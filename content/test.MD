@@ -13,3 +13,5 @@ Slug: pelican-setup
 
 In this post it is documented how this blog was constructed using a static 
 site maker, meaning, there is no server-side processing of data.
+
+this is a test.
