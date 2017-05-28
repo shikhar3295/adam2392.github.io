@@ -34,13 +34,13 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
          ('You can modify those links in your config file', '#'),)
 
 # Main page
-MAIN_MENU = True
-DISPLAY_PAGES_ON_MENU = True
+# MAIN_MENU = True
+# DISPLAY_PAGES_ON_MENU = True
 
-MENUITEMS = (("Blog", "/blog.html"),
-             ("Archives", "/archives.html"),
-             ("Categories", "/categories.html"),
-             ("Tags", "/tags.html"),)
+# MENUITEMS = (("Blog", "/blog.html"),
+#              ("Archives", "/archives.html"),
+#              ("Categories", "/categories.html"),
+#              ("Tags", "/tags.html"),)
 
 # Social widget
 GITHUB_URL = "https://github.com/adam2392"
