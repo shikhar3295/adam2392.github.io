@@ -18,28 +18,6 @@ CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
 
 DELETE_OUTPUT_DIRECTORY = True
 
-# MARKUP = ('rst', 'md', 'html')
-
-# PLUGIN_PATHS = ['./plugins']
-# PLUGINS = ['extract_toc','render_math','disqus_static','better_figures_and_images']
-# MD_EXTENSIONS = ['codehilite','extra','smarty', 'toc']
-
-# Set Directives
-# PATH = '/content/'
-# OUTPUT_PATH = '../www.notionsandnotes.org/'
-# STATIC_PATHS = ['extra', 'images', 'pdfs']
-# EXTRA_PATH_METADATA = {
-#     'extra/robots.txt': {'path': 'robots.txt'},
-#     'extra/favicon.ico': {'path': 'favicon.ico'},
-#     'extra/htaccess': {'path': '.htaccess'}
-# }
-
-# THEME = 'themes/built-texts'
-
-# COLOPHON = True
-# COLOPHON_TITLE = 'About'
-# COLOPHON_CONTENT = "Mainly...."
-
 # Following items are often useful when publishing
 
 #DISQUS_SITENAME = ""
