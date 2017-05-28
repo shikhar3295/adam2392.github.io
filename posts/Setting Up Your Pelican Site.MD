@@ -4,6 +4,7 @@
 
 - Installation
 - Choosing Your Hosting Server
+- Pushing Content to Cloud
     - References:
 
 <!-- /MarkdownTOC -->
@@ -17,6 +18,34 @@ for helping to write in Markdown and writing pretty text.
 
 # Choosing Your Hosting Server
 There are a couple of options, but you should decide how you want to host your site because then it will be built into your pelican project directory.
+
+# Pushing Content to Cloud
+'pip install ghp-import fabric'
+
+1. Using ghp-import
+First run install by 'pip install ghp-import'
+
+Then you can run code like:
+
+    $ ghp-import -m 'commit message' -b master output
+    $ git push --all
+
+2. Using fab
+
+First install fabric by running 'pip install fabric'. Then insert code into your fabfile.py:
+
+    def publishghp(msg):
+        preview() #builds publishconf.py
+        local("git add -A") #will commit allll files, be careful
+        local("git commit -m '%s'"%msg)
+        local("ghp-import -m '%s' -b master output"%msg)
+        local("git push --all")
+
+and then run 
+    
+    $ fab publishghp:"commit message"
+
+to create commits up to the cloud.
 
 ## References:
 1. https://www.notionsandnotes.org/tech/web-development/pelican-static-blog-setup.html
