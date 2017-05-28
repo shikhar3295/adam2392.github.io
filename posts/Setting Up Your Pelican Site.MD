@@ -3,6 +3,7 @@
 <!-- MarkdownTOC -->
 
 - Installation
+- Choosing Your Hosting Server
     - References:
 
 <!-- /MarkdownTOC -->
@@ -13,6 +14,9 @@
 'pip install Markdown beautifulsoup4 typogrify Pillow webassets'
 
 for helping to write in Markdown and writing pretty text.
+
+# Choosing Your Hosting Server
+There are a couple of options, but you should decide how you want to host your site because then it will be built into your pelican project directory.
 
 ## References:
 1. https://www.notionsandnotes.org/tech/web-development/pelican-static-blog-setup.html
