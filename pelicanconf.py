@@ -2,14 +2,18 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
+# jinja2.Environment.install_gettext_callables
+
 AUTHOR = u'Adam Li'
 SITENAME = u"Adam Li's Website"
-SITEURL = ''
+SITEURL = 'http://localhost:8000'
+# SITELOGO = 
+SITETITLE = 'Adam J. Li'
+COPYRIGHT_YEAR = 2017
 
 PATH = 'content'
 
 TIMEZONE = 'America/New_York'
-
 DEFAULT_LANG = u'en'
 
 # Feed generation is usually not desired when developing
@@ -21,11 +25,12 @@ AUTHOR_FEED_RSS = None
 
 # to run the theme 
 # for now, pelican-bootstrap3
-# THEME = 'pelican-themes/pelican-bootstrap3'
-# JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
-# PLUGIN_PATHS = ['/path/to/git/pelican-plugins'] 
-# PLUGINS = ['i18n_subsites']
-THEME = "pelican-themes/Flex/"
+THEME = 'pelican-themes/pelican-bootstrap3'
+PLUGIN_PATHS = ['plugins'] 
+PLUGINS = ['i18n_subsites']
+JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
+# JINJA_EXTENSIONS = {'extensions': ['jinja2.ext.i18n']}
+# THEME = "pelican-themes/Flex/"
 
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
