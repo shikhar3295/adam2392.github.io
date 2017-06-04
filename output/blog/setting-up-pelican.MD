@@ -1,6 +1,5 @@
 Title: Setting Up a Pelican Site
-Date: 2017-06-04 12:20
-Modified: 2017-06-04 12:20
+Date: 2017-6-4
 Category: Python
 Tags: pelican, publishing, webdev, python
 Slug: setup-pelican-site
