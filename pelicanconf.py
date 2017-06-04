@@ -85,4 +85,4 @@ DEFAULT_PAGINATION = 10
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
 # Static content
-STATIC_PATHS = ["blog", "pdfs", "files"]
+STATIC_PATHS = ["pdfs", "files"]
