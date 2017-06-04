@@ -38,8 +38,7 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-# to run the theme 
-# for now, pelican-bootstrap3
+# to run the theme | for now, pelican-bootstrap3
 THEME = 'pelican-themes/pelican-bootstrap3'
 PLUGIN_PATHS = ['plugins'] 
 PLUGINS = ['i18n_subsites']
@@ -74,3 +73,5 @@ DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
+# Static content
+STATIC_PATHS = ["pdfs", "files"]

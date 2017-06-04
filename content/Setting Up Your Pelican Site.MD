@@ -15,6 +15,8 @@ Summary: A short walkthrough of setting up a pelican site
 - Choosing Your Hosting Server
 - Installing and Choosing Themes/Plugins
 - Pushing Content to Cloud
+- Adding Pages of Static Content
+- Adding Articles To Your Blog
 - References:
 
 <!-- /MarkdownTOC -->
@@ -71,6 +73,12 @@ and then run
     $ fab publishghp:"commit message"
 
 to create commits up to the cloud.
+
+# Adding Pages of Static Content
+Here you want to add a homepage, about me page and other static pages that are relevant to your site.
+
+
+# Adding Articles To Your Blog
 
 # References:
 1. https://www.notionsandnotes.org/tech/web-development/pelican-static-blog-setup.html
