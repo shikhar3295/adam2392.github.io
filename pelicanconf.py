@@ -10,6 +10,7 @@ SITEURL = 'http://localhost:8000'
 # SITELOGO = 
 SITETITLE = 'Adam J. Li'
 COPYRIGHT_YEAR = 2017
+HEADER_IMAGE='header.JPG'
 
 PATH = 'content'
 
@@ -47,7 +48,7 @@ AUTHOR_FEED_RSS = None
 # to run the theme | for now, pelican-bootstrap3
 THEME = 'pelican-themes/pelican-bootstrap3'
 PLUGIN_PATHS = ['plugins'] 
-PLUGINS = ['i18n_subsites']
+PLUGINS = ['i18n_subsites', 'render_math']
 JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
 # JINJA_EXTENSIONS = {'extensions': ['jinja2.ext.i18n']}
 # THEME = "pelican-themes/Flex/"
