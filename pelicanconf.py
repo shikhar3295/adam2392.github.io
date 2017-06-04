@@ -63,6 +63,7 @@ JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
 # Main page
 MAIN_MENU = True
 DISPLAY_PAGES_ON_MENU = True
+DISPLAY_CATEGORIES_ON_MENU = False
 
 MENUITEMS = (("Blog", "/blog.html"),
              ("Archives", "/archives.html"),
@@ -79,7 +80,7 @@ SOCIAL = (("twitter", "https://twitter.com/adam2392"),
           ("github", "https://github.com/adam2392"),
           ("linkedin", "https://www.linkedin.com/in/adam2392"))
 
-# DEFAULT_PAGINATION = 10
+DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
