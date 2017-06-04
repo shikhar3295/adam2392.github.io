@@ -29,6 +29,7 @@ PATH = 'content'
 # PHOTO_EXIF_COPYRIGHT_AUTHOR = 'Adam Li'
 
 # Handling Articles
+INDEX_SAVE_AS = "blog.html"
 PAGE_URL = "{slug}/"
 PAGE_SAVE_AS = "{slug}/index.html"
 ARTICLE_URL = "blog/{date:%Y}/{date:%m}/{slug}/"
