@@ -27,6 +27,12 @@ PHOTO_EXIF_REMOVE_GPS = True  # Removes any GPS information from t
 PHOTO_EXIF_COPYRIGHT = 'COPYRIGHT'
 PHOTO_EXIF_COPYRIGHT_AUTHOR = 'Adam Li'
 
+# Handling Articles
+PAGE_URL = "{slug}/"
+PAGE_SAVE_AS = "{slug}/index.html"
+ARTICLE_URL = "blog/{date:%Y}/{date:%m}/{slug}/"
+ARTICLE_SAVE_AS = "blog/{date:%Y}/{date:%m}/{slug}/index.html"
+
 
 TIMEZONE = 'America/New_York'
 DEFAULT_LANG = u'en'
