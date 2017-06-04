@@ -1,5 +1,5 @@
 Title: Contact
-
+Slug: contact
 ### Email
 
 - `adam2392 at gmail dot com`
