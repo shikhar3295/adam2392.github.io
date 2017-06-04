@@ -66,6 +66,7 @@ DISPLAY_PAGES_ON_MENU = True
 MENUITEMS = (("Blog", "/article_list.html"),
              ("Archives", "/archives.html"),
              ("Categories", "/categories.html"),
+             ("Curriculum Vitae", "/AdamLi_CVFellowships.pdf"),
              ("Tags", "/tags.html"),)
 
 # Social widget
