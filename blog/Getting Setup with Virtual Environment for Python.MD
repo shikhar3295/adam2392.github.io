@@ -1,3 +1,10 @@
+Title: Setting Up a Virtual Environment for Python
+Category: Python
+Tags: virtualenv, webdev, python
+Slug: setup-virtual-env
+Authors: Adam Li
+Summary: A short walkthrough of setting up a virtual environment for Python development.
+
 # Getting Setup with Virtual Environment for Python Development
 # By: Adam Li
 <!-- MarkdownTOC autolink="true" bracket="round" -->
