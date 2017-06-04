@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>Adam Li's Website</title>
+    <title>Adam Li</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -13,11 +13,11 @@
         <meta name="author" content="Adam Li" />
 
     <!-- Open Graph tags -->
-        <meta property="og:site_name" content="Adam Li's Website" />
+        <meta property="og:site_name" content="Adam Li" />
         <meta property="og:type" content="website"/>
-        <meta property="og:title" content="Adam Li's Website"/>
+        <meta property="og:title" content="Adam Li"/>
         <meta property="og:url" content=""/>
-        <meta property="og:description" content="Adam Li's Website"/>
+        <meta property="og:description" content="Adam Li"/>
 
 
     <!-- Bootstrap -->
@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
 
         <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
-              title="Adam Li's Website ATOM Feed"/>
+              title="Adam Li ATOM Feed"/>
 
 
 
@@ -39,11 +39,21 @@
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
 	<div class="container">
         <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
             <a href="/" class="navbar-brand">
-Adam Li's Website            </a>
+Adam Li            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/archives.html">Archives</a></li>
+                    <li><a href="/categories.html">Categories</a></li>
+                    <li><a href="/tags.html">Tags</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
             </ul>
@@ -69,31 +79,12 @@ Adam Li's Website            </a>
   <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
   <ul class="list-group" id="social">
     <li class="list-group-item"><a href="https://twitter.com/adam2392"><i class="fa fa-twitter-square fa-lg"></i> twitter</a></li>
+    <li class="list-group-item"><a href="https://stackexchange.com/users/4494355/ajl123"><i class="fa fa-stack-overflow fa-lg"></i> stack-overflow</a></li>
     <li class="list-group-item"><a href="https://github.com/adam2392"><i class="fa fa-github-square fa-lg"></i> github</a></li>
     <li class="list-group-item"><a href="https://www.linkedin.com/in/adam2392"><i class="fa fa-linkedin-square fa-lg"></i> linkedin</a></li>
   </ul>
 </li>
 <!-- End Sidebar/Social -->
-
-<!-- Sidebar/Links -->
-<li class="list-group-item">
-  <h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
-  <ul class="list-group" id="links">
-    <li class="list-group-item">
-      <a href="http://getpelican.com/" target="_blank">Pelican</a>
-    </li>
-    <li class="list-group-item">
-      <a href="http://python.org/" target="_blank">Python.org</a>
-    </li>
-    <li class="list-group-item">
-      <a href="http://jinja.pocoo.org/" target="_blank">Jinja2</a>
-    </li>
-    <li class="list-group-item">
-      <a href="#" target="_blank">You can modify those links in your config file</a>
-    </li>
-  </ul>
-</li>
-<!-- End Sidebar/Links -->
   </ul>
 </section>
 <!-- End Sidebar -->            </aside>
