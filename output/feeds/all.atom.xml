@@ -78,4 +78,126 @@ First run install by 'pip install ghp-import'&lt;/li&gt;
 &lt;li&gt;https://www.notionsandnotes.org/tech/web-development/pelican-static-blog-setup.html&lt;/li&gt;
 &lt;li&gt;http://terriyu.info/blog/posts/2013/07/pelican-setup/&lt;/li&gt;
 &lt;li&gt;http://beneathdata.com/how-to/how-i-built-this-website/&lt;/li&gt;
-&lt;/ol&gt;</content><category term="pelican"></category><category term="publishing"></category><category term="webdev"></category><category term="python"></category></entry></feed>
+&lt;/ol&gt;</content><category term="pelican"></category><category term="publishing"></category><category term="webdev"></category><category term="python"></category></entry><entry><title>Setting Up a Virtual Environment for Python</title><link href="/blog/2017/06/setup-virtual-env/" rel="alternate"></link><published>2017-06-04T00:00:00-04:00</published><updated>2017-06-04T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-06-04:/blog/2017/06/setup-virtual-env/</id><summary type="html">&lt;p&gt;A short walkthrough of setting up a virtual environment for Python development.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Getting Setup with Virtual Environment for Python Development&lt;/h1&gt;
+&lt;h1&gt;By: Adam Li&lt;/h1&gt;
+&lt;!-- MarkdownTOC autolink="true" bracket="round" --&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#basics-create-delete"&gt;Basics (Create, Delete):&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#tips"&gt;Tips&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#convenient-tools"&gt;Convenient Tools&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#references"&gt;References:&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- /MarkdownTOC --&gt;
+
+&lt;p&gt;VirtualEnv: 15.1.0
+VirtualEnvWrapper&lt;/p&gt;
+&lt;h1&gt;Basics (Create, Delete):&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;Create
+For Virtualenvwrapper: Run the command 'mkvirtualenv &lt;envname&gt;'&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;For Virtualenv: Run command virtualenv './venv/' inside your project directory&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Delete a Virtualenv
+For Virtualenvwrappper: In order to delete a virtual environment, all you need to do is to remove it recursively from your ~/.virtualenvs directory with 'sudo rm -rf &lt;name&gt;'.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;For Virtualenv: Go to the directory of your project and delete the /venv/ directory.&lt;/p&gt;
+&lt;h1&gt;Tips&lt;/h1&gt;
+&lt;h1&gt;Convenient Tools&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Automatically cd to your project directory
+Input the following code to your ./virtualenvs/postactivate file
+'''
+    #
+    # subtract strings to get the project name
+    #
+    function get_project_name() {
+        local venv_dir=&lt;span class="math"&gt;\(VIRTUALENVWRAPPER_HOOK_DIR
+        local venv=\)&lt;/span&gt;VIRTUAL_ENV&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;temp_project_name=&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;venv&lt;/span&gt;&lt;span class="c1"&gt;#&amp;quot;$venv_dir&amp;quot;&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;   # get difference between two strings
+project_name=&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;temp_project_name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;     # remove leading &amp;#39;/&amp;#39; character
+
+echo &lt;span class="nv"&gt;$project_name&lt;/span&gt;
+## uncomment for debugging
+# echo &lt;span class="nv"&gt;$venv_dir&lt;/span&gt;
+# echo &lt;span class="nv"&gt;$venv&lt;/span&gt;
+# echo &lt;span class="nv"&gt;$temp_project_name&lt;/span&gt;
+# echo &lt;span class="nv"&gt;$project_name&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;}&lt;/p&gt;
+&lt;h1&gt;export proj="cd ~/Documents/$(get_project_name)"&lt;/h1&gt;
+&lt;p&gt;root_dir='/Users/adam2392/Documents/'
+project_dir=&lt;span class="math" project_dir&gt;\((get_project_name)
+cd ${root_dir}/\)&lt;/span&gt;
+'''&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Make sure you change 'root_dir' to the correct root directory of your projects. This assumes that your project directory files are all correspondingly named with your virtualenv.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1&gt;References:&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;https://nolar.info/automatically-activate-virtualenv-on-cd/&lt;/li&gt;
+&lt;li&gt;code to input into .bashrc&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="virtualenv"></category><category term="webdev"></category><category term="python"></category></entry></feed>

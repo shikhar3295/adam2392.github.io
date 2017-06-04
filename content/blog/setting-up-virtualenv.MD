@@ -1,4 +1,5 @@
 Title: Setting Up a Virtual Environment for Python
+Date: 2017-6-4
 Category: Python
 Tags: virtualenv, webdev, python
 Slug: setup-virtual-env
