@@ -64,7 +64,7 @@ JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
 MAIN_MENU = True
 DISPLAY_PAGES_ON_MENU = True
 
-MENUITEMS = (("Blog", "/article_list.html"),
+MENUITEMS = (("Blog", "/blog.html"),
              ("Archives", "/archives.html"),
              ("Categories", "/categories.html"),
              ("Curriculum Vitae", "/pdfs/AdamLi_CVFellowships.pdf"),
