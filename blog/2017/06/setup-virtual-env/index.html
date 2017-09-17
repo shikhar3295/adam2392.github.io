@@ -136,31 +136,39 @@ Adam Li            </a>
 </ol>
 <p>For Virtualenvwrappper: In order to delete a virtual environment, all you need to do is to remove it recursively from your ~/.virtualenvs directory with 'sudo rm -rf <name>'. For Virtualenv: Go to the directory of your project and delete the /venv/ directory.</p>
 <h1>Tips</h1>
+<ol>
+<li>Starting up virtualenv</li>
+</ol>
+<p>Here just type in:</p>
+<p>$ workon <virtualenvname></p>
+<p>and your virtual environment will start up.</p>
 <h1>Convenient Tools</h1>
 <ol>
 <li>
 <p>Automatically cd to your project directory
 Input the following code to your ./virtualenvs/postactivate file</p>
-<p>```
-    # subtract strings to get the project name
-    function get_project_name() {
-        local venv_dir=<span class="math">\(VIRTUALENVWRAPPER_HOOK_DIR
-        local venv=\)</span>VIRTUAL_ENV</p>
-<div class="highlight"><pre><span></span>    temp_project_name=<span class="cp">${</span><span class="n">venv</span><span class="c1">#&quot;$venv_dir&quot;</span><span class="cp">}</span>   # get difference between two strings
-    project_name=<span class="cp">${</span><span class="n">temp_project_name</span><span class="p">:</span><span class="mi">1</span><span class="cp">}</span>     # remove leading &#39;/&#39; character
+<p>```</p>
+<div class="highlight"><pre><span></span><span class="err">#</span> <span class="nx">subtract</span> <span class="nx">strings</span> <span class="nx">to</span> <span class="nx">get</span> <span class="nx">the</span> <span class="nx">project</span> <span class="nx">name</span>
+<span class="kd">function</span> <span class="nx">get_project_name() {</span>
 
-    echo <span class="nv">$project_name</span>
-    ## uncomment for debugging
-    # echo <span class="nv">$venv_dir</span>
-    # echo <span class="nv">$venv</span>
-    # echo <span class="nv">$temp_project_name</span>
-    # echo <span class="nv">$project_name</span>
-}
+    <span class="nx">local</span> <span class="nx">venv_dir</span><span class="o">=</span><span class="nx">$VIRTUALENVWRAPPER_HOOK_DIR</span>
+    <span class="nx">local</span> <span class="nx">venv</span><span class="o">=</span><span class="nx">$VIRTUAL_ENV</span>
 
-# export proj=&quot;cd ~/Documents/$(get_project_name)&quot;
-root_dir=&#39;/Users/adam2392/Documents/&#39;
-project_dir=$(get_project_name)
-cd <span class="cp">${</span><span class="n">root_dir</span><span class="cp">}</span>/<span class="cp">${</span><span class="n">project_dir</span><span class="cp">}</span>
+    <span class="nx">temp_project_name</span><span class="o">=</span><span class="nx">$</span><span class="p">{</span><span class="nx">venv</span><span class="err">#</span><span class="s2">&quot;$venv_dir&quot;</span><span class="p">}</span>   <span class="err">#</span> <span class="nx">get</span> <span class="nx">difference</span> <span class="nx">between</span> <span class="nx">two</span> <span class="nx">strings</span>
+    <span class="nx">project_name</span><span class="o">=</span><span class="nx">$</span><span class="p">{</span><span class="nx">temp_project_name</span>:<span class="kt">1</span><span class="p">}</span>     <span class="err">#</span> <span class="nx">remove</span> <span class="nx">leading</span> <span class="s1">&#39;/&#39;</span> <span class="nx">character</span>
+
+    <span class="nx">echo</span> <span class="nx">$project_name</span>
+    <span class="err">##</span> <span class="nx">uncomment</span> <span class="k">for</span> <span class="nx">debugging</span>
+    <span class="err">#</span> <span class="nx">echo</span> <span class="nx">$venv_dir</span>
+    <span class="err">#</span> <span class="nx">echo</span> <span class="nx">$venv</span>
+    <span class="err">#</span> <span class="nx">echo</span> <span class="nx">$temp_project_name</span>
+    <span class="err">#</span> <span class="nx">echo</span> <span class="nx">$project_name</span>
+<span class="p">}</span>
+
+<span class="err">#</span> <span class="kr">export</span> <span class="nx">proj</span><span class="o">=</span><span class="s2">&quot;cd ~/Documents/$(get_project_name)&quot;</span>
+<span class="nx">root_dir</span><span class="o">=</span><span class="s1">&#39;/Users/adam2392/Documents/&#39;</span>
+<span class="nx">project_dir</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="nx">get_project_name</span><span class="p">)</span>
+<span class="nx">cd</span> <span class="nx">$</span><span class="p">{</span><span class="nx">root_dir</span><span class="p">}</span><span class="o">/</span><span class="nx">$</span><span class="p">{</span><span class="nx">project_dir</span><span class="p">}</span>
 </pre></div>
 
 
@@ -168,70 +176,12 @@ cd <span class="cp">${</span><span class="n">root_dir</span><span class="cp">}</
 </li>
 </ol>
 <p>Make sure you change 'root_dir' to the correct root directory of your projects. This assumes that your project directory files are all correspondingly named with your virtualenv.</p>
-<ol>
-<li></li>
-</ol>
 <h1>References:</h1>
 <ol>
 <li>https://nolar.info/automatically-activate-virtualenv-on-cd/</li>
 <li>code to input into .bashrc</li>
 <li></li>
 </ol>
-<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width < 768) ? "left" : align;
-        indent = (screen.width < 768) ? "0em" : indent;
-        linebreak = (screen.width < 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-</script>
             </div>
             <!-- /.entry-content -->
 <section class="well" id="related-posts">
