@@ -141,36 +141,35 @@ For Virtualenvwrappper: In order to delete a virtual environment, all you need t
 <h1>Tips</h1>
 <h1>Convenient Tools</h1>
 <ol>
-<li>
-<p>Automatically cd to your project directory
-Input the following code to your ./virtualenvs/postactivate file
-'''
+<li>Automatically cd to your project directory
+Input the following code to your ./virtualenvs/postactivate file</li>
+</ol>
+<p>'''
     #
     # subtract strings to get the project name
     #
     function get_project_name() {
         local venv_dir=<span class="math">\(VIRTUALENVWRAPPER_HOOK_DIR
         local venv=\)</span>VIRTUAL_ENV</p>
-<div class="highlight"><pre><span></span>temp_project_name=<span class="cp">${</span><span class="n">venv</span><span class="c1">#&quot;$venv_dir&quot;</span><span class="cp">}</span>   # get difference between two strings
-project_name=<span class="cp">${</span><span class="n">temp_project_name</span><span class="p">:</span><span class="mi">1</span><span class="cp">}</span>     # remove leading &#39;/&#39; character
+<div class="highlight"><pre><span></span>    temp_project_name=<span class="cp">${</span><span class="n">venv</span><span class="c1">#&quot;$venv_dir&quot;</span><span class="cp">}</span>   # get difference between two strings
+    project_name=<span class="cp">${</span><span class="n">temp_project_name</span><span class="p">:</span><span class="mi">1</span><span class="cp">}</span>     # remove leading &#39;/&#39; character
 
-echo <span class="nv">$project_name</span>
-## uncomment for debugging
-# echo <span class="nv">$venv_dir</span>
-# echo <span class="nv">$venv</span>
-# echo <span class="nv">$temp_project_name</span>
-# echo <span class="nv">$project_name</span>
+    echo <span class="nv">$project_name</span>
+    ## uncomment for debugging
+    # echo <span class="nv">$venv_dir</span>
+    # echo <span class="nv">$venv</span>
+    # echo <span class="nv">$temp_project_name</span>
+    # echo <span class="nv">$project_name</span>
+}
+
+# export proj=&quot;cd ~/Documents/$(get_project_name)&quot;
+root_dir=&#39;/Users/adam2392/Documents/&#39;
+project_dir=$(get_project_name)
+cd <span class="cp">${</span><span class="n">root_dir</span><span class="cp">}</span>/<span class="cp">${</span><span class="n">project_dir</span><span class="cp">}</span>
 </pre></div>
 
 
-<p>}</p>
-<h1>export proj="cd ~/Documents/$(get_project_name)"</h1>
-<p>root_dir='/Users/adam2392/Documents/'
-project_dir=<span class="math" project_dir>\((get_project_name)
-cd ${root_dir}/\)</span>
-'''</p>
-</li>
-</ol>
+<p>'''</p>
 <p>Make sure you change 'root_dir' to the correct root directory of your projects. This assumes that your project directory files are all correspondingly named with your virtualenv.</p>
 <ol>
 <li></li>

@@ -106,36 +106,35 @@ For Virtualenvwrappper: In order to delete a virtual environment, all you need t
 &lt;h1&gt;Tips&lt;/h1&gt;
 &lt;h1&gt;Convenient Tools&lt;/h1&gt;
 &lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Automatically cd to your project directory
-Input the following code to your ./virtualenvs/postactivate file
-'''
+&lt;li&gt;Automatically cd to your project directory
+Input the following code to your ./virtualenvs/postactivate file&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;'''
     #
     # subtract strings to get the project name
     #
     function get_project_name() {
         local venv_dir=&lt;span class="math"&gt;\(VIRTUALENVWRAPPER_HOOK_DIR
         local venv=\)&lt;/span&gt;VIRTUAL_ENV&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;temp_project_name=&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;venv&lt;/span&gt;&lt;span class="c1"&gt;#&amp;quot;$venv_dir&amp;quot;&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;   # get difference between two strings
-project_name=&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;temp_project_name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;     # remove leading &amp;#39;/&amp;#39; character
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    temp_project_name=&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;venv&lt;/span&gt;&lt;span class="c1"&gt;#&amp;quot;$venv_dir&amp;quot;&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;   # get difference between two strings
+    project_name=&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;temp_project_name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;     # remove leading &amp;#39;/&amp;#39; character
 
-echo &lt;span class="nv"&gt;$project_name&lt;/span&gt;
-## uncomment for debugging
-# echo &lt;span class="nv"&gt;$venv_dir&lt;/span&gt;
-# echo &lt;span class="nv"&gt;$venv&lt;/span&gt;
-# echo &lt;span class="nv"&gt;$temp_project_name&lt;/span&gt;
-# echo &lt;span class="nv"&gt;$project_name&lt;/span&gt;
+    echo &lt;span class="nv"&gt;$project_name&lt;/span&gt;
+    ## uncomment for debugging
+    # echo &lt;span class="nv"&gt;$venv_dir&lt;/span&gt;
+    # echo &lt;span class="nv"&gt;$venv&lt;/span&gt;
+    # echo &lt;span class="nv"&gt;$temp_project_name&lt;/span&gt;
+    # echo &lt;span class="nv"&gt;$project_name&lt;/span&gt;
+}
+
+# export proj=&amp;quot;cd ~/Documents/$(get_project_name)&amp;quot;
+root_dir=&amp;#39;/Users/adam2392/Documents/&amp;#39;
+project_dir=$(get_project_name)
+cd &lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;root_dir&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;/&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;project_dir&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;}&lt;/p&gt;
-&lt;h1&gt;export proj="cd ~/Documents/$(get_project_name)"&lt;/h1&gt;
-&lt;p&gt;root_dir='/Users/adam2392/Documents/'
-project_dir=&lt;span class="math" project_dir&gt;\((get_project_name)
-cd ${root_dir}/\)&lt;/span&gt;
-'''&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;'''&lt;/p&gt;
 &lt;p&gt;Make sure you change 'root_dir' to the correct root directory of your projects. This assumes that your project directory files are all correspondingly named with your virtualenv.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;/li&gt;

@@ -37,6 +37,7 @@ For Virtualenv: Go to the directory of your project and delete the /venv/ direct
 # Convenient Tools
 1. Automatically cd to your project directory
 Input the following code to your ./virtualenvs/postactivate file
+
 '''
     #
     # subtract strings to get the project name
