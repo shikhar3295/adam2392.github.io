@@ -1,3 +1,10 @@
+Title: Doctoral Board Oral Exam - PhD
+Date: 2017-8-05
+Category: Academic
+Tags: academic, dbo, phd
+Authors: Adam Li
+Summary: A post about my experience through the Doctoral Board Oral exam in my PhD at Johns Hopkins University.
+
 # Doctoral Board Oral Exam
 <!-- MarkdownTOC -->
 
@@ -173,8 +180,8 @@ Show that the cost monotonically decreases, so the algorithm will converge at le
 
 # FAQ
 1. Q: Where should I stay? 
-A: Generally, I'm an advocate of staying downtown because then everything is walking distance. If not, I would try to stay within walking distance to a subway station. Stay away from South Chicago because that is a very crime-ridden area.
+A: 
 
 2. Q: I only have a day in Seoul, where should I go?
-A: Purple pig, Girl on the goat, Lou Malnati's to eat. Cloud Gate / Millenium Park and the River Walk to see. Signature Room for a night time drink if you have the time.
+A: 
 
