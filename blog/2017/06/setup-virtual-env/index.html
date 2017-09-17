@@ -144,13 +144,14 @@ For Virtualenvwrappper: In order to delete a virtual environment, all you need t
 <li>Automatically cd to your project directory
 Input the following code to your ./virtualenvs/postactivate file</li>
 </ol>
-<p>'''
+<p><span class="math">\(
+'''
     #
     # subtract strings to get the project name
     #
     function get_project_name() {
-        local venv_dir=<span class="math">\(VIRTUALENVWRAPPER_HOOK_DIR
-        local venv=\)</span>VIRTUAL_ENV</p>
+        local venv_dir=\)</span>VIRTUALENVWRAPPER_HOOK_DIR
+        local venv=$VIRTUAL_ENV</p>
 <div class="highlight"><pre><span></span>    temp_project_name=<span class="cp">${</span><span class="n">venv</span><span class="c1">#&quot;$venv_dir&quot;</span><span class="cp">}</span>   # get difference between two strings
     project_name=<span class="cp">${</span><span class="n">temp_project_name</span><span class="p">:</span><span class="mi">1</span><span class="cp">}</span>     # remove leading &#39;/&#39; character
 
@@ -169,7 +170,8 @@ cd <span class="cp">${</span><span class="n">root_dir</span><span class="cp">}</
 </pre></div>
 
 
-<p>'''</p>
+<p>'''
+$</p>
 <p>Make sure you change 'root_dir' to the correct root directory of your projects. This assumes that your project directory files are all correspondingly named with your virtualenv.</p>
 <ol>
 <li></li>
