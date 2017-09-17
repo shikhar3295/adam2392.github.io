@@ -144,34 +144,33 @@ For Virtualenvwrappper: In order to delete a virtual environment, all you need t
 <li>Automatically cd to your project directory
 Input the following code to your ./virtualenvs/postactivate file</li>
 </ol>
-<p><span class="math">\(
-'''
-        #
+<p>$</p>
+<div class="highlight"><pre><span></span>        #
         # subtract strings to get the project name
         #
         function get_project_name() {
-            local venv_dir=\)</span>VIRTUALENVWRAPPER_HOOK_DIR
-            local venv=$VIRTUAL_ENV</p>
-<div class="highlight"><pre><span></span>        temp_project_name=<span class="cp">${</span><span class="n">venv</span><span class="c1">#&quot;$venv_dir&quot;</span><span class="cp">}</span>   # get difference between two strings
-        project_name=<span class="cp">${</span><span class="n">temp_project_name</span><span class="p">:</span><span class="mi">1</span><span class="cp">}</span>     # remove leading &#39;/&#39; character
+            local venv_dir=<span class="nv">$VIRTUALENVWRAPPER_HOOK_DIR</span>
+            local venv=<span class="nv">$VIRTUAL_ENV</span>
 
-        echo <span class="nv">$project_name</span>
-        ## uncomment for debugging
-        # echo <span class="nv">$venv_dir</span>
-        # echo <span class="nv">$venv</span>
-        # echo <span class="nv">$temp_project_name</span>
-        # echo <span class="nv">$project_name</span>
-    }
+            temp_project_name=<span class="cp">${</span><span class="n">venv</span><span class="c1">#&quot;$venv_dir&quot;</span><span class="cp">}</span>   # get difference between two strings
+            project_name=<span class="cp">${</span><span class="n">temp_project_name</span><span class="p">:</span><span class="mi">1</span><span class="cp">}</span>     # remove leading &#39;/&#39; character
 
-    # export proj=&quot;cd ~/Documents/$(get_project_name)&quot;
-    root_dir=&#39;/Users/adam2392/Documents/&#39;
-    project_dir=$(get_project_name)
-    cd <span class="cp">${</span><span class="n">root_dir</span><span class="cp">}</span>/<span class="cp">${</span><span class="n">project_dir</span><span class="cp">}</span>
+            echo <span class="nv">$project_name</span>
+            ## uncomment for debugging
+            # echo <span class="nv">$venv_dir</span>
+            # echo <span class="nv">$venv</span>
+            # echo <span class="nv">$temp_project_name</span>
+            # echo <span class="nv">$project_name</span>
+        }
+
+        # export proj=&quot;cd ~/Documents/$(get_project_name)&quot;
+        root_dir=&#39;/Users/adam2392/Documents/&#39;
+        project_dir=$(get_project_name)
+        cd <span class="cp">${</span><span class="n">root_dir</span><span class="cp">}</span>/<span class="cp">${</span><span class="n">project_dir</span><span class="cp">}</span>
 </pre></div>
 
 
-<p>'''
-$</p>
+<p>$</p>
 <p>Make sure you change 'root_dir' to the correct root directory of your projects. This assumes that your project directory files are all correspondingly named with your virtualenv.</p>
 <ol>
 <li></li>
@@ -182,61 +181,6 @@ $</p>
 <li>code to input into .bashrc</li>
 <li></li>
 </ol>
-<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width < 768) ? "left" : align;
-        indent = (screen.width < 768) ? "0em" : indent;
-        linebreak = (screen.width < 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-</script>
             </div>
             <!-- /.entry-content -->
 <section class="well" id="related-posts">
