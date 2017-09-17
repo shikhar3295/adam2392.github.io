@@ -29,6 +29,7 @@
             <meta property="article:author" content="Adam Li" />
 
 
+
     <!-- Bootstrap -->
         <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
     <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
@@ -156,6 +157,20 @@ Adam Li            </a>
 https://github.com/getpelican/pelican-themes
 https://github.com/getpelican/pelican-plugins</p>
 <p>Afterwards, you can follow those instructions to get a certain theme setup. </p>
+<p>Clone:</p>
+<div class="highlight"><pre><span></span>git clone https://github.com/getpelican/pelican-themes.git
+git clone https://github.com/getpelican/pelican-plugins
+</pre></div>
+
+
+<p>Then:</p>
+<div class="highlight"><pre><span></span>PLUGIN_PATHS = [&#39;path/to/pelican-plugins&#39;]
+PLUGINS = [&#39;assets&#39;, &#39;sitemap&#39;, &#39;gravatar&#39;]
+
+JINJA_ENVIRONMENT = {&#39;extensions&#39;: [&#39;jinja2.ext.i18n&#39;]}
+</pre></div>
+
+
 <h1>Pushing Content to Cloud</h1>
 <p>'pip install ghp-import fabric'</p>
 <ol>

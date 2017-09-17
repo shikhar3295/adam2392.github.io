@@ -45,6 +45,19 @@ https://github.com/getpelican/pelican-plugins
 
 Afterwards, you can follow those instructions to get a certain theme setup. 
 
+Clone:
+
+	git clone https://github.com/getpelican/pelican-themes.git
+	git clone https://github.com/getpelican/pelican-plugins
+
+Then:
+
+	PLUGIN_PATHS = ['path/to/pelican-plugins']
+	PLUGINS = ['assets', 'sitemap', 'gravatar']
+
+	JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
+
+
 # Pushing Content to Cloud
 'pip install ghp-import fabric'
 
