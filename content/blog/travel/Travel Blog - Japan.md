@@ -1,3 +1,11 @@
+Title: Travel Blog - Japan
+Date: 2017-7-20
+Category: Travel
+Tags: travel, japan, tokyo, kyoto, osaka, nara 
+Slug: travel-japan
+Authors: Adam Li
+Summary: A post about my experience through Japan.
+
 # Asia
 <!-- MarkdownTOC -->
 
