@@ -29,15 +29,23 @@ For Virtualenvwrapper: Run the command 'mkvirtualenv <envname>'. For Virtualenv:
 For Virtualenvwrappper: In order to delete a virtual environment, all you need to do is to remove it recursively from your ~/.virtualenvs directory with 'sudo rm -rf <name>'. For Virtualenv: Go to the directory of your project and delete the /venv/ directory.
 
 # Tips
+1. Starting up virtualenv
 
+Here just type in:
+
+$ workon <virtualenvname>
+
+and your virtual environment will start up.
 
 # Convenient Tools
 1. Automatically cd to your project directory
 Input the following code to your ./virtualenvs/postactivate file
 
     ```
+
         # subtract strings to get the project name
         function get_project_name() {
+
             local venv_dir=$VIRTUALENVWRAPPER_HOOK_DIR
             local venv=$VIRTUAL_ENV
 
@@ -58,10 +66,8 @@ Input the following code to your ./virtualenvs/postactivate file
         cd ${root_dir}/${project_dir}
     ```
 
-
 Make sure you change 'root_dir' to the correct root directory of your projects. This assumes that your project directory files are all correspondingly named with your virtualenv.
 
-2. 
 
 # References:
 1. https://nolar.info/automatically-activate-virtualenv-on-cd/
