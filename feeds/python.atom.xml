@@ -94,44 +94,45 @@ First run install by 'pip install ghp-import'&lt;/li&gt;
 &lt;p&gt;VirtualEnv: 15.1.0 | VirtualEnvWrapper&lt;/p&gt;
 &lt;h1&gt;Basics (Create, Delete):&lt;/h1&gt;
 &lt;ol&gt;
-&lt;li&gt;Create
-For Virtualenvwrapper: Run the command 'mkvirtualenv &lt;envname&gt;'&lt;/li&gt;
+&lt;li&gt;Create&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;For Virtualenv: Run command virtualenv './venv/' inside your project directory&lt;/p&gt;
+&lt;p&gt;For Virtualenvwrapper: Run the command 'mkvirtualenv &lt;envname&gt;'. For Virtualenv: Run command virtualenv './venv/' inside your project directory.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Delete a Virtualenv
-For Virtualenvwrappper: In order to delete a virtual environment, all you need to do is to remove it recursively from your ~/.virtualenvs directory with 'sudo rm -rf &lt;name&gt;'.&lt;/li&gt;
+&lt;li&gt;Delete a Virtualenv&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;For Virtualenv: Go to the directory of your project and delete the /venv/ directory.&lt;/p&gt;
+&lt;p&gt;For Virtualenvwrappper: In order to delete a virtual environment, all you need to do is to remove it recursively from your ~/.virtualenvs directory with 'sudo rm -rf &lt;name&gt;'. For Virtualenv: Go to the directory of your project and delete the /venv/ directory.&lt;/p&gt;
 &lt;h1&gt;Tips&lt;/h1&gt;
 &lt;h1&gt;Convenient Tools&lt;/h1&gt;
 &lt;ol&gt;
-&lt;li&gt;Automatically cd to your project directory
-Input the following code to your ./virtualenvs/postactivate file&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;        # subtract strings to get the project name
-        function get_project_name() {
-            local venv_dir=&lt;span class="nv"&gt;$VIRTUALENVWRAPPER_HOOK_DIR&lt;/span&gt;
-            local venv=&lt;span class="nv"&gt;$VIRTUAL_ENV&lt;/span&gt;
+&lt;li&gt;
+&lt;p&gt;Automatically cd to your project directory
+Input the following code to your ./virtualenvs/postactivate file&lt;/p&gt;
+&lt;p&gt;```
+    # subtract strings to get the project name
+    function get_project_name() {
+        local venv_dir=&lt;span class="math"&gt;\(VIRTUALENVWRAPPER_HOOK_DIR
+        local venv=\)&lt;/span&gt;VIRTUAL_ENV&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    temp_project_name=&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;venv&lt;/span&gt;&lt;span class="c1"&gt;#&amp;quot;$venv_dir&amp;quot;&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;   # get difference between two strings
+    project_name=&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;temp_project_name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;     # remove leading &amp;#39;/&amp;#39; character
 
-            temp_project_name=&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;venv&lt;/span&gt;&lt;span class="c1"&gt;#&amp;quot;$venv_dir&amp;quot;&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;   # get difference between two strings
-            project_name=&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;temp_project_name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;     # remove leading &amp;#39;/&amp;#39; character
+    echo &lt;span class="nv"&gt;$project_name&lt;/span&gt;
+    ## uncomment for debugging
+    # echo &lt;span class="nv"&gt;$venv_dir&lt;/span&gt;
+    # echo &lt;span class="nv"&gt;$venv&lt;/span&gt;
+    # echo &lt;span class="nv"&gt;$temp_project_name&lt;/span&gt;
+    # echo &lt;span class="nv"&gt;$project_name&lt;/span&gt;
+}
 
-            echo &lt;span class="nv"&gt;$project_name&lt;/span&gt;
-            ## uncomment for debugging
-            # echo &lt;span class="nv"&gt;$venv_dir&lt;/span&gt;
-            # echo &lt;span class="nv"&gt;$venv&lt;/span&gt;
-            # echo &lt;span class="nv"&gt;$temp_project_name&lt;/span&gt;
-            # echo &lt;span class="nv"&gt;$project_name&lt;/span&gt;
-        }
-
-        # export proj=&amp;quot;cd ~/Documents/$(get_project_name)&amp;quot;
-        root_dir=&amp;#39;/Users/adam2392/Documents/&amp;#39;
-        project_dir=$(get_project_name)
-        cd &lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;root_dir&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;/&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;project_dir&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;
+# export proj=&amp;quot;cd ~/Documents/$(get_project_name)&amp;quot;
+root_dir=&amp;#39;/Users/adam2392/Documents/&amp;#39;
+project_dir=$(get_project_name)
+cd &lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;root_dir&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;/&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;project_dir&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;p&gt;```&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;Make sure you change 'root_dir' to the correct root directory of your projects. This assumes that your project directory files are all correspondingly named with your virtualenv.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;/li&gt;
@@ -141,4 +142,59 @@ Input the following code to your ./virtualenvs/postactivate file&lt;/li&gt;
 &lt;li&gt;https://nolar.info/automatically-activate-virtualenv-on-cd/&lt;/li&gt;
 &lt;li&gt;code to input into .bashrc&lt;/li&gt;
 &lt;li&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><category term="virtualenv"></category><category term="webdev"></category><category term="python"></category></entry></feed>
+&lt;/ol&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="virtualenv"></category><category term="webdev"></category><category term="python"></category></entry></feed>
