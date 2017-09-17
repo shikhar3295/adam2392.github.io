@@ -17,8 +17,7 @@ Summary: A short walkthrough of setting up a virtual environment for Python deve
 
 <!-- /MarkdownTOC -->
 
-VirtualEnv: 15.1.0
-VirtualEnvWrapper
+VirtualEnv: 15.1.0 | VirtualEnvWrapper
 
 # Basics (Create, Delete):
 1. Create
@@ -38,11 +37,8 @@ For Virtualenv: Go to the directory of your project and delete the /venv/ direct
 1. Automatically cd to your project directory
 Input the following code to your ./virtualenvs/postactivate file
 
-$
 ```
-        #
         # subtract strings to get the project name
-        #
         function get_project_name() {
             local venv_dir=$VIRTUALENVWRAPPER_HOOK_DIR
             local venv=$VIRTUAL_ENV
@@ -63,7 +59,7 @@ $
         project_dir=$(get_project_name)
         cd ${root_dir}/${project_dir}
 ```
-$
+
 
 Make sure you change 'root_dir' to the correct root directory of your projects. This assumes that your project directory files are all correspondingly named with your virtualenv.
 

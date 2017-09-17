@@ -125,8 +125,7 @@ Adam Li            </a>
 </ul>
 <!-- /MarkdownTOC -->
 
-<p>VirtualEnv: 15.1.0
-VirtualEnvWrapper</p>
+<p>VirtualEnv: 15.1.0 | VirtualEnvWrapper</p>
 <h1>Basics (Create, Delete):</h1>
 <ol>
 <li>Create
@@ -144,10 +143,7 @@ For Virtualenvwrappper: In order to delete a virtual environment, all you need t
 <li>Automatically cd to your project directory
 Input the following code to your ./virtualenvs/postactivate file</li>
 </ol>
-<p>$</p>
-<div class="highlight"><pre><span></span>        #
-        # subtract strings to get the project name
-        #
+<div class="highlight"><pre><span></span>        # subtract strings to get the project name
         function get_project_name() {
             local venv_dir=<span class="nv">$VIRTUALENVWRAPPER_HOOK_DIR</span>
             local venv=<span class="nv">$VIRTUAL_ENV</span>
@@ -170,7 +166,6 @@ Input the following code to your ./virtualenvs/postactivate file</li>
 </pre></div>
 
 
-<p>$</p>
 <p>Make sure you change 'root_dir' to the correct root directory of your projects. This assumes that your project directory files are all correspondingly named with your virtualenv.</p>
 <ol>
 <li></li>

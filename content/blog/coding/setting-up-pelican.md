@@ -74,10 +74,11 @@ and then run
 to create commits up to the cloud.
 
 # Adding Pages of Static Content
-Here you want to add a homepage, about me page and other static pages that are relevant to your site.
-
+Here you want to add a homepage, about me page and other static pages that are relevant to your site. Add them within the /content/pages/ directory. For example, I added a 404, contact and home page.
 
 # Adding Articles To Your Blog
+Within /content/blog/ directory, you can setup different articles for your blog. You can create several subdirectories here too to organize your different pages.
+
 
 # References:
 1. https://www.notionsandnotes.org/tech/web-development/pelican-static-blog-setup.html
