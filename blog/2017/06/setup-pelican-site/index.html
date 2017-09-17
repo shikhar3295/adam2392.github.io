@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Setting Up a Pelican Site - Adam Li</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="/blog/2017/06/setup-pelican-site/">
+
+        <meta name="author" content="Adam Li" />
+        <meta name="keywords" content="pelican,publishing,webdev,python" />
+        <meta name="description" content="A short walkthrough of setting up a pelican site" />
+
+        <meta property="og:site_name" content="Adam Li" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Setting Up a Pelican Site"/>
+        <meta property="og:url" content="/blog/2017/06/setup-pelican-site/"/>
+        <meta property="og:description" content="A short walkthrough of setting up a pelican site"/>
+        <meta property="article:published_time" content="2017-06-04" />
+            <meta property="article:section" content="Python" />
+            <meta property="article:tag" content="pelican" />
+            <meta property="article:tag" content="publishing" />
+            <meta property="article:tag" content="webdev" />
+            <meta property="article:tag" content="python" />
+            <meta property="article:author" content="Adam Li" />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Adam Li ATOM Feed"/>
+
+
+
+        <link href="/feeds/python.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Adam Li Python ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+Adam Li            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                    <li><a href="/blog.html">Blog</a></li>
+                    <li><a href="/archives.html">Archives</a></li>
+                    <li><a href="/categories.html">Categories</a></li>
+                    <li><a href="/pdfs/AdamLi_CVFellowships.pdf">Curriculum Vitae</a></li>
+                    <li><a href="/tags.html">Tags</a></li>
+                         <li><a href="/contact/">
+                             Contact
+                          </a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/blog/2017/06/setup-pelican-site/"
+                       rel="bookmark"
+                       title="Permalink to Setting Up a Pelican Site">
+                        Setting Up a Pelican Site
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2017-06-04T00:00:00-04:00"> Sun 04 June 2017</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="/tag/pelican.html">pelican</a>
+        /
+	<a href="/tag/publishing.html">publishing</a>
+        /
+	<a href="/tag/webdev.html">webdev</a>
+        /
+	<a href="/tag/python.html">python</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <h1>Getting Setup with Pelican Site</h1>
+<h1>By: Adam Li</h1>
+<!-- MarkdownTOC -->
+
+<ul>
+<li>Installation</li>
+<li>Choosing Your Hosting Server</li>
+<li>Installing and Choosing Themes/Plugins</li>
+<li>Pushing Content to Cloud</li>
+<li>Adding Pages of Static Content</li>
+<li>Adding Articles To Your Blog</li>
+<li>References:</li>
+</ul>
+<!-- /MarkdownTOC -->
+
+<h1>Installation</h1>
+<ol>
+<li>After getting your virtualenv setup, run 'pip install pelican'. Also include additional packages:</li>
+</ol>
+<p>'pip install Markdown beautifulsoup4 typogrify Pillow webassets'</p>
+<p>for helping to write in Markdown and writing pretty text.</p>
+<h1>Choosing Your Hosting Server</h1>
+<p>There are a couple of options, but you should decide how you want to host your site because then it will be built into your pelican project directory.</p>
+<ol>
+<li>
+<p>Github Pages</p>
+</li>
+<li>
+<p>S3 by Amazon</p>
+</li>
+<li>
+<p>Heroku, PythonAnywhere, and More</p>
+</li>
+</ol>
+<h1>Installing and Choosing Themes/Plugins</h1>
+<p>You need to install the pelican themes and the pelican plugins, if you want to use the open source themes and plugins developed.</p>
+<p>Go to these two websites to get your themes/plugins.
+https://github.com/getpelican/pelican-themes
+https://github.com/getpelican/pelican-plugins</p>
+<p>Afterwards, you can follow those instructions to get a certain theme setup. </p>
+<p>Clone:</p>
+<div class="highlight"><pre><span></span>git clone https://github.com/getpelican/pelican-themes.git
+git clone https://github.com/getpelican/pelican-plugins
+</pre></div>
+
+
+<p>Then:</p>
+<div class="highlight"><pre><span></span>PLUGIN_PATHS = [&#39;path/to/pelican-plugins&#39;]
+PLUGINS = [&#39;assets&#39;, &#39;sitemap&#39;, &#39;gravatar&#39;]
+
+JINJA_ENVIRONMENT = {&#39;extensions&#39;: [&#39;jinja2.ext.i18n&#39;]}
+</pre></div>
+
+
+<h1>Pushing Content to Cloud</h1>
+<p>'pip install ghp-import fabric'</p>
+<ol>
+<li>Using ghp-import
+First run install by 'pip install ghp-import'</li>
+</ol>
+<p>Then you can run code like:</p>
+<div class="highlight"><pre><span></span><span class="err">$</span> <span class="n">ghp</span><span class="o">-</span><span class="kn">import</span> <span class="o">-</span><span class="n">m</span> <span class="s1">&#39;commit message&#39;</span> <span class="o">-</span><span class="n">b</span> <span class="n">master</span> <span class="n">output</span>
+<span class="err">$</span> <span class="n">git</span> <span class="n">push</span> <span class="o">--</span><span class="nb">all</span>
+</pre></div>
+
+
+<ol>
+<li>Using fab</li>
+</ol>
+<p>First install fabric by running 'pip install fabric'. Then insert code into your fabfile.py:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">publishghp</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
+    <span class="n">preview</span><span class="p">()</span> <span class="c1">#builds publishconf.py</span>
+    <span class="n">local</span><span class="p">(</span><span class="s2">&quot;git add -A&quot;</span><span class="p">)</span> <span class="c1">#will commit allll files, be careful</span>
+    <span class="n">local</span><span class="p">(</span><span class="s2">&quot;git commit -m &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span><span class="o">%</span><span class="n">msg</span><span class="p">)</span>
+    <span class="n">local</span><span class="p">(</span><span class="s2">&quot;ghp-import -m &#39;</span><span class="si">%s</span><span class="s2">&#39; -b master output&quot;</span><span class="o">%</span><span class="n">msg</span><span class="p">)</span>
+    <span class="n">local</span><span class="p">(</span><span class="s2">&quot;git push --all&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>and then run </p>
+<div class="highlight"><pre><span></span>$ fab publishghp:<span class="s2">&quot;commit message&quot;</span>
+</pre></div>
+
+
+<p>to create commits up to the cloud.</p>
+<h1>Adding Pages of Static Content</h1>
+<p>Here you want to add a homepage, about me page and other static pages that are relevant to your site.</p>
+<h1>Adding Articles To Your Blog</h1>
+<h1>References:</h1>
+<ol>
+<li>https://www.notionsandnotes.org/tech/web-development/pelican-static-blog-setup.html</li>
+<li>http://terriyu.info/blog/posts/2013/07/pelican-setup/</li>
+<li>http://beneathdata.com/how-to/how-i-built-this-website/</li>
+</ol>
+            </div>
+            <!-- /.entry-content -->
+<section class="well" id="related-posts">
+    <h4>Related Posts:</h4>
+    <ul>
+        <li><a href="/blog/2017/06/setup-virtual-env/">Setting Up a Virtual Environment for Python</a></li>
+    </ul>
+</section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="https://twitter.com/adam2392"><i class="fa fa-twitter-square fa-lg"></i> twitter</a></li>
+    <li class="list-group-item"><a href="https://stackexchange.com/users/4494355/ajl123"><i class="fa fa-stack-overflow fa-lg"></i> stack-overflow</a></li>
+    <li class="list-group-item"><a href="https://github.com/adam2392"><i class="fa fa-github-square fa-lg"></i> github</a></li>
+    <li class="list-group-item"><a href="https://www.linkedin.com/in/adam2392"><i class="fa fa-linkedin-square fa-lg"></i> linkedin</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+
+<!-- Sidebar/Github -->
+<li class="list-group-item">
+  <h4><i class="fa fa-github fa-lg"></i><span class="icon-label">GitHub Repos</span></h4>
+  <div id="gh_repos">
+    <p class="list-group-item">Status updating...</p>
+  </div>
+</li>
+<!-- End Sidebar/Github -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2017 Adam Li
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+
+<!-- GitHub JS Code -->
+<script type="text/javascript">
+$(document).ready(function () {
+  if (!window.jXHR) {
+    var jxhr = document.createElement('script');
+    jxhr.type = 'text/javascript';
+    jxhr.src = '/theme/js/jXHR.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(jxhr, s);
+  }
+
+  github.showRepos({
+    user: 'adam2392',
+    count: 5,
+    skip_forks: false,
+    target: '#gh_repos'
+  });
+});
+</script>
+<script src="/theme/js/github.js" type="text/javascript"></script>
+<!-- End GitHub JS Code -->
+
+
+</body>
+</html>
