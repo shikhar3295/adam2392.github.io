@@ -1,3 +1,11 @@
+Title: Travel - Europe
+Date: 2017-8-4
+Category: Travel
+Tags: travel, europe
+Slug: travel-europe
+Authors: Adam Li
+Summary: A walkthrough of my experience in Europe.
+
 Partner Banks
 Chase doesn't have any unfortunately.
 

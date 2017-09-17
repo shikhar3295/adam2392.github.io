@@ -1,3 +1,11 @@
+Title: Travel - Korea
+Date: 2017-8-4
+Category: Travel
+Tags: travel, korea
+Slug: travel-korea
+Authors: Adam Li
+Summary: A walkthrough of my experience in Seoul.
+
 # Seoul, South Korea
 <!-- MarkdownTOC -->
 

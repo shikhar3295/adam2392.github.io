@@ -1,3 +1,11 @@
+Title: Travel - Baltimore
+Date: 2017-8-4
+Category: Travel
+Tags: travel, baltimore, usa
+Slug: travel-baltimore
+Authors: Adam Li
+Summary: A walkthrough of my experience in Baltimore.
+
 # Baltimore, MD
 <!-- MarkdownTOC -->
 

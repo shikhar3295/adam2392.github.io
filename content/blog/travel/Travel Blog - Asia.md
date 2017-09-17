@@ -1,3 +1,11 @@
+Title: Travel - Asia
+Date: 2017-8-4
+Category: Travel
+Tags: travel, asia
+Slug: travel-asia
+Authors: Adam Li
+Summary: A walkthrough of my experience in Asia.
+
 # Asia
 <!-- MarkdownTOC -->
 

@@ -1,3 +1,11 @@
+Title: Travel - Chicago
+Date: 2017-8-4
+Category: Travel
+Tags: travel, chicago, usa
+Slug: travel-chicago
+Authors: Adam Li
+Summary: A walkthrough of my experience in Chicago.
+
 # Chicago, IL
 <!-- MarkdownTOC -->
 

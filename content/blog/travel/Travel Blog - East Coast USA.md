@@ -1,3 +1,11 @@
+Title: Travel - East Coast
+Date: 2017-8-4
+Category: Travel
+Tags: travel, east coast, usa
+Slug: travel-east-coast
+Authors: Adam Li
+Summary: A walkthrough of my experience in East Coast.
+
 # USA East Coast
 <!-- MarkdownTOC -->
 

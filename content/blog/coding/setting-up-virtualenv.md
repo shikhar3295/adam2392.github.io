@@ -32,39 +32,38 @@ For Virtualenvwrappper: In order to delete a virtual environment, all you need t
 For Virtualenv: Go to the directory of your project and delete the /venv/ directory.
 
 # Tips
+1. Starting up your Venv
+Startup your virtual environment by typing:
 
+    $ workon <virtualenvironment>
 
 # Convenient Tools
 1. Automatically cd to your project directory
 Input the following code to your ./virtualenvs/postactivate file
-'''
-    #
-    # subtract strings to get the project name
-    #
-    function get_project_name() {
-        local venv_dir=$VIRTUALENVWRAPPER_HOOK_DIR
-        local venv=$VIRTUAL_ENV
 
-        temp_project_name=${venv#"$venv_dir"}   # get difference between two strings
-        project_name=${temp_project_name:1}     # remove leading '/' character
+        # subtract strings to get the project name
+        function get_project_name() {
+            local venv_dir=$VIRTUALENVWRAPPER_HOOK_DIR
+            local venv=$VIRTUAL_ENV
 
-        echo $project_name
-        ## uncomment for debugging
-        # echo $venv_dir
-        # echo $venv
-        # echo $temp_project_name
-        # echo $project_name
-    }
+            temp_project_name=${venv#"$venv_dir"}   # get difference between two strings
+            project_name=${temp_project_name:1}     # remove leading '/' character
 
-    # export proj="cd ~/Documents/$(get_project_name)"
-    root_dir='/Users/adam2392/Documents/'
-    project_dir=$(get_project_name)
-    cd ${root_dir}/${project_dir}
-'''
+            echo $project_name
+            ## uncomment for debugging
+            # echo $venv_dir
+            # echo $venv
+            # echo $temp_project_name
+            # echo $project_name
+        }
+
+        # export proj="cd ~/Documents/$(get_project_name)"
+        root_dir='/Users/adam2392/Documents/'
+        project_dir=$(get_project_name)
+        cd ${root_dir}/${project_dir}
 
 Make sure you change 'root_dir' to the correct root directory of your projects. This assumes that your project directory files are all correspondingly named with your virtualenv.
 
-2. 
 
 # References:
 1. https://nolar.info/automatically-activate-virtualenv-on-cd/
