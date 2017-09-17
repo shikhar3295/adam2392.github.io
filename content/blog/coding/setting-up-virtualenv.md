@@ -20,6 +20,8 @@ Summary: A short walkthrough of setting up a virtual environment for Python deve
 VirtualEnv: 15.1.0
 VirtualEnvWrapper
 
+A virtual environment is useful for development in Python because it keeps your packages for certain projects separate from each other. It'll keep everything for that project separated in a separate wrapper.
+
 # Basics (Create, Delete):
 1. Create
 For Virtualenvwrapper: Run the command 'mkvirtualenv <envname>'
@@ -35,7 +37,7 @@ For Virtualenv: Go to the directory of your project and delete the /venv/ direct
 1. Starting up your Venv
 Startup your virtual environment by typing:
 
-    $ workon <virtualenvironment>
+    $ workon name_of_virtualenvironment
 
 # Convenient Tools
 1. Automatically cd to your project directory
