@@ -69,6 +69,7 @@ Here, I briefly describe a couple of food places that are worth the HYPE. For lo
 Everyone has heard about the infamous Chicago deep dish pizza. Well if you're into pizza, meat, cheese and sauce, then it's really worth the hype. 
 
 The places that are well worth the try are:
+
 1. Lou Malnati's
 2. Giordano's
 3. Pizzeria Uno 
