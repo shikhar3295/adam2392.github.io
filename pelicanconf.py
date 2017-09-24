@@ -85,6 +85,6 @@ DEFAULT_PAGINATION = 10
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
 # Static content
-STATIC_PATHS = ["pdfs", "files"]
+STATIC_PATHS = ["pdfs", "files", 'images']
 
 GOOGLE_ANALYTICS ='UA-106551801-1'
