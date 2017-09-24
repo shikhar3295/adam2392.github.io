@@ -69,9 +69,9 @@ Here, I briefly describe a couple of food places that are worth the HYPE. For lo
 Everyone has heard about the infamous Chicago deep dish pizza. Well if you're into pizza, meat, cheese and sauce, then it's really worth the hype. 
 
 The places that are well worth the try are:
-- Lou Malnati's
-- Giordano's
-- Pizzeria Uno 
+1. Lou Malnati's
+2. Giordano's
+3. Pizzeria Uno 
 
 It's hard to decide which one is the best, but for my personal preference I like them in this order because Lou generally has a better crust. It's more crunchy. 
 
@@ -123,6 +123,7 @@ Once you're downtown, generally you can walk everywhere. So I would advise just 
 
 # Images in Chicago
 ![test]({photo}chicago/atom.jpg)
+![test]({attach}chicago/atom.jpg)
 
 # FAQ
 1. Q: Where should I stay? 
