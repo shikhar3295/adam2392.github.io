@@ -111,7 +111,7 @@ Coming to/from the airports, you can easily take the subway lines to wherever yo
 Once you're downtown, generally you can walk everywhere. So I would advise just using the subway to/from the airport and then Uber/Lyft with your group elsewhere. Obviously if you're solo traveling, I would probably get a multi-day subway pass. 
 
 # Images in Chicago
-![test]({photo}chicago/atom.JPG)
+![test]({photo}chicago/atom)
 
 # FAQ
 1. Q: Where should I stay? 
