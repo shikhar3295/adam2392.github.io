@@ -86,6 +86,7 @@ def publish():
         extra_opts='-c',
     )
 
+# $ fab publishghp:"commit message"
 def publishghp(msg):
     preview() #builds publishconf.py
     local("git add -A") #will commit allll files, be careful

@@ -27,6 +27,12 @@ Summary: A short walkthrough of setting up a pelican site
 
 for helping to write in Markdown and writing pretty text.
 
+2. Start up pelican
+
+    pelican-quickstart
+
+then go through the directions and create your project.
+
 # Choosing Your Hosting Server
 There are a couple of options, but you should decide how you want to host your site because then it will be built into your pelican project directory.
 
@@ -87,10 +93,11 @@ and then run
 to create commits up to the cloud.
 
 # Adding Pages of Static Content
-Here you want to add a homepage, about me page and other static pages that are relevant to your site.
-
+Here you want to add a homepage, about me page and other static pages that are relevant to your site. Create a directory inside /content/pages/ to hold your static pages.
 
 # Adding Articles To Your Blog
+To add articles to your blog, create /content/blog/ directory and create subdirectories in there. For example, I have academic, coding, and travel as my subdirectories in my blog. Then adjust your pelicanconf.py file for these blog posts.
+
 
 # References:
 1. https://www.notionsandnotes.org/tech/web-development/pelican-static-blog-setup.html

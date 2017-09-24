@@ -86,3 +86,5 @@ DEFAULT_PAGINATION = 10
 #RELATIVE_URLS = True
 # Static content
 STATIC_PATHS = ["pdfs", "files"]
+
+GOOGLE_ANALYTICS ='UA-106551801-1'

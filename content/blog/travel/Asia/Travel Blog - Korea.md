@@ -1,5 +1,5 @@
 Title: Travel - Korea
-Date: 2017-8-4
+Date: 2017-7-26
 Category: Travel
 Tags: travel, korea
 Slug: travel-korea

@@ -20,6 +20,13 @@
 &lt;/ol&gt;
 &lt;p&gt;'pip install Markdown beautifulsoup4 typogrify Pillow webassets'&lt;/p&gt;
 &lt;p&gt;for helping to write in Markdown and writing pretty text.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Start up pelican&lt;/p&gt;
+&lt;p&gt;pelican-quickstart&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;then go through the directions and create your project.&lt;/p&gt;
 &lt;h1&gt;Choosing Your Hosting Server&lt;/h1&gt;
 &lt;p&gt;There are a couple of options, but you should decide how you want to host your site because then it will be built into your pelican project directory.&lt;/p&gt;
 &lt;ol&gt;
@@ -85,8 +92,9 @@ First run install by 'pip install ghp-import'&lt;/li&gt;
 
 &lt;p&gt;to create commits up to the cloud.&lt;/p&gt;
 &lt;h1&gt;Adding Pages of Static Content&lt;/h1&gt;
-&lt;p&gt;Here you want to add a homepage, about me page and other static pages that are relevant to your site.&lt;/p&gt;
+&lt;p&gt;Here you want to add a homepage, about me page and other static pages that are relevant to your site. Create a directory inside /content/pages/ to hold your static pages.&lt;/p&gt;
 &lt;h1&gt;Adding Articles To Your Blog&lt;/h1&gt;
+&lt;p&gt;To add articles to your blog, create /content/blog/ directory and create subdirectories in there. For example, I have academic, coding, and travel as my subdirectories in my blog. Then adjust your pelicanconf.py file for these blog posts.&lt;/p&gt;
 &lt;h1&gt;References:&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;https://www.notionsandnotes.org/tech/web-development/pelican-static-blog-setup.html&lt;/li&gt;
