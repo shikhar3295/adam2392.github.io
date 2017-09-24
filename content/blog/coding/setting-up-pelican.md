@@ -102,6 +102,7 @@ To add articles to your blog, create /content/blog/ directory and create subdire
 
 # Adding Gallery / Images To Your Blog
 https://kwkelly.com/blog/adding-galleries-to-pelican-and-bootstrap/
+http://duncanlock.net/blog/2013/05/29/better-figures-images-plugin-for-pelican/
 
 # References:
 1. https://www.notionsandnotes.org/tech/web-development/pelican-static-blog-setup.html
