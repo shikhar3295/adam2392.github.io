@@ -123,8 +123,6 @@ Once you're downtown, generally you can walk everywhere. So I would advise just 
 
 # Images in Chicago
 ![test]({photo}chicago/atom.jpg)
-![test]({attach}chicago/atom.jpg)
-![test]({{SITEURL}}photos/chicago/atom.jpg)
 
 {photo}chicago/atom.jpg
 
