@@ -8,6 +8,8 @@ Summary: A short walkthrough of setting up a virtual environment for Python deve
 
 # Getting Setup with Virtual Environment for Python Development
 # By: Adam Li
+
+### Table of Contents
 <!-- MarkdownTOC autolink="true" bracket="round" -->
 
 - [Basics \(Create, Delete\):](#basics-create-delete)
@@ -24,11 +26,15 @@ A virtual environment is useful for development in Python because it keeps your 
 
 # Basics (Create, Delete):
 1. Create
+
 For Virtualenvwrapper: Run the command 'mkvirtualenv <envname>'
 
-For Virtualenv: Run command virtualenv './venv/' inside your project directory
+For Virtualenv: Run command virtualenv './venv/' inside your project directory.
+
+You can also run 'mkvirtualenv -p python3' to make the virtual environment with a specific python installation (e.g. 2.7, or 3.4).
 
 2. Delete a Virtualenv
+
 For Virtualenvwrappper: In order to delete a virtual environment, all you need to do is to remove it recursively from your ~/.virtualenvs directory with 'sudo rm -rf <name>'.
 
 For Virtualenv: Go to the directory of your project and delete the /venv/ directory.

@@ -7,7 +7,8 @@ Authors: Adam Li
 Summary: A walkthrough of my experience in Chicago.
 
 # Chicago, Illinois, USA
-### Table of Contents:
+### Table of Contents
+
 <!-- MarkdownTOC -->
 - General Suggestions
     - Sights
@@ -21,25 +22,23 @@ Summary: A walkthrough of my experience in Chicago.
 ## Airports
 To get to/from the airport, you can take the metro, which is only about $3. Else, you can take uber/lyft.
 
-1. O'Hare Airport
+1. O'Hare Airport:
+
 This is the main airport that is a lot larger.
 
-2. Midway
+2. Midway Airport:
+
 This is the main airport that services Southwest.
 
 ## Sights
-1. Cloud Gate / Millenium Park: 
-
-This is the home of the infamous Chicago Bean. The entire area has very cool architecture, and there is a snake bridge that goes over the highway that leads to a park. 
-
+1. Cloud Gate / Millenium Park: <br />
+This is the home of the infamous Chicago Bean. The entire area has very cool architecture, and there is a snake bridge that goes over the highway that leads to a park. <br />
 I would highly recommend coming to check out the Bean once during the day and once in the late afternoon. The different lights provide for a truly appreciative experience. If you're into checking out cool parks, go to the playground that is across the snake bridge. There's an incredible playground built for kids, but it's a great experience to relive your childhood making your way through the slides, tree houses and swings. 
 
-2. Art Institute of Chicago: 
-
+2. Art Institute of Chicago: <br />
 Would highly recommend if you're into art. A great collection.
 
-3. Chicago Architecture River Tour: 
-
+3. Chicago Architecture River Tour: <br />
 This is advertised all over the city. A ticket costs ~$35 and you go on a large boat that will take you on a guided tour throughout the river and talk about some of the history of Chicago and its beautiful architecture. 
 
 Although the price seems hefty, it's a great thing to try at least once (hell, I've gone twice and loved it both times). I would definitely recommend trying this in the warmer seasons because it can get unbearably cold outside on the boat deck. 
@@ -139,6 +138,7 @@ Coming to/from the airports, you can easily take the subway lines to wherever yo
 Once you're downtown, generally you can walk everywhere. So I would advise just using the subway to/from the airport and then Uber/Lyft with your group elsewhere. Obviously if you're solo traveling, I would probably get a multi-day subway pass. 
 
 # Images in Chicago
+![energy]({filename}images/chicago/atom.JPG)
 
 # FAQ
 1. Q: Where should I stay? 

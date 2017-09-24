@@ -8,6 +8,7 @@ Summary: A short walkthrough of setting up a pelican site
 
 # Getting Setup with Pelican Site
 # By: Adam Li
+### Table of Contents
 <!-- MarkdownTOC -->
 
 - Installation
@@ -67,7 +68,8 @@ Then:
 # Pushing Content to Cloud
 'pip install ghp-import fabric'
 
-1. Using ghp-import
+1. Using ghp-import:
+
 First run install by 'pip install ghp-import'
 
 Then you can run code like:
@@ -75,7 +77,7 @@ Then you can run code like:
     $ ghp-import -m 'commit message' -b master output
     $ git push --all
 
-2. Using fab
+2. Using fab:
 
 First install fabric by running 'pip install fabric'. Then insert code into your fabfile.py:
 
@@ -98,6 +100,8 @@ Here you want to add a homepage, about me page and other static pages that are r
 # Adding Articles To Your Blog
 To add articles to your blog, create /content/blog/ directory and create subdirectories in there. For example, I have academic, coding, and travel as my subdirectories in my blog. Then adjust your pelicanconf.py file for these blog posts.
 
+# Adding Gallery / Images To Your Blog
+https://kwkelly.com/blog/adding-galleries-to-pelican-and-bootstrap/
 
 # References:
 1. https://www.notionsandnotes.org/tech/web-development/pelican-static-blog-setup.html
