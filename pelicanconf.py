@@ -15,7 +15,6 @@ HEADER_IMAGE='header.JPG'
 PATH = 'content'
 
 # Photo blog settings | https://github.com/getpelican/pelican-plugins/tree/master/photos
-PHOTO_LIBRARY = '/Users/adam2392/Documents/pelicansite/content/blog/images/'
 PHOTO_LIBRARY = 'photos'
 PHOTO_GALLERY = (1024, 768, 80)	# For photos in galleries, maximum width and height, plus JPEG quality
 PHOTO_ARTICLE = (760, 506, 80)	# For photos associated with articles, maximum width, height, and quality
@@ -24,10 +23,10 @@ PHOTO_RESIZE_JOBS = 5 			# Number of parallel resize jobs to be run.
 PHOTO_WATERMARK = True # Adds a watermark to all photos in articles and pages. Defaults to using your site name.
 PHOTO_WATERMARK_TEXT = 'ADAM LI' # Allow the user to change the watermark text or remove it completel
 
-# PHOTO_EXIF_KEEP = True
-# PHOTO_EXIF_REMOVE_GPS = True  # Removes any GPS information from t
-# PHOTO_EXIF_COPYRIGHT = 'COPYRIGHT'
-# PHOTO_EXIF_COPYRIGHT_AUTHOR = 'Adam Li'
+PHOTO_EXIF_KEEP = True
+PHOTO_EXIF_REMOVE_GPS = True  # Removes any GPS information from t
+PHOTO_EXIF_COPYRIGHT = 'COPYRIGHT'
+PHOTO_EXIF_COPYRIGHT_AUTHOR = 'Adam Li'
 
 # Handling Articles
 INDEX_SAVE_AS = "blog.html"

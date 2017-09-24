@@ -126,10 +126,12 @@ Once you're downtown, generally you can walk everywhere. So I would advise just 
 ![test]({attach}chicago/atom.jpg)
 ![test]({{SITEURL}}photos/chicago/atom.jpg)
 
+{photo}chicago/atom.jpg
+
 # FAQ
-1. Q: Where should I stay? 
+1. Q: Where should I stay? <br/>
 A: Generally, I'm an advocate of staying downtown because then everything is walking distance. If not, I would try to stay within walking distance to a subway station. Stay away from South Chicago because that is a very crime-ridden area.
 
-2. Q: I only have a day in Chicago, where should I go?
+2. Q: I only have a day in Chicago, where should I go? <br/>
 A: Purple pig, Girl on the goat, Lou Malnati's to eat. Cloud Gate / Millenium Park and the River Walk to see. Signature Room for a night time drink if you have the time.
 
