@@ -6,7 +6,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Adam Li'
 SITENAME = u"Adam Li"
-# SITEURL = 'http://localhost:8000'
+SITEURL = 'http://localhost:8000'
 # SITELOGO = 
 SITETITLE = 'Adam J. Li'
 COPYRIGHT_YEAR = 2017
