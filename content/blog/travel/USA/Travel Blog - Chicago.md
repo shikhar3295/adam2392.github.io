@@ -66,7 +66,7 @@ Everyone has heard about the infamous Chicago deep dish pizza. Well if you're in
 The places that are well worth the try are:
 	- Lou Malnati's
 	- Giordano's
-	- Pizzeria Uno
+	- Pizzeria Uno <br/>
 It's hard to decide which one is the best, but for my personal preference I like them in this order because Lou generally has a better crust. It's more crunchy. 
 
 2. Garrett's Popcorn: <br />
