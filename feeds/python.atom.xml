@@ -97,7 +97,8 @@ JINJA_ENVIRONMENT = {&amp;#39;extensions&amp;#39;: [&amp;#39;jinja2.ext.i18n&amp
 &lt;h1&gt;Adding Articles To Your Blog&lt;/h1&gt;
 &lt;p&gt;To add articles to your blog, create /content/blog/ directory and create subdirectories in there. For example, I have academic, coding, and travel as my subdirectories in my blog. Then adjust your pelicanconf.py file for these blog posts.&lt;/p&gt;
 &lt;h1&gt;Adding Gallery / Images To Your Blog&lt;/h1&gt;
-&lt;p&gt;https://kwkelly.com/blog/adding-galleries-to-pelican-and-bootstrap/&lt;/p&gt;
+&lt;p&gt;https://kwkelly.com/blog/adding-galleries-to-pelican-and-bootstrap/
+http://duncanlock.net/blog/2013/05/29/better-figures-images-plugin-for-pelican/&lt;/p&gt;
 &lt;h1&gt;References:&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;https://www.notionsandnotes.org/tech/web-development/pelican-static-blog-setup.html&lt;/li&gt;
