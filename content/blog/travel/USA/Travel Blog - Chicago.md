@@ -31,19 +31,20 @@ This is the main airport that is a lot larger.
 This is the main airport that services Southwest.
 
 ## Sights
-### 1. Cloud Gate / Millenium Park: <br />
-This is the home of the infamous Chicago Bean. The entire area has very cool architecture, and there is a snake bridge that goes over the highway that leads to a park. <br/><br/>
+#### 1. Cloud Gate / Millenium Park: <br />
+This is the home of the infamous Chicago Bean. The entire area has very cool architecture, and there is a snake bridge that goes over the highway that leads to a park. 
 
 I would highly recommend coming to check out the Bean once during the day and once in the late afternoon. The different lights provide for a truly appreciative experience. If you're into checking out cool parks, go to the playground that is across the snake bridge. There's an incredible playground built for kids, but it's a great experience to relive your childhood making your way through the slides, tree houses and swings. 
 
-### 2. Art Institute of Chicago: <br />
+#### 2. Art Institute of Chicago: <br />
 Would highly recommend if you're into art. A great collection.
 
-### 3. Chicago Architecture River Tour: <br/>
-This is advertised all over the city. A ticket costs ~$35 and you go on a large boat that will take you on a guided tour throughout the river and talk about some of the history of Chicago and its beautiful architecture. <br/><br/>
+#### 3. Chicago Architecture River Tour: <br/>
+This is advertised all over the city. A ticket costs ~$35 and you go on a large boat that will take you on a guided tour throughout the river and talk about some of the history of Chicago and its beautiful architecture. 
+
 Although the price seems hefty, it's a great thing to try at least once (hell, I've gone twice and loved it both times). I would definitely recommend trying this in the warmer seasons because it can get unbearably cold outside on the boat deck. 
 
-#### 4. Willis Tower / Sears Tower: <br />
+#### 4. Willis Tower / Sears Tower: 
 This was at one point the tallest building in the USA and houses the infamous glass cube. You've probably seen a bunch of your friends Instagram this. If you're afraid of heights, it might not be the best idea. However, it definitely makes for a cool sight and is worth the trip at least once. 
 It does cost quite a bit of money to go up.
 
@@ -65,27 +66,33 @@ Take note, that there is a closing time for the river walk at night (~11PM), so 
 Here, I briefly describe a couple of food places that are worth the HYPE. For locations, just use google, or yelp.
 
 #### 1. Deep Dish Pizza: <br />
-Everyone has heard about the infamous Chicago deep dish pizza. Well if you're into pizza, meat, cheese and sauce, then it's really worth the hype. <br />
+Everyone has heard about the infamous Chicago deep dish pizza. Well if you're into pizza, meat, cheese and sauce, then it's really worth the hype. 
+
 The places that are well worth the try are:
 	- Lou Malnati's
 	- Giordano's
-	- Pizzeria Uno <br/>
+	- Pizzeria Uno 
+
 It's hard to decide which one is the best, but for my personal preference I like them in this order because Lou generally has a better crust. It's more crunchy. 
 
 #### 2. Garrett's Popcorn: <br />
 This is a famous popcorn place that sells all different kinds of popcorn. You name it; they probably have it. Everything from caramel, chocolate covered, to regular popcorn, Garrett's has it all. This is great for souvenirs for friends/family/coworkers because they sell them either in traditional popcorn bags, or in to-go containers.
 
 #### 3. Purple Pig: <br />
-This is by far one of my most favorite restaurants in all of USA. It's a tapas place (family style sharing of small plates), so definitely try to come with a group. There is generally a wait, so I would recommend putting your name down early around dinner opening, or lunch opening, and then possibly going and walking along the RiverWalk. <br /><br/>
+This is by far one of my most favorite restaurants in all of USA. It's a tapas place (family style sharing of small plates), so definitely try to come with a group. There is generally a wait, so I would recommend putting your name down early around dinner opening, or lunch opening, and then possibly going and walking along the RiverWalk. 
+
 I'll leave it to Yelp to advise you on what to eat because truly everything there is worth your money.
 
 #### 4. Girl on the Goat: <br />
-This is also by far one of my most favorite restaurants in all of USA. It's a tapas place (family style sharing of small plates), so definitely try to come with a group. It's slightly more upscale and more expensive then the Purple Pig. <br /><br/>
-I would advise MAKING A RESERVATION well before your trip. If you have a large group, there is no way you will get seated if you are only in town for a few days. <br /><br/>
+This is also by far one of my most favorite restaurants in all of USA. It's a tapas place (family style sharing of small plates), so definitely try to come with a group. It's slightly more upscale and more expensive then the Purple Pig. 
+
+I would advise MAKING A RESERVATION well before your trip. If you have a large group, there is no way you will get seated if you are only in town for a few days. 
+
 I'll leave it to Yelp to advise you on what to eat because truly everything there is worth your money.
 
 #### 5. Wildberry Cafe: <br />
-This is my favorite brunch place. It's right next to Cloud Gate / Millenium Park. Hands down, make sure you try their specialty pancakes and pretty much everything else on the menu is great. There will always be a wait, so you can put your name down and then go check out Millenium Park.<br />
+This is my favorite brunch place. It's right next to Cloud Gate / Millenium Park. Hands down, make sure you try their specialty pancakes and pretty much everything else on the menu is great. There will always be a wait, so you can put your name down and then go check out Millenium Park.
+
 I'll leave it to Yelp to advise you on the rest.
 
 ## Nightlife/Drinking
