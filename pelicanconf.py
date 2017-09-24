@@ -41,11 +41,11 @@ TIMEZONE = 'America/New_York'
 DEFAULT_LANG = u'en'
 
 # Feed generation is usually not desired when developing
-FEED_ALL_ATOM = None
-CATEGORY_FEED_ATOM = None
-TRANSLATION_FEED_ATOM = None
-AUTHOR_FEED_ATOM = None
-AUTHOR_FEED_RSS = None
+# FEED_ALL_ATOM = None
+# CATEGORY_FEED_ATOM = None
+# TRANSLATION_FEED_ATOM = None
+# AUTHOR_FEED_ATOM = None
+# AUTHOR_FEED_RSS = None
 
 # to run the theme | for now, pelican-bootstrap3
 THEME = 'pelican-themes/pelican-bootstrap3'
@@ -78,7 +78,9 @@ DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
+
 # Static content
 STATIC_PATHS = ["pdfs", "files"]
 
+# Google Analytics Tag
 GOOGLE_ANALYTICS ='UA-106551801-1'
