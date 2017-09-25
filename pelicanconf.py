@@ -21,7 +21,7 @@ PATH = 'content'
 
 # Photo blog settings | https://github.com/getpelican/pelican-plugins/tree/master/photos
 PHOTO_LIBRARY = '~/Pictures'
-PHOTO_GALLERY = (1024, 768, 80)	# For photos in galleries, maximum width and height, plus JPEG quality
+PHOTO_GALLERY = (4288, 2848, 80)	# For photos in galleries, maximum width and height, plus JPEG quality
 PHOTO_ARTICLE = (760, 506, 80)	# For photos associated with articles, maximum width, height, and quality
 PHOTO_THUMB = (192, 144, 60)	# For thumbnails, maximum width, height, and quality
 # PHOTO_RESIZE_JOBS = 5 			# Number of parallel resize jobs to be run.
