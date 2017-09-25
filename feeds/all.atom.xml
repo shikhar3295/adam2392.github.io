@@ -491,6 +491,8 @@ It does cost quite a bit of money to go up.&lt;/p&gt;
 &lt;h1&gt;Images in Chicago&lt;/h1&gt;
 &lt;p&gt;&lt;img alt="test" src="photos/chicago/atoma.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;{photo}chicago/atom.jpg&lt;/p&gt;
+&lt;p&gt;{lightbox}chicago/atom.jpg&lt;/p&gt;
+&lt;p&gt;gallery: {photo}chicago&lt;/p&gt;
 &lt;h1&gt;FAQ&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;
