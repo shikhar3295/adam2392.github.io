@@ -26,9 +26,6 @@ gallery: {photo}chicago
 
 ![]{({photo}chicago/atom.jpg)
 
-
-gallery: {photo}chicago
-
 ## Airports
 To get to/from the airport, you can take the metro, which is only about $3. Else, you can take uber/lyft.
 
