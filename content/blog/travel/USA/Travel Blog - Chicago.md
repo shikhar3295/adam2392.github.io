@@ -26,7 +26,6 @@ gallery: {photo}chicago
 
 ![]{({photo}chicago/atom.jpg)
 
-![]({lightbox}chicago/atom.jpg)
 
 gallery: {photo}chicago
 
