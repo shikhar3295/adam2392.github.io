@@ -28,10 +28,10 @@ PHOTO_RESIZE_JOBS = 5 			# Number of parallel resize jobs to be run.
 PHOTO_WATERMARK = True # Adds a watermark to all photos in articles and pages. Defaults to using your site name.
 PHOTO_WATERMARK_TEXT = 'ADAM LI' # Allow the user to change the watermark text or remove it completel
 
-# PHOTO_EXIF_KEEP = True
-# PHOTO_EXIF_REMOVE_GPS = True  # Removes any GPS information from t
-# PHOTO_EXIF_COPYRIGHT = 'COPYRIGHT'
-# PHOTO_EXIF_COPYRIGHT_AUTHOR = 'Adam Li'
+PHOTO_EXIF_KEEP = True
+PHOTO_EXIF_REMOVE_GPS = True  # Removes any GPS information from t
+PHOTO_EXIF_COPYRIGHT = 'COPYRIGHT'
+PHOTO_EXIF_COPYRIGHT_AUTHOR = 'Adam Li'
 
 # handling the gallery
 with open("./images.yaml", "r+") as f:
@@ -94,7 +94,7 @@ DEFAULT_PAGINATION = 5
 #RELATIVE_URLS = True
 
 # Static content
-STATIC_PATHS = ["pdfs", "files"]
+STATIC_PATHS = ["pdfs", "files", 'photos']
 
 # Google Analytics Tag
 GOOGLE_ANALYTICS ='UA-106551801-1'
