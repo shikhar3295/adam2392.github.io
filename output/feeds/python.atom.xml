@@ -139,7 +139,21 @@ VirtualEnvWrapper&lt;/p&gt;
 Startup your virtual environment by typing:&lt;/p&gt;
 &lt;p&gt;$ workon name_of_virtualenvironment&lt;/p&gt;
 &lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Working on TVB with Venv
+TBD.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Requirements.txt
+This is a convenient file for you to make that keeps track of all your packages. If you ever want to run your project on a new computer, you just create a new virtual environment and run:&lt;/p&gt;
+&lt;p&gt;$ pip install -r requirements.txt $&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
+&lt;p&gt;To create the file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ pip freeze &amp;gt; requirements.txt $
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h1&gt;Convenient Tools&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;Automatically cd to your project directory

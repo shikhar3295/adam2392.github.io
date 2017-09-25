@@ -45,6 +45,18 @@ Startup your virtual environment by typing:
 
     $ workon name_of_virtualenvironment
 
+2. Working on TVB with Venv
+TBD.
+
+3. Requirements.txt
+This is a convenient file for you to make that keeps track of all your packages. If you ever want to run your project on a new computer, you just create a new virtual environment and run:
+
+    $ pip install -r requirements.txt $
+
+To create the file:
+
+    $ pip freeze > requirements.txt $
+
 # Convenient Tools
 1. Automatically cd to your project directory
 Input the following code to your ./virtualenvs/postactivate file
