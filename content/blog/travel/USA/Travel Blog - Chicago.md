@@ -5,7 +5,7 @@ Tags: travel, chicago, usa
 Slug: travel-chicago
 Authors: Adam Li
 Summary: A walkthrough of my experience in Chicago.
-gallery: {photo}chicago
+Gallery: {photo}chicago
 
 # Chicago, Illinois, USA
 ### Table of Contents
@@ -20,11 +20,6 @@ gallery: {photo}chicago
 
 <!-- /MarkdownTOC -->
 # General Suggestions
-
-# Images in Chicago
-![test]({photo}chicago/atom.jpg)
-
-![]{({photo}chicago/atom.jpg)
 
 ## Airports
 To get to/from the airport, you can take the metro, which is only about $3. Else, you can take uber/lyft.
@@ -134,4 +129,9 @@ A: Generally, I'm an advocate of staying downtown because then everything is wal
 
 2. Q: I only have a day in Chicago, where should I go? <br/>
 A: Purple pig, Girl on the goat, Lou Malnati's to eat. Cloud Gate / Millenium Park and the River Walk to see. Signature Room for a night time drink if you have the time.
+
+# Images in Chicago
+![test]({photo}chicago/atom.jpg)
+
+![]{({photo}chicago/atom.jpg)
 
