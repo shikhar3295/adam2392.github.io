@@ -127,6 +127,10 @@ Once you're downtown, generally you can walk everywhere. So I would advise just 
 
 {photo}chicago/atom.jpg
 
+{lightbox}chicago/atom.jpg
+
+gallery: {photo}chicago
+
 # FAQ
 1. Q: Where should I stay? <br/>
 A: Generally, I'm an advocate of staying downtown because then everything is walking distance. If not, I would try to stay within walking distance to a subway station. Stay away from South Chicago because that is a very crime-ridden area.
