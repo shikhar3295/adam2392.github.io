@@ -1,0 +1,8 @@
+img1:
+    url: http://my_blog.com/static/kitten.jpg
+    thumbnail: http://my_blog/static/kitten-small.jpg
+    description: Nice and cuddly
+img2:
+    url: http://my_blog.com/static/puppy.jpg
+    thumbnail: http://my_blog/static/puppy-small.jpg
+    description: I love puppies

@@ -1,0 +1,5 @@
+{% for image in IMAGES %}
+    <a class="gallery-image" href="{{ image.url }}">
+        <img src="{{ image.thumbnail }}" alt="{{ image.description }}">
+    </a>
+{% endfor %}

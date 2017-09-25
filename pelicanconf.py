@@ -1,6 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
+import yaml
+from collections import namedtuple
+
+def convert(dictionary):
+	return namedtuple("Image", dictionary.keys())(**dictionary)
 
 # jinja2.Environment.install_gettext_callables
 
@@ -28,6 +33,14 @@ PHOTO_EXIF_REMOVE_GPS = True  # Removes any GPS information from t
 PHOTO_EXIF_COPYRIGHT = 'COPYRIGHT'
 PHOTO_EXIF_COPYRIGHT_AUTHOR = 'Adam Li'
 
+# handling the gallery
+with open("./images.yaml", "r+") as f:
+	IMAGES = convert(yaml.load(f.read()))
+
+TEMPLATE_PAGES = {
+    "gallery.html": "gallery.html",
+}
+
 # Handling Articles
 INDEX_SAVE_AS = "blog.html"
 PAGE_URL = "{slug}/"
@@ -35,7 +48,7 @@ PAGE_SAVE_AS = "{slug}/index.html"
 ARTICLE_URL = "blog/{date:%Y}/{date:%m}/{slug}/"
 ARTICLE_SAVE_AS = "blog/{date:%Y}/{date:%m}/{slug}/index.html"
 
-RELATED_POSTS_MAX = 10
+RELATED_POSTS_MAX = 5
 
 TIMEZONE = 'America/New_York'
 DEFAULT_LANG = u'en'
@@ -84,3 +97,5 @@ STATIC_PATHS = ["pdfs", "files"]
 
 # Google Analytics Tag
 GOOGLE_ANALYTICS ='UA-106551801-1'
+
+
