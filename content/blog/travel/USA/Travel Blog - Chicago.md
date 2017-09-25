@@ -5,6 +5,7 @@ Tags: travel, chicago, usa
 Slug: travel-chicago
 Authors: Adam Li
 Summary: A walkthrough of my experience in Chicago.
+gallery: {photo}chicago
 
 # Chicago, Illinois, USA
 ### Table of Contents
@@ -20,6 +21,14 @@ Summary: A walkthrough of my experience in Chicago.
 <!-- /MarkdownTOC -->
 # General Suggestions
 
+# Images in Chicago
+![test]({photo}chicago/atom.jpg)
+
+![]{({photo}chicago/atom.jpg)
+
+![]({lightbox}chicago/atom.jpg)
+
+gallery: {photo}chicago
 
 ## Airports
 To get to/from the airport, you can take the metro, which is only about $3. Else, you can take uber/lyft.
@@ -122,14 +131,6 @@ Coming to/from the airports, you can easily take the subway lines to wherever yo
 
 Once you're downtown, generally you can walk everywhere. So I would advise just using the subway to/from the airport and then Uber/Lyft with your group elsewhere. Obviously if you're solo traveling, I would probably get a multi-day subway pass. 
 
-# Images in Chicago
-![test]({photo}chicago/atom.jpg)
-
-{photo}chicago/atom.jpg
-
-{lightbox}chicago/atom.jpg
-
-gallery: {photo}chicago
 
 # FAQ
 1. Q: Where should I stay? <br/>
