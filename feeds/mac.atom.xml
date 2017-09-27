@@ -7,11 +7,38 @@
 &lt;h4&gt;2. Virtual Environment&lt;/h4&gt;
 &lt;p&gt;See my blog post on virtual environments.&lt;/p&gt;
 &lt;h4&gt;3. Jupyter Notebook&lt;/h4&gt;
+&lt;p&gt;https://taufiqhabib.wordpress.com/2016/12/18/intalling-jupyter-in-a-virtualenv/&lt;/p&gt;
 &lt;h4&gt;4. Git&lt;/h4&gt;
 &lt;h4&gt;5. R Notebook / IDE&lt;/h4&gt;
-&lt;h4&gt;6.&lt;/h4&gt;
+&lt;h4&gt;6. The Virtual Brain&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkvirtualenv tvb
+pip install numpy scipy numexpr numba matplotlib 
+pip install ipython jupyter
+pip install nibabel networkx
+git clone https://github.com/the-virtual-brain/tvb-data
+git clone https://github.com/the-virtual-brain/tvb-library
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Then in your project directory, create a launch_tvb.command file and add this:&lt;/p&gt;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="ch"&gt;#!/bin/bash&lt;/span&gt;
+&lt;span class="c1"&gt;# add tvb data and library to path and launch notebook&lt;/span&gt;
+&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;PYTHONPATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;pwd&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;/tvb-data:&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;pwd&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;/tvb-library:&lt;span class="nv"&gt;$PYTHONPATH&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+jupyter notebook
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;p&gt;Now to open up a jupyter notebook ready to run TVB, just type into your terminal:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;./launch_tvb.command
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h1&gt;Miscellaneous Tools&lt;/h1&gt;
 &lt;h4&gt;1. Text Editor&lt;/h4&gt;
 &lt;p&gt;I generally use sublime text editor. It has nice colors and a lot of cool packages to get you running stuff quickly.&lt;/p&gt;
+&lt;p&gt;https://ashleynolan.co.uk/blog/launching-sublime-from-the-terminal&lt;/p&gt;
 &lt;h4&gt;2.&lt;/h4&gt;
 &lt;h1&gt;Implementation&lt;/h1&gt;</content><category term="mac"></category><category term="os"></category><category term="data analysis"></category><category term="data science"></category></entry></feed>
