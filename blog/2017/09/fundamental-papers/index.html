@@ -135,24 +135,20 @@
 <p>This work can be used in applications to information processing problems (e.g. deep learning).</p>
 <h3>Important Notes:</h3>
 <p>We want the optimal representations of signal X with respect to output label Y. Sufficient statistics are maps/partitions of X, S(X) that captures all the information X has about Y. The mutual information given Y is equal. </p>
-<div class="highlight"><pre><span></span>$I(S(X); Y) = I(X; Y)$
-</pre></div>
-
-
+<p><span class="math">\(I(S(X); Y) = I(X; Y)\)</span></p>
 <p>We can allow the map to be stochastic, with encoder P(T|X) and allow map to capture as much as possible of I(X;Y), not necessarily all of it <span class="math">\(I(S(X); Y) \leq I(X; Y)\)</span>. Define <span class="math">\(t \in T\)</span> as compressed representations of <span class="math">\(x \in X\)</span>, stochastically, <span class="math">\(p(t|x)\)</span>. The following optimization problem finds a balance between compression of X and prediction of Y.</p>
-<div class="highlight"><pre><span></span>$min {I(X;T) - \beta I(T;Y)}\ wrt\ p(t|x),p(y|t),p(t)$
-</pre></div>
-
-
+<p><span class="math">\(min {I(X;T) - \beta I(T;Y)}\ wrt\ p(t|x),p(y|t),p(t)\)</span></p>
 <h3>5. Opening the Black Box of Deep Neural Networks Via Information</h3>
 <p>Reference: https://arxiv.org/pdf/1703.00810.pdf</p>
 <h4>Summary / Conclusions:</h4>
-<p>In this paper, the authors extend their analysis of DNN using information theory. They answered the following questions:
-1. The SGD layer dynamics in the Information plane.
-2. The effect of the training sample size on the layers.
-3. What is the benefit of the hidden layers?
-4. What is the final location of the hidden layers?
-5. Do the hidden layers form optimal IB representations?</p>
+<p>In this paper, the authors extend their analysis of DNN using information theory. They answered the following questions:</p>
+<ol>
+<li>The SGD layer dynamics in the Information plane.</li>
+<li>The effect of the training sample size on the layers.</li>
+<li>What is the benefit of the hidden layers?</li>
+<li>What is the final location of the hidden layers?</li>
+<li>Do the hidden layers form optimal IB representations?</li>
+</ol>
 <h4>Important Notes:</h4>
 <p>First, they estimated the mutual information of the layers with the input and with the labels <span class="math">\(I(X;T_i)\)</span> and <span class="math">\(I(T_i;Y)\)</span>. </p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
@@ -215,8 +211,8 @@
 <section class="well" id="related-posts">
     <h4>Related Posts:</h4>
     <ul>
-        <li><a href="/blog/2017/08/doctoral-board-oral/">Doctoral Board Oral Exam (PhD)</a></li>
         <li><a href="/blog/2017/09/primer-eeg-analysis/">Introduction to EEG Data Analysis</a></li>
+        <li><a href="/blog/2017/08/doctoral-board-oral/">Doctoral Board Oral Exam (PhD)</a></li>
     </ul>
 </section>
         </article>
