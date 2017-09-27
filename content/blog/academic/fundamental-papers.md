@@ -38,16 +38,17 @@ This work can be used in applications to information processing problems (e.g. d
 ### Important Notes:
 We want the optimal representations of signal X with respect to output label Y. Sufficient statistics are maps/partitions of X, S(X) that captures all the information X has about Y. The mutual information given Y is equal. 
 
-    $I(S(X); Y) = I(X; Y)$
+$I(S(X); Y) = I(X; Y)$
 
 We can allow the map to be stochastic, with encoder P(T|X) and allow map to capture as much as possible of I(X;Y), not necessarily all of it $I(S(X); Y) \leq I(X; Y)$. Define $t \in T$ as compressed representations of $x \in X$, stochastically, $p(t|x)$. The following optimization problem finds a balance between compression of X and prediction of Y.
 
-    $min {I(X;T) - \beta I(T;Y)}\ wrt\ p(t|x),p(y|t),p(t)$
+$min {I(X;T) - \beta I(T;Y)}\ wrt\ p(t|x),p(y|t),p(t)$
 
 ### 5. Opening the Black Box of Deep Neural Networks Via Information
 Reference: https://arxiv.org/pdf/1703.00810.pdf
 #### Summary / Conclusions:
 In this paper, the authors extend their analysis of DNN using information theory. They answered the following questions:
+
 1. The SGD layer dynamics in the Information plane.
 2. The effect of the training sample size on the layers.
 3. What is the benefit of the hidden layers?

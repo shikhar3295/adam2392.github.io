@@ -19,24 +19,20 @@
 &lt;p&gt;This work can be used in applications to information processing problems (e.g. deep learning).&lt;/p&gt;
 &lt;h3&gt;Important Notes:&lt;/h3&gt;
 &lt;p&gt;We want the optimal representations of signal X with respect to output label Y. Sufficient statistics are maps/partitions of X, S(X) that captures all the information X has about Y. The mutual information given Y is equal. &lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$I(S(X); Y) = I(X; Y)$
-&lt;/pre&gt;&lt;/div&gt;
-
-
+&lt;p&gt;&lt;span class="math"&gt;\(I(S(X); Y) = I(X; Y)\)&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;We can allow the map to be stochastic, with encoder P(T|X) and allow map to capture as much as possible of I(X;Y), not necessarily all of it &lt;span class="math"&gt;\(I(S(X); Y) \leq I(X; Y)\)&lt;/span&gt;. Define &lt;span class="math"&gt;\(t \in T\)&lt;/span&gt; as compressed representations of &lt;span class="math"&gt;\(x \in X\)&lt;/span&gt;, stochastically, &lt;span class="math"&gt;\(p(t|x)\)&lt;/span&gt;. The following optimization problem finds a balance between compression of X and prediction of Y.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$min {I(X;T) - \beta I(T;Y)}\ wrt\ p(t|x),p(y|t),p(t)$
-&lt;/pre&gt;&lt;/div&gt;
-
-
+&lt;p&gt;&lt;span class="math"&gt;\(min {I(X;T) - \beta I(T;Y)}\ wrt\ p(t|x),p(y|t),p(t)\)&lt;/span&gt;&lt;/p&gt;
 &lt;h3&gt;5. Opening the Black Box of Deep Neural Networks Via Information&lt;/h3&gt;
 &lt;p&gt;Reference: https://arxiv.org/pdf/1703.00810.pdf&lt;/p&gt;
 &lt;h4&gt;Summary / Conclusions:&lt;/h4&gt;
-&lt;p&gt;In this paper, the authors extend their analysis of DNN using information theory. They answered the following questions:
-1. The SGD layer dynamics in the Information plane.
-2. The effect of the training sample size on the layers.
-3. What is the benefit of the hidden layers?
-4. What is the final location of the hidden layers?
-5. Do the hidden layers form optimal IB representations?&lt;/p&gt;
+&lt;p&gt;In this paper, the authors extend their analysis of DNN using information theory. They answered the following questions:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The SGD layer dynamics in the Information plane.&lt;/li&gt;
+&lt;li&gt;The effect of the training sample size on the layers.&lt;/li&gt;
+&lt;li&gt;What is the benefit of the hidden layers?&lt;/li&gt;
+&lt;li&gt;What is the final location of the hidden layers?&lt;/li&gt;
+&lt;li&gt;Do the hidden layers form optimal IB representations?&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h4&gt;Important Notes:&lt;/h4&gt;
 &lt;p&gt;First, they estimated the mutual information of the layers with the input and with the labels &lt;span class="math"&gt;\(I(X;T_i)\)&lt;/span&gt; and &lt;span class="math"&gt;\(I(T_i;Y)\)&lt;/span&gt;. &lt;/p&gt;
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
