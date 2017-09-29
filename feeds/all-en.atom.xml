@@ -1046,9 +1046,23 @@ http://duncanlock.net/blog/2013/05/29/better-figures-images-plugin-for-pelican/&
 &lt;!-- MarkdownTOC autolink="true" bracket="round" --&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="#basics-create-delete"&gt;Basics (Create, Delete):&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#tips"&gt;Tips&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#convenient-tools"&gt;Convenient Tools&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#installing"&gt;Installing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#basics-create-delete"&gt;Basics (Create, Delete):&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#1-create"&gt;1. Create&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#2-delete-a-virtualenv"&gt;2. Delete a Virtualenv&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#tips"&gt;Tips&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#1-starting-up-your-venv"&gt;1. Starting up your Venv&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#2-working-on-tvb-with-venv"&gt;2. Working on TVB with Venv&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#3-requirementstxt"&gt;3. Requirements.txt&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#convenient-tools"&gt;Convenient Tools&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#1-automatically-cd-to-project-directory"&gt;1. Automatically cd To Project Directory&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#2"&gt;2.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;a href="#references"&gt;References:&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;!-- /MarkdownTOC --&gt;
@@ -1056,69 +1070,74 @@ http://duncanlock.net/blog/2013/05/29/better-figures-images-plugin-for-pelican/&
 &lt;p&gt;VirtualEnv: 15.1.0
 VirtualEnvWrapper&lt;/p&gt;
 &lt;p&gt;A virtual environment is useful for development in Python because it keeps your packages for certain projects separate from each other. It'll keep everything for that project separated in a separate wrapper.&lt;/p&gt;
+&lt;h1&gt;Installing&lt;/h1&gt;
+&lt;p&gt;For virtualenvironment, follow https://virtualenv.pypa.io/en/stable/installation/&lt;/p&gt;
+&lt;p&gt;For virtualenvwrapper, follow http://virtualenvwrapper.readthedocs.io/en/latest/install.html&lt;/p&gt;
 &lt;h1&gt;Basics (Create, Delete):&lt;/h1&gt;
-&lt;ol&gt;
-&lt;li&gt;Create&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;For Virtualenvwrapper: Run the command 'mkvirtualenv &lt;envname&gt;'&lt;/p&gt;
+&lt;h2&gt;1. Create&lt;/h2&gt;
+&lt;p&gt;For Virtualenvwrapper: Run the command &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;#39;mkvirtualenv &amp;lt;envname&amp;gt;&amp;#39;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;For Virtualenv: Run command virtualenv './venv/' inside your project directory.&lt;/p&gt;
 &lt;p&gt;You can also run 'mkvirtualenv -p python3' to make the virtual environment with a specific python installation (e.g. 2.7, or 3.4).&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Delete a Virtualenv&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;For Virtualenvwrappper: In order to delete a virtual environment, all you need to do is to remove it recursively from your ~/.virtualenvs directory with 'sudo rm -rf &lt;name&gt;'.&lt;/p&gt;
+&lt;h2&gt;2. Delete a Virtualenv&lt;/h2&gt;
+&lt;p&gt;For Virtualenvwrappper: In order to delete a virtual environment, all you need to do is to remove it recursively from your ~/.virtualenvs directory with    &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;#39;sudo rm -rf &amp;lt;name&amp;gt;&amp;#39;.
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;For Virtualenv: Go to the directory of your project and delete the /venv/ directory.&lt;/p&gt;
 &lt;h1&gt;Tips&lt;/h1&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Starting up your Venv
-Startup your virtual environment by typing:&lt;/p&gt;
-&lt;p&gt;$ workon name_of_virtualenvironment&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Working on TVB with Venv
-TBD.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Requirements.txt
-This is a convenient file for you to make that keeps track of all your packages. If you ever want to run your project on a new computer, you just create a new virtual environment and run:&lt;/p&gt;
-&lt;p&gt;$ pip install -r requirements.txt $&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h2&gt;1. Starting up your Venv&lt;/h2&gt;
+&lt;p&gt;Startup your virtual environment by typing:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;workon name_of_virtualenvironment
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;2. Working on TVB with Venv&lt;/h2&gt;
+&lt;p&gt;TBD.&lt;/p&gt;
+&lt;h2&gt;3. Requirements.txt&lt;/h2&gt;
+&lt;p&gt;This is a convenient file for you to make that keeps track of all your packages. If you ever want to run your project on a new computer, you just create a new virtual environment and run:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install -r requirements.txt
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;To create the file:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ pip freeze &amp;gt; requirements.txt $
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip freeze &amp;gt; requirements.txt
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h1&gt;Convenient Tools&lt;/h1&gt;
-&lt;ol&gt;
-&lt;li&gt;Automatically cd to your project directory
-Input the following code to your ./virtualenvs/postactivate file&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nx"&gt;subtract&lt;/span&gt; &lt;span class="nx"&gt;strings&lt;/span&gt; &lt;span class="nx"&gt;to&lt;/span&gt; &lt;span class="nx"&gt;get&lt;/span&gt; &lt;span class="nx"&gt;the&lt;/span&gt; &lt;span class="nx"&gt;project&lt;/span&gt; &lt;span class="nx"&gt;name&lt;/span&gt;
-&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;get_project_name() {&lt;/span&gt;
-    &lt;span class="nx"&gt;local&lt;/span&gt; &lt;span class="nx"&gt;venv_dir&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nx"&gt;$VIRTUALENVWRAPPER_HOOK_DIR&lt;/span&gt;
-    &lt;span class="nx"&gt;local&lt;/span&gt; &lt;span class="nx"&gt;venv&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nx"&gt;$VIRTUAL_ENV&lt;/span&gt;
+&lt;h2&gt;1. Automatically cd To Project Directory&lt;/h2&gt;
+&lt;p&gt;Input the following code to your ./virtualenvs/postactivate file&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    # subtract strings to get the project name
+    function get_project_name() {
+        local venv_dir=&lt;span class="nv"&gt;$VIRTUALENVWRAPPER_HOOK_DIR&lt;/span&gt;
+        local venv=&lt;span class="nv"&gt;$VIRTUAL_ENV&lt;/span&gt;
 
-    &lt;span class="nx"&gt;temp_project_name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nx"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="nx"&gt;venv&lt;/span&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;$venv_dir&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;   &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nx"&gt;get&lt;/span&gt; &lt;span class="nx"&gt;difference&lt;/span&gt; &lt;span class="nx"&gt;between&lt;/span&gt; &lt;span class="nx"&gt;two&lt;/span&gt; &lt;span class="nx"&gt;strings&lt;/span&gt;
-    &lt;span class="nx"&gt;project_name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nx"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="nx"&gt;temp_project_name&lt;/span&gt;:&lt;span class="kt"&gt;1&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;     &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nx"&gt;remove&lt;/span&gt; &lt;span class="nx"&gt;leading&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;/&amp;#39;&lt;/span&gt; &lt;span class="nx"&gt;character&lt;/span&gt;
+        temp_project_name=&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;venv&lt;/span&gt;&lt;span class="c1"&gt;#&amp;quot;$venv_dir&amp;quot;&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;   # get difference between two strings
+        project_name=&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;temp_project_name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;     # remove leading &amp;#39;/&amp;#39; character
 
-    &lt;span class="nx"&gt;echo&lt;/span&gt; &lt;span class="nx"&gt;$project_name&lt;/span&gt;
-    &lt;span class="err"&gt;##&lt;/span&gt; &lt;span class="nx"&gt;uncomment&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nx"&gt;debugging&lt;/span&gt;
-    &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nx"&gt;echo&lt;/span&gt; &lt;span class="nx"&gt;$venv_dir&lt;/span&gt;
-    &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nx"&gt;echo&lt;/span&gt; &lt;span class="nx"&gt;$venv&lt;/span&gt;
-    &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nx"&gt;echo&lt;/span&gt; &lt;span class="nx"&gt;$temp_project_name&lt;/span&gt;
-    &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="nx"&gt;echo&lt;/span&gt; &lt;span class="nx"&gt;$project_name&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
+        echo &lt;span class="nv"&gt;$project_name&lt;/span&gt;
+        ## uncomment for debugging
+        # echo &lt;span class="nv"&gt;$venv_dir&lt;/span&gt;
+        # echo &lt;span class="nv"&gt;$venv&lt;/span&gt;
+        # echo &lt;span class="nv"&gt;$temp_project_name&lt;/span&gt;
+        # echo &lt;span class="nv"&gt;$project_name&lt;/span&gt;
+    }
 
-&lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="kr"&gt;export&lt;/span&gt; &lt;span class="nx"&gt;proj&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;cd ~/Documents/$(get_project_name)&amp;quot;&lt;/span&gt;
-&lt;span class="nx"&gt;root_dir&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/Users/adam2392/Documents/&amp;#39;&lt;/span&gt;
-&lt;span class="nx"&gt;project_dir&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nx"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;get_project_name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="nx"&gt;cd&lt;/span&gt; &lt;span class="nx"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="nx"&gt;root_dir&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nx"&gt;$&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="nx"&gt;project_dir&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+    # export proj=&amp;quot;cd ~/Documents/$(get_project_name)&amp;quot;
+    root_dir=&amp;#39;/Users/adam2392/Documents/&amp;#39;
+    project_dir=$(get_project_name)
+    cd &lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;root_dir&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;/&lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;project_dir&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Make sure you change 'root_dir' to the correct root directory of your projects. This assumes that your project directory files are all correspondingly named with your virtualenv.&lt;/p&gt;
+&lt;p&gt;Make sure you change 'root_dir' to the correct root directory of your projects. &lt;/p&gt;
+&lt;p&gt;This assumes that your project directory files are all correspondingly named with your virtualenv. This is convenient for changing directory into your project directory automatically.&lt;/p&gt;
+&lt;h2&gt;2.&lt;/h2&gt;
 &lt;h1&gt;References:&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;https://nolar.info/automatically-activate-virtualenv-on-cd/&lt;/li&gt;
