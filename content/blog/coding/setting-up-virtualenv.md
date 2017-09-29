@@ -12,9 +12,17 @@ Summary: A short walkthrough of setting up a virtual environment for Python deve
 ### Table of Contents
 <!-- MarkdownTOC autolink="true" bracket="round" -->
 
+- [Installing](#installing)
 - [Basics \(Create, Delete\):](#basics-create-delete)
+    - [1. Create](#1-create)
+    - [2. Delete a Virtualenv](#2-delete-a-virtualenv)
 - [Tips](#tips)
+    - [1. Starting up your Venv](#1-starting-up-your-venv)
+    - [2. Working on TVB with Venv](#2-working-on-tvb-with-venv)
+    - [3. Requirements.txt](#3-requirementstxt)
 - [Convenient Tools](#convenient-tools)
+    - [1. Automatically cd To Project Directory](#1-automatically-cd-to-project-directory)
+    - [2.](#2)
 - [References:](#references)
 
 <!-- /MarkdownTOC -->
@@ -24,41 +32,50 @@ VirtualEnvWrapper
 
 A virtual environment is useful for development in Python because it keeps your packages for certain projects separate from each other. It'll keep everything for that project separated in a separate wrapper.
 
-# Basics (Create, Delete):
-1. Create
+# Installing
+For virtualenvironment, follow https://virtualenv.pypa.io/en/stable/installation/
 
-For Virtualenvwrapper: Run the command 'mkvirtualenv <envname>'
+For virtualenvwrapper, follow http://virtualenvwrapper.readthedocs.io/en/latest/install.html
+
+# Basics (Create, Delete):
+## 1. Create
+
+For Virtualenvwrapper: Run the command 
+
+    'mkvirtualenv <envname>'
 
 For Virtualenv: Run command virtualenv './venv/' inside your project directory.
 
 You can also run 'mkvirtualenv -p python3' to make the virtual environment with a specific python installation (e.g. 2.7, or 3.4).
 
-2. Delete a Virtualenv
+## 2. Delete a Virtualenv
 
-For Virtualenvwrappper: In order to delete a virtual environment, all you need to do is to remove it recursively from your ~/.virtualenvs directory with 'sudo rm -rf <name>'.
+For Virtualenvwrappper: In order to delete a virtual environment, all you need to do is to remove it recursively from your ~/.virtualenvs directory with    
+    
+    'sudo rm -rf <name>'.
 
 For Virtualenv: Go to the directory of your project and delete the /venv/ directory.
 
 # Tips
-1. Starting up your Venv
+## 1. Starting up your Venv
 Startup your virtual environment by typing:
 
-    $ workon name_of_virtualenvironment
+    workon name_of_virtualenvironment
 
-2. Working on TVB with Venv
+## 2. Working on TVB with Venv
 TBD.
 
-3. Requirements.txt
+## 3. Requirements.txt
 This is a convenient file for you to make that keeps track of all your packages. If you ever want to run your project on a new computer, you just create a new virtual environment and run:
 
-    $ pip install -r requirements.txt $
+    pip install -r requirements.txt
 
 To create the file:
 
-    $ pip freeze > requirements.txt $
+    pip freeze > requirements.txt
 
 # Convenient Tools
-1. Automatically cd to your project directory
+## 1. Automatically cd To Project Directory
 Input the following code to your ./virtualenvs/postactivate file
 
         # subtract strings to get the project name
@@ -82,7 +99,11 @@ Input the following code to your ./virtualenvs/postactivate file
         project_dir=$(get_project_name)
         cd ${root_dir}/${project_dir}
 
-Make sure you change 'root_dir' to the correct root directory of your projects. This assumes that your project directory files are all correspondingly named with your virtualenv.
+Make sure you change 'root_dir' to the correct root directory of your projects. 
+
+This assumes that your project directory files are all correspondingly named with your virtualenv. This is convenient for changing directory into your project directory automatically.
+
+## 2. 
 
 
 # References:
