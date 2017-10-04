@@ -11,15 +11,22 @@ Gallery: {photo}chicago
 ### Table of Contents
 
 <!-- MarkdownTOC -->
+
 - General Suggestions
+    - Airports
     - Sights
     - Food
     - Nightlife/Drinking
     - Getting Around
 - FAQ
+- Images in Chicago
 
 <!-- /MarkdownTOC -->
 # General Suggestions
+Things to be added:
+1. sample itinerary
+
+I've added to different sights, whether it is good for indoors (when weather is poor)!
 
 ## Airports
 To get to/from the airport, you can take the metro, which is only about $3. Else, you can take uber/lyft.
@@ -36,7 +43,7 @@ This is the home of the infamous Chicago Bean. The entire area has very cool arc
 
 I would highly recommend coming to check out the Bean once during the day and once in the late afternoon. The different lights provide for a truly appreciative experience. If you're into checking out cool parks, go to the playground that is across the snake bridge. There's an incredible playground built for kids, but it's a great experience to relive your childhood making your way through the slides, tree houses and swings. 
 
-#### 2. Art Institute of Chicago: <br />
+#### 2. Art Institute of Chicago [X]: <br />
 Would highly recommend if you're into art. A great collection.
 
 #### 3. Chicago Architecture River Tour: <br/>

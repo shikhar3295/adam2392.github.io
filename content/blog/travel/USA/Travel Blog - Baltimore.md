@@ -5,6 +5,7 @@ Tags: travel, baltimore, usa
 Slug: travel-baltimore
 Authors: Adam Li
 Summary: A walkthrough of my experience in Baltimore.
+status: draft
 
 # Baltimore, MD
 <!-- MarkdownTOC -->
