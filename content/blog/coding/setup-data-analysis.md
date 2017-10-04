@@ -5,7 +5,7 @@ Tags: mac, os, data analysis, data science
 Slug: setup-data-analysis
 Authors: Adam Li
 Summary: To guide the setup of a work station for data analysis.
-
+status: draft
 # Background
 
 # OS Tools

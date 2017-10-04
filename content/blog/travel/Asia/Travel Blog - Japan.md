@@ -5,15 +5,18 @@ Tags: travel, japan
 Slug: travel-japan
 Authors: Adam Li
 Summary: A walkthrough of my experience in Japan.
-
+status: draft
 # Asia
 <!-- MarkdownTOC -->
+
 - General Suggestions
-	- Sights
-	- Food
-	- Nightlife/Drinking
-	- Getting Around
+    - Airports
+    - Sights
+    - Food
+    - Nightlife/Drinking
+    - Getting Around
 - FAQ
+
 <!-- /MarkdownTOC -->
 
 # General Suggestions

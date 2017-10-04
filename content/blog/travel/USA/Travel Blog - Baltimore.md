@@ -20,10 +20,10 @@ status: draft
 <!-- /MarkdownTOC -->
 # General Suggestions
 ## Sights
-1. Peabody Library:
-2. Inner Harbor:
-3. National Aquarium:
-4. Fort Mchenry:
+1. Peabody Library: This is the main library of the peabody institute (music school and concert hall). It's very beautiful and free to go in.
+2. Inner Harbor: This is the harbor of Baltimore and where a lot of ships are docked. Around here you can check out various ships for a small entrance fee of ~$10-20. It also has a lot of shops around the area, a Shake Shack, a huge Barnes & Noble (which was built inside a battery factory) and a lot of tourists.
+3. National Aquarium: This is the NATIONAL aquarium and costs about $40 normally to get into. However, if you come at night time starting at around 4PM, you can get in for half price. It's worth checking out because it's very big and national for a reason.
+4. Fort Mchenry: This is the fort where the Star Spangled Banner was born. It has a lot of American history and costs about $10 to go through. You can reach this location by car, or you can even take a water ferry from the Inner Harbor for a nice ride in the water.
 
 ## Food
 1. Miss Shirley's Cafe:

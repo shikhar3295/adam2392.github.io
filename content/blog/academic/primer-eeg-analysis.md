@@ -5,7 +5,7 @@ Tags: data analysis, eeg, phd
 Slug: primer-eeg-analysis
 Authors: Adam Li
 Summary: To guide the introduction of EEG analysis.
-
+status: draft
 # Background
 
 # Data & Metadata

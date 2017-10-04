@@ -1,126 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Adam Li</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2017-09-27T00:00:00-04:00</updated><entry><title>Important Concepts for Computational Modeling</title><link href="/blog/2017/09/fundamental-computational-modeling/" rel="alternate"></link><published>2017-09-27T00:00:00-04:00</published><updated>2017-09-27T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-09-27:/blog/2017/09/fundamental-computational-modeling/</id><summary type="html">&lt;p&gt;To keep a log of important concepts in computational modeling.&lt;/p&gt;</summary><content type="html">&lt;!-- MarkdownTOC --&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Background&lt;/li&gt;
-&lt;li&gt;Concepts&lt;ul&gt;
-&lt;li&gt;
-&lt;ol&gt;
-&lt;li&gt;Numerical Integration&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;ol&gt;
-&lt;li&gt;Deterministic and Stochastic Differential Equations&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;ol&gt;
-&lt;li&gt;Deterministic vs Stochastic&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!-- /MarkdownTOC --&gt;
-
-&lt;h1&gt;Background&lt;/h1&gt;
-&lt;p&gt;Computational modeling involves setting up mathematical equations that represent some sort of statics, or dynamics within a system. You want to simulate these equations to understand behavior, fixed points, bifurcations and changes wrt parameter values.&lt;/p&gt;
-&lt;h1&gt;Concepts&lt;/h1&gt;
-&lt;h2&gt;1. Numerical Integration&lt;/h2&gt;
-&lt;p&gt;Numerical integration involves solving system of differential equations via numerical methods. This is in general split into deterministic vs stochastic differential equations. Here we will also split the two.&lt;/p&gt;
-&lt;h3&gt;Deterministic Differential Equations&lt;/h3&gt;
-&lt;p&gt;1) Euler's Method&lt;/p&gt;
-&lt;p&gt;2) Runge-Kutta Method(s)?&lt;/p&gt;
-&lt;h3&gt;Stochastic Differential Equations&lt;/h3&gt;
-&lt;p&gt;Heun methods seem to be more accurate, but more time consuming vs the Milstein method.
-1) Heun Method
-Simple discretization leading to Stratonovich integral. It is a "predictor-corrector method" because given value of X at time &lt;span class="math"&gt;\(t_n\)&lt;/span&gt;, obtain predictors with Euler integration scheme, then correct it using Heun's correction.&lt;/p&gt;
-&lt;p&gt;Details to be filled in.&lt;/p&gt;
-&lt;p&gt;2) Milstein Method
-Uses the derivative of the diffusion coefficients&lt;/p&gt;
-&lt;h3&gt;Considerations:&lt;/h3&gt;
-&lt;p&gt;1) Convergence&lt;/p&gt;
-&lt;h3&gt;References:&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;Comparison of stochastic integration https://arxiv.org/pdf/1102.4401.pdf&lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2&gt;2. Deterministic and Stochastic Differential Equations&lt;/h2&gt;
-&lt;h3&gt;Deterministic Differential Equations&lt;/h3&gt;
-&lt;p&gt;An example would be a population growth model. &lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(dx_t = Kx_t dt,\ x(0)=x_0\)&lt;/span&gt;, with K being some constant.&lt;/p&gt;
-&lt;p&gt;However, if we have some inherent randomness, then maybe we can't assume &lt;span class="math"&gt;\(x_0\)&lt;/span&gt; is deterministic constant, but perhaps a random variable.&lt;/p&gt;
-&lt;h3&gt;Stochastic Differential Equations&lt;/h3&gt;
-&lt;p&gt;An example would be a population growth model. &lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(dX_t(w) = KX_t(w) dt,\ X_0(w)\)&lt;/span&gt;, with K being some constant and &lt;span class="math"&gt;\(X_t(w)\)&lt;/span&gt; is a random variable, which comes from the initial condition. K could also be random.&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(dX_t(w) = (Kdt + dW_t(w))X_t(w) dt,\ X_0(w)\)&lt;/span&gt;, where &lt;span class="math"&gt;\(dW_t(w)\)&lt;/span&gt; is some noise process that adds randomness to K.&lt;/p&gt;
-&lt;p&gt;This leads us to the general SDE. &lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(dX_t(w) = f_t(X_t(w))dt + \sigma_t(X_t(w))dW_t(w),\ X_0(w)\)&lt;/span&gt;, where f is the deterministic drift of the SDE. &lt;span class="math"&gt;\(\sigma_t\)&lt;/span&gt; is the diffusion coefficient, and &lt;span class="math"&gt;\(dW_t(w)\)&lt;/span&gt; is the noise process. &lt;/p&gt;
-&lt;p&gt;We can rewrite the SDE in integral form, which leads us to the Stratonovich integral and the Ito integral.&lt;/p&gt;
-&lt;p&gt;&lt;span class="math"&gt;\(X_t(w) = X_0(w) + \int_t_0 f_s(X_s(w)) ds + \int_t_0 \sigma_s(X_s(w)) dW_s(w)\)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Ito integral =&amp;gt;
-Stratonovich integral =&amp;gt;&lt;/p&gt;
-&lt;h3&gt;References:&lt;/h3&gt;
-&lt;h2&gt;1. Deterministic vs Stochastic&lt;/h2&gt;
-&lt;h3&gt;References:&lt;/h3&gt;
-&lt;h3&gt;Summary / Conclusions:&lt;/h3&gt;
-&lt;h3&gt;Important Notes:&lt;/h3&gt;
-&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width &lt; 768) ? "left" : align;
-        indent = (screen.width &lt; 768) ? "0em" : indent;
-        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
-&lt;/script&gt;</content><category term="phd"></category><category term="journals"></category><category term="reviews"></category><category term="computational modeling"></category></entry><entry><title>Simulating Epileptic iEEG Activity Using The Virtual Brain</title><link href="/blog/2017/09/simulating-tvb/" rel="alternate"></link><published>2017-09-27T00:00:00-04:00</published><updated>2017-09-27T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-09-27:/blog/2017/09/simulating-tvb/</id><summary type="html">&lt;p&gt;To guide the simulation of Epileptic iEEG activity using TVB in Marseille, France.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Questions&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Adam Li</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2017-09-27T00:00:00-04:00</updated><entry><title>Simulating Epileptic iEEG Activity Using The Virtual Brain</title><link href="/blog/2017/09/simulating-tvb/" rel="alternate"></link><published>2017-09-27T00:00:00-04:00</published><updated>2017-09-27T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-09-27:/blog/2017/09/simulating-tvb/</id><summary type="html">&lt;p&gt;To guide the simulation of Epileptic iEEG activity using TVB in Marseille, France.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Questions&lt;/h1&gt;
 &lt;p&gt;Using convolutional and recurrent neural networks, this paper showed that they could perform seizure detection as well as incidence detection (of some experimental marker). I am interested in the possibility of exploring how this algorithm might perform on simulated TVB data, which to my knowledge has not been done yet. I would be interested in seeing how this improves, or is similar to training on the real data.&lt;/p&gt;
 &lt;p&gt;Then I was going to see if I could extend this same network onto the fragility maps.&lt;/p&gt;
 &lt;p&gt;I was wondering:
@@ -284,49 +163,7 @@ It seems that the hidden layers converge to the optiaml IB representations. Howe
         "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="phd"></category><category term="journals"></category><category term="reviews"></category></entry><entry><title>Setting up Your Data Analysis</title><link href="/blog/2017/09/setup-data-analysis/" rel="alternate"></link><published>2017-09-25T00:00:00-04:00</published><updated>2017-09-25T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-09-25:/blog/2017/09/setup-data-analysis/</id><summary type="html">&lt;p&gt;To guide the setup of a work station for data analysis.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Background&lt;/h1&gt;
-&lt;h1&gt;OS Tools&lt;/h1&gt;
-&lt;h4&gt;1. SSHFS&lt;/h4&gt;
-&lt;p&gt;Link: https://github.com/libfuse/sshfs&lt;/p&gt;
-&lt;p&gt;Used for linking ssh to your remote file system for easy visualization.&lt;/p&gt;
-&lt;h4&gt;2. Virtual Environment&lt;/h4&gt;
-&lt;p&gt;See my blog post on virtual environments.&lt;/p&gt;
-&lt;h4&gt;3. Jupyter Notebook&lt;/h4&gt;
-&lt;p&gt;https://taufiqhabib.wordpress.com/2016/12/18/intalling-jupyter-in-a-virtualenv/&lt;/p&gt;
-&lt;h4&gt;4. Git&lt;/h4&gt;
-&lt;h4&gt;5. R Notebook / IDE&lt;/h4&gt;
-&lt;h4&gt;6. The Virtual Brain&lt;/h4&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkvirtualenv tvb
-pip install numpy scipy numexpr numba matplotlib 
-pip install ipython jupyter
-pip install nibabel networkx
-git clone https://github.com/the-virtual-brain/tvb-data
-git clone https://github.com/the-virtual-brain/tvb-library
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Then in your project directory, create a launch_tvb.command file and add this:&lt;/p&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
-2
-3
-4&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="ch"&gt;#!/bin/bash&lt;/span&gt;
-&lt;span class="c1"&gt;# add tvb data and library to path and launch notebook&lt;/span&gt;
-&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;PYTHONPATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;pwd&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;/tvb-data:&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;pwd&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;/tvb-library:&lt;span class="nv"&gt;$PYTHONPATH&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-jupyter notebook
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-
-&lt;p&gt;Now to open up a jupyter notebook ready to run TVB, just type into your terminal:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;./launch_tvb.command
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h1&gt;Miscellaneous Tools&lt;/h1&gt;
-&lt;h4&gt;1. Text Editor&lt;/h4&gt;
-&lt;p&gt;I generally use sublime text editor. It has nice colors and a lot of cool packages to get you running stuff quickly.&lt;/p&gt;
-&lt;p&gt;https://ashleynolan.co.uk/blog/launching-sublime-from-the-terminal&lt;/p&gt;
-&lt;h4&gt;2.&lt;/h4&gt;
-&lt;h1&gt;Implementation&lt;/h1&gt;</content><category term="mac"></category><category term="os"></category><category term="data analysis"></category><category term="data science"></category></entry><entry><title>Travel - Marseille</title><link href="/blog/2017/09/travel-marseille/" rel="alternate"></link><published>2017-09-22T00:00:00-04:00</published><updated>2017-09-22T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-09-22:/blog/2017/09/travel-marseille/</id><summary type="html">&lt;p&gt;A summary of how to visit Marseille and get the most out of your trip.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Europe - Marseille, France&lt;/h1&gt;
+&lt;/script&gt;</content><category term="phd"></category><category term="journals"></category><category term="reviews"></category></entry><entry><title>Travel - Marseille</title><link href="/blog/2017/09/travel-marseille/" rel="alternate"></link><published>2017-09-22T00:00:00-04:00</published><updated>2017-09-22T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-09-22:/blog/2017/09/travel-marseille/</id><summary type="html">&lt;p&gt;A summary of how to visit Marseille and get the most out of your trip.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Europe - Marseille, France&lt;/h1&gt;
 &lt;p&gt;&lt;!-- MarkdownTOC --&gt;
 - General Suggestions
     - Sights
@@ -391,9 +228,7 @@ An island 8 km off the coast of Marseille.&lt;/p&gt;
 &lt;li&gt;Q: How do I get around?
 A: I highly suggest getting the Kansai pass ahead of time if you are going to be traveling in that region. &lt;/li&gt;
 &lt;li&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><category term="travel"></category><category term="europe"></category><category term="france"></category><category term="marseille"></category></entry><entry><title>Introduction to EEG Data Analysis</title><link href="/blog/2017/09/primer-eeg-analysis/" rel="alternate"></link><published>2017-09-18T00:00:00-04:00</published><updated>2017-09-18T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-09-18:/blog/2017/09/primer-eeg-analysis/</id><summary type="html">&lt;p&gt;To guide the introduction of EEG analysis.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Background&lt;/h1&gt;
-&lt;h1&gt;Data &amp;amp; Metadata&lt;/h1&gt;
-&lt;h1&gt;Implementation&lt;/h1&gt;</content><category term="data analysis"></category><category term="eeg"></category><category term="phd"></category></entry><entry><title>Doctoral Board Oral Exam (PhD)</title><link href="/blog/2017/08/doctoral-board-oral/" rel="alternate"></link><published>2017-08-05T00:00:00-04:00</published><updated>2017-08-05T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-08-05:/blog/2017/08/doctoral-board-oral/</id><summary type="html">&lt;p&gt;A short walkthrough of my experience with the DBO exam at Johns Hopkins University&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Doctoral Board Oral Exam&lt;/h1&gt;
+&lt;/ol&gt;</content><category term="travel"></category><category term="europe"></category><category term="france"></category><category term="marseille"></category></entry><entry><title>Doctoral Board Oral Exam (PhD)</title><link href="/blog/2017/08/doctoral-board-oral/" rel="alternate"></link><published>2017-08-05T00:00:00-04:00</published><updated>2017-08-05T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-08-05:/blog/2017/08/doctoral-board-oral/</id><summary type="html">&lt;p&gt;A short walkthrough of my experience with the DBO exam at Johns Hopkins University&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Doctoral Board Oral Exam&lt;/h1&gt;
 &lt;!-- MarkdownTOC --&gt;
 
 &lt;ul&gt;
@@ -646,36 +481,7 @@ A: Purple pig, Girl on the goat, Lou Malnati's to eat. Cloud Gate / Millenium Pa
         "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="doctoral board oral"></category><category term="phd"></category><category term="johns hopkins"></category></entry><entry><title>Travel - Asia</title><link href="/blog/2017/08/travel-asia/" rel="alternate"></link><published>2017-08-04T00:00:00-04:00</published><updated>2017-08-04T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-08-04:/blog/2017/08/travel-asia/</id><summary type="html">&lt;p&gt;A walkthrough of my experience in Asia.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Asia&lt;/h1&gt;
-&lt;!-- MarkdownTOC --&gt;
-
-&lt;ul&gt;
-&lt;li&gt;South Korea&lt;ul&gt;
-&lt;li&gt;Seoul Summer 2017 | July 8 - July 15&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;China&lt;ul&gt;
-&lt;li&gt;Shanghai Summer 2016 | June 13 - June 23&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!-- /MarkdownTOC --&gt;
-
-&lt;h2&gt;South Korea&lt;/h2&gt;
-&lt;h3&gt;Seoul Summer 2017 | July 8 - July 15&lt;/h3&gt;
-&lt;p&gt;Typical Sightseeing Places:
-Namsan Tower - I went at nighttime and the views were really great! It's also where all the couples put their locks on a fence.&lt;/p&gt;
-&lt;p&gt;Gwanghwamun Palace and Gyeongbukgong Palace - if you're into historical stuff, these are some old temples you can check out.&lt;/p&gt;
-&lt;p&gt;Bukchon Village - a small traditional village with cute boutiques and restaurants that you can walk around if you want to get away from the super modern shopping areas.&lt;/p&gt;
-&lt;p&gt;Han River - it's nice to just sit along the river and have a picnic, or you can rent bikes and bike along the river too.&lt;/p&gt;
-&lt;p&gt;Cheonggyecheon Stream - also one of my favorite places. The stream is all lit up at night so it's very nice to stroll around there at night&lt;/p&gt;
-&lt;p&gt;Namdaemun Market - super cheap street market where you can get souvenirs, bags, clothes, etc. Kind of random but if you wear glasses they are also well known for having cheap glasses! I got a new pair of frames+lens for like $60 and they made it for me within an hour or so!!&lt;/p&gt;
-&lt;p&gt;Dragon Hill Spa - if you want to have the spa experience that you always see in kdramas, this is one of the largest spas in Korea (I think there are like 7 stories) and I remember they can speak Chinese/English so it wasn't too hard to communicate. Also they sell fried chicken on one of the floors and its really good!!&lt;/p&gt;
-&lt;p&gt;Shopping:
-Hongdae - one of my favorite places in Korea! There's a lot of talented street performers (dancers, singers) so it's cool to see that side of Korean culture. Also there's a few cat cafes here, and also a trickeye museum which was really fun if you want to take trippy photos!&lt;/p&gt;
-&lt;p&gt;Myungdong - perfect to get all your shopping done in one place.&lt;/p&gt;
-&lt;h2&gt;China&lt;/h2&gt;
-&lt;h3&gt;Shanghai Summer 2016 | June 13 - June 23&lt;/h3&gt;</content><category term="travel"></category><category term="asia"></category></entry><entry><title>Travel - Chicago</title><link href="/blog/2017/08/travel-chicago/" rel="alternate"></link><published>2017-08-04T00:00:00-04:00</published><updated>2017-08-04T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-08-04:/blog/2017/08/travel-chicago/</id><summary type="html">&lt;p&gt;A walkthrough of my experience in Chicago.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Chicago, Illinois, USA&lt;/h1&gt;
+&lt;/script&gt;</content><category term="doctoral board oral"></category><category term="phd"></category><category term="johns hopkins"></category></entry><entry><title>Travel - Chicago</title><link href="/blog/2017/08/travel-chicago/" rel="alternate"></link><published>2017-08-04T00:00:00-04:00</published><updated>2017-08-04T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-08-04:/blog/2017/08/travel-chicago/</id><summary type="html">&lt;p&gt;A walkthrough of my experience in Chicago.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Chicago, Illinois, USA&lt;/h1&gt;
 &lt;h3&gt;Table of Contents&lt;/h3&gt;
 &lt;!-- MarkdownTOC --&gt;
 
@@ -696,7 +502,7 @@ Hongdae - one of my favorite places in Korea! There's a lot of talented street p
 &lt;h1&gt;General Suggestions&lt;/h1&gt;
 &lt;p&gt;Things to be added:
 1. sample itinerary&lt;/p&gt;
-&lt;p&gt;I've added to different sights, whether it is good for indoors (when weather is poor)!&lt;/p&gt;
+&lt;p&gt;I've added to different sights, whether it is good for indoors (when weather is poor)! Look for the &lt;span class="math"&gt;\(\bold{[X]}\)&lt;/span&gt;.&lt;/p&gt;
 &lt;h2&gt;Airports&lt;/h2&gt;
 &lt;p&gt;To get to/from the airport, you can take the metro, which is only about $3. Else, you can take uber/lyft.&lt;/p&gt;
 &lt;ol&gt;
@@ -718,7 +524,7 @@ This is the main airport that services Southwest.&lt;/p&gt;
 &lt;h4&gt;3. Chicago Architecture River Tour: &lt;br/&gt;&lt;/h4&gt;
 &lt;p&gt;This is advertised all over the city. A ticket costs ~$35 and you go on a large boat that will take you on a guided tour throughout the river and talk about some of the history of Chicago and its beautiful architecture. &lt;/p&gt;
 &lt;p&gt;Although the price seems hefty, it's a great thing to try at least once (hell, I've gone twice and loved it both times). I would definitely recommend trying this in the warmer seasons because it can get unbearably cold outside on the boat deck. &lt;/p&gt;
-&lt;h4&gt;4. Willis Tower / Sears Tower:&lt;/h4&gt;
+&lt;h4&gt;4. Willis Tower / Sears Tower [X]:&lt;/h4&gt;
 &lt;p&gt;This was at one point the tallest building in the USA and houses the infamous glass cube. You've probably seen a bunch of your friends Instagram this. If you're afraid of heights, it might not be the best idea. However, it definitely makes for a cool sight and is worth the trip at least once. 
 It does cost quite a bit of money to go up.&lt;/p&gt;
 &lt;h4&gt;5. Lincoln Park Zoo: &lt;br /&gt;&lt;/h4&gt;
@@ -758,9 +564,9 @@ It does cost quite a bit of money to go up.&lt;/p&gt;
 &lt;p&gt;This is a night club that houses some DJs from time to time (e.g. I saw Dash Berlin here once).&lt;/p&gt;
 &lt;h4&gt;2. Sound Bar: &lt;br /&gt;&lt;/h4&gt;
 &lt;p&gt;This is also a night club that houses some DJs from time to time. &lt;/p&gt;
-&lt;h4&gt;3. Three Dots and a Dash: &lt;br /&gt;&lt;/h4&gt;
+&lt;h4&gt;3. Three Dots and a Dash [X]: &lt;br /&gt;&lt;/h4&gt;
 &lt;p&gt;This is a speakeasy that has very instagram/snapchat worthy drinks. It's worth checking out. &lt;/p&gt;
-&lt;h4&gt;4. Signature Room: &lt;br /&gt;&lt;/h4&gt;
+&lt;h4&gt;4. Signature Room [X]: &lt;br /&gt;&lt;/h4&gt;
 &lt;p&gt;If you're not willing to pay to go up to Willis Tower, you can come here to grab a drink and get a free view of Chicago. It's great to see both during the day and at night because of Chicago's night lights.&lt;/p&gt;
 &lt;h4&gt;5. JPark Rooftop Bar: &lt;br /&gt;&lt;/h4&gt;
 &lt;p&gt;This is a rooftop bar that is just a great place to chill and relax. You can place reservations if you have a large group, so make sure to do that, else it can get crowded.&lt;/p&gt;
@@ -783,114 +589,62 @@ A: Purple pig, Girl on the goat, Lou Malnati's to eat. Cloud Gate / Millenium Pa
 &lt;/ol&gt;
 &lt;h1&gt;Images in Chicago&lt;/h1&gt;
 &lt;p&gt;&lt;img alt="test" src="photos/chicago/atoma.jpg"&gt;&lt;/p&gt;
-&lt;p&gt;![]{({photo}chicago/atom.jpg)&lt;/p&gt;</content><category term="travel"></category><category term="chicago"></category><category term="usa"></category></entry><entry><title>Travel - East Coast</title><link href="/blog/2017/08/travel-east-coast/" rel="alternate"></link><published>2017-08-04T00:00:00-04:00</published><updated>2017-08-04T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-08-04:/blog/2017/08/travel-east-coast/</id><summary type="html">&lt;p&gt;A walkthrough of my experience in East Coast.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;USA East Coast&lt;/h1&gt;
-&lt;!-- MarkdownTOC --&gt;
+&lt;p&gt;![]{({photo}chicago/atom.jpg)&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
 
-&lt;ul&gt;
-&lt;li&gt;Baltimore&lt;/li&gt;
-&lt;li&gt;Washington DC&lt;/li&gt;
-&lt;li&gt;New York City&lt;/li&gt;
-&lt;li&gt;Philadelphia&lt;/li&gt;
-&lt;li&gt;Boston&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!-- /MarkdownTOC --&gt;
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
 
-&lt;h2&gt;Baltimore&lt;/h2&gt;
-&lt;h2&gt;Washington DC&lt;/h2&gt;
-&lt;h2&gt;New York City&lt;/h2&gt;
-&lt;h2&gt;Philadelphia&lt;/h2&gt;
-&lt;h2&gt;Boston&lt;/h2&gt;</content><category term="travel"></category><category term="east coast"></category><category term="usa"></category></entry><entry><title>Travel - Europe</title><link href="/blog/2017/08/travel-europe/" rel="alternate"></link><published>2017-08-04T00:00:00-04:00</published><updated>2017-08-04T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-08-04:/blog/2017/08/travel-europe/</id><summary type="html">&lt;p&gt;A walkthrough of my experience in Europe.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Partner Banks
-Chase doesn't have any unfortunately.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Make list of places I want to go:&lt;/li&gt;
-&lt;li&gt;look into swiss alps&lt;/li&gt;
-&lt;li&gt;look into iceland&lt;/li&gt;
-&lt;li&gt;portugal&lt;/li&gt;
-&lt;li&gt;cambridge, etc.&lt;/li&gt;
-&lt;li&gt;greece&lt;/li&gt;
-&lt;li&gt;nice&lt;/li&gt;
-&lt;li&gt;Jungfraujoch for half fare card&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Barclays United Kingdom (England, Scotland, Wales, Northern Ireland, Jersey, Guernsey and the Channel Islands)
-ABSA (South Africa)
-BNP Paribas (France)
-BNL D'Italia (Italy)
-Deutsche Bank (Germany and Spain)
-UkrSibbank (Ukraine)
-TEB (Turkey)
-Scotiabank (Canada, Mexico, Peru, Chile, and the Caribbean countries: Anguilla, Antigua &amp;amp; Barbuda, The Bahamas, Barbados, British Virgin Islands, Cayman Islands, Dominica, Dominican Republic, Grenada, Jamaica, St. Maarten, Puerto Rico, Saint Kitts &amp;amp; Nevis, Saint Lucia, St. Vincent &amp;amp; The Grenadines, Trinidad &amp;amp; Tobago, Turks &amp;amp; Caicos Islands, and US Virgin Islands)
-Westpac Bank (Australia and New Zealand)
-China Construction Bank (Mainland China, excluding Hong Kong)&lt;/p&gt;
-&lt;p&gt;https://locators.bankofamerica.com/international.html&lt;/p&gt;</content><category term="travel"></category><category term="europe"></category></entry><entry><title>Travel - Japan</title><link href="/blog/2017/07/travel-japan/" rel="alternate"></link><published>2017-07-26T00:00:00-04:00</published><updated>2017-07-26T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-07-26:/blog/2017/07/travel-japan/</id><summary type="html">&lt;p&gt;A walkthrough of my experience in Japan.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Asia&lt;/h1&gt;
-&lt;p&gt;&lt;!-- MarkdownTOC --&gt;
-- General Suggestions
-    - Sights
-    - Food
-    - Nightlife/Drinking
-    - Getting Around
-- FAQ
-&lt;!-- /MarkdownTOC --&gt;&lt;/p&gt;
-&lt;h1&gt;General Suggestions&lt;/h1&gt;
-&lt;p&gt;Know your geography in Japan. Since everything is easily accessible by high speed train, you can plan your trip by region.&lt;/p&gt;
-&lt;h2&gt;Airports&lt;/h2&gt;
-&lt;p&gt;Tokyo:
-1. Narita airport
-This is the main international airport near Tokyo. To get to and from here, you can take the Narita express for ~30,000 yen ($30 USD).&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Haneda airport
-This is the domestic airport near Tokyo.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Osaka
-1. Kansai airport
-This is the main airport near Osaka. It is easy to get to and from here using the metro.&lt;/p&gt;
-&lt;h2&gt;Sights&lt;/h2&gt;
-&lt;p&gt;Tokyo:&lt;/p&gt;
-&lt;p&gt;Osaka:&lt;/p&gt;
-&lt;p&gt;Kyoto:&lt;/p&gt;
-&lt;p&gt;Nara:&lt;/p&gt;
-&lt;h2&gt;Food&lt;/h2&gt;
-&lt;p&gt;Here, I briefly describe a couple of food places that are worth the HYPE. For locations, just use google, or yelp.&lt;/p&gt;
-&lt;h2&gt;Nightlife/Drinking&lt;/h2&gt;
-&lt;h2&gt;Getting Around&lt;/h2&gt;
-&lt;p&gt;The best way to get around each city would definitely be using the train/metro. It is perfectly affordable, but if you're running late, you can easily get a taxi.&lt;/p&gt;
-&lt;p&gt;To get a taxi (and you don't have the japanese app), you can always ask the restaurant/bar/store you are at to order a taxi. They are always perfectly happy to call the taxis for you using their app.&lt;/p&gt;
-&lt;h1&gt;FAQ&lt;/h1&gt;
-&lt;ol&gt;
-&lt;li&gt;Q: How do I get around?
-A: I highly suggest getting the Kansai pass ahead of time if you are going to be traveling in that region. &lt;/li&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><category term="travel"></category><category term="japan"></category></entry><entry><title>Travel - Korea</title><link href="/blog/2017/07/travel-korea/" rel="alternate"></link><published>2017-07-26T00:00:00-04:00</published><updated>2017-07-26T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-07-26:/blog/2017/07/travel-korea/</id><summary type="html">&lt;p&gt;A walkthrough of my experience in Seoul.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Seoul, South Korea&lt;/h1&gt;
-&lt;!-- MarkdownTOC --&gt;
-
-&lt;ul&gt;
-&lt;li&gt;General Suggestions&lt;ul&gt;
-&lt;li&gt;Sights&lt;/li&gt;
-&lt;li&gt;Food&lt;/li&gt;
-&lt;li&gt;Nightlife/Drinking&lt;/li&gt;
-&lt;li&gt;Getting Around&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;FAQ&lt;/li&gt;
-&lt;/ul&gt;
-&lt;!-- /MarkdownTOC --&gt;
-
-&lt;h1&gt;General Suggestions&lt;/h1&gt;
-&lt;h2&gt;Sights&lt;/h2&gt;
-&lt;h2&gt;Food&lt;/h2&gt;
-&lt;p&gt;Here, I briefly describe a couple of food places that are worth the HYPE. For locations, just use google, or yelp.&lt;/p&gt;
-&lt;h2&gt;Nightlife/Drinking&lt;/h2&gt;
-&lt;h2&gt;Getting Around&lt;/h2&gt;
-&lt;h1&gt;FAQ&lt;/h1&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Q: Where should I stay? 
-A: Generally, I'm an advocate of staying downtown because then everything is walking distance. If not, I would try to stay within walking distance to a subway station. Stay away from South Chicago because that is a very crime-ridden area.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Q: I only have a day in Seoul, where should I go?
-A: Purple pig, Girl on the goat, Lou Malnati's to eat. Cloud Gate / Millenium Park and the River Walk to see. Signature Room for a night time drink if you have the time.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;</content><category term="travel"></category><category term="korea"></category></entry><entry><title>Setting Up a Pelican Site</title><link href="/blog/2017/06/setup-pelican-site/" rel="alternate"></link><published>2017-06-04T00:00:00-04:00</published><updated>2017-06-04T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-06-04:/blog/2017/06/setup-pelican-site/</id><summary type="html">&lt;p&gt;A short walkthrough of setting up a pelican site&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Getting Setup with Pelican Site&lt;/h1&gt;
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="travel"></category><category term="chicago"></category><category term="usa"></category></entry><entry><title>Setting Up a Pelican Site</title><link href="/blog/2017/06/setup-pelican-site/" rel="alternate"></link><published>2017-06-04T00:00:00-04:00</published><updated>2017-06-04T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-06-04:/blog/2017/06/setup-pelican-site/</id><summary type="html">&lt;p&gt;A short walkthrough of setting up a pelican site&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Getting Setup with Pelican Site&lt;/h1&gt;
 &lt;h1&gt;By: Adam Li&lt;/h1&gt;
 &lt;h3&gt;Table of Contents&lt;/h3&gt;
 &lt;!-- MarkdownTOC --&gt;

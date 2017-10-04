@@ -5,7 +5,7 @@ Tags: travel, korea
 Slug: travel-korea
 Authors: Adam Li
 Summary: A walkthrough of my experience in Seoul.
-
+status: draft
 # Seoul, South Korea
 <!-- MarkdownTOC -->
 

@@ -5,14 +5,14 @@ Tags: travel, asia
 Slug: travel-asia
 Authors: Adam Li
 Summary: A walkthrough of my experience in Asia.
-
+status: draft
 # Asia
 <!-- MarkdownTOC -->
 
 - South Korea
-	- Seoul Summer 2017 | July 8 - July 15
+    - Seoul Summer 2017 | July 8 - July 15
 - China
-	- Shanghai Summer 2016 | June 13 - June 23
+    - Shanghai Summer 2016 | June 13 - June 23
 
 <!-- /MarkdownTOC -->
 

@@ -26,7 +26,7 @@ Gallery: {photo}chicago
 Things to be added:
 1. sample itinerary
 
-I've added to different sights, whether it is good for indoors (when weather is poor)!
+I've added to different sights, whether it is good for indoors (when weather is poor)! Look for the $\bold{[X]}$.
 
 ## Airports
 To get to/from the airport, you can take the metro, which is only about $3. Else, you can take uber/lyft.
@@ -51,7 +51,7 @@ This is advertised all over the city. A ticket costs ~$35 and you go on a large 
 
 Although the price seems hefty, it's a great thing to try at least once (hell, I've gone twice and loved it both times). I would definitely recommend trying this in the warmer seasons because it can get unbearably cold outside on the boat deck. 
 
-#### 4. Willis Tower / Sears Tower: 
+#### 4. Willis Tower / Sears Tower [X]: 
 This was at one point the tallest building in the USA and houses the infamous glass cube. You've probably seen a bunch of your friends Instagram this. If you're afraid of heights, it might not be the best idea. However, it definitely makes for a cool sight and is worth the trip at least once. 
 It does cost quite a bit of money to go up.
 
@@ -110,10 +110,10 @@ This is a night club that houses some DJs from time to time (e.g. I saw Dash Ber
 #### 2. Sound Bar: <br />
 This is also a night club that houses some DJs from time to time. 
 
-#### 3. Three Dots and a Dash: <br />
+#### 3. Three Dots and a Dash [X]: <br />
 This is a speakeasy that has very instagram/snapchat worthy drinks. It's worth checking out. 
 
-#### 4. Signature Room: <br />
+#### 4. Signature Room [X]: <br />
 If you're not willing to pay to go up to Willis Tower, you can come here to grab a drink and get a free view of Chicago. It's great to see both during the day and at night because of Chicago's night lights.
 
 #### 5. JPark Rooftop Bar: <br />

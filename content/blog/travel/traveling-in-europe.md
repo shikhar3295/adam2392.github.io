@@ -5,7 +5,7 @@ Tags: travel, europe
 Slug: travel-europe
 Authors: Adam Li
 Summary: A walkthrough of my experience in Europe.
-
+status: draft
 Partner Banks
 Chase doesn't have any unfortunately.
 

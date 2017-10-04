@@ -5,7 +5,7 @@ Tags: travel, east coast, usa
 Slug: travel-east-coast
 Authors: Adam Li
 Summary: A walkthrough of my experience in East Coast.
-
+status: draft
 # USA East Coast
 <!-- MarkdownTOC -->
 
