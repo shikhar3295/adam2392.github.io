@@ -63,7 +63,8 @@ DEFAULT_LANG = u'en'
 # to run the theme | for now, pelican-bootstrap3
 THEME = 'pelican-themes/pelican-bootstrap3'
 PLUGIN_PATHS = ['pelican-plugins'] 
-PLUGINS = ['i18n_subsites', 'render_math', 'related_posts', 'photos']
+PLUGINS = ['i18n_subsites', 'render_math', 'related_posts', 'photos', \
+'pelican_javascript']
 JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
 # THEME = "pelican-themes/Flex/"
 
