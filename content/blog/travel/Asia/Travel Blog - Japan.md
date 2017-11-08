@@ -6,10 +6,12 @@ Slug: travel-japan
 Authors: Adam Li
 Summary: A walkthrough of my experience in Japan.
 status: draft
-# Asia
+
+# Asia - Japan
 <!-- MarkdownTOC -->
 
 - General Suggestions
+    - Important Links
     - Airports
     - Sights
     - Food
@@ -20,28 +22,34 @@ status: draft
 <!-- /MarkdownTOC -->
 
 # General Suggestions
-Know your geography in Japan. Since everything is easily accessible by high speed train, you can plan your trip by region.
+This is a blog post assuming you'll be spending a bit of time around the entirety of Japan (e.g. few days in a few cities). Know your geography in Japan. Since everything is easily accessible by high speed train, you can plan your trip by region.
+
+## Important Links
+#### If you need airbnb (you'll get a free $40 off):
+<a href="https://abnb.me/e/jRvXPz3dUH">https://abnb.me/e/jRvXPz3dUH</a>
+#### If you need uber (you'll get a free ride!):
+<a href="https://www.uber.com/invite/lffud">https://www.uber.com/invite/lffud</a>
 
 ## Airports
-Tokyo:
-1. Narita airport
+### Tokyo:
+#### 1. Narita airport
 This is the main international airport near Tokyo. To get to and from here, you can take the Narita express for ~30,000 yen ($30 USD).
 
-2. Haneda airport
+#### 2. Haneda airport
 This is the domestic airport near Tokyo.
 
-Osaka
-1. Kansai airport
+### Osaka
+#### 1. Kansai airport
 This is the main airport near Osaka. It is easy to get to and from here using the metro.
 
 ## Sights
-Tokyo:
+### Tokyo:
 
-Osaka:
+### Osaka:
 
-Kyoto:
+### Kyoto:
 
-Nara:
+### Nara:
 
 
 ## Food
@@ -58,4 +66,3 @@ To get a taxi (and you don't have the japanese app), you can always ask the rest
 # FAQ
 1. Q: How do I get around?
 A: I highly suggest getting the Kansai pass ahead of time if you are going to be traveling in that region. 
-2. 

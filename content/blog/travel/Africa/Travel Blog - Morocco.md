@@ -10,6 +10,7 @@ Summary: A summary of how to visit Morocco and get the most out of your trip.
 <!-- MarkdownTOC -->
 
 - General Suggestions
+    - Important Links
     - Airports
     - Sights
     - Food
@@ -20,7 +21,15 @@ Summary: A summary of how to visit Morocco and get the most out of your trip.
 <!-- /MarkdownTOC -->
 
 # General Suggestions
-Know your geography in Marseille. Since everything is easily accessible by high speed train, you can plan your trip by region.
+Know your geography in Morocco. Since everything is easily accessible by train/night train, you can plan your trip by region and not spend too long in one city.
+
+## Important Links
+#### If you need airbnb (you'll get a free $40 off):
+<a href="https://abnb.me/e/jRvXPz3dUH">https://abnb.me/e/jRvXPz3dUH</a>
+#### If you need uber (you'll get a free ride!):
+<a href="https://www.uber.com/invite/lffud">https://www.uber.com/invite/lffud</a>
+#### If you need taxify (you'll get a free $5 off!):
+<a href="https://invite.taxify.eu/EZN7D">https://invite.taxify.eu/EZN7D</a>
 
 ## Airports
 There are about 3 main airports that you can fly into from Europe and then get around to the rest of the country either by train, or by grand taxi.
@@ -35,14 +44,14 @@ This airport is located well in the city and for locals it costs only about 30 M
 When you are getting a taxi as a tourist, honestly try not to pay over 100 MAD because then you're just getting ripped off.
 
 #### 3. Tangier Airport (TNG)
-
+TBD
 
 ## Sights
 ### Casablanca
 #### 1. Hassan II Mosque
 
 #### 2. Quartier Tabous
-The main souk of Casablanca.
+The main souk of Casablanca. It's not that big compared to 
 
 ### Marrakesh
 #### Jemaa El Fna
@@ -57,14 +66,16 @@ There are wild monkeys here, Berber locals and an amazing waterfall. There are p
 
 
 ## Food
+I highly recommend asking your hotel/airbnb hosts about these things, or checking out tripadvisor. Morocco is not advanced like most US/EU cities, so you have to really explore and be comfortable trying new things.
 #### 1. Tangine
+This is the main Moroccan food. It essentially consists of some couscous and slow cooked meat and vegetables. It's great to try at least a few times! 
 
 #### 2. Bazaar Cafe
 Rue Sidi El Yamani 24 Bis - Marrakech
 www.bazaarcafe.ma
 
 #### 3. Roti D'or
-
+If you're sick and tired of eating tangine, then come here! This is a great kebab/falafel restaurant that is super cheap within the Jema El Fana in Marrakech.
 
 ## Nightlife/Drinking
 TBD

@@ -5,6 +5,7 @@ Tags: travel, europe, germany, munich
 Slug: travel-munich
 Authors: Adam Li
 Summary: A summary of how to visit Munich and get the most out of your trip.
+status: draft
 
 # Europe - Munich, Germany
 <!-- MarkdownTOC -->

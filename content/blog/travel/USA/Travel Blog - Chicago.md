@@ -13,6 +13,7 @@ Gallery: {photo}chicago
 <!-- MarkdownTOC -->
 
 - General Suggestions
+    - Important Links
     - Airports
     - Sights
     - Food
@@ -28,6 +29,7 @@ Things to be added:
 
 I've added to different sights, whether it is good for indoors (when weather is poor)! Look for the $\bold{[X]}$.
 
+## Important Links
 #### If you need airbnb (you'll get a free $40 off):
 <a href="https://abnb.me/e/jRvXPz3dUH">https://abnb.me/e/jRvXPz3dUH</a>
 #### If you need uber (you'll get a free ride!):

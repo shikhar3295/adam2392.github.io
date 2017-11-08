@@ -1,15 +1,17 @@
 Title: Travel - Korea
 Date: 2017-7-26
 Category: Travel
-Tags: travel, korea
+Tags: travel, korea, seoul
 Slug: travel-korea
 Authors: Adam Li
 Summary: A walkthrough of my experience in Seoul.
 status: draft
-# Seoul, South Korea
+
+# Asia - Seoul, South Korea
 <!-- MarkdownTOC -->
 
 - General Suggestions
+    - Important Links
     - Sights
     - Food
     - Nightlife/Drinking
@@ -18,6 +20,15 @@ status: draft
 
 <!-- /MarkdownTOC -->
 # General Suggestions
+
+## Important Links
+#### If you need airbnb (you'll get a free $40 off):
+<a href="https://abnb.me/e/jRvXPz3dUH">https://abnb.me/e/jRvXPz3dUH</a>
+#### If you need uber (you'll get a free ride!):
+<a href="https://www.uber.com/invite/lffud">https://www.uber.com/invite/lffud</a>
+#### If you need taxify (you'll get a free $5 off!):
+<a href="https://invite.taxify.eu/EZN7D">https://invite.taxify.eu/EZN7D</a>
+
 ## Sights
 
 
