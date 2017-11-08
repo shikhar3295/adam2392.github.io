@@ -28,6 +28,15 @@ Things to be added:
 
 I've added to different sights, whether it is good for indoors (when weather is poor)! Look for the $\bold{[X]}$.
 
+#### If you need airbnb (you'll get a free $40 off):
+https://abnb.me/e/jRvXPz3dUH
+#### If you need uber (you'll get a free ride!):
+https://www.uber.com/invite/lffud
+#### If you need taxify (you'll get a free $5 off!):
+https://invite.taxify.eu/EZN7D
+#### If you need lyft (you'll get a free ride!):
+https://lyft.com/ici/ADAM10866
+
 ## Airports
 To get to/from the airport, you can take the metro, which is only about $3. Else, you can take uber/lyft.
 
@@ -43,7 +52,7 @@ This is the home of the infamous Chicago Bean. The entire area has very cool arc
 
 I would highly recommend coming to check out the Bean once during the day and once in the late afternoon. The different lights provide for a truly appreciative experience. If you're into checking out cool parks, go to the playground that is across the snake bridge. There's an incredible playground built for kids, but it's a great experience to relive your childhood making your way through the slides, tree houses and swings. 
 
-#### 2. Art Institute of Chicago [X]: <br />
+#### 2. Art Institute of Chicago: <br />
 Would highly recommend if you're into art. A great collection.
 
 #### 3. Chicago Architecture River Tour: <br/>
@@ -51,7 +60,7 @@ This is advertised all over the city. A ticket costs ~$35 and you go on a large 
 
 Although the price seems hefty, it's a great thing to try at least once (hell, I've gone twice and loved it both times). I would definitely recommend trying this in the warmer seasons because it can get unbearably cold outside on the boat deck. 
 
-#### 4. Willis Tower / Sears Tower [X]: 
+#### 4. Willis Tower / Sears Tower: 
 This was at one point the tallest building in the USA and houses the infamous glass cube. You've probably seen a bunch of your friends Instagram this. If you're afraid of heights, it might not be the best idea. However, it definitely makes for a cool sight and is worth the trip at least once. 
 It does cost quite a bit of money to go up.
 
@@ -110,10 +119,10 @@ This is a night club that houses some DJs from time to time (e.g. I saw Dash Ber
 #### 2. Sound Bar: <br />
 This is also a night club that houses some DJs from time to time. 
 
-#### 3. Three Dots and a Dash [X]: <br />
+#### 3. Three Dots and a Dash: <br />
 This is a speakeasy that has very instagram/snapchat worthy drinks. It's worth checking out. 
 
-#### 4. Signature Room [X]: <br />
+#### 4. Signature Room: <br />
 If you're not willing to pay to go up to Willis Tower, you can come here to grab a drink and get a free view of Chicago. It's great to see both during the day and at night because of Chicago's night lights.
 
 #### 5. JPark Rooftop Bar: <br />
