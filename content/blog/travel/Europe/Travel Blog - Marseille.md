@@ -21,11 +21,12 @@ Summary: A summary of how to visit Marseille and get the most out of your trip.
 
 # General Suggestions
 
+#### If you need airbnb (you'll get a free $40 off):
+<a href="https://abnb.me/e/jRvXPz3dUH">https://abnb.me/e/jRvXPz3dUH</a>
 #### If you need uber (you'll get a free ride!):
-https://www.uber.com/invite/lffud
+<a href="https://www.uber.com/invite/lffud">https://www.uber.com/invite/lffud</a>
 #### If you need taxify (you'll get a free $5 off!):
-https://invite.taxify.eu/EZN7D
-
+<a href="https://invite.taxify.eu/EZN7D">https://invite.taxify.eu/EZN7D</a>
 
 ## Airports
 #### 1. Marseille Provence Airport

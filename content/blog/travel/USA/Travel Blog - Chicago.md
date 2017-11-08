@@ -29,13 +29,13 @@ Things to be added:
 I've added to different sights, whether it is good for indoors (when weather is poor)! Look for the $\bold{[X]}$.
 
 #### If you need airbnb (you'll get a free $40 off):
-https://abnb.me/e/jRvXPz3dUH
+<a href="https://abnb.me/e/jRvXPz3dUH">https://abnb.me/e/jRvXPz3dUH</a>
 #### If you need uber (you'll get a free ride!):
-https://www.uber.com/invite/lffud
+<a href="https://www.uber.com/invite/lffud">https://www.uber.com/invite/lffud</a>
 #### If you need taxify (you'll get a free $5 off!):
-https://invite.taxify.eu/EZN7D
+<a href="https://invite.taxify.eu/EZN7D">https://invite.taxify.eu/EZN7D</a>
 #### If you need lyft (you'll get a free ride!):
-https://lyft.com/ici/ADAM10866
+<a href="https://lyft.com/ici/ADAM10866">https://lyft.com/ici/ADAM10866</a>
 
 ## Airports
 To get to/from the airport, you can take the metro, which is only about $3. Else, you can take uber/lyft.
