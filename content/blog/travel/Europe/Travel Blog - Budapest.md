@@ -29,7 +29,7 @@ Summary: A summary of how to visit Budapest and get the most out of your trip.
 <a href="https://invite.taxify.eu/EZN7D">https://invite.taxify.eu/EZN7D</a>
 
 #### Sample Itinerary
-https://docs.google.com/spreadsheets/d/1gYT-UxSW0CtTBlGOznBtBnpnF5huMIQmP7xUmOPhynE/edit?usp=sharing
+<a href="https://docs.google.com/spreadsheets/d/1gYT-UxSW0CtTBlGOznBtBnpnF5huMIQmP7xUmOPhynE/edit?usp=sharing">Charles' Optimized Itin.</a>
 
 ## Airports
 #### 1. Budapest International Airport
