@@ -28,15 +28,13 @@ status: draft
 ## Sights
 ### 1. Museum Brandhorst
 
-
 ### 2. St Peter's Church Tower
-
 
 ### 3. BMW Museum
 
 ### 4. English Garden
 
-### 5. Dachau
+### 5. Dachau Concentration Camp
 
 ## Food
 Here, I briefly describe a couple of food places that are worth the HYPE. For locations, just use google, or yelp.
