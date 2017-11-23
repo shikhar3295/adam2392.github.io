@@ -1,6 +1,6 @@
 Title: Setting up Your Data Analysis
 Date: 2017-9-25
-Category: Mac
+Category: Coding
 Tags: mac, os, data analysis, data science
 Slug: setup-data-analysis
 Authors: Adam Li

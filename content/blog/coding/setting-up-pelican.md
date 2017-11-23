@@ -1,6 +1,6 @@
 Title: Setting Up a Pelican Site
 Date: 2017-6-4
-Category: Python
+Category: Coding
 Tags: pelican, publishing, webdev, python
 Slug: setup-pelican-site
 Authors: Adam Li
@@ -17,6 +17,7 @@ Summary: A short walkthrough of setting up a pelican site
 - Pushing Content to Cloud
 - Adding Pages of Static Content
 - Adding Articles To Your Blog
+- Adding Gallery / Images To Your Blog
 - References:
 
 <!-- /MarkdownTOC -->

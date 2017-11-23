@@ -94,7 +94,7 @@ GITHUB_URL = "https://github.com/adam2392"
 GITHUB_USER = 'adam2392'
 TWITTER_USERNAME = "adam2392"
 SOCIAL = (("twitter", "https://twitter.com/adam2392"),
-		    ("stack-overflow", "https://stackexchange.com/users/4494355/ajl123"),
+		      ("stack-overflow", "https://stackexchange.com/users/4494355/ajl123"),
           ("github", "https://github.com/adam2392"),
           ("linkedin", "https://www.linkedin.com/in/adam2392"))
 
