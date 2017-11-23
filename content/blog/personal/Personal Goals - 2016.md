@@ -1,6 +1,6 @@
 Title: Personal Goals - 2016
 Date: 2015-12-31
-Category: personal
+Category: Personal
 Tags: personal, goals
 Slug: goals-2016
 Authors: Adam Li

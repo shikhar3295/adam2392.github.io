@@ -1,6 +1,6 @@
 Title: Personal Goals - 2018
 Date: 2017-12-31
-Category: personal
+Category: Personal
 Tags: personal, goals
 Slug: goals-2018
 Authors: Adam Li
