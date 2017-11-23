@@ -5,7 +5,6 @@ Tags: personal, goals
 Slug: goals-2017
 Authors: Adam Li
 Summary: A summary of goals for 2017.
-status: draft
 
 Reflecting on one of the best years ever, I'm grateful for all the people and places that made these memories happen. I took some time around 1 year ago to plan out ten things I wanted to carry out in 2016. I've enjoyed it a lot because it's been a goal to work towards for the entire year.
 

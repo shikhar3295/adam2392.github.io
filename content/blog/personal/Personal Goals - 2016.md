@@ -5,7 +5,6 @@ Tags: personal, goals
 Slug: goals-2016
 Authors: Adam Li
 Summary: A summary of goals for 2016.
-status: draft
 
 Each year passes by faster and faster in my opinion, so I want to make the most out of 2016. As 2016 comes and 2015 comes to a close, I want to make some resolutions and goals for the new year.
 
