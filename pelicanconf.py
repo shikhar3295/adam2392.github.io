@@ -80,14 +80,14 @@ MENUITEMS = (("Blog", "/blog.html"),
              # ("Gallery", "/gallery.html"),
              ("Curriculum Vitae", "/pdfs/AdamLi_CVFellowships.pdf"),)
 
-MENUITEMS = (("Blog", [
-              ("Blog", "/blog.html"),
-              ("Tags", "/tags.html"),
-              ("Categories", "/categories.html"),
-              ("Timeline", "/archives.html"),
-              ]),
-             # ("Gallery", "/gallery.html"),
-             ("Curriculum Vitae", "/pdfs/AdamLi_CVFellowships.pdf"),)
+# MENUITEMS = (("Blog", [
+#               ("Blog", "/blog.html"),
+#               ("Tags", "/tags.html"),
+#               ("Categories", "/categories.html"),
+#               ("Timeline", "/archives.html"),
+#               ]),
+#              # ("Gallery", "/gallery.html"),
+#              ("Curriculum Vitae", "/pdfs/AdamLi_CVFellowships.pdf"),)
 
 # Social widget
 GITHUB_URL = "https://github.com/adam2392"
