@@ -5,7 +5,6 @@ Tags: travel, europe, germany, munich
 Slug: travel-munich
 Authors: Adam Li
 Summary: A summary of how to visit Munich and get the most out of your trip.
-status: draft
 
 # Europe - Munich, Germany
 <!-- MarkdownTOC -->
@@ -32,26 +31,30 @@ status: draft
 
 ## Airports
 1. Munich International Airport
-Getting to the city from the airport is extremely easy. Just check google maps and you can take a direct S train into the city. You can easily buy a ticket before reaching the station (within the airport) because it will definitely be crowded if it's tourist season.
+Getting to the city from the airport is extremely easy. Just check google maps and you can take a direct S (1, or 8) train into the city. You can easily buy a ticket before reaching the station (within the airport) because it will definitely be crowded if it's tourist season.
 
 ## Sights
+### 0. Dachau Concentration Camp (!)
+One of the most important places to visit in Munich I think. You can google map and just take a short train ride over to this area. Then there is an easy to use bus, which you will need to use coins to buy a ticket.
+
 ### 1. Museum Brandhorst
 
-### 2. St Peter's Church Tower
+### 2. St Peter's Church Tower / Marianplatz
 
-### 3. BMW Museum
+### 3. Eisbachwelle
 
-### 4. English Garden (Monopterus)
-
-### 5. Dachau Concentration Camp
+### 4. Hofgarten
 
 ### 6. Friedensengel (Angel of Peace)
 
-Marianplatz
-Hofgarten
-Flaucher
-Eisbachwelle
-9. Nymphenburg Palace
+
+### 7. English Garden (Monopterus)
+
+### 8. BMW Museum
+
+### 9. Nymphenburg Palace
+
+### 10. Flaucher
 
 ## Food
 Here, I briefly describe a couple of food places that are worth the HYPE. For locations, just use google, or yelp.
@@ -61,13 +64,25 @@ Great pasta for a simple price
 
 ### 2. Steinhall 16
 
-
 ### 3. Viktualienmarkt
 
 ### 4. Haufbrohaus
 
+### 5. Burrito Company
+
+### 6. Augustiner Braustuben
+
 ## Nightlife/Drinking
 ### 1. Oktoberfest
+
+### 2. Tollwood Winter Festival
+
+### 3. Christmas Markets
+Pink Christmas Market
+
+Christkindlmarkt
+
+Christmas Market at the Chinese Tower
 
 ## Getting Around
 The best way to get around would be the S line and the U, which goes throughout the entire city. It is pay by an honor system.
@@ -75,5 +90,4 @@ The best way to get around would be the S line and the U, which goes throughout 
 Other then that, you can take an Uber or a taxi.
 
 # FAQ
-1.
-2. 
+TBD
