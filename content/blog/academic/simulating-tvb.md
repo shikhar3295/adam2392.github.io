@@ -17,7 +17,46 @@ I was wondering:
 3. Can TVB determine when the seizure occurred exactly in Epileptor time series?
 
 # Background
+TVB is a platform for simulating whole-brain dynamics that starts from raw data involving:
+    1. structural connectivity derived from DTI
+    2. brain parcellation derived from MRI and CT
+    3. SEEG xyz locations derived from MRI and CT
+This will then determine a gain matrix to determine SEEG signals from the source signals that are generated from neural mass models.
+
+The neural mass models will be implemented with nonlinear, complex models for simulating certain type of electrophysiology. The Epileptor is used for simulating seizure activity from a specific source region. 
+
+The epileptor is a set of coupled differential equations that rely on 6 different variables. They are described here:
 
 # Data & Metadata
 
 # Implementation
+## 1. Setting Up Environment
+First you may want to set up a conda environment, or a virtualenv that will separate the entire python project from your normal OS.
+
+    $
+    pip install nibabel networkx
+    git clone https://github.com/the-virtual-brain/tvb-data
+    git clone https://github.com/the-virtual-brain/tvb-library
+    $
+
+If you want to have a script to add these all to path for your jupyter notebook, use the following:
+
+    #!/bin/bash
+    echo "Launching IPython Notebook from TVB Distribution"
+    if [ -z "$LANG" ]; then
+        export LANG=en_US.UTF-8
+    fi
+    export LC_ALL=$LANG
+    # add tvb data and library to path and launch notebook
+    export PYTHONPATH=$(pwd)/_tvbdata:$(pwd)/_tvblibrary:$PYTHONPATH;
+    jupyter notebook
+
+## 1b. Setting Up Environment on a Cluster
+
+. /soft/miniconda3/activate
+conda env list
+conda create -n tridesclous python=3.6 scipy numpy pandas scikit-learn matplotlib seaborn pyqt=5 ipykernel
+source activate tridesclous
+pip install pyqtgraph
+pip install https://github.com/tridesclous/tridesclous/archive/master.zip
+python -m ipykernel install --name tridesclous-testing —user
