@@ -124,15 +124,73 @@
 2. A problem with the previous paper was the unbalance of data in training (e.g. much less seizure starts, then non seizure instances). For TVB, is it possible to virtually ensure seizures happen at a certain rate if I simulated for say... 2 minutes, 100 times? So that we could have many instances of seizure occurence and could train on an equal set of seizure occurence and non seizure?
 3. Can TVB determine when the seizure occurred exactly in Epileptor time series?</p>
 <h1>Background</h1>
+<p>TVB is a platform for simulating whole-brain dynamics that starts from raw data involving:
+    1. structural connectivity derived from DTI
+    2. brain parcellation derived from MRI and CT
+    3. SEEG xyz locations derived from MRI and CT
+This will then determine a gain matrix to determine SEEG signals from the source signals that are generated from neural mass models.</p>
+<p>The neural mass models will be implemented with nonlinear, complex models for simulating certain type of electrophysiology. The Epileptor is used for simulating seizure activity from a specific source region. </p>
+<p>The epileptor is a set of coupled differential equations that rely on 6 different variables. They are described here:</p>
 <h1>Data &amp; Metadata</h1>
 <h1>Implementation</h1>
+<h2>1. Setting Up Environment</h2>
+<p>First you may want to set up a conda environment, or a virtualenv that will separate the entire python project from your normal OS.</p>
+<div class="highlight"><pre><span></span>$
+pip install nibabel networkx
+git clone https://github.com/the-virtual-brain/tvb-data
+git clone https://github.com/the-virtual-brain/tvb-library
+$
+</pre></div>
+
+
+<p>If you want to have a script to add these all to path for your jupyter notebook, use the following:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nb">echo</span> <span class="s2">&quot;Launching IPython Notebook from TVB Distribution&quot;</span>
+<span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;</span><span class="nv">$LANG</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">export</span> <span class="nv">LANG</span><span class="o">=</span>en_US.UTF-8
+<span class="k">fi</span>
+<span class="nb">export</span> <span class="nv">LC_ALL</span><span class="o">=</span><span class="nv">$LANG</span>
+<span class="c1"># add tvb data and library to path and launch notebook</span>
+<span class="nb">export</span> <span class="nv">PYTHONPATH</span><span class="o">=</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/_tvbdata:<span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/_tvblibrary:<span class="nv">$PYTHONPATH</span><span class="p">;</span>
+jupyter notebook
+</pre></div>
+</td></tr></table>
+
+<h2>1b. Setting Up Environment on a Cluster</h2>
+<div class="highlight"><pre><span></span>. /soft/miniconda3/activate
+conda env list
+conda create -n tridesclous python=3.6 scipy numpy pandas scikit-learn matplotlib seaborn pyqt=5 ipykernel
+source activate tridesclous
+pip install pyqtgraph
+pip install https://github.com/tridesclous/tridesclous/archive/master.zip
+python -m ipykernel install --name tridesclous-testing —user
+</pre></div>
+
+
+<h2>2. Simulating Epilepsy</h2>
+<p>In order to simulate epilepsy, you are going to walk through a pipeline using TVB. </p>
+<p>i. Structural Connectivity</p>
+<p>ii. Neural Mass Model</p>
+<p>iii. Integrators</p>
+<p>iv. Monitors</p>
+<p>Then once these are complete, you can run your simulation.</p>
             </div>
             <!-- /.entry-content -->
 <section class="well" id="related-posts">
     <h4>Related Posts:</h4>
     <ul>
-        <li><a href="/blog/2017/08/doctoral-board-oral/">Doctoral Board Oral Exam (PhD)</a></li>
+        <li><a href="/blog/2017/12/using-freesurfer/">Using FreeSurfer</a></li>
+        <li><a href="/blog/2017/09/fundamental-computational-modeling/">Important Concepts for Computational Modeling</a></li>
         <li><a href="/blog/2017/09/fundamental-papers/">Important Papers for Fundamentals in Computational Neuroscience / Data Science</a></li>
+        <li><a href="/blog/2017/08/doctoral-board-oral/">Doctoral Board Oral Exam (PhD)</a></li>
     </ul>
 </section>
         </article>
