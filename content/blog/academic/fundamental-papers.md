@@ -15,6 +15,7 @@ Summary: To keep a log of important papers I read about and how they are relevan
     - 5. Opening the Black Box of Deep Neural Networks Via Information
     - 6. Reinforcement Learning: An Overview
     - 7. Deep Reinforcement Learning: An Overview
+    - 8. Variational Inference:
 
 <!-- /MarkdownTOC -->
 
@@ -94,4 +95,9 @@ Reference: https://pdfs.semanticscholar.org/b373/b0c6e3b4fef4ac0534965708fc38234
 
 
 ## 7. Deep Reinforcement Learning: An Overview
-Reference: 
+Reference:
+
+## 8. Variational Inference: 
+### Summary / Conclusions
+Variational inference
+### Important Notes 

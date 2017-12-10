@@ -165,7 +165,6 @@ Walk through for a small example to see how the algorithm works:
 
 ## Initialization
 
-
 ## Convergence
 Show that the cost monotonically decreases, so the algorithm will converge at least in the sense of cost decreasing to a non-changing amount.
 

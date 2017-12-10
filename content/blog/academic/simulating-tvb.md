@@ -53,10 +53,24 @@ If you want to have a script to add these all to path for your jupyter notebook,
 
 ## 1b. Setting Up Environment on a Cluster
 
-. /soft/miniconda3/activate
-conda env list
-conda create -n tridesclous python=3.6 scipy numpy pandas scikit-learn matplotlib seaborn pyqt=5 ipykernel
-source activate tridesclous
-pip install pyqtgraph
-pip install https://github.com/tridesclous/tridesclous/archive/master.zip
-python -m ipykernel install --name tridesclous-testing —user
+    . /soft/miniconda3/activate
+    conda env list
+    conda create -n tridesclous python=3.6 scipy numpy pandas scikit-learn matplotlib seaborn pyqt=5 ipykernel
+    source activate tridesclous
+    pip install pyqtgraph
+    pip install https://github.com/tridesclous/tridesclous/archive/master.zip
+    python -m ipykernel install --name tridesclous-testing —user
+
+## 2. Simulating Epilepsy
+In order to simulate epilepsy, you are going to walk through a pipeline using TVB. 
+
+i. Structural Connectivity
+
+ii. Neural Mass Model
+
+iii. Integrators
+
+iv. Monitors
+
+Then once these are complete, you can run your simulation.
+

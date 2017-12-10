@@ -5,7 +5,6 @@ Tags: phd, journals, reviews, computational modeling,
 Slug: fundamental-computational-modeling
 Authors: Adam Li
 Summary: To keep a log of important concepts in computational modeling. 
-status: draft
 <!-- MarkdownTOC -->
 
 - Background
