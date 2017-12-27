@@ -1,7 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Adam Li</title><link href="/" rel="alternate"></link><link href="/feeds/all-en.atom.xml" rel="self"></link><id>/</id><updated>2017-12-07T00:00:00-05:00</updated><entry><title>Using FreeSurfer</title><link href="/blog/2017/12/using-freesurfer/" rel="alternate"></link><published>2017-12-07T00:00:00-05:00</published><updated>2017-12-07T00:00:00-05:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-12-07:/blog/2017/12/using-freesurfer/</id><summary type="html">&lt;p&gt;To guide the user in how to setup freesurfer correctly.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Questions&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Adam Li</title><link href="/" rel="alternate"></link><link href="/feeds/all-en.atom.xml" rel="self"></link><id>/</id><updated>2017-12-31T00:00:00-05:00</updated><entry><title>Personal Goals - 2018</title><link href="/blog/2017/12/goals-2018/" rel="alternate"></link><published>2017-12-31T00:00:00-05:00</published><updated>2017-12-31T00:00:00-05:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-12-31:/blog/2017/12/goals-2018/</id><summary type="html">&lt;p&gt;A summary of goals for 2018.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This year has been a fantastic year from beginning to end. I turned the big 2 5 (yay 1 year older). However, this year came with a lot of fun as I spent time at Coachella 2017, made it out for birthdays of my friends and spent a lot of time enjoying my "relative" last year in Baltimore. I was fortunate enough to win three prestigious fellowships: the NSF-GRFP, Whitaker and Chateaubriand fellowships. I presented two conference papers at two different conferences, where I was even able to make a trip through Korea and Japan come out of it. It's ending with me being in France working with the Theoretical Neurosciences Group in Marseille. I am incredibly fortunate to be working in a group of extraordinary people from all different countries and backgrounds. I am learning so much and developing new ideas that I honestly can't say I would've had if I were just back in Baltimore. I think I have some explicit goals this year related to my work because I find it fascinating.&lt;/p&gt;
+&lt;h2&gt;Old 2017 Resolutions:&lt;/h2&gt;
+&lt;h4&gt;1. Keep dance a significant part of my life: [ ]&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;This is actually something I thought would impact me a lot. I still watch hella dance vids online and keep up with hip hop news here and there, but I haven't touched the dance floor in a few months and it almost feels normal now. I get my daily excercise and I'm driven by my research and learning opportunities.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;2. Run a half-marathon: [ ]&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Yeah I don't know if this will ever happen... So maybe I'll aim to do a 5k next year.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;3. Read four new books: [x]&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Always learn from others.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;4. Establish a healthy workout regimen: [x]&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;I got to be able to deadlift 245, and bench 205 this year. I've also started working out in the morning, or at least daily. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;5. Put myself in uncomfortable situations: [x]&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;I moved to France and have been traveling my ass off. I don't intend on stopping and I've found that I started to become more comfortable with just being by myself. You really learn a lot when you have to handle everything from beginning to end without a friend/family member watching your back.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;6. Begin to learn French: [x]&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Used Duolingo and got to 2% fluency. Hell yeah. Well... I'm in France, so I started now LOL.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;7. Keep learning more "unrelated" math: [x]&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;I was so set on the idea of data science last year, but it's all related to my interest in medicine, tech, and AI. I've been reading more papers here and there about random things ranging from deep neural networks, matrix perturbation theory, to deep reinforcement learning. None directly relate to my rsearch, but it's fascinating and great to think about how it can continue to impact my research and future growth as a data scientist / engineer.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;8. Build 3 Node, JS, React webapps this year [ ]&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Yeah I don't know why I thought this was feasible during a PhD. However, I've built a Node.js/D3.js web app at Lauz Hack this year! I'll be building my skills further as I design a complete system for data input, data analysis and data visualization for clinical usage within a Phase I clinical trial, that I will be helping lead in the next few years.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;2018 Resolutions:&lt;/h2&gt;
+&lt;h4&gt;1. Travel [ ]&lt;/h4&gt;
+&lt;p&gt;I'm going to be spending another 6-9 months in Marseille, France. I truly enjoy having this opportunity to live in Europe for not just one semester, but one year. However, I don't think I will ever choose to live here long term, so I want to take advantage of the majority of the time I have left here and go traveling... A LOT. &lt;/p&gt;
+&lt;p&gt;Currently this year, I've visited London, Paris, Lyon, Marrackech, Casablanca, Munich, Vienna, Prague, Budapest, Lausanne, Geneva, Cambridge, Oxford, Whales. &lt;/p&gt;
+&lt;p&gt;So my travel goals for this year are two parts:
+- I'm going to try to visit Lisbon, Oslo, Helsinki, Stockholm, Nice, Monaco, Istanbul, Athens, Santorini, Croatia, Barcelona, Amsterdam, Luxembourg, Bordeaux, Berlin, Frankfurt, Rome, Bologna, and Aushwitz.
+- The things I'm going to try to attend are Tomorrowland 2018 and Yacht week 2018.&lt;/p&gt;
+&lt;h4&gt;2. Academic [ ]&lt;/h4&gt;
+&lt;p&gt;I've been able to finish two conference papers, and a journal paper as first author. I've also served as an author on two additional conference papers. This upcoming year, I want to delve deeper into the intersection of my current work with machine learning. &lt;/p&gt;
+&lt;p&gt;I want to submit two conference papers: &lt;/p&gt;
+&lt;p&gt;1) on initial results of fragility tested on TVB and 
+2) initial results of a DNN tested on TVB for seizure detection. &lt;/p&gt;
+&lt;p&gt;I want to submit a journal paper for a complete retrospective study on the fragility algorithm and an Bayesian inference implementation of the final layer of prediction of the EZ set. &lt;/p&gt;
+&lt;p&gt;I want to enroll in a class on Matrix Theory, Stochastic Optimization and Nonlinear Optimization. These are three topics I feel like I have to understand at a deeper level to fundamentally be able to tackle many generic problems.&lt;/p&gt;
+&lt;h4&gt;3. Professional [ ]&lt;/h4&gt;
+&lt;p&gt;I think the time is approaching when I will be thinking about graduation from the PhD program at JHU. It feels like a lifetime ago that I was a nervous wreck joining JHU and wondering if I was smart enough to keep up with some of the cutting edge research in BME. &lt;/p&gt;
+&lt;p&gt;I've got my short term eyes set on a few companies and positions that I have heard great things about. I am excited at the possibility of learning even more by joining mathematics, free-thinking, machine learning and data expertise.&lt;/p&gt;
+&lt;p&gt;My goal here is to submit applications to DE Shaw LLC, DE Shaw Research, Google Brain Research Team, DeepMind, Facebook Research, Amazon Data Science, Amazon Health Research. &lt;/p&gt;
+&lt;p&gt;I think in order to make it within these groups, I should develop my fundamental computer science skills further by creating in C++ and Python the various data structures and Cracking the Code Interview problem sets. I should have a fundamental understanding of backpropagation, optimization, probability, statistics, and machine learning.&lt;/p&gt;
+&lt;h4&gt;4. Personal [ ]&lt;/h4&gt;
+&lt;p&gt;I've been really focused on spending time and making time for friends. I love doing it honestly and I've slowly realized I'm slightly extroverted for every 10 hours that I spend being introverted. This year, I want to focus more on the things that will define me. &lt;/p&gt;
+&lt;p&gt;I've picked up photography and I enjoy just posting on Instagram/Facebook, photos that I take, that I like. I've stopped dancing, but I've started working out on a consistent basis. &lt;/p&gt;
+&lt;p&gt;I want to reach a bench of 225, a deadlift of 275. &lt;/p&gt;
+&lt;h4&gt;5. Personal [ ]&lt;/h4&gt;
+&lt;p&gt;I want to go out on a few more dates and push myself out there. I want to be cooking at least 5 times a week, as opposed to my poor habits in the last 25 years.&lt;/p&gt;</content><category term="personal"></category><category term="goals"></category></entry><entry><title>Using FreeSurfer</title><link href="/blog/2017/12/using-freesurfer/" rel="alternate"></link><published>2017-12-07T00:00:00-05:00</published><updated>2017-12-07T00:00:00-05:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-12-07:/blog/2017/12/using-freesurfer/</id><summary type="html">&lt;p&gt;To guide the user in how to setup freesurfer correctly.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Questions&lt;/h1&gt;
 &lt;h1&gt;Background&lt;/h1&gt;
 &lt;p&gt;Freesurfer is a tool built for rendering 3D brains using MRI and Ct scans.&lt;/p&gt;
+&lt;p&gt;FSL is a tool for coregistration and image analysis.&lt;/p&gt;
+&lt;p&gt;Download both online:&lt;/p&gt;
 &lt;h2&gt;Common Definitions:&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;Registration: to find a common coordinate system for the input data sets&lt;/li&gt;
@@ -48,7 +108,7 @@ recon-all -i &amp;lt;data&amp;gt;.nii -s &amp;lt;subject_name&amp;gt; -all
 
 &lt;p&gt;This will take a long time! So be prepared to run this on a compute engine that has time.&lt;/p&gt;
 &lt;h2&gt;3. Running Through CT Images&lt;/h2&gt;
-&lt;p&gt;flirt &lt;ct_data&gt; &lt;mri_data&gt;.mgz&lt;/p&gt;
+&lt;p&gt;flirt -in patient_ct.nii -ref patient_mri.nii -omat patient_omat.mat -out patient_registered.nii.gz&lt;/p&gt;
 &lt;p&gt;This command will coregister the CT data onto the domain of the MRI data and provide a coregistration for you to look at where certain contacts of electrodes are. You can also view in Freeview the different cuts of the brain using either CT, or MRI. &lt;/p&gt;
 &lt;h2&gt;4. Getting Surface Parcellations&lt;/h2&gt;
 &lt;h2&gt;5. Getting SEEG XYZ Coordinates&lt;/h2&gt;
@@ -1359,8 +1419,13 @@ VirtualEnvWrapper&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;For Virtualenv: Run command virtualenv './venv/' inside your project directory.&lt;/p&gt;
-&lt;p&gt;You can also run 'mkvirtualenv -p python3' to make the virtual environment with a specific python installation (e.g. 2.7, or 3.4).&lt;/p&gt;
+&lt;p&gt;For Virtualenv: Run command &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;virtualenv &amp;#39;./venv/&amp;#39;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;inside your project directory.&lt;/p&gt;
+&lt;p&gt;You can also run 'mkvirtualenv -p python3', or 'virtualenv -p python3' to make the virtual environment with a specific python installation (e.g. 2.7, or 3.4).&lt;/p&gt;
 &lt;h2&gt;2. Delete a Virtualenv&lt;/h2&gt;
 &lt;p&gt;For Virtualenvwrappper: In order to delete a virtual environment, all you need to do is to remove it recursively from your ~/.virtualenvs directory with    &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;#39;sudo rm -rf &amp;lt;name&amp;gt;&amp;#39;.
