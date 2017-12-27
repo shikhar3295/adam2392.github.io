@@ -44,9 +44,13 @@ For Virtualenvwrapper: Run the command
 
     'mkvirtualenv <envname>'
 
-For Virtualenv: Run command virtualenv './venv/' inside your project directory.
+For Virtualenv: Run command 
 
-You can also run 'mkvirtualenv -p python3' to make the virtual environment with a specific python installation (e.g. 2.7, or 3.4).
+    virtualenv './venv/' 
+
+inside your project directory.
+
+You can also run 'mkvirtualenv -p python3', or 'virtualenv -p python3' to make the virtual environment with a specific python installation (e.g. 2.7, or 3.4).
 
 ## 2. Delete a Virtualenv
 

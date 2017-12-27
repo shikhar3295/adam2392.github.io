@@ -145,8 +145,13 @@ VirtualEnvWrapper&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;For Virtualenv: Run command virtualenv './venv/' inside your project directory.&lt;/p&gt;
-&lt;p&gt;You can also run 'mkvirtualenv -p python3' to make the virtual environment with a specific python installation (e.g. 2.7, or 3.4).&lt;/p&gt;
+&lt;p&gt;For Virtualenv: Run command &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;virtualenv &amp;#39;./venv/&amp;#39;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;inside your project directory.&lt;/p&gt;
+&lt;p&gt;You can also run 'mkvirtualenv -p python3', or 'virtualenv -p python3' to make the virtual environment with a specific python installation (e.g. 2.7, or 3.4).&lt;/p&gt;
 &lt;h2&gt;2. Delete a Virtualenv&lt;/h2&gt;
 &lt;p&gt;For Virtualenvwrappper: In order to delete a virtual environment, all you need to do is to remove it recursively from your ~/.virtualenvs directory with    &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;#39;sudo rm -rf &amp;lt;name&amp;gt;&amp;#39;.

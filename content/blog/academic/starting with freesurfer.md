@@ -11,6 +11,11 @@ Summary: To guide the user in how to setup freesurfer correctly.
 # Background
 Freesurfer is a tool built for rendering 3D brains using MRI and Ct scans.
 
+FSL is a tool for coregistration and image analysis.
+
+Download both online:
+
+
 ## Common Definitions:
 1. Registration: to find a common coordinate system for the input data sets
 2. 
@@ -57,7 +62,8 @@ Afterwards, you can run the following command(s):
 This will take a long time! So be prepared to run this on a compute engine that has time.
 
 ## 3. Running Through CT Images
-flirt <ct_data> <mri_data>.mgz
+
+flirt -in patient_ct.nii -ref patient_mri.nii -omat patient_omat.mat -out patient_registered.nii.gz
 
 This command will coregister the CT data onto the domain of the MRI data and provide a coregistration for you to look at where certain contacts of electrodes are. You can also view in Freeview the different cuts of the brain using either CT, or MRI. 
 

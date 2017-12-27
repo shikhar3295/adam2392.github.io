@@ -14,6 +14,7 @@ status: draft
     - Important Links
     - Airports
     - Sights
+    - Nearby Cities
     - Food
     - Nightlife/Drinking
     - Getting Around
@@ -31,14 +32,61 @@ status: draft
 #### If you need taxify (you'll get a free $5 off!):
 <a href="https://invite.taxify.eu/EZN7D">https://invite.taxify.eu/EZN7D</a>
 
+Sample Itinerary:
+28th:
+- Land at night and go to Airbnb
+- Buy groceries and stuff to make for the rest of the week (4 days)
+
+29th:
+Day trip to Mount Pilatus / Lucerne:
+- Wake up at ~9AM and train to Lucerne
+- 
+
+30th:
+Day trip to Rhine Falls
+1 hr train ride
+
+
+31st:
+Stuff in Zurich (sights at least):
+Old Town -> Bahnhofstrasse -> Lake Zurich -> Swiss National Museum
+
+Museum of Fine Arts, St Peter's Church
+
+1st:
+Uetliberg mountain hiking (not really hiking apparently, so that's good lolol)?
+https://www.inyourpocket.com/zurich/uetliberg_65333v
+
+Day trip to Heidiland via Lichenstein
+https://www.tripadvisor.co.uk/ShowUserReviews-g659909-d1907336-r163751353-Heidi_s_Village-Maienfeld_Canton_of_Graubunden_Swiss_Alps.html
+
+Day trip to Mount Rigi:
+1 hr train ride there
+
+2nd:
+- Wake up and take a train to Geneva
+
 ## Airports
 #### 1. Zurich Airport
 
 
 ## Sights
-1. 
+#### 1. Polyterrasse at ETH
 
-#### 1. Basilisque Notre Dame Foire:
+#### 2. Lake Zurich / Walking down Bahnhofstrasse
+The old town is a historic walking area, and bahnofstrasse is just a famous landmark in Zurich.
+
+#### 3. Uetliberg Mountain
+
+#### 4. Grossmunster
+
+## Nearby Cities
+#### 1. Bern
+
+#### 2. St. Gallen
+
+#### 3. Lugano
+
 
 ## Food
 Here, I briefly describe a couple of food places that are worth the HYPE. For locations, just use google, or yelp.

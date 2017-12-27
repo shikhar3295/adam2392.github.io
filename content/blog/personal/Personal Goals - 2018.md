@@ -5,7 +5,6 @@ Tags: personal, goals
 Slug: goals-2018
 Authors: Adam Li
 Summary: A summary of goals for 2018.
-status: draft
 
 This year has been a fantastic year from beginning to end. I turned the big 2 5 (yay 1 year older). However, this year came with a lot of fun as I spent time at Coachella 2017, made it out for birthdays of my friends and spent a lot of time enjoying my "relative" last year in Baltimore. I was fortunate enough to win three prestigious fellowships: the NSF-GRFP, Whitaker and Chateaubriand fellowships. I presented two conference papers at two different conferences, where I was even able to make a trip through Korea and Japan come out of it. It's ending with me being in France working with the Theoretical Neurosciences Group in Marseille. I am incredibly fortunate to be working in a group of extraordinary people from all different countries and backgrounds. I am learning so much and developing new ideas that I honestly can't say I would've had if I were just back in Baltimore. I think I have some explicit goals this year related to my work because I find it fascinating.
 
@@ -47,7 +46,14 @@ So my travel goals for this year are two parts:
 #### 2. Academic [ ]
 I've been able to finish two conference papers, and a journal paper as first author. I've also served as an author on two additional conference papers. This upcoming year, I want to delve deeper into the intersection of my current work with machine learning. 
 
-I want to submit two conference papers: 1) on initial results of fragility tested on TVB and 2) initial results of a DNN tested on TVB for seizure detection. I want to submit a journal paper for a complete retrospective study on the fragility algorithm and an Bayesian inference implementation of the final layer of prediction of the EZ set. I want to enroll in a class on Matrix Theory, Stochastic Optimization and Nonlinear Optimization. These are three topics I feel like I have to understand at a deeper level to fundamentally be able to tackle many generic problems.
+I want to submit two conference papers: 
+
+1) on initial results of fragility tested on TVB and 
+2) initial results of a DNN tested on TVB for seizure detection. 
+
+I want to submit a journal paper for a complete retrospective study on the fragility algorithm and an Bayesian inference implementation of the final layer of prediction of the EZ set. 
+
+I want to enroll in a class on Matrix Theory, Stochastic Optimization and Nonlinear Optimization. These are three topics I feel like I have to understand at a deeper level to fundamentally be able to tackle many generic problems.
 
 #### 3. Professional [ ]
 I think the time is approaching when I will be thinking about graduation from the PhD program at JHU. It feels like a lifetime ago that I was a nervous wreck joining JHU and wondering if I was smart enough to keep up with some of the cutting edge research in BME. 
@@ -63,9 +69,9 @@ I've been really focused on spending time and making time for friends. I love do
 
 I've picked up photography and I enjoy just posting on Instagram/Facebook, photos that I take, that I like. I've stopped dancing, but I've started working out on a consistent basis. 
 
-I want to reach a bench of 225, a deadlift of 275. I want to go out on a few more dates and push myself out there. I want to be cooking at least 5 times a week, as opposed to my poor habits in the last 25 years.
+I want to reach a bench of 225, a deadlift of 275. 
 
-#### 5. Financial [ ]
-I think everyone wants to be financially healthy. I've been fortunate to not have college debt and put my early internship/job earnings to good usage. I was willing to take a dip into these savings for the sake of this year's adventures in Europe. However, I think I still want to be financially ready for graduation from JHU. 
+#### 5. Personal [ ]
+I want to go out on a few more dates and push myself out there. I want to be cooking at least 5 times a week, as opposed to my poor habits in the last 25 years.
 
-I hope to have $120,000 saved up by the end of 2018. I want a credit score of 770. 
+
