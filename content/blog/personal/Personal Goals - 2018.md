@@ -65,13 +65,11 @@ My goal here is to submit applications to DE Shaw LLC, DE Shaw Research, Google 
 I think in order to make it within these groups, I should develop my fundamental computer science skills further by creating in C++ and Python the various data structures and Cracking the Code Interview problem sets. I should have a fundamental understanding of backpropagation, optimization, probability, statistics, and machine learning.
 
 #### 4. Personal [ ]
-I've been really focused on spending time and making time for friends. I love doing it honestly and I've slowly realized I'm slightly extroverted for every 10 hours that I spend being introverted. This year, I want to focus more on the things that will define me. 
-
 I've picked up photography and I enjoy just posting on Instagram/Facebook, photos that I take, that I like. I've stopped dancing, but I've started working out on a consistent basis. 
 
-I want to reach a bench of 225, a deadlift of 275. 
+I want to reach a bench of 225, a deadlift of 275 and consistent running of 1-5 miles (by the end of the year).
 
 #### 5. Personal [ ]
-I want to go out on a few more dates and push myself out there. I want to be cooking at least 5 times a week, as opposed to my poor habits in the last 25 years.
+I want to be cooking at least 5 times a week, so that I can maintain a healthy diet.
 
 

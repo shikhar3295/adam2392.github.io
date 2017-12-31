@@ -17,7 +17,6 @@ status: draft
     - Food
     - Nightlife/Drinking
     - Getting Around
-- FAQ
 
 <!-- /MarkdownTOC -->
 
@@ -37,6 +36,9 @@ This airport is on the north end of the city and you can take a train to get int
 
 #### 2. London Airport (Heathrow)
 TBD
+
+#### 3. London Airport (Gatwick)
+This airport is huge! Also has huge lines for security, so I would come early by at least 2 hours even if you're not checking in luggage. It takes awhile to get to some of the farther off gates. If you come early, they have some great airport lounges though!
 
 ## Sights
 1. Stonehenge day trip / Salisbury 
@@ -60,21 +62,16 @@ https://www.buzzfeed.com/chelseypippin/25-wanderlust-worthy-day-trips-from-londo
 ## Food
 Here, I briefly describe a couple of food places that are worth the HYPE. For locations, just use google, or yelp.
 
-#### 1. Slake:
-This is a fantastic coffee cafe that serves some great breakfast foods, like quiche, sandwiches and cookies. Highly recommend as a start off to your day.
+#### 1. Lanzhou LaMian Noodle:
 
- 
+#### 2. Burger and Lobster:
+
+#### 3. Chick N Sours:
+
 
 ## Nightlife/Drinking
-#### 1. Wine Drinking On the Rhone:
+#### 1. 
 
 
 ## Getting Around
-You can definitely use the Underground, uber/taxi/taxify, or just walk!
-
-# FAQ
-1. Q: How do I get around?
-A: Use uber, or the underground subways.
-
-2. Q: Where should I stay?
-A: TBD
+You can definitely use the Underground, or just walk! Uber if necessary.

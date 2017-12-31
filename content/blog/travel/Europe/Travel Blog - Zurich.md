@@ -5,7 +5,6 @@ Tags: travel, europe, zurich, switzerland
 Slug: travel-zurich
 Authors: Adam Li
 Summary: A summary of how to visit Zurich and get the most out of your trip.
-status: draft
 
 # Europe - Zurich, Switzerland
 <!-- MarkdownTOC -->
@@ -40,7 +39,7 @@ Sample Itinerary:
 29th:
 Day trip to Mount Pilatus / Lucerne:
 - Wake up at ~9AM and train to Lucerne
-- 
+- then take train up to Mount Pilatus
 
 30th:
 Day trip to Rhine Falls
@@ -52,6 +51,9 @@ Stuff in Zurich (sights at least):
 Old Town -> Bahnhofstrasse -> Lake Zurich -> Swiss National Museum
 
 Museum of Fine Arts, St Peter's Church
+
+Fifa museum
+
 
 1st:
 Uetliberg mountain hiking (not really hiking apparently, so that's good lolol)?
@@ -68,7 +70,7 @@ Day trip to Mount Rigi:
 
 ## Airports
 #### 1. Zurich Airport
-
+Great looking airport that has train (SBB) access to the local city.
 
 ## Sights
 #### 1. Polyterrasse at ETH
