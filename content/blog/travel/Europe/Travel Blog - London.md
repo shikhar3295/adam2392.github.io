@@ -53,18 +53,24 @@ The River Cam
 Oxford Univ.
 Ashmolean Museum
 Pitt Rivers Museum
-4. Blenheim Palace from Paddington
-https://www.buzzfeed.com/chelseypippin/25-wanderlust-worthy-day-trips-from-london?utm_term=.cvVw2Zerea#.xdW5Mm6D6P
-5. 
 
-#### 1. Basilisque Notre Dame Foire:
+
+#### 1. London Eye
+
+#### 2. Buckingham Palace / Big Ben
+
+#### 3. Millenium Bridge / Tower Bridge
+
+#### 4. 
 
 ## Food
 Here, I briefly describe a couple of food places that are worth the HYPE. For locations, just use google, or yelp.
 
 #### 1. Lanzhou LaMian Noodle:
+Amazing handpulled noodle restaurant for any asian food cravings.
 
 #### 2. Burger and Lobster:
+Amazing burger and lobster. Simplistic and reasonably priced.
 
 #### 3. Chick N Sours:
 

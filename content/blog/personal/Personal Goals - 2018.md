@@ -6,7 +6,7 @@ Slug: goals-2018
 Authors: Adam Li
 Summary: A summary of goals for 2018.
 
-This year has been a fantastic year from beginning to end. I turned the big 2 5 (yay 1 year older). However, this year came with a lot of fun as I spent time at Coachella 2017, made it out for birthdays of my friends and spent a lot of time enjoying my "relative" last year in Baltimore. I was fortunate enough to win three prestigious fellowships: the NSF-GRFP, Whitaker and Chateaubriand fellowships. I presented two conference papers at two different conferences, where I was even able to make a trip through Korea and Japan come out of it. It's ending with me being in France working with the Theoretical Neurosciences Group in Marseille. I am incredibly fortunate to be working in a group of extraordinary people from all different countries and backgrounds. I am learning so much and developing new ideas that I honestly can't say I would've had if I were just back in Baltimore. I think I have some explicit goals this year related to my work because I find it fascinating.
+This year has been a fantastic year from beginning to end. I turned the big 2 5 (yay 1 year older). However, this year came with a lot of fun as I spent time at Coachella 2017, made it out for birthdays of my friends in Vegas, spent time in SF, LA, SD and Chicago visiting old friends, enjoyed new time with Hopkins friends in NYC, Boston and DC, and spent a lot of time enjoying my "relative" last year in Baltimore. I was fortunate enough to win three prestigious fellowships: the NSF-GRFP, Whitaker and Chateaubriand fellowships. I presented two conference papers at two different conferences, where I was even able to make a trip through Korea and Japan come out of it. It's ending with me being in France working with the Theoretical Neurosciences Group in Marseille. I am incredibly fortunate to be working in a group of extraordinary people from all different countries and backgrounds. I am learning so much and developing new ideas that I honestly can't say I would've had if I were just back in Baltimore. I think I have some explicit goals this year related to my work because I find it fascinating.
 
 ## Old 2017 Resolutions:
 #### 1. Keep dance a significant part of my life: [ ]
@@ -40,16 +40,35 @@ I'm going to be spending another 6-9 months in Marseille, France. I truly enjoy 
 Currently this year, I've visited London, Paris, Lyon, Marrackech, Casablanca, Munich, Vienna, Prague, Budapest, Lausanne, Geneva, Cambridge, Oxford, Whales. 
 
 So my travel goals for this year are two parts:
-- I'm going to try to visit Lisbon, Oslo, Helsinki, Stockholm, Nice, Monaco, Istanbul, Athens, Santorini, Croatia, Barcelona, Amsterdam, Luxembourg, Bordeaux, Berlin, Frankfurt, Rome, Bologna, and Aushwitz.
-- The things I'm going to try to attend are Tomorrowland 2018 and Yacht week 2018.
+i. I'm going to try to visit:
+Lisbon [ ], 
+Oslo [ ], 
+Helsinki [ ], 
+Stockholm [ ], 
+Nice [ ], 
+Monaco [ ], 
+Istanbul [ ], 
+Athens [ ], 
+Santorini [ ],
+Croatia [ ], 
+Barcelona [ ], 
+Amsterdam [ ], 
+Luxembourg [ ], 
+Bordeaux [ ], 
+Berlin [ ], 
+Frankfurt [ ], 
+Rome [ ], 
+Bologna [ ], 
+
+ii. The things I'm going to try to attend are Tomorrowland 2018 [ ] and Yacht week 2018 [ ].
 
 #### 2. Academic [ ]
 I've been able to finish two conference papers, and a journal paper as first author. I've also served as an author on two additional conference papers. This upcoming year, I want to delve deeper into the intersection of my current work with machine learning. 
 
 I want to submit two conference papers: 
 
-1) on initial results of fragility tested on TVB and 
-2) initial results of a DNN tested on TVB for seizure detection. 
+1) on initial results of fragility tested on TVB and [ ]
+2) initial results of a DNN tested on TVB for seizure detection. [ ]
 
 I want to submit a journal paper for a complete retrospective study on the fragility algorithm and an Bayesian inference implementation of the final layer of prediction of the EZ set. 
 
@@ -64,12 +83,40 @@ My goal here is to submit applications to DE Shaw LLC, DE Shaw Research, Google 
 
 I think in order to make it within these groups, I should develop my fundamental computer science skills further by creating in C++ and Python the various data structures and Cracking the Code Interview problem sets. I should have a fundamental understanding of backpropagation, optimization, probability, statistics, and machine learning.
 
+- C++ review of data structures [ ]
+- Python review of data structures [ ]
+- Math review of backpropagation [ ]
+- Math review of machine learning basics [ ]
+
 #### 4. Personal [ ]
 I've picked up photography and I enjoy just posting on Instagram/Facebook, photos that I take, that I like. I've stopped dancing, but I've started working out on a consistent basis. 
 
-I want to reach a bench of 225, a deadlift of 275 and consistent running of 1-5 miles (by the end of the year).
+I want to reach a 
+bench of 225 [ ], 
+a deadlift of 275 [ ] and 
+consistent running of 1-5 miles (by the end of the year) [ ].
 
-#### 5. Personal [ ]
-I want to be cooking at least 5 times a week, so that I can maintain a healthy diet.
+In addition, I want to release a series of publicly shared blog posts on professional topics I feel are important:
+
+- bitcoin [ ]
+- blockchain technologies and ethereum [ ]
+- machine learning and AI [ ]
+- VR and AR [ ]
+
+#### 5. Cooking and Lifestyle [ ]
+I want to be cooking at least 5 times a week, so that I can maintain a healthy diet. I will look at maintaining a combination of recipes and learning something new every other month!
+
+- Chicken Breast [ ]
+- Steak [ ]
+- Pasta With Meat [ ]
+- Salmon Dish [ ]
+- Tuna Dish [ ]
+- Other Fish Dish [ ]
+- (if possible): Other seafood [ ]
+
+#### 6. Reading and Knowledge [ ]
+I want to continuously be reading from highly regarded sources. I want to conssistently read from sources on Twitter, The World Economic Review and Bloomberg.
+
+
 
 
