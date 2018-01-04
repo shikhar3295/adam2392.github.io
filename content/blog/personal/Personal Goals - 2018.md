@@ -117,6 +117,15 @@ I want to be cooking at least 5 times a week, so that I can maintain a healthy d
 #### 6. Reading and Knowledge [ ]
 I want to continuously be reading from highly regarded sources. I want to conssistently read from sources on Twitter, The World Economic Review and Bloomberg.
 
+In order to keep up with my intake of knowledge, I want to challenge myself to write a series of publically available blog posts on trends in technology, medicine, politics and economics/finance.
+
+- bitcoin [X]
+- ethereum/blockchain [ ]
+- machine learning/AI [ ]
+- politics
+- foreign markets (EU/Asia) and cryptocurrency/blockchains [ ]
+- emerging markets
+
 
 
 
