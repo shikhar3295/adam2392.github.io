@@ -11,9 +11,9 @@ Disclaimer: I am a heavy advocate and believer in the ethereum platform, and sim
 # A Personal View on Bitcoin
 “Bitcoin is going to change the world.” A few words that I heard in 2014 at a startup conference that stuck with me for the next few years. As an engineer, I looked into bitcoin, blockchain and the technologies that began making headlines (e.g. ethereum, litecoin, etc.). My research led me to make investments into cryptocurrency. However, with the recent explosion of Bitcoin throughout the media, I formed a more rigorous hypothesis that led me to question mainstream thinking. Basing my thoughts on a semi-technical understanding of blockchain and basic economics knowledge, I arrive at three main argument points on the validity of bitcoin, or any cryptocurrency for that matter. 
 
-1) Will bitcoin be able to become a currency that is widely used? 
-2) Will bitcoin become a valued asset that yields significant dividends? 
-3) Will bitcoin become a mode of intermediate to long term value storage like gold? 
+1. Will bitcoin be able to become a currency that is widely used? 
+2. Will bitcoin become a valued asset that yields significant dividends? 
+3. Will bitcoin become a mode of intermediate to long term value storage like gold? 
 
 I address all three points from what I have researched and experienced with the conclusion that bitcoin is not worth the financial hype. (Similar blockchain technologies like ethereum are another topic for another time)
 
