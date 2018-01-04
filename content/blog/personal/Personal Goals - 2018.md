@@ -67,15 +67,15 @@ I've been able to finish two conference papers, and a journal paper as first aut
 
 I want to submit two conference papers: 
 
-1) on initial results of fragility tested on TVB and [ ]
-2) initial results of a DNN tested on TVB for seizure detection. [ ]
+1. on initial results of fragility tested on TVB and [ ]
+2. initial results of a DNN tested on TVB for seizure detection. [ ]
 
-I want to submit a journal paper for a complete retrospective study on the fragility algorithm and an Bayesian inference implementation of the final layer of prediction of the EZ set. 
+I want to submit a journal paper for a complete retrospective study on the fragility algorithm [ ] and an Bayesian inference implementation of the final layer of prediction of the EZ set. 
 
 I want to enroll in a class on Matrix Theory, Stochastic Optimization and Nonlinear Optimization. These are three topics I feel like I have to understand at a deeper level to fundamentally be able to tackle many generic problems.
 
 #### 3. Professional [ ]
-I think the time is approaching when I will be thinking about graduation from the PhD program at JHU. It feels like a lifetime ago that I was a nervous wreck joining JHU and wondering if I was smart enough to keep up with some of the cutting edge research in BME. 
+I think the time is approaching when I will be thinking about graduation from the PhD program at JHU. It feels like a lifetime ago that I was a nervous wreck joining JHU and wondering if I was smart enough to keep up with some of the cutting edge research in BME. I think I still have some issues with where I feel in terms of knowledge. My goal is to augment and seal up those weaknesses / shortcomings.
 
 I've got my short term eyes set on a few companies and positions that I have heard great things about. I am excited at the possibility of learning even more by joining mathematics, free-thinking, machine learning and data expertise.
 
@@ -92,19 +92,12 @@ I think in order to make it within these groups, I should develop my fundamental
 I've picked up photography and I enjoy just posting on Instagram/Facebook, photos that I take, that I like. I've stopped dancing, but I've started working out on a consistent basis. 
 
 I want to reach a 
-bench of 225 [ ], 
-a deadlift of 275 [ ] and 
-consistent running of 1-5 miles (by the end of the year) [ ].
-
-In addition, I want to release a series of publicly shared blog posts on professional topics I feel are important:
-
-- bitcoin [ ]
-- blockchain technologies and ethereum [ ]
-- machine learning and AI [ ]
-- VR and AR [ ]
+- bench of 225 [ ], 
+- a deadlift of 275 [ ] and 
+- consistent running of 1-5 miles (by the end of the year) [ ].
 
 #### 5. Cooking and Lifestyle [ ]
-I want to be cooking at least 5 times a week, so that I can maintain a healthy diet. I will look at maintaining a combination of recipes and learning something new every other month!
+I want to be cooking at least 5 times a week, so that I can maintain a healthy diet. I will look at maintaining a combination of recipes and learning something new every other month! I'll keep an update here on the recipes I learn and experiment with.
 
 - Chicken Breast [ ]
 - Steak [ ]
@@ -115,7 +108,7 @@ I want to be cooking at least 5 times a week, so that I can maintain a healthy d
 - (if possible): Other seafood [ ]
 
 #### 6. Reading and Knowledge [ ]
-I want to continuously be reading from highly regarded sources. I want to conssistently read from sources on Twitter, The World Economic Review and Bloomberg.
+I want to continuously be reading from highly regarded sources. I want to conssistently read from sources on Twitter, The World Economic Review and Bloomberg. I'll try to update some of my thoughts on the different mechanisms of obtaining knowledge.
 
 In order to keep up with my intake of knowledge, I want to challenge myself to write a series of publically available blog posts on trends in technology, medicine, politics and economics/finance.
 
