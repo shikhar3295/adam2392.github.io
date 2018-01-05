@@ -36,9 +36,14 @@ This final view on Bitcoin is slightly related to its potential as a currency, b
 
 In addition, to a problem with liquidity, there is a problem with competition. In rare metals, like gold and platinum, there are no gold replicas, or platinum replicas; there is only gold and platinum. With bitcoin and cryptocurrencies, there is an explosion in different implementations and designs that seek to improve on the original bitcoin. These create digital competitions in the sense that, we cannot have multiple “irreplaceable digital gold.” This is inherently contradictory, and so the argument that bitcoin can be a replacement for gold does not hold true because of these alternative coins that have more or less the same functionality.
 
+## Conclusions and Summary:
+So I've discussed three viewpoints of Bitcoin as a cryptocurrency: i) usage as a currency, ii) a dividend-yielding asset, and iii) a "digital gold" as a value storage. While all these points of view have some valid arguments in favor of Bitcoin, they have some underlying flaws that are hard to solve. They are hard to solve because of numerous reasons, but in my opinion, it is due to the way Bitcoin was originally designed and it's mechanisms for change. I think that a truly successful cryptocurrency will be able to encompass all three viewpoints by not only having a well-thought-out initial design, but also a robust mechanism for changing the blockchain operations. 
+
+Bitcoin has a lot of problems. Nonetheless, it is the first mainstream technology of its kind, and it will spur a generation of technologies that will change the world for the better.
+
 ### References:
-1.  Link to China clamping down on bitcoin 
-2.  Link to centralized mining rigs for bitcoin
-3.  Link to usd total assets in world
-4.  
+1.  <a href="http://fortune.com/2017/09/15/china-shutting-down-beijing-bitcoin-cryptocurrency-exchanges/"> China shuts down bitcoin exchanges</a>
+2.  <a href="https://www.nytimes.com/2017/12/28/business/south-korea-bitcoin.html"> South Korea Clamps Down On Bitcoin Exchanges </a>
+3.  <a href="https://www.blocktrail.com/BTC/pools"> Link to centralized mining rigs for bitcoin </a>
+4.  <a href="https://en.wikipedia.org/wiki/Financial_position_of_the_United_States"> Link to usd total assets in world </a>
 
