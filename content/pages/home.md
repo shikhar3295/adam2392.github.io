@@ -5,15 +5,17 @@ save_as: index.html
 
 # About Me
 
-I am a third year PhD student in biomedical engineering at Johns Hopkins University. I work with Dr. Sridevi V. Sarma in the [Neuromedical Control Systms group](http://sarmalab.icm.jhu.edu/).
+I am a third year PhD student in biomedical engineering, specializing in computational neuroscience and machine learning at Johns Hopkins University. I work with Dr. Sridevi V. Sarma in the [Neuromedical Control Systms group](http://sarmalab.icm.jhu.edu/).
 
-I graduated from UCSD in 2015 with a double major in Bioengineering and Mathematics. I'm originally from Los Angeles, CA and consider myself a true CA native even though I wasn't born there (and don't even live there now).
+My interest in technology and engineering started at UCSD, where I graduated in 2015 with a double major in Bioengineering and Mathematics. It was there under the guidance of many great faculty, such as Dr. Todd Coleman, that I became interested in applied mathematics, data analytics and machine learning in healthcare. It led me to pursue a PhD, with the ultimate goal of bringing together technology expertise with biomedical domain knowledge to solve challenging medical problems.
 
-I'm interested in applied mathematics, computational neuroscience, machine learning, data science, software engineering, entrepreneurship, hip hop and traveling to see the world's wonders. My coding languages (in order of proficiency) consist of Matlab, Python, Bash, Javascript, HTML, CSS, C/C++, MongoDB (and a little SQL), R, and Latex. I have experience with Django, Flask, Pelican (obviously), PBS/SLURM scheduling systems, Arduino, and Raspberry Pi.
+I'm originally from Los Angeles, CA and consider myself a true CA native even though I wasn't born there. I have a range of hobbies, including, but not limited to: running, gymming (weight lifting), reading, hacking, traveling and photography. 
 
-My domain experience includes neuroscience, linear algebra, matrix theory, linear systems, and algorithms. Some things I've became interested in recently (as of 2015) are neural networks (specifically deep learning), bayesian statistics, malware and cybersecurity, differential geometry and eigenvalue problems.
+As an engineer, I consider myself an expert in Matlab and Python, being able to work with Pandas, Scipy, Keras and Tensorflow. I am familiar with Bash, Javascript, HTML, CSS, C/C++, MongoDB and SQL. I have experience with Django, Pelican (obviously), PBS/SLURM scheduling systems, GNU parallel OS systems, Arduino, and Raspberry Pi. My domain experience includes neuroscience, linear systems, data wrangling, machine learning and algorithm development. 
 
-Everything on this site reflects my personal views only. It'll generally range from research/science thoughts, to photo blogs, to travel blogs.
+Some things I've become interested in recently (as of 2017) are bayesian statistics, malware/cybersecurity, differential geometry and blockchain technologies.
+
+Everything on this site reflects my personal views only. It'll generally range from research/science thoughts, to photo blogs (in progress), to travel blogs.
 
 # Blog
 
