@@ -26,5 +26,6 @@ pyparsing==2.2.0
 python-dateutil==2.6.0
 python-gettext==3.0
 pytz==2017.2
+PyYAML==3.12
 six==1.10.0
 Unidecode==0.4.20
