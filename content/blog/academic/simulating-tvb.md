@@ -28,6 +28,22 @@ The neural mass models will be implemented with nonlinear, complex models for si
 The epileptor is a set of coupled differential equations that rely on 6 different variables. They are described here:
 
 # Data & Metadata
+The minimum necessary requirements for creating the TVB dataset are a set of T1 and DWI images as a list of dicom files, or a single 4-D image nifti file.
+
+A high level summary of how the pipeline proceeds is:
+1. Construct Cortical Surface, Subcortical Surface
+Using freesurfer, you can get the reconstructed surfaces, which are your files that outline the voxels that belong to each region of the brain.
+2. Construct Parcellation Scheme
+This can range from the default in freesurfer to different atlases available for the human brain.
+3. Construct Corticography Tracts
+First, you need to coregister the DWI images with the T1 scans
+
+Using the DWI images, along with the reconstructed surfaces, you can count fiber tracts between each region of the brain and reconstruct the structural connectivity matrices. This is composed from the weights matrix and the length matrix between parcellated regions.
+4. Obtain Electrode Coordinates in T1 Space
+First, you need to coregister the CT reconstructed freesurfer file into the T1 space. 
+
+5. 
+
 
 # Implementation
 ## 1. Setting Up Environment

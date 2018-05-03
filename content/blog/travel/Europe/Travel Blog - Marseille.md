@@ -11,9 +11,27 @@ Summary: A summary of how to visit Marseille and get the most out of your trip.
 
 - General Suggestions
     - Important Links
+        - If you need airbnb \(you'll get a free $40 off\):
+        - If you need uber \(you'll get a free ride!\):
+        - If you need taxify \(you'll get a free $5 off!\):
     - Airports
+        - 1. Marseille Provence Airport
     - Sights
+        - 1. Basilique Notre-Dame de la Garde
+        - 2. Les Calanques \(Best Thing!\)
+        - 3. Cathedral La Major
+        - 4. Vieux Port
+        - 5. Musee des Civilisations d'Europe
+        - 6. Parc Longchamp
+        - 7. Chateau d'lf
+        - 8. Frioul Archipelago
     - Food
+        - 1. House of Raviolis
+        - 2. Le Maison Geney
+        - 3. Noodles Chop
+        - 4. Sur Le Pouce
+        - 5. Tapas Rojas
+        - 6. Tako-san
     - Nightlife/Drinking
     - Getting Around
 - FAQ
@@ -40,8 +58,16 @@ If you are 25 y/o or younger, it only costs 6 euros, but for everyone else it is
 #### 1. Basilique Notre-Dame de la Garde
 A huge castle/basilisque that stands at the top of a hill overlooking Marseille. You can take the bus here, but I've only ever walked. It is an amazing sight to look over the city during sunset, or at night time. However, any other time is also great!
 
-#### 2. Les Calanques
+#### 2. Les Calanques (Best Thing!)
 A hiking trail and place to go to check out a sick view. This is highly recommended because all you need to do is take a bus to Luminy and then you can walk 30 minutes to an amazing vantage point!
+
+There are multiple calanques in this area; the main ones total 9.
+
+These are accessible by a boat that leaves from Vieux Port, Marseille, or the port of Cassis.
+
+To get to the port of Cassis from Marseille, you have to take a train, or a bus. The train from Saint Charles will leave you about 2-3 km inland, so it is not ideal. However, there is a M8 bus that leaves from Castellane metro station that will get you directly to the port of Cassis. This bus is very infrequent and the time tables are not on Google maps. You need to google "How to get to Cassis from Marseille with M8 bus" to find the timetables that are most current. At the time that I went, I don't think the bus ran on Sundays.
+
+To access the calanques via boat is easy. You just go to Vieux Port, or in Port Miou and buy a ticket for the next ferry ride. I highly recommend doing all 9 calanques to get the full experience. The sad thing is that there is no direct ferry from Port Miou to Vieux Port, or vice versa.
 
 #### 3. Cathedral La Major
 This is just a very pretty looking cathedral that stands next to the water. It is a beautiful place to watch the sunset.
