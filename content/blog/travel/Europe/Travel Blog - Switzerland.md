@@ -11,10 +11,19 @@ Summary: A summary of how to visit Switzerland and get the most out of your trip
 
 - General Suggestions
     - Important Links
+            - If you need airbnb \(you'll get a free $40 off\):
+            - If you need uber \(you'll get a free ride!\):
     - Airports
     - Sights
+        - 1. Lucerne \(Luzern\)
+        - 2. Mount Pilatus
+        - 3. Zurich
+        - 4. Geneva
     - Food
+        - 
     - Nightlife/Drinking
+        - 1. Volkshaus
+        - 2. Langstrasse Street
     - Getting Around
 - FAQ
 
@@ -60,11 +69,9 @@ This shows all the history behind the FIFA organization. Very cool place to chec
 i. CERN
 This is where the infamous Hadron Collider is! This is where the Higgs Boson was discovered, and where there is very important physics research going on everyday.
 
-ii. 
-
 
 ## Food
-Here, I briefly describe a couple of food places that are worth the HYPE. For locations, just use google, or yelp.
+Here, I briefly describe a couple of food places that are worth the HYPE. For locations, just use google, or yelp. Just FYI, food in Switzerland is crazy expensive! They have such a high standard of living, I went out to eat a basic Chinese meal and it cost me $40...
 
 ### 
 

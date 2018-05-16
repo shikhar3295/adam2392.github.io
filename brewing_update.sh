@@ -6,8 +6,8 @@ brew cask cleanup
 #now diagnotic
 brew doctor
 brew missing
-apm upgrade -c false
-/opt/bin/updateCCTF.sh && terminal-notifier -message “git pull done :-)” -title “CCTF up to date”
+# apm upgrade -c false
+# /opt/bin/updateCCTF.sh && terminal-notifier -message “git pull done :-)” -title “CCTF up to date”
 
 echo “you can hit mas upgrade to upgrade theses apps from the app store:”
 mas outdated
