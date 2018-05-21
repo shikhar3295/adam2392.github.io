@@ -12,9 +12,23 @@ status: draft
 
 - General Suggestions
     - Important Links
+            - If you need airbnb \(you'll get a free $40 off\):
+            - If you need uber \(you'll get a free ride!\):
     - Airports
+        - Tokyo:
+            - 1. Narita airport
+            - 2. Haneda airport
+        - Osaka
+            - 1. Kansai airport
     - Sights
+        - Tokyo:
+        - Osaka:
+        - Kyoto:
+        - Nara:
     - Food
+            - 1. Gen Sushi
+            - 2. Ichiran Ramen
+            - 3.
     - Nightlife/Drinking
     - Getting Around
 - FAQ
@@ -54,6 +68,14 @@ This is the main airport near Osaka. It is easy to get to and from here using th
 
 ## Food
 Here, I briefly describe a couple of food places that are worth the HYPE. For locations, just use google, or yelp.
+
+#### 1. Gen Sushi
+
+
+#### 2. Ichiran Ramen
+
+
+#### 3. 
 
 ## Nightlife/Drinking
 
