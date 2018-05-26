@@ -57,6 +57,18 @@ I started out with analyzing datasets on my laptop/workstation with unoptimized 
 A lot of this year was spent reading papers and doing a lot of thinking... Not very productive, but I really felt like I learned a lot and expanded my research mindset.
 
 Couple things I started learning more about:
+1. reading papers is good to do on a consistent basis, but focus on getting to the core of the "key" papers (how you decide which papers are key comes with exp)
+
+I realized that some papers are great to learn and skim through the results and methods to understand how they did it, what are the limitations and what was innovated on. Then there are other papers that introduce a completely new concept that might be different. These papers are important to understand because they usually spur papers down the road that require you to understand this one. I tend to go through the figures and equations multiple times to understand the details of the motivation, methods and results.
+2. software engineering is very important in data analysis.
+
+It helps you formulate and design a software package that is intended to "experiment" the different parameters, datasets, and visualize results in an end-to-end fashion. I probably refactored my code around 5-6 times this year, which was a great learning experience, but it took a lot of time. It helped me understand the scope of my projects and will hopefully be helpful down the road.
+
+3. it's easy to get stuck in a loop of feeling like "you're not going anywhere". 
+
+Research takes time and whether it's analyzing data, thinking of a math problem, understanding an experiment, or testing a computational model, it can become easy to think you're making no progress. It is extremely important to set mini-goals (e.g. weekly) on top of your milestone goals (e.g. monthly, or few months). You want to also allow yourself room to learn how to set these goals realistically. At the beginning, you'll think that you are capable of accomplish ABC...Z in one week. Most of the time, this ends up being overly optimistic. As you grow, you start to realize what is realistically accomplishable on a week-to-week basis. This helps you scope out each week and plan accordingly to make incremental progress.
+
+Even if your results don't pan out, this helps build a mindset of systematic thinking. You want to plan mini-experiments on your analysis that will provide you with the next step to pursue. "The analysis did not work the way you expect? Okay, then we probalby need to test these factors and visualize data over the next week. Okay if those factors will take too long, we should back up and clean up our approach."
 
 # Concepts
 ## 1. TVB vs Network Data Analysis
@@ -70,7 +82,7 @@ A core problem of deep learning is the amount of data required to train successf
 TVB at its core is a generative model of the brain that utilizes realistic brain geometry, connectivity and clinical hypotheses to simulate electrophysiological signals. Based on the model placed into TVB, it can generate different patterns of behavior, or in our case, epileptic seizures. This is extremely important because as a scientist, you can control the variables to produce different types of data, but all demonstrating epileptic seizing. This hypothetically would give you a huge amount of variable data, that has ground truth set by you, and also only require computing power to simulate. It is not constrained by medical procedures and could help in generating data that deep learning models can learn from for each patient BEFORE surgery. This could help establish a completely in-silico pipeline for helping clinicians make informed decisions and hypotheses before the patient is operated on.
 
 # Conclusions / Future Considerations
-
+TBD: Returning to JHU...
 
 ### References:
 1. http://www.thevirtualbrain.org/tvb/
