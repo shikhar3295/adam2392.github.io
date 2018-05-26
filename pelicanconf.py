@@ -78,7 +78,7 @@ MENUITEMS = (("Blog", "/categories.html"),
              ("Tags", "/tags.html"),
              # ("Blog", "/blog.html"),
              # ("Gallery", "/gallery.html"),
-             ("Curriculum Vitae", "/pdfs/AdamLi_CVFellowships.pdf"),)
+             ("Curriculum Vitae", "/pdfs/AdamLi_CV.pdf"),)
 
 # MENUITEMS = (("Blog", [
 #               ("Blog", "/blog.html"),
