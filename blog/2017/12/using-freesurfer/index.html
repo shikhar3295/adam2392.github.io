@@ -170,6 +170,7 @@ recon-all -i &lt;data&gt;.nii -s &lt;subject_name&gt; -all
 <p>flirt -in patient_ct.nii -ref patient_mri.nii -omat patient_omat.mat -out patient_registered.nii.gz</p>
 <p>This command will coregister the CT data onto the domain of the MRI data and provide a coregistration for you to look at where certain contacts of electrodes are. You can also view in Freeview the different cuts of the brain using either CT, or MRI. </p>
 <h2>4. Getting Surface Parcellations</h2>
+<p>TBD</p>
 <h2>5. Getting SEEG XYZ Coordinates</h2>
 <p>Once you have CT images coregistered with MRI images, you can easily extract the locations of all iEEG contacts in the MRI axis system. This is done by noting a contact within each electrode (e.g. A1, B1, C10, etc.) and then an algorithm can fill in the entire electrode's xyz coordinates and output to a file.</p>
 <h1>References:</h1>
@@ -184,9 +185,9 @@ recon-all -i &lt;data&gt;.nii -s &lt;subject_name&gt; -all
     <ul>
         <li><a href="/blog/2017/09/simulating-tvb/">Simulating Epileptic iEEG Activity Using The Virtual Brain</a></li>
         <li><a href="/blog/2018/06/whitaker-summary-experience/">Using The Virtual Brain to Understand Algorithms</a></li>
-        <li><a href="/blog/2017/09/fundamental-computational-modeling/">Important Concepts for Computational Modeling</a></li>
-        <li><a href="/blog/2017/09/fundamental-papers/">Important Papers for Fundamentals in Computational Neuroscience / Data Science</a></li>
         <li><a href="/blog/2017/08/doctoral-board-oral/">Doctoral Board Oral Exam (PhD)</a></li>
+        <li><a href="/blog/2017/09/fundamental-papers/">Important Papers for Fundamentals in Computational Neuroscience / Data Science</a></li>
+        <li><a href="/blog/2017/09/fundamental-computational-modeling/">Important Concepts for Computational Modeling</a></li>
     </ul>
 </section>
         </article>
