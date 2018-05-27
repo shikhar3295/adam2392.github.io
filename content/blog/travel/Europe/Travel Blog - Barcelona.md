@@ -81,7 +81,6 @@ https://xceed.me/blog/en/best-night-clubs-in-barcelona/
 
 #### 2. Pacha Nightclub
 
-
 #### 3. Shoko Nightclub
 
 #### 4. Gothic Quarter

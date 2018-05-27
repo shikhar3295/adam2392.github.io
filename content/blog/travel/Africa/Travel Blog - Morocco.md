@@ -11,9 +11,24 @@ Summary: A summary of how to visit Morocco and get the most out of your trip.
 
 - General Suggestions
     - Important Links
+            - If you need airbnb \(you'll get a free $40 off\):
+            - If you need uber \(you'll get a free ride!\):
+            - If you need taxify \(you'll get a free $5 off!\):
     - Airports
+            - 1. Casablanca Airport \(CMN\)
+            - 2. Marrakesh Menara Airport \(RAK\)
+            - 3. Tangier Airport \(TNG\)
     - Sights
+        - Casablanca
+            - 1. Hassan II Mosque
+            - 2. Quartier Tabous
+        - Marrakesh
+            - Jemaa El Fna
+            - Ouzoud Waterfall
     - Food
+            - 1. Tangine
+            - 2. Bazaar Cafe
+            - 3. Roti D'or
     - Nightlife/Drinking
     - Getting Around
 - FAQ
@@ -49,6 +64,7 @@ TBD
 ## Sights
 ### Casablanca
 #### 1. Hassan II Mosque
+A big mosque that is next to the ocean. Not a bad place! Make sure you wear appropriate clothing.
 
 #### 2. Quartier Tabous
 The main souk of Casablanca. It's not that big compared to 
@@ -63,7 +79,6 @@ Please ignore any of the locals with monkeys chained up. They steal monkeys from
 This is a tremendous sight 3 hours drive away from Marrakesh. You can book excursions here through tripadvisor, or viator. I only paid about 40 euros per person.
 
 There are wild monkeys here, Berber locals and an amazing waterfall. There are plenty of restaurants and local shops that you can buy souvenirs from.
-
 
 ## Food
 I highly recommend asking your hotel/airbnb hosts about these things, or checking out tripadvisor. Morocco is not advanced like most US/EU cities, so you have to really explore and be comfortable trying new things.

@@ -24,6 +24,8 @@ Summary: A summary of how to visit London and get the most out of your trip.
         - 2. Buckingham Palace / Big Ben
         - 3. Millenium Bridge / Tower Bridge
         - 4. Cambridge
+        - 5. Tate Museum
+        - 6. National Gallery Museum
     - Food
         - 1. Lanzhou LaMian Noodle:
         - 2. Burger and Lobster:
@@ -31,7 +33,6 @@ Summary: A summary of how to visit London and get the most out of your trip.
         - 4.
     - Nightlife/Drinking
         - 1. Mr. Fogg's Residence
-        - 2. Ministry of Sound
     - Getting Around
 
 <!-- /MarkdownTOC -->
@@ -85,6 +86,12 @@ You get there via Greater Anglia train for 1.5 hrs. Once there, you can go see:
 - Univ. of Cambridge (imo the coolest part because it is such a historical university)
 - The River Cam
 
+#### 5. Tate Museum
+A very cool modern art museum.
+
+#### 6. National Gallery Museum
+A lot of good art ranging from portraits, impressionism and post-impressionism.
+
 ## Food
 Here, I briefly describe a couple of food places that are worth the HYPE. For locations, just use google, or yelp. London has a ridiculous amount of people, so if you have 3+ people, I would highly recommend trying to make reservations in advance.
 
@@ -103,7 +110,7 @@ Great fried chicken place that is actually really healthy formulas for the fact 
 #### 1. Mr. Fogg's Residence
 Great speak-easy looking place! Serves some interesting drinks, but can get quite pricey.
 
-#### 2. Ministry of Sound
+<!-- #### 2. Ministry of Sound -->
 
 
 ## Getting Around
