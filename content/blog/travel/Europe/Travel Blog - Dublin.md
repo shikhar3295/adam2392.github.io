@@ -5,7 +5,6 @@ Tags: travel, europe, ireland, dublin
 Slug: travel-dublin
 Authors: Adam Li
 Summary: A summary of how to visit Dublin and get the most out of your trip.
-status: draft 
 
 # Europe - Dublin, Ireland
 <!-- MarkdownTOC -->
@@ -19,15 +18,11 @@ status: draft
         - 1. Dublin Airport
     - Sights
         - 1. Guiness St. James Gate Brewery
-        - 2. The Book of Kells
-        - 3. Jameson Distillery
+        - 2. Jameson Distillery
     - Food
-        - 1. Tang Cafe
-        - 2.
-        - 3.
+        - 1. Klaw
     - Nightlife/Drinking
         - 1. Temple Bar
-        - 2.
     - Getting Around
 
 <!-- /MarkdownTOC -->
@@ -44,33 +39,26 @@ status: draft
 
 ## Airports
 #### 1. Dublin Airport 
+Big international airport that you can get RT bus tickets to the city for 12 euros. It takes about 30-40 minutes and runs pretty frequently.
 
+Note that I only spent 2 days here, and I think it's not worth anymore then that, unless you are planning daytrips from Dublin!
 
 ## Sights
 #### 1. Guiness St. James Gate Brewery
+Self-explanatory and a must-see. There's a sick panoramic view at the top with a free beer waiting for you with the purchase of the tour ticket.
 
-#### 2. The Book of Kells
-Sex shows, prostitutes in windows, sex shops and a very red lit district.
-
-#### 3. Jameson Distillery
-
+#### 2. Jameson Distillery
+Also self-explanatory. You get to do a tasting of different types of whiskey, bourbon and scotch! 
 
 ## Food
-Here, I briefly describe a couple of food places that are worth the HYPE. For locations, just use google, or yelp.
+Here, I briefly describe a couple of food places that are worth the HYPE. For locations, just use google, or tripadvisor.
 
-#### 1. Tang Cafe
-
-#### 2. 
-
-#### 3.
+#### 1. Klaw
+Sick seafood restaurant. Very small, so don't be surprised if you have to wait! I got the lobster roll and pasta with mussels. Fantastic.
 
 ## Nightlife/Drinking
 #### 1. Temple Bar
-There is live music every night and this area (i.e. Temple Street) is always lively and busy.
-
-#### 2. 
+There is live music every night and this area (i.e. Temple Street) is always lively and busy. Pop into different bars and get some Guiness!
 
 ## Getting Around
-You can definitely use the tram/bus system in Amsterdam! I recommend buying the multi-day passes. 
-
-Another option is completely walking the city (uhh), or renting a bike and getting around like the locals do.
+You can definitely use the tram/bus system here! The overall city isn't that big, so you can honestly just walk everywhere.
