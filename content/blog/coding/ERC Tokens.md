@@ -171,3 +171,4 @@ You can create an ethereum mnemonic and set it, so your providers can see it wit
 1. https://medium.com/@ConsenSys/a-101-noob-intro-to-programming-smart-contracts-on-ethereum-695d15c1dab4
 2. https://medium.com/@mvmurthy/full-stack-hello-world-voting-ethereum-dapp-tutorial-part-1-40d2d0d807c2
 3. http://truffleframework.com/docs/getting_started/project#exploring-the-project
+4. https://www.pubnub.com/blog/testing-and-deploying-an-ethereum-token-part-2/

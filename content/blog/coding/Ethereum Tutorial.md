@@ -91,4 +91,4 @@ For example, Golem
 # References:
 1. https://medium.com/@ConsenSys/a-101-noob-intro-to-programming-smart-contracts-on-ethereum-695d15c1dab4
 2. https://medium.com/@mvmurthy/full-stack-hello-world-voting-ethereum-dapp-tutorial-part-1-40d2d0d807c2
-3. 
+3. https://www.pubnub.com/blog/testing-and-deploying-an-ethereum-token-part-2/
