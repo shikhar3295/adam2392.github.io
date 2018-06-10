@@ -1,5 +1,218 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Adam Li - Adam Li</title><link href="/" rel="alternate"></link><link href="/feeds/adam-li.atom.xml" rel="self"></link><id>/</id><updated>2018-06-02T00:00:00-04:00</updated><entry><title>Travel - Nice</title><link href="/blog/2018/06/travel-nice/" rel="alternate"></link><published>2018-06-02T00:00:00-04:00</published><updated>2018-06-02T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2018-06-02:/blog/2018/06/travel-nice/</id><summary type="html">&lt;p&gt;A summary of how to visit Nice and get the most out of your trip.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Europe - Nice, France&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Adam Li - Adam Li</title><link href="/" rel="alternate"></link><link href="/feeds/adam-li.atom.xml" rel="self"></link><id>/</id><updated>2018-06-10T00:00:00-04:00</updated><entry><title>Setting Up ERC Standard Tokens</title><link href="/blog/2018/06/setup-erc-token/" rel="alternate"></link><published>2018-06-10T00:00:00-04:00</published><updated>2018-06-10T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2018-06-10:/blog/2018/06/setup-erc-token/</id><summary type="html">&lt;p&gt;A short walkthrough of setting up an ethereum token.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Getting Setup with Ethereum&lt;/h1&gt;
+&lt;h1&gt;By: Adam Li&lt;/h1&gt;
+&lt;h3&gt;Table of Contents&lt;/h3&gt;
+&lt;!-- MarkdownTOC --&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Installation&lt;/li&gt;
+&lt;li&gt;Set Up&lt;ul&gt;
+&lt;li&gt;
+&lt;ol&gt;
+&lt;li&gt;Creating Your Project Directory&lt;/li&gt;
+&lt;li&gt;1b. Project Directory&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ol&gt;
+&lt;li&gt;Contracts and FrontEnd&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Implementation&lt;ul&gt;
+&lt;li&gt;ERC Standards&lt;ul&gt;
+&lt;li&gt;
+&lt;ol&gt;
+&lt;li&gt;ERC20&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ol&gt;
+&lt;li&gt;ERC721&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Testing&lt;ul&gt;
+&lt;li&gt;
+&lt;ol&gt;
+&lt;li&gt;Remix (http://remix.ethereum.org/)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ol&gt;
+&lt;li&gt;Ropsten Test Network (https://ropsten.etherscan.io )&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ol&gt;
+&lt;li&gt;Javascript Truffle Tests&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ol&gt;
+&lt;li&gt;Metamask and Ganache&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Deployment&lt;ul&gt;
+&lt;li&gt;
+&lt;ol&gt;
+&lt;li&gt;truffle.js (http://truffleframework.com/docs/advanced/configuration)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ol&gt;
+&lt;li&gt;Crowdsalable Ethereum Token&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;References:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- /MarkdownTOC --&gt;
+
+&lt;p&gt;pragma solidity ^0.4.18;
+web3@1.0.0-beta.27
+truffle@4.0.4 
+solc@0.4.19 
+ethereumjs-testrpc@6.0.3 &lt;/p&gt;
+&lt;h1&gt;Installation&lt;/h1&gt;
+&lt;p&gt;The following packages need to be installed for a test time environment:
+&lt;em&gt; testrpc
+&lt;/em&gt; web3js
+&lt;em&gt; solc
+&lt;/em&gt; truffle&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;npm install ethereumjs-testrpc web3
+npm install solc
+npm install -g truffle
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;Testrpc is an in-memory blockchain that can be used to test the development of the application.&lt;/li&gt;
+&lt;li&gt;Web3 is essentially the web interface with the backend and frontend.&lt;/li&gt;
+&lt;li&gt;Solc is a solidity code compiler&lt;/li&gt;
+&lt;li&gt;Truffle is a web framework for building dAPPs using Ethereum&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Set Up&lt;/h1&gt;
+&lt;h2&gt;1. Creating Your Project Directory&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir MyToken &amp;amp;&amp;amp; cd MyToken
+truffle init
+npm init -y
+npm install -E zeppelin-solidity
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This will install zeppelin-solidity for testing code and initialize your project directory using truffle.s&lt;/p&gt;
+&lt;h3&gt;1b. Project Directory&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;contracts: this is your directory for any solidity contracts&lt;/li&gt;
+&lt;li&gt;migrations: this is your directory for scriptable deployment files (how do we want to release the functionality of our entire project?)&lt;/li&gt;
+&lt;li&gt;test: for testing your entire application&lt;/li&gt;
+&lt;li&gt;truffle.js: a configuration file for truffle&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;2. Contracts and FrontEnd&lt;/h2&gt;
+&lt;p&gt;Next, you need to implement your contracts and frontend to create your unique token(s).&lt;/p&gt;
+&lt;h1&gt;Implementation&lt;/h1&gt;
+&lt;h2&gt;ERC Standards&lt;/h2&gt;
+&lt;h3&gt;1. ERC20&lt;/h3&gt;
+&lt;p&gt;Requirements for it are:
+- The Token’s Name
+- The Token’s Symbol
+- The Token’s Decimal Places
+- The Number of Tokens in Circulation
+- balanceOf 
+- allowance
+- approve 
+- transferFrom&lt;/p&gt;
+&lt;p&gt;It also defines two events: Transfer and Approval .&lt;/p&gt;
+&lt;h3&gt;2. ERC721&lt;/h3&gt;
+&lt;p&gt;These are tokens that are non-fungible. One token does not necessarily equal another. It is slightly more complicated then the erc20 token.&lt;/p&gt;
+&lt;p&gt;The standard defines the functions:
+- name 
+- symbol 
+- totalSupply 
+- balanceOf 
+- ownerOf 
+- approve 
+- takeOwnership 
+- transfer 
+- tokenOfOwnerByIndex
+- tokenMetadata &lt;/p&gt;
+&lt;p&gt;It also defines two events: Transfer and Approval .&lt;/p&gt;
+&lt;h1&gt;Testing&lt;/h1&gt;
+&lt;h2&gt;1. Remix (http://remix.ethereum.org/)&lt;/h2&gt;
+&lt;p&gt;You can test using a web tool (solidity online compiler), hosted by the Ethereum foundation: http://remix.ethereum.org/.&lt;/p&gt;
+&lt;p&gt;You can easily test contract functionality, but beware you can't test your whole dapp functionality, so there could be bugs in synchronizing the front/back end with the contracts.&lt;/p&gt;
+&lt;h2&gt;2. Ropsten Test Network (https://ropsten.etherscan.io )&lt;/h2&gt;
+&lt;p&gt;Using remix, or another tool to deploy your contract, you can check basic outputs here on the test network.&lt;/p&gt;
+&lt;h2&gt;3. Javascript Truffle Tests&lt;/h2&gt;
+&lt;p&gt;These will be customized test suites that you write in the truffle directory.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;npm i ethereumjs-tx
+truffle develop
+truffle(develop)&amp;gt; test
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This command will install the ethereum-tx package, boot a test blockchain using truffle and then run all tests within "/test/" directory.&lt;/p&gt;
+&lt;h2&gt;4. Metamask and Ganache&lt;/h2&gt;
+&lt;p&gt;This is a blockchain utility web app that can run in your web2.0 browser. It can help debug your entire dapp.&lt;/p&gt;
+&lt;p&gt;Ganache is a personal Ethereum development network that runs on your computer.  Using Ganache you can quickly see how your application affects the blockchain, and introspect details like your accounts, balances, contract creations and gas costs. &lt;/p&gt;
+&lt;h1&gt;Deployment&lt;/h1&gt;
+&lt;h2&gt;1. truffle.js (http://truffleframework.com/docs/advanced/configuration)&lt;/h2&gt;
+&lt;p&gt;Inside your truffle.js file, you'll find the line module.exports. You can modify the contents of this json object, to manage your deployment testing.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;networks: Specifies which networks are available for deployment during migrations, as well as specific transaction parameters when interacting with each network (such as gas price, from address, etc.). &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;name: development, test, ropste, live, etc.&lt;/li&gt;
+&lt;li&gt;(options): gas, gasPrice, from, provider&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;providers: Specifies the local test network. Make sure you wrap truffle-hdwallet providers in a function closure as shown below to ensure that only one network is ever connected at a time.&lt;/p&gt;
+&lt;p&gt;networks: {
+  ropsten: {
+    provider: function() {
+      return new HDWalletProvider(mnemonic, "https://ropsten.infura.io/");
+    },
+    network_id: '3',
+  },
+  test: {
+    provider: function() {
+      return new HDWalletProvider(mnemonic, "http://127.0.0.1:8545/");
+    },
+    network_id: '*',
+  },
+}&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;contracts_build_directory: for where to build the contracts into byte code.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;mocha: configuration options for mochajs testing framework.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can create an ethereum mnemonic and set it, so your providers can see it within the config file. Here is an example of &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;truffle migrate --network ropsten
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;2. Crowdsalable Ethereum Token&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir crowdsalable-eth-token &amp;amp;&amp;amp; cd crowdsalable-eth-token
+truffle unbox git@github.com:ajb413/crowdsalable-eth-token.git
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;References:&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;https://medium.com/@ConsenSys/a-101-noob-intro-to-programming-smart-contracts-on-ethereum-695d15c1dab4&lt;/li&gt;
+&lt;li&gt;https://medium.com/@mvmurthy/full-stack-hello-world-voting-ethereum-dapp-tutorial-part-1-40d2d0d807c2&lt;/li&gt;
+&lt;li&gt;http://truffleframework.com/docs/getting_started/project#exploring-the-project&lt;/li&gt;
+&lt;/ol&gt;</content><category term="webdev"></category><category term="ethereum"></category><category term="javascript"></category><category term="blockchain"></category></entry><entry><title>Travel - Nice</title><link href="/blog/2018/06/travel-nice/" rel="alternate"></link><published>2018-06-02T00:00:00-04:00</published><updated>2018-06-02T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2018-06-02:/blog/2018/06/travel-nice/</id><summary type="html">&lt;p&gt;A summary of how to visit Nice and get the most out of your trip.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Europe - Nice, France&lt;/h1&gt;
 &lt;!-- MarkdownTOC --&gt;
 
 &lt;ul&gt;
