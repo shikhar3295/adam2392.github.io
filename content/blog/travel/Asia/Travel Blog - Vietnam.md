@@ -12,16 +12,18 @@ status: draft
 
 - General Suggestions
     - Important Links
-            - If you need airbnb \(you'll get a free $40 off\):
-            - If you need uber \(you'll get a free ride!\):
+        - If you need airbnb \(you'll get a free $40 off\):
+        - If you need uber \(you'll get a free ride!\):
     - Airports
-        - :
-            - 1.
-    - Sights
+        - 1. Hanoi Airport
+    - Hanoi:
+    - Halong Bay:
+    - Ninh Binh:
     - Food
-            - 1.
+        - 1.
     - Nightlife/Drinking
     - Getting Around
+    - Visa Into Vietnam
 - FAQ
 
 <!-- /MarkdownTOC -->
@@ -35,9 +37,18 @@ status: draft
 <a href="https://www.uber.com/invite/lffud">https://www.uber.com/invite/lffud</a>
 
 ## Airports
-### :
-#### 1. 
-## Sights
+#### 1. Hanoi Airport
+
+
+## Hanoi:
+
+
+## Halong Bay:
+
+
+## Ninh Binh:
+
+
 
 
 
@@ -52,6 +63,7 @@ Here, I briefly describe a couple of food places that are worth the HYPE. For lo
 
 ## Getting Around
 
+## Visa Into Vietnam
 
 # FAQ
 1. Q: How do I get around?

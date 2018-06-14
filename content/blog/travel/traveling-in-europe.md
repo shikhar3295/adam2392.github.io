@@ -12,10 +12,8 @@ Chase doesn't have any unfortunately.
 4. Make list of places I want to go:
 - look into swiss alps
 - look into iceland
-- portugal
 - cambridge, etc.
 - greece
-- nice
 - Jungfraujoch for half fare card
 
 Barclays United Kingdom (England, Scotland, Wales, Northern Ireland, Jersey, Guernsey and the Channel Islands)
