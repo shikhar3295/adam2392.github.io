@@ -789,7 +789,136 @@ A: Use uber, or the metro line.&lt;/li&gt;
 &lt;p&gt;This is an American style club that will probably play EDM/HipHop and is styled with an Asian theme. Pretty cool, and they also have a lot of bars around the area. There is a bar across the street from the entrance that has live music and cheap drinks for a 2 euro entrance fee!&lt;/p&gt;
 &lt;h2&gt;Getting Around&lt;/h2&gt;
 &lt;p&gt;You can definitely use the tram/bus system in Amsterdam! I recommend buying the multi-day passes. &lt;/p&gt;
-&lt;p&gt;Another option is completely walking the city (uhh), or renting a bike and getting around like the locals do.&lt;/p&gt;</content><category term="travel"></category><category term="europe"></category><category term="netherlands"></category><category term="amsterdam"></category></entry><entry><title>Travel - Switzerland</title><link href="/blog/2018/01/travel-switzerland/" rel="alternate"></link><published>2018-01-01T00:00:00-05:00</published><updated>2018-01-01T00:00:00-05:00</updated><author><name>Adam Li</name></author><id>tag:None,2018-01-01:/blog/2018/01/travel-switzerland/</id><summary type="html">&lt;p&gt;A summary of how to visit Switzerland and get the most out of your trip.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Europe - Switzerland&lt;/h1&gt;
+&lt;p&gt;Another option is completely walking the city (uhh), or renting a bike and getting around like the locals do.&lt;/p&gt;</content><category term="travel"></category><category term="europe"></category><category term="netherlands"></category><category term="amsterdam"></category></entry><entry><title>Setting Up Singularity Containers</title><link href="/blog/2018/01/setup-singularity/" rel="alternate"></link><published>2018-01-31T00:00:00-05:00</published><updated>2018-01-31T00:00:00-05:00</updated><author><name>Adam Li</name></author><id>tag:None,2018-01-31:/blog/2018/01/setup-singularity/</id><summary type="html">&lt;p&gt;A short walkthrough of setting up the Singularity containers&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Getting Setup with Singularity&lt;/h1&gt;
+&lt;h1&gt;By: Adam Li&lt;/h1&gt;
+&lt;h3&gt;Table of Contents&lt;/h3&gt;
+&lt;!-- MarkdownTOC --&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Installation&lt;/li&gt;
+&lt;li&gt;Setting Up A Tensorflow Container Recipe (Example):&lt;/li&gt;
+&lt;li&gt;
+&lt;ol&gt;
+&lt;li&gt;Needed Docker Containers:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ol&gt;
+&lt;li&gt;Environment / Setup&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ol&gt;
+&lt;li&gt;Post&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ol&gt;
+&lt;li&gt;Run Script&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ol&gt;
+&lt;li&gt;Test&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Common Commands&lt;/li&gt;
+&lt;li&gt;Conclusions&lt;/li&gt;
+&lt;li&gt;References:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- /MarkdownTOC --&gt;
+
+&lt;h1&gt;Installation&lt;/h1&gt;
+&lt;p&gt;To install singularity locally with root privelages, you can then build up containers that can be hosted online.&lt;/p&gt;
+&lt;h1&gt;Setting Up A Tensorflow Container Recipe (Example):&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nl"&gt;Bootstrap&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;docker&lt;/span&gt;
+&lt;span class="nl"&gt;From&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;tensorflow&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nl"&gt;tensorflow&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;latest&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;gpu&lt;/span&gt;
+&lt;span class="nf"&gt;%environment&lt;/span&gt;
+  &lt;span class="cp"&gt;# use bash as default shell&lt;/span&gt;
+  &lt;span class="n"&gt;SHELL&lt;/span&gt;&lt;span class="o"&gt;=/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bash&lt;/span&gt;
+  &lt;span class="k"&gt;export&lt;/span&gt; &lt;span class="n"&gt;SHELL&lt;/span&gt;
+&lt;span class="nf"&gt;%setup&lt;/span&gt;
+  &lt;span class="cp"&gt;# runs on host - the path to the image is $SINGULARITY_ROOTFS&lt;/span&gt;
+&lt;span class="nf"&gt;%post&lt;/span&gt;
+  &lt;span class="cp"&gt;# post-setup script&lt;/span&gt;
+  &lt;span class="cp"&gt;# load environment variables&lt;/span&gt;
+  &lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;environment&lt;/span&gt;
+  &lt;span class="cp"&gt;# use bash as default shell&lt;/span&gt;
+  &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;SHELL&lt;/span&gt;&lt;span class="o"&gt;=/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bash&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;environment&lt;/span&gt;
+  &lt;span class="cp"&gt;# make environment file executable&lt;/span&gt;
+  &lt;span class="n"&gt;chmod&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;environment&lt;/span&gt;
+  &lt;span class="cp"&gt;# default mount paths&lt;/span&gt;
+  &lt;span class="n"&gt;mkdir&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;scratch&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt; 
+  &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;load&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;extra&lt;/span&gt; &lt;span class="n"&gt;packages&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;
+  &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;update&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;locales&lt;/span&gt;
+  &lt;span class="n"&gt;locale&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;gen&lt;/span&gt; &lt;span class="n"&gt;en_US&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;UTF&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;
+  &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;wget&lt;/span&gt; &lt;span class="n"&gt;python3&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt; &lt;span class="n"&gt;python3&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pip&lt;/span&gt;
+  &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;clean&lt;/span&gt;
+  &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="n"&gt;libcupti&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt;
+  &lt;span class="n"&gt;pip3&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;upgrade&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt;
+  &lt;span class="n"&gt;pip3&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;keras&lt;/span&gt;
+  &lt;span class="n"&gt;pip3&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;numpy&lt;/span&gt; &lt;span class="n"&gt;scipy&lt;/span&gt; &lt;span class="n"&gt;scikit&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;learn&lt;/span&gt; &lt;span class="n"&gt;pandas&lt;/span&gt; &lt;span class="n"&gt;tensorboard&lt;/span&gt; &lt;span class="n"&gt;natsorted&lt;/span&gt; &lt;span class="n"&gt;tqdm&lt;/span&gt;
+&lt;span class="nf"&gt;%runscript&lt;/span&gt;
+  &lt;span class="cp"&gt;# executes with the singularity run command&lt;/span&gt;
+  &lt;span class="cp"&gt;# delete this section to use existing docker ENTRYPOINT command&lt;/span&gt;
+&lt;span class="nf"&gt;%test&lt;/span&gt;
+  &lt;span class="cp"&gt;# test that script is a success&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;1. Needed Docker Containers:&lt;/h2&gt;
+&lt;p&gt;The best thing to do is start off with a docker container that is already prebuilt. The nice thing is that for cloud computing with tensorflow-gpu, tensorflow is maintained on docker and up to date. &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Bootstrap&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Docker&lt;/span&gt;
+&lt;span class="n"&gt;From&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;tensorflow&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;tensorflow&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;latest&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;gpu&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Other options are:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Bootstrap&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;shub&lt;/span&gt;
+&lt;span class="n"&gt;From&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;2. Environment / Setup&lt;/h2&gt;
+&lt;p&gt;These are commands that can be used to export variables into the environment. Then you can run setup of files/variables before running any installations.&lt;/p&gt;
+&lt;h2&gt;3. Post&lt;/h2&gt;
+&lt;p&gt;This is the main area where your image will install different packages and load different environment variables.&lt;/p&gt;
+&lt;h2&gt;4. Run Script&lt;/h2&gt;
+&lt;p&gt;This will run a script afterwards, say a scientific experiment:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;python3 main.py --args
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;5. Test&lt;/h2&gt;
+&lt;p&gt;This will run test scripts to see that your "main.py" did what it was supposed to do. Were files saved? Were computations correct?&lt;/p&gt;
+&lt;h1&gt;Common Commands&lt;/h1&gt;
+&lt;p&gt;Pulling images, shelling into the image and executing the image with a script&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;singularity pull
+
+singularity shell
+
+singularity exec
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Common argument flags:
+&lt;em&gt; verbose mode(s): -v, -vv, -vvv
+&lt;/em&gt; debug mode: -d 
+&lt;em&gt; link nvidia driver &amp;amp; GPU: --nv
+&lt;/em&gt; binds an existing directory onto the image: -B&lt;/p&gt;
+&lt;p&gt;An example use case that runs a tensorflow simg and runs a training script:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;singularity exec --nv ./tensorflow.simg python main.py &lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;traindatadir&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt; &lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;testdatadir&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt; --output_data_dir &lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;outputdatadir&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt; --log_data_dir &lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;logdatadir&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt; --patient_to_loo &lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;patient&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt; --expname &lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;expname&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Conclusions&lt;/h1&gt;
+&lt;p&gt;This allows an end-to-end HPC/scientific computation analysis that uses Docker/Singularityhub to setup your system, and then runs setup, main scripts and testing to create a consistent output.&lt;/p&gt;
+&lt;h1&gt;References:&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;https://www.singularity-hub.org/&lt;/li&gt;
+&lt;li&gt;http://geekyap.blogspot.com/2016/11/docker-vs-singularity-vs-shifter-in-hpc.html&lt;/li&gt;
+&lt;li&gt;https://singularity.lbl.gov/docs-docker&lt;/li&gt;
+&lt;/ol&gt;</content><category term="cloud"></category><category term="singularity"></category><category term="python"></category><category term="hpc"></category><category term="tensorflow"></category><category term="deep-learning"></category></entry><entry><title>Travel - Switzerland</title><link href="/blog/2018/01/travel-switzerland/" rel="alternate"></link><published>2018-01-01T00:00:00-05:00</published><updated>2018-01-01T00:00:00-05:00</updated><author><name>Adam Li</name></author><id>tag:None,2018-01-01:/blog/2018/01/travel-switzerland/</id><summary type="html">&lt;p&gt;A summary of how to visit Switzerland and get the most out of your trip.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Europe - Switzerland&lt;/h1&gt;
 &lt;!-- MarkdownTOC --&gt;
 
 &lt;ul&gt;
@@ -1184,7 +1313,44 @@ Pitt Rivers Museum --&gt;
 &lt;!-- #### 2. Ministry of Sound --&gt;
 
 &lt;h2&gt;Getting Around&lt;/h2&gt;
-&lt;p&gt;You can definitely use the Underground, or just walk! UberX/Pool/Plus if necessary.&lt;/p&gt;</content><category term="travel"></category><category term="europe"></category><category term="UK"></category><category term="london"></category></entry><entry><title>Using FreeSurfer</title><link href="/blog/2017/12/using-freesurfer/" rel="alternate"></link><published>2017-12-07T00:00:00-05:00</published><updated>2017-12-07T00:00:00-05:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-12-07:/blog/2017/12/using-freesurfer/</id><summary type="html">&lt;p&gt;To guide the user in how to setup freesurfer correctly.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Questions&lt;/h1&gt;
+&lt;p&gt;You can definitely use the Underground, or just walk! UberX/Pool/Plus if necessary.&lt;/p&gt;</content><category term="travel"></category><category term="europe"></category><category term="UK"></category><category term="london"></category></entry><entry><title>Using FreeSurfer</title><link href="/blog/2017/12/using-freesurfer/" rel="alternate"></link><published>2017-12-07T00:00:00-05:00</published><updated>2017-12-07T00:00:00-05:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-12-07:/blog/2017/12/using-freesurfer/</id><summary type="html">&lt;p&gt;To guide the user in how to setup freesurfer correctly.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Necessary Tools&lt;/h1&gt;
+&lt;p&gt;Freesurfer, FSL, and MRtrix3 are the three main neuroimaging and registration softwares that you need to run a systematic data pipeline of neuroimaging data (i.e. CT, MRI, DWI).&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Freesurfer
+https://surfer.nmr.mgh.harvard.edu/fswiki/DownloadAndInstall&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;FreeSurfer is a software package for the analysis and visualization of structural and functional neuroimaging data from cross-sectional or longitudinal studies. &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;FSL
+https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;FSL is a comprehensive library of analysis tools for FMRI, MRI and DTI brain imaging data.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;MRtrix3
+http://mrtrix.readthedocs.io/en/latest/installation/mac_install.html&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;MRtrix3 is primarily intended to be used for the analysis of diffusion MRI data. In addition, at its fundamental level it is designed as a general-purpose library for the analysis of any type of MRI data. &lt;/p&gt;
+&lt;h1&gt;Data Processing Pipeline:&lt;/h1&gt;
+&lt;h2&gt;1. DWI Processing&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Process diffusion imaging data, by denoising the data, then preprocessing it, then applying bias correction and then estimating the response function.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$
+    dwidenoise &lt;/DTI_dicom_dir/&gt; &lt;dti_img_denoise.mif&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dwipreproc -rpe_none AP DTI_30_average-2_denoise.mif &amp;lt;dti_img_preproc_output.mif&amp;gt;
+
+dwibiascorrect &amp;lt;dti_img_preproc_output.mif&amp;gt; &amp;lt;dti_img_preproc_biascorrect_output.mif&amp;gt; –fsl
+
+dwi2response tournier &amp;lt;dti_img_preproc_biascorrect_output.mif&amp;gt; &amp;lt;dti_img_preproc_biascorrect_response.txt&amp;gt;
+
+dwi2fod csd DTI_30_average-2_denoise_preproc_biascorrected.mif DTI_30_average-2_denoise_preproc_biascorrected_response.txt DTI_30_average-2_denoise_preproc_biascorrected_fod.mif
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;$$&lt;/p&gt;
+&lt;h2&gt;2. T1 MRI Processing&lt;/h2&gt;
+&lt;h2&gt;3. (Optional) CT Processing&lt;/h2&gt;
+&lt;h2&gt;4. Connectome Generation&lt;/h2&gt;
 &lt;h1&gt;Background&lt;/h1&gt;
 &lt;p&gt;Freesurfer is a tool built for rendering 3D brains using MRI and Ct scans.&lt;/p&gt;
 &lt;p&gt;FSL is a tool for coregistration and image analysis.&lt;/p&gt;
@@ -1746,14 +1912,7 @@ Stratonovich integral =&amp;gt;&lt;/p&gt;
         "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="phd"></category><category term="journals"></category><category term="reviews"></category><category term="computational modeling"></category></entry><entry><title>Simulating Epileptic iEEG Activity Using The Virtual Brain</title><link href="/blog/2017/09/simulating-tvb/" rel="alternate"></link><published>2017-09-27T00:00:00-04:00</published><updated>2017-09-27T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-09-27:/blog/2017/09/simulating-tvb/</id><summary type="html">&lt;p&gt;To guide the simulation of Epileptic iEEG activity using TVB in Marseille, France.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Questions&lt;/h1&gt;
-&lt;p&gt;Using convolutional and recurrent neural networks, this paper showed that they could perform seizure detection as well as incidence detection (of some experimental marker). I am interested in the possibility of exploring how this algorithm might perform on simulated TVB data, which to my knowledge has not been done yet. I would be interested in seeing how this improves, or is similar to training on the real data.&lt;/p&gt;
-&lt;p&gt;Then I was going to see if I could extend this same network onto the fragility maps.&lt;/p&gt;
-&lt;p&gt;I was wondering:
-1. Would it be possible to get access to patient's SEEG data that has the SEEG xyz coordinates, and raw iEEG data? (n as big as can be)
-2. A problem with the previous paper was the unbalance of data in training (e.g. much less seizure starts, then non seizure instances). For TVB, is it possible to virtually ensure seizures happen at a certain rate if I simulated for say... 2 minutes, 100 times? So that we could have many instances of seizure occurence and could train on an equal set of seizure occurence and non seizure?
-3. Can TVB determine when the seizure occurred exactly in Epileptor time series?&lt;/p&gt;
-&lt;h1&gt;Background&lt;/h1&gt;
+&lt;/script&gt;</content><category term="phd"></category><category term="journals"></category><category term="reviews"></category><category term="computational modeling"></category></entry><entry><title>Simulating Epileptic iEEG Activity Using The Virtual Brain</title><link href="/blog/2017/09/simulating-tvb/" rel="alternate"></link><published>2017-09-27T00:00:00-04:00</published><updated>2017-09-27T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-09-27:/blog/2017/09/simulating-tvb/</id><summary type="html">&lt;p&gt;To guide the simulation of Epileptic iEEG activity using TVB in Marseille, France.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Background&lt;/h1&gt;
 &lt;p&gt;TVB is a platform for simulating whole-brain dynamics that starts from raw data involving:
     1. structural connectivity derived from DTI
     2. brain parcellation derived from MRI and CT
@@ -1762,20 +1921,33 @@ This will then determine a gain matrix to determine SEEG signals from the source
 &lt;p&gt;The neural mass models will be implemented with nonlinear, complex models for simulating certain type of electrophysiology. The Epileptor is used for simulating seizure activity from a specific source region. &lt;/p&gt;
 &lt;p&gt;The epileptor is a set of coupled differential equations that rely on 6 different variables. They are described here:&lt;/p&gt;
 &lt;h1&gt;Data &amp;amp; Metadata&lt;/h1&gt;
+&lt;p&gt;Generally, refer to my post on "Freesurfer" to establish the preprocessing data pipeline using Freesurfer, FSL and MRtrix3.&lt;/p&gt;
 &lt;p&gt;The minimum necessary requirements for creating the TVB dataset are a set of T1 and DWI images as a list of dicom files, or a single 4-D image nifti file.&lt;/p&gt;
 &lt;p&gt;A high level summary of how the pipeline proceeds is:
 1. Construct Cortical Surface, Subcortical Surface
-Using freesurfer, you can get the reconstructed surfaces, which are your files that outline the voxels that belong to each region of the brain.
-2. Construct Parcellation Scheme
-This can range from the default in freesurfer to different atlases available for the human brain.
-3. Construct Corticography Tracts
-First, you need to coregister the DWI images with the T1 scans&lt;/p&gt;
-&lt;p&gt;Using the DWI images, along with the reconstructed surfaces, you can count fiber tracts between each region of the brain and reconstruct the structural connectivity matrices. This is composed from the weights matrix and the length matrix between parcellated regions.
-4. Obtain Electrode Coordinates in T1 Space
-First, you need to coregister the CT reconstructed freesurfer file into the T1 space. &lt;/p&gt;
+Using freesurfer, you can get the reconstructed surfaces, which are your files that outline the voxels that belong to each region of the brain. This will give you the surface geometries of the cortical and subcortical surface.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Construct Parcellation Scheme
+This can range from the default in freesurfer to different atlases available for the human brain. This will give you a region mapping for every vertex/face from your cortical/subcortical surface geometries files.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Construct Corticography Tracts
+First, you need to coregister the DWI images with the T1 scans&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
+&lt;p&gt;Using the DWI images, along with the reconstructed surfaces, you can count fiber tracts between each region of the brain and reconstruct the structural connectivity matrices. This is composed from the weights matrix and the length matrix between parcellated regions.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Obtain Electrode Coordinates in T1 Space
+First, you need to coregister the CT reconstructed freesurfer file into the T1 space. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Computing Gain Matrix Between Brain Regions and Electrodes
+In order to compute forward solutions of electrode (i.e. SEEG, ECoG, etc.) activity, you need to compute a gain matrix that transforms region activity into electrode activity. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This can be done using an inverse-square method fall-off on the region activity, or using a dipole method as outlined in the "Virtual Epileptic Patient" paper.&lt;/p&gt;
 &lt;h1&gt;Implementation&lt;/h1&gt;
 &lt;h2&gt;1. Setting Up Environment&lt;/h2&gt;
 &lt;p&gt;First you may want to set up a conda environment, or a virtualenv that will separate the entire python project from your normal OS.&lt;/p&gt;
@@ -1819,44 +1991,68 @@ python -m ipykernel install --name tridesclous-testing —user
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;h2&gt;1c. Using Docker / Singularity&lt;/h2&gt;
+&lt;p&gt;TBD&lt;/p&gt;
 &lt;h2&gt;2. Simulating Epilepsy&lt;/h2&gt;
 &lt;p&gt;In order to simulate epilepsy, you are going to walk through a pipeline using TVB. &lt;/p&gt;
-&lt;p&gt;i. Structural Connectivity&lt;/p&gt;
-&lt;p&gt;ii. Neural Mass Model&lt;/p&gt;
-&lt;p&gt;iii. Integrators&lt;/p&gt;
-&lt;p&gt;iv. Monitors&lt;/p&gt;
-&lt;p&gt;Then once these are complete, you can run your simulation.&lt;/p&gt;</content><category term="data analysis"></category><category term="eeg"></category><category term="phd"></category><category term="computational modeling"></category></entry><entry><title>Important Papers for Fundamentals in Computational Neuroscience / Data Science</title><link href="/blog/2017/09/fundamental-papers/" rel="alternate"></link><published>2017-09-25T00:00:00-04:00</published><updated>2017-09-25T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-09-25:/blog/2017/09/fundamental-papers/</id><summary type="html">&lt;p&gt;To keep a log of important papers I read about and how they are relevant.&lt;/p&gt;</summary><content type="html">&lt;!-- MarkdownTOC --&gt;
+&lt;p&gt;i. Structural Connectivity
+Ex: Connectivity weights, conduction speed, coupling function between long-range regions&lt;/p&gt;
+&lt;p&gt;ii. Neural Mass Model
+Ex: Epileptor6D, with parameter settings&lt;/p&gt;
+&lt;p&gt;iii. Integrators
+Ex: Heunstochastic, with noise levels&lt;/p&gt;
+&lt;p&gt;iv. Monitors
+Ex: State variables, iEEG activity from sampling rate and period.&lt;/p&gt;
+&lt;p&gt;Then once these are complete, you can run your simulation.&lt;/p&gt;
+&lt;h2&gt;References:&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;https://github.com/the-virtual-brain/tvb-library&lt;/li&gt;
+&lt;li&gt;https://github.com/the-virtual-brain/tvb-epilepsy&lt;/li&gt;
+&lt;li&gt;https://www.thevirtualbrain.org/tvb/zwei&lt;/li&gt;
+&lt;/ol&gt;</content><category term="data analysis"></category><category term="eeg"></category><category term="phd"></category><category term="computational modeling"></category></entry><entry><title>Important Papers for Fundamentals in Computational Neuroscience / Data Science</title><link href="/blog/2017/09/fundamental-papers/" rel="alternate"></link><published>2017-09-25T00:00:00-04:00</published><updated>2017-09-25T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-09-25:/blog/2017/09/fundamental-papers/</id><summary type="html">&lt;p&gt;To keep a log of important papers I read about and how they are relevant.&lt;/p&gt;</summary><content type="html">&lt;!-- MarkdownTOC --&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Papers&lt;ul&gt;
 &lt;li&gt;
 &lt;ol&gt;
 &lt;li&gt;Wilson-Cowan Neural Mass Model&lt;/li&gt;
+&lt;li&gt;Summary / Conclusions:&lt;/li&gt;
+&lt;li&gt;Important Notes:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;ol&gt;
 &lt;li&gt;Kalman Filter Model&lt;/li&gt;
+&lt;li&gt;Summary / Conclusions:&lt;/li&gt;
+&lt;li&gt;Important Notes:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;ol&gt;
 &lt;li&gt;Expectation Maximization&lt;/li&gt;
+&lt;li&gt;Summary / Conclusions:&lt;/li&gt;
+&lt;li&gt;Important Notes:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;ol&gt;
 &lt;li&gt;Information Bottleneck Method&lt;/li&gt;
+&lt;li&gt;Summary / Conclusions:&lt;/li&gt;
+&lt;li&gt;Important Notes:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;ol&gt;
 &lt;li&gt;Opening the Black Box of Deep Neural Networks Via Information&lt;/li&gt;
+&lt;li&gt;Summary / Conclusions:&lt;/li&gt;
+&lt;li&gt;Important Notes:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;ol&gt;
 &lt;li&gt;Reinforcement Learning: An Overview&lt;/li&gt;
+&lt;li&gt;Summary / Conclusions:&lt;/li&gt;
+&lt;li&gt;Important Notes:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -1867,6 +2063,8 @@ python -m ipykernel install --name tridesclous-testing —user
 &lt;li&gt;
 &lt;ol&gt;
 &lt;li&gt;Variational Inference:&lt;/li&gt;
+&lt;li&gt;Summary / Conclusions&lt;/li&gt;
+&lt;li&gt;Important Notes&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -3015,13 +3213,11 @@ http://duncanlock.net/blog/2013/05/29/better-figures-images-plugin-for-pelican/&
 &lt;/li&gt;
 &lt;li&gt;&lt;a href="#tips"&gt;Tips&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="#1-starting-up-your-venv"&gt;1. Starting up your Venv&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#2-working-on-tvb-with-venv"&gt;2. Working on TVB with Venv&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#3-requirementstxt"&gt;3. Requirements.txt&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#2-requirementstxt"&gt;2. Requirements.txt&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href="#convenient-tools"&gt;Convenient Tools&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="#1-automatically-cd-to-project-directory"&gt;1. Automatically cd To Project Directory&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#2"&gt;2.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href="#references"&gt;References:&lt;/a&gt;&lt;/li&gt;
@@ -3046,8 +3242,22 @@ VirtualEnvWrapper&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;inside your project directory.&lt;/p&gt;
-&lt;p&gt;You can also run 'mkvirtualenv -p python3', or 'virtualenv -p python3' to make the virtual environment with a specific python installation (e.g. 2.7, or 3.4).&lt;/p&gt;
+&lt;p&gt;inside your project directory. or&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkvirtualenv -p python3
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;or&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;virtualenv -p python3
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;to make the virtual environment with a specific python installation (e.g. 2.7, or 3.4). With python3.6 and most of the recent versions, the virtualenvironment is built in, so you can just run&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;python3 -m venv &amp;lt;name_of_venv&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;which is great because it handles it for you.&lt;/p&gt;
 &lt;h2&gt;2. Delete a Virtualenv&lt;/h2&gt;
 &lt;p&gt;For Virtualenvwrappper: In order to delete a virtual environment, all you need to do is to remove it recursively from your ~/.virtualenvs directory with    &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;#39;sudo rm -rf &amp;lt;name&amp;gt;&amp;#39;.
@@ -3062,9 +3272,7 @@ VirtualEnvWrapper&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h2&gt;2. Working on TVB with Venv&lt;/h2&gt;
-&lt;p&gt;TBD.&lt;/p&gt;
-&lt;h2&gt;3. Requirements.txt&lt;/h2&gt;
+&lt;h2&gt;2. Requirements.txt&lt;/h2&gt;
 &lt;p&gt;This is a convenient file for you to make that keeps track of all your packages. If you ever want to run your project on a new computer, you just create a new virtual environment and run:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install -r requirements.txt
 &lt;/pre&gt;&lt;/div&gt;
@@ -3103,7 +3311,6 @@ VirtualEnvWrapper&lt;/p&gt;
 
 &lt;p&gt;Make sure you change 'root_dir' to the correct root directory of your projects. &lt;/p&gt;
 &lt;p&gt;This assumes that your project directory files are all correspondingly named with your virtualenv. This is convenient for changing directory into your project directory automatically.&lt;/p&gt;
-&lt;h2&gt;2.&lt;/h2&gt;
 &lt;h1&gt;References:&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;https://nolar.info/automatically-activate-virtualenv-on-cd/&lt;/li&gt;

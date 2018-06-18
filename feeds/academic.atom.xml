@@ -92,7 +92,44 @@
 &lt;li&gt;http://www.thevirtualbrain.org/tvb/&lt;/li&gt;
 &lt;li&gt;https://ieeexplore.ieee.org/document/7963378/&lt;/li&gt;
 &lt;li&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><category term="tvb"></category><category term="phd"></category></entry><entry><title>Using FreeSurfer</title><link href="/blog/2017/12/using-freesurfer/" rel="alternate"></link><published>2017-12-07T00:00:00-05:00</published><updated>2017-12-07T00:00:00-05:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-12-07:/blog/2017/12/using-freesurfer/</id><summary type="html">&lt;p&gt;To guide the user in how to setup freesurfer correctly.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Questions&lt;/h1&gt;
+&lt;/ol&gt;</content><category term="tvb"></category><category term="phd"></category></entry><entry><title>Using FreeSurfer</title><link href="/blog/2017/12/using-freesurfer/" rel="alternate"></link><published>2017-12-07T00:00:00-05:00</published><updated>2017-12-07T00:00:00-05:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-12-07:/blog/2017/12/using-freesurfer/</id><summary type="html">&lt;p&gt;To guide the user in how to setup freesurfer correctly.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Necessary Tools&lt;/h1&gt;
+&lt;p&gt;Freesurfer, FSL, and MRtrix3 are the three main neuroimaging and registration softwares that you need to run a systematic data pipeline of neuroimaging data (i.e. CT, MRI, DWI).&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Freesurfer
+https://surfer.nmr.mgh.harvard.edu/fswiki/DownloadAndInstall&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;FreeSurfer is a software package for the analysis and visualization of structural and functional neuroimaging data from cross-sectional or longitudinal studies. &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;FSL
+https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;FSL is a comprehensive library of analysis tools for FMRI, MRI and DTI brain imaging data.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;MRtrix3
+http://mrtrix.readthedocs.io/en/latest/installation/mac_install.html&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;MRtrix3 is primarily intended to be used for the analysis of diffusion MRI data. In addition, at its fundamental level it is designed as a general-purpose library for the analysis of any type of MRI data. &lt;/p&gt;
+&lt;h1&gt;Data Processing Pipeline:&lt;/h1&gt;
+&lt;h2&gt;1. DWI Processing&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Process diffusion imaging data, by denoising the data, then preprocessing it, then applying bias correction and then estimating the response function.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$
+    dwidenoise &lt;/DTI_dicom_dir/&gt; &lt;dti_img_denoise.mif&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dwipreproc -rpe_none AP DTI_30_average-2_denoise.mif &amp;lt;dti_img_preproc_output.mif&amp;gt;
+
+dwibiascorrect &amp;lt;dti_img_preproc_output.mif&amp;gt; &amp;lt;dti_img_preproc_biascorrect_output.mif&amp;gt; –fsl
+
+dwi2response tournier &amp;lt;dti_img_preproc_biascorrect_output.mif&amp;gt; &amp;lt;dti_img_preproc_biascorrect_response.txt&amp;gt;
+
+dwi2fod csd DTI_30_average-2_denoise_preproc_biascorrected.mif DTI_30_average-2_denoise_preproc_biascorrected_response.txt DTI_30_average-2_denoise_preproc_biascorrected_fod.mif
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;$$&lt;/p&gt;
+&lt;h2&gt;2. T1 MRI Processing&lt;/h2&gt;
+&lt;h2&gt;3. (Optional) CT Processing&lt;/h2&gt;
+&lt;h2&gt;4. Connectome Generation&lt;/h2&gt;
 &lt;h1&gt;Background&lt;/h1&gt;
 &lt;p&gt;Freesurfer is a tool built for rendering 3D brains using MRI and Ct scans.&lt;/p&gt;
 &lt;p&gt;FSL is a tool for coregistration and image analysis.&lt;/p&gt;
@@ -274,14 +311,7 @@ Stratonovich integral =&amp;gt;&lt;/p&gt;
         "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="phd"></category><category term="journals"></category><category term="reviews"></category><category term="computational modeling"></category></entry><entry><title>Simulating Epileptic iEEG Activity Using The Virtual Brain</title><link href="/blog/2017/09/simulating-tvb/" rel="alternate"></link><published>2017-09-27T00:00:00-04:00</published><updated>2017-09-27T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-09-27:/blog/2017/09/simulating-tvb/</id><summary type="html">&lt;p&gt;To guide the simulation of Epileptic iEEG activity using TVB in Marseille, France.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Questions&lt;/h1&gt;
-&lt;p&gt;Using convolutional and recurrent neural networks, this paper showed that they could perform seizure detection as well as incidence detection (of some experimental marker). I am interested in the possibility of exploring how this algorithm might perform on simulated TVB data, which to my knowledge has not been done yet. I would be interested in seeing how this improves, or is similar to training on the real data.&lt;/p&gt;
-&lt;p&gt;Then I was going to see if I could extend this same network onto the fragility maps.&lt;/p&gt;
-&lt;p&gt;I was wondering:
-1. Would it be possible to get access to patient's SEEG data that has the SEEG xyz coordinates, and raw iEEG data? (n as big as can be)
-2. A problem with the previous paper was the unbalance of data in training (e.g. much less seizure starts, then non seizure instances). For TVB, is it possible to virtually ensure seizures happen at a certain rate if I simulated for say... 2 minutes, 100 times? So that we could have many instances of seizure occurence and could train on an equal set of seizure occurence and non seizure?
-3. Can TVB determine when the seizure occurred exactly in Epileptor time series?&lt;/p&gt;
-&lt;h1&gt;Background&lt;/h1&gt;
+&lt;/script&gt;</content><category term="phd"></category><category term="journals"></category><category term="reviews"></category><category term="computational modeling"></category></entry><entry><title>Simulating Epileptic iEEG Activity Using The Virtual Brain</title><link href="/blog/2017/09/simulating-tvb/" rel="alternate"></link><published>2017-09-27T00:00:00-04:00</published><updated>2017-09-27T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-09-27:/blog/2017/09/simulating-tvb/</id><summary type="html">&lt;p&gt;To guide the simulation of Epileptic iEEG activity using TVB in Marseille, France.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Background&lt;/h1&gt;
 &lt;p&gt;TVB is a platform for simulating whole-brain dynamics that starts from raw data involving:
     1. structural connectivity derived from DTI
     2. brain parcellation derived from MRI and CT
@@ -290,20 +320,33 @@ This will then determine a gain matrix to determine SEEG signals from the source
 &lt;p&gt;The neural mass models will be implemented with nonlinear, complex models for simulating certain type of electrophysiology. The Epileptor is used for simulating seizure activity from a specific source region. &lt;/p&gt;
 &lt;p&gt;The epileptor is a set of coupled differential equations that rely on 6 different variables. They are described here:&lt;/p&gt;
 &lt;h1&gt;Data &amp;amp; Metadata&lt;/h1&gt;
+&lt;p&gt;Generally, refer to my post on "Freesurfer" to establish the preprocessing data pipeline using Freesurfer, FSL and MRtrix3.&lt;/p&gt;
 &lt;p&gt;The minimum necessary requirements for creating the TVB dataset are a set of T1 and DWI images as a list of dicom files, or a single 4-D image nifti file.&lt;/p&gt;
 &lt;p&gt;A high level summary of how the pipeline proceeds is:
 1. Construct Cortical Surface, Subcortical Surface
-Using freesurfer, you can get the reconstructed surfaces, which are your files that outline the voxels that belong to each region of the brain.
-2. Construct Parcellation Scheme
-This can range from the default in freesurfer to different atlases available for the human brain.
-3. Construct Corticography Tracts
-First, you need to coregister the DWI images with the T1 scans&lt;/p&gt;
-&lt;p&gt;Using the DWI images, along with the reconstructed surfaces, you can count fiber tracts between each region of the brain and reconstruct the structural connectivity matrices. This is composed from the weights matrix and the length matrix between parcellated regions.
-4. Obtain Electrode Coordinates in T1 Space
-First, you need to coregister the CT reconstructed freesurfer file into the T1 space. &lt;/p&gt;
+Using freesurfer, you can get the reconstructed surfaces, which are your files that outline the voxels that belong to each region of the brain. This will give you the surface geometries of the cortical and subcortical surface.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Construct Parcellation Scheme
+This can range from the default in freesurfer to different atlases available for the human brain. This will give you a region mapping for every vertex/face from your cortical/subcortical surface geometries files.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Construct Corticography Tracts
+First, you need to coregister the DWI images with the T1 scans&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
+&lt;p&gt;Using the DWI images, along with the reconstructed surfaces, you can count fiber tracts between each region of the brain and reconstruct the structural connectivity matrices. This is composed from the weights matrix and the length matrix between parcellated regions.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Obtain Electrode Coordinates in T1 Space
+First, you need to coregister the CT reconstructed freesurfer file into the T1 space. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Computing Gain Matrix Between Brain Regions and Electrodes
+In order to compute forward solutions of electrode (i.e. SEEG, ECoG, etc.) activity, you need to compute a gain matrix that transforms region activity into electrode activity. &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This can be done using an inverse-square method fall-off on the region activity, or using a dipole method as outlined in the "Virtual Epileptic Patient" paper.&lt;/p&gt;
 &lt;h1&gt;Implementation&lt;/h1&gt;
 &lt;h2&gt;1. Setting Up Environment&lt;/h2&gt;
 &lt;p&gt;First you may want to set up a conda environment, or a virtualenv that will separate the entire python project from your normal OS.&lt;/p&gt;
@@ -347,44 +390,68 @@ python -m ipykernel install --name tridesclous-testing —user
 &lt;/pre&gt;&lt;/div&gt;
 
 
+&lt;h2&gt;1c. Using Docker / Singularity&lt;/h2&gt;
+&lt;p&gt;TBD&lt;/p&gt;
 &lt;h2&gt;2. Simulating Epilepsy&lt;/h2&gt;
 &lt;p&gt;In order to simulate epilepsy, you are going to walk through a pipeline using TVB. &lt;/p&gt;
-&lt;p&gt;i. Structural Connectivity&lt;/p&gt;
-&lt;p&gt;ii. Neural Mass Model&lt;/p&gt;
-&lt;p&gt;iii. Integrators&lt;/p&gt;
-&lt;p&gt;iv. Monitors&lt;/p&gt;
-&lt;p&gt;Then once these are complete, you can run your simulation.&lt;/p&gt;</content><category term="data analysis"></category><category term="eeg"></category><category term="phd"></category><category term="computational modeling"></category></entry><entry><title>Important Papers for Fundamentals in Computational Neuroscience / Data Science</title><link href="/blog/2017/09/fundamental-papers/" rel="alternate"></link><published>2017-09-25T00:00:00-04:00</published><updated>2017-09-25T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-09-25:/blog/2017/09/fundamental-papers/</id><summary type="html">&lt;p&gt;To keep a log of important papers I read about and how they are relevant.&lt;/p&gt;</summary><content type="html">&lt;!-- MarkdownTOC --&gt;
+&lt;p&gt;i. Structural Connectivity
+Ex: Connectivity weights, conduction speed, coupling function between long-range regions&lt;/p&gt;
+&lt;p&gt;ii. Neural Mass Model
+Ex: Epileptor6D, with parameter settings&lt;/p&gt;
+&lt;p&gt;iii. Integrators
+Ex: Heunstochastic, with noise levels&lt;/p&gt;
+&lt;p&gt;iv. Monitors
+Ex: State variables, iEEG activity from sampling rate and period.&lt;/p&gt;
+&lt;p&gt;Then once these are complete, you can run your simulation.&lt;/p&gt;
+&lt;h2&gt;References:&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;https://github.com/the-virtual-brain/tvb-library&lt;/li&gt;
+&lt;li&gt;https://github.com/the-virtual-brain/tvb-epilepsy&lt;/li&gt;
+&lt;li&gt;https://www.thevirtualbrain.org/tvb/zwei&lt;/li&gt;
+&lt;/ol&gt;</content><category term="data analysis"></category><category term="eeg"></category><category term="phd"></category><category term="computational modeling"></category></entry><entry><title>Important Papers for Fundamentals in Computational Neuroscience / Data Science</title><link href="/blog/2017/09/fundamental-papers/" rel="alternate"></link><published>2017-09-25T00:00:00-04:00</published><updated>2017-09-25T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-09-25:/blog/2017/09/fundamental-papers/</id><summary type="html">&lt;p&gt;To keep a log of important papers I read about and how they are relevant.&lt;/p&gt;</summary><content type="html">&lt;!-- MarkdownTOC --&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Papers&lt;ul&gt;
 &lt;li&gt;
 &lt;ol&gt;
 &lt;li&gt;Wilson-Cowan Neural Mass Model&lt;/li&gt;
+&lt;li&gt;Summary / Conclusions:&lt;/li&gt;
+&lt;li&gt;Important Notes:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;ol&gt;
 &lt;li&gt;Kalman Filter Model&lt;/li&gt;
+&lt;li&gt;Summary / Conclusions:&lt;/li&gt;
+&lt;li&gt;Important Notes:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;ol&gt;
 &lt;li&gt;Expectation Maximization&lt;/li&gt;
+&lt;li&gt;Summary / Conclusions:&lt;/li&gt;
+&lt;li&gt;Important Notes:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;ol&gt;
 &lt;li&gt;Information Bottleneck Method&lt;/li&gt;
+&lt;li&gt;Summary / Conclusions:&lt;/li&gt;
+&lt;li&gt;Important Notes:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;ol&gt;
 &lt;li&gt;Opening the Black Box of Deep Neural Networks Via Information&lt;/li&gt;
+&lt;li&gt;Summary / Conclusions:&lt;/li&gt;
+&lt;li&gt;Important Notes:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;ol&gt;
 &lt;li&gt;Reinforcement Learning: An Overview&lt;/li&gt;
+&lt;li&gt;Summary / Conclusions:&lt;/li&gt;
+&lt;li&gt;Important Notes:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -395,6 +462,8 @@ python -m ipykernel install --name tridesclous-testing —user
 &lt;li&gt;
 &lt;ol&gt;
 &lt;li&gt;Variational Inference:&lt;/li&gt;
+&lt;li&gt;Summary / Conclusions&lt;/li&gt;
+&lt;li&gt;Important Notes&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
