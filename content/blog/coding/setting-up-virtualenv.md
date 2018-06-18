@@ -18,11 +18,9 @@ Summary: A short walkthrough of setting up a virtual environment for Python deve
     - [2. Delete a Virtualenv](#2-delete-a-virtualenv)
 - [Tips](#tips)
     - [1. Starting up your Venv](#1-starting-up-your-venv)
-    - [2. Working on TVB with Venv](#2-working-on-tvb-with-venv)
-    - [3. Requirements.txt](#3-requirementstxt)
+    - [2. Requirements.txt](#2-requirementstxt)
 - [Convenient Tools](#convenient-tools)
     - [1. Automatically cd To Project Directory](#1-automatically-cd-to-project-directory)
-    - [2.](#2)
 - [References:](#references)
 
 <!-- /MarkdownTOC -->
@@ -48,9 +46,19 @@ For Virtualenv: Run command
 
     virtualenv './venv/' 
 
-inside your project directory.
+inside your project directory. or
 
-You can also run 'mkvirtualenv -p python3', or 'virtualenv -p python3' to make the virtual environment with a specific python installation (e.g. 2.7, or 3.4).
+    mkvirtualenv -p python3 
+
+or
+
+    virtualenv -p python3
+
+to make the virtual environment with a specific python installation (e.g. 2.7, or 3.4). With python3.6 and most of the recent versions, the virtualenvironment is built in, so you can just run
+
+    python3 -m venv <name_of_venv>
+
+which is great because it handles it for you.
 
 ## 2. Delete a Virtualenv
 
@@ -66,10 +74,7 @@ Startup your virtual environment by typing:
 
     workon name_of_virtualenvironment
 
-## 2. Working on TVB with Venv
-TBD.
-
-## 3. Requirements.txt
+## 2. Requirements.txt
 This is a convenient file for you to make that keeps track of all your packages. If you ever want to run your project on a new computer, you just create a new virtual environment and run:
 
     pip install -r requirements.txt
@@ -106,8 +111,6 @@ Input the following code to your ./virtualenvs/postactivate file
 Make sure you change 'root_dir' to the correct root directory of your projects. 
 
 This assumes that your project directory files are all correspondingly named with your virtualenv. This is convenient for changing directory into your project directory automatically.
-
-## 2. 
 
 
 # References:

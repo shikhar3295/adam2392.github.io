@@ -116,7 +116,44 @@
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <h1>Questions</h1>
+                <h1>Necessary Tools</h1>
+<p>Freesurfer, FSL, and MRtrix3 are the three main neuroimaging and registration softwares that you need to run a systematic data pipeline of neuroimaging data (i.e. CT, MRI, DWI).</p>
+<ol>
+<li>Freesurfer
+https://surfer.nmr.mgh.harvard.edu/fswiki/DownloadAndInstall</li>
+</ol>
+<p>FreeSurfer is a software package for the analysis and visualization of structural and functional neuroimaging data from cross-sectional or longitudinal studies. </p>
+<ol>
+<li>FSL
+https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation</li>
+</ol>
+<p>FSL is a comprehensive library of analysis tools for FMRI, MRI and DTI brain imaging data.</p>
+<ol>
+<li>MRtrix3
+http://mrtrix.readthedocs.io/en/latest/installation/mac_install.html</li>
+</ol>
+<p>MRtrix3 is primarily intended to be used for the analysis of diffusion MRI data. In addition, at its fundamental level it is designed as a general-purpose library for the analysis of any type of MRI data. </p>
+<h1>Data Processing Pipeline:</h1>
+<h2>1. DWI Processing</h2>
+<ul>
+<li>Process diffusion imaging data, by denoising the data, then preprocessing it, then applying bias correction and then estimating the response function.</li>
+</ul>
+<p>$$
+    dwidenoise </DTI_dicom_dir/> <dti_img_denoise.mif></p>
+<div class="highlight"><pre><span></span>dwipreproc -rpe_none AP DTI_30_average-2_denoise.mif &lt;dti_img_preproc_output.mif&gt;
+
+dwibiascorrect &lt;dti_img_preproc_output.mif&gt; &lt;dti_img_preproc_biascorrect_output.mif&gt; –fsl
+
+dwi2response tournier &lt;dti_img_preproc_biascorrect_output.mif&gt; &lt;dti_img_preproc_biascorrect_response.txt&gt;
+
+dwi2fod csd DTI_30_average-2_denoise_preproc_biascorrected.mif DTI_30_average-2_denoise_preproc_biascorrected_response.txt DTI_30_average-2_denoise_preproc_biascorrected_fod.mif
+</pre></div>
+
+
+<p>$$</p>
+<h2>2. T1 MRI Processing</h2>
+<h2>3. (Optional) CT Processing</h2>
+<h2>4. Connectome Generation</h2>
 <h1>Background</h1>
 <p>Freesurfer is a tool built for rendering 3D brains using MRI and Ct scans.</p>
 <p>FSL is a tool for coregistration and image analysis.</p>
@@ -185,9 +222,9 @@ recon-all -i &lt;data&gt;.nii -s &lt;subject_name&gt; -all
     <ul>
         <li><a href="/blog/2017/09/simulating-tvb/">Simulating Epileptic iEEG Activity Using The Virtual Brain</a></li>
         <li><a href="/blog/2018/06/whitaker-summary-experience/">Using The Virtual Brain to Understand Algorithms</a></li>
-        <li><a href="/blog/2017/09/fundamental-computational-modeling/">Important Concepts for Computational Modeling</a></li>
         <li><a href="/blog/2017/09/fundamental-papers/">Important Papers for Fundamentals in Computational Neuroscience / Data Science</a></li>
         <li><a href="/blog/2017/08/doctoral-board-oral/">Doctoral Board Oral Exam (PhD)</a></li>
+        <li><a href="/blog/2017/09/fundamental-computational-modeling/">Important Concepts for Computational Modeling</a></li>
     </ul>
 </section>
         </article>

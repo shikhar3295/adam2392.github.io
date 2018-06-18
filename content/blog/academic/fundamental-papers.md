@@ -5,17 +5,32 @@ Tags: phd, journals, reviews
 Slug: fundamental-papers
 Authors: Adam Li
 Summary: To keep a log of important papers I read about and how they are relevant.
+
 <!-- MarkdownTOC -->
 
 - Papers
     - 1. Wilson-Cowan Neural Mass Model
+        - Summary / Conclusions:
+        - Important Notes:
     - 2. Kalman Filter Model
+        - Summary / Conclusions:
+        - Important Notes:
     - 3. Expectation Maximization
+        - Summary / Conclusions:
+        - Important Notes:
     - 4. Information Bottleneck Method
+        - Summary / Conclusions:
+        - Important Notes:
     - 5. Opening the Black Box of Deep Neural Networks Via Information
+        - Summary / Conclusions:
+        - Important Notes:
     - 6. Reinforcement Learning: An Overview
+        - Summary / Conclusions:
+        - Important Notes:
     - 7. Deep Reinforcement Learning: An Overview
     - 8. Variational Inference:
+        - Summary / Conclusions
+        - Important Notes
 
 <!-- /MarkdownTOC -->
 

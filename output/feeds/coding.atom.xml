@@ -213,7 +213,136 @@ truffle unbox git@github.com:ajb413/crowdsalable-eth-token.git
 &lt;li&gt;https://medium.com/@mvmurthy/full-stack-hello-world-voting-ethereum-dapp-tutorial-part-1-40d2d0d807c2&lt;/li&gt;
 &lt;li&gt;http://truffleframework.com/docs/getting_started/project#exploring-the-project&lt;/li&gt;
 &lt;li&gt;https://www.pubnub.com/blog/testing-and-deploying-an-ethereum-token-part-2/&lt;/li&gt;
-&lt;/ol&gt;</content><category term="webdev"></category><category term="ethereum"></category><category term="javascript"></category><category term="blockchain"></category></entry><entry><title>Setting Up a Pelican Site</title><link href="/blog/2017/06/setup-pelican-site/" rel="alternate"></link><published>2017-06-04T00:00:00-04:00</published><updated>2017-06-04T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-06-04:/blog/2017/06/setup-pelican-site/</id><summary type="html">&lt;p&gt;A short walkthrough of setting up a pelican site&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Getting Setup with Pelican Site&lt;/h1&gt;
+&lt;/ol&gt;</content><category term="webdev"></category><category term="ethereum"></category><category term="javascript"></category><category term="blockchain"></category></entry><entry><title>Setting Up Singularity Containers</title><link href="/blog/2018/01/setup-singularity/" rel="alternate"></link><published>2018-01-31T00:00:00-05:00</published><updated>2018-01-31T00:00:00-05:00</updated><author><name>Adam Li</name></author><id>tag:None,2018-01-31:/blog/2018/01/setup-singularity/</id><summary type="html">&lt;p&gt;A short walkthrough of setting up the Singularity containers&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Getting Setup with Singularity&lt;/h1&gt;
+&lt;h1&gt;By: Adam Li&lt;/h1&gt;
+&lt;h3&gt;Table of Contents&lt;/h3&gt;
+&lt;!-- MarkdownTOC --&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Installation&lt;/li&gt;
+&lt;li&gt;Setting Up A Tensorflow Container Recipe (Example):&lt;/li&gt;
+&lt;li&gt;
+&lt;ol&gt;
+&lt;li&gt;Needed Docker Containers:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ol&gt;
+&lt;li&gt;Environment / Setup&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ol&gt;
+&lt;li&gt;Post&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ol&gt;
+&lt;li&gt;Run Script&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ol&gt;
+&lt;li&gt;Test&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Common Commands&lt;/li&gt;
+&lt;li&gt;Conclusions&lt;/li&gt;
+&lt;li&gt;References:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- /MarkdownTOC --&gt;
+
+&lt;h1&gt;Installation&lt;/h1&gt;
+&lt;p&gt;To install singularity locally with root privelages, you can then build up containers that can be hosted online.&lt;/p&gt;
+&lt;h1&gt;Setting Up A Tensorflow Container Recipe (Example):&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nl"&gt;Bootstrap&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;docker&lt;/span&gt;
+&lt;span class="nl"&gt;From&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;tensorflow&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nl"&gt;tensorflow&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;latest&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;gpu&lt;/span&gt;
+&lt;span class="nf"&gt;%environment&lt;/span&gt;
+  &lt;span class="cp"&gt;# use bash as default shell&lt;/span&gt;
+  &lt;span class="n"&gt;SHELL&lt;/span&gt;&lt;span class="o"&gt;=/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bash&lt;/span&gt;
+  &lt;span class="k"&gt;export&lt;/span&gt; &lt;span class="n"&gt;SHELL&lt;/span&gt;
+&lt;span class="nf"&gt;%setup&lt;/span&gt;
+  &lt;span class="cp"&gt;# runs on host - the path to the image is $SINGULARITY_ROOTFS&lt;/span&gt;
+&lt;span class="nf"&gt;%post&lt;/span&gt;
+  &lt;span class="cp"&gt;# post-setup script&lt;/span&gt;
+  &lt;span class="cp"&gt;# load environment variables&lt;/span&gt;
+  &lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;environment&lt;/span&gt;
+  &lt;span class="cp"&gt;# use bash as default shell&lt;/span&gt;
+  &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;SHELL&lt;/span&gt;&lt;span class="o"&gt;=/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bash&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;environment&lt;/span&gt;
+  &lt;span class="cp"&gt;# make environment file executable&lt;/span&gt;
+  &lt;span class="n"&gt;chmod&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;environment&lt;/span&gt;
+  &lt;span class="cp"&gt;# default mount paths&lt;/span&gt;
+  &lt;span class="n"&gt;mkdir&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;scratch&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt; 
+  &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;load&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;extra&lt;/span&gt; &lt;span class="n"&gt;packages&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;
+  &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;update&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;locales&lt;/span&gt;
+  &lt;span class="n"&gt;locale&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;gen&lt;/span&gt; &lt;span class="n"&gt;en_US&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;UTF&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;
+  &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;wget&lt;/span&gt; &lt;span class="n"&gt;python3&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt; &lt;span class="n"&gt;python3&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pip&lt;/span&gt;
+  &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;clean&lt;/span&gt;
+  &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="n"&gt;libcupti&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt;
+  &lt;span class="n"&gt;pip3&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;upgrade&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt;
+  &lt;span class="n"&gt;pip3&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;keras&lt;/span&gt;
+  &lt;span class="n"&gt;pip3&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;numpy&lt;/span&gt; &lt;span class="n"&gt;scipy&lt;/span&gt; &lt;span class="n"&gt;scikit&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;learn&lt;/span&gt; &lt;span class="n"&gt;pandas&lt;/span&gt; &lt;span class="n"&gt;tensorboard&lt;/span&gt; &lt;span class="n"&gt;natsorted&lt;/span&gt; &lt;span class="n"&gt;tqdm&lt;/span&gt;
+&lt;span class="nf"&gt;%runscript&lt;/span&gt;
+  &lt;span class="cp"&gt;# executes with the singularity run command&lt;/span&gt;
+  &lt;span class="cp"&gt;# delete this section to use existing docker ENTRYPOINT command&lt;/span&gt;
+&lt;span class="nf"&gt;%test&lt;/span&gt;
+  &lt;span class="cp"&gt;# test that script is a success&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;1. Needed Docker Containers:&lt;/h2&gt;
+&lt;p&gt;The best thing to do is start off with a docker container that is already prebuilt. The nice thing is that for cloud computing with tensorflow-gpu, tensorflow is maintained on docker and up to date. &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Bootstrap&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Docker&lt;/span&gt;
+&lt;span class="n"&gt;From&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;tensorflow&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;tensorflow&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;latest&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;gpu&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Other options are:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Bootstrap&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;shub&lt;/span&gt;
+&lt;span class="n"&gt;From&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;2. Environment / Setup&lt;/h2&gt;
+&lt;p&gt;These are commands that can be used to export variables into the environment. Then you can run setup of files/variables before running any installations.&lt;/p&gt;
+&lt;h2&gt;3. Post&lt;/h2&gt;
+&lt;p&gt;This is the main area where your image will install different packages and load different environment variables.&lt;/p&gt;
+&lt;h2&gt;4. Run Script&lt;/h2&gt;
+&lt;p&gt;This will run a script afterwards, say a scientific experiment:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;python3 main.py --args
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;5. Test&lt;/h2&gt;
+&lt;p&gt;This will run test scripts to see that your "main.py" did what it was supposed to do. Were files saved? Were computations correct?&lt;/p&gt;
+&lt;h1&gt;Common Commands&lt;/h1&gt;
+&lt;p&gt;Pulling images, shelling into the image and executing the image with a script&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;singularity pull
+
+singularity shell
+
+singularity exec
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Common argument flags:
+&lt;em&gt; verbose mode(s): -v, -vv, -vvv
+&lt;/em&gt; debug mode: -d 
+&lt;em&gt; link nvidia driver &amp;amp; GPU: --nv
+&lt;/em&gt; binds an existing directory onto the image: -B&lt;/p&gt;
+&lt;p&gt;An example use case that runs a tensorflow simg and runs a training script:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;singularity exec --nv ./tensorflow.simg python main.py &lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;traindatadir&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt; &lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;testdatadir&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt; --output_data_dir &lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;outputdatadir&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt; --log_data_dir &lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;logdatadir&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt; --patient_to_loo &lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;patient&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt; --expname &lt;span class="cp"&gt;${&lt;/span&gt;&lt;span class="n"&gt;expname&lt;/span&gt;&lt;span class="cp"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Conclusions&lt;/h1&gt;
+&lt;p&gt;This allows an end-to-end HPC/scientific computation analysis that uses Docker/Singularityhub to setup your system, and then runs setup, main scripts and testing to create a consistent output.&lt;/p&gt;
+&lt;h1&gt;References:&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;https://www.singularity-hub.org/&lt;/li&gt;
+&lt;li&gt;http://geekyap.blogspot.com/2016/11/docker-vs-singularity-vs-shifter-in-hpc.html&lt;/li&gt;
+&lt;li&gt;https://singularity.lbl.gov/docs-docker&lt;/li&gt;
+&lt;/ol&gt;</content><category term="cloud"></category><category term="singularity"></category><category term="python"></category><category term="hpc"></category><category term="tensorflow"></category><category term="deep-learning"></category></entry><entry><title>Setting Up a Pelican Site</title><link href="/blog/2017/06/setup-pelican-site/" rel="alternate"></link><published>2017-06-04T00:00:00-04:00</published><updated>2017-06-04T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-06-04:/blog/2017/06/setup-pelican-site/</id><summary type="html">&lt;p&gt;A short walkthrough of setting up a pelican site&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Getting Setup with Pelican Site&lt;/h1&gt;
 &lt;h1&gt;By: Adam Li&lt;/h1&gt;
 &lt;h3&gt;Table of Contents&lt;/h3&gt;
 &lt;!-- MarkdownTOC --&gt;
@@ -333,13 +462,11 @@ http://duncanlock.net/blog/2013/05/29/better-figures-images-plugin-for-pelican/&
 &lt;/li&gt;
 &lt;li&gt;&lt;a href="#tips"&gt;Tips&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="#1-starting-up-your-venv"&gt;1. Starting up your Venv&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#2-working-on-tvb-with-venv"&gt;2. Working on TVB with Venv&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#3-requirementstxt"&gt;3. Requirements.txt&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#2-requirementstxt"&gt;2. Requirements.txt&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href="#convenient-tools"&gt;Convenient Tools&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="#1-automatically-cd-to-project-directory"&gt;1. Automatically cd To Project Directory&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#2"&gt;2.&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href="#references"&gt;References:&lt;/a&gt;&lt;/li&gt;
@@ -364,8 +491,22 @@ VirtualEnvWrapper&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;inside your project directory.&lt;/p&gt;
-&lt;p&gt;You can also run 'mkvirtualenv -p python3', or 'virtualenv -p python3' to make the virtual environment with a specific python installation (e.g. 2.7, or 3.4).&lt;/p&gt;
+&lt;p&gt;inside your project directory. or&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkvirtualenv -p python3
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;or&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;virtualenv -p python3
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;to make the virtual environment with a specific python installation (e.g. 2.7, or 3.4). With python3.6 and most of the recent versions, the virtualenvironment is built in, so you can just run&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;python3 -m venv &amp;lt;name_of_venv&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;which is great because it handles it for you.&lt;/p&gt;
 &lt;h2&gt;2. Delete a Virtualenv&lt;/h2&gt;
 &lt;p&gt;For Virtualenvwrappper: In order to delete a virtual environment, all you need to do is to remove it recursively from your ~/.virtualenvs directory with    &lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;#39;sudo rm -rf &amp;lt;name&amp;gt;&amp;#39;.
@@ -380,9 +521,7 @@ VirtualEnvWrapper&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h2&gt;2. Working on TVB with Venv&lt;/h2&gt;
-&lt;p&gt;TBD.&lt;/p&gt;
-&lt;h2&gt;3. Requirements.txt&lt;/h2&gt;
+&lt;h2&gt;2. Requirements.txt&lt;/h2&gt;
 &lt;p&gt;This is a convenient file for you to make that keeps track of all your packages. If you ever want to run your project on a new computer, you just create a new virtual environment and run:&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install -r requirements.txt
 &lt;/pre&gt;&lt;/div&gt;
@@ -421,7 +560,6 @@ VirtualEnvWrapper&lt;/p&gt;
 
 &lt;p&gt;Make sure you change 'root_dir' to the correct root directory of your projects. &lt;/p&gt;
 &lt;p&gt;This assumes that your project directory files are all correspondingly named with your virtualenv. This is convenient for changing directory into your project directory automatically.&lt;/p&gt;
-&lt;h2&gt;2.&lt;/h2&gt;
 &lt;h1&gt;References:&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;https://nolar.info/automatically-activate-virtualenv-on-cd/&lt;/li&gt;

@@ -6,7 +6,48 @@ Slug: using-freesurfer
 Authors: Adam Li
 Summary: To guide the user in how to setup freesurfer correctly.
 
-# Questions
+# Necessary Tools
+Freesurfer, FSL, and MRtrix3 are the three main neuroimaging and registration softwares that you need to run a systematic data pipeline of neuroimaging data (i.e. CT, MRI, DWI).
+
+1. Freesurfer
+https://surfer.nmr.mgh.harvard.edu/fswiki/DownloadAndInstall
+
+FreeSurfer is a software package for the analysis and visualization of structural and functional neuroimaging data from cross-sectional or longitudinal studies. 
+
+2. FSL
+https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation
+
+FSL is a comprehensive library of analysis tools for FMRI, MRI and DTI brain imaging data.
+
+3. MRtrix3
+http://mrtrix.readthedocs.io/en/latest/installation/mac_install.html
+
+MRtrix3 is primarily intended to be used for the analysis of diffusion MRI data. In addition, at its fundamental level it is designed as a general-purpose library for the analysis of any type of MRI data. 
+
+# Data Processing Pipeline:
+## 1. DWI Processing
+- Process diffusion imaging data, by denoising the data, then preprocessing it, then applying bias correction and then estimating the response function.
+    
+$$
+    dwidenoise </DTI_dicom_dir/> <dti_img_denoise.mif>
+    
+    dwipreproc -rpe_none AP DTI_30_average-2_denoise.mif <dti_img_preproc_output.mif>
+    
+    dwibiascorrect <dti_img_preproc_output.mif> <dti_img_preproc_biascorrect_output.mif> –fsl
+
+    dwi2response tournier <dti_img_preproc_biascorrect_output.mif> <dti_img_preproc_biascorrect_response.txt>
+
+    dwi2fod csd DTI_30_average-2_denoise_preproc_biascorrected.mif DTI_30_average-2_denoise_preproc_biascorrected_response.txt DTI_30_average-2_denoise_preproc_biascorrected_fod.mif
+$$
+
+## 2. T1 MRI Processing
+
+
+## 3. (Optional) CT Processing
+
+
+## 4. Connectome Generation
+
 
 # Background
 Freesurfer is a tool built for rendering 3D brains using MRI and Ct scans.

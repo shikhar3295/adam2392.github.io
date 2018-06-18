@@ -116,14 +116,7 @@
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <h1>Questions</h1>
-<p>Using convolutional and recurrent neural networks, this paper showed that they could perform seizure detection as well as incidence detection (of some experimental marker). I am interested in the possibility of exploring how this algorithm might perform on simulated TVB data, which to my knowledge has not been done yet. I would be interested in seeing how this improves, or is similar to training on the real data.</p>
-<p>Then I was going to see if I could extend this same network onto the fragility maps.</p>
-<p>I was wondering:
-1. Would it be possible to get access to patient's SEEG data that has the SEEG xyz coordinates, and raw iEEG data? (n as big as can be)
-2. A problem with the previous paper was the unbalance of data in training (e.g. much less seizure starts, then non seizure instances). For TVB, is it possible to virtually ensure seizures happen at a certain rate if I simulated for say... 2 minutes, 100 times? So that we could have many instances of seizure occurence and could train on an equal set of seizure occurence and non seizure?
-3. Can TVB determine when the seizure occurred exactly in Epileptor time series?</p>
-<h1>Background</h1>
+                <h1>Background</h1>
 <p>TVB is a platform for simulating whole-brain dynamics that starts from raw data involving:
     1. structural connectivity derived from DTI
     2. brain parcellation derived from MRI and CT
@@ -132,20 +125,33 @@ This will then determine a gain matrix to determine SEEG signals from the source
 <p>The neural mass models will be implemented with nonlinear, complex models for simulating certain type of electrophysiology. The Epileptor is used for simulating seizure activity from a specific source region. </p>
 <p>The epileptor is a set of coupled differential equations that rely on 6 different variables. They are described here:</p>
 <h1>Data &amp; Metadata</h1>
+<p>Generally, refer to my post on "Freesurfer" to establish the preprocessing data pipeline using Freesurfer, FSL and MRtrix3.</p>
 <p>The minimum necessary requirements for creating the TVB dataset are a set of T1 and DWI images as a list of dicom files, or a single 4-D image nifti file.</p>
 <p>A high level summary of how the pipeline proceeds is:
 1. Construct Cortical Surface, Subcortical Surface
-Using freesurfer, you can get the reconstructed surfaces, which are your files that outline the voxels that belong to each region of the brain.
-2. Construct Parcellation Scheme
-This can range from the default in freesurfer to different atlases available for the human brain.
-3. Construct Corticography Tracts
-First, you need to coregister the DWI images with the T1 scans</p>
-<p>Using the DWI images, along with the reconstructed surfaces, you can count fiber tracts between each region of the brain and reconstruct the structural connectivity matrices. This is composed from the weights matrix and the length matrix between parcellated regions.
-4. Obtain Electrode Coordinates in T1 Space
-First, you need to coregister the CT reconstructed freesurfer file into the T1 space. </p>
+Using freesurfer, you can get the reconstructed surfaces, which are your files that outline the voxels that belong to each region of the brain. This will give you the surface geometries of the cortical and subcortical surface.</p>
 <ol>
-<li></li>
+<li>
+<p>Construct Parcellation Scheme
+This can range from the default in freesurfer to different atlases available for the human brain. This will give you a region mapping for every vertex/face from your cortical/subcortical surface geometries files.</p>
+</li>
+<li>
+<p>Construct Corticography Tracts
+First, you need to coregister the DWI images with the T1 scans</p>
+</li>
 </ol>
+<p>Using the DWI images, along with the reconstructed surfaces, you can count fiber tracts between each region of the brain and reconstruct the structural connectivity matrices. This is composed from the weights matrix and the length matrix between parcellated regions.</p>
+<ol>
+<li>
+<p>Obtain Electrode Coordinates in T1 Space
+First, you need to coregister the CT reconstructed freesurfer file into the T1 space. </p>
+</li>
+<li>
+<p>Computing Gain Matrix Between Brain Regions and Electrodes
+In order to compute forward solutions of electrode (i.e. SEEG, ECoG, etc.) activity, you need to compute a gain matrix that transforms region activity into electrode activity. </p>
+</li>
+</ol>
+<p>This can be done using an inverse-square method fall-off on the region activity, or using a dipole method as outlined in the "Virtual Epileptic Patient" paper.</p>
 <h1>Implementation</h1>
 <h2>1. Setting Up Environment</h2>
 <p>First you may want to set up a conda environment, or a virtualenv that will separate the entire python project from your normal OS.</p>
@@ -189,13 +195,25 @@ python -m ipykernel install --name tridesclous-testing —user
 </pre></div>
 
 
+<h2>1c. Using Docker / Singularity</h2>
+<p>TBD</p>
 <h2>2. Simulating Epilepsy</h2>
 <p>In order to simulate epilepsy, you are going to walk through a pipeline using TVB. </p>
-<p>i. Structural Connectivity</p>
-<p>ii. Neural Mass Model</p>
-<p>iii. Integrators</p>
-<p>iv. Monitors</p>
+<p>i. Structural Connectivity
+Ex: Connectivity weights, conduction speed, coupling function between long-range regions</p>
+<p>ii. Neural Mass Model
+Ex: Epileptor6D, with parameter settings</p>
+<p>iii. Integrators
+Ex: Heunstochastic, with noise levels</p>
+<p>iv. Monitors
+Ex: State variables, iEEG activity from sampling rate and period.</p>
 <p>Then once these are complete, you can run your simulation.</p>
+<h2>References:</h2>
+<ol>
+<li>https://github.com/the-virtual-brain/tvb-library</li>
+<li>https://github.com/the-virtual-brain/tvb-epilepsy</li>
+<li>https://www.thevirtualbrain.org/tvb/zwei</li>
+</ol>
             </div>
             <!-- /.entry-content -->
 <section class="well" id="related-posts">

@@ -127,13 +127,11 @@
 </li>
 <li><a href="#tips">Tips</a><ul>
 <li><a href="#1-starting-up-your-venv">1. Starting up your Venv</a></li>
-<li><a href="#2-working-on-tvb-with-venv">2. Working on TVB with Venv</a></li>
-<li><a href="#3-requirementstxt">3. Requirements.txt</a></li>
+<li><a href="#2-requirementstxt">2. Requirements.txt</a></li>
 </ul>
 </li>
 <li><a href="#convenient-tools">Convenient Tools</a><ul>
 <li><a href="#1-automatically-cd-to-project-directory">1. Automatically cd To Project Directory</a></li>
-<li><a href="#2">2.</a></li>
 </ul>
 </li>
 <li><a href="#references">References:</a></li>
@@ -158,8 +156,22 @@ VirtualEnvWrapper</p>
 </pre></div>
 
 
-<p>inside your project directory.</p>
-<p>You can also run 'mkvirtualenv -p python3', or 'virtualenv -p python3' to make the virtual environment with a specific python installation (e.g. 2.7, or 3.4).</p>
+<p>inside your project directory. or</p>
+<div class="highlight"><pre><span></span>mkvirtualenv -p python3
+</pre></div>
+
+
+<p>or</p>
+<div class="highlight"><pre><span></span>virtualenv -p python3
+</pre></div>
+
+
+<p>to make the virtual environment with a specific python installation (e.g. 2.7, or 3.4). With python3.6 and most of the recent versions, the virtualenvironment is built in, so you can just run</p>
+<div class="highlight"><pre><span></span>python3 -m venv &lt;name_of_venv&gt;
+</pre></div>
+
+
+<p>which is great because it handles it for you.</p>
 <h2>2. Delete a Virtualenv</h2>
 <p>For Virtualenvwrappper: In order to delete a virtual environment, all you need to do is to remove it recursively from your ~/.virtualenvs directory with    </p>
 <div class="highlight"><pre><span></span>&#39;sudo rm -rf &lt;name&gt;&#39;.
@@ -174,9 +186,7 @@ VirtualEnvWrapper</p>
 </pre></div>
 
 
-<h2>2. Working on TVB with Venv</h2>
-<p>TBD.</p>
-<h2>3. Requirements.txt</h2>
+<h2>2. Requirements.txt</h2>
 <p>This is a convenient file for you to make that keeps track of all your packages. If you ever want to run your project on a new computer, you just create a new virtual environment and run:</p>
 <div class="highlight"><pre><span></span>pip install -r requirements.txt
 </pre></div>
@@ -215,7 +225,6 @@ VirtualEnvWrapper</p>
 
 <p>Make sure you change 'root_dir' to the correct root directory of your projects. </p>
 <p>This assumes that your project directory files are all correspondingly named with your virtualenv. This is convenient for changing directory into your project directory automatically.</p>
-<h2>2.</h2>
 <h1>References:</h1>
 <ol>
 <li>https://nolar.info/automatically-activate-virtualenv-on-cd/</li>
@@ -228,6 +237,7 @@ VirtualEnvWrapper</p>
     <h4>Related Posts:</h4>
     <ul>
         <li><a href="/blog/2017/06/setup-pelican-site/">Setting Up a Pelican Site</a></li>
+        <li><a href="/blog/2018/01/setup-singularity/">Setting Up Singularity Containers</a></li>
         <li><a href="/blog/2018/06/setup-erc-token/">Setting Up ERC Standard Tokens</a></li>
     </ul>
 </section>
