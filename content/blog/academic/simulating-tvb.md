@@ -81,15 +81,23 @@ TBD
 In order to simulate epilepsy, you are going to walk through a pipeline using TVB. 
 
 i. Structural Connectivity
+What is the matrix of connectivities between your brain regions?
 Ex: Connectivity weights, conduction speed, coupling function between long-range regions
 
 ii. Neural Mass Model
+What is the phenomenological model at brain regions?
 Ex: Epileptor6D, with parameter settings
 
 iii. Integrators
+How to solve your stochastic differential equation?
 Ex: Heunstochastic, with noise levels
 
-iv. Monitors
+iv. Coupling
+How are your brain regions coupled?
+Ex: linear, additive, hyperbolic
+
+v. Monitors
+What variables to monitor and store?
 Ex: State variables, iEEG activity from sampling rate and period.
 
 Then once these are complete, you can run your simulation.
