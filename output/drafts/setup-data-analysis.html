@@ -127,32 +127,6 @@
 <p>https://taufiqhabib.wordpress.com/2016/12/18/intalling-jupyter-in-a-virtualenv/</p>
 <h4>4. Git</h4>
 <h4>5. R Notebook / IDE</h4>
-<h4>6. The Virtual Brain</h4>
-<div class="highlight"><pre><span></span>mkvirtualenv tvb
-pip install numpy scipy numexpr numba matplotlib 
-pip install ipython jupyter
-pip install nibabel networkx
-git clone https://github.com/the-virtual-brain/tvb-data
-git clone https://github.com/the-virtual-brain/tvb-library
-</pre></div>
-
-
-<p>Then in your project directory, create a launch_tvb.command file and add this:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-<span class="c1"># add tvb data and library to path and launch notebook</span>
-<span class="nb">export</span> <span class="nv">PYTHONPATH</span><span class="o">=</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/tvb-data:<span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/tvb-library:<span class="nv">$PYTHONPATH</span><span class="p">;</span>
-jupyter notebook
-</pre></div>
-</td></tr></table>
-
-<p>Now to open up a jupyter notebook ready to run TVB, just type into your terminal:</p>
-<div class="highlight"><pre><span></span>./launch_tvb.command
-</pre></div>
-
-
 <h1>Miscellaneous Tools</h1>
 <h4>1. Text Editor</h4>
 <p>I generally use sublime text editor. It has nice colors and a lot of cool packages to get you running stuff quickly.</p>
