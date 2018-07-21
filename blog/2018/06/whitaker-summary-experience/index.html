@@ -174,7 +174,11 @@
 <h1>Concepts</h1>
 <h2>1. The Virtual Brain (TVB) vs Network Data Analysis</h2>
 <p>This was the main project proposed when I applied for the Whitaker/Chateaubriand fellowships. The goal was to use the flexible modeling capabilities of "The Virtual Brain" (TVB) platform developed here in Marseille to understand how network data predictions of the epileptogenic zone performs under various model configurations. So, how can our predictions work under various clinical settings? Can we arrive at the same conclusion when our algorithm is applied to an in-silico model?</p>
-<p>Being able to demonstrate agreement by using this whole-brain model helps provide evidence on two fronts: 1. provides additional evidence that TVB is capable of modeling the dynamical characteristics of seizures realistically and 2. provide hypothetical constraints on data analysis by providing ground-truth simulations of epileptic seizures and demonstrating when the algorithms work.</p>
+<p>Being able to demonstrate agreement by using this whole-brain model helps provide evidence on two fronts: </p>
+<ol>
+<li>provides additional evidence that TVB is capable of modeling the dynamical characteristics of seizures realistically and </li>
+<li>provide hypothetical constraints on data analysis by providing ground-truth simulations of epileptic seizures and demonstrating when the algorithms work.</li>
+</ol>
 <p><strong>Summary of Work</strong>
 By using a patient's individual neuroimaging scans, and their actual recorded epileptic seizures, we can 1) create a personalized brain from those scans and 2) analyze their electrophysiological recordings with our network-based algorithm. </p>
 <p>From the personalized brain, we can use TVB as a software platform to simulate signals that we hypothesize might come from different regions of that patient's brain. If we fix all parameters, and then systematically change which region of the brain is epileptic, then we can form a suite of datasets that we know the region that is epileptic. This would not be possible with real data because we never know for sure which region of the brain is epileptic! So assuming this model is accurate to some degree in replicating features of the  brain's electrophysiology, we can compare the results of the network-based analysis for each simulated dataset.</p>
@@ -202,8 +206,10 @@ Using a batch of real recording data from patients, we can construct a deep lear
 <p>A lot of this year was spent reading papers and doing a lot of thinking... Not very productive, but I really felt like I learned a lot and expanded my research mindset.</p>
 <p>Couple things I started learning more about:
 1. reading papers is good to do on a consistent basis, but focus on getting to the core of the "key" papers (how you decide which papers are key comes with exp)</p>
-<p>I realized that some papers are great to learn and skim through the results and methods to understand how they did it, what are the limitations and what was innovated on. Then there are other papers that introduce a completely new concept that might be different. These papers are important to understand because they usually spur papers down the road that require you to understand this one. I tend to go through the figures and equations multiple times to understand the details of the motivation, methods and results.
-2. software engineering is very important in data analysis.</p>
+<p>I realized that some papers are great to learn and skim through the results and methods to understand how they did it, what are the limitations and what was innovated on. Then there are other papers that introduce a completely new concept that might be different. These papers are important to understand because they usually spur papers down the road that require you to understand this one. I tend to go through the figures and equations multiple times to understand the details of the motivation, methods and results.</p>
+<ol>
+<li>software engineering is very important in data analysis.</li>
+</ol>
 <p>It helps you formulate and design a software package that is intended to "experiment" the different parameters, datasets, and visualize results in an end-to-end fashion. I probably refactored my code around 5-6 times this year, which was a great learning experience, but it took a lot of time. It helped me understand the scope of my projects and will hopefully be helpful down the road.</p>
 <ol>
 <li>it's easy to get stuck in a loop of feeling like "you're not going anywhere". </li>
@@ -220,10 +226,10 @@ Using a batch of real recording data from patients, we can construct a deep lear
 <section class="well" id="related-posts">
     <h4>Related Posts:</h4>
     <ul>
-        <li><a href="/blog/2017/09/simulating-tvb/">Simulating Epileptic iEEG Activity Using The Virtual Brain</a></li>
         <li><a href="/blog/2017/09/fundamental-papers/">Important Papers for Fundamentals in Computational Neuroscience / Data Science</a></li>
         <li><a href="/blog/2017/12/using-freesurfer/">Using FreeSurfer</a></li>
         <li><a href="/blog/2017/08/doctoral-board-oral/">Doctoral Board Oral Exam (PhD)</a></li>
+        <li><a href="/blog/2017/09/simulating-tvb/">Simulating Epileptic iEEG Activity Using The Virtual Brain</a></li>
         <li><a href="/blog/2017/09/fundamental-computational-modeling/">Important Concepts for Computational Modeling</a></li>
     </ul>
 </section>
