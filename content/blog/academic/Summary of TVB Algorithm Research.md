@@ -46,7 +46,10 @@ On the other end of the spectrum, one could apply deep learning to this problem 
 ## 1. The Virtual Brain (TVB) vs Network Data Analysis
 This was the main project proposed when I applied for the Whitaker/Chateaubriand fellowships. The goal was to use the flexible modeling capabilities of "The Virtual Brain" (TVB) platform developed here in Marseille to understand how network data predictions of the epileptogenic zone performs under various model configurations. So, how can our predictions work under various clinical settings? Can we arrive at the same conclusion when our algorithm is applied to an in-silico model?
 
-Being able to demonstrate agreement by using this whole-brain model helps provide evidence on two fronts: 1. provides additional evidence that TVB is capable of modeling the dynamical characteristics of seizures realistically and 2. provide hypothetical constraints on data analysis by providing ground-truth simulations of epileptic seizures and demonstrating when the algorithms work.
+Being able to demonstrate agreement by using this whole-brain model helps provide evidence on two fronts: 
+
+1. provides additional evidence that TVB is capable of modeling the dynamical characteristics of seizures realistically and 
+2. provide hypothetical constraints on data analysis by providing ground-truth simulations of epileptic seizures and demonstrating when the algorithms work.
 
 **Summary of Work**
 By using a patient's individual neuroimaging scans, and their actual recorded epileptic seizures, we can 1) create a personalized brain from those scans and 2) analyze their electrophysiological recordings with our network-based algorithm. 
@@ -78,6 +81,7 @@ Here, I had to deal with data at scale. I had to understand how to optimize para
 I started out with analyzing datasets on my laptop/workstation with unoptimized code. Then I proceeded to optimize different parts of my workflow and moduralize it, so that it could be parallelized onto multiple cores. I then proceeded to submit it onto the JHU Maryland High-Performance Computing cluster. 
 
 ## Data Pipeline Design
+
 1. First, I began with one CPU per window of data (each dataset was split into a number of windows to analyze). This resulted in hundreds-thousands of CPUs being fired up with loading the data and then analyzing a short segment of the dataset. This had numerous problems. One CPU out of hundreds/thousands could easily fail the run the job correctly, which would result in a missing computed window.
 2. Then, I began using a parallel framework with GNU that ran each dataset with a fixed 24 cores per node. This helped because GNU allows you to restart jobs using a log file, but this was also problematic because as datasets grew longer, it wasn't clear how long I would have to wait to get data per each patient.
 3. Now, I also break up datasets into chunks and then analyze using 24-48 cores at a time that sift through the data. These data analyzed-chunks can later be combined to form into the one dataset if necessary, but a metadata json object is used to store information allowing anyone using the data to understand how to put computations together.
@@ -89,6 +93,7 @@ Couple things I started learning more about:
 1. reading papers is good to do on a consistent basis, but focus on getting to the core of the "key" papers (how you decide which papers are key comes with exp)
 
 I realized that some papers are great to learn and skim through the results and methods to understand how they did it, what are the limitations and what was innovated on. Then there are other papers that introduce a completely new concept that might be different. These papers are important to understand because they usually spur papers down the road that require you to understand this one. I tend to go through the figures and equations multiple times to understand the details of the motivation, methods and results.
+
 2. software engineering is very important in data analysis.
 
 It helps you formulate and design a software package that is intended to "experiment" the different parameters, datasets, and visualize results in an end-to-end fashion. I probably refactored my code around 5-6 times this year, which was a great learning experience, but it took a lot of time. It helped me understand the scope of my projects and will hopefully be helpful down the road.
