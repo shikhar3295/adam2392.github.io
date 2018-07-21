@@ -412,12 +412,19 @@ python -m ipykernel install --name tridesclous-testing —user
 &lt;h2&gt;2. Simulating Epilepsy&lt;/h2&gt;
 &lt;p&gt;In order to simulate epilepsy, you are going to walk through a pipeline using TVB. &lt;/p&gt;
 &lt;p&gt;i. Structural Connectivity
+What is the matrix of connectivities between your brain regions?
 Ex: Connectivity weights, conduction speed, coupling function between long-range regions&lt;/p&gt;
 &lt;p&gt;ii. Neural Mass Model
+What is the phenomenological model at brain regions?
 Ex: Epileptor6D, with parameter settings&lt;/p&gt;
 &lt;p&gt;iii. Integrators
+How to solve your stochastic differential equation?
 Ex: Heunstochastic, with noise levels&lt;/p&gt;
-&lt;p&gt;iv. Monitors
+&lt;p&gt;iv. Coupling
+How are your brain regions coupled?
+Ex: linear, additive, hyperbolic&lt;/p&gt;
+&lt;p&gt;v. Monitors
+What variables to monitor and store?
 Ex: State variables, iEEG activity from sampling rate and period.&lt;/p&gt;
 &lt;p&gt;Then once these are complete, you can run your simulation.&lt;/p&gt;
 &lt;h2&gt;References:&lt;/h2&gt;
