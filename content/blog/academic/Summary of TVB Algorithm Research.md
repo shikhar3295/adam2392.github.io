@@ -13,7 +13,7 @@ Summary: To summarize my Whitaker/Chateaubriand research experience abroad in Ma
     - 2. Computational Modeling
     - 3. Algorithms
 - Concepts
-    - 1. TVB vs Network Data Analysis
+    - 1. The Virtual Brain \(TVB\) vs Network Data Analysis
     - 2. Using TVB To Augment Neural Datasets For Deep Learning
 - Conclusions / Future Considerations
 - Random Notes
@@ -30,6 +30,7 @@ However, the problem is that surgery is extremely variable in success (e.g. ~50%
 
 ## 2. Computational Modeling
 Computational modeling is the art of using mathematical equations to model how certain systems (i.e. the brain) behaves given parameters you input. So here, at Marseille, the group has developed computational models that take in the patient's specific reconstructed brain tractography and geometry to model epilepsy. The way it does this is by parcellating the brain into multiple regions, where each region is modeled by a computational model that can exhibit seizure phenomena. By coupling every region based on realistic brain connectivity, you can simulate brain behavior when you "set" different regions of the brain to be "diseased". One could then compare the simulation and the real electrophysiological recording data in patients to test different hypotheses, such as: 
+
 1. what happens if we set this region to be epileptogenic? does it resemble the real dynamics recorded in the patient's brain? 
 2. If we remove this region of the brain (i.e. remove connectivity to and from this region), will it help prevent propagation of seizure activity to healthy regions of the brain?
 3. Can we generate realistic data that can reflect feature variability of the real recording data?
@@ -42,8 +43,8 @@ Our research group currently developed a linear algorithm that analyzes the data
 On the other end of the spectrum, one could apply deep learning to this problem for a way of supervised learning. What this would require is knowing the exact regions of the brain that are diseased and then feeding in the data and the labels of the regions to let the model determine which features of the data are most predictive of the diseased region. This is more general, but can require large amounts of data and hyperparameter tuning of the neural networks.
 
 # Concepts
-## 1. TVB vs Network Data Analysis
-This was the main project proposed when I applied for the Whitaker/Chateaubriand fellowships. The goal was to use the flexible modeling capabilities of "The Virtual Brain" platform developed here in Marseille to understand how network data predictions of the epileptogenic zone performs under various model configurations. So, how can our predictions work under various clinical settings? Can we arrive at the same conclusion when our algorithm is applied to an in-silico model?
+## 1. The Virtual Brain (TVB) vs Network Data Analysis
+This was the main project proposed when I applied for the Whitaker/Chateaubriand fellowships. The goal was to use the flexible modeling capabilities of "The Virtual Brain" (TVB) platform developed here in Marseille to understand how network data predictions of the epileptogenic zone performs under various model configurations. So, how can our predictions work under various clinical settings? Can we arrive at the same conclusion when our algorithm is applied to an in-silico model?
 
 Being able to demonstrate agreement by using this whole-brain model helps provide evidence on two fronts: 1. provides additional evidence that TVB is capable of modeling the dynamical characteristics of seizures realistically and 2. provide hypothetical constraints on data analysis by providing ground-truth simulations of epileptic seizures and demonstrating when the algorithms work.
 
