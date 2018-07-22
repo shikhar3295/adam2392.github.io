@@ -38,7 +38,7 @@ status: draft
         - 3. Bota & Bira
         - 4. Tapabento
     - Nightlife/Drinking
-        - 1.
+        - 1. Wine bars and Bar Hopping
         - 2.
         - 3.
     - Nightlife/Drinking \(Porto\)
@@ -102,6 +102,7 @@ The most famous place I went to was:
 #### 2. Estamine Art Food Drink (Thu - Mon 2:00 PM - 8:00 PM)
 
 #### 3. Ramiro (seafood)
+Great seafood place recommended by Anthony Bourdain, and lives up to it!
 
 ## Food (Porto)
 #### 1. Puorto
@@ -113,7 +114,8 @@ The most famous place I went to was:
 #### 4. Tapabento
 
 ## Nightlife/Drinking
-#### 1. 
+#### 1. Wine bars and Bar Hopping
+To be honest, I don't feel like Portugal is known for any wild night life, so I just went bar hopping. It was quite fun.
 
 #### 2. 
 
