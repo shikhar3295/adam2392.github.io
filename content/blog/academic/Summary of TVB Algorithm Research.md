@@ -20,6 +20,9 @@ Summary: To summarize my Whitaker/Chateaubriand research experience abroad in Ma
 - Random Notes
     - Data Pipeline Design
     - PhD and Research Understanding
+            - 1. reading papers is good to do on a consistent basis, but focus on getting to the core of the "key" papers \(how you decide which papers are key comes with exp\)
+            - 2. software engineering is very important in data analysis.
+            - 3. it's easy to get stuck in a loop of feeling like "you're not going anywhere".
         - References:
 
 <!-- /MarkdownTOC -->
@@ -98,15 +101,15 @@ I started out with analyzing datasets on my laptop/workstation with unoptimized 
 A lot of this year was spent reading papers and doing a lot of thinking... Not very productive, but I really felt like I learned a lot and expanded my research mindset.
 
 Couple things I started learning more about:
-1. reading papers is good to do on a consistent basis, but focus on getting to the core of the "key" papers (how you decide which papers are key comes with exp)
+#### 1. reading papers is good to do on a consistent basis, but focus on getting to the core of the "key" papers (how you decide which papers are key comes with exp)
 
 I realized that some papers are great to learn and skim through the results and methods to understand how they did it, what are the limitations and what was innovated on. Then there are other papers that introduce a completely new concept that might be different. These papers are important to understand because they usually spur papers down the road that require you to understand this one. I tend to go through the figures and equations multiple times to understand the details of the motivation, methods and results.
 
-2. software engineering is very important in data analysis.
+#### 2. software engineering is very important in data analysis.
 
-It helps you formulate and design a software package that is intended to "experiment" the different parameters, datasets, and visualize results in an end-to-end fashion. I probably refactored my code around 5-6 times this year, which was a great learning experience, but it took a lot of time. It helped me understand the scope of my projects and will hopefully be helpful down the road.
+It helps you formulate and design a software package that is intended to "experiment" the different parameters, datasets, and visualize results in an end-to-end fashion; it ideally would allow you to "press run" while you read papers, go out drinking, or go traveling. I probably refactored my code around 5-6 times this year, which was a great learning experience, but it took a lot of time. It helped me understand the scope of my projects and will hopefully be helpful down the road in my ambition to become a data and machine learning expert.
 
-3. it's easy to get stuck in a loop of feeling like "you're not going anywhere". 
+#### 3. it's easy to get stuck in a loop of feeling like "you're not going anywhere". 
 
 Research takes time and whether it's analyzing data, thinking of a math problem, understanding an experiment, or testing a computational model, it can become easy to think you're making no progress. It is extremely important to set mini-goals (e.g. weekly) on top of your milestone goals (e.g. monthly, or few months). You want to also allow yourself room to learn how to set these goals realistically. At the beginning, you'll think that you are capable of accomplish ABC...Z in one week. Most of the time, this ends up being overly optimistic. As you grow, you start to realize what is realistically accomplishable on a week-to-week basis. This helps you scope out each week and plan accordingly to make incremental progress.
 
