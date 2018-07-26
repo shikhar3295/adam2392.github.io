@@ -41,7 +41,10 @@
 &lt;li&gt;Conclusions / Future Considerations&lt;/li&gt;
 &lt;li&gt;Random Notes&lt;ul&gt;
 &lt;li&gt;Data Pipeline Design&lt;/li&gt;
-&lt;li&gt;PhD and Research Understanding&lt;ul&gt;
+&lt;li&gt;PhD and Research Understanding
+        - 1. reading papers is good to do on a consistent basis, but focus on getting to the core of the "key" papers (how you decide which papers are key comes with exp)
+        - 2. software engineering is very important in data analysis.
+        - 3. it's easy to get stuck in a loop of feeling like "you're not going anywhere".&lt;ul&gt;
 &lt;li&gt;References:&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -102,16 +105,12 @@ Using a batch of real recording data from patients, we can construct a deep lear
 &lt;/ol&gt;
 &lt;h2&gt;PhD and Research Understanding&lt;/h2&gt;
 &lt;p&gt;A lot of this year was spent reading papers and doing a lot of thinking... Not very productive, but I really felt like I learned a lot and expanded my research mindset.&lt;/p&gt;
-&lt;p&gt;Couple things I started learning more about:
-1. reading papers is good to do on a consistent basis, but focus on getting to the core of the "key" papers (how you decide which papers are key comes with exp)&lt;/p&gt;
+&lt;p&gt;Couple things I started learning more about:&lt;/p&gt;
+&lt;h4&gt;1. reading papers is good to do on a consistent basis, but focus on getting to the core of the "key" papers (how you decide which papers are key comes with exp)&lt;/h4&gt;
 &lt;p&gt;I realized that some papers are great to learn and skim through the results and methods to understand how they did it, what are the limitations and what was innovated on. Then there are other papers that introduce a completely new concept that might be different. These papers are important to understand because they usually spur papers down the road that require you to understand this one. I tend to go through the figures and equations multiple times to understand the details of the motivation, methods and results.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;software engineering is very important in data analysis.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;It helps you formulate and design a software package that is intended to "experiment" the different parameters, datasets, and visualize results in an end-to-end fashion. I probably refactored my code around 5-6 times this year, which was a great learning experience, but it took a lot of time. It helped me understand the scope of my projects and will hopefully be helpful down the road.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;it's easy to get stuck in a loop of feeling like "you're not going anywhere". &lt;/li&gt;
-&lt;/ol&gt;
+&lt;h4&gt;2. software engineering is very important in data analysis.&lt;/h4&gt;
+&lt;p&gt;It helps you formulate and design a software package that is intended to "experiment" the different parameters, datasets, and visualize results in an end-to-end fashion; it ideally would allow you to "press run" while you read papers, go out drinking, or go traveling. I probably refactored my code around 5-6 times this year, which was a great learning experience, but it took a lot of time. It helped me understand the scope of my projects and will hopefully be helpful down the road in my ambition to become a data and machine learning expert.&lt;/p&gt;
+&lt;h4&gt;3. it's easy to get stuck in a loop of feeling like "you're not going anywhere".&lt;/h4&gt;
 &lt;p&gt;Research takes time and whether it's analyzing data, thinking of a math problem, understanding an experiment, or testing a computational model, it can become easy to think you're making no progress. It is extremely important to set mini-goals (e.g. weekly) on top of your milestone goals (e.g. monthly, or few months). You want to also allow yourself room to learn how to set these goals realistically. At the beginning, you'll think that you are capable of accomplish ABC...Z in one week. Most of the time, this ends up being overly optimistic. As you grow, you start to realize what is realistically accomplishable on a week-to-week basis. This helps you scope out each week and plan accordingly to make incremental progress.&lt;/p&gt;
 &lt;p&gt;Even if your results don't pan out, this helps build a mindset of systematic thinking. You want to plan mini-experiments on your analysis that will provide you with the next step to pursue. The analysis did not work the way you expect? Okay, then we probably need to test these factors and visualize data over the next week. Okay if those factors will take too long, we should back up and clean up our approach.&lt;/p&gt;
 &lt;h3&gt;References:&lt;/h3&gt;
