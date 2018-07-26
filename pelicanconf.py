@@ -12,7 +12,7 @@ def convert(dictionary):
 AUTHOR = u'Adam Li'
 SITENAME = u"Adam Li"
 SITEURL = 'https://adam2392.github.io'
-SITELOGO = 'header.JPG'
+SITELOGO = 'brain.jpg'
 SITETITLE = 'Adam J. Li'
 COPYRIGHT_YEAR = 2017
 HEADER_IMAGE='brain.jpg'
