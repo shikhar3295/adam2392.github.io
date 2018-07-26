@@ -380,7 +380,7 @@ A: Use uber, or the metro line.&lt;/li&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Concepts&lt;ul&gt;
+&lt;li&gt;Research Project Concepts&lt;ul&gt;
 &lt;li&gt;
 &lt;ol&gt;
 &lt;li&gt;The Virtual Brain (TVB) vs Network Data Analysis&lt;/li&gt;
@@ -394,7 +394,7 @@ A: Use uber, or the metro line.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;Conclusions / Future Considerations&lt;/li&gt;
-&lt;li&gt;Random Notes&lt;ul&gt;
+&lt;li&gt;Random Notes on This Year, Data and PhD Research&lt;ul&gt;
 &lt;li&gt;Data Pipeline Design&lt;/li&gt;
 &lt;li&gt;PhD and Research Understanding
         - 1. reading papers is good to do on a consistent basis, but focus on getting to the core of the "key" papers (how you decide which papers are key comes with exp)
@@ -409,6 +409,7 @@ A: Use uber, or the metro line.&lt;/li&gt;
 &lt;!-- /MarkdownTOC --&gt;
 
 &lt;h1&gt;Background&lt;/h1&gt;
+&lt;p&gt;Here, I will attempt to give a brief introduction to the core concepts in my research and relate it to the clinical problem of epilepsy.&lt;/p&gt;
 &lt;h2&gt;0. Short Blurb About Brains and Network Neuroscience&lt;/h2&gt;
 &lt;p&gt;With all the hype about "AI" and deep learning recently, it can become easy to assume that we are at the apex of our understanding of the human brain. This couldn't be farther from the truth. While we have a decent understanding of how single neurons work and how different regions of our brain work to give rise to very basic behavior (i.e. vision, movement, perception), we essentially have no knowledge as to how hundreds-millions of neurons work together, or how more complex behavior manifests (i.e. imagination, learning, etc.). &lt;/p&gt;
 &lt;p&gt;Brains are inherently a complex network of highly nonlinear functions. In the past it has been easy to analyze very simple, linear "things". That is because linear means a line. If you add a lot of lines together, it is easy to predict what the result looks like. Now imagine, if instead of a line, you have a highly complex curve and you add many of these together. It quickly becomes insurmountable to imagine how this result would look like. This is exactly what happens with our brain. We initially were able to ask simple questions of the brain and get simple answers from one neuron, or one region of the brain. However, in order to tackle increasingly complex questions of the brain, we have to shift our analysis to look at the entire network of the brain. When we learn, how does the entire brain coordinate this (not just one region)? When we have neurological diseases, how does the entire brain get affected (not just one region)?&lt;/p&gt;
@@ -427,7 +428,8 @@ A: Use uber, or the metro line.&lt;/li&gt;
 &lt;p&gt;Algorithms are spelling out a certain set of computations that a program should undertake to get a specific answer. In our research group, we are attempting to develop algorithms that take in brain data of the patient and outputs a prediction of the diseased region. There are different kinds of algorithms that use the data in various ways. In general, all data analysis tries to represent data in various ways. Does the amplitude, or frequency of the data matter? Should we represent the data as a graph? Should we apply filters to the data to remove noise? Should we just leave the data alone and let the model decide what is important?&lt;/p&gt;
 &lt;p&gt;Our research group currently developed a fast network-based algorithm that analyzes the data as a graph by applying a very specific type of computation. Namely, it constructs a graph out of the dataset and applies perturbations to the graph (i.e. add's vectors of noise in a very structured way), to determine which regions of the brain are most susceptible to being perturbed into seizing. This specific type of analysis requires some simple linear systems theory to derive an analytical equation for doing this. It was biologically inspired and can be read in some of the reference publications.&lt;/p&gt;
 &lt;p&gt;On the other end of the spectrum, one could apply deep learning to this problem for a way of supervised learning. What this would require is knowing the exact regions of the brain that are diseased and then feeding in the data and the labels of the regions to let the model determine which features of the data are most predictive of the diseased region. This is more general, but can require large amounts of data and hyperparameter tuning of the neural networks. In addition, epilepsy data has the problem of "noisy labeling". Clinicians are never sure where exactly the EZ is, so even if we have a significant amount of patients, our training data for deep learning are not optimal. Contrast this with the infamous case of recognizing "cats vs dogs", where I am pretty positive most cats are definitely correctly labeled as cats, and vice versa.&lt;/p&gt;
-&lt;h1&gt;Concepts&lt;/h1&gt;
+&lt;h1&gt;Research Project Concepts&lt;/h1&gt;
+&lt;p&gt;Here, I attempt to explain some of the high level concepts that motivated the research I am carrying out that integrates network analysis, computational modeling and deep learning.&lt;/p&gt;
 &lt;h2&gt;1. The Virtual Brain (TVB) vs Network Data Analysis&lt;/h2&gt;
 &lt;p&gt;This was the main project proposed when I applied for the Whitaker/Chateaubriand fellowships. The goal was to use the flexible modeling capabilities of "The Virtual Brain" (TVB) platform developed here in Marseille to understand how network data predictions of the epileptogenic zone performs under various model configurations. So, how can our predictions work under various clinical settings? Can we arrive at the same conclusion when our algorithm is applied to an in-silico model?&lt;/p&gt;
 &lt;p&gt;Being able to demonstrate agreement by using this whole-brain model helps provide evidence on two fronts: &lt;/p&gt;
@@ -449,7 +451,7 @@ Using a batch of real recording data from patients, we can construct a deep lear
 &lt;h1&gt;Conclusions / Future Considerations&lt;/h1&gt;
 &lt;p&gt;Returning to JHU, I have a lot of things to accomplish before being able to graduate with my PhD. Although spending this year may have increased my timeline to graduation, it also expanded my research scope and scientific knowledge. This is exciting to me because a PhD is not just about quickly graduating, but about developing a broad range of deep skills that allow you to make impacts on a variety of different problems.&lt;/p&gt;
 &lt;p&gt;Epilepsy is only a small subset of the many unsolved neurological disorders out there. By tackling a very specific problem in the brain, I will hope to build fundamental understanding that translates to understanding other brain disorders. Specifically in the future, I am interested in Alzheimers disease.&lt;/p&gt;
-&lt;h1&gt;Random Notes&lt;/h1&gt;
+&lt;h1&gt;Random Notes on This Year, Data and PhD Research&lt;/h1&gt;
 &lt;p&gt;This year, I really had to deal with more data then I was accustomed to at JHU. At JHU, I had access to various text files, EEG recordings and MRI/CT imaging data for various patients from various clinical centers. However, these recordings were never longer then 5-10 minutes. &lt;/p&gt;
 &lt;p&gt;Here, I had to begin dealing with data at larger scales. I had to understand how to optimize parallelized runs of linear algorithms on said data. My datasets went from a couple hundred MB (i.e. few recordings for a single patient), to a few GB (i.e. multiple patients) to a couple hundred GB and few TBs (i.e. &amp;gt;50 patients with multiple recordings). My analysis and data pipeline design scaled at the same time, but required me to refactor and understand how to continuously analyze the data robustly and efficiently. I complain a lot about having to refactor code (since it's not really research), but I think there is a lot to be learned by having to independently design, implement and test your own data pipelines as your data/analysis becomes more and more complex.&lt;/p&gt;
 &lt;p&gt;I started out with analyzing datasets on my laptop/workstation with unoptimized code. Then I proceeded to optimize different parts of my workflow and moduralize it, so that it could be parallelized onto multiple cores. I then proceeded to submit it onto the JHU Maryland High-Performance Computing cluster. At the same time, I ended up learning a lot more about Unix and terminal-based commands.&lt;/p&gt;

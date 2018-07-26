@@ -13,11 +13,11 @@ Summary: To summarize my Whitaker/Chateaubriand research experience abroad in Ma
     - 1. Epilepsy
     - 2. Computational Modeling
     - 3. Algorithms
-- Concepts
+- Research Project Concepts
     - 1. The Virtual Brain \(TVB\) vs Network Data Analysis
     - 2. Using TVB To Augment Neural Datasets For Deep Learning
 - Conclusions / Future Considerations
-- Random Notes
+- Random Notes on This Year, Data and PhD Research
     - Data Pipeline Design
     - PhD and Research Understanding
             - 1. reading papers is good to do on a consistent basis, but focus on getting to the core of the "key" papers \(how you decide which papers are key comes with exp\)
@@ -27,6 +27,8 @@ Summary: To summarize my Whitaker/Chateaubriand research experience abroad in Ma
 
 <!-- /MarkdownTOC -->
 # Background
+Here, I will attempt to give a brief introduction to the core concepts in my research and relate it to the clinical problem of epilepsy.
+
 ## 0. Short Blurb About Brains and Network Neuroscience
 With all the hype about "AI" and deep learning recently, it can become easy to assume that we are at the apex of our understanding of the human brain. This couldn't be farther from the truth. While we have a decent understanding of how single neurons work and how different regions of our brain work to give rise to very basic behavior (i.e. vision, movement, perception), we essentially have no knowledge as to how hundreds-millions of neurons work together, or how more complex behavior manifests (i.e. imagination, learning, etc.). 
 
@@ -53,7 +55,9 @@ Our research group currently developed a fast network-based algorithm that analy
 
 On the other end of the spectrum, one could apply deep learning to this problem for a way of supervised learning. What this would require is knowing the exact regions of the brain that are diseased and then feeding in the data and the labels of the regions to let the model determine which features of the data are most predictive of the diseased region. This is more general, but can require large amounts of data and hyperparameter tuning of the neural networks. In addition, epilepsy data has the problem of "noisy labeling". Clinicians are never sure where exactly the EZ is, so even if we have a significant amount of patients, our training data for deep learning are not optimal. Contrast this with the infamous case of recognizing "cats vs dogs", where I am pretty positive most cats are definitely correctly labeled as cats, and vice versa.
 
-# Concepts
+# Research Project Concepts
+Here, I attempt to explain some of the high level concepts that motivated the research I am carrying out that integrates network analysis, computational modeling and deep learning.
+
 ## 1. The Virtual Brain (TVB) vs Network Data Analysis
 This was the main project proposed when I applied for the Whitaker/Chateaubriand fellowships. The goal was to use the flexible modeling capabilities of "The Virtual Brain" (TVB) platform developed here in Marseille to understand how network data predictions of the epileptogenic zone performs under various model configurations. So, how can our predictions work under various clinical settings? Can we arrive at the same conclusion when our algorithm is applied to an in-silico model?
 
@@ -86,7 +90,7 @@ Returning to JHU, I have a lot of things to accomplish before being able to grad
 
 Epilepsy is only a small subset of the many unsolved neurological disorders out there. By tackling a very specific problem in the brain, I will hope to build fundamental understanding that translates to understanding other brain disorders. Specifically in the future, I am interested in Alzheimers disease.
 
-# Random Notes
+# Random Notes on This Year, Data and PhD Research
 This year, I really had to deal with more data then I was accustomed to at JHU. At JHU, I had access to various text files, EEG recordings and MRI/CT imaging data for various patients from various clinical centers. However, these recordings were never longer then 5-10 minutes. 
 
 Here, I had to begin dealing with data at larger scales. I had to understand how to optimize parallelized runs of linear algorithms on said data. My datasets went from a couple hundred MB (i.e. few recordings for a single patient), to a few GB (i.e. multiple patients) to a couple hundred GB and few TBs (i.e. >50 patients with multiple recordings). My analysis and data pipeline design scaled at the same time, but required me to refactor and understand how to continuously analyze the data robustly and efficiently. I complain a lot about having to refactor code (since it's not really research), but I think there is a lot to be learned by having to independently design, implement and test your own data pipelines as your data/analysis becomes more and more complex.
