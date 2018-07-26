@@ -9,6 +9,7 @@ Summary: To summarize my Whitaker/Chateaubriand research experience abroad in Ma
 <!-- MarkdownTOC -->
 
 - Background
+    - 0. Short Blurb About Brains and Network Neuroscience
     - 1. Epilepsy
     - 2. Computational Modeling
     - 3. Algorithms
@@ -23,6 +24,13 @@ Summary: To summarize my Whitaker/Chateaubriand research experience abroad in Ma
 
 <!-- /MarkdownTOC -->
 # Background
+## 0. Short Blurb About Brains and Network Neuroscience
+With all the hype about "AI" and deep learning recently, it can become easy to assume that we are at the apex of our understanding of the human brain. This couldn't be farther from the truth. While we have a decent understanding of how single neurons work and how different regions of our brain work to give rise to very basic behavior (i.e. vision, movement, perception), we essentially have no knowledge as to how hundreds-millions of neurons work together, or how more complex behavior manifests (i.e. imagination, learning, etc.). 
+
+Brains are inherently a complex network of highly nonlinear functions. In the past it has been easy to analyze very simple, linear "things". That is because linear means a line. If you add a lot of lines together, it is easy to predict what the result looks like. Now imagine, if instead of a line, you have a highly complex curve and you add many of these together. It quickly becomes insurmountable to imagine how this result would look like. This is exactly what happens with our brain. We initially were able to ask simple questions of the brain and get simple answers from one neuron, or one region of the brain. However, in order to tackle increasingly complex questions of the brain, we have to shift our analysis to look at the entire network of the brain. When we learn, how does the entire brain coordinate this (not just one region)? When we have neurological diseases, how does the entire brain get affected (not just one region)?
+
+Obviously, there is a whole field out there growing as a result. That is called, network neuroscience; the science of analyzing how the brain works using network-based analysis (e.g. graphs, neural networks, etc.). My belief is that as our understanding of basic brain network principles improves, our ability to generate increasingly complex AI systems will also improve.
+
 ## 1. Epilepsy
 Epilepsy is a disease that affects more then 70 M people worldwide, which characterizes itself with seizures (i.e. abnormal brain activity) for seconds to several minutes. Epilepsy can be treated with medicine that generally inhibits brain activity (albeit with numerous side effects), and also with surgery. Surgery can involve resection (i.e. cutting a portion of the hypothesized diseased brain) and laser ablation (i.e. heat treatment of small spherical regions within the brain). When successful, surgery can result in complete seizure freedom! 
 
