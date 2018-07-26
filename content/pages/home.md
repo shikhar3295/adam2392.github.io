@@ -13,9 +13,9 @@ I'm originally from Los Angeles, CA and consider myself a true CA native even th
 
 As an engineer, I consider myself an expert in Matlab and Python, being able to work with Numpy, Pandas, Scipy, Keras/Tensorflow, Pytorch and more. I am familiar with Bash, Javascript, HTML, CSS, C/C++, MongoDB and SQL. I have experience with Django, Pelican frameworks. I like building stuff with Arduino, and Raspberry Pi. As a data analyst, I have experience with PBS/SLURM scheduling systems and GNU parallel. 
 
-My domain experience includes neuroscience, linear systems, data wrangling, machine learning and algorithm development. Some things I've become interested in recently (as of 2016/2017) are bayesian statistics, malware/cybersecurity, differential geometry and blockchain technologies. Building things in Solidity is fun, but very challenging.
+My domain experience includes neuroscience, linear systems, data wrangling, machine learning and algorithm development. Some things I've become interested in recently (as of 2016/2017) are bayesian statistics, malware/cybersecurity, differential geometry and blockchain technologies; basically I enjoy reading laymen-term articles about these topics. 
 
-Everything on this site reflects my personal views only. It'll generally range from research/science thoughts, to photo blogs (in progress), to travel blogs.
+Everything on this site reflects my personal views only. It'll generally range from research/science thoughts, to photo blogs (in progress in the backend), to travel blogs (for my own benefit of keeping track of where I went :p).
 
 # Blog
 
