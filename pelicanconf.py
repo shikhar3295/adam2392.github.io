@@ -15,7 +15,7 @@ SITEURL = 'https://adam2392.github.io'
 SITELOGO = 'header.JPG'
 SITETITLE = 'Adam J. Li'
 COPYRIGHT_YEAR = 2017
-HEADER_IMAGE='header.JPG'
+HEADER_IMAGE='brain.jpg'
 
 PATH = 'content'
 
