@@ -10,8 +10,17 @@ Summary: To keep a log of important concepts in computational modeling.
 - Background
 - Concepts
     - 1. Numerical Integration
+        - Deterministic Differential Equations
+        - Stochastic Differential Equations
+        - Considerations:
+        - References:
     - 2. Deterministic and Stochastic Differential Equations
-    - 1. Deterministic vs Stochastic
+        - Deterministic Differential Equations
+        - Stochastic Differential Equations
+        - References:
+        - References:
+        - Summary / Conclusions:
+        - Important Notes:
 
 <!-- /MarkdownTOC -->
 # Background
@@ -73,7 +82,7 @@ Stratonovich integral =>
 
 ### References:
 
-## 1. Deterministic vs Stochastic
+
 ### References:
 ### Summary / Conclusions:
 

@@ -13,6 +13,11 @@ Summary: A short walkthrough of my experience with the DBO exam at Johns Hopkins
 	- Examples of different types of neurons
 	- Approach
 	- Important Equations
+		- Unsealed end:
+		- Sealed end:
+		- Concatenated Cables:
+		- Definitions:
+		- Compartmental Models:
 	- Study
 - 2. Generalized Linear Models:
 	- General Form of Exponential Family Distribution
@@ -36,7 +41,7 @@ Summary: A short walkthrough of my experience with the DBO exam at Johns Hopkins
 	- Convergence
 - 6. Sensory Pathways and Systems in Neuroscience
 - 7. Motor Pathways and Systems in Neuroscience
-- 8. General Systems in Neuroscience
+- 8. General Topics in Neuroscience
 - 9. Gaussian Mixture Models
 - FAQ
 
@@ -96,7 +101,6 @@ Be able to define all the terms, such as: natural paramters, sufficient statisti
 
 ## Normal Linear Regression
 
-
 ## Logistic Regression
 
 ## Poisson Regression
@@ -128,9 +132,10 @@ Derive the Kalman filter equations for the state update, covarariance estimates
 4. Covariance Update
 
 ## Relation to a Least-Squares Problem
+Review...
 
 ## Relation to a Bayesian Maximum Aposteri Estimation
-
+Review...
 
 
 # 4. Expectation Maximization
@@ -162,26 +167,40 @@ Walk through for a small example to see how the algorithm works:
 (1, 1, 0)
 (2, 1, 0)
 
-
 ## Initialization
+Initialization of a k-means type algorithm initializes k "means", we call centers at the beginning, and then assigns points into these centers based on the cost function. 
 
 ## Convergence
 Show that the cost monotonically decreases, so the algorithm will converge at least in the sense of cost decreasing to a non-changing amount.
 
 
 # 6. Sensory Pathways and Systems in Neuroscience
+The different neuronal pathways in the central nervous system, vs the periphery nervous system. 
+
+Visual sensory pathway that leads from the retina all the way to the occipital lobe of the brain.
+
+The somatosensory pathways that lead to the SI, and SII all with nerve sensors from the periphery of your body.
 
 # 7. Motor Pathways and Systems in Neuroscience
+How does motor movements get controlled in the brain?
 
-# 8. General Systems in Neuroscience
+The premotor cortex, and also the motor cortex are at the highest levels of control. We can also include the cerebellum when we talk about motor control.
+
+# 8. General Topics in Neuroscience
+Good things to know and remember are:
+- Hodgkin Huxley models: a biophysical model that models realistic neuronal firing based on concentration gradients, membrane conductances, membrane potentials and even more.
+- Nernst equation: a fundamental equation for determining the resting potential of a membrane in the presence of a concentration gradient of an ion.
+- Goldman-Katz equation: a model with multiple ions that determins the resting potential of a membrane (extension of Nernst)
+- Action potentials and the chronology of cell actions that are taken
 
 # 9. Gaussian Mixture Models
+This is the idea that some data distributions can be the combinations of many different Gaussian models with different means and variance, but superimposed on each other. 
 
+The goal of a gaussian mixture model is to identify the parameters of each of the separate gaussians by a process called Expectation Maximization. In this process, we switch between maximizing the likelihood by iterating on the parameters of the gaussian models and computing a new likelihood function given the new parameters.
 
 # FAQ
-1. Q: Where should I stay? 
-A: Generally, I'm an advocate of staying downtown because then everything is walking distance. If not, I would try to stay within walking distance to a subway station. Stay away from South Chicago because that is a very crime-ridden area.
+1. Q: How long should I study for?
+A: I would study for about 2-3 weeks with nothing else going on. You want to be able to do a comprehensive overview of everything first, and then dive deeper into topics that are more likely to come up. You should also do test runs of walking through "open-ended" questions on a white board many times.
 
-2. Q: I only have a day in Seoul, where should I go?
-A: Purple pig, Girl on the goat, Lou Malnati's to eat. Cloud Gate / Millenium Park and the River Walk to see. Signature Room for a night time drink if you have the time.
+The goal here is to practice thinking out loud and being very clear in your communication.
 

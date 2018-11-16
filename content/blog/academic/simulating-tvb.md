@@ -78,7 +78,7 @@ If you want to have a script to add these all to path for your jupyter notebook,
 TBD
 
 ## 2. Simulating Epilepsy
-In order to simulate epilepsy, you are going to walk through a pipeline using TVB. 
+In order to simulate epilepsy, you are going to walk through a pipeline using TVB. Details are left out for now.
 
 i. Structural Connectivity
 What is the matrix of connectivities between your brain regions?

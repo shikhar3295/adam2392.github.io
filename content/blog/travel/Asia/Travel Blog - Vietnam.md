@@ -18,7 +18,6 @@ status: draft
         - 1. Hanoi Airport
     - Hanoi:
     - Halong Bay:
-    - Ninh Binh:
     - Food
         - 1.
     - Nightlife/Drinking
@@ -44,9 +43,6 @@ status: draft
 
 
 ## Halong Bay:
-
-
-## Ninh Binh:
 
 
 
