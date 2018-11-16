@@ -354,7 +354,81 @@ truffle unbox git@github.com:ajb413/crowdsalable-eth-token.git
 &lt;ol&gt;
 &lt;li&gt;Q: How do I get around?
 A: Use uber, or the metro line.&lt;/li&gt;
-&lt;/ol&gt;</content><category term="travel"></category><category term="europe"></category><category term="france"></category><category term="nice"></category></entry><entry><title>Using The Virtual Brain to Understand Algorithms</title><link href="/blog/2018/06/whitaker-summary-experience/" rel="alternate"></link><published>2018-06-01T00:00:00-04:00</published><updated>2018-06-01T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2018-06-01:/blog/2018/06/whitaker-summary-experience/</id><summary type="html">&lt;p&gt;To summarize my Whitaker/Chateaubriand research experience abroad in Marseille, France.&lt;/p&gt;</summary><content type="html">&lt;!-- MarkdownTOC --&gt;
+&lt;/ol&gt;</content><category term="travel"></category><category term="europe"></category><category term="france"></category><category term="nice"></category></entry><entry><title>Europe - Living and Traveling</title><link href="/blog/2018/06/europe-summary-2018/" rel="alternate"></link><published>2018-06-01T00:00:00-04:00</published><updated>2018-06-01T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2018-06-01:/blog/2018/06/europe-summary-2018/</id><summary type="html">&lt;p&gt;A summary of my time abroad in Europe, 2017-2018.&lt;/p&gt;</summary><content type="html">&lt;!-- MarkdownTOC --&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Quick Background&lt;/li&gt;
+&lt;li&gt;Top Experiences&lt;/li&gt;
+&lt;li&gt;Culture EU vs America&lt;/li&gt;
+&lt;li&gt;Misc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- /MarkdownTOC --&gt;
+
+&lt;h1&gt;Quick Background&lt;/h1&gt;
+&lt;p&gt;This past year, I was fortunate to live in France, Europe from September 2017 till August 2018. While, I couldn't speak much French, I worked in an english speaking laboratory at Aix-Marseille Universite, under a really talented and successful professor, Dr. Viktor Jirsa.&lt;/p&gt;
+&lt;p&gt;While there, I had the chance to visit numerous countries and cities (I try to stay chronologically):
+- London, UK
+- Munich, Germany (Oktoberfest)
+- Casablanca and Marrakech, Morocco
+- Budapest, Hungary
+- Geneva/Lausanne, Switzerland (LauzHack)
+- Lyon, France
+- Prague, Czech Republic
+- Paris, France (Thanksgiving)
+- Munich, Germany (with parents)
+- Vienna, Austria
+- London, UK (Christmas)
+- Zurich, Switzerland (NY)
+- Cambridge, UK (Cambridge Hacks)
+- Berlin, Germany (Bosch Connected World Hackathon/Conference)
+- Amsterdam, Netherlands (SD friends here)
+- Paris, France
+- Cassis, France (from Marseille)
+- Amsterdam, Netherlands (Baltimore friends here)
+- Barcelona, Spain
+- Paris, France
+- Saint Raphael, France (For TNG/INS Retreat! So fun...)
+- Monaco
+- Nice, France
+- London -&amp;gt; Dublin, Ireland 
+- Lisbon and Porto, Portugal
+- London, UK (Last layover before heading home to USA)
+- Tuscany and Pisa, Italy&lt;/p&gt;
+&lt;h1&gt;Top Experiences&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;United Kingdom&lt;/li&gt;
+&lt;li&gt;Switzerland&lt;/li&gt;
+&lt;li&gt;Southern France&lt;/li&gt;
+&lt;li&gt;Traveling A Lot
+TBD&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1&gt;Culture EU vs America&lt;/h1&gt;
+&lt;p&gt;Culture in Europe is a huge mix of different nations. &lt;/p&gt;
+&lt;p&gt;America is different because we are one nation with a mix of many nationalities that came to solely LIVE in America. Honestly, we're all American. I felt more American while living abroad, then Chinese because that's who I am; that's how I grew up. &lt;/p&gt;
+&lt;p&gt;Politics of America in Europe is actually very well known. Everyone I knew heard about the major events in the USA. They knew a lot about Trump's policies and found it amusing that Americans had so many divisive issues that were not present in EU life. For example, they found it absurd that we have guns. Even if it is for enjoyment..., why do we need them? Even if you're a law-abiding citizen, why do you need a gun. EU citizens definitely don't see America as a great country in any aspect since Trump got elected. Most of the times the USA came up, it was with an air of humor, or mockery. To be fair, I agreed at times with them because Trump acted like a child.&lt;/p&gt;
+&lt;h1&gt;Misc.&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;What was the most memorable part of your experience abroad?&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;traveling, connecting with people from other countries and going on a lab retreat EU style.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;How did the Whitaker experience improve your research in graduate school?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;it brought a different viewpoint into my research of epilepsy seizure localization. It also exposed me to the field of computational modeling and using dynamical systems to study biological phenomena.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;For scientists planning on going abroad for a prolonged visit, what is some advice you would give them?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;spend as much time as you can engaging in other researchers while you are there. Take as much time as you can to travel within the country and region also.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Can you explain the research you undertook during your Whitaker in laymen terms and why it was important?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;simulating seizures in the brain to determine if algorithms designed on empirical data can localize the origin of these seizures in-silico.&lt;/li&gt;
+&lt;/ol&gt;</content><category term="personal"></category><category term="travel"></category><category term="europe"></category></entry><entry><title>Using The Virtual Brain to Understand Algorithms</title><link href="/blog/2018/06/whitaker-summary-experience/" rel="alternate"></link><published>2018-06-01T00:00:00-04:00</published><updated>2018-06-01T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2018-06-01:/blog/2018/06/whitaker-summary-experience/</id><summary type="html">&lt;p&gt;To summarize my Whitaker/Chateaubriand research experience abroad in Marseille, France.&lt;/p&gt;</summary><content type="html">&lt;!-- MarkdownTOC --&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Background&lt;ul&gt;
@@ -1828,16 +1902,21 @@ Getting to the city from the airport is extremely easy. Just check google maps a
 &lt;li&gt;
 &lt;ol&gt;
 &lt;li&gt;Numerical Integration&lt;/li&gt;
+&lt;li&gt;Deterministic Differential Equations&lt;/li&gt;
+&lt;li&gt;Stochastic Differential Equations&lt;/li&gt;
+&lt;li&gt;Considerations:&lt;/li&gt;
+&lt;li&gt;References:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;ol&gt;
 &lt;li&gt;Deterministic and Stochastic Differential Equations&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;ol&gt;
-&lt;li&gt;Deterministic vs Stochastic&lt;/li&gt;
+&lt;li&gt;Deterministic Differential Equations&lt;/li&gt;
+&lt;li&gt;Stochastic Differential Equations&lt;/li&gt;
+&lt;li&gt;References:&lt;/li&gt;
+&lt;li&gt;References:&lt;/li&gt;
+&lt;li&gt;Summary / Conclusions:&lt;/li&gt;
+&lt;li&gt;Important Notes:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -1883,7 +1962,6 @@ Uses the derivative of the diffusion coefficients&lt;/p&gt;
 &lt;p&gt;Ito integral =&amp;gt;
 Stratonovich integral =&amp;gt;&lt;/p&gt;
 &lt;h3&gt;References:&lt;/h3&gt;
-&lt;h2&gt;1. Deterministic vs Stochastic&lt;/h2&gt;
 &lt;h3&gt;References:&lt;/h3&gt;
 &lt;h3&gt;Summary / Conclusions:&lt;/h3&gt;
 &lt;h3&gt;Important Notes:&lt;/h3&gt;
@@ -2023,7 +2101,7 @@ python -m ipykernel install --name tridesclous-testing —user
 &lt;h2&gt;1c. Using Docker / Singularity&lt;/h2&gt;
 &lt;p&gt;TBD&lt;/p&gt;
 &lt;h2&gt;2. Simulating Epilepsy&lt;/h2&gt;
-&lt;p&gt;In order to simulate epilepsy, you are going to walk through a pipeline using TVB. &lt;/p&gt;
+&lt;p&gt;In order to simulate epilepsy, you are going to walk through a pipeline using TVB. Details are left out for now.&lt;/p&gt;
 &lt;p&gt;i. Structural Connectivity
 What is the matrix of connectivities between your brain regions?
 Ex: Connectivity weights, conduction speed, coupling function between long-range regions&lt;/p&gt;
@@ -2389,7 +2467,14 @@ A: I would stay near Vieux Port, Joliette, or the southern part of the city.&lt;
 &lt;li&gt;Cable Theory and Compartmental Modeling&lt;/li&gt;
 &lt;li&gt;Examples of different types of neurons&lt;/li&gt;
 &lt;li&gt;Approach&lt;/li&gt;
-&lt;li&gt;Important Equations&lt;/li&gt;
+&lt;li&gt;Important Equations&lt;ul&gt;
+&lt;li&gt;Unsealed end:&lt;/li&gt;
+&lt;li&gt;Sealed end:&lt;/li&gt;
+&lt;li&gt;Concatenated Cables:&lt;/li&gt;
+&lt;li&gt;Definitions:&lt;/li&gt;
+&lt;li&gt;Compartmental Models:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;Study&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
@@ -2441,7 +2526,7 @@ A: I would stay near Vieux Port, Joliette, or the southern part of the city.&lt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;ol&gt;
-&lt;li&gt;General Systems in Neuroscience&lt;/li&gt;
+&lt;li&gt;General Topics in Neuroscience&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -2536,7 +2621,9 @@ A: I would stay near Vieux Port, Joliette, or the southern part of the city.&lt;
 &lt;li&gt;Covariance Update&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2&gt;Relation to a Least-Squares Problem&lt;/h2&gt;
+&lt;p&gt;Review...&lt;/p&gt;
 &lt;h2&gt;Relation to a Bayesian Maximum Aposteri Estimation&lt;/h2&gt;
+&lt;p&gt;Review...&lt;/p&gt;
 &lt;h1&gt;4. Expectation Maximization&lt;/h1&gt;
 &lt;h2&gt;Basic Idea&lt;/h2&gt;
 &lt;p&gt;By computing the likelihood of your unknown parameters, based on known outcomes. You can perform maximum likelihood estimation to get the best estimate of the unknown parameters&lt;/p&gt;
@@ -2562,23 +2649,31 @@ repeat until there is no further change in L(z, C):
 (1, 1, 0)
 (2, 1, 0)&lt;/p&gt;
 &lt;h2&gt;Initialization&lt;/h2&gt;
+&lt;p&gt;Initialization of a k-means type algorithm initializes k "means", we call centers at the beginning, and then assigns points into these centers based on the cost function. &lt;/p&gt;
 &lt;h2&gt;Convergence&lt;/h2&gt;
 &lt;p&gt;Show that the cost monotonically decreases, so the algorithm will converge at least in the sense of cost decreasing to a non-changing amount.&lt;/p&gt;
 &lt;h1&gt;6. Sensory Pathways and Systems in Neuroscience&lt;/h1&gt;
+&lt;p&gt;The different neuronal pathways in the central nervous system, vs the periphery nervous system. &lt;/p&gt;
+&lt;p&gt;Visual sensory pathway that leads from the retina all the way to the occipital lobe of the brain.&lt;/p&gt;
+&lt;p&gt;The somatosensory pathways that lead to the SI, and SII all with nerve sensors from the periphery of your body.&lt;/p&gt;
 &lt;h1&gt;7. Motor Pathways and Systems in Neuroscience&lt;/h1&gt;
-&lt;h1&gt;8. General Systems in Neuroscience&lt;/h1&gt;
+&lt;p&gt;How does motor movements get controlled in the brain?&lt;/p&gt;
+&lt;p&gt;The premotor cortex, and also the motor cortex are at the highest levels of control. We can also include the cerebellum when we talk about motor control.&lt;/p&gt;
+&lt;h1&gt;8. General Topics in Neuroscience&lt;/h1&gt;
+&lt;p&gt;Good things to know and remember are:
+- Hodgkin Huxley models: a biophysical model that models realistic neuronal firing based on concentration gradients, membrane conductances, membrane potentials and even more.
+- Nernst equation: a fundamental equation for determining the resting potential of a membrane in the presence of a concentration gradient of an ion.
+- Goldman-Katz equation: a model with multiple ions that determins the resting potential of a membrane (extension of Nernst)
+- Action potentials and the chronology of cell actions that are taken&lt;/p&gt;
 &lt;h1&gt;9. Gaussian Mixture Models&lt;/h1&gt;
+&lt;p&gt;This is the idea that some data distributions can be the combinations of many different Gaussian models with different means and variance, but superimposed on each other. &lt;/p&gt;
+&lt;p&gt;The goal of a gaussian mixture model is to identify the parameters of each of the separate gaussians by a process called Expectation Maximization. In this process, we switch between maximizing the likelihood by iterating on the parameters of the gaussian models and computing a new likelihood function given the new parameters.&lt;/p&gt;
 &lt;h1&gt;FAQ&lt;/h1&gt;
 &lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Q: Where should I stay? 
-A: Generally, I'm an advocate of staying downtown because then everything is walking distance. If not, I would try to stay within walking distance to a subway station. Stay away from South Chicago because that is a very crime-ridden area.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Q: I only have a day in Seoul, where should I go?
-A: Purple pig, Girl on the goat, Lou Malnati's to eat. Cloud Gate / Millenium Park and the River Walk to see. Signature Room for a night time drink if you have the time.&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;Q: How long should I study for?
+A: I would study for about 2-3 weeks with nothing else going on. You want to be able to do a comprehensive overview of everything first, and then dive deeper into topics that are more likely to come up. You should also do test runs of walking through "open-ended" questions on a white board many times.&lt;/li&gt;
 &lt;/ol&gt;
+&lt;p&gt;The goal here is to practice thinking out loud and being very clear in your communication.&lt;/p&gt;
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
@@ -3562,25 +3657,62 @@ A: I would stay near the Seine river if possible! Preferably on the north side b
 &lt;/ul&gt;
 &lt;h4&gt;8. Build 3 Node, JS, React webapps this year&lt;/h4&gt;
 &lt;p&gt;Keeping it under 10 this year because I recently read about Warren Buffet's 5/25 rule and am inspired by its logic. Happy 2017 everyone.&lt;/p&gt;</content><category term="personal"></category><category term="goals"></category></entry><entry><title>Personal Goals - 2016</title><link href="/blog/2015/12/goals-2016/" rel="alternate"></link><published>2015-12-31T00:00:00-05:00</published><updated>2015-12-31T00:00:00-05:00</updated><author><name>Adam Li</name></author><id>tag:None,2015-12-31:/blog/2015/12/goals-2016/</id><summary type="html">&lt;p&gt;A summary of goals for 2016.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Each year passes by faster and faster in my opinion, so I want to make the most out of 2016. As 2016 comes and 2015 comes to a close, I want to make some resolutions and goals for the new year.&lt;/p&gt;
-&lt;p&gt;Spend more effort and time on good friends and ignore the rest.
-- This year I realized that even someone who you've known for years can exit your life in an instant. I want to spend more time and money on people that are there for you when you're up and down. When shit went down for me, people who I thought I could count on were nowhere to be seen. Why waste time and effort on those people?
-Read more about politics and current events in our country.
-- I think that coming from California is a blessing in many ways. However, I think that we take for granted all the things we have. There is a lot of different things happening around the country (e.g. politics) that I did not educate myself on. Using politico and pulse apps to keep up to date
-Start choreographing again.
-- Throughout undergrad, I made excuses for not trying more in dance to improve. Whether it was coursework, social life, or laziness, I didn't put in time and effort into my passion. Will try to do at least 1 piece and work on it throughout the year.
-Enter in 1-2 jams.
-- Been bboying for almost 8 years and it has carried me through undergrad and high school. Want to continue going for top 8 in some big jams until I can't bboy anymore.
-Begin taking photos and videos more during the year and documenting them.
-- My dad gave me his old Nikon D5000 and I got a GoPro at the beginning of the summer. Photography is a way for me to keep involved in the hip hop scene once I can't dance anymore. Videos and photos are also great of documenting the year!
-Continue blogging about graduate school and the milestones of a PhD in STEM.
-- There are a lot of challenges and obstacles to overcome to get to a PhD program. There are also many to overcome whilst in the program. I want to talk about various events including: preparing for grad school in undergrad, applying for grad school, applying for fellowships, picking your rotations, picking your coursework, picking your advisor, choosing a thesis committee, structuring and studying for your DBO and then research on a daily basis. My goal is to graduate from this PhD as soon as possible (ideally 4-5 years) and start working to get industry experience.
-Run a half-marathon: Rock &amp;amp; Roll Half Marathon in SD/DC
-- Been saying that I wanna do this for years... time to get started.
-Spend less time on myself and volunteer more.
-- Spent too much time saying I wanna help out and not enough time doing. Getting involved in THREAD at Baltimore is one step and I hope to do more. The world is too big to just always be working on yourself.
-Spend less time on social media (Facebook and Snapchat).
-- Good for seeing friends and chatting. Good for sending some updates once in awhile and documenting photos/videos. Not good for productivity. Aim: go from online once/day to once/two days this year.
-Be content with paying my dues.
-- I've always been anxious to accomplish things. However, over the next 4 years, I realized it'll be grind and work. Gaining the technical skills so I can set myself up for maximizing the probability of succeeding in a technical startup. Just have to be patient and have this same dream when I'm 29.
-All resolutions are goals in my opinion. The only real way to accomplish a goal that you set your mind to is work on them in minimal increments. In entrepreneurship, they call these minimal viable products (MVPs). Everyone should check back on these goals at least once/month over 2016 to see how they're doing and work on them like they're MVPs. Won't that make for an even more exciting 2017? Happy new years. It's going to be a good one.
-- See more at: http://adam2392.pythonanywhere.com/post/9/#sthash.Pv506BjD.dpuf&lt;/p&gt;</content><category term="personal"></category><category term="goals"></category></entry></feed>
+&lt;ol&gt;
+&lt;li&gt;Spend more effort and time on good friends and ignore the rest.&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;This year I realized that even someone who you've known for years can exit your life in an instant. I want to spend more time and money on people that are there for you when you're up and down. When shit went down for me, people who I thought I could count on were nowhere to be seen. Why waste time and effort on those people?&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Read more about politics and current events in our country.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;I think that coming from California is a blessing in many ways. However, I think that we take for granted all the things we have. There is a lot of different things happening around the country (e.g. politics) that I did not educate myself on. Using politico and pulse apps to keep up to date&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Start choreographing again.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Throughout undergrad, I made excuses for not trying more in dance to improve. Whether it was coursework, social life, or laziness, I didn't put in time and effort into my passion. Will try to do at least 1 piece and work on it throughout the year.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Enter in 1-2 jams.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Been bboying for almost 8 years and it has carried me through undergrad and high school. Want to continue going for top 8 in some big jams until I can't bboy anymore.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Begin taking photos and videos more during the year and documenting them.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;My dad gave me his old Nikon D5000 and I got a GoPro at the beginning of the summer. Photography is a way for me to keep involved in the hip hop scene once I can't dance anymore. Videos and photos are also great of documenting the year!&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Continue blogging about graduate school and the milestones of a PhD in STEM.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;There are a lot of challenges and obstacles to overcome to get to a PhD program. There are also many to overcome whilst in the program. I want to talk about various events including: preparing for grad school in undergrad, applying for grad school, applying for fellowships, picking your rotations, picking your coursework, picking your advisor, choosing a thesis committee, structuring and studying for your DBO and then research on a daily basis. My goal is to graduate from this PhD as soon as possible (ideally 4-5 years) and start working to get industry experience.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Run a half-marathon: Rock &amp;amp; Roll Half Marathon in SD/DC&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Been saying that I wanna do this for years... time to get started.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Spend less time on myself and volunteer more.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Spent too much time saying I wanna help out and not enough time doing. Getting involved in THREAD at Baltimore is one step and I hope to do more. The world is too big to just always be working on yourself.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Spend less time on social media (Facebook and Snapchat).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Good for seeing friends and chatting. Good for sending some updates once in awhile and documenting photos/videos. Not good for productivity. Aim: go from online once/day to once/two days this year.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Be content with paying my dues.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;I've always been anxious to accomplish things. However, over the next 4 years, I realized it'll be grind and work. Gaining the technical skills so I can set myself up for maximizing the probability of succeeding in a technical startup. Just have to be patient and have this same dream when I'm 29.
+All resolutions are goals in my opinion. The only real way to accomplish a goal that you set your mind to is work on them in minimal increments. Happy new years. It's going to be a good one.&lt;/li&gt;
+&lt;/ol&gt;</content><category term="personal"></category><category term="goals"></category></entry></feed>
