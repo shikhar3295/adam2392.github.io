@@ -62,14 +62,21 @@ America is different because we are one nation with a mix of many nationalities 
 Politics of America in Europe is actually very well known. Everyone I knew heard about the major events in the USA. They knew a lot about Trump's policies and found it amusing that Americans had so many divisive issues that were not present in EU life. For example, they found it absurd that we have guns. Even if it is for enjoyment..., why do we need them? Even if you're a law-abiding citizen, why do you need a gun. EU citizens definitely don't see America as a great country in any aspect since Trump got elected. Most of the times the USA came up, it was with an air of humor, or mockery. To be fair, I agreed at times with them because Trump acted like a child.
 
 # Misc.
+0. Can we share this interview in our social media posts?
+Would you be okay with us writing small posts that may highlight different parts of this interview? 
+
 1. What was the most memorable part of your experience abroad?
+(Telling a story and highlights of doing research abroad in an intl setting.)
 - traveling, connecting with people from other countries and going on a lab retreat EU style.
 
 2. How did the Whitaker experience improve your research in graduate school?
+(relating their exp back to the Whitaker program)
 - it brought a different viewpoint into my research of epilepsy seizure localization. It also exposed me to the field of computational modeling and using dynamical systems to study biological phenomena.
 
 3. For scientists planning on going abroad for a prolonged visit, what is some advice you would give them?
+(giving some value to readers)
 - spend as much time as you can engaging in other researchers while you are there. Take as much time as you can to travel within the country and region also.
 
 4. Can you explain the research you undertook during your Whitaker in laymen terms and why it was important?
+(education about the research to the general public that is digestable)
 - simulating seizures in the brain to determine if algorithms designed on empirical data can localize the origin of these seizures in-silico.
