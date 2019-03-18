@@ -78,4 +78,7 @@ In addition, I want to practice more of my coding skills with data structures an
 #### 5. Improving Photography With New IG Page [ ]
 This year, I'm going to try to post new photos to a new instagram blog page with more travel related photos. This is to sort of separate my personal instagram from my photography hobby. I have a lot more to learn about optimal lighting and photography of different scenes (e.g. portraits, landscapes, nightshots). I am aiming to post an additional 12 photos that I am proud of onto this IG page by the end of the year.
 
+See link to keep up to dates with my adventure!
+https://www.instagram.com/ajltravels/
+
 
