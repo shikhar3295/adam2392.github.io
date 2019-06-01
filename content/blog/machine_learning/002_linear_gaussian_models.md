@@ -31,7 +31,7 @@ Recently, I re-read this 1999 paper on Linear Gaussian models and I am pretty am
 $$\dot{x}(t) = Ax(t) + w$$
 $$y(t) = Cx(t) + v$$
 
-where: $w \~ N(0,Q)$ and $v \~ N(0,R)$ are the state and output noise terms that we assume to be normally distributed (i.e. Gaussian).
+where: $w \approx N(0,Q)$ and $v \approx N(0,R)$ are the state and output noise terms that we assume to be normally distributed (i.e. Gaussian).
 
 # Conclusions
 
