@@ -16,7 +16,7 @@
 &lt;p&gt;\alpha = 10^2&lt;/p&gt;
 &lt;div class="math"&gt;$$\dot{x}(t) = Ax(t) + w$$&lt;/div&gt;
 &lt;div class="math"&gt;$$y(t) = Cx(t) + v$$&lt;/div&gt;
-&lt;p&gt;where: &lt;span class="math"&gt;\(w \~ N(0,Q)\)&lt;/span&gt; and &lt;span class="math"&gt;\(v \~ N(0,R)\)&lt;/span&gt; are the state and output noise terms that we assume to be normally distributed (i.e. Gaussian).&lt;/p&gt;
+&lt;p&gt;where: &lt;span class="math"&gt;\(w \approx N(0,Q)\)&lt;/span&gt; and &lt;span class="math"&gt;\(v \approx N(0,R)\)&lt;/span&gt; are the state and output noise terms that we assume to be normally distributed (i.e. Gaussian).&lt;/p&gt;
 &lt;h1&gt;Conclusions&lt;/h1&gt;
 &lt;h1&gt;References:&lt;/h1&gt;
 &lt;ol&gt;
