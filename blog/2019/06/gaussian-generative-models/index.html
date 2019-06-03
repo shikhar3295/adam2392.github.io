@@ -135,7 +135,8 @@ Adam Li            </a>
 <li>Control Theory Type Problems</li>
 </ul>
 </li>
-<li>Conclusions</li>
+<li>Conclusions
+        - Dynamic Version of PCA/KMeans?</li>
 <li>References:</li>
 </ul>
 <!-- /MarkdownTOC -->
@@ -237,6 +238,8 @@ When the observation noise approaches 0 (i.e. R approaches 0), then we arrive at
 <p>Note that the Kalman filter/smoothing procedure is an optimal observer under Gaussian noise assumptions. The EM algorithm can be used in general in conjunction with Kalman filter/smoothing to estimate the parameters (A, B, C, D).</p>
 <h1>Conclusions</h1>
 <p>In this post, I attempt to summarize some of the main points in the Roweis paper that I thought were relevant to someone with knowledge in Linear Algebra, Probability &amp; Statistics and Linear Dynamical Systems. The nice thing is that all these very common algorithms and methods can be framed using Expectation Maximization. This point of view links together control theory, linear dynamical systems and machine learning. It points to how general linear Gaussian models are and how general Expectation Maximization is. </p>
+<h3>Dynamic Version of PCA/KMeans?</h3>
+<p>What happens if we assume a dynamical model, but instead the output noise is zero (i.e. Q=0)? Here, our states are completely determinable if we have our C matrix. For a linear dynamical system, we can perform PCA to obtain our principle components, which can comprise of our C matrix (i.e. how to go from principle values to observed space). For Hidden Markov Models, we can instead perform vector quantization (i.e. KMeans) to obtain our columns of C. Now, we have to actually estimate the A matrix, which is a first-order Markov dynamic matrix (i.e. governing how states change from time t to t+1). Here it boils down to a simple autoregressive (AR(1)) model in continuous time, or first order Markov chain in the discrete space.</p>
 <h1>References:</h1>
 <ol>
 <li>Roweis S. et al. "A Unifying Review of Linear Gaussian Models".http://mlg.eng.cam.ac.uk/zoubin/papers/lds.pdf</li>
@@ -303,9 +306,9 @@ When the observation noise approaches 0 (i.e. R approaches 0), then we arrive at
     <ul>
         <li><a href="/blog/2017/09/simulating-tvb/">Simulating Epileptic iEEG Activity Using The Virtual Brain</a></li>
         <li><a href="/blog/2017/09/fundamental-computational-modeling/">Important Concepts for Computational Modeling</a></li>
-        <li><a href="/blog/2017/09/fundamental-papers/">Important Papers for Fundamentals in Computational Neuroscience / Data Science</a></li>
         <li><a href="/blog/2017/08/doctoral-board-oral/">Doctoral Board Oral Exam (PhD)</a></li>
-        <li><a href="/blog/2018/06/whitaker-summary-experience/">Using The Virtual Brain to Understand Algorithms</a></li>
+        <li><a href="/blog/2017/09/fundamental-papers/">Important Papers for Fundamentals in Computational Neuroscience / Data Science</a></li>
+        <li><a href="/blog/2017/12/using-freesurfer/">Using FreeSurfer</a></li>
     </ul>
 </section>
         </article>
