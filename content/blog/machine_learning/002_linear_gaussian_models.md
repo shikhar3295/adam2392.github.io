@@ -23,6 +23,7 @@ Summary: An overview of linear gaussian models and how in general, they fall und
     - Non-Gaussian Models \(i.e. noise terms are no longer normally distributed\)
     - Control Theory Type Problems
 - Conclusions
+        - Dynamic Version of PCA/KMeans?
 - References:
 
 <!-- /MarkdownTOC -->
@@ -147,6 +148,9 @@ Note that the Kalman filter/smoothing procedure is an optimal observer under Gau
 
 # Conclusions
 In this post, I attempt to summarize some of the main points in the Roweis paper that I thought were relevant to someone with knowledge in Linear Algebra, Probability & Statistics and Linear Dynamical Systems. The nice thing is that all these very common algorithms and methods can be framed using Expectation Maximization. This point of view links together control theory, linear dynamical systems and machine learning. It points to how general linear Gaussian models are and how general Expectation Maximization is. 
+
+### Dynamic Version of PCA/KMeans?
+What happens if we assume a dynamical model, but instead the output noise is zero (i.e. Q=0)? Here, our states are completely determinable if we have our C matrix. For a linear dynamical system, we can perform PCA to obtain our principle components, which can comprise of our C matrix (i.e. how to go from principle values to observed space). For Hidden Markov Models, we can instead perform vector quantization (i.e. KMeans) to obtain our columns of C. Now, we have to actually estimate the A matrix, which is a first-order Markov dynamic matrix (i.e. governing how states change from time t to t+1). Here it boils down to a simple autoregressive (AR(1)) model in continuous time, or first order Markov chain in the discrete space.
 
 # References:
 1. Roweis S. et al. "A Unifying Review of Linear Gaussian Models".http://mlg.eng.cam.ac.uk/zoubin/papers/lds.pdf
