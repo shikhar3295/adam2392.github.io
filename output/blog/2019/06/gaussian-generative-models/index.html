@@ -114,21 +114,129 @@ Adam Li            </a>
 
 <ul>
 <li>Background</li>
-<li>Methods</li>
+<li>Methods<ul>
+<li>Most General Linear Gaussian Model</li>
+<li>General Expectation Maximization</li>
+<li>Kalman Filter/Smoothing</li>
+</ul>
+</li>
+<li>Important Models And Connections With Control Theory<ul>
+<li>Static Models (i.e. time is not a factor)<ul>
+<li>Continuous State</li>
+<li>Discrete State</li>
+</ul>
+</li>
+<li>Dynamical Models (i.e. time is a factor)<ul>
+<li>Continuous State - Kalman Filter Models</li>
+<li>Discrete State - Hidden Markov Models</li>
+</ul>
+</li>
+<li>Non-Gaussian Models (i.e. noise terms are no longer normally distributed)</li>
+<li>Control Theory Type Problems</li>
+</ul>
+</li>
 <li>Conclusions</li>
 <li>References:</li>
 </ul>
 <!-- /MarkdownTOC -->
 
 <h1>Background</h1>
-<p>Recently, I re-read this 1999 paper on Linear Gaussian models and I am pretty amazed at how deep this paper is in unifying the different common data analysis methods and linear models under one framework. We think of principal component analysis (PCA), or Gaussian mixture models (GMM), or Kalman filter models (KF) all as disparate ways to model data, but this review is able to bring them under the umbrella of the Expectation Maximization (EM). </p>
+<p>Recently, I re-read this 1999 paper on Linear Gaussian models and I am pretty amazed at how deep this paper is in unifying the different common data analysis methods and linear models under one framework. We think of principal component analysis (PCA), or Gaussian mixture models (GMM), or Kalman filter models (KF) all as disparate ways to model data, but this review is able to bring them under the umbrella of the Expectation Maximization (EM). I wanted to highlight for myself (and anyone reading) the key high level concepts and insights and also extend these to talk about control systems.</p>
+<p>At a very simplifying level, linear gaussian models are heavily used in all branches of engineering from control systems, to data analysis. Expectation maximization is an iterative learning algorithm for learning some optimal parameters in a probabilistic model.</p>
 <h1>Methods</h1>
-<p>.. math::</p>
-<p>\alpha = 10^2</p>
-<div class="math">$$\dot{x}(t) = Ax(t) + w$$</div>
-<div class="math">$$y(t) = Cx(t) + v$$</div>
+<h2>Most General Linear Gaussian Model</h2>
+<p>Here is the most general form of the linear latent state-space model.</p>
+<div class="math">$$\dot{x}(t) = Ax(t) + Bu(t) + w$$</div>
+<div class="math">$$y(t) = Cx(t) + Du(t) + v$$</div>
 <p>where: <span class="math">\(w \approx N(0,Q)\)</span> and <span class="math">\(v \approx N(0,R)\)</span> are the state and output noise terms that we assume to be normally distributed (i.e. Gaussian).</p>
+<p>The dimensionality of the terms are:
+<em> <span class="math">\(x, w \in R^{n}\)</span>
+</em> <span class="math">\(y, v \in R^{p}\)</span>
+* <span class="math">\(u \in R^{k}\)</span></p>
+<p>Some jargon for folks:
+<em> x is the state variable, generally considered "hidden", or part of the "latent space" (i.e. some subspace of your data that you don't know)
+</em> y is the observation variable, generally considered measured, or observed (i.e. signals in your data)
+<em> u is our control signal, that we input
+</em> A is our state transition matrix governing how states change 
+<em> B is our control matrix
+</em> C is our observation matrix
+<em> D is our feedthrough matrix
+</em> w and v are our random variable noise terms that we may (sometimes) assume Normally distributed</p>
+<p>Then the A, B, C, D matrices have their respecting dimensionality. In general, we assume y is observed and measured.</p>
+<h2>General Expectation Maximization</h2>
+<p>The general expectation maximization boils down to two distinct steps: 1) Computing the expecation under a certain generative model (i.e. computing the expected states and covariances) and 2) Maximizing the likelihood given the states (i.e. computing the optimal parameters). In the general Gaussian model, these parameters are <span class="math">\(\theta = \{A, C, B, D, Q, R\}\)</span>. </p>
+<h2>Kalman Filter/Smoothing</h2>
+<p>The general Kalman filter assumes Gaussian noise, which we have here. Filtering is the problem of predicting the state <span class="math">\(x(t)\)</span> given all the observations up to time t. Smoothing is the problem of predicting the state <span class="math">\(x(t)\)</span> given all the observations we have (i.e. over entire window of observation of length T).</p>
+<h1>Important Models And Connections With Control Theory</h1>
+<h2>Static Models (i.e. time is not a factor)</h2>
+<p>Here, we are dealing with just data points (i.e. sets of x's, y's), so there is no notion of time dependency. This simplifies the general model, so that A = 0. </p>
+<p>General inference on model:</p>
+<div class="math">$$P(x | y) = \frac{P(y|x)P(x)}{P(y)} = \frac{N(Cx, R) N(0, I)}{N(0, CC^T + R)}$$</div>
+<div class="math">$$P(x|y) = N(\beta y, I - \beta C), \ \beta=C^T(CC^T + R)^{-1}$$</div>
+<h3>Continuous State</h3>
+<p>Here, we presume that the state space is continuous (i.e. x is a continuous variable).</p>
+<ol>
+<li>(Sensible) Principal Component Analysis (PCA)
+PCA is probably one of the most common dimensionality reduction techniques, which at the end of the day (for you lin alg folks) boils down to Singular Value Decomposition (SVD). Here we assume the following:</li>
+<li>the observation noise R is a multiple of the identity matrix (i.e. <span class="math">\(R=\alpha I\)</span>)</li>
+</ol>
+<p>Note that because R is not 0, then we have some noise in the state variables, so this is very similar to probabilistic PCA. </p>
+<p>When <span class="math">\(\alpha\)</span> goes to 0, then the noise on the states goes to 0, while Q is still finite. This means that the only noise we assume in our model comes from our observations of the data. A naive approach would simply take the observed covariance matrix of our data, apply SVD to obtain the singular vector matrices and the singular values. The columns of C then are the principle components of PCA. The values of our latent space vector x are the principle values (i.e. singular values of our covariance matrix).</p>
+<ol>
+<li>Maximum Likelihood Factor Analysis
+In factor analysis, we assume the following:</li>
+<li>that the observation covariance matrix, R, is diagonal</li>
+<li>state noise Q is the identity matrix </li>
+</ol>
+<p>X are considered the factors, and the key assumption assuming R is diagonal means that the model wants to put all the covariance structure in our observed data (i.e. y variables) into the unique coordinates of R. Note that if R is diagonal, then the off-diagonals (i.e. the covariances) are equal to 0. </p>
+<ol>
+<li>Summary
+In both static modeling procedures, where we assume our latent space and observations are static, we can solve them using EM by using the general inference equations described above for the static model. P(x|y) gives you the inference estimates of states (i.e. x) for a given set of parameters (in this case: C and R). Then for a given set of states (i.e. x), we can maximize wrt the log-likelihood of our model to recover new estimates of C and R. This is the EM algorithm! </li>
+</ol>
+<p>Quite fascinating that they wrapped this under one umbrella when most people normally look at solving for example PCA using SVD.</p>
+<h3>Discrete State</h3>
+<p>Here, we presume x is a discrete variable.
+1. Gaussian Mixture Models
+If x is a discrete probability distribution controlled by the distribution of the noise, w. The mean <span class="math">\(\mu\)</span> and covariance Q parametrize the distribution of x. Now x is modeled by:</p>
+<div class="math">$$x = WTA(w)$$</div>
+<p>where WTA is the winner take all function applied to the vector w, so x becomes a unit vector of size n. Now the interpretation of x is the mixture weights (i.e. how much each data point y belongs to each cluster). The columns of matrix C represent the cluster means. This is solved via EM also.</p>
+<ol>
+<li>Vector Quantization (K-means) Models
+When the observation noise approaches 0 (i.e. R approaches 0), then we arrive at the k-means algorithm formulation, which can be solved via EM also. So now, P(x|y) is a single point, since there is no noise in the y term, and it is all governed by the noise in the k clusters defined in the state term. </li>
+</ol>
+<h2>Dynamical Models (i.e. time is a factor)</h2>
+<p>Here, we now deal with the fact that time is a factor in our model. So A is no longer the 0 matrix. </p>
+<h3>Continuous State - Kalman Filter Models</h3>
+<p>The model is generated according to the general model with the noise terms all being independently and identically distributed. This is just solved via the Kalman filter and smoothing algorithms.</p>
+<p>If all parameters are known, can employ a Maximum Likelihood approach to estimate the states.</p>
+<p>If the parameters are unknown, then EM can be used to iterate on the parameters.</p>
+<h3>Discrete State - Hidden Markov Models</h3>
+<p>Now, we consider when the states are discrete, which lead to Hidden Markov Models. The model for the states is:</p>
+<div class="math">$$x(t+1) = WTA(Ax(t)+w)$$</div>
+<p>Here, if we constrain Q to be the identity matrix, then it will have the same covariances for all Gaussians. With traditional Hidden Markov models, we usually define a state transition matrix (e.g. normalized columns), which defines how probable different state transitions are from an initial state. Solving for the most likely state sequence employs the famous Viterbi algorithm. Solving the filtering and smoothing problems, then employ EM traditionally.</p>
+<h2>Non-Gaussian Models (i.e. noise terms are no longer normally distributed)</h2>
+<p>This results in a famous class of algorithm known as Independent Component Analaysis. This is a generalization of the PCA. Here, we have a nonlinearity applied to the state model:</p>
+<div class="math">$$x = g(w)$$</div>
+<p>This converts a Gaussian prior (i.e. noise variable w) into a non-Gaussian prior for the state variable x. Now, x is considered our "blind sources" and y is our observed data. In classical ICA, R is assumed to be infinitesimal, and C is square and full-rank. C is considered a "mixing matrix", that is how to mix the sources to "recover" our observed data.</p>
+<h2>Control Theory Type Problems</h2>
+<p>In control theory and linear systems, we are generally interested in the following problems:</p>
+<ul>
+<li>Given the general model and outputs measured y, how do we estimate a control input u(t) that controls the dynamics of the state? That is, how do we control the eigenvalues of the system? <ul>
+<li>This results in things like state-feedback and the notion of controllability.</li>
+</ul>
+</li>
+<li>Given the general model, how can we estimate the values of the states if we know the rest of the parameters (A, B, C, D)?<ul>
+<li>This results in observers and the notion of observability.</li>
+</ul>
+</li>
+<li>Given the general model, how can we estimate an optimal u(t) that follows some constraints and minimizes some cost functional on u? (e.g. constraint on the magnitude of u, or the sparseness of u, etc.)<ul>
+<li>This is known as optimal control. It can be deterministic, or stochastic. </li>
+</ul>
+</li>
+</ul>
+<p>Note that the Kalman filter/smoothing procedure is an optimal observer under Gaussian noise assumptions. The EM algorithm can be used in general in conjunction with Kalman filter/smoothing to estimate the parameters (A, B, C, D).</p>
 <h1>Conclusions</h1>
+<p>In this post, I attempt to summarize some of the main points in the Roweis paper that I thought were relevant to someone with knowledge in Linear Algebra, Probability &amp; Statistics and Linear Dynamical Systems. The nice thing is that all these very common algorithms and methods can be framed using Expectation Maximization. This point of view links together control theory, linear dynamical systems and machine learning. It points to how general linear Gaussian models are and how general Expectation Maximization is. </p>
 <h1>References:</h1>
 <ol>
 <li>Roweis S. et al. "A Unifying Review of Linear Gaussian Models".http://mlg.eng.cam.ac.uk/zoubin/papers/lds.pdf</li>
@@ -193,11 +301,11 @@ Adam Li            </a>
 <section class="well" id="related-posts">
     <h4>Related Posts:</h4>
     <ul>
-        <li><a href="/blog/2018/06/whitaker-summary-experience/">Using The Virtual Brain to Understand Algorithms</a></li>
-        <li><a href="/blog/2017/09/fundamental-computational-modeling/">Important Concepts for Computational Modeling</a></li>
-        <li><a href="/blog/2017/12/using-freesurfer/">Using FreeSurfer</a></li>
-        <li><a href="/blog/2017/09/fundamental-papers/">Important Papers for Fundamentals in Computational Neuroscience / Data Science</a></li>
         <li><a href="/blog/2017/09/simulating-tvb/">Simulating Epileptic iEEG Activity Using The Virtual Brain</a></li>
+        <li><a href="/blog/2017/09/fundamental-computational-modeling/">Important Concepts for Computational Modeling</a></li>
+        <li><a href="/blog/2017/09/fundamental-papers/">Important Papers for Fundamentals in Computational Neuroscience / Data Science</a></li>
+        <li><a href="/blog/2017/08/doctoral-board-oral/">Doctoral Board Oral Exam (PhD)</a></li>
+        <li><a href="/blog/2018/06/whitaker-summary-experience/">Using The Virtual Brain to Understand Algorithms</a></li>
     </ul>
 </section>
         </article>
