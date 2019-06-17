@@ -135,15 +135,32 @@ Adam Li            </a>
 <li>Control Theory Type Problems</li>
 </ul>
 </li>
-<li>Conclusions
+<li>Conclusions for Gaussian Linear Models
         - Dynamic Version of PCA/KMeans?</li>
+<li>Extensions of Gaussian Linear Models<ul>
+<li>Low Rank Tensors (to generalize space, time and other variable dimensions!)</li>
+<li>Deep Kalman Filter<ul>
+<li>Caveats of the DKF</li>
+</ul>
+</li>
+<li>Deep Extend To Control (EC2)</li>
+<li>Deep Variational Bayes Filter</li>
+<li>Deep Koopman Model<ul>
+<li>Quick Koopman Theory Overview</li>
+<li>Now the Deep Koopman Model</li>
+</ul>
+</li>
+<li>Deep Kalman Variational Autoencoders (DKVAE)</li>
+<li>Possibilities for Improved Deep State Space Models (DSSM)</li>
+</ul>
+</li>
 <li>References:</li>
 </ul>
 <!-- /MarkdownTOC -->
 
 <h1>Background</h1>
 <p>Recently, I re-read this 1999 paper on Linear Gaussian models and I am pretty amazed at how deep this paper is in unifying the different common data analysis methods and linear models under one framework. We think of principal component analysis (PCA), or Gaussian mixture models (GMM), or Kalman filter models (KF) all as disparate ways to model data, but this review is able to bring them under the umbrella of the Expectation Maximization (EM). I wanted to highlight for myself (and anyone reading) the key high level concepts and insights and also extend these to talk about control systems.</p>
-<p>At a very simplifying level, linear gaussian models are heavily used in all branches of engineering from control systems, to data analysis. Expectation maximization is an iterative learning algorithm for learning some optimal parameters in a probabilistic model.</p>
+<p>At a very simplifying level, linear gaussian models are heavily used in all branches of engineering from control systems, to data analysis. Expectation maximization is an iterative learning algorithm for learning some optimal parameters in a probabilistic model. In this blog post, I attempt to review the main overarching concepts that I believe are important and then also provide some recent work that draws upon the theory of linear gaussian modeling. Specifically, I look at tensor modeling (i.e. a generalization of a linear time-invariant state space model), deep neural networks to provide end-to-end learning of a state space system and variations of these deep state space models. The goal of this post is to provide the reader with a broad overview of the fundamentals that drive linear modeling to the recent state-of-the-art advancements in deep learning that draw from "older" fundamentals.</p>
 <h1>Methods</h1>
 <h2>Most General Linear Gaussian Model</h2>
 <p>Here is the most general form of the linear latent state-space model.</p>
@@ -236,13 +253,85 @@ When the observation noise approaches 0 (i.e. R approaches 0), then we arrive at
 </li>
 </ul>
 <p>Note that the Kalman filter/smoothing procedure is an optimal observer under Gaussian noise assumptions. The EM algorithm can be used in general in conjunction with Kalman filter/smoothing to estimate the parameters (A, B, C, D).</p>
-<h1>Conclusions</h1>
+<h1>Conclusions for Gaussian Linear Models</h1>
 <p>In this post, I attempt to summarize some of the main points in the Roweis paper that I thought were relevant to someone with knowledge in Linear Algebra, Probability &amp; Statistics and Linear Dynamical Systems. The nice thing is that all these very common algorithms and methods can be framed using Expectation Maximization. This point of view links together control theory, linear dynamical systems and machine learning. It points to how general linear Gaussian models are and how general Expectation Maximization is. </p>
 <h3>Dynamic Version of PCA/KMeans?</h3>
 <p>What happens if we assume a dynamical model, but instead the output noise is zero (i.e. Q=0)? Here, our states are completely determinable if we have our C matrix. For a linear dynamical system, we can perform PCA to obtain our principle components, which can comprise of our C matrix (i.e. how to go from principle values to observed space). For Hidden Markov Models, we can instead perform vector quantization (i.e. KMeans) to obtain our columns of C. Now, we have to actually estimate the A matrix, which is a first-order Markov dynamic matrix (i.e. governing how states change from time t to t+1). Here it boils down to a simple autoregressive (AR(1)) model in continuous time, or first order Markov chain in the discrete space.</p>
+<h1>Extensions of Gaussian Linear Models</h1>
+<p>Here, I talk about some extensions to Gaussian linear models and relate them to our linear models through the lens of probability and statistics; specifically: variational inference and markov chain monte carlo. These are the main techniques in the estimation of an intractable posterior distribution. Here, we'll assume you have basic Bayesian working knowledge and comfortable with the statistics involved.</p>
+<p>The setup of the problem is similar to that of Linear Gaussian Models.</p>
+<div class="math">$$\dot{x}(t) = f(x(t)) + g(u(t)) + w$$</div>
+<div class="math">$$y(t) = h(x(t)) + v$$</div>
+<p>where: <span class="math">\(w \approx Q(\theta)\)</span> and <span class="math">\(v \approx R(\gamma)\)</span> are the state and output noise terms that we assume to be distributed with some distribution <span class="math">\(Q,R\)</span> parametrized by <span class="math">\(\theta, \gamma\)</span>. In addition, now <span class="math">\(f, g, h\)</span> are all potentially nonlinear functions analogs of A, B, C. If we define some priors on the distribution of noise for the latent variables, we can perform Bayesian inference given our observed signals, y. That is, we are interested in estimating:</p>
+<div class="math">$$P(x|y) \approx P(y|x) P(x)$$</div>
+<p>Note, that in convention with literature, P(y|x) is our likelihood of the model and P(x) is our assumed prior distribution on our latent state variable. </p>
+<ul>
+<li>
+<p>Variational inference (VI) proceeds by: * 
+Fitting the parameters of a family of tractable distributions (e.g. independent Gaussians) to approximate the posterior. For more details, see my blog post on a summary of VI and MCMC.</p>
+</li>
+<li>
+<p>Markov Chain Monte Carlo proceeds by: * 
+Creating a Markov chain that has convergent properties to the true posterior. Samples are drawn from the "proposal" distribution and are either kept, or rejected based on various algorithms (e.g. important sampling, Gibbs sampling, Hamiltonian Monte Carlo, etc.). For more details, see my blog post on a summary of VI and MCMC.</p>
+</li>
+</ul>
+<h2>Low Rank Tensors (to generalize space, time and other variable dimensions!)</h2>
+<p>In a Linear Gaussian state space model, in general you are assuming that x, y, u are vectors, while A, B, C are matrices of their respective dimensions. Tensors are higher order generalizations of matrices (e.g. matrices are 2D arrays, while tensors are N-D arrays). So in the context of neural recording data where you have a suite of electrode signals that vary over time, one can think of the system as a 3D tensor (channels X channels X time); this is opposed to a normal linear time-invariant system (i.e. constant A matrix), which would just be represented as a 2D tensor (channels X channels) because time is invariant. Now, just viewing this system as a 3D tensor does not really give much room for improvement because now you are just dealing with a linear time-varying system with N^2 T parameters (N=#channels, T=#time). </p>
+<p>However, in the TVART paper from Rajesh Rao's group, they assume that the system's state transition matrix, A, lies in a low rank tensor. Specifically, this gives the system only a few "unique" A matrices (i.e. system state transition matrices) to choose from at any particular window of data. The number of these unique A matrices is determined by the assumption of the "low-rank" of this tensor. </p>
+<p>One of the shortcomings of this method is that there is no easy way to determine the "low-rankness" of a dataset prior to analyzing it. I imagine that the way to proceed is to use some heuristic measure, such as Bayesian Information Criterion / Aikake's Information Criterion. </p>
+<p>Assuming you have a good choice of the rank, then you can apply some traditional regularizations, such as l1 and l2 regularizations to enforce sparsity and smoothness in the different dimensions of the A 3D tensor (i.e. either in channel space, or in time space). Then the optimal tensor is solved for via convex optimization. The paper uses a combination of conjugate gradient and proximal gradient with Nesterov acceleration for the smooth, and non-smooth objective functions respectively. A review of these optimization terms hopefully can be covered in another blog post on optimization: convex, nonlinear and constrained.</p>
+<h2>Deep Kalman Filter</h2>
+<p>In the paper on the deep Kalman Filter, the authors derive a deep neural network that is a Kalman filter analog. They explicitly assume that the latent state is modeled by a Normal distribution (i.e. <span class="math">\(x ~ N(\mu, \Sigma)\)</span>) with possible nonlinear interactions between time steps, and that the observations are distributed according to some family of distributions (e.g. Bernoulli if observations are binary).</p>
+<p>The neural network architectures that seem to work are the: i) q-RNN (filtering) and ii) q-BRNN (smoothing), which are just recurrent and bi-directional recurrent neural network architectures. They perform variational learning of the latent state parameters by maximizing a derived evidence lower bound (ELBO). In the Variational AutoEncoder paper, they talk about how to perform stochastic gradient descent by performing the re-parameterization trick on the Normal distribution.</p>
+<p>They introduce the notion of performing counterfactual inference by introducing an extra variable that the network conditions on. For example, you can include a vectorized variable that determines whether or not you took a drug at time t, or whether or not a specific action was taken. Then during testing, you can modify the conditional variable action and perform forward prediction to determine the x(t+1), ..., x(t+T) steps which predicts what "would have" happened if you took a certain action.</p>
+<h3>Caveats of the DKF</h3>
+<p>In experiments, they show that the DKF does not extract information about time-derivatives very well, which in general lead to problems with forward prediction.</p>
+<h2>Deep Extend To Control (EC2)</h2>
+<p>In this paper, they combine optimal control theory and deep learning.</p>
+<h2>Deep Variational Bayes Filter</h2>
+<p>In this paper, they argue that a suite of previous methods that use a VAE-style for time series is optimized for reconstruction mainly (i.e. not prediction). This will just compress the data in the best possible manner, while allowing the data to still be reconstructed. However, there is no explicit optimization for prediction. In addition, previous methods may not explicitly include the necessary mini-batch data for the model to infer time-derivatives, thus weakening prediction as well.</p>
+<p>First, we want to reparametrize the transition model:</p>
+<div class="math">$$x(t+1) = f(x(t), u(t), \beta(t))$$</div>
+<h2>Deep Koopman Model</h2>
+<h3>Quick Koopman Theory Overview</h3>
+<p>For the reader (and myself), I assume we have no idea what the Koopman operator is. So first, I will overview some of the basic concepts here, so that I can introduce the Deep Koopman model. See https://www.mit.edu/~arbabi/research/KoopmanIntro.pdf for a great in-depth overview. One should be relatively comfortable with the theory of linear dynamical systems and matrix analysis (specifically the idea of state transition matrices, linearity and eigenvalues/eigenvectors). Recall a linear dynamical system without input:</p>
+<div class="math">$$\dot{x}(t) = Ax(t)$$</div>
+<p>where A is our linear operator of the form <span class="math">\(T: \mathbf{R}^n -&gt; \mathbf{R}^n\)</span>.</p>
+<p>The idea of the Koopman operator is that any data we collect in a real-world scenario are "observables" of our system that are a function of the underlying state (g). So the Koopman operator is a linear transformation (U) that acts on the state transition operator (A). An eigenvalue decomposition of the Koopman operator yields (possibly infinite-dimensional) eigenfunctions that span the observable space, so now all observables of a dynamical system are linear combinations of the eigenfunctions of the Koopman operator. This is quite fascinating because the idea is that you can break down nonlinear system phenomena in terms of linear Koopman eigenfunctions (nonlinear approximation by linear functions)! </p>
+<div class="math">$$Ug(x) = g o T(x)$$</div>
+<p>For example, we can look at:
+1. Limit Cycles:
+This is a nonlinear system property because no linear dynamical system (i.e. x(t+1) = Ax(t)) can generate limit cycles. A limit cycle is parametrized by a period, T. So one can perform Fourier decomposition:</p>
+<div class="math">$$g(x(t)) = \sum_{k=0}^{\infty} a_j e^{ikt2\pi / T}$$</div>
+<p>The <span class="math">\(a_j\)</span> are Fourier coefficients and the exponential term can be constructed as the eigenfunctions of the Koopman operator with eigenvalues <span class="math">\(\lambda_k = ik2\pi / T\)</span> (interestingly when eigenvalues are of this form, you have degenerate discrete time-sampling in the sense that you can lose controllability, or observability of dynamical system). </p>
+<ol>
+<li>Hyperbolic Fixed Points</li>
+<li>Basins of Attraction (stable limit cycles)</li>
+</ol>
+<p>Now in general, you can perform Koopman mode decomposition on a vector of observables (no one just observes one data point). You get:</p>
+<div class="math">$$U^t g(x) = \sum_{k=0}^{\infty} g_k e^{\lambda_k t} \phi_k(x)$$</div>
+<p>where U is our Koopman operator, g is our observable function of our state, x is our state vector, <span class="math">\(g_k\)</span> are the Koopman modes of the observable g at the eigenvalue <span class="math">\(\lambda_k\)</span>, <span class="math">\(\phi_k\)</span> are the eigenfunctions at their respective eigenvalue.</p>
+<h3>Now the Deep Koopman Model</h3>
+<p>In this paper, they parametrize the observable function using a deep neural network, and then explicitly model the decoding as a Koopman operator to learn the mappings of a latent state back into the observable data. In addition, they add special training scheme of penalizing the loss over consecutive predictive steps, so that the model learns a stable mapping that attempts to keep low error rates over many consecutive predictions.</p>
+<p>TBD</p>
+<h2>Deep Kalman Variational Autoencoders (DKVAE)</h2>
+<p>In this paper, the authors formulate yet another variation of the VAE framework that is somewhat similar to the DVBF model, but with a few differences and improvements. Recall that the model for the DVBF was for locally linear transitions:</p>
+<div class="math">$$x(t+1) = A(t)x(t) + B(t)u(t) + C(t)w(t)$$</div>
+<div class="math">$$y(t) = H(t)x(t) + y(t)$$</div>
+<p>Here, the variational parameters that parametrize the variational family is <span class="math">\(v(t) = \{A(t)^{i}, B(t)^{i}, C(t)^{i}\}\)</span>.</p>
+<p>In the DKVAE, the model adds an additional pseudo-latent state, which is of low-dimension between the high dimensional observation space and the linear state space model. </p>
+<p>TBD</p>
+<h2>Possibilities for Improved Deep State Space Models (DSSM)</h2>
+<p>It seems that a reoccuring theme right now in deep learning is the integration of older techniques (i.e. Linear State Space Models LSSM) with deep neural networks. Since deep neural networks can act as universal function approximators, that are also able to be trained end-to-end using stochastic gradient descent on data, then many challenges in traditional LSSM that had intractable setups can potentially be overcome. Granted, you will need enough data for each situation you are thinking of, but in theory one can really extend the power of DSSM to provide improved interpretability of a deep learning model.</p>
 <h1>References:</h1>
 <ol>
 <li>Roweis S. et al. "A Unifying Review of Linear Gaussian Models".http://mlg.eng.cam.ac.uk/zoubin/papers/lds.pdf</li>
+<li>"Deep Kalman Filter."  https://arxiv.org/abs/1511.05121</li>
+<li>"Deep Variational Bayes Filter." https://arxiv.org/abs/1605.06432</li>
+<li>"Deep Koopman Model." https://arxiv.org/pdf/1805.07472.pdf</li>
+<li>"Kalman VAE." https://arxiv.org/pdf/1710.05741.pdf</li>
+<li>"Time Varying Autoregression with Low-Rank Tensors (TVART)."</li>
+<li>"Introduction to Koopman Theory." https://www.mit.edu/~arbabi/research/KoopmanIntro.pdf</li>
 </ol>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
@@ -304,11 +393,11 @@ When the observation noise approaches 0 (i.e. R approaches 0), then we arrive at
 <section class="well" id="related-posts">
     <h4>Related Posts:</h4>
     <ul>
+        <li><a href="/blog/2019/06/optimization-landscape-overview/">Optimization: Convex, Nonlinear, Unconstrained and Constrained</a></li>
         <li><a href="/blog/2017/09/simulating-tvb/">Simulating Epileptic iEEG Activity Using The Virtual Brain</a></li>
-        <li><a href="/blog/2017/09/fundamental-computational-modeling/">Important Concepts for Computational Modeling</a></li>
         <li><a href="/blog/2017/08/doctoral-board-oral/">Doctoral Board Oral Exam (PhD)</a></li>
-        <li><a href="/blog/2017/09/fundamental-papers/">Important Papers for Fundamentals in Computational Neuroscience / Data Science</a></li>
-        <li><a href="/blog/2017/12/using-freesurfer/">Using FreeSurfer</a></li>
+        <li><a href="/blog/2018/06/whitaker-summary-experience/">Using The Virtual Brain to Understand Algorithms</a></li>
+        <li><a href="/blog/2017/09/fundamental-computational-modeling/">Important Concepts for Computational Modeling</a></li>
     </ul>
 </section>
         </article>
