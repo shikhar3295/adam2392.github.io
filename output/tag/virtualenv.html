@@ -1,200 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <meta charset="utf-8" />
-        <title>Adam Li's blog - virtualenv</title>
-        <link rel="stylesheet" href="https://adam2392.github.io/theme/css/main.css" />
-        <link href="https://adam2392.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Adam Li's blog Atom Feed" />
-        <link href="https://adam2392.github.io/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Adam Li's blog RSS Feed" />
+	<meta charset="utf-8">
+	<title>Adam Li's blog</title>
+	<meta name="description" content="">
+	<meta name="author" content="Adam Li">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="https://adam2392.github.io/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="https://adam2392.github.io/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="https://adam2392.github.io/theme/local.css" rel="stylesheet">
+	<link href="https://adam2392.github.io/theme/pygments.css" rel="stylesheet">
+
+	<!-- Feeds -->
+	<link href="https://adam2392.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Adam Li's blog Atom Feed" />
+
+
+	<link href="https://adam2392.github.io/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Adam Li's blog RSS Feed" />
+
+
+<script>var _gaq=[['_setAccount','UA-106551801-1'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'))</script>
 </head>
+<body>
+<a href="https://github.com/adam2392"><img style="position: absolute; top: 39px; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub" /></a>
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="https://adam2392.github.io/">Adam Li's blog</a>
+			<ul class="nav">
+					<li><a href="/categories.html">Blog</a></li>
+					<li><a href="/archives.html">Timeline</a></li>
+					<li><a href="/tags.html">Tags</a></li>
+					<li><a href="/pdfs/AdamLi_CV.pdf">Curriculum Vitae</a></li>
+						<li><a href="https://adam2392.github.io/contact/">Contact</a></li>
+					<li ><a href="https://adam2392.github.io/category/academic.html">Academic</a></li>
+					<li ><a href="https://adam2392.github.io/category/coding.html">Coding</a></li>
+					<li ><a href="https://adam2392.github.io/category/machine-learning.html">Machine Learning</a></li>
+					<li ><a href="https://adam2392.github.io/category/personal.html">Personal</a></li>
+					<li ><a href="https://adam2392.github.io/category/travel.html">Travel</a></li>
+					<li ><a href="https://adam2392.github.io/category/views.html">Views</a></li>
+			</ul>
+			<p class="pull-right"><a href="https://adam2392.github.io/archives.html">[archives]</a> <a href="https://adam2392.github.io/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
 
-<body id="index" class="home">
-<a href="https://github.com/adam2392">
-<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
-</a>
-        <header id="banner" class="body">
-                <h1><a href="https://adam2392.github.io/">Adam Li's blog </a></h1>
-                <nav><ul>
-                    <li><a href="/categories.html">Blog</a></li>
-                    <li><a href="/archives.html">Timeline</a></li>
-                    <li><a href="/tags.html">Tags</a></li>
-                    <li><a href="/pdfs/AdamLi_CV.pdf">Curriculum Vitae</a></li>
-                    <li><a href="https://adam2392.github.io/contact/">Contact</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
-
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="https://adam2392.github.io/blog/2017/06/setup-virtual-env/">Setting Up a Virtual Environment for Python</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2017-06-04T00:00:00-04:00">
-                Published: Sun 04 June 2017
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://adam2392.github.io/author/adam-li.html">Adam Li</a>
-        </address>
-<p>In <a href="https://adam2392.github.io/category/coding.html">Coding</a>.</p>
-<p>tags: <a href="https://adam2392.github.io/tag/virtualenv.html">virtualenv</a> <a href="https://adam2392.github.io/tag/webdev.html">webdev</a> <a href="https://adam2392.github.io/tag/python.html">python</a> </p>
-</footer><!-- /.post-info --><h1>Getting Setup with Virtual Environment for Python Development</h1>
-<h1>By: Adam Li</h1>
-<h3>Table of Contents</h3>
-<!-- MarkdownTOC autolink="true" bracket="round" -->
-
-<ul>
-<li><a href="#installing">Installing</a></li>
-<li><a href="#basics-create-delete">Basics (Create, Delete):</a><ul>
-<li><a href="#1-create">1. Create</a></li>
-<li><a href="#2-delete-a-virtualenv">2. Delete a Virtualenv</a></li>
-</ul>
-</li>
-<li><a href="#tips">Tips</a><ul>
-<li><a href="#1-starting-up-your-venv">1. Starting up your Venv</a></li>
-<li><a href="#2-requirementstxt">2. Requirements.txt</a></li>
-</ul>
-</li>
-<li><a href="#convenient-tools">Convenient Tools</a><ul>
-<li><a href="#1-automatically-cd-to-project-directory">1. Automatically cd To Project Directory</a></li>
-</ul>
-</li>
-<li><a href="#references">References:</a></li>
-</ul>
-<!-- /MarkdownTOC -->
-
-<p>VirtualEnv: 15.1.0
-VirtualEnvWrapper</p>
-<p>A virtual environment is useful for development in Python because it keeps your packages for certain projects separate from each other. It'll keep everything for that project separated in a separate wrapper.</p>
-<h1>Installing</h1>
-<p>For virtualenvironment, follow https://virtualenv.pypa.io/en/stable/installation/</p>
-<p>For virtualenvwrapper, follow http://virtualenvwrapper.readthedocs.io/en/latest/install.html</p>
-<h1>Basics (Create, Delete):</h1>
-<h2>1. Create</h2>
-<p>For Virtualenvwrapper: Run the command </p>
-<div class="highlight"><pre><span></span><span class="s1">&#39;mkvirtualenv &lt;envname&gt;&#39;</span>
-</pre></div>
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<h3>Blogroll</h3>
+			<ul>
+				<li><a href="http://getpelican.com/">Pelican</a></li>
+				<li><a href="http://python.org/">Python.org</a></li>
+				<li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+				<li><a href="#">You can modify those links in your config file</a></li>
+			</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+				<li><a href="https://twitter.com/adam2392">twitter</a></li>
+				<li><a href="https://stackexchange.com/users/4494355/ajl123">stack-overflow</a></li>
+				<li><a href="https://github.com/adam2392">github</a></li>
+				<li><a href="https://www.linkedin.com/in/adam2392">linkedin</a></li>
+			</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+<div class="page-header"><h1>Adam Li's blog <small>virtualenv</small></h1></div>
+<div class='article'>
+	<h2>Setting Up a Virtual Environment for Python</h2>
+	<div class="well small">Permalink: <a class="more" href="https://adam2392.github.io/blog/2017/06/setup-virtual-env/">2017-06-04 00:00:00-04:00</a>
+by <a class="url fn" href="https://adam2392.github.io/author/adam-li.html">Adam Li </a>
+ in <a href="https://adam2392.github.io/category/coding.html">Coding</a>
+tags: <a href="https://adam2392.github.io/tag/virtualenv.html">virtualenv</a> <a href="https://adam2392.github.io/tag/webdev.html">webdev</a> <a href="https://adam2392.github.io/tag/python.html">python</a> </div>
+	<div class="summary"><p>A short walkthrough of setting up a virtual environment for Python development.</p> <a class="btn primary xsmall" href="https://adam2392.github.io/blog/2017/06/setup-virtual-env/">more…</a>
+	</div>
+</div>	
 
 
-<p>For Virtualenv: Run command </p>
-<div class="highlight"><pre><span></span><span class="n">virtualenv</span> <span class="s1">&#39;./venv/&#39;</span>
-</pre></div>
+		<footer>
+		  <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		  <p>&copy; Adam Li</p>
+		</footer>
+	  </div>
 
-
-<p>inside your project directory. or</p>
-<div class="highlight"><pre><span></span><span class="n">mkvirtualenv</span> <span class="o">-</span><span class="n">p</span> <span class="n">python3</span>
-</pre></div>
-
-
-<p>or</p>
-<div class="highlight"><pre><span></span><span class="n">virtualenv</span> <span class="o">-</span><span class="n">p</span> <span class="n">python3</span>
-</pre></div>
-
-
-<p>to make the virtual environment with a specific python installation (e.g. 2.7, or 3.4). With python3.6 and most of the recent versions, the virtualenvironment is built in, so you can just run</p>
-<div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="o">&lt;</span><span class="n">name_of_venv</span><span class="o">&gt;</span>
-</pre></div>
-
-
-<p>which is great because it handles it for you.</p>
-<h2>2. Delete a Virtualenv</h2>
-<p>For Virtualenvwrappper: In order to delete a virtual environment, all you need to do is to remove it recursively from your ~/.virtualenvs directory with    </p>
-<div class="highlight"><pre><span></span><span class="s1">&#39;sudo rm -rf &lt;name&gt;&#39;</span><span class="p">.</span>
-</pre></div>
-
-
-<p>For Virtualenv: Go to the directory of your project and delete the /venv/ directory.</p>
-<h1>Tips</h1>
-<h2>1. Starting up your Venv</h2>
-<p>Startup your virtual environment by typing:</p>
-<div class="highlight"><pre><span></span><span class="n">workon</span> <span class="n">name_of_virtualenvironment</span>
-</pre></div>
-
-
-<h2>2. Requirements.txt</h2>
-<p>This is a convenient file for you to make that keeps track of all your packages. If you ever want to run your project on a new computer, you just create a new virtual environment and run:</p>
-<div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="p">.</span><span class="n">txt</span>
-</pre></div>
-
-
-<p>To create the file:</p>
-<div class="highlight"><pre><span></span><span class="n">pip</span> <span class="k">freeze</span> <span class="o">&gt;</span> <span class="n">requirements</span><span class="p">.</span><span class="n">txt</span>
-</pre></div>
-
-
-<h1>Convenient Tools</h1>
-<h2>1. Automatically cd To Project Directory</h2>
-<p>Input the following code to your ./virtualenvs/postactivate file</p>
-<div class="highlight"><pre><span></span>    # <span class="nv">subtract</span> <span class="nv">strings</span> <span class="nv">to</span> <span class="nv">get</span> <span class="nv">the</span> <span class="nv">project</span> <span class="nv">name</span>
-    <span class="nv">function</span> <span class="nv">get_project_name</span><span class="ss">()</span> {
-        <span class="nv">local</span> <span class="nv">venv_dir</span><span class="o">=</span>$<span class="nv">VIRTUALENVWRAPPER_HOOK_DIR</span>
-        <span class="nv">local</span> <span class="nv">venv</span><span class="o">=</span>$<span class="nv">VIRTUAL_ENV</span>
-
-        <span class="nv">temp_project_name</span><span class="o">=</span>${<span class="nv">venv</span>#<span class="s2">&quot;</span><span class="s">$venv_dir</span><span class="s2">&quot;</span>}   # <span class="nv">get</span> <span class="nv">difference</span> <span class="nv">between</span> <span class="nv">two</span> <span class="nv">strings</span>
-        <span class="nv">project_name</span><span class="o">=</span>${<span class="nv">temp_project_name</span>:<span class="mi">1</span>}     # <span class="nv">remove</span> <span class="nv">leading</span> <span class="s1">&#39;</span><span class="s">/</span><span class="s1">&#39;</span> <span class="nv">character</span>
-
-        <span class="nv">echo</span> $<span class="nv">project_name</span>
-        ## <span class="nv">uncomment</span> <span class="k">for</span> <span class="nv">debugging</span>
-        # <span class="nv">echo</span> $<span class="nv">venv_dir</span>
-        # <span class="nv">echo</span> $<span class="nv">venv</span>
-        # <span class="nv">echo</span> $<span class="nv">temp_project_name</span>
-        # <span class="nv">echo</span> $<span class="nv">project_name</span>
-    }
-
-    # <span class="nv">export</span> <span class="nv">proj</span><span class="o">=</span><span class="s2">&quot;</span><span class="s">cd ~/Documents/$(get_project_name)</span><span class="s2">&quot;</span>
-    <span class="nv">root_dir</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">/Users/adam2392/Documents/</span><span class="s1">&#39;</span>
-    <span class="nv">project_dir</span><span class="o">=</span>$<span class="ss">(</span><span class="nv">get_project_name</span><span class="ss">)</span>
-    <span class="nv">cd</span> ${<span class="nv">root_dir</span>}<span class="o">/</span>${<span class="nv">project_dir</span>}
-</pre></div>
-
-
-<p>Make sure you change 'root_dir' to the correct root directory of your projects. </p>
-<p>This assumes that your project directory files are all correspondingly named with your virtualenv. This is convenient for changing directory into your project directory automatically.</p>
-<h1>References:</h1>
-<ol>
-<li>https://nolar.info/automatically-activate-virtualenv-on-cd/</li>
-<li>code to input into .bashrc</li>
-<li></li>
-</ol>                </article>
-            </aside><!-- /#featured -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="http://getpelican.com/">Pelican</a></li>
-                            <li><a href="http://python.org/">Python.org</a></li>
-                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-                            <li><a href="#">You can modify those links in your config file</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="https://adam2392.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
-                            <li><a href="https://adam2392.github.io/feeds/all.rss.xml" type="application/rss+xml" rel="alternate">rss feed</a></li>
-
-                            <li><a href="https://twitter.com/adam2392">twitter</a></li>
-                            <li><a href="https://stackexchange.com/users/4494355/ajl123">stack-overflow</a></li>
-                            <li><a href="https://github.com/adam2392">github</a></li>
-                            <li><a href="https://www.linkedin.com/in/adam2392">linkedin</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-    <script type="text/javascript">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-106551801-1', 'auto');
-    ga('send', 'pageview');
-    </script>
+	</div>
 </body>
 </html>

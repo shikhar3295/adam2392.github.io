@@ -53,13 +53,13 @@
 &lt;h1&gt;Methods&lt;/h1&gt;
 &lt;h2&gt;Most General Linear Gaussian Model&lt;/h2&gt;
 &lt;p&gt;Here is the most general form of the linear latent state-space model.&lt;/p&gt;
-&lt;p&gt;$$\dot{x}(t) = Ax(t) + Bu(t) + w$$
-$$y(t) = Cx(t) + Du(t) + v$$&lt;/p&gt;
-&lt;p&gt;where: $w \approx N(0,Q)$ and $v \approx N(0,R)$ are the state and output noise terms that we assume to be normally distributed (i.e. Gaussian).&lt;/p&gt;
+&lt;div class="math"&gt;$$\dot{x}(t) = Ax(t) + Bu(t) + w$$&lt;/div&gt;
+&lt;div class="math"&gt;$$y(t) = Cx(t) + Du(t) + v$$&lt;/div&gt;
+&lt;p&gt;where: &lt;span class="math"&gt;\(w \approx N(0,Q)\)&lt;/span&gt; and &lt;span class="math"&gt;\(v \approx N(0,R)\)&lt;/span&gt; are the state and output noise terms that we assume to be normally distributed (i.e. Gaussian).&lt;/p&gt;
 &lt;p&gt;The dimensionality of the terms are:
-* $x, w \in R^{n}$
-* $y, v \in R^{p}$
-* $u \in R^{k}$&lt;/p&gt;
+* &lt;span class="math"&gt;\(x, w \in R^{n}\)&lt;/span&gt;
+* &lt;span class="math"&gt;\(y, v \in R^{p}\)&lt;/span&gt;
+* &lt;span class="math"&gt;\(u \in R^{k}\)&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Some jargon for folks:
 * x is the state variable, generally considered "hidden", or part of the "latent space" (i.e. some subspace of your data that you don't know)
 * y is the observation variable, generally considered measured, or observed (i.e. signals in your data)
@@ -71,24 +71,24 @@ $$y(t) = Cx(t) + Du(t) + v$$&lt;/p&gt;
 * w and v are our random variable noise terms that we may (sometimes) assume Normally distributed&lt;/p&gt;
 &lt;p&gt;Then the A, B, C, D matrices have their respecting dimensionality. In general, we assume y is observed and measured.&lt;/p&gt;
 &lt;h2&gt;General Expectation Maximization&lt;/h2&gt;
-&lt;p&gt;The general expectation maximization boils down to two distinct steps: 1) Computing the expecation under a certain generative model (i.e. computing the expected states and covariances) and 2) Maximizing the likelihood given the states (i.e. computing the optimal parameters). In the general Gaussian model, these parameters are $\theta = {A, C, B, D, Q, R}$. &lt;/p&gt;
+&lt;p&gt;The general expectation maximization boils down to two distinct steps: 1) Computing the expecation under a certain generative model (i.e. computing the expected states and covariances) and 2) Maximizing the likelihood given the states (i.e. computing the optimal parameters). In the general Gaussian model, these parameters are &lt;span class="math"&gt;\(\theta = \{A, C, B, D, Q, R\}\)&lt;/span&gt;. &lt;/p&gt;
 &lt;h2&gt;Kalman Filter/Smoothing&lt;/h2&gt;
-&lt;p&gt;The general Kalman filter assumes Gaussian noise, which we have here. Filtering is the problem of predicting the state $x(t)$ given all the observations up to time t. Smoothing is the problem of predicting the state $x(t)$ given all the observations we have (i.e. over entire window of observation of length T).&lt;/p&gt;
+&lt;p&gt;The general Kalman filter assumes Gaussian noise, which we have here. Filtering is the problem of predicting the state &lt;span class="math"&gt;\(x(t)\)&lt;/span&gt; given all the observations up to time t. Smoothing is the problem of predicting the state &lt;span class="math"&gt;\(x(t)\)&lt;/span&gt; given all the observations we have (i.e. over entire window of observation of length T).&lt;/p&gt;
 &lt;h1&gt;Important Models And Connections With Control Theory&lt;/h1&gt;
 &lt;h2&gt;Static Models (i.e. time is not a factor)&lt;/h2&gt;
 &lt;p&gt;Here, we are dealing with just data points (i.e. sets of x's, y's), so there is no notion of time dependency. This simplifies the general model, so that A = 0. &lt;/p&gt;
 &lt;p&gt;General inference on model:&lt;/p&gt;
-&lt;p&gt;$$P(x | y) = \frac{P(y|x)P(x)}{P(y)} = \frac{N(Cx, R) N(0, I)}{N(0, CC^T + R)}$$
-$$P(x|y) = N(\beta y, I - \beta C), \ \beta=C^T(CC^T + R)^{-1}$$&lt;/p&gt;
+&lt;div class="math"&gt;$$P(x | y) = \frac{P(y|x)P(x)}{P(y)} = \frac{N(Cx, R) N(0, I)}{N(0, CC^T + R)}$$&lt;/div&gt;
+&lt;div class="math"&gt;$$P(x|y) = N(\beta y, I - \beta C), \ \beta=C^T(CC^T + R)^{-1}$$&lt;/div&gt;
 &lt;h3&gt;Continuous State&lt;/h3&gt;
 &lt;p&gt;Here, we presume that the state space is continuous (i.e. x is a continuous variable).&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;(Sensible) Principal Component Analysis (PCA)
 PCA is probably one of the most common dimensionality reduction techniques, which at the end of the day (for you lin alg folks) boils down to Singular Value Decomposition (SVD). Here we assume the following:&lt;/li&gt;
-&lt;li&gt;the observation noise R is a multiple of the identity matrix (i.e. $R=\alpha I$)&lt;/li&gt;
+&lt;li&gt;the observation noise R is a multiple of the identity matrix (i.e. &lt;span class="math"&gt;\(R=\alpha I\)&lt;/span&gt;)&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Note that because R is not 0, then we have some noise in the state variables, so this is very similar to probabilistic PCA. &lt;/p&gt;
-&lt;p&gt;When $\alpha$ goes to 0, then the noise on the states goes to 0, while Q is still finite. This means that the only noise we assume in our model comes from our observations of the data. A naive approach would simply take the observed covariance matrix of our data, apply SVD to obtain the singular vector matrices and the singular values. The columns of C then are the principle components of PCA. The values of our latent space vector x are the principle values (i.e. singular values of our covariance matrix).&lt;/p&gt;
+&lt;p&gt;When &lt;span class="math"&gt;\(\alpha\)&lt;/span&gt; goes to 0, then the noise on the states goes to 0, while Q is still finite. This means that the only noise we assume in our model comes from our observations of the data. A naive approach would simply take the observed covariance matrix of our data, apply SVD to obtain the singular vector matrices and the singular values. The columns of C then are the principle components of PCA. The values of our latent space vector x are the principle values (i.e. singular values of our covariance matrix).&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Maximum Likelihood Factor Analysis
 In factor analysis, we assume the following:&lt;/li&gt;
@@ -104,8 +104,8 @@ In both static modeling procedures, where we assume our latent space and observa
 &lt;h3&gt;Discrete State&lt;/h3&gt;
 &lt;p&gt;Here, we presume x is a discrete variable.
 1. Gaussian Mixture Models
-If x is a discrete probability distribution controlled by the distribution of the noise, w. The mean $\mu$ and covariance Q parametrize the distribution of x. Now x is modeled by:&lt;/p&gt;
-&lt;p&gt;$$x = WTA(w)$$&lt;/p&gt;
+If x is a discrete probability distribution controlled by the distribution of the noise, w. The mean &lt;span class="math"&gt;\(\mu\)&lt;/span&gt; and covariance Q parametrize the distribution of x. Now x is modeled by:&lt;/p&gt;
+&lt;div class="math"&gt;$$x = WTA(w)$$&lt;/div&gt;
 &lt;p&gt;where WTA is the winner take all function applied to the vector w, so x becomes a unit vector of size n. Now the interpretation of x is the mixture weights (i.e. how much each data point y belongs to each cluster). The columns of matrix C represent the cluster means. This is solved via EM also.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Vector Quantization (K-means) Models
@@ -119,11 +119,11 @@ When the observation noise approaches 0 (i.e. R approaches 0), then we arrive at
 &lt;p&gt;If the parameters are unknown, then EM can be used to iterate on the parameters.&lt;/p&gt;
 &lt;h3&gt;Discrete State - Hidden Markov Models&lt;/h3&gt;
 &lt;p&gt;Now, we consider when the states are discrete, which lead to Hidden Markov Models. The model for the states is:&lt;/p&gt;
-&lt;p&gt;$$x(t+1) = WTA(Ax(t)+w)$$&lt;/p&gt;
+&lt;div class="math"&gt;$$x(t+1) = WTA(Ax(t)+w)$$&lt;/div&gt;
 &lt;p&gt;Here, if we constrain Q to be the identity matrix, then it will have the same covariances for all Gaussians. With traditional Hidden Markov models, we usually define a state transition matrix (e.g. normalized columns), which defines how probable different state transitions are from an initial state. Solving for the most likely state sequence employs the famous Viterbi algorithm. Solving the filtering and smoothing problems, then employ EM traditionally.&lt;/p&gt;
 &lt;h2&gt;Non-Gaussian Models (i.e. noise terms are no longer normally distributed)&lt;/h2&gt;
 &lt;p&gt;This results in a famous class of algorithm known as Independent Component Analaysis. This is a generalization of the PCA. Here, we have a nonlinearity applied to the state model:&lt;/p&gt;
-&lt;p&gt;$$x = g(w)$$&lt;/p&gt;
+&lt;div class="math"&gt;$$x = g(w)$$&lt;/div&gt;
 &lt;p&gt;This converts a Gaussian prior (i.e. noise variable w) into a non-Gaussian prior for the state variable x. Now, x is considered our "blind sources" and y is our observed data. In classical ICA, R is assumed to be infinitesimal, and C is square and full-rank. C is considered a "mixing matrix", that is how to mix the sources to "recover" our observed data.&lt;/p&gt;
 &lt;h2&gt;Control Theory Type Problems&lt;/h2&gt;
 &lt;p&gt;In control theory and linear systems, we are generally interested in the following problems:&lt;/p&gt;
@@ -149,10 +149,10 @@ When the observation noise approaches 0 (i.e. R approaches 0), then we arrive at
 &lt;h1&gt;Extensions of Gaussian Linear Models&lt;/h1&gt;
 &lt;p&gt;Here, I talk about some extensions to Gaussian linear models and relate them to our linear models through the lens of probability and statistics; specifically: variational inference and markov chain monte carlo. These are the main techniques in the estimation of an intractable posterior distribution. Here, we'll assume you have basic Bayesian working knowledge and comfortable with the statistics involved.&lt;/p&gt;
 &lt;p&gt;The setup of the problem is similar to that of Linear Gaussian Models.&lt;/p&gt;
-&lt;p&gt;$$\dot{x}(t) = f(x(t)) + g(u(t)) + w$$
-$$y(t) = h(x(t)) + v$$&lt;/p&gt;
-&lt;p&gt;where: $w \approx Q(\theta)$ and $v \approx R(\gamma)$ are the state and output noise terms that we assume to be distributed with some distribution $Q,R$ parametrized by $\theta, \gamma$. In addition, now $f, g, h$ are all potentially nonlinear functions analogs of A, B, C. If we define some priors on the distribution of noise for the latent variables, we can perform Bayesian inference given our observed signals, y. That is, we are interested in estimating:&lt;/p&gt;
-&lt;p&gt;$$P(x|y) \approx P(y|x) P(x)$$&lt;/p&gt;
+&lt;div class="math"&gt;$$\dot{x}(t) = f(x(t)) + g(u(t)) + w$$&lt;/div&gt;
+&lt;div class="math"&gt;$$y(t) = h(x(t)) + v$$&lt;/div&gt;
+&lt;p&gt;where: &lt;span class="math"&gt;\(w \approx Q(\theta)\)&lt;/span&gt; and &lt;span class="math"&gt;\(v \approx R(\gamma)\)&lt;/span&gt; are the state and output noise terms that we assume to be distributed with some distribution &lt;span class="math"&gt;\(Q,R\)&lt;/span&gt; parametrized by &lt;span class="math"&gt;\(\theta, \gamma\)&lt;/span&gt;. In addition, now &lt;span class="math"&gt;\(f, g, h\)&lt;/span&gt; are all potentially nonlinear functions analogs of A, B, C. If we define some priors on the distribution of noise for the latent variables, we can perform Bayesian inference given our observed signals, y. That is, we are interested in estimating:&lt;/p&gt;
+&lt;div class="math"&gt;$$P(x|y) \approx P(y|x) P(x)$$&lt;/div&gt;
 &lt;p&gt;Note, that in convention with literature, P(y|x) is our likelihood of the model and P(x) is our assumed prior distribution on our latent state variable. &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -170,7 +170,7 @@ Creating a Markov chain that has convergent properties to the true posterior. Sa
 &lt;p&gt;One of the shortcomings of this method is that there is no easy way to determine the "low-rankness" of a dataset prior to analyzing it. I imagine that the way to proceed is to use some heuristic measure, such as Bayesian Information Criterion / Aikake's Information Criterion. &lt;/p&gt;
 &lt;p&gt;Assuming you have a good choice of the rank, then you can apply some traditional regularizations, such as l1 and l2 regularizations to enforce sparsity and smoothness in the different dimensions of the A 3D tensor (i.e. either in channel space, or in time space). Then the optimal tensor is solved for via convex optimization. The paper uses a combination of conjugate gradient and proximal gradient with Nesterov acceleration for the smooth, and non-smooth objective functions respectively. A review of these optimization terms hopefully can be covered in another blog post on optimization: convex, nonlinear and constrained.&lt;/p&gt;
 &lt;h2&gt;Deep Kalman Filter&lt;/h2&gt;
-&lt;p&gt;In the paper on the deep Kalman Filter, the authors derive a deep neural network that is a Kalman filter analog. They explicitly assume that the latent state is modeled by a Normal distribution (i.e. $x ~ N(\mu, \Sigma)$) with possible nonlinear interactions between time steps, and that the observations are distributed according to some family of distributions (e.g. Bernoulli if observations are binary).&lt;/p&gt;
+&lt;p&gt;In the paper on the deep Kalman Filter, the authors derive a deep neural network that is a Kalman filter analog. They explicitly assume that the latent state is modeled by a Normal distribution (i.e. &lt;span class="math"&gt;\(x ~ N(\mu, \Sigma)\)&lt;/span&gt;) with possible nonlinear interactions between time steps, and that the observations are distributed according to some family of distributions (e.g. Bernoulli if observations are binary).&lt;/p&gt;
 &lt;p&gt;The neural network architectures that seem to work are the: i) q-RNN (filtering) and ii) q-BRNN (smoothing), which are just recurrent and bi-directional recurrent neural network architectures. They perform variational learning of the latent state parameters by maximizing a derived evidence lower bound (ELBO). In the Variational AutoEncoder paper, they talk about how to perform stochastic gradient descent by performing the re-parameterization trick on the Normal distribution.&lt;/p&gt;
 &lt;p&gt;They introduce the notion of performing counterfactual inference by introducing an extra variable that the network conditions on. For example, you can include a vectorized variable that determines whether or not you took a drug at time t, or whether or not a specific action was taken. Then during testing, you can modify the conditional variable action and perform forward prediction to determine the x(t+1), ..., x(t+T) steps which predicts what "would have" happened if you took a certain action.&lt;/p&gt;
 &lt;h3&gt;Caveats of the DKF&lt;/h3&gt;
@@ -180,34 +180,34 @@ Creating a Markov chain that has convergent properties to the true posterior. Sa
 &lt;h2&gt;Deep Variational Bayes Filter&lt;/h2&gt;
 &lt;p&gt;In this paper, they argue that a suite of previous methods that use a VAE-style for time series is optimized for reconstruction mainly (i.e. not prediction). This will just compress the data in the best possible manner, while allowing the data to still be reconstructed. However, there is no explicit optimization for prediction. In addition, previous methods may not explicitly include the necessary mini-batch data for the model to infer time-derivatives, thus weakening prediction as well.&lt;/p&gt;
 &lt;p&gt;First, we want to reparametrize the transition model:&lt;/p&gt;
-&lt;p&gt;$$x(t+1) = f(x(t), u(t), \beta(t))$$&lt;/p&gt;
+&lt;div class="math"&gt;$$x(t+1) = f(x(t), u(t), \beta(t))$$&lt;/div&gt;
 &lt;h2&gt;Deep Koopman Model&lt;/h2&gt;
 &lt;h3&gt;Quick Koopman Theory Overview&lt;/h3&gt;
 &lt;p&gt;For the reader (and myself), I assume we have no idea what the Koopman operator is. So first, I will overview some of the basic concepts here, so that I can introduce the Deep Koopman model. See https://www.mit.edu/~arbabi/research/KoopmanIntro.pdf for a great in-depth overview. One should be relatively comfortable with the theory of linear dynamical systems and matrix analysis (specifically the idea of state transition matrices, linearity and eigenvalues/eigenvectors). Recall a linear dynamical system without input:&lt;/p&gt;
-&lt;p&gt;$$\dot{x}(t) = Ax(t)$$&lt;/p&gt;
-&lt;p&gt;where A is our linear operator of the form $T: \mathbf{R}^n -&amp;gt; \mathbf{R}^n$.&lt;/p&gt;
+&lt;div class="math"&gt;$$\dot{x}(t) = Ax(t)$$&lt;/div&gt;
+&lt;p&gt;where A is our linear operator of the form &lt;span class="math"&gt;\(T: \mathbf{R}^n -&amp;gt; \mathbf{R}^n\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;The idea of the Koopman operator is that any data we collect in a real-world scenario are "observables" of our system that are a function of the underlying state (g). So the Koopman operator is a linear transformation (U) that acts on the state transition operator (A). An eigenvalue decomposition of the Koopman operator yields (possibly infinite-dimensional) eigenfunctions that span the observable space, so now all observables of a dynamical system are linear combinations of the eigenfunctions of the Koopman operator. This is quite fascinating because the idea is that you can break down nonlinear system phenomena in terms of linear Koopman eigenfunctions (nonlinear approximation by linear functions)! &lt;/p&gt;
-&lt;p&gt;$$Ug(x) = g o T(x)$$&lt;/p&gt;
+&lt;div class="math"&gt;$$Ug(x) = g o T(x)$$&lt;/div&gt;
 &lt;p&gt;For example, we can look at:
 1. Limit Cycles:
 This is a nonlinear system property because no linear dynamical system (i.e. x(t+1) = Ax(t)) can generate limit cycles. A limit cycle is parametrized by a period, T. So one can perform Fourier decomposition:&lt;/p&gt;
-&lt;p&gt;$$g(x(t)) = \sum_{k=0}^{\infty} a_j e^{ikt2\pi / T}$$&lt;/p&gt;
-&lt;p&gt;The $a_j$ are Fourier coefficients and the exponential term can be constructed as the eigenfunctions of the Koopman operator with eigenvalues $\lambda_k = ik2\pi / T$ (interestingly when eigenvalues are of this form, you have degenerate discrete time-sampling in the sense that you can lose controllability, or observability of dynamical system). &lt;/p&gt;
+&lt;div class="math"&gt;$$g(x(t)) = \sum_{k=0}^{\infty} a_j e^{ikt2\pi / T}$$&lt;/div&gt;
+&lt;p&gt;The &lt;span class="math"&gt;\(a_j\)&lt;/span&gt; are Fourier coefficients and the exponential term can be constructed as the eigenfunctions of the Koopman operator with eigenvalues &lt;span class="math"&gt;\(\lambda_k = ik2\pi / T\)&lt;/span&gt; (interestingly when eigenvalues are of this form, you have degenerate discrete time-sampling in the sense that you can lose controllability, or observability of dynamical system). &lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Hyperbolic Fixed Points&lt;/li&gt;
 &lt;li&gt;Basins of Attraction (stable limit cycles)&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Now in general, you can perform Koopman mode decomposition on a vector of observables (no one just observes one data point). You get:&lt;/p&gt;
-&lt;p&gt;$$U^t g(x) = \sum_{k=0}^{\infty} g_k e^{\lambda_k t} \phi_k(x)$$&lt;/p&gt;
-&lt;p&gt;where U is our Koopman operator, g is our observable function of our state, x is our state vector, $g_k$ are the Koopman modes of the observable g at the eigenvalue $\lambda_k$, $\phi_k$ are the eigenfunctions at their respective eigenvalue.&lt;/p&gt;
+&lt;div class="math"&gt;$$U^t g(x) = \sum_{k=0}^{\infty} g_k e^{\lambda_k t} \phi_k(x)$$&lt;/div&gt;
+&lt;p&gt;where U is our Koopman operator, g is our observable function of our state, x is our state vector, &lt;span class="math"&gt;\(g_k\)&lt;/span&gt; are the Koopman modes of the observable g at the eigenvalue &lt;span class="math"&gt;\(\lambda_k\)&lt;/span&gt;, &lt;span class="math"&gt;\(\phi_k\)&lt;/span&gt; are the eigenfunctions at their respective eigenvalue.&lt;/p&gt;
 &lt;h3&gt;Now the Deep Koopman Model&lt;/h3&gt;
 &lt;p&gt;In this paper, they parametrize the observable function using a deep neural network, and then explicitly model the decoding as a Koopman operator to learn the mappings of a latent state back into the observable data. In addition, they add special training scheme of penalizing the loss over consecutive predictive steps, so that the model learns a stable mapping that attempts to keep low error rates over many consecutive predictions.&lt;/p&gt;
 &lt;p&gt;TBD&lt;/p&gt;
 &lt;h2&gt;Deep Kalman Variational Autoencoders (DKVAE)&lt;/h2&gt;
 &lt;p&gt;In this paper, the authors formulate yet another variation of the VAE framework that is somewhat similar to the DVBF model, but with a few differences and improvements. Recall that the model for the DVBF was for locally linear transitions:&lt;/p&gt;
-&lt;p&gt;$$x(t+1) = A(t)x(t) + B(t)u(t) + C(t)w(t)$$
-$$y(t) = H(t)x(t) + y(t)$$&lt;/p&gt;
-&lt;p&gt;Here, the variational parameters that parametrize the variational family is $v(t) = {A(t)^{i}, B(t)^{i}, C(t)^{i}}$.&lt;/p&gt;
+&lt;div class="math"&gt;$$x(t+1) = A(t)x(t) + B(t)u(t) + C(t)w(t)$$&lt;/div&gt;
+&lt;div class="math"&gt;$$y(t) = H(t)x(t) + y(t)$$&lt;/div&gt;
+&lt;p&gt;Here, the variational parameters that parametrize the variational family is &lt;span class="math"&gt;\(v(t) = \{A(t)^{i}, B(t)^{i}, C(t)^{i}\}\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;In the DKVAE, the model adds an additional pseudo-latent state, which is of low-dimension between the high dimensional observation space and the linear state space model. &lt;/p&gt;
 &lt;p&gt;TBD&lt;/p&gt;
 &lt;h2&gt;Possibilities for Improved Deep State Space Models (DSSM)&lt;/h2&gt;
@@ -221,7 +221,62 @@ $$y(t) = H(t)x(t) + y(t)$$&lt;/p&gt;
 &lt;li&gt;"Kalman VAE." https://arxiv.org/pdf/1710.05741.pdf&lt;/li&gt;
 &lt;li&gt;"Time Varying Autoregression with Low-Rank Tensors (TVART)."&lt;/li&gt;
 &lt;li&gt;"Introduction to Koopman Theory." https://www.mit.edu/~arbabi/research/KoopmanIntro.pdf&lt;/li&gt;
-&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Tue, 18 Jun 2019 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:adam2392.github.io,2019-06-18:/blog/2019/06/gaussian-generative-models/</guid><category>phd</category><category>machine learning</category></item><item><title>Optimization: Convex, Nonlinear, Unconstrained and Constrained</title><link>https://adam2392.github.io/blog/2019/06/optimization-landscape-overview/</link><description>&lt;!-- MarkdownTOC --&gt;
+&lt;/ol&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Tue, 18 Jun 2019 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:adam2392.github.io,2019-06-18:/blog/2019/06/gaussian-generative-models/</guid><category>phd</category><category>machine learning</category></item><item><title>Optimization: Convex, Nonlinear, Unconstrained and Constrained</title><link>https://adam2392.github.io/blog/2019/06/optimization-landscape-overview/</link><description>&lt;!-- MarkdownTOC --&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Background&lt;/li&gt;
@@ -258,7 +313,7 @@ $$y(t) = H(t)x(t) + y(t)$$&lt;/p&gt;
 &lt;!-- /MarkdownTOC --&gt;
 
 &lt;h1&gt;Background&lt;/h1&gt;
-&lt;p&gt;Recently, I re-read my notes on convex optimization, nonlinear unconstrained optimization and nonlinear constrained optimization. It's quite fascinating how mathematics can break down very general assumptions into different classes of algorithms with certain convergence, convergence rate and computational cost guarantees. In general all these algorithms are iterative algorithms, that solve a certain optimization problem by taking iterations from a starting vector $x_0$. Obviously, there are other classes of algorithms that can say be solved analytically (i.e. one shot), but we're interested in how to take iterations that converge, converge fast and are computationally efficient. The different classes of algorithms can at a high level be broken down into:&lt;/p&gt;
+&lt;p&gt;Recently, I re-read my notes on convex optimization, nonlinear unconstrained optimization and nonlinear constrained optimization. It's quite fascinating how mathematics can break down very general assumptions into different classes of algorithms with certain convergence, convergence rate and computational cost guarantees. In general all these algorithms are iterative algorithms, that solve a certain optimization problem by taking iterations from a starting vector &lt;span class="math"&gt;\(x_0\)&lt;/span&gt;. Obviously, there are other classes of algorithms that can say be solved analytically (i.e. one shot), but we're interested in how to take iterations that converge, converge fast and are computationally efficient. The different classes of algorithms can at a high level be broken down into:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;convex vs nonconvex&lt;/li&gt;
 &lt;li&gt;constrained vs unconstrained&lt;/li&gt;
@@ -269,9 +324,9 @@ $$y(t) = H(t)x(t) + y(t)$$&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;regularization (i.e. the addition of a l1, l2, or p-norm operator on some variable of interest) to prevent overfitting, include prior knowledge into the model, and improve tractability&lt;/li&gt;
 &lt;li&gt;duality (i.e. the idea of solving a related "dual" problem that has nice properties)&lt;/li&gt;
-&lt;li&gt;initialization (i.e. $x_0$)&lt;/li&gt;
-&lt;li&gt;step length (i.e. $\alpha_t$)&lt;/li&gt;
-&lt;li&gt;direction of algorithm iteration (i.e. $g_t$)&lt;/li&gt;
+&lt;li&gt;initialization (i.e. &lt;span class="math"&gt;\(x_0\)&lt;/span&gt;)&lt;/li&gt;
+&lt;li&gt;step length (i.e. &lt;span class="math"&gt;\(\alpha_t\)&lt;/span&gt;)&lt;/li&gt;
+&lt;li&gt;direction of algorithm iteration (i.e. &lt;span class="math"&gt;\(g_t\)&lt;/span&gt;)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;In general, one is interested in necessary and/or sufficient conditions for optimality and the following questions:&lt;/p&gt;
 &lt;ol&gt;
@@ -282,15 +337,15 @@ $$y(t) = H(t)x(t) + y(t)$$&lt;/p&gt;
 &lt;p&gt;What I will not overview is combinatorial and stochastic optimization. I will plan on adding the general concepts once I've reviewed linear, quadratic, and semidefinite programming, as well as stochastic gradient descent. &lt;/p&gt;
 &lt;h1&gt;Methods&lt;/h1&gt;
 &lt;p&gt;Here, I preface the landscape of optimization algorithms with the general objective function:&lt;/p&gt;
-&lt;p&gt;$$minimize_{x \in X} f(x) \ s.t. \ g(x)=0,\ h(x) \le 0$$
-$$X \subset \mathbf{R}^n$$
-$$f: X -&amp;gt; \mathbf{R}$$
-$$g: X -&amp;gt; \mathbf{R}^k$$
-$$h: X -&amp;gt; \mathbf{R}^l$$&lt;/p&gt;
+&lt;div class="math"&gt;$$minimize_{x \in X} f(x) \ s.t. \ g(x)=0,\ h(x) \le 0$$&lt;/div&gt;
+&lt;div class="math"&gt;$$X \subset \mathbf{R}^n$$&lt;/div&gt;
+&lt;div class="math"&gt;$$f: X -&amp;gt; \mathbf{R}$$&lt;/div&gt;
+&lt;div class="math"&gt;$$g: X -&amp;gt; \mathbf{R}^k$$&lt;/div&gt;
+&lt;div class="math"&gt;$$h: X -&amp;gt; \mathbf{R}^l$$&lt;/div&gt;
 &lt;p&gt;There are k equality constraints, and l inequality constraints. X is our feasible set, f is our evaluation function (think loss/cost function), g is our equality constraint function, and h is our inequality constraint function. x is our variable of interest that we want in the end that satisfies this minimization problem.&lt;/p&gt;
 &lt;p&gt;A very general iteration looks something like this:&lt;/p&gt;
-&lt;p&gt;$$x_{k+1} = x_k - \alpha_k g_k (x_k)$$&lt;/p&gt;
-&lt;p&gt;where $\alpha$ is the step size, g is the step direction. Note that $\alpha$ can either be a vector, or scalar (depending on if you want to step uniformly, or with varying magnitudes in the direction vector) and g is a in general a vector that denotes the directionality in the space of x (i.e. $R^n$).&lt;/p&gt;
+&lt;div class="math"&gt;$$x_{k+1} = x_k - \alpha_k g_k (x_k)$$&lt;/div&gt;
+&lt;p&gt;where &lt;span class="math"&gt;\(\alpha\)&lt;/span&gt; is the step size, g is the step direction. Note that &lt;span class="math"&gt;\(\alpha\)&lt;/span&gt; can either be a vector, or scalar (depending on if you want to step uniformly, or with varying magnitudes in the direction vector) and g is a in general a vector that denotes the directionality in the space of x (i.e. &lt;span class="math"&gt;\(R^n\)&lt;/span&gt;).&lt;/p&gt;
 &lt;h2&gt;Convex&lt;/h2&gt;
 &lt;p&gt;In this section, we make the assumption that f is convex, and in general the constraint functions are convex. Assuming convexity provides a couple of strong guarantees:&lt;/p&gt;
 &lt;ul&gt;
@@ -303,7 +358,7 @@ $$h: X -&amp;gt; \mathbf{R}^l$$&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Subgradient Descent Algorithm
-This is essentially gradient descent, but using the subgradient. It's a basic algorithm that has guaranteed convergence with some assumptions on the choices of your step sizes, $\alpha_k$.&lt;/p&gt;
+This is essentially gradient descent, but using the subgradient. It's a basic algorithm that has guaranteed convergence with some assumptions on the choices of your step sizes, &lt;span class="math"&gt;\(\alpha_k\)&lt;/span&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Proximal Gradient Descent Algorithm
@@ -312,7 +367,7 @@ This defines a proximal operator that IS differentiable, so that we can take gra
 &lt;/ol&gt;
 &lt;p&gt;&lt;em&gt;Acceleration (Nesterov)&lt;/em&gt;
 Armed with the proximal gradient, one can apply acceleration techniques of the form:&lt;/p&gt;
-&lt;p&gt;$$ $$&lt;/p&gt;
+&lt;div class="math"&gt;$$ $$&lt;/div&gt;
 &lt;p&gt;, which leads to algorithms like FISTA (fast ISTA).&lt;/p&gt;
 &lt;h3&gt;Smooth&lt;/h3&gt;
 &lt;p&gt;Here, we are dealing with convex functions that ARE differentiable (i.e you can take the derivative). Taking the derivative gives you powerful first-order information. This leads to algorithms like:&lt;/p&gt;
@@ -330,7 +385,7 @@ Armed with the proximal gradient, one can apply acceleration techniques of the f
 &lt;p&gt;For convex and linear optimization problems, generally you don't need such methods, so we restrict overview until we reach the section on Nonlinear optimization.&lt;/p&gt;
 &lt;h2&gt;Constrained&lt;/h2&gt;
 &lt;p&gt;In this section, we allow for constraints either in the form of equality, and/or inequality constraints. The idea of adding constraints is really fascinating because in most (almost all) real world problems, you can formulate a loss function to optimize (based on some metric) that generally has constraints built in! This is due to the nature of the problem. For example, if you want to optimize usage of fuel in a car, you are constrained by the amount of fuel you can even have and the fact that fuel can never be negative! In general, adding constraints helps the optimization problem achieve better solutions. In order to analyze a constrained optimization problem, the strategy is to perform a "conversion" into an unconstrained problem. This leads to the definition of a Lagrangian function (draws upon physics):&lt;/p&gt;
-&lt;p&gt;$$L(x,y,\lambda,\mu) = $$&lt;/p&gt;
+&lt;div class="math"&gt;$$L(x,y,\lambda,\mu) = $$&lt;/div&gt;
 &lt;p&gt;There is a wealth of theory behind constraint optimization with some of the basics drawing from the idea of Lagrange multipliers (that handle equality constraints). One can generalize this notion (it's quite beautiful actually) to inequality constraints, which then handle all possible constraints you might have. This generalization leads to the notion of the Karusch-Kuhn-Tucker (KKT) conditions for optimality. The KKT conditions are:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;stationarity:&lt;/li&gt;
@@ -349,25 +404,25 @@ Armed with the proximal gradient, one can apply acceleration techniques of the f
 The purpose of line search methods is to define a direction of search first and then perform a line search to determine a good step size. The procedure is as follows:&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;solve for a descent direction $B_k$. In general, it is difficult to get this for high-dimensional systems exactly because you can't compute the Hessian.&lt;/p&gt;
+&lt;p&gt;solve for a descent direction &lt;span class="math"&gt;\(B_k\)&lt;/span&gt;. In general, it is difficult to get this for high-dimensional systems exactly because you can't compute the Hessian.&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;perform a line search to determine the step size $\alpha_k$.&lt;/li&gt;
+&lt;li&gt;perform a line search to determine the step size &lt;span class="math"&gt;\(\alpha_k\)&lt;/span&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Here, we review two main line search methods: 
 * exact line search: Armijo line search (backtracking line search) and 
 * inexact line search with satisfied Wolfe conditions.&lt;/p&gt;
-&lt;p&gt;The wolfe conditions are conditions for choosing a step length, $\alpha_k$, given a descent direction $p_k$:&lt;/p&gt;
+&lt;p&gt;The wolfe conditions are conditions for choosing a step length, &lt;span class="math"&gt;\(\alpha_k\)&lt;/span&gt;, given a descent direction &lt;span class="math"&gt;\(p_k\)&lt;/span&gt;:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;(Armijo rule) $f(x_k + \alpha_k p_k) \le f(x_k) + c_1 \alpha_k p_k^T \Nabla f(x_k)$&lt;/li&gt;
+&lt;li&gt;(Armijo rule) &lt;span class="math"&gt;\(f(x_k + \alpha_k p_k) \le f(x_k) + c_1 \alpha_k p_k^T \Nabla f(x_k)\)&lt;/span&gt;&lt;/li&gt;
 &lt;li&gt;(curvature condition) -p_k^T \Nabla f(x_k + \alpha_k p_k) \le -c_2 p_k^T \Nabla f(x_k)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Armijo rule ensures that the step length decreases f sufficiently. The curvature condition ensures that the slope has been reduced sufficiently. With the strong Wolfe conditions, there is a different curvature condition:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;$|p_k^T \Nabla f(x_k + \alpha_k p_k)| \le c_2 |p_k^T \Nabla f(x_k)|$&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(|p_k^T \Nabla f(x_k + \alpha_k p_k)| \le c_2 |p_k^T \Nabla f(x_k)|\)&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;with $0 &amp;lt; c_1 &amp;lt; c_2 &amp;lt; 1$. If $p_k$ is a descent direction, then we just need to satisfy:&lt;/p&gt;
-&lt;p&gt;$$p_k^T \Nabla f(x_k) &amp;lt; 0$$&lt;/p&gt;
-&lt;p&gt;with $p_k = -\Nabla f(x_k)$ as the gradient direction, or with $p_k = - H^{-1} \Nabla f(x_k)$ with H being positive definite as the Newton-Raphson direction. &lt;/p&gt;
+&lt;p&gt;with &lt;span class="math"&gt;\(0 &amp;lt; c_1 &amp;lt; c_2 &amp;lt; 1\)&lt;/span&gt;. If &lt;span class="math"&gt;\(p_k\)&lt;/span&gt; is a descent direction, then we just need to satisfy:&lt;/p&gt;
+&lt;div class="math"&gt;$$p_k^T \Nabla f(x_k) &amp;lt; 0$$&lt;/div&gt;
+&lt;p&gt;with &lt;span class="math"&gt;\(p_k = -\Nabla f(x_k)\)&lt;/span&gt; as the gradient direction, or with &lt;span class="math"&gt;\(p_k = - H^{-1} \Nabla f(x_k)\)&lt;/span&gt; with H being positive definite as the Newton-Raphson direction. &lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Trust Region Methods
 The purpose of trust region methods is to define a region that is "trustworthy" to move in the direction of a local optima. The idea is to first perform a "line search" and then determine the direction of search. A trust region algorithm solves a subproblem that uses the gradient information and Hessian (or approximation) information.&lt;/li&gt;
@@ -379,11 +434,11 @@ The purpose of trust region methods is to define a region that is "trustworthy" 
 &lt;li&gt;Secant method
 This method essentaially uses an iteration of secant lines and their roots to better approximate a root of the original function of interest, f. It is similar to a finite-difference approximation of Newton's method.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;$$x_{k+1} = x_k - f(x_k) \frac{x_k - x_{k-1}}{f(x_k) - f(x_{k-1})}$$&lt;/p&gt;
+&lt;div class="math"&gt;$$x_{k+1} = x_k - f(x_k) \frac{x_k - x_{k-1}}{f(x_k) - f(x_{k-1})}$$&lt;/div&gt;
 &lt;ol&gt;
 &lt;li&gt;Newton's method&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;$$x_{k+1} = x_k - \frac{f(x_k)}{f'(x_k)}$$&lt;/p&gt;
+&lt;div class="math"&gt;$$x_{k+1} = x_k - \frac{f(x_k)}{f'(x_k)}$$&lt;/div&gt;
 &lt;p&gt;This Newton's method can be approximated when Jacobians and Hessians are too expensive, by using the class of quasi-newton methods, such as the BFGS method.&lt;/p&gt;
 &lt;h3&gt;Newton Directions, General Newton Method and Quasi-Newton Methods&lt;/h3&gt;
 &lt;p&gt;TBD&lt;/p&gt;
@@ -405,7 +460,62 @@ TBD&lt;/p&gt;
 &lt;li&gt;Cvx Course, JHU. https://sites.google.com/site/danielprobinson/convex-optimization&lt;/li&gt;
 &lt;li&gt;"Convex Optimization." https://web.stanford.edu/~boyd/cvxbook/&lt;/li&gt;
 &lt;li&gt;&lt;/li&gt;
-&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Tue, 18 Jun 2019 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:adam2392.github.io,2019-06-18:/blog/2019/06/optimization-landscape-overview/</guid><category>phd</category><category>machine learning</category></item><item><title>Setting Up ERC Standard Tokens</title><link>https://adam2392.github.io/blog/2018/06/setup-erc-token/</link><description>&lt;h1&gt;Getting Setup with Ethereum&lt;/h1&gt;
+&lt;/ol&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Tue, 18 Jun 2019 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:adam2392.github.io,2019-06-18:/blog/2019/06/optimization-landscape-overview/</guid><category>phd</category><category>machine learning</category></item><item><title>Setting Up ERC Standard Tokens</title><link>https://adam2392.github.io/blog/2018/06/setup-erc-token/</link><description>&lt;h1&gt;Getting Setup with Ethereum&lt;/h1&gt;
 &lt;h1&gt;By: Adam Li&lt;/h1&gt;
 &lt;h3&gt;Table of Contents&lt;/h3&gt;
 &lt;!-- MarkdownTOC --&gt;
@@ -2419,7 +2529,7 @@ Getting to the city from the airport is extremely easy. Just check google maps a
 &lt;h3&gt;Stochastic Differential Equations&lt;/h3&gt;
 &lt;p&gt;Heun methods seem to be more accurate, but more time consuming vs the Milstein method.
 1) Heun Method
-Simple discretization leading to Stratonovich integral. It is a "predictor-corrector method" because given value of X at time $t_n$, obtain predictors with Euler integration scheme, then correct it using Heun's correction.&lt;/p&gt;
+Simple discretization leading to Stratonovich integral. It is a "predictor-corrector method" because given value of X at time &lt;span class="math"&gt;\(t_n\)&lt;/span&gt;, obtain predictors with Euler integration scheme, then correct it using Heun's correction.&lt;/p&gt;
 &lt;p&gt;Details to be filled in.&lt;/p&gt;
 &lt;p&gt;2) Milstein Method
 Uses the derivative of the diffusion coefficients&lt;/p&gt;
@@ -2433,22 +2543,77 @@ Uses the derivative of the diffusion coefficients&lt;/p&gt;
 &lt;h2&gt;2. Deterministic and Stochastic Differential Equations&lt;/h2&gt;
 &lt;h3&gt;Deterministic Differential Equations&lt;/h3&gt;
 &lt;p&gt;An example would be a population growth model. &lt;/p&gt;
-&lt;p&gt;$dx_t = Kx_t dt,\ x(0)=x_0$, with K being some constant.&lt;/p&gt;
-&lt;p&gt;However, if we have some inherent randomness, then maybe we can't assume $x_0$ is deterministic constant, but perhaps a random variable.&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(dx_t = Kx_t dt,\ x(0)=x_0\)&lt;/span&gt;, with K being some constant.&lt;/p&gt;
+&lt;p&gt;However, if we have some inherent randomness, then maybe we can't assume &lt;span class="math"&gt;\(x_0\)&lt;/span&gt; is deterministic constant, but perhaps a random variable.&lt;/p&gt;
 &lt;h3&gt;Stochastic Differential Equations&lt;/h3&gt;
 &lt;p&gt;An example would be a population growth model. &lt;/p&gt;
-&lt;p&gt;$dX_t(w) = KX_t(w) dt,\ X_0(w)$, with K being some constant and $X_t(w)$ is a random variable, which comes from the initial condition. K could also be random.&lt;/p&gt;
-&lt;p&gt;$dX_t(w) = (Kdt + dW_t(w))X_t(w) dt,\ X_0(w)$, where $dW_t(w)$ is some noise process that adds randomness to K.&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(dX_t(w) = KX_t(w) dt,\ X_0(w)\)&lt;/span&gt;, with K being some constant and &lt;span class="math"&gt;\(X_t(w)\)&lt;/span&gt; is a random variable, which comes from the initial condition. K could also be random.&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(dX_t(w) = (Kdt + dW_t(w))X_t(w) dt,\ X_0(w)\)&lt;/span&gt;, where &lt;span class="math"&gt;\(dW_t(w)\)&lt;/span&gt; is some noise process that adds randomness to K.&lt;/p&gt;
 &lt;p&gt;This leads us to the general SDE. &lt;/p&gt;
-&lt;p&gt;$dX_t(w) = f_t(X_t(w))dt + \sigma_t(X_t(w))dW_t(w),\ X_0(w)$, where f is the deterministic drift of the SDE. $\sigma_t$ is the diffusion coefficient, and $dW_t(w)$ is the noise process. &lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(dX_t(w) = f_t(X_t(w))dt + \sigma_t(X_t(w))dW_t(w),\ X_0(w)\)&lt;/span&gt;, where f is the deterministic drift of the SDE. &lt;span class="math"&gt;\(\sigma_t\)&lt;/span&gt; is the diffusion coefficient, and &lt;span class="math"&gt;\(dW_t(w)\)&lt;/span&gt; is the noise process. &lt;/p&gt;
 &lt;p&gt;We can rewrite the SDE in integral form, which leads us to the Stratonovich integral and the Ito integral.&lt;/p&gt;
-&lt;p&gt;$X_t(w) = X_0(w) + \int_t_0 f_s(X_s(w)) ds + \int_t_0 \sigma_s(X_s(w)) dW_s(w)$&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(X_t(w) = X_0(w) + \int_t_0 f_s(X_s(w)) ds + \int_t_0 \sigma_s(X_s(w)) dW_s(w)\)&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Ito integral =&amp;gt;
 Stratonovich integral =&amp;gt;&lt;/p&gt;
 &lt;h3&gt;References:&lt;/h3&gt;
 &lt;h3&gt;References:&lt;/h3&gt;
 &lt;h3&gt;Summary / Conclusions:&lt;/h3&gt;
-&lt;h3&gt;Important Notes:&lt;/h3&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Wed, 27 Sep 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:adam2392.github.io,2017-09-27:/blog/2017/09/fundamental-computational-modeling/</guid><category>phd</category><category>journals</category><category>reviews</category><category>computational modeling</category></item><item><title>Simulating Epileptic iEEG Activity Using The Virtual Brain</title><link>https://adam2392.github.io/blog/2017/09/simulating-tvb/</link><description>&lt;h1&gt;Background&lt;/h1&gt;
+&lt;h3&gt;Important Notes:&lt;/h3&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Wed, 27 Sep 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:adam2392.github.io,2017-09-27:/blog/2017/09/fundamental-computational-modeling/</guid><category>phd</category><category>journals</category><category>reviews</category><category>computational modeling</category></item><item><title>Simulating Epileptic iEEG Activity Using The Virtual Brain</title><link>https://adam2392.github.io/blog/2017/09/simulating-tvb/</link><description>&lt;h1&gt;Background&lt;/h1&gt;
 &lt;p&gt;TVB is a platform for simulating whole-brain dynamics that starts from raw data involving:
     1. structural connectivity derived from DTI
     2. brain parcellation derived from MRI and CT
@@ -2635,20 +2800,20 @@ Ex: State variables, iEEG activity from sampling rate and period.&lt;/p&gt;
 &lt;p&gt;This work can be used in applications to information processing problems (e.g. deep learning).&lt;/p&gt;
 &lt;h3&gt;Important Notes:&lt;/h3&gt;
 &lt;p&gt;Mutual information is defined as:&lt;/p&gt;
-&lt;p&gt;$I(X;Y) = D_{KL}[P(x,y)||P(x)P(y)] = \sum_{x\in X, y\in Y} P(x,y) log(\frac_{P(x,y)}&lt;em X_="X," Y x_in="x\in" y_in="y\in"&gt;{P(x)P(y)})$
-$= \sum&lt;/em&gt;P(x,y) log(\frac_{P(x|y)}_{P(x)}) = H(X) - H(X|Y)$&lt;/p&gt;
-&lt;p&gt;, where $D_{KL}(p||q)$ is the Kullback-Liebler divergence of distributions p and q, and $H(X)$ and $H(X|Y)$ are entropy and conditional entropies, respectively.&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(I(X;Y) = D_{KL}[P(x,y)||P(x)P(y)] = \sum_{x\in X, y\in Y} P(x,y) log(\frac_{P(x,y)}_{P(x)P(y)})\)&lt;/span&gt;
+&lt;span class="math"&gt;\(= \sum_{x\in X, y\in Y}P(x,y) log(\frac_{P(x|y)}_{P(x)}) = H(X) - H(X|Y)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;, where &lt;span class="math"&gt;\(D_{KL}(p||q)\)&lt;/span&gt; is the Kullback-Liebler divergence of distributions p and q, and &lt;span class="math"&gt;\(H(X)\)&lt;/span&gt; and &lt;span class="math"&gt;\(H(X|Y)\)&lt;/span&gt; are entropy and conditional entropies, respectively.&lt;/p&gt;
 &lt;p&gt;We want the optimal representations of signal X with respect to output label Y. Sufficient statistics are maps/partitions of X, S(X) that captures all the information X has about Y. The mutual information given Y is equal. &lt;/p&gt;
-&lt;p&gt;$I(S(X); Y) = I(X; Y)$&lt;/p&gt;
-&lt;p&gt;We can allow the map to be stochastic, with encoder P(T|X) and allow map to capture as much as possible of I(X;Y), not necessarily all of it $I(S(X); Y) \leq I(X; Y)$. Define $t \in T$ as compressed representations of $x \in X$, stochastically, $p(t|x)$. The following optimization problem finds a balance between compression of X and prediction of Y.&lt;/p&gt;
-&lt;p&gt;$min_{p(t|x),p(y|t),p(t)}\ {I(X;T) - \beta I(T;Y)}$&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(I(S(X); Y) = I(X; Y)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;We can allow the map to be stochastic, with encoder P(T|X) and allow map to capture as much as possible of I(X;Y), not necessarily all of it &lt;span class="math"&gt;\(I(S(X); Y) \leq I(X; Y)\)&lt;/span&gt;. Define &lt;span class="math"&gt;\(t \in T\)&lt;/span&gt; as compressed representations of &lt;span class="math"&gt;\(x \in X\)&lt;/span&gt;, stochastically, &lt;span class="math"&gt;\(p(t|x)\)&lt;/span&gt;. The following optimization problem finds a balance between compression of X and prediction of Y.&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(min_{p(t|x),p(y|t),p(t)}\ {I(X;T) - \beta I(T;Y)}\)&lt;/span&gt;&lt;/p&gt;
 &lt;h2&gt;5. Opening the Black Box of Deep Neural Networks Via Information&lt;/h2&gt;
 &lt;p&gt;Reference: https://arxiv.org/pdf/1703.00810.pdf&lt;/p&gt;
 &lt;h3&gt;Summary / Conclusions:&lt;/h3&gt;
 &lt;p&gt;In this paper, the authors extend their analysis of DNN using information theory. They answered the following questions:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;The SGD layer dynamics in the Information plane.
-First the layers increase $I(T_i;Y)$, and then later decrease $I(X; T_i)$, which corresponds to increasing the information about Y and then later compressing the representation (empirical error minimization &amp;amp; representation compression phase).&lt;/li&gt;
+First the layers increase &lt;span class="math"&gt;\(I(T_i;Y)\)&lt;/span&gt;, and then later decrease &lt;span class="math"&gt;\(I(X; T_i)\)&lt;/span&gt;, which corresponds to increasing the information about Y and then later compressing the representation (empirical error minimization &amp;amp; representation compression phase).&lt;/li&gt;
 &lt;li&gt;The effect of the training sample size on the layers.
 It seems that sample size does not have an effect on empirical error minimization, but does have an effect on the representation compression. Smaller sample sizes has overfitting, which has been seen as overfitting the sample noise. &lt;/li&gt;
 &lt;li&gt;
@@ -2665,7 +2830,7 @@ It seems that the hidden layers converge to the optiaml IB representations. Howe
 &lt;/ol&gt;
 &lt;p&gt;Another important hypothesis/conjecture they make is that: attempts to interpret single weights, or even single neurons in such networks can be meaningless because there is a large number of different networks that can achieve optimal performance. This makes sense in terms of how the brain is structured; the brain does not form the same pathway for learning something new between different people, but form a unique network for optimal performance. &lt;/p&gt;
 &lt;h3&gt;Important Notes:&lt;/h3&gt;
-&lt;p&gt;First, they estimated the mutual information of the layers with the input and with the labels $I(X;T_i)$ and $I(T_i;Y)$. &lt;/p&gt;
+&lt;p&gt;First, they estimated the mutual information of the layers with the input and with the labels &lt;span class="math"&gt;\(I(X;T_i)\)&lt;/span&gt; and &lt;span class="math"&gt;\(I(T_i;Y)\)&lt;/span&gt;. &lt;/p&gt;
 &lt;h2&gt;6. Reinforcement Learning: An Overview&lt;/h2&gt;
 &lt;p&gt;Reference: https://pdfs.semanticscholar.org/b373/b0c6e3b4fef4ac0534965708fc382343f8dc.pdf&lt;/p&gt;
 &lt;h3&gt;Summary / Conclusions:&lt;/h3&gt;
@@ -2675,7 +2840,62 @@ It seems that the hidden layers converge to the optiaml IB representations. Howe
 &lt;h2&gt;8. Variational Inference:&lt;/h2&gt;
 &lt;h3&gt;Summary / Conclusions&lt;/h3&gt;
 &lt;p&gt;Variational inference&lt;/p&gt;
-&lt;h3&gt;Important Notes&lt;/h3&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Mon, 25 Sep 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:adam2392.github.io,2017-09-25:/blog/2017/09/fundamental-papers/</guid><category>phd</category><category>journals</category><category>reviews</category></item><item><title>Travel - Marseille</title><link>https://adam2392.github.io/blog/2017/09/travel-marseille/</link><description>&lt;h1&gt;Europe - Marseille, France&lt;/h1&gt;
+&lt;h3&gt;Important Notes&lt;/h3&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Mon, 25 Sep 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:adam2392.github.io,2017-09-25:/blog/2017/09/fundamental-papers/</guid><category>phd</category><category>journals</category><category>reviews</category></item><item><title>Travel - Marseille</title><link>https://adam2392.github.io/blog/2017/09/travel-marseille/</link><description>&lt;h1&gt;Europe - Marseille, France&lt;/h1&gt;
 &lt;!-- MarkdownTOC --&gt;
 
 &lt;ul&gt;
@@ -2939,7 +3159,7 @@ A: I would stay near Vieux Port, Joliette, or the southern part of the city.&lt;
 &lt;/ol&gt;
 &lt;h3&gt;Concatenated Cables:&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;Compute V(X) along branches, by determining $G_{out}$&lt;/li&gt;
+&lt;li&gt;Compute V(X) along branches, by determining &lt;span class="math"&gt;\(G_{out}\)&lt;/span&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3&gt;Definitions:&lt;/h3&gt;
 &lt;p&gt;Know definitions and related biology of:
@@ -3047,7 +3267,62 @@ repeat until there is no further change in L(z, C):
 &lt;li&gt;Q: How long should I study for?
 A: I would study for about 2-3 weeks with nothing else going on. You want to be able to do a comprehensive overview of everything first, and then dive deeper into topics that are more likely to come up. You should also do test runs of walking through "open-ended" questions on a white board many times.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;The goal here is to practice thinking out loud and being very clear in your communication.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Sat, 05 Aug 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:adam2392.github.io,2017-08-05:/blog/2017/08/doctoral-board-oral/</guid><category>doctoral board oral</category><category>phd</category><category>johns hopkins</category></item><item><title>Travel - Baltimore</title><link>https://adam2392.github.io/blog/2017/08/travel-baltimore/</link><description>&lt;h1&gt;Baltimore, MD&lt;/h1&gt;
+&lt;p&gt;The goal here is to practice thinking out loud and being very clear in your communication.&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Sat, 05 Aug 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:adam2392.github.io,2017-08-05:/blog/2017/08/doctoral-board-oral/</guid><category>doctoral board oral</category><category>phd</category><category>johns hopkins</category></item><item><title>Travel - Baltimore</title><link>https://adam2392.github.io/blog/2017/08/travel-baltimore/</link><description>&lt;h1&gt;Baltimore, MD&lt;/h1&gt;
 &lt;!-- MarkdownTOC --&gt;
 
 &lt;ul&gt;
@@ -3133,7 +3408,7 @@ A: Miss Shirley's, Woodberry Kitchen, and Chocolate Over Water to eat. Inner Har
 &lt;h1&gt;General Suggestions&lt;/h1&gt;
 &lt;p&gt;Things to be added:
 1. sample itinerary&lt;/p&gt;
-&lt;p&gt;I've added to different sights, whether it is good for indoors (when weather is poor)! Look for the $\bold{[X]}$.&lt;/p&gt;
+&lt;p&gt;I've added to different sights, whether it is good for indoors (when weather is poor)! Look for the &lt;span class="math"&gt;\(\bold{[X]}\)&lt;/span&gt;.&lt;/p&gt;
 &lt;h2&gt;Important Links&lt;/h2&gt;
 &lt;h4&gt;If you need airbnb (you'll get a free $40 off):&lt;/h4&gt;
 &lt;p&gt;&lt;a href="https://abnb.me/e/jRvXPz3dUH"&gt;https://abnb.me/e/jRvXPz3dUH&lt;/a&gt;&lt;/p&gt;
@@ -3228,8 +3503,63 @@ A: Purple pig, Girl on the goat, Lou Malnati's to eat. Cloud Gate / Millenium Pa
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h1&gt;Images in Chicago&lt;/h1&gt;
-&lt;p&gt;&lt;img alt="test" src="{photo}chicago/atom.jpg"&gt;&lt;/p&gt;
-&lt;p&gt;![]{({photo}chicago/atom.jpg)&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Fri, 04 Aug 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:adam2392.github.io,2017-08-04:/blog/2017/08/travel-chicago/</guid><category>travel</category><category>chicago</category><category>usa</category></item><item><title>Travel - Japan</title><link>https://adam2392.github.io/blog/2017/07/travel-japan/</link><description>&lt;h1&gt;Asia - Japan&lt;/h1&gt;
+&lt;p&gt;&lt;img alt="test" src="https://adam2392.github.io/photos/chicago/atoma.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;![]{({photo}chicago/atom.jpg)&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Fri, 04 Aug 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:adam2392.github.io,2017-08-04:/blog/2017/08/travel-chicago/</guid><category>travel</category><category>chicago</category><category>usa</category></item><item><title>Travel - Japan</title><link>https://adam2392.github.io/blog/2017/07/travel-japan/</link><description>&lt;h1&gt;Asia - Japan&lt;/h1&gt;
 &lt;!-- MarkdownTOC --&gt;
 
 &lt;ul&gt;
@@ -3604,6 +3934,11 @@ A: I highly suggest getting the Kansai pass ahead of time if you are going to be
 
 &lt;p&gt;to create commits up to the cloud.&lt;/p&gt;
 &lt;h2&gt;2. Via Git Directly&lt;/h2&gt;
+&lt;p&gt;Before doing anything, check locally if files look right:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="n"&gt;html&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="n"&gt;serve&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;First just push all your stuff to your path.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="k"&gt;add&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="k"&gt;commit&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;first commit&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;push&lt;/span&gt; &lt;span class="c1"&gt;--all&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;

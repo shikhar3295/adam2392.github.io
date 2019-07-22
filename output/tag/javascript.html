@@ -1,297 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <meta charset="utf-8" />
-        <title>Adam Li's blog - javascript</title>
-        <link rel="stylesheet" href="https://adam2392.github.io/theme/css/main.css" />
-        <link href="https://adam2392.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Adam Li's blog Atom Feed" />
-        <link href="https://adam2392.github.io/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Adam Li's blog RSS Feed" />
+	<meta charset="utf-8">
+	<title>Adam Li's blog</title>
+	<meta name="description" content="">
+	<meta name="author" content="Adam Li">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="https://adam2392.github.io/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Styles -->
+	<link href="https://adam2392.github.io/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="https://adam2392.github.io/theme/local.css" rel="stylesheet">
+	<link href="https://adam2392.github.io/theme/pygments.css" rel="stylesheet">
+
+	<!-- Feeds -->
+	<link href="https://adam2392.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Adam Li's blog Atom Feed" />
+
+
+	<link href="https://adam2392.github.io/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Adam Li's blog RSS Feed" />
+
+
+<script>var _gaq=[['_setAccount','UA-106551801-1'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'))</script>
 </head>
+<body>
+<a href="https://github.com/adam2392"><img style="position: absolute; top: 39px; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub" /></a>
+	<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="https://adam2392.github.io/">Adam Li's blog</a>
+			<ul class="nav">
+					<li><a href="/categories.html">Blog</a></li>
+					<li><a href="/archives.html">Timeline</a></li>
+					<li><a href="/tags.html">Tags</a></li>
+					<li><a href="/pdfs/AdamLi_CV.pdf">Curriculum Vitae</a></li>
+						<li><a href="https://adam2392.github.io/contact/">Contact</a></li>
+					<li ><a href="https://adam2392.github.io/category/academic.html">Academic</a></li>
+					<li ><a href="https://adam2392.github.io/category/coding.html">Coding</a></li>
+					<li ><a href="https://adam2392.github.io/category/machine-learning.html">Machine Learning</a></li>
+					<li ><a href="https://adam2392.github.io/category/personal.html">Personal</a></li>
+					<li ><a href="https://adam2392.github.io/category/travel.html">Travel</a></li>
+					<li ><a href="https://adam2392.github.io/category/views.html">Views</a></li>
+			</ul>
+			<p class="pull-right"><a href="https://adam2392.github.io/archives.html">[archives]</a> <a href="https://adam2392.github.io/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
 
-<body id="index" class="home">
-<a href="https://github.com/adam2392">
-<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
-</a>
-        <header id="banner" class="body">
-                <h1><a href="https://adam2392.github.io/">Adam Li's blog </a></h1>
-                <nav><ul>
-                    <li><a href="/categories.html">Blog</a></li>
-                    <li><a href="/archives.html">Timeline</a></li>
-                    <li><a href="/tags.html">Tags</a></li>
-                    <li><a href="/pdfs/AdamLi_CV.pdf">Curriculum Vitae</a></li>
-                    <li><a href="https://adam2392.github.io/contact/">Contact</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
-
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="https://adam2392.github.io/blog/2018/06/setup-erc-token/">Setting Up ERC Standard Tokens</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2018-06-10T00:00:00-04:00">
-                Published: Sun 10 June 2018
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://adam2392.github.io/author/adam-li.html">Adam Li</a>
-        </address>
-<p>In <a href="https://adam2392.github.io/category/coding.html">Coding</a>.</p>
-<p>tags: <a href="https://adam2392.github.io/tag/webdev.html">webdev</a> <a href="https://adam2392.github.io/tag/ethereum.html">ethereum</a> <a href="https://adam2392.github.io/tag/javascript.html">javascript</a> <a href="https://adam2392.github.io/tag/blockchain.html">blockchain</a> </p>
-</footer><!-- /.post-info --><h1>Getting Setup with Ethereum</h1>
-<h1>By: Adam Li</h1>
-<h3>Table of Contents</h3>
-<!-- MarkdownTOC -->
-
-<ul>
-<li>Installation</li>
-<li>Set Up<ul>
-<li>
-<ol>
-<li>Creating Your Project Directory</li>
-<li>1b. Project Directory</li>
-</ol>
-</li>
-<li>
-<ol>
-<li>Contracts and FrontEnd</li>
-</ol>
-</li>
-</ul>
-</li>
-<li>Implementation<ul>
-<li>ERC Standards<ul>
-<li>
-<ol>
-<li>ERC20</li>
-</ol>
-</li>
-<li>
-<ol>
-<li>ERC721</li>
-</ol>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Testing<ul>
-<li>
-<ol>
-<li>Remix (http://remix.ethereum.org/)</li>
-</ol>
-</li>
-<li>
-<ol>
-<li>Ropsten Test Network (https://ropsten.etherscan.io )</li>
-</ol>
-</li>
-<li>
-<ol>
-<li>Javascript Truffle Tests</li>
-</ol>
-</li>
-<li>
-<ol>
-<li>Metamask and Ganache</li>
-</ol>
-</li>
-</ul>
-</li>
-<li>Deployment<ul>
-<li>
-<ol>
-<li>truffle.js (http://truffleframework.com/docs/advanced/configuration)</li>
-</ol>
-</li>
-<li>
-<ol>
-<li>Crowdsalable Ethereum Token</li>
-</ol>
-</li>
-</ul>
-</li>
-<li>References:</li>
-</ul>
-<!-- /MarkdownTOC -->
-
-<p>pragma solidity ^0.4.18;
-web3@1.0.0-beta.27
-truffle@4.0.4 
-solc@0.4.19 
-ethereumjs-testrpc@6.0.3 </p>
-<h1>Installation</h1>
-<p>The following packages need to be installed for a test time environment:
-* testrpc
-* web3js
-* solc
-* truffle</p>
-<div class="highlight"><pre><span></span><span class="n">npm</span> <span class="n">install</span> <span class="n">ethereumjs</span><span class="o">-</span><span class="n">testrpc</span> <span class="n">web3</span>
-<span class="n">npm</span> <span class="n">install</span> <span class="n">solc</span>
-<span class="n">npm</span> <span class="n">install</span> <span class="o">-</span><span class="k">g</span> <span class="n">truffle</span>
-</pre></div>
+	<div class="container-fluid">
+	  <div class="sidebar">
+		<div class="well">
+			<h3>Blogroll</h3>
+			<ul>
+				<li><a href="http://getpelican.com/">Pelican</a></li>
+				<li><a href="http://python.org/">Python.org</a></li>
+				<li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+				<li><a href="#">You can modify those links in your config file</a></li>
+			</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+				<li><a href="https://twitter.com/adam2392">twitter</a></li>
+				<li><a href="https://stackexchange.com/users/4494355/ajl123">stack-overflow</a></li>
+				<li><a href="https://github.com/adam2392">github</a></li>
+				<li><a href="https://www.linkedin.com/in/adam2392">linkedin</a></li>
+			</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+<div class="page-header"><h1>Adam Li's blog <small>javascript</small></h1></div>
+<div class='article'>
+	<h2>Setting Up ERC Standard Tokens</h2>
+	<div class="well small">Permalink: <a class="more" href="https://adam2392.github.io/blog/2018/06/setup-erc-token/">2018-06-10 00:00:00-04:00</a>
+by <a class="url fn" href="https://adam2392.github.io/author/adam-li.html">Adam Li </a>
+ in <a href="https://adam2392.github.io/category/coding.html">Coding</a>
+tags: <a href="https://adam2392.github.io/tag/webdev.html">webdev</a> <a href="https://adam2392.github.io/tag/ethereum.html">ethereum</a> <a href="https://adam2392.github.io/tag/javascript.html">javascript</a> <a href="https://adam2392.github.io/tag/blockchain.html">blockchain</a> </div>
+	<div class="summary"><p>A short walkthrough of setting up an ethereum token.</p> <a class="btn primary xsmall" href="https://adam2392.github.io/blog/2018/06/setup-erc-token/">more…</a>
+	</div>
+</div>	
 
 
-<ul>
-<li>Testrpc is an in-memory blockchain that can be used to test the development of the application.</li>
-<li>Web3 is essentially the web interface with the backend and frontend.</li>
-<li>Solc is a solidity code compiler</li>
-<li>Truffle is a web framework for building dAPPs using Ethereum</li>
-</ul>
-<h1>Set Up</h1>
-<h2>1. Creating Your Project Directory</h2>
-<div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">MyToken</span> <span class="o">&amp;&amp;</span> <span class="n">cd</span> <span class="n">MyToken</span>
-<span class="n">truffle</span> <span class="n">init</span>
-<span class="n">npm</span> <span class="n">init</span> <span class="o">-</span><span class="n">y</span>
-<span class="n">npm</span> <span class="n">install</span> <span class="o">-</span><span class="n">E</span> <span class="n">zeppelin</span><span class="o">-</span><span class="n">solidity</span>
-</pre></div>
+		<footer>
+		  <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+		  <p>&copy; Adam Li</p>
+		</footer>
+	  </div>
 
-
-<p>This will install zeppelin-solidity for testing code and initialize your project directory using truffle.s</p>
-<h3>1b. Project Directory</h3>
-<ul>
-<li>contracts: this is your directory for any solidity contracts</li>
-<li>migrations: this is your directory for scriptable deployment files (how do we want to release the functionality of our entire project?)</li>
-<li>test: for testing your entire application</li>
-<li>truffle.js: a configuration file for truffle</li>
-</ul>
-<h2>2. Contracts and FrontEnd</h2>
-<p>Next, you need to implement your contracts and frontend to create your unique token(s).</p>
-<h1>Implementation</h1>
-<h2>ERC Standards</h2>
-<h3>1. ERC20</h3>
-<p>Requirements for it are:
-- The Token’s Name
-- The Token’s Symbol
-- The Token’s Decimal Places
-- The Number of Tokens in Circulation
-- balanceOf 
-- allowance
-- approve 
-- transferFrom</p>
-<p>It also defines two events: Transfer and Approval .</p>
-<h3>2. ERC721</h3>
-<p>These are tokens that are non-fungible. One token does not necessarily equal another. It is slightly more complicated then the erc20 token.</p>
-<p>The standard defines the functions:
-- name 
-- symbol 
-- totalSupply 
-- balanceOf 
-- ownerOf 
-- approve 
-- takeOwnership 
-- transfer 
-- tokenOfOwnerByIndex
-- tokenMetadata </p>
-<p>It also defines two events: Transfer and Approval .</p>
-<h1>Testing</h1>
-<h2>1. Remix (http://remix.ethereum.org/)</h2>
-<p>You can test using a web tool (solidity online compiler), hosted by the Ethereum foundation: http://remix.ethereum.org/.</p>
-<p>You can easily test contract functionality, but beware you can't test your whole dapp functionality, so there could be bugs in synchronizing the front/back end with the contracts.</p>
-<h2>2. Ropsten Test Network (https://ropsten.etherscan.io )</h2>
-<p>Using remix, or another tool to deploy your contract, you can check basic outputs here on the test network.</p>
-<h2>3. Javascript Truffle Tests</h2>
-<p>These will be customized test suites that you write in the truffle directory.</p>
-<div class="highlight"><pre><span></span><span class="n">npm</span> <span class="n">i</span> <span class="n">ethereumjs</span><span class="o">-</span><span class="n">tx</span>
-<span class="n">truffle</span> <span class="n">develop</span>
-<span class="n">truffle</span><span class="p">(</span><span class="n">develop</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">test</span>
-</pre></div>
-
-
-<p>This command will install the ethereum-tx package, boot a test blockchain using truffle and then run all tests within "/test/" directory.</p>
-<h2>4. Metamask and Ganache</h2>
-<p>This is a blockchain utility web app that can run in your web2.0 browser. It can help debug your entire dapp.</p>
-<p>Ganache is a personal Ethereum development network that runs on your computer.  Using Ganache you can quickly see how your application affects the blockchain, and introspect details like your accounts, balances, contract creations and gas costs. </p>
-<h1>Deployment</h1>
-<h2>1. truffle.js (http://truffleframework.com/docs/advanced/configuration)</h2>
-<p>Inside your truffle.js file, you'll find the line module.exports. You can modify the contents of this json object, to manage your deployment testing.</p>
-<ul>
-<li>
-<p>networks: Specifies which networks are available for deployment during migrations, as well as specific transaction parameters when interacting with each network (such as gas price, from address, etc.). </p>
-<ul>
-<li>name: development, test, ropste, live, etc.</li>
-<li>(options): gas, gasPrice, from, provider</li>
-</ul>
-</li>
-<li>
-<p>providers: Specifies the local test network. Make sure you wrap truffle-hdwallet providers in a function closure as shown below to ensure that only one network is ever connected at a time.</p>
-<p>networks: {
-  ropsten: {
-    provider: function() {
-      return new HDWalletProvider(mnemonic, "https://ropsten.infura.io/");
-    },
-    network_id: '3',
-  },
-  test: {
-    provider: function() {
-      return new HDWalletProvider(mnemonic, "http://127.0.0.1:8545/");
-    },
-    network_id: '*',
-  },
-}</p>
-</li>
-<li>
-<p>contracts_build_directory: for where to build the contracts into byte code.</p>
-</li>
-<li>mocha: configuration options for mochajs testing framework.</li>
-</ul>
-<p>You can create an ethereum mnemonic and set it, so your providers can see it within the config file. Here is an example of </p>
-<div class="highlight"><pre><span></span><span class="n">truffle</span> <span class="n">migrate</span> <span class="c1">--network ropsten</span>
-</pre></div>
-
-
-<h2>2. Crowdsalable Ethereum Token</h2>
-<div class="highlight"><pre><span></span><span class="n">mkdir</span><span class="w"> </span><span class="n">crowdsalable</span><span class="o">-</span><span class="n">eth</span><span class="o">-</span><span class="n">token</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">cd</span><span class="w"> </span><span class="n">crowdsalable</span><span class="o">-</span><span class="n">eth</span><span class="o">-</span><span class="n">token</span><span class="w"></span>
-<span class="n">truffle</span><span class="w"> </span><span class="n">unbox</span><span class="w"> </span><span class="n">git</span><span class="nv">@github</span><span class="p">.</span><span class="nl">com</span><span class="p">:</span><span class="n">ajb413</span><span class="o">/</span><span class="n">crowdsalable</span><span class="o">-</span><span class="n">eth</span><span class="o">-</span><span class="n">token</span><span class="p">.</span><span class="n">git</span><span class="w"></span>
-</pre></div>
-
-
-<h1>References:</h1>
-<ol>
-<li>https://medium.com/@ConsenSys/a-101-noob-intro-to-programming-smart-contracts-on-ethereum-695d15c1dab4</li>
-<li>https://medium.com/@mvmurthy/full-stack-hello-world-voting-ethereum-dapp-tutorial-part-1-40d2d0d807c2</li>
-<li>http://truffleframework.com/docs/getting_started/project#exploring-the-project</li>
-<li>https://www.pubnub.com/blog/testing-and-deploying-an-ethereum-token-part-2/</li>
-</ol>                </article>
-            </aside><!-- /#featured -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="http://getpelican.com/">Pelican</a></li>
-                            <li><a href="http://python.org/">Python.org</a></li>
-                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-                            <li><a href="#">You can modify those links in your config file</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="https://adam2392.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
-                            <li><a href="https://adam2392.github.io/feeds/all.rss.xml" type="application/rss+xml" rel="alternate">rss feed</a></li>
-
-                            <li><a href="https://twitter.com/adam2392">twitter</a></li>
-                            <li><a href="https://stackexchange.com/users/4494355/ajl123">stack-overflow</a></li>
-                            <li><a href="https://github.com/adam2392">github</a></li>
-                            <li><a href="https://www.linkedin.com/in/adam2392">linkedin</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-    <script type="text/javascript">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-106551801-1', 'auto');
-    ga('send', 'pageview');
-    </script>
+	</div>
 </body>
 </html>
