@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Setting Up Ethereum</title>
+        <link rel="stylesheet" href="https://adam2392.github.io/theme/css/main.css" />
+        <link href="https://adam2392.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Adam Li's blog Atom Feed" />
+        <link href="https://adam2392.github.io/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Adam Li's blog RSS Feed" />
+</head>
+
+<body id="index" class="home">
+<a href="https://github.com/adam2392">
+<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
+</a>
+        <header id="banner" class="body">
+                <h1><a href="https://adam2392.github.io/">Adam Li's blog </a></h1>
+                <nav><ul>
+                    <li><a href="/categories.html">Blog</a></li>
+                    <li><a href="/archives.html">Timeline</a></li>
+                    <li><a href="/tags.html">Tags</a></li>
+                    <li><a href="/pdfs/AdamLi_CV.pdf">Curriculum Vitae</a></li>
+                    <li><a href="https://adam2392.github.io/contact/">Contact</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="https://adam2392.github.io/drafts/setup-ethereum.html" rel="bookmark"
+           title="Permalink to Setting Up Ethereum">Setting Up Ethereum</a></h1>
+<a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="adam2392">Tweet</a><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2017-12-21T00:00:00-05:00">
+                Published: Thu 21 December 2017
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="https://adam2392.github.io/author/adam-li.html">Adam Li</a>
+        </address>
+<p>In <a href="https://adam2392.github.io/category/coding.html">Coding</a>.</p>
+<p>tags: <a href="https://adam2392.github.io/tag/webdev.html">webdev</a> <a href="https://adam2392.github.io/tag/ethereum.html">ethereum</a> <a href="https://adam2392.github.io/tag/python.html">python</a> <a href="https://adam2392.github.io/tag/javascript.html">javascript</a> </p>
+</footer><!-- /.post-info -->      <h1>Getting Setup with Ethereum</h1>
+<h1>By: Adam Li</h1>
+<h3>Table of Contents</h3>
+<!-- MarkdownTOC -->
+
+<ul>
+<li>Installation</li>
+<li>Setting Up Ethereum<ul>
+<li>
+<ol>
+<li>Setting Up a Node (For Testing):</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Modifying Migrations and Adding New Contracts</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>
+<ol>
+<li>Creating Smart Contracts (General)</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>General Thoughs on Ethereum</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>References:</li>
+</ul>
+<!-- /MarkdownTOC -->
+
+<p>pragma solidity ^0.4.18;
+web3@1.0.0-beta.27
+truffle@4.0.4 
+solc@0.4.19 
+ethereumjs-testrpc@6.0.3 </p>
+<h1>Installation</h1>
+<p>The following packages need to be installed for a test time environment:
+* testrpc
+* web3js
+* solc
+* truffle</p>
+<div class="highlight"><pre><span></span><span class="n">npm</span> <span class="n">install</span> <span class="n">ethereumjs</span><span class="o">-</span><span class="n">testrpc</span> <span class="n">web3</span>
+<span class="n">npm</span> <span class="n">install</span> <span class="n">solc</span>
+<span class="n">npm</span> <span class="n">install</span> <span class="o">-</span><span class="k">g</span> <span class="n">truffle</span>
+</pre></div>
+
+
+<ul>
+<li>Testrpc is an in-memory blockchain that can be used to test the development of the application.</li>
+<li>Web3 is essentially the web interface with the backend and frontend.</li>
+<li>Solc is a solidity code compiler</li>
+<li>Truffle is a web framework for building dAPPs using Ethereum</li>
+</ul>
+<h1>Setting Up Ethereum</h1>
+<h2>1. Setting Up a Node (For Testing):</h2>
+<p>You can either set up a node that fully connects to the ethereum network, or connect to a test node to test application development! Very cool, so we will probably start with testrpc to run a test client node.</p>
+<div class="highlight"><pre><span></span><span class="n">testrpc</span>
+</pre></div>
+
+
+<p>In order to deploy, you need to setup a file directory. For those familiar with express for node.js and any other web framework, this is very similar.</p>
+<div class="highlight"><pre><span></span><span class="n">truffle</span> <span class="n">init</span>
+</pre></div>
+
+
+<p>Next, tell truffle how to deploy. You'll need to modify the truffle.js file.</p>
+<div class="highlight"><pre><span></span><span class="k">module</span>.<span class="n">exports</span> = {
+  // <span class="n">See</span> <span class="s">&lt;http://truffleframework.com/docs/advanced/configuration&gt;</span>
+  // <span class="nb">to</span> <span class="n">customize</span> <span class="n">your</span> <span class="n">Truffle</span> <span class="n">configuration</span>!
+    <span class="n">networks:</span> {
+    <span class="n">development:</span> {
+        <span class="n">host:</span> <span class="s">&quot;localhost&quot;</span>,
+        <span class="n">port:</span> <span class="mi">8545</span>,
+        <span class="n">network_id:</span> <span class="s">&quot;*&quot;</span>,<span class="sr"> //</span> <span class="n">match</span> <span class="nb">any</span> <span class="n">network</span> <span class="n">id</span>
+        <span class="n">gas:</span> <span class="mi">4600000</span>    // <span class="nb">to</span> <span class="n">ensure</span> <span class="n">your</span> <span class="n">test</span> <span class="n">node</span> <span class="k">has</span> <span class="n">a</span> <span class="n">lot</span> <span class="k">of</span> <span class="n">gas</span> <span class="nb">to</span> <span class="nb">run</span>
+    }
+  }
+};
+</pre></div>
+
+
+<p>Then you can run</p>
+<div class="highlight"><pre><span></span><span class="n">truffle</span> <span class="n">deploy</span>
+</pre></div>
+
+
+<p>You should not see any errors at this point.</p>
+<h2>2. Modifying Migrations and Adding New Contracts</h2>
+<p>Any new contracts you write will go in the /contracts/ direcotry, and then the corresponding requirements need to be loaded in the /migrations/ directory. There is boiler code there that shows you how to add things.</p>
+<h1></h1>
+<h2>3. Creating Smart Contracts (General)</h2>
+<h2>4. General Thoughs on Ethereum</h2>
+<p>So it seems that ethereum is great for creating sets of smart contracts, but there will need to be platforms that are optimized for specific technologies built on top of smart contracts.</p>
+<p>For example, Golem</p>
+<h1>References:</h1>
+<ol>
+<li>https://medium.com/@ConsenSys/a-101-noob-intro-to-programming-smart-contracts-on-ethereum-695d15c1dab4</li>
+<li>https://medium.com/@mvmurthy/full-stack-hello-world-voting-ethereum-dapp-tutorial-part-1-40d2d0d807c2</li>
+<li>https://www.pubnub.com/blog/testing-and-deploying-an-ethereum-token-part-2/</li>
+</ol>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="https://adam2392.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+                            <li><a href="https://adam2392.github.io/feeds/all.rss.xml" type="application/rss+xml" rel="alternate">rss feed</a></li>
+
+                            <li><a href="https://twitter.com/adam2392">twitter</a></li>
+                            <li><a href="https://stackexchange.com/users/4494355/ajl123">stack-overflow</a></li>
+                            <li><a href="https://github.com/adam2392">github</a></li>
+                            <li><a href="https://www.linkedin.com/in/adam2392">linkedin</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-106551801-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>

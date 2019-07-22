@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Doctoral Board Oral Exam (PhD)</title>
+        <link rel="stylesheet" href="https://adam2392.github.io/theme/css/main.css" />
+        <link href="https://adam2392.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Adam Li's blog Atom Feed" />
+        <link href="https://adam2392.github.io/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Adam Li's blog RSS Feed" />
+</head>
+
+<body id="index" class="home">
+<a href="https://github.com/adam2392">
+<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
+</a>
+        <header id="banner" class="body">
+                <h1><a href="https://adam2392.github.io/">Adam Li's blog </a></h1>
+                <nav><ul>
+                    <li><a href="/categories.html">Blog</a></li>
+                    <li><a href="/archives.html">Timeline</a></li>
+                    <li><a href="/tags.html">Tags</a></li>
+                    <li><a href="/pdfs/AdamLi_CV.pdf">Curriculum Vitae</a></li>
+                    <li><a href="https://adam2392.github.io/contact/">Contact</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="https://adam2392.github.io/blog/2017/08/doctoral-board-oral/" rel="bookmark"
+           title="Permalink to Doctoral Board Oral Exam (PhD)">Doctoral Board Oral Exam (PhD)</a></h1>
+<a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="adam2392">Tweet</a><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2017-08-05T00:00:00-04:00">
+                Published: Sat 05 August 2017
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="https://adam2392.github.io/author/adam-li.html">Adam Li</a>
+        </address>
+<p>In <a href="https://adam2392.github.io/category/academic.html">Academic</a>.</p>
+<p>tags: <a href="https://adam2392.github.io/tag/doctoral-board-oral.html">doctoral board oral</a> <a href="https://adam2392.github.io/tag/phd.html">phd</a> <a href="https://adam2392.github.io/tag/johns-hopkins.html">johns hopkins</a> </p>
+</footer><!-- /.post-info -->      <h1>Doctoral Board Oral Exam</h1>
+<!-- MarkdownTOC -->
+
+<ul>
+<li>
+<ol>
+<li>Cable Theory and Compartmental Modeling</li>
+<li>Examples of different types of neurons</li>
+<li>Approach</li>
+<li>Important Equations<ul>
+<li>Unsealed end:</li>
+<li>Sealed end:</li>
+<li>Concatenated Cables:</li>
+<li>Definitions:</li>
+<li>Compartmental Models:</li>
+</ul>
+</li>
+<li>Study</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Generalized Linear Models:</li>
+<li>General Form of Exponential Family Distribution</li>
+<li>Normal Linear Regression</li>
+<li>Logistic Regression</li>
+<li>Poisson Regression</li>
+<li>Solving GLM Methods:</li>
+<li>Goodness of Fit</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Kalman Filter</li>
+<li>Stochastic State-Space Model</li>
+<li>Assumptions</li>
+<li>Derivation</li>
+<li>Relation to a Least-Squares Problem</li>
+<li>Relation to a Bayesian Maximum Aposteri Estimation</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Expectation Maximization</li>
+<li>Basic Idea</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>K-Means Algorithm</li>
+<li>Cost Function</li>
+<li>The Algorithm</li>
+<li>Initialization</li>
+<li>Convergence</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Sensory Pathways and Systems in Neuroscience</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Motor Pathways and Systems in Neuroscience</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>General Topics in Neuroscience</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Gaussian Mixture Models</li>
+</ol>
+</li>
+<li>FAQ</li>
+</ul>
+<!-- /MarkdownTOC -->
+
+<h1>1. Cable Theory and Compartmental Modeling</h1>
+<h2>Examples of different types of neurons</h2>
+<p>There are thalamic cells, pyramidal cells, double pyramidal cells, granule cells, purkinje cells. These all have different morphologies and perform different computations.</p>
+<h2>Approach</h2>
+<ol>
+<li>Approximate dendrites as uniform membrane cylandiers</li>
+<li>Synaptic inputs are approximated as 'injected currents'</li>
+<li>Use the cable equation to create a system of differential equations for each cylinder.</li>
+</ol>
+<h2>Important Equations</h2>
+<ol>
+<li>input conductance of semi-infinite cable</li>
+<li>input conductance of infinite cable</li>
+</ol>
+<h3>Unsealed end:</h3>
+<ol>
+<li>cable equation</li>
+<li>input conductance of finite cable</li>
+<li>s.s. voltage along cable</li>
+</ol>
+<h3>Sealed end:</h3>
+<ol>
+<li>input conductance of the finite cable</li>
+<li>s.s. voltage along cable</li>
+</ol>
+<h3>Concatenated Cables:</h3>
+<ol>
+<li>Compute V(X) along branches, by determining $G_{out}$</li>
+</ol>
+<h3>Definitions:</h3>
+<p>Know definitions and related biology of:
+- axial resistance, the resistance to current flow along the uniform cable (along the dendrite)
+- membrane resistance, the resistance of current flow out of the dendrite
+- membrance capacitance, the capacitance of a patch of membrane surface area
+- derive cable equation as a model of concatenated RC circuits</p>
+<h3>Compartmental Models:</h3>
+<p>Be able to derive system of equations into a matrix form for a linear time-invariant system </p>
+<p>Understand how transfer resistances work. Understand how distributing synaptic inputs works. </p>
+<p>Understand how coincidence detection (AND operator), shunting inhibition (AND-NOT operator).</p>
+<h2>Study</h2>
+<ol>
+<li>Definitions of cable theory and biological relations</li>
+<li>Solving single cable equation and different boundary conditions</li>
+<li>Derivation of cable equation under different boundary conditions</li>
+<li>Deriving LTI system from compartmental models of cables</li>
+<li>Derive transfer resistances</li>
+<li>Derive AND operator (coincidence detection)</li>
+<li>Derive AND-NOT operator (shunting inhibition)</li>
+</ol>
+<h1>2. Generalized Linear Models:</h1>
+<h2>General Form of Exponential Family Distribution</h2>
+<p>Be able to define all the terms, such as: natural paramters, sufficient statistic, natural link function, dispersion parameter</p>
+<h2>Normal Linear Regression</h2>
+<h2>Logistic Regression</h2>
+<h2>Poisson Regression</h2>
+<h2>Solving GLM Methods:</h2>
+<ol>
+<li>Penalized Quasi-likelihood</li>
+<li>Laplace's Method</li>
+<li>Adaptive Gaussian Quadrature</li>
+</ol>
+<h2>Goodness of Fit</h2>
+<ol>
+<li>Chi-square test</li>
+<li>Kolmogorov Statistic</li>
+</ol>
+<h1>3. Kalman Filter</h1>
+<h2>Stochastic State-Space Model</h2>
+<p>Here, list the linear, time-invariant system with a state evolution equation and measurement/observation equation.</p>
+<h2>Assumptions</h2>
+<ol>
+<li>state and observation noises are independent, zero-mean Gaussian white processes with some defined covariances</li>
+<li>initial state x_0 is a Gaussian R.V. independent of the state/observation noises</li>
+</ol>
+<h2>Derivation</h2>
+<p>Derive the Kalman filter equations for the state update, covarariance estimates</p>
+<ol>
+<li>Measurement update</li>
+<li>Time update</li>
+<li>Combined Update</li>
+<li>Covariance Update</li>
+</ol>
+<h2>Relation to a Least-Squares Problem</h2>
+<p>Review...</p>
+<h2>Relation to a Bayesian Maximum Aposteri Estimation</h2>
+<p>Review...</p>
+<h1>4. Expectation Maximization</h1>
+<h2>Basic Idea</h2>
+<p>By computing the likelihood of your unknown parameters, based on known outcomes. You can perform maximum likelihood estimation to get the best estimate of the unknown parameters</p>
+<h1>5. K-Means Algorithm</h1>
+<h2>Cost Function</h2>
+<p>The cost function is attempting to minimize the distortion (distance to centers) for every point in the set of data points, S.</p>
+<h2>The Algorithm</h2>
+<p>'''
+Input: k clusters
+initialize centers: z_1, ..., z_k \in \real^d and clusters C_1, ..., C_k
+repeat until there is no further change in L(z, C):
+    for each j (data point): C_j &lt;- {x \in S whose closest center is z_j}
+    for each j (data point): z_j &lt;- mean(C_j) 
+'''</p>
+<p>Walk through for a small example to see how the algorithm works:
+(0, 0, 0)
+(0, 0.5, 1)
+(1, 3, 2)
+(4, 5, 6)
+(2, 3, 1)
+(5, 2, 0)
+(0, 1, 0)
+(1, 1, 0)
+(2, 1, 0)</p>
+<h2>Initialization</h2>
+<p>Initialization of a k-means type algorithm initializes k "means", we call centers at the beginning, and then assigns points into these centers based on the cost function. </p>
+<h2>Convergence</h2>
+<p>Show that the cost monotonically decreases, so the algorithm will converge at least in the sense of cost decreasing to a non-changing amount.</p>
+<h1>6. Sensory Pathways and Systems in Neuroscience</h1>
+<p>The different neuronal pathways in the central nervous system, vs the periphery nervous system. </p>
+<p>Visual sensory pathway that leads from the retina all the way to the occipital lobe of the brain.</p>
+<p>The somatosensory pathways that lead to the SI, and SII all with nerve sensors from the periphery of your body.</p>
+<h1>7. Motor Pathways and Systems in Neuroscience</h1>
+<p>How does motor movements get controlled in the brain?</p>
+<p>The premotor cortex, and also the motor cortex are at the highest levels of control. We can also include the cerebellum when we talk about motor control.</p>
+<h1>8. General Topics in Neuroscience</h1>
+<p>Good things to know and remember are:
+- Hodgkin Huxley models: a biophysical model that models realistic neuronal firing based on concentration gradients, membrane conductances, membrane potentials and even more.
+- Nernst equation: a fundamental equation for determining the resting potential of a membrane in the presence of a concentration gradient of an ion.
+- Goldman-Katz equation: a model with multiple ions that determins the resting potential of a membrane (extension of Nernst)
+- Action potentials and the chronology of cell actions that are taken</p>
+<h1>9. Gaussian Mixture Models</h1>
+<p>This is the idea that some data distributions can be the combinations of many different Gaussian models with different means and variance, but superimposed on each other. </p>
+<p>The goal of a gaussian mixture model is to identify the parameters of each of the separate gaussians by a process called Expectation Maximization. In this process, we switch between maximizing the likelihood by iterating on the parameters of the gaussian models and computing a new likelihood function given the new parameters.</p>
+<h1>FAQ</h1>
+<ol>
+<li>Q: How long should I study for?
+A: I would study for about 2-3 weeks with nothing else going on. You want to be able to do a comprehensive overview of everything first, and then dive deeper into topics that are more likely to come up. You should also do test runs of walking through "open-ended" questions on a white board many times.</li>
+</ol>
+<p>The goal here is to practice thinking out loud and being very clear in your communication.</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="https://adam2392.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+                            <li><a href="https://adam2392.github.io/feeds/all.rss.xml" type="application/rss+xml" rel="alternate">rss feed</a></li>
+
+                            <li><a href="https://twitter.com/adam2392">twitter</a></li>
+                            <li><a href="https://stackexchange.com/users/4494355/ajl123">stack-overflow</a></li>
+                            <li><a href="https://github.com/adam2392">github</a></li>
+                            <li><a href="https://www.linkedin.com/in/adam2392">linkedin</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-106551801-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>

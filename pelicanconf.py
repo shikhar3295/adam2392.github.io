@@ -50,11 +50,36 @@ TIMEZONE = 'America/New_York'
 DEFAULT_LANG = 'en'
 
 # Feed generation is usually not desired when developing
-FEED_ALL_ATOM = None
+FEED_ALL_ATOM = 'feeds/all.atom.xml'
+FEED_ALL_RSS = 'feeds/all.rss.xml'
+AUTHOR_FEED_RSS = 'feeds/%s.rss.xml'
+RSS_FEED_SUMMARY_ONLY = False
+
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
-AUTHOR_FEED_RSS = None
+
+# to run the theme | for now, pelican-bootstrap3
+# THEME = 'pelican-themes/pelican-bootstrap3'
+# PLUGIN_PATHS = ['pelican-plugins'] 
+# PLUGINS = [
+# # 'i18n_subsites',
+#  'render_math', 'related_posts', 'photos', \
+# 'pelican_javascript']
+# JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
+# THEME = "pelican-themes/Flex/"
+
+# Main page
+MAIN_MENU = True
+DISPLAY_PAGES_ON_MENU = True
+DISPLAY_CATEGORIES_ON_MENU = False
+
+MENUITEMS = (("Blog", "/categories.html"),
+             ("Timeline", "/archives.html"),
+             ("Tags", "/tags.html"),
+             # ("Blog", "/blog.html"),
+             # ("Gallery", "/gallery.html"),
+             ("Curriculum Vitae", "/pdfs/AdamLi_CV.pdf"),)
 
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
@@ -63,10 +88,21 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
          ('You can modify those links in your config file', '#'),)
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+GITHUB_URL = "https://github.com/adam2392"
+GITHUB_USER = 'adam2392'
+TWITTER_USERNAME = "adam2392"
+SOCIAL = (("twitter", "https://twitter.com/adam2392"),
+		      ("stack-overflow", "https://stackexchange.com/users/4494355/ajl123"),
+          ("github", "https://github.com/adam2392"),
+          ("linkedin", "https://www.linkedin.com/in/adam2392"))
 
 DEFAULT_PAGINATION = 5
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
+
+# Static content
+STATIC_PATHS = ["pdfs", "files", 'photos']
+
+# Google Analytics Tag
+GOOGLE_ANALYTICS ='UA-106551801-1'

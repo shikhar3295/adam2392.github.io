@@ -111,6 +111,10 @@ to create commits up to the cloud.
 
 ## 2. Via Git Directly
 
+Before doing anything, check locally if files look right:
+
+    make html && make serve
+
 First just push all your stuff to your path.
 
     git add -A && git commit -a -m 'first commit' && git push --all
@@ -135,3 +139,4 @@ http://duncanlock.net/blog/2013/05/29/better-figures-images-plugin-for-pelican/
 3. http://beneathdata.com/how-to/how-i-built-this-website/
 4. Pelican-plugins: https://github.com/getpelican/pelican-plugins
 5. Pelican-themes: https://github.com/getpelican/pelican-themes
+6. Walkthru of Pelican w/ Python3.7: https://rsip22.github.io/blog/create-a-blog-with-pelican-and-github-pages.html

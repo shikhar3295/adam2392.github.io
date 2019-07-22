@@ -11,9 +11,6 @@ __pycache__/
 pelican-plugins/*
 pelican-themes/*
 
-recurrentshop/*
-connectivity_dk/*
-
 # C extensions
 *.so
 

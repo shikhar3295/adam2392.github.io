@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Adam Li's blog - data analysis</title>
+        <link rel="stylesheet" href="https://adam2392.github.io/theme/css/main.css" />
+        <link href="https://adam2392.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Adam Li's blog Atom Feed" />
+        <link href="https://adam2392.github.io/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Adam Li's blog RSS Feed" />
+</head>
+
+<body id="index" class="home">
+<a href="https://github.com/adam2392">
+<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
+</a>
+        <header id="banner" class="body">
+                <h1><a href="https://adam2392.github.io/">Adam Li's blog </a></h1>
+                <nav><ul>
+                    <li><a href="/categories.html">Blog</a></li>
+                    <li><a href="/archives.html">Timeline</a></li>
+                    <li><a href="/tags.html">Tags</a></li>
+                    <li><a href="/pdfs/AdamLi_CV.pdf">Curriculum Vitae</a></li>
+                    <li><a href="https://adam2392.github.io/contact/">Contact</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="https://adam2392.github.io/blog/2017/12/using-freesurfer/">Using FreeSurfer</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2017-12-07T00:00:00-05:00">
+                Published: Thu 07 December 2017
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="https://adam2392.github.io/author/adam-li.html">Adam Li</a>
+        </address>
+<p>In <a href="https://adam2392.github.io/category/academic.html">Academic</a>.</p>
+<p>tags: <a href="https://adam2392.github.io/tag/data-analysis.html">data analysis</a> <a href="https://adam2392.github.io/tag/eeg.html">eeg</a> <a href="https://adam2392.github.io/tag/phd.html">phd</a> <a href="https://adam2392.github.io/tag/brain-rendering.html">brain rendering</a> </p>
+</footer><!-- /.post-info --><h1>Necessary Tools</h1>
+<p>Freesurfer, FSL, and MRtrix3 are the three main neuroimaging and registration softwares that you need to run a systematic data pipeline of neuroimaging data (i.e. CT, MRI, DWI).</p>
+<ol>
+<li>Freesurfer
+https://surfer.nmr.mgh.harvard.edu/fswiki/DownloadAndInstall</li>
+</ol>
+<p>FreeSurfer is a software package for the analysis and visualization of structural and functional neuroimaging data from cross-sectional or longitudinal studies. </p>
+<ol>
+<li>FSL
+https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation</li>
+</ol>
+<p>FSL is a comprehensive library of analysis tools for FMRI, MRI and DTI brain imaging data.</p>
+<ol>
+<li>MRtrix3
+http://mrtrix.readthedocs.io/en/latest/installation/mac_install.html</li>
+</ol>
+<p>MRtrix3 is primarily intended to be used for the analysis of diffusion MRI data. In addition, at its fundamental level it is designed as a general-purpose library for the analysis of any type of MRI data. </p>
+<h1>Data Processing Pipeline:</h1>
+<h2>1. DWI Processing</h2>
+<ul>
+<li>Process diffusion imaging data, by denoising the data, then preprocessing it, then applying bias correction and then estimating the response function.</li>
+</ul>
+<p>$$
+    dwidenoise </DTI_dicom_dir/> <dti_img_denoise.mif></p>
+<div class="highlight"><pre><span></span><span class="n">dwipreproc</span> <span class="o">-</span><span class="n">rpe_none</span> <span class="n">AP</span> <span class="n">DTI_30_average</span><span class="o">-</span><span class="mi">2</span><span class="n">_denoise</span><span class="p">.</span><span class="n">mif</span> <span class="o">&lt;</span><span class="n">dti_img_preproc_output</span><span class="p">.</span><span class="n">mif</span><span class="o">&gt;</span>
+
+<span class="n">dwibiascorrect</span> <span class="o">&lt;</span><span class="n">dti_img_preproc_output</span><span class="p">.</span><span class="n">mif</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">dti_img_preproc_biascorrect_output</span><span class="p">.</span><span class="n">mif</span><span class="o">&gt;</span> <span class="err">–</span><span class="n">fsl</span>
+
+<span class="n">dwi2response</span> <span class="n">tournier</span> <span class="o">&lt;</span><span class="n">dti_img_preproc_biascorrect_output</span><span class="p">.</span><span class="n">mif</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">dti_img_preproc_biascorrect_response</span><span class="p">.</span><span class="n">txt</span><span class="o">&gt;</span>
+
+<span class="n">dwi2fod</span> <span class="n">csd</span> <span class="n">DTI_30_average</span><span class="o">-</span><span class="mi">2</span><span class="n">_denoise_preproc_biascorrected</span><span class="p">.</span><span class="n">mif</span> <span class="n">DTI_30_average</span><span class="o">-</span><span class="mi">2</span><span class="n">_denoise_preproc_biascorrected_response</span><span class="p">.</span><span class="n">txt</span> <span class="n">DTI_30_average</span><span class="o">-</span><span class="mi">2</span><span class="n">_denoise_preproc_biascorrected_fod</span><span class="p">.</span><span class="n">mif</span>
+</pre></div>
+
+
+<p>$$</p>
+<h2>2. T1 MRI Processing</h2>
+<h2>3. (Optional) CT Processing</h2>
+<h2>4. Connectome Generation</h2>
+<h1>Background</h1>
+<p>Freesurfer is a tool built for rendering 3D brains using MRI and Ct scans.</p>
+<p>FSL is a tool for coregistration and image analysis.</p>
+<p>Download both online:</p>
+<h2>Common Definitions:</h2>
+<ol>
+<li>Registration: to find a common coordinate system for the input data sets</li>
+<li></li>
+</ol>
+<h1>Implementation</h1>
+<h2>1. Set Up</h2>
+<p>First you will want to download freesurfer from the following website:</p>
+<p>https://surfer.nmr.mgh.harvard.edu/fswiki/DownloadAndInstall
+Linux:
+    ## bash
+    $&gt; export FREESURFER_HOME=/usr/local/freesurfer
+    $&gt; source $FREESURFER_HOME/SetUpFreeSurfer.sh</p>
+<div class="highlight"><pre><span></span>## <span class="nv">tcsh</span>
+$<span class="o">&gt;</span> <span class="k">setenv</span> <span class="nv">FREESURFER_HOME</span> <span class="o">/</span><span class="nv">usr</span><span class="o">/</span><span class="nv">local</span><span class="o">/</span><span class="nv">freesurfer</span>
+$<span class="o">&gt;</span> <span class="nv">source</span> <span class="mh">$F</span><span class="nv">REESURFER_HOME</span><span class="o">/</span><span class="nv">SetUpFreeSurfer</span>.<span class="nv">csh</span>
+</pre></div>
+
+
+<p>Mac:
+    $&gt; export FREESURFER_HOME=/Applications/freesurfer
+    $&gt; source $FREESURFER_HOME/SetUpFreeSurfer.sh</p>
+<p>Run those commands within your terminal, or add them to ~/.bashrc file to have access to all the command line tools for freeview.</p>
+<p>You will need to setup your own directory where you will hold all your subject data.</p>
+<div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">SUBJECTS_DIR</span><span class="o">=&lt;</span><span class="n">path</span> <span class="k">to</span> <span class="n">subject</span> <span class="k">data</span><span class="o">&gt;</span>
+</pre></div>
+
+
+<p>This will be where you store say patient's MRI/CT scans that you will use to reconstruct the brain.</p>
+<h2>2. Running Through T1-Weighted MRI Images</h2>
+<p>First you want to set your current Subjects directory to where you are working with the raw say .dcm data.</p>
+<div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">SUBJECTS_DIR</span><span class="o">=</span><span class="err">$</span><span class="n">PWD</span>
+</pre></div>
+
+
+<p>There may be an issue where you can't run the functions with your .dcm files. I have no idea why this occurs, but an easy fix is to externally run a dicom to nii converter and pass this type of file instead. Here is a link to a matlab converter that can do this:
+https://www.mathworks.com/matlabcentral/fileexchange/42997-dicom-to-nifti-converter--nifti-tool-and-viewer</p>
+<p>There are also other resources online.</p>
+<p>Afterwards, you can run the following command(s):</p>
+<div class="highlight"><pre><span></span><span class="n">recon</span><span class="o">-</span><span class="k">all</span> <span class="o">-</span><span class="n">i</span> <span class="o">&lt;</span><span class="k">data</span><span class="o">&gt;</span><span class="p">.</span><span class="n">nii</span> <span class="o">-</span><span class="n">s</span> <span class="o">&lt;</span><span class="n">subject_name</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">autorecon1</span>
+<span class="n">recon</span><span class="o">-</span><span class="k">all</span> <span class="o">-</span><span class="n">i</span> <span class="o">&lt;</span><span class="k">data</span><span class="o">&gt;</span><span class="p">.</span><span class="n">nii</span> <span class="o">-</span><span class="n">s</span> <span class="o">&lt;</span><span class="n">subject_name</span><span class="o">&gt;</span> <span class="o">-</span><span class="k">all</span>
+</pre></div>
+
+
+<p>This will take a long time! So be prepared to run this on a compute engine that has time.</p>
+<h2>3. Running Through CT Images</h2>
+<p>flirt -in patient_ct.nii -ref patient_mri.nii -omat patient_omat.mat -out patient_registered.nii.gz</p>
+<p>This command will coregister the CT data onto the domain of the MRI data and provide a coregistration for you to look at where certain contacts of electrodes are. You can also view in Freeview the different cuts of the brain using either CT, or MRI. </p>
+<h2>4. Getting Surface Parcellations</h2>
+<p>TBD</p>
+<h2>5. Getting SEEG XYZ Coordinates</h2>
+<p>Once you have CT images coregistered with MRI images, you can easily extract the locations of all iEEG contacts in the MRI axis system. This is done by noting a contact within each electrode (e.g. A1, B1, C10, etc.) and then an algorithm can fill in the entire electrode's xyz coordinates and output to a file.</p>
+<h1>References:</h1>
+<ol>
+<li>https://surfer.nmr.mgh.harvard.edu/fswiki/DownloadAndInstall#Setup.26Configuration</li>
+<li></li>
+</ol>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="https://adam2392.github.io/blog/2017/09/simulating-tvb/" rel="bookmark"
+                           title="Permalink to Simulating Epileptic iEEG Activity Using The Virtual Brain">Simulating Epileptic iEEG Activity Using The Virtual Brain</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2017-09-27T00:00:00-04:00">
+                Published: Wed 27 September 2017
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="https://adam2392.github.io/author/adam-li.html">Adam Li</a>
+        </address>
+<p>In <a href="https://adam2392.github.io/category/academic.html">Academic</a>.</p>
+<p>tags: <a href="https://adam2392.github.io/tag/data-analysis.html">data analysis</a> <a href="https://adam2392.github.io/tag/eeg.html">eeg</a> <a href="https://adam2392.github.io/tag/phd.html">phd</a> <a href="https://adam2392.github.io/tag/computational-modeling.html">computational modeling</a> </p>
+</footer><!-- /.post-info -->                <p>To guide the simulation of Epileptic iEEG activity using TVB in Marseille, France.</p>
+                <a class="readmore" href="https://adam2392.github.io/blog/2017/09/simulating-tvb/">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+                </ol><!-- /#posts-list -->
+                </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="https://adam2392.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+                            <li><a href="https://adam2392.github.io/feeds/all.rss.xml" type="application/rss+xml" rel="alternate">rss feed</a></li>
+
+                            <li><a href="https://twitter.com/adam2392">twitter</a></li>
+                            <li><a href="https://stackexchange.com/users/4494355/ajl123">stack-overflow</a></li>
+                            <li><a href="https://github.com/adam2392">github</a></li>
+                            <li><a href="https://www.linkedin.com/in/adam2392">linkedin</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-106551801-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>

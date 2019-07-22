@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Simulating Epileptic iEEG Activity Using The Virtual Brain</title>
+        <link rel="stylesheet" href="https://adam2392.github.io/theme/css/main.css" />
+        <link href="https://adam2392.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Adam Li's blog Atom Feed" />
+        <link href="https://adam2392.github.io/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Adam Li's blog RSS Feed" />
+</head>
+
+<body id="index" class="home">
+<a href="https://github.com/adam2392">
+<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
+</a>
+        <header id="banner" class="body">
+                <h1><a href="https://adam2392.github.io/">Adam Li's blog </a></h1>
+                <nav><ul>
+                    <li><a href="/categories.html">Blog</a></li>
+                    <li><a href="/archives.html">Timeline</a></li>
+                    <li><a href="/tags.html">Tags</a></li>
+                    <li><a href="/pdfs/AdamLi_CV.pdf">Curriculum Vitae</a></li>
+                    <li><a href="https://adam2392.github.io/contact/">Contact</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="https://adam2392.github.io/blog/2017/09/simulating-tvb/" rel="bookmark"
+           title="Permalink to Simulating Epileptic iEEG Activity Using The Virtual Brain">Simulating Epileptic iEEG Activity Using The Virtual Brain</a></h1>
+<a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="adam2392">Tweet</a><script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2017-09-27T00:00:00-04:00">
+                Published: Wed 27 September 2017
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="https://adam2392.github.io/author/adam-li.html">Adam Li</a>
+        </address>
+<p>In <a href="https://adam2392.github.io/category/academic.html">Academic</a>.</p>
+<p>tags: <a href="https://adam2392.github.io/tag/data-analysis.html">data analysis</a> <a href="https://adam2392.github.io/tag/eeg.html">eeg</a> <a href="https://adam2392.github.io/tag/phd.html">phd</a> <a href="https://adam2392.github.io/tag/computational-modeling.html">computational modeling</a> </p>
+</footer><!-- /.post-info -->      <h1>Background</h1>
+<p>TVB is a platform for simulating whole-brain dynamics that starts from raw data involving:
+    1. structural connectivity derived from DTI
+    2. brain parcellation derived from MRI and CT
+    3. SEEG xyz locations derived from MRI and CT
+This will then determine a gain matrix to determine SEEG signals from the source signals that are generated from neural mass models.</p>
+<p>The neural mass models will be implemented with nonlinear, complex models for simulating certain type of electrophysiology. The Epileptor is used for simulating seizure activity from a specific source region. </p>
+<p>The epileptor is a set of coupled differential equations that rely on 6 different variables. They are described here:</p>
+<h1>Data &amp; Metadata</h1>
+<p>Generally, refer to my post on "Freesurfer" to establish the preprocessing data pipeline using Freesurfer, FSL and MRtrix3.</p>
+<p>The minimum necessary requirements for creating the TVB dataset are a set of T1 and DWI images as a list of dicom files, or a single 4-D image nifti file.</p>
+<p>A high level summary of how the pipeline proceeds is:
+1. Construct Cortical Surface, Subcortical Surface
+Using freesurfer, you can get the reconstructed surfaces, which are your files that outline the voxels that belong to each region of the brain. This will give you the surface geometries of the cortical and subcortical surface.</p>
+<ol>
+<li>
+<p>Construct Parcellation Scheme
+This can range from the default in freesurfer to different atlases available for the human brain. This will give you a region mapping for every vertex/face from your cortical/subcortical surface geometries files.</p>
+</li>
+<li>
+<p>Construct Corticography Tracts
+First, you need to coregister the DWI images with the T1 scans</p>
+</li>
+</ol>
+<p>Using the DWI images, along with the reconstructed surfaces, you can count fiber tracts between each region of the brain and reconstruct the structural connectivity matrices. This is composed from the weights matrix and the length matrix between parcellated regions.</p>
+<ol>
+<li>
+<p>Obtain Electrode Coordinates in T1 Space
+First, you need to coregister the CT reconstructed freesurfer file into the T1 space. </p>
+</li>
+<li>
+<p>Computing Gain Matrix Between Brain Regions and Electrodes
+In order to compute forward solutions of electrode (i.e. SEEG, ECoG, etc.) activity, you need to compute a gain matrix that transforms region activity into electrode activity. </p>
+</li>
+</ol>
+<p>This can be done using an inverse-square method fall-off on the region activity, or using a dipole method as outlined in the "Virtual Epileptic Patient" paper.</p>
+<h1>Implementation</h1>
+<h2>1. Setting Up Environment</h2>
+<p>First you may want to set up a conda environment, or a virtualenv that will separate the entire python project from your normal OS.</p>
+<div class="highlight"><pre><span></span><span class="err">$</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">nibabel</span> <span class="n">networkx</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">the</span><span class="o">-</span><span class="n">virtual</span><span class="o">-</span><span class="n">brain</span><span class="o">/</span><span class="n">tvb</span><span class="o">-</span><span class="k">data</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">the</span><span class="o">-</span><span class="n">virtual</span><span class="o">-</span><span class="n">brain</span><span class="o">/</span><span class="n">tvb</span><span class="o">-</span><span class="n">library</span>
+<span class="err">$</span>
+</pre></div>
+
+
+<p>If you want to have a script to add these all to path for your jupyter notebook, use the following:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nb">echo</span> <span class="s2">&quot;Launching IPython Notebook from TVB Distribution&quot;</span>
+<span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;</span><span class="nv">$LANG</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">export</span> <span class="nv">LANG</span><span class="o">=</span>en_US.UTF-8
+<span class="k">fi</span>
+<span class="nb">export</span> <span class="nv">LC_ALL</span><span class="o">=</span><span class="nv">$LANG</span>
+<span class="c1"># add tvb data and library to path and launch notebook</span>
+<span class="nb">export</span> <span class="nv">PYTHONPATH</span><span class="o">=</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/_tvbdata:<span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/_tvblibrary:<span class="nv">$PYTHONPATH</span><span class="p">;</span>
+jupyter notebook
+</pre></div>
+</td></tr></table>
+
+<h2>1b. Setting Up Environment on a Cluster</h2>
+<div class="highlight"><pre><span></span><span class="p">.</span> <span class="o">/</span><span class="n">soft</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">activate</span>
+<span class="n">conda</span> <span class="n">env</span> <span class="n">list</span>
+<span class="n">conda</span> <span class="k">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">tridesclous</span> <span class="n">python</span><span class="o">=</span><span class="mi">3</span><span class="p">.</span><span class="mi">6</span> <span class="n">scipy</span> <span class="n">numpy</span> <span class="n">pandas</span> <span class="n">scikit</span><span class="o">-</span><span class="n">learn</span> <span class="n">matplotlib</span> <span class="n">seaborn</span> <span class="n">pyqt</span><span class="o">=</span><span class="mi">5</span> <span class="n">ipykernel</span>
+<span class="k">source</span> <span class="n">activate</span> <span class="n">tridesclous</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">pyqtgraph</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">tridesclous</span><span class="o">/</span><span class="n">tridesclous</span><span class="o">/</span><span class="n">archive</span><span class="o">/</span><span class="n">master</span><span class="p">.</span><span class="n">zip</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">ipykernel</span> <span class="n">install</span> <span class="c1">--name tridesclous-testing —user</span>
+</pre></div>
+
+
+<h2>1c. Using Docker / Singularity</h2>
+<p>TBD</p>
+<h2>2. Simulating Epilepsy</h2>
+<p>In order to simulate epilepsy, you are going to walk through a pipeline using TVB. Details are left out for now.</p>
+<p>i. Structural Connectivity
+What is the matrix of connectivities between your brain regions?
+Ex: Connectivity weights, conduction speed, coupling function between long-range regions</p>
+<p>ii. Neural Mass Model
+What is the phenomenological model at brain regions?
+Ex: Epileptor6D, with parameter settings</p>
+<p>iii. Integrators
+How to solve your stochastic differential equation?
+Ex: Heunstochastic, with noise levels</p>
+<p>iv. Coupling
+How are your brain regions coupled?
+Ex: linear, additive, hyperbolic</p>
+<p>v. Monitors
+What variables to monitor and store?
+Ex: State variables, iEEG activity from sampling rate and period.</p>
+<p>Then once these are complete, you can run your simulation.</p>
+<h2>References:</h2>
+<ol>
+<li>https://github.com/the-virtual-brain/tvb-library</li>
+<li>https://github.com/the-virtual-brain/tvb-epilepsy</li>
+<li>https://www.thevirtualbrain.org/tvb/zwei</li>
+</ol>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="https://adam2392.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+                            <li><a href="https://adam2392.github.io/feeds/all.rss.xml" type="application/rss+xml" rel="alternate">rss feed</a></li>
+
+                            <li><a href="https://twitter.com/adam2392">twitter</a></li>
+                            <li><a href="https://stackexchange.com/users/4494355/ajl123">stack-overflow</a></li>
+                            <li><a href="https://github.com/adam2392">github</a></li>
+                            <li><a href="https://www.linkedin.com/in/adam2392">linkedin</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-106551801-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>
