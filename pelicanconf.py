@@ -60,11 +60,11 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 
 # to run the theme | for now, pelican-bootstrap3
-# THEME = "pelican-themes/pelican-bootstrap3"
-THEME = "pelican-themes/Responsive-Pelican"
+THEME = "pelican-themes/pelican-bootstrap3"
+# THEME = "pelican-themes/Responsive-Pelican"
 PLUGIN_PATHS = ["pelican-plugins"] 
 PLUGINS = [
-# "i18n_subsites",
+"i18n_subsites",
  "render_math", "related_posts", "photos", \
 "pelican_javascript"]
 JINJA_ENVIRONMENT = {"extensions": ["jinja2.ext.i18n"]}
