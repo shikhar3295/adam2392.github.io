@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <title>Adam Li's blog - Important Concepts for Computational Modeling</title>
+        <meta charset="utf-8" />
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Adam Li's blog Full Atom Feed" />
+        <link href="/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Adam Li's blog Full RSS Feed" />
+        <link href="/feeds/academic.atom.xml" type="application/atom+xml" rel="alternate" title="Adam Li's blog Categories Atom Feed" />
+
+
+
+
+    <meta name="tags" content="phd" />
+    <meta name="tags" content="journals" />
+    <meta name="tags" content="reviews" />
+    <meta name="tags" content="computational modeling" />
+
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">Adam Li's blog <strong></strong></a></h1>
+        </header><!-- /#banner -->
+        <nav id="menu"><ul>
+            <li><a href="/categories.html">Blog</a></li>
+            <li><a href="/archives.html">Timeline</a></li>
+            <li><a href="/tags.html">Tags</a></li>
+            <li><a href="/pdfs/AdamLi_CV.pdf">Curriculum Vitae</a></li>
+            <li><a href="/contact/">Contact</a></li>
+        </ul></nav><!-- /#menu -->
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="/blog/2017/09/fundamental-computational-modeling/" rel="bookmark"
+         title="Permalink to Important Concepts for Computational Modeling">Important Concepts for Computational Modeling</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+    <time class="published" datetime="2017-09-27T00:00:00-04:00">
+      Wed 27 September 2017
+    </time>
+    <address class="vcard author">
+      By           <a class="url fn" href="/author/adam-li.html">Adam Li</a>
+    </address>
+    <div class="category">
+        Category: <a href="/category/academic.html">Academic</a>
+    </div>
+    <div class="tags">
+        Tags:
+            <a href="/tag/phd.html">phd</a>
+            <a href="/tag/journals.html">journals</a>
+            <a href="/tag/reviews.html">reviews</a>
+            <a href="/tag/computational-modeling.html">computational modeling</a>
+    </div>
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <!-- MarkdownTOC -->
+
+<ul>
+<li>Background</li>
+<li>Concepts<ul>
+<li>
+<ol>
+<li>Numerical Integration</li>
+<li>Deterministic Differential Equations</li>
+<li>Stochastic Differential Equations</li>
+<li>Considerations:</li>
+<li>References:</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Deterministic and Stochastic Differential Equations</li>
+<li>Deterministic Differential Equations</li>
+<li>Stochastic Differential Equations</li>
+<li>References:</li>
+<li>References:</li>
+<li>Summary / Conclusions:</li>
+<li>Important Notes:</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<!-- /MarkdownTOC -->
+
+<h1>Background</h1>
+<p>Computational modeling involves setting up mathematical equations that represent some sort of statics, or dynamics within a system. You want to simulate these equations to understand behavior, fixed points, bifurcations and changes wrt parameter values.</p>
+<h1>Concepts</h1>
+<h2>1. Numerical Integration</h2>
+<p>Numerical integration involves solving system of differential equations via numerical methods. This is in general split into deterministic vs stochastic differential equations. Here we will also split the two.</p>
+<h3>Deterministic Differential Equations</h3>
+<p>1) Euler's Method</p>
+<p>2) Runge-Kutta Method(s)?</p>
+<h3>Stochastic Differential Equations</h3>
+<p>Heun methods seem to be more accurate, but more time consuming vs the Milstein method.
+1) Heun Method
+Simple discretization leading to Stratonovich integral. It is a "predictor-corrector method" because given value of X at time <span class="math">\(t_n\)</span>, obtain predictors with Euler integration scheme, then correct it using Heun's correction.</p>
+<p>Details to be filled in.</p>
+<p>2) Milstein Method
+Uses the derivative of the diffusion coefficients</p>
+<h3>Considerations:</h3>
+<p>1) Convergence</p>
+<h3>References:</h3>
+<ol>
+<li>Comparison of stochastic integration https://arxiv.org/pdf/1102.4401.pdf</li>
+<li></li>
+</ol>
+<h2>2. Deterministic and Stochastic Differential Equations</h2>
+<h3>Deterministic Differential Equations</h3>
+<p>An example would be a population growth model. </p>
+<p><span class="math">\(dx_t = Kx_t dt,\ x(0)=x_0\)</span>, with K being some constant.</p>
+<p>However, if we have some inherent randomness, then maybe we can't assume <span class="math">\(x_0\)</span> is deterministic constant, but perhaps a random variable.</p>
+<h3>Stochastic Differential Equations</h3>
+<p>An example would be a population growth model. </p>
+<p><span class="math">\(dX_t(w) = KX_t(w) dt,\ X_0(w)\)</span>, with K being some constant and <span class="math">\(X_t(w)\)</span> is a random variable, which comes from the initial condition. K could also be random.</p>
+<p><span class="math">\(dX_t(w) = (Kdt + dW_t(w))X_t(w) dt,\ X_0(w)\)</span>, where <span class="math">\(dW_t(w)\)</span> is some noise process that adds randomness to K.</p>
+<p>This leads us to the general SDE. </p>
+<p><span class="math">\(dX_t(w) = f_t(X_t(w))dt + \sigma_t(X_t(w))dW_t(w),\ X_0(w)\)</span>, where f is the deterministic drift of the SDE. <span class="math">\(\sigma_t\)</span> is the diffusion coefficient, and <span class="math">\(dW_t(w)\)</span> is the noise process. </p>
+<p>We can rewrite the SDE in integral form, which leads us to the Stratonovich integral and the Ito integral.</p>
+<p><span class="math">\(X_t(w) = X_0(w) + \int_t_0 f_s(X_s(w)) ds + \int_t_0 \sigma_s(X_s(w)) dW_s(w)\)</span></p>
+<p>Ito integral =&gt;
+Stratonovich integral =&gt;</p>
+<h3>References:</h3>
+<h3>References:</h3>
+<h3>Summary / Conclusions:</h3>
+<h3>Important Notes:</h3>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+  </div><!-- /.entry-content -->
+</section>
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+        </footer><!-- /#contentinfo -->
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <title>Adam Li's blog - Optimization: Convex, Nonlinear, Unconstrained and Constrained</title>
+        <meta charset="utf-8" />
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Adam Li's blog Full Atom Feed" />
+        <link href="/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Adam Li's blog Full RSS Feed" />
+        <link href="/feeds/machine-learning.atom.xml" type="application/atom+xml" rel="alternate" title="Adam Li's blog Categories Atom Feed" />
+
+
+
+
+    <meta name="tags" content="phd" />
+    <meta name="tags" content="machine learning" />
+
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">Adam Li's blog <strong></strong></a></h1>
+        </header><!-- /#banner -->
+        <nav id="menu"><ul>
+            <li><a href="/categories.html">Blog</a></li>
+            <li><a href="/archives.html">Timeline</a></li>
+            <li><a href="/tags.html">Tags</a></li>
+            <li><a href="/pdfs/AdamLi_CV.pdf">Curriculum Vitae</a></li>
+            <li><a href="/contact/">Contact</a></li>
+        </ul></nav><!-- /#menu -->
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="/blog/2019/06/optimization-landscape-overview/" rel="bookmark"
+         title="Permalink to Optimization: Convex, Nonlinear, Unconstrained and Constrained">Optimization: Convex, Nonlinear, Unconstrained and Constrained</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+    <time class="published" datetime="2019-06-18T00:00:00-04:00">
+      Tue 18 June 2019
+    </time>
+    <address class="vcard author">
+      By           <a class="url fn" href="/author/adam-li.html">Adam Li</a>
+    </address>
+    <div class="category">
+        Category: <a href="/category/machine-learning.html">Machine Learning</a>
+    </div>
+    <div class="tags">
+        Tags:
+            <a href="/tag/phd.html">phd</a>
+            <a href="/tag/machine-learning.html">machine learning</a>
+    </div>
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <!-- MarkdownTOC -->
+
+<ul>
+<li>Background</li>
+<li>Methods<ul>
+<li>Convex<ul>
+<li>Non-smooth</li>
+<li>Smooth</li>
+</ul>
+</li>
+<li>Unconstrained</li>
+<li>Constrained</li>
+<li>Nonlinear<ul>
+<li>Unconstrained</li>
+<li>Constrained</li>
+</ul>
+</li>
+<li>Zero-Finding: Newton's Method and the Secant Method<ul>
+<li>Newton Directions, General Newton Method and Quasi-Newton Methods</li>
+</ul>
+</li>
+<li>Programming (Linear, Quadratic and Semidefinite)</li>
+</ul>
+</li>
+<li>Stochastic Optimization</li>
+<li>Conclusions</li>
+<li>Current Research and Interesting Papers<ul>
+<li>Accelerated Adaptive Moments (ADAM)</li>
+<li>RMS-Prop</li>
+<li>Structured Regularizations and Different Forms</li>
+</ul>
+</li>
+<li>References:</li>
+</ul>
+<!-- /MarkdownTOC -->
+
+<h1>Background</h1>
+<p>Recently, I re-read my notes on convex optimization, nonlinear unconstrained optimization and nonlinear constrained optimization. It's quite fascinating how mathematics can break down very general assumptions into different classes of algorithms with certain convergence, convergence rate and computational cost guarantees. In general all these algorithms are iterative algorithms, that solve a certain optimization problem by taking iterations from a starting vector <span class="math">\(x_0\)</span>. Obviously, there are other classes of algorithms that can say be solved analytically (i.e. one shot), but we're interested in how to take iterations that converge, converge fast and are computationally efficient. The different classes of algorithms can at a high level be broken down into:</p>
+<ul>
+<li>convex vs nonconvex</li>
+<li>constrained vs unconstrained</li>
+<li>linear vs nonlinear</li>
+<li>differentiable vs non-differentiable (or smooth vs nonsmooth)</li>
+</ul>
+<p>In each of these classes of algorithms there are relatively important concepts that are present in all of them such as:</p>
+<ul>
+<li>regularization (i.e. the addition of a l1, l2, or p-norm operator on some variable of interest) to prevent overfitting, include prior knowledge into the model, and improve tractability</li>
+<li>duality (i.e. the idea of solving a related "dual" problem that has nice properties)</li>
+<li>initialization (i.e. <span class="math">\(x_0\)</span>)</li>
+<li>step length (i.e. <span class="math">\(\alpha_t\)</span>)</li>
+<li>direction of algorithm iteration (i.e. <span class="math">\(g_t\)</span>)</li>
+</ul>
+<p>In general, one is interested in necessary and/or sufficient conditions for optimality and the following questions:</p>
+<ol>
+<li>does an algorithm converge and what are the necessary assumptions to do so?</li>
+<li>what is the convergence rate of an algorithm (i.e. how many iterations to reach a bound on the error rate)?</li>
+<li>what is the computational cost per iteration of the algorithm (i.e. how many function evaluations, jacobian evaluations, or hessian evaluations does one need)?</li>
+</ol>
+<p>What I will not overview is combinatorial and stochastic optimization. I will plan on adding the general concepts once I've reviewed linear, quadratic, and semidefinite programming, as well as stochastic gradient descent. </p>
+<h1>Methods</h1>
+<p>Here, I preface the landscape of optimization algorithms with the general objective function:</p>
+<div class="math">$$minimize_{x \in X} f(x) \ s.t. \ g(x)=0,\ h(x) \le 0$$</div>
+<div class="math">$$X \subset \mathbf{R}^n$$</div>
+<div class="math">$$f: X -&gt; \mathbf{R}$$</div>
+<div class="math">$$g: X -&gt; \mathbf{R}^k$$</div>
+<div class="math">$$h: X -&gt; \mathbf{R}^l$$</div>
+<p>There are k equality constraints, and l inequality constraints. X is our feasible set, f is our evaluation function (think loss/cost function), g is our equality constraint function, and h is our inequality constraint function. x is our variable of interest that we want in the end that satisfies this minimization problem.</p>
+<p>A very general iteration looks something like this:</p>
+<div class="math">$$x_{k+1} = x_k - \alpha_k g_k (x_k)$$</div>
+<p>where <span class="math">\(\alpha\)</span> is the step size, g is the step direction. Note that <span class="math">\(\alpha\)</span> can either be a vector, or scalar (depending on if you want to step uniformly, or with varying magnitudes in the direction vector) and g is a in general a vector that denotes the directionality in the space of x (i.e. <span class="math">\(R^n\)</span>).</p>
+<h2>Convex</h2>
+<p>In this section, we make the assumption that f is convex, and in general the constraint functions are convex. Assuming convexity provides a couple of strong guarantees:</p>
+<ul>
+<li>the minimum we find is a global minimum, so we don't have to say rerun the algorithm with multiple initializations</li>
+<li>in general strong duality applies, so there is a zero duality gap (I think)</li>
+</ul>
+<p>There is a whole theory of convex analysis and convex optimization, but here we review the main algorithms that come out of this convex assumption. In general, the algorithms can be broken down into non-smooth vs smooth (where f is either differentiable, or not). If f is not differentiable, a technical detail is that we still assume f is Lipschitz-continuous. </p>
+<h3>Non-smooth</h3>
+<p>Here, we are dealing with convex functions that are not differentiable. We are able to circumvent the issue with the use of subgradients and proximal operators. This leads to algorithms like:</p>
+<ol>
+<li>
+<p>Subgradient Descent Algorithm
+This is essentially gradient descent, but using the subgradient. It's a basic algorithm that has guaranteed convergence with some assumptions on the choices of your step sizes, <span class="math">\(\alpha_k\)</span>.</p>
+</li>
+<li>
+<p>Proximal Gradient Descent Algorithm
+This defines a proximal operator that IS differentiable, so that we can take gradients of the proximal operator to define our direction, and then take corresponding steps. This leads to algorithms like the iterative shrinkage threshold operator (ISTA).</p>
+</li>
+</ol>
+<p><em>Acceleration (Nesterov)</em>
+Armed with the proximal gradient, one can apply acceleration techniques of the form:</p>
+<div class="math">$$ $$</div>
+<p>, which leads to algorithms like FISTA (fast ISTA).</p>
+<h3>Smooth</h3>
+<p>Here, we are dealing with convex functions that ARE differentiable (i.e you can take the derivative). Taking the derivative gives you powerful first-order information. This leads to algorithms like:</p>
+<ol>
+<li>Gradient Descent</li>
+<li>Conjugate Gradient Descent</li>
+<li></li>
+</ol>
+<h2>Unconstrained</h2>
+<p>In this section, we comment on the idea of unconstrained optimization. That is the objective function does not have g, or h terms (equality, or inequality constraints). In general, this leads to two classes of algorithms:</p>
+<ul>
+<li>line-search methods (e.g. Armijo line-search and Wolfe conditional line search)</li>
+<li>trust-region methods</li>
+</ul>
+<p>For convex and linear optimization problems, generally you don't need such methods, so we restrict overview until we reach the section on Nonlinear optimization.</p>
+<h2>Constrained</h2>
+<p>In this section, we allow for constraints either in the form of equality, and/or inequality constraints. The idea of adding constraints is really fascinating because in most (almost all) real world problems, you can formulate a loss function to optimize (based on some metric) that generally has constraints built in! This is due to the nature of the problem. For example, if you want to optimize usage of fuel in a car, you are constrained by the amount of fuel you can even have and the fact that fuel can never be negative! In general, adding constraints helps the optimization problem achieve better solutions. In order to analyze a constrained optimization problem, the strategy is to perform a "conversion" into an unconstrained problem. This leads to the definition of a Lagrangian function (draws upon physics):</p>
+<div class="math">$$L(x,y,\lambda,\mu) = $$</div>
+<p>There is a wealth of theory behind constraint optimization with some of the basics drawing from the idea of Lagrange multipliers (that handle equality constraints). One can generalize this notion (it's quite beautiful actually) to inequality constraints, which then handle all possible constraints you might have. This generalization leads to the notion of the Karusch-Kuhn-Tucker (KKT) conditions for optimality. The KKT conditions are:</p>
+<ul>
+<li>stationarity:</li>
+<li>primal feasibility:</li>
+<li>dual feasibility:</li>
+<li>complementary slackness: </li>
+</ul>
+<p>In general, these define necessary conditions for optimality, and in some special cases, they can define also sufficient conditions. Basically, with KKT conditions, you can convert any constrained optimization problem into an unconstrained version with the Lagrangian.</p>
+<p>I don't actually talk about the algorithms here because they get quite complex, but I will cover them in the "Programming (Linear, Quadratic and Semidefinite)" section in the future.</p>
+<h2>Nonlinear</h2>
+<p>In this section, we now deal with the possibility of nonlinear functions f, and possibly nonlinear constraint functions. This then leads to the problem that in general, we can not find a global minima of the optimization problem. We simply find local minimums that may, or may not be a useful solution and possibly rerun the algorithms with multiple intializations. </p>
+<h3>Unconstrained</h3>
+<ol>
+<li>
+<p>Line-Search Methods
+The purpose of line search methods is to define a direction of search first and then perform a line search to determine a good step size. The procedure is as follows:</p>
+</li>
+<li>
+<p>solve for a descent direction <span class="math">\(B_k\)</span>. In general, it is difficult to get this for high-dimensional systems exactly because you can't compute the Hessian.</p>
+</li>
+<li>perform a line search to determine the step size <span class="math">\(\alpha_k\)</span>.</li>
+</ol>
+<p>Here, we review two main line search methods: 
+* exact line search: Armijo line search (backtracking line search) and 
+* inexact line search with satisfied Wolfe conditions.</p>
+<p>The wolfe conditions are conditions for choosing a step length, <span class="math">\(\alpha_k\)</span>, given a descent direction <span class="math">\(p_k\)</span>:</p>
+<ul>
+<li>(Armijo rule) <span class="math">\(f(x_k + \alpha_k p_k) \le f(x_k) + c_1 \alpha_k p_k^T \Nabla f(x_k)\)</span></li>
+<li>(curvature condition) -p_k^T \Nabla f(x_k + \alpha_k p_k) \le -c_2 p_k^T \Nabla f(x_k)</li>
+</ul>
+<p>Armijo rule ensures that the step length decreases f sufficiently. The curvature condition ensures that the slope has been reduced sufficiently. With the strong Wolfe conditions, there is a different curvature condition:</p>
+<ul>
+<li><span class="math">\(|p_k^T \Nabla f(x_k + \alpha_k p_k)| \le c_2 |p_k^T \Nabla f(x_k)|\)</span></li>
+</ul>
+<p>with <span class="math">\(0 &lt; c_1 &lt; c_2 &lt; 1\)</span>. If <span class="math">\(p_k\)</span> is a descent direction, then we just need to satisfy:</p>
+<div class="math">$$p_k^T \Nabla f(x_k) &lt; 0$$</div>
+<p>with <span class="math">\(p_k = -\Nabla f(x_k)\)</span> as the gradient direction, or with <span class="math">\(p_k = - H^{-1} \Nabla f(x_k)\)</span> with H being positive definite as the Newton-Raphson direction. </p>
+<ol>
+<li>Trust Region Methods
+The purpose of trust region methods is to define a region that is "trustworthy" to move in the direction of a local optima. The idea is to first perform a "line search" and then determine the direction of search. A trust region algorithm solves a subproblem that uses the gradient information and Hessian (or approximation) information.</li>
+</ol>
+<h3>Constrained</h3>
+<p>See section on Programming. </p>
+<h2>Zero-Finding: Newton's Method and the Secant Method</h2>
+<ol>
+<li>Secant method
+This method essentaially uses an iteration of secant lines and their roots to better approximate a root of the original function of interest, f. It is similar to a finite-difference approximation of Newton's method.</li>
+</ol>
+<div class="math">$$x_{k+1} = x_k - f(x_k) \frac{x_k - x_{k-1}}{f(x_k) - f(x_{k-1})}$$</div>
+<ol>
+<li>Newton's method</li>
+</ol>
+<div class="math">$$x_{k+1} = x_k - \frac{f(x_k)}{f'(x_k)}$$</div>
+<p>This Newton's method can be approximated when Jacobians and Hessians are too expensive, by using the class of quasi-newton methods, such as the BFGS method.</p>
+<h3>Newton Directions, General Newton Method and Quasi-Newton Methods</h3>
+<p>TBD</p>
+<h2>Programming (Linear, Quadratic and Semidefinite)</h2>
+<p>TBD</p>
+<h1>Stochastic Optimization</h1>
+<p>This section deserves a header of its own because of its widespread usage nowadays in training deep neural networks and actually any optimization problem that can't necesesarily fit into RAM. 
+TBD</p>
+<h1>Conclusions</h1>
+<h1>Current Research and Interesting Papers</h1>
+<h2>Accelerated Adaptive Moments (ADAM)</h2>
+<p>TBD</p>
+<h2>RMS-Prop</h2>
+<p>TBD</p>
+<h2>Structured Regularizations and Different Forms</h2>
+<p>TBD</p>
+<h1>References:</h1>
+<ol>
+<li>Cvx Course, JHU. https://sites.google.com/site/danielprobinson/convex-optimization</li>
+<li>"Convex Optimization." https://web.stanford.edu/~boyd/cvxbook/</li>
+<li></li>
+</ol>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+  </div><!-- /.entry-content -->
+</section>
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+        </footer><!-- /#contentinfo -->
+</body>
+</html>

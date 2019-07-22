@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <title>Adam Li's blog - Bayesian Analysis: An Overview</title>
+        <meta charset="utf-8" />
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Adam Li's blog Full Atom Feed" />
+        <link href="/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Adam Li's blog Full RSS Feed" />
+        <link href="/feeds/machine-learning.atom.xml" type="application/atom+xml" rel="alternate" title="Adam Li's blog Categories Atom Feed" />
+
+
+
+
+    <meta name="tags" content="phd" />
+    <meta name="tags" content="machine learning" />
+
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">Adam Li's blog <strong></strong></a></h1>
+        </header><!-- /#banner -->
+        <nav id="menu"><ul>
+            <li><a href="/categories.html">Blog</a></li>
+            <li><a href="/archives.html">Timeline</a></li>
+            <li><a href="/tags.html">Tags</a></li>
+            <li><a href="/pdfs/AdamLi_CV.pdf">Curriculum Vitae</a></li>
+            <li><a href="/contact/">Contact</a></li>
+        </ul></nav><!-- /#menu -->
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="/drafts/bayesian-landscape-overview.html" rel="bookmark"
+         title="Permalink to Bayesian Analysis: An Overview">Bayesian Analysis: An Overview</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+    <time class="published" datetime="2019-06-18T00:00:00-04:00">
+      Tue 18 June 2019
+    </time>
+    <address class="vcard author">
+      By           <a class="url fn" href="/author/adam-li.html">Adam Li</a>
+    </address>
+    <div class="category">
+        Category: <a href="/category/machine-learning.html">Machine Learning</a>
+    </div>
+    <div class="tags">
+        Tags:
+            <a href="/tag/phd.html">phd</a>
+            <a href="/tag/machine-learning.html">machine learning</a>
+    </div>
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <!-- MarkdownTOC -->
+
+<ul>
+<li>Background</li>
+<li>Methods<ul>
+<li>Analytical Solution<ul>
+<li>The Power of the Normal Distribution</li>
+<li>Conjugate Priors</li>
+</ul>
+</li>
+<li>Variational inference (VI)<ul>
+<li>Evidence Lower Bound (ELBO)</li>
+</ul>
+</li>
+<li>Markov Chain Monte Carlo (MCMC)<ul>
+<li>Gibbs Sampling</li>
+<li>Importance Sampling</li>
+<li>Hamiltonian Monte Carlo (HMC)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Conclusions<ul>
+<li>Variational Autoencoder (VAE)</li>
+<li>Combining MCMC and VI</li>
+<li></li>
+</ul>
+</li>
+<li>References:</li>
+</ul>
+<!-- /MarkdownTOC -->
+
+<h1>Background</h1>
+<p>In any sort of data analysis, you generally formulate a model that answers some question based on an estimation of a variable. </p>
+<p>Kullman-Leiback Divergence (KL)</p>
+<h1>Methods</h1>
+<p>Here, I talk about some extensions to Gaussian linear models and relate them to our linear models through the lens of probability and statistics; specifically: variational inference and markov chain monte carlo. These are the main techniques in the estimation of an intractable posterior distribution. Here, we'll assume you have basic Bayesian working knowledge and comfortable with the statistics involved.</p>
+<p>The setup of the problem is similar to that of Linear Gaussian Models.</p>
+<div class="math">$$\dot{x}(t) = f(x(t)) + g(u(t)) + w$$</div>
+<div class="math">$$y(t) = h(x(t)) + v$$</div>
+<p>where: <span class="math">\(w \approx Q(\theta)\)</span> and <span class="math">\(v \approx R(\gamma)\)</span> are the state and output noise terms that we assume to be distributed with some distribution <span class="math">\(Q,R\)</span> parametrized by <span class="math">\(\theta, \gamma\)</span>. In addition, now <span class="math">\(f, g, h\)</span> are all potentially nonlinear functions analogs of A, B, C. If we define some priors on the distribution of noise for the latent variables, we can perform Bayesian inference given our observed signals, y. That is, we are interested in estimating:</p>
+<div class="math">$$P(x|y) \approx P(y|x) P(x)$$</div>
+<p>Note, that in convention with literature, P(y|x) is our likelihood of the model and P(x) is our assumed prior distribution on our latent state variable. </p>
+<h2>Analytical Solution</h2>
+<h3>The Power of the Normal Distribution</h3>
+<h3>Conjugate Priors</h3>
+<h2>Variational inference (VI)</h2>
+<ul>
+<li>Variational inference (VI) proceeds by: * 
+Fitting the parameters of a family of tractable distributions (e.g. independent Gaussians) to approximate the posterior. For more details, see my blog post on a summary of VI and MCMC.</li>
+</ul>
+<h3>Evidence Lower Bound (ELBO)</h3>
+<h2>Markov Chain Monte Carlo (MCMC)</h2>
+<ul>
+<li>Markov Chain Monte Carlo proceeds by: * 
+Creating a Markov chain that has convergent properties to the true posterior. Samples are drawn from the "proposal" distribution and are either kept, or rejected based on various algorithms (e.g. important sampling, Gibbs sampling, Hamiltonian Monte Carlo, etc.). For more details, see my blog post on a summary of VI and MCMC.</li>
+</ul>
+<h3>Gibbs Sampling</h3>
+<h3>Importance Sampling</h3>
+<h3>Hamiltonian Monte Carlo (HMC)</h3>
+<h1>Conclusions</h1>
+<h2>Variational Autoencoder (VAE)</h2>
+<p>TBD</p>
+<h2>Combining MCMC and VI</h2>
+<p>TBD</p>
+<h2></h2>
+<h1>References:</h1>
+<ol>
+<li>"Deep Variational Bayes Filter." https://arxiv.org/abs/1605.06432</li>
+<li>"Deep Koopman Model." https://arxiv.org/pdf/1805.07472.pdf</li>
+<li>"Kalman VAE." https://arxiv.org/pdf/1710.05741.pdf</li>
+<li>https://www.cs.princeton.edu/courses/archive/fall11/cos597C/lectures/variational-inference-i.pdf</li>
+<li>https://www.cs.cmu.edu/~epxing/Class/10708-15/notes/10708_scribe_lecture14.pdf</li>
+<li>https://blog.evjang.com/2016/08/variational-bayes.html</li>
+</ol>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+  </div><!-- /.entry-content -->
+</section>
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+        </footer><!-- /#contentinfo -->
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <title>Adam Li's blog - Setting Up Ethereum</title>
+        <meta charset="utf-8" />
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Adam Li's blog Full Atom Feed" />
+        <link href="/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Adam Li's blog Full RSS Feed" />
+        <link href="/feeds/coding.atom.xml" type="application/atom+xml" rel="alternate" title="Adam Li's blog Categories Atom Feed" />
+
+
+
+
+    <meta name="tags" content="webdev" />
+    <meta name="tags" content="ethereum" />
+    <meta name="tags" content="python" />
+    <meta name="tags" content="javascript" />
+
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">Adam Li's blog <strong></strong></a></h1>
+        </header><!-- /#banner -->
+        <nav id="menu"><ul>
+            <li><a href="/categories.html">Blog</a></li>
+            <li><a href="/archives.html">Timeline</a></li>
+            <li><a href="/tags.html">Tags</a></li>
+            <li><a href="/pdfs/AdamLi_CV.pdf">Curriculum Vitae</a></li>
+            <li><a href="/contact/">Contact</a></li>
+        </ul></nav><!-- /#menu -->
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="/drafts/setup-ethereum.html" rel="bookmark"
+         title="Permalink to Setting Up Ethereum">Setting Up Ethereum</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+    <time class="published" datetime="2017-12-21T00:00:00-05:00">
+      Thu 21 December 2017
+    </time>
+    <address class="vcard author">
+      By           <a class="url fn" href="/author/adam-li.html">Adam Li</a>
+    </address>
+    <div class="category">
+        Category: <a href="/category/coding.html">Coding</a>
+    </div>
+    <div class="tags">
+        Tags:
+            <a href="/tag/webdev.html">webdev</a>
+            <a href="/tag/ethereum.html">ethereum</a>
+            <a href="/tag/python.html">python</a>
+            <a href="/tag/javascript.html">javascript</a>
+    </div>
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <h1>Getting Setup with Ethereum</h1>
+<h1>By: Adam Li</h1>
+<h3>Table of Contents</h3>
+<!-- MarkdownTOC -->
+
+<ul>
+<li>Installation</li>
+<li>Setting Up Ethereum<ul>
+<li>
+<ol>
+<li>Setting Up a Node (For Testing):</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>Modifying Migrations and Adding New Contracts</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>
+<ol>
+<li>Creating Smart Contracts (General)</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>General Thoughs on Ethereum</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>References:</li>
+</ul>
+<!-- /MarkdownTOC -->
+
+<p>pragma solidity ^0.4.18;
+web3@1.0.0-beta.27
+truffle@4.0.4 
+solc@0.4.19 
+ethereumjs-testrpc@6.0.3 </p>
+<h1>Installation</h1>
+<p>The following packages need to be installed for a test time environment:
+* testrpc
+* web3js
+* solc
+* truffle</p>
+<div class="highlight"><pre><span></span><span class="n">npm</span> <span class="n">install</span> <span class="n">ethereumjs</span><span class="o">-</span><span class="n">testrpc</span> <span class="n">web3</span>
+<span class="n">npm</span> <span class="n">install</span> <span class="n">solc</span>
+<span class="n">npm</span> <span class="n">install</span> <span class="o">-</span><span class="k">g</span> <span class="n">truffle</span>
+</pre></div>
+
+
+<ul>
+<li>Testrpc is an in-memory blockchain that can be used to test the development of the application.</li>
+<li>Web3 is essentially the web interface with the backend and frontend.</li>
+<li>Solc is a solidity code compiler</li>
+<li>Truffle is a web framework for building dAPPs using Ethereum</li>
+</ul>
+<h1>Setting Up Ethereum</h1>
+<h2>1. Setting Up a Node (For Testing):</h2>
+<p>You can either set up a node that fully connects to the ethereum network, or connect to a test node to test application development! Very cool, so we will probably start with testrpc to run a test client node.</p>
+<div class="highlight"><pre><span></span><span class="n">testrpc</span>
+</pre></div>
+
+
+<p>In order to deploy, you need to setup a file directory. For those familiar with express for node.js and any other web framework, this is very similar.</p>
+<div class="highlight"><pre><span></span><span class="n">truffle</span> <span class="n">init</span>
+</pre></div>
+
+
+<p>Next, tell truffle how to deploy. You'll need to modify the truffle.js file.</p>
+<div class="highlight"><pre><span></span><span class="k">module</span>.<span class="n">exports</span> = {
+  // <span class="n">See</span> <span class="s">&lt;http://truffleframework.com/docs/advanced/configuration&gt;</span>
+  // <span class="nb">to</span> <span class="n">customize</span> <span class="n">your</span> <span class="n">Truffle</span> <span class="n">configuration</span>!
+    <span class="n">networks:</span> {
+    <span class="n">development:</span> {
+        <span class="n">host:</span> <span class="s">&quot;localhost&quot;</span>,
+        <span class="n">port:</span> <span class="mi">8545</span>,
+        <span class="n">network_id:</span> <span class="s">&quot;*&quot;</span>,<span class="sr"> //</span> <span class="n">match</span> <span class="nb">any</span> <span class="n">network</span> <span class="n">id</span>
+        <span class="n">gas:</span> <span class="mi">4600000</span>    // <span class="nb">to</span> <span class="n">ensure</span> <span class="n">your</span> <span class="n">test</span> <span class="n">node</span> <span class="k">has</span> <span class="n">a</span> <span class="n">lot</span> <span class="k">of</span> <span class="n">gas</span> <span class="nb">to</span> <span class="nb">run</span>
+    }
+  }
+};
+</pre></div>
+
+
+<p>Then you can run</p>
+<div class="highlight"><pre><span></span><span class="n">truffle</span> <span class="n">deploy</span>
+</pre></div>
+
+
+<p>You should not see any errors at this point.</p>
+<h2>2. Modifying Migrations and Adding New Contracts</h2>
+<p>Any new contracts you write will go in the /contracts/ direcotry, and then the corresponding requirements need to be loaded in the /migrations/ directory. There is boiler code there that shows you how to add things.</p>
+<h1></h1>
+<h2>3. Creating Smart Contracts (General)</h2>
+<h2>4. General Thoughs on Ethereum</h2>
+<p>So it seems that ethereum is great for creating sets of smart contracts, but there will need to be platforms that are optimized for specific technologies built on top of smart contracts.</p>
+<p>For example, Golem</p>
+<h1>References:</h1>
+<ol>
+<li>https://medium.com/@ConsenSys/a-101-noob-intro-to-programming-smart-contracts-on-ethereum-695d15c1dab4</li>
+<li>https://medium.com/@mvmurthy/full-stack-hello-world-voting-ethereum-dapp-tutorial-part-1-40d2d0d807c2</li>
+<li>https://www.pubnub.com/blog/testing-and-deploying-an-ethereum-token-part-2/</li>
+</ol>
+  </div><!-- /.entry-content -->
+</section>
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+        </footer><!-- /#contentinfo -->
+</body>
+</html>
