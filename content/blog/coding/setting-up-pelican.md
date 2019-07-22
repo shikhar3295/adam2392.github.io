@@ -124,12 +124,16 @@ Then:
     make github
 
 # Adding Pages of Static Content
-Here you want to add a homepage, about me page and other static pages that are relevant to your site. Create a directory inside /content/pages/ to hold your static pages.
+Here you want to add a homepage, about me page and other static pages that are relevant to your site. Create a directory inside /content/pages/ to hold your static pages. Separate blog content and other content and use pelicanconf.py along w/ plugins to play around with the visuals and presentation of the site.
 
 # Adding Articles To Your Blog
 To add articles to your blog, create /content/blog/ directory and create subdirectories in there. For example, I have academic, coding, and travel as my subdirectories in my blog. Then adjust your pelicanconf.py file for these blog posts.
 
 # Adding Gallery / Images To Your Blog
+Adding images to your blog require the following packages:
+- exeif
+- 
+
 https://kwkelly.com/blog/adding-galleries-to-pelican-and-bootstrap/
 http://duncanlock.net/blog/2013/05/29/better-figures-images-plugin-for-pelican/
 

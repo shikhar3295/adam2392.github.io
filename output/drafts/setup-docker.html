@@ -1,83 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>Adam Li's blog</title>
-	<meta name="description" content="">
-	<meta name="author" content="Adam Li">
-
-	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
-	<!--[if lt IE 9]>
-		<script src="https://adam2392.github.io/theme/html5.js"></script>
-	<![endif]-->
-
-	<!-- Styles -->
-	<link href="https://adam2392.github.io/theme/bootstrap.min.css" rel="stylesheet">
-	<link href="https://adam2392.github.io/theme/local.css" rel="stylesheet">
-	<link href="https://adam2392.github.io/theme/pygments.css" rel="stylesheet">
-
-	<!-- Feeds -->
-	<link href="https://adam2392.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Adam Li's blog Atom Feed" />
+          <title>Adam Li's blog - Setting Up Docker</title>
+        <meta charset="utf-8" />
+        <link href="https://adam2392.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Adam Li's blog Full Atom Feed" />
+        <link href="https://adam2392.github.io/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Adam Li's blog Full RSS Feed" />
 
 
-	<link href="https://adam2392.github.io/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Adam Li's blog RSS Feed" />
 
 
-<script>var _gaq=[['_setAccount','UA-106551801-1'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'))</script>
+    <meta name="tags" content="webdev" />
+    <meta name="tags" content="docker" />
+    <meta name="tags" content="macos" />
+
 </head>
-<body>
-<a href="https://github.com/adam2392"><img style="position: absolute; top: 39px; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub" /></a>
-	<div class="topbar">
-	  <div class="topbar-inner">
-		<div class="container-fluid">
-		  <a class="brand" href="https://adam2392.github.io/">Adam Li's blog</a>
-			<ul class="nav">
-					<li><a href="/categories.html">Blog</a></li>
-					<li><a href="/archives.html">Timeline</a></li>
-					<li><a href="/tags.html">Tags</a></li>
-					<li><a href="/pdfs/AdamLi_CV.pdf">Curriculum Vitae</a></li>
-						<li><a href="https://adam2392.github.io/contact/">Contact</a></li>
-					<li ><a href="https://adam2392.github.io/category/academic.html">Academic</a></li>
-					<li class="active"><a href="https://adam2392.github.io/category/coding.html">Coding</a></li>
-					<li ><a href="https://adam2392.github.io/category/machine-learning.html">Machine Learning</a></li>
-					<li ><a href="https://adam2392.github.io/category/personal.html">Personal</a></li>
-					<li ><a href="https://adam2392.github.io/category/travel.html">Travel</a></li>
-					<li ><a href="https://adam2392.github.io/category/views.html">Views</a></li>
-			</ul>
-			<p class="pull-right"><a href="https://adam2392.github.io/archives.html">[archives]</a> <a href="https://adam2392.github.io/tags.html">[tags]</a></p>
-		</div>
-	  </div>
-	</div>
 
-	<div class="container-fluid">
-	  <div class="sidebar">
-		<div class="well">
-			<h3>Blogroll</h3>
-			<ul>
-				<li><a href="http://getpelican.com/">Pelican</a></li>
-				<li><a href="http://python.org/">Python.org</a></li>
-				<li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-				<li><a href="#">You can modify those links in your config file</a></li>
-			</ul>
-			<div class="social">
-			<h3>Social</h3>
-			<ul>
-				<li><a href="https://twitter.com/adam2392">twitter</a></li>
-				<li><a href="https://stackexchange.com/users/4494355/ajl123">stack-overflow</a></li>
-				<li><a href="https://github.com/adam2392">github</a></li>
-				<li><a href="https://www.linkedin.com/in/adam2392">linkedin</a></li>
-			</ul>
-			</div>
-		</div>
-	  </div>
-	  <div class="content">
-	<div class='article'>
-		<div class="page-header"><h1>Setting Up Docker</h1></div>
-		<div class="well small">Permalink: <a class="more" href="https://adam2392.github.io/drafts/setup-docker.html">2018-06-17 00:00:00-04:00</a>
-by <a class="url fn" href="https://adam2392.github.io/author/adam-li.html">Adam Li </a>
- in <a href="https://adam2392.github.io/category/coding.html">Coding</a>
-tags: <a href="https://adam2392.github.io/tag/webdev.html">webdev</a> <a href="https://adam2392.github.io/tag/docker.html">docker</a> <a href="https://adam2392.github.io/tag/macos.html">macos</a> </div>
-		<div><h1>Getting Setup on Using Docker</h1>
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="https://adam2392.github.io/">Adam Li's blog <strong></strong></a></h1>
+        </header><!-- /#banner -->
+        <nav id="menu"><ul>
+            <li><a href="/categories.html">Blog</a></li>
+            <li><a href="/archives.html">Timeline</a></li>
+            <li><a href="/tags.html">Tags</a></li>
+            <li><a href="/pdfs/AdamLi_CV.pdf">Curriculum Vitae</a></li>
+            <li><a href="https://adam2392.github.io/contact/">Contact</a></li>
+        </ul></nav><!-- /#menu -->
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="https://adam2392.github.io/drafts/setup-docker.html" rel="bookmark"
+         title="Permalink to Setting Up Docker">Setting Up Docker</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+    <time class="published" datetime="2018-06-17T00:00:00-04:00">
+      Sun 17 June 2018
+    </time>
+    <address class="vcard author">
+      By           <a class="url fn" href="https://adam2392.github.io/author/adam-li.html">Adam Li</a>
+    </address>
+    <div class="category">
+        Category: <a href="https://adam2392.github.io/category/coding.html">Coding</a>
+    </div>
+    <div class="tags">
+        Tags:
+            <a href="https://adam2392.github.io/tag/webdev.html">webdev</a>
+            <a href="https://adam2392.github.io/tag/docker.html">docker</a>
+            <a href="https://adam2392.github.io/tag/macos.html">macos</a>
+    </div>
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <h1>Getting Setup on Using Docker</h1>
 <h1>By: Adam Li</h1>
 <h3>Table of Contents</h3>
 <!-- MarkdownTOC -->
@@ -208,18 +182,14 @@ tags: <a href="https://adam2392.github.io/tag/webdev.html">webdev</a> <a href="h
 <li>http://boot2docker.io/</li>
 <li>https://ryaneschinger.com/blog/dockerized-postgresql-development-environment/</li>
 <li></li>
-</ol></div>
-		<div>
-			<h2>Comments</h2>
-<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="adam2392">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-		<div>
-	</div>
-		<footer>
-		  <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
-		  <p>&copy; Adam Li</p>
-		</footer>
-	  </div>
-
-	</div>
+</ol>
+  </div><!-- /.entry-content -->
+</section>
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+        </footer><!-- /#contentinfo -->
 </body>
 </html>

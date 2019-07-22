@@ -61,13 +61,13 @@ AUTHOR_FEED_ATOM = None
 
 # to run the theme | for now, pelican-bootstrap3
 # THEME = "pelican-themes/pelican-bootstrap3"
+THEME = "pelican-themes/Responsive-Pelican"
 PLUGIN_PATHS = ["pelican-plugins"] 
 PLUGINS = [
 # "i18n_subsites",
  "render_math", "related_posts", "photos", \
 "pelican_javascript"]
 JINJA_ENVIRONMENT = {"extensions": ["jinja2.ext.i18n"]}
-THEME = "pelican-themes/bootstrap"
 
 # Main page
 MAIN_MENU = True
@@ -83,17 +83,14 @@ MENUITEMS = (("Blog", "/categories.html"),
              )
 
 # Blogroll
-LINKS = (("Pelican", "http://getpelican.com/"),
-         ("Python.org", "http://python.org/"),
-         ("Jinja2", "http://jinja.pocoo.org/"),
-         ("You can modify those links in your config file", "#"),)
+# LINKS = (("Pelican", "http://getpelican.com/"),)
 
 # Social widget
 GITHUB_URL = "https://github.com/adam2392"
 GITHUB_USER = "adam2392"
 TWITTER_USERNAME = "adam2392"
 SOCIAL = (("twitter", "https://twitter.com/adam2392"),
-		  ("stack-overflow", "https://stackexchange.com/users/4494355/ajl123"),
+		      ("stack-overflow", "https://stackexchange.com/users/4494355/ajl123"),
           ("github", "https://github.com/adam2392"),
           ("linkedin", "https://www.linkedin.com/in/adam2392"))
 
