@@ -3,6 +3,7 @@
 from __future__ import unicode_literals
 
 import yaml
+import gettext
 from collections import namedtuple
 def convert(dictionary):
 	return namedtuple("Image", dictionary.keys())(**dictionary)
@@ -50,24 +51,25 @@ TIMEZONE = "America/New_York"
 DEFAULT_LANG = "en"
 
 # Feed generation is usually not desired when developing
-FEED_ALL_ATOM = "feeds/all.atom.xml"
-FEED_ALL_RSS = "feeds/all.rss.xml"
-AUTHOR_FEED_RSS = "feeds/{slug}.rss.xml"
-RSS_FEED_SUMMARY_ONLY = False
-
-CATEGORY_FEED_ATOM = None
-TRANSLATION_FEED_ATOM = None
-AUTHOR_FEED_ATOM = None
+# FEED_ALL_ATOM = "feeds/all.atom.xml"
+# FEED_ALL_RSS = "feeds/all.rss.xml"
+# AUTHOR_FEED_RSS = "feeds/{slug}.rss.xml"
+# RSS_FEED_SUMMARY_ONLY = False
+# CATEGORY_FEED_ATOM = None
+# TRANSLATION_FEED_ATOM = None
+# AUTHOR_FEED_ATOM = None
 
 # to run the theme | for now, pelican-bootstrap3
-THEME = "pelican-themes/pelican-bootstrap3"
 # THEME = "pelican-themes/Responsive-Pelican"
-PLUGIN_PATHS = ["pelican-plugins"] 
-PLUGINS = [
-"i18n_subsites",
- "render_math", "related_posts", "photos", \
-"pelican_javascript"]
+PLUGIN_PATHS = ["./pelican-plugins"] 
 JINJA_ENVIRONMENT = {"extensions": ["jinja2.ext.i18n"]}
+PLUGINS = [
+ "render_math", "related_posts",
+"photos",
+"pelican_javascript",
+"i18n_subsites",
+]
+THEME = "./pelican-themes/pelican-bootstrap3"
 
 # Main page
 MAIN_MENU = True
