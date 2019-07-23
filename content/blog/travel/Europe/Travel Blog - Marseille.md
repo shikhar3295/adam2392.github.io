@@ -7,34 +7,34 @@ Authors: Adam Li
 Summary: A summary of how to visit Marseille and get the most out of your trip.
 
 # Europe - Marseille, France
-<!-- MarkdownTOC -->
+<!-- MarkdownTOC autolink="true" -->
 
-- General Suggestions
-    - Important Links
-        - If you need airbnb \(you'll get a free $40 off\):
-        - If you need uber \(you'll get a free ride!\):
-        - If you need taxify \(you'll get a free $5 off!\):
-    - Airports
-        - 1. Marseille Provence Airport
-    - Sights
-        - 1. Basilique Notre-Dame de la Garde
-        - 2. Les Calanques \(Best Thing!\)
-        - 3. Cathedral La Major
-        - 4. Vieux Port
-        - 5. Musee des Civilisations d'Europe
-        - 6. Parc Longchamp
-        - 7. Chateau d'lf
-        - 8. Frioul Archipelago
-    - Food
-        - 1. House of Raviolis
-        - 2. Le Maison Geney
-        - 3. Noodles Chop
-        - 4. Sur Le Pouce
-        - 5. Tapas Rojas
-        - 6. Tako-san
-    - Nightlife/Drinking
-    - Getting Around
-- FAQ
+- [General Suggestions](#general-suggestions)
+    - [Important Links](#important-links)
+        - [If you need airbnb \(you'll get a free $40 off\):](#if-you-need-airbnb-youll-get-a-free-%2440-off)
+        - [If you need uber \(you'll get a free ride!\):](#if-you-need-uber-youll-get-a-free-ride)
+        - [If you need taxify \(you'll get a free $5 off!\):](#if-you-need-taxify-youll-get-a-free-%245-off)
+    - [Airports](#airports)
+        - [1. Marseille Provence Airport](#1-marseille-provence-airport)
+    - [Sights](#sights)
+        - [1. Basilique Notre-Dame de la Garde](#1-basilique-notre-dame-de-la-garde)
+        - [2. Les Calanques \(Best Thing!\)](#2-les-calanques-best-thing)
+        - [3. Cathedral La Major](#3-cathedral-la-major)
+        - [4. Vieux Port](#4-vieux-port)
+        - [5. Musee des Civilisations d'Europe](#5-musee-des-civilisations-deurope)
+        - [6. Parc Longchamp](#6-parc-longchamp)
+        - [7. Chateau d'lf](#7-chateau-dlf)
+        - [8. Frioul Archipelago](#8-frioul-archipelago)
+    - [Food](#food)
+        - [1. House of Raviolis](#1-house-of-raviolis)
+        - [2. Le Maison Geney](#2-le-maison-geney)
+        - [3. Noodles Chop](#3-noodles-chop)
+        - [4. Sur Le Pouce](#4-sur-le-pouce)
+        - [5. Tapas Rojas](#5-tapas-rojas)
+        - [6. Tako-san](#6-tako-san)
+    - [Nightlife/Drinking](#nightlifedrinking)
+    - [Getting Around](#getting-around)
+- [FAQ](#faq)
 
 <!-- /MarkdownTOC -->
 

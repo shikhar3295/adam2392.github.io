@@ -7,30 +7,30 @@ Authors: Adam Li
 Summary: A summary of how to visit Amsterdam and get the most out of your trip.
 
 # Europe - Amsterdam, Netherlands
-<!-- MarkdownTOC -->
+<!-- MarkdownTOC autolink="true" -->
 
-- General Suggestions
-    - Important Links
-        - If you need airbnb \(you'll get a free $40 off\):
-        - If you need uber \(you'll get a free ride!\):
-        - If you need taxify \(you'll get a free $5 off!\):
-    - Airports
-        - 1. Schipol Airport
-    - Sights
-        - 1. De Gooyer Windmill \(and Brewery!\)
-        - 2. Red Light District
-        - 3. Van Gogh Museum
-        - 4. Rijksmuseum
-        - 5. Anne-Frank House
-    - Food
-        - 1. Indonesian Food \(Cafe Kadijk\)
-        - 2. Seafood Bar \(Spui\)
-        - 3. Stroopwafels
-    - Nightlife/Drinking
-        - 1. Rembrandt Square
-        - 2. Shelter
-        - 3. Jimmy Woos
-    - Getting Around
+- [General Suggestions](#general-suggestions)
+    - [Important Links](#important-links)
+        - [If you need airbnb \(you'll get a free $40 off\):](#if-you-need-airbnb-youll-get-a-free-%2440-off)
+        - [If you need uber \(you'll get a free ride!\):](#if-you-need-uber-youll-get-a-free-ride)
+        - [If you need taxify \(you'll get a free $5 off!\):](#if-you-need-taxify-youll-get-a-free-%245-off)
+    - [Airports](#airports)
+        - [1. Schipol Airport](#1-schipol-airport)
+    - [Sights](#sights)
+        - [1. De Gooyer Windmill \(and Brewery!\)](#1-de-gooyer-windmill-and-brewery)
+        - [2. Red Light District](#2-red-light-district)
+        - [3. Van Gogh Museum](#3-van-gogh-museum)
+        - [4. Rijksmuseum](#4-rijksmuseum)
+        - [5. Anne-Frank House](#5-anne-frank-house)
+    - [Food](#food)
+        - [1. Indonesian Food \(Cafe Kadijk\)](#1-indonesian-food-cafe-kadijk)
+        - [2. Seafood Bar \(Spui\)](#2-seafood-bar-spui)
+        - [3. Stroopwafels](#3-stroopwafels)
+    - [Nightlife/Drinking](#nightlifedrinking)
+        - [1. Rembrandt Square](#1-rembrandt-square)
+        - [2. Shelter](#2-shelter)
+        - [3. Jimmy Woos](#3-jimmy-woos)
+    - [Getting Around](#getting-around)
 
 <!-- /MarkdownTOC -->
 

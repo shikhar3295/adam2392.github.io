@@ -7,25 +7,25 @@ Authors: Adam Li
 Summary: A summary of how to visit Switzerland and get the most out of your trip.
 
 # Europe - Switzerland
-<!-- MarkdownTOC -->
+<!-- MarkdownTOC autolink="true" -->
 
-- General Suggestions
-    - Important Links
-            - If you need airbnb \(you'll get a free $40 off\):
-            - If you need uber \(you'll get a free ride!\):
-    - Airports
-    - Sights
-        - 1. Lucerne \(Luzern\)
-        - 2. Mount Pilatus
-        - 3. Zurich
-        - 4. Geneva
-    - Food
-        - 
-    - Nightlife/Drinking
-        - 1. Volkshaus
-        - 2. Langstrasse Street
-    - Getting Around
-- FAQ
+- [General Suggestions](#general-suggestions)
+    - [Important Links](#important-links)
+            - [If you need airbnb \(you'll get a free $40 off\):](#if-you-need-airbnb-youll-get-a-free-%2440-off)
+            - [If you need uber \(you'll get a free ride!\):](#if-you-need-uber-youll-get-a-free-ride)
+    - [Airports](#airports)
+    - [Sights](#sights)
+        - [1. Lucerne \(Luzern\)](#1-lucerne-luzern)
+        - [2. Mount Pilatus](#2-mount-pilatus)
+        - [3. Zurich](#3-zurich)
+        - [4. Geneva](#4-geneva)
+    - [Food](#food)
+        - [](#)
+    - [Nightlife/Drinking](#nightlifedrinking)
+        - [1. Volkshaus](#1-volkshaus)
+        - [2. Langstrasse Street](#2-langstrasse-street)
+    - [Getting Around](#getting-around)
+- [FAQ](#faq)
 
 <!-- /MarkdownTOC -->
 

@@ -7,24 +7,24 @@ Authors: Adam Li
 Summary: A walkthrough of my experience in Seoul.
 
 # Asia - Seoul, South Korea
-<!-- MarkdownTOC -->
+<!-- MarkdownTOC autolink="true" -->
 
-- General Suggestions
-    - Important Links
-        - If you need airbnb \(you'll get a free $40 off\):
-        - If you need uber \(you'll get a free ride!\):
-        - If you need taxify \(you'll get a free $5 off!\):
-    - Sights
-        - 1. Namsan Tower
-        - 2. Gwanghwamun Palace and Gyeongbukgong Palace
-        - 3. Bukchon Village
-        - 4. Cheonggyecheon Stream
-        - 5. Namdaemun Market
-        - 6. Dragon Hill Spa
-    - Food
-    - Nightlife/Drinking
-    - Getting Around
-- FAQ
+- [General Suggestions](#general-suggestions)
+    - [Important Links](#important-links)
+        - [If you need airbnb \(you'll get a free $40 off\):](#if-you-need-airbnb-youll-get-a-free-%2440-off)
+        - [If you need uber \(you'll get a free ride!\):](#if-you-need-uber-youll-get-a-free-ride)
+        - [If you need taxify \(you'll get a free $5 off!\):](#if-you-need-taxify-youll-get-a-free-%245-off)
+    - [Sights](#sights)
+        - [1. Namsan Tower](#1-namsan-tower)
+        - [2. Gwanghwamun Palace and Gyeongbukgong Palace](#2-gwanghwamun-palace-and-gyeongbukgong-palace)
+        - [3. Bukchon Village](#3-bukchon-village)
+        - [4. Cheonggyecheon Stream](#4-cheonggyecheon-stream)
+        - [5. Namdaemun Market](#5-namdaemun-market)
+        - [6. Dragon Hill Spa](#6-dragon-hill-spa)
+    - [Food](#food)
+    - [Nightlife/Drinking](#nightlifedrinking)
+    - [Getting Around](#getting-around)
+- [FAQ](#faq)
 
 <!-- /MarkdownTOC -->
 # General Suggestions

@@ -7,23 +7,23 @@ Authors: Adam Li
 Summary: A summary of how to visit Dublin and get the most out of your trip.
 
 # Europe - Dublin, Ireland
-<!-- MarkdownTOC -->
+<!-- MarkdownTOC autolink="true" -->
 
-- General Suggestions
-    - Important Links
-        - If you need airbnb \(you'll get a free $40 off\):
-        - If you need uber \(you'll get a free ride!\):
-        - If you need taxify \(you'll get a free $5 off!\):
-    - Airports
-        - 1. Dublin Airport
-    - Sights
-        - 1. Guiness St. James Gate Brewery
-        - 2. Jameson Distillery
-    - Food
-        - 1. Klaw
-    - Nightlife/Drinking
-        - 1. Temple Bar
-    - Getting Around
+- [General Suggestions](#general-suggestions)
+    - [Important Links](#important-links)
+        - [If you need airbnb \(you'll get a free $40 off\):](#if-you-need-airbnb-youll-get-a-free-%2440-off)
+        - [If you need uber \(you'll get a free ride!\):](#if-you-need-uber-youll-get-a-free-ride)
+        - [If you need taxify \(you'll get a free $5 off!\):](#if-you-need-taxify-youll-get-a-free-%245-off)
+    - [Airports](#airports)
+        - [1. Dublin Airport](#1-dublin-airport)
+    - [Sights](#sights)
+        - [1. Guiness St. James Gate Brewery](#1-guiness-st-james-gate-brewery)
+        - [2. Jameson Distillery](#2-jameson-distillery)
+    - [Food](#food)
+        - [1. Klaw](#1-klaw)
+    - [Nightlife/Drinking](#nightlifedrinking)
+        - [1. Temple Bar](#1-temple-bar)
+    - [Getting Around](#getting-around)
 
 <!-- /MarkdownTOC -->
 

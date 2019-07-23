@@ -7,31 +7,31 @@ Authors: Adam Li
 Summary: A summary of how to visit Paris and get the most out of your trip.
 
 # Europe - Lyon, France
-<!-- MarkdownTOC -->
+<!-- MarkdownTOC autolink="true" -->
 
-- General Suggestions
-    - Important Links
-        - If you need airbnb \(you'll get a free $40 off\):
-        - If you need uber \(you'll get a free ride!\):
-        - If you need taxify \(you'll get a free $5 off!\):
-    - Airports
-        - 1. Charles De Gaulle Airport
-        - 2. Orly Airport
-    - Sights
-        - 1. Eiffel Tower
-        - 2. Champs De Lysee \(I think that's how it's spelled\)
-        - 3. Sacre-Coeur
-        - 4. Louvre
-        - 5. Les Catacombes de Paris
-        - 6. Arc de Triomphe
-        - 7. Cathedrale Notre-Dame de Paris
-    - Food
-        - 1. Robert et Louis
-        - 2. La Duree
-    - Nightlife/Drinking
-        - 1. Wine Drinking On the Seine/Near Eiffel Tower:
-    - Getting Around
-- FAQ
+- [General Suggestions](#general-suggestions)
+    - [Important Links](#important-links)
+        - [If you need airbnb \(you'll get a free $40 off\):](#if-you-need-airbnb-youll-get-a-free-%2440-off)
+        - [If you need uber \(you'll get a free ride!\):](#if-you-need-uber-youll-get-a-free-ride)
+        - [If you need taxify \(you'll get a free $5 off!\):](#if-you-need-taxify-youll-get-a-free-%245-off)
+    - [Airports](#airports)
+        - [1. Charles De Gaulle Airport](#1-charles-de-gaulle-airport)
+        - [2. Orly Airport](#2-orly-airport)
+    - [Sights](#sights)
+        - [1. Eiffel Tower](#1-eiffel-tower)
+        - [2. Champs De Lysee \(I think that's how it's spelled\)](#2-champs-de-lysee-i-think-thats-how-its-spelled)
+        - [3. Sacre-Coeur](#3-sacre-coeur)
+        - [4. Louvre](#4-louvre)
+        - [5. Les Catacombes de Paris](#5-les-catacombes-de-paris)
+        - [6. Arc de Triomphe](#6-arc-de-triomphe)
+        - [7. Cathedrale Notre-Dame de Paris](#7-cathedrale-notre-dame-de-paris)
+    - [Food](#food)
+        - [1. Robert et Louis](#1-robert-et-louis)
+        - [2. La Duree](#2-la-duree)
+    - [Nightlife/Drinking](#nightlifedrinking)
+        - [1. Wine Drinking On the Seine/Near Eiffel Tower:](#1-wine-drinking-on-the-seinenear-eiffel-tower)
+    - [Getting Around](#getting-around)
+- [FAQ](#faq)
 
 <!-- /MarkdownTOC -->
 

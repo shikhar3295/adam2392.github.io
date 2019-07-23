@@ -7,16 +7,29 @@ Authors: Adam Li
 Summary: A summary of how to visit Budapest and get the most out of your trip.
 
 # Europe - Budapest, Hungary
-<!-- MarkdownTOC -->
+<!-- MarkdownTOC autolink="true" -->
 
-- General Suggestions
-    - Important Links
-    - Airports
-    - Sights/Activities
-    - Food
-    - Nightlife/Drinking
-    - Getting Around
-- FAQ
+- [General Suggestions](#general-suggestions)
+    - [Important Links](#important-links)
+        - [If you need airbnb \(you'll get a free $40 off\):](#if-you-need-airbnb-youll-get-a-free-%2440-off)
+        - [If you need taxify \(you'll get a free $5 off!\):](#if-you-need-taxify-youll-get-a-free-%245-off)
+        - [Sample Itinerary](#sample-itinerary)
+    - [Airports](#airports)
+        - [1. Budapest International Airport](#1-budapest-international-airport)
+    - [Sights/Activities](#sightsactivities)
+        - [1. Szechenyi Baths](#1-szechenyi-baths)
+        - [2. River Danube Tour](#2-river-danube-tour)
+        - [3. Matthias Church / Buda Castle / Fisherman's Bastion](#3-matthias-church--buda-castle--fishermans-bastion)
+        - [4. St. Stephen's Basilisque](#4-st-stephens-basilisque)
+        - [5. Hungarian Parliament Building](#5-hungarian-parliament-building)
+    - [Food](#food)
+        - [1. KonyvBar & Restaurant](#1-konyvbar--restaurant)
+        - [2. Gelato Rosa](#2-gelato-rosa)
+    - [Nightlife/Drinking](#nightlifedrinking)
+        - [1. Ruin Bars:](#1-ruin-bars)
+        - [2. Peaches & Cream](#2-peaches--cream)
+    - [Getting Around](#getting-around)
+- [FAQ](#faq)
 
 <!-- /MarkdownTOC -->
 

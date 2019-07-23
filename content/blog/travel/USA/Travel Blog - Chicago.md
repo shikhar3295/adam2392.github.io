@@ -10,17 +10,40 @@ Gallery: {photo}chicago
 # Chicago, Illinois, USA
 ### Table of Contents
 
-<!-- MarkdownTOC -->
+<!-- MarkdownTOC autolink="true" -->
 
-- General Suggestions
-    - Important Links
-    - Airports
-    - Sights
-    - Food
-    - Nightlife/Drinking
-    - Getting Around
-- FAQ
-- Images in Chicago
+- [General Suggestions](#general-suggestions)
+    - [Important Links](#important-links)
+        - [If you need airbnb \(you'll get a free $40 off\):](#if-you-need-airbnb-youll-get-a-free-%2440-off)
+        - [If you need uber \(you'll get a free ride!\):](#if-you-need-uber-youll-get-a-free-ride)
+        - [If you need taxify \(you'll get a free $5 off!\):](#if-you-need-taxify-youll-get-a-free-%245-off)
+        - [If you need lyft \(you'll get a free ride!\):](#if-you-need-lyft-youll-get-a-free-ride)
+    - [Airports](#airports)
+    - [Sights](#sights)
+        - [1. Cloud Gate / Millenium Park:](#1-cloud-gate--millenium-park)
+        - [2. Art Institute of Chicago:](#2-art-institute-of-chicago)
+        - [3. Chicago Architecture River Tour:](#3-chicago-architecture-river-tour)
+        - [4. Willis Tower / Sears Tower:](#4-willis-tower--sears-tower)
+        - [5. Lincoln Park Zoo:](#5-lincoln-park-zoo)
+        - [6. Crown Fountain:](#6-crown-fountain)
+        - [7. Navy Pier:](#7-navy-pier)
+        - [8. River Walk:](#8-river-walk)
+    - [Food](#food)
+        - [1. Deep Dish Pizza:](#1-deep-dish-pizza)
+        - [2. Garrett's Popcorn:](#2-garretts-popcorn)
+        - [3. Purple Pig:](#3-purple-pig)
+        - [4. Girl on the Goat:](#4-girl-on-the-goat)
+        - [5. Wildberry Cafe:](#5-wildberry-cafe)
+    - [Nightlife/Drinking](#nightlifedrinking)
+        - [1. The Mid:](#1-the-mid)
+        - [2. Sound Bar:](#2-sound-bar)
+        - [3. Three Dots and a Dash:](#3-three-dots-and-a-dash)
+        - [4. Signature Room:](#4-signature-room)
+        - [5. JPark Rooftop Bar:](#5-jpark-rooftop-bar)
+        - [6. Goose Island Brewery:](#6-goose-island-brewery)
+    - [Getting Around](#getting-around)
+- [FAQ](#faq)
+- [Images in Chicago](#images-in-chicago)
 
 <!-- /MarkdownTOC -->
 # General Suggestions

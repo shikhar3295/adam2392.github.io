@@ -8,15 +8,27 @@ Summary: A summary of how to visit Berlin and get the most out of your trip.
 status: draft
 
 # Europe - Berlin, Germany
-<!-- MarkdownTOC -->
+<!-- MarkdownTOC autolink="true" -->
 
-- General Suggestions
-    - Important Links
-    - Airports
-    - Sights
-    - Food
-    - Nightlife/Drinking
-    - Getting Around
+- [General Suggestions](#general-suggestions)
+    - [Important Links](#important-links)
+        - [If you need airbnb \(you'll get a free $40 off\):](#if-you-need-airbnb-youll-get-a-free-%2440-off)
+        - [If you need uber \(you'll get a free ride!\):](#if-you-need-uber-youll-get-a-free-ride)
+        - [If you need taxify \(you'll get a free $5 off!\):](#if-you-need-taxify-youll-get-a-free-%245-off)
+    - [Airports](#airports)
+        - [1. Berlin Airport](#1-berlin-airport)
+    - [Sights](#sights)
+        - [1. Bradenburg Gate](#1-bradenburg-gate)
+        - [2. Berlin Wall \(or what's left of it\)](#2-berlin-wall-or-whats-left-of-it)
+        - [3. East Berlin](#3-east-berlin)
+        - [4.](#4)
+    - [Food](#food)
+        - [1. Burgermeister](#1-burgermeister)
+        - [2. Mustafas Gamas](#2-mustafas-gamas)
+        - [3. Currywurst](#3-currywurst)
+    - [Nightlife/Drinking](#nightlifedrinking)
+        - [1.](#1)
+    - [Getting Around](#getting-around)
 
 <!-- /MarkdownTOC -->
 
@@ -35,22 +47,22 @@ status: draft
 
 
 ## Sights
-#### 1. London Eye
+#### 1. Bradenburg Gate
 
-#### 2. Buckingham Palace / Big Ben
+#### 2. Berlin Wall (or what's left of it)
 
-#### 3. Millenium Bridge / Tower Bridge
+#### 3. East Berlin
 
 #### 4. 
 
 ## Food
 Here, I briefly describe a couple of food places that are worth the HYPE. For locations, just use google, or yelp.
 
-#### 1. 
+#### 1. Burgermeister
 
-#### 2. Burger and Lobster:
+#### 2. Mustafas Gamas
 
-#### 3. Chick N Sours:
+#### 3. Currywurst
 
 
 ## Nightlife/Drinking

@@ -8,22 +8,22 @@ Summary: A walkthrough of my experience in Vietnam.
 status: draft
 
 # Asia - Vietnam
-<!-- MarkdownTOC -->
+<!-- MarkdownTOC autolink="true" -->
 
-- General Suggestions
-    - Important Links
-        - If you need airbnb \(you'll get a free $40 off\):
-        - If you need uber \(you'll get a free ride!\):
-    - Airports
-        - 1. Hanoi Airport
-    - Hanoi:
-    - Halong Bay:
-    - Food
-        - 1.
-    - Nightlife/Drinking
-    - Getting Around
-    - Visa Into Vietnam
-- FAQ
+- [General Suggestions](#general-suggestions)
+    - [Important Links](#important-links)
+        - [If you need airbnb \(you'll get a free $40 off\):](#if-you-need-airbnb-youll-get-a-free-%2440-off)
+        - [If you need uber \(you'll get a free ride!\):](#if-you-need-uber-youll-get-a-free-ride)
+    - [Airports](#airports)
+        - [1. Hanoi Airport](#1-hanoi-airport)
+    - [Hanoi:](#hanoi)
+    - [Halong Bay:](#halong-bay)
+    - [Food](#food)
+        - [1.](#1)
+    - [Nightlife/Drinking](#nightlifedrinking)
+    - [Getting Around](#getting-around)
+    - [Visa Into Vietnam](#visa-into-vietnam)
+- [FAQ](#faq)
 
 <!-- /MarkdownTOC -->
 

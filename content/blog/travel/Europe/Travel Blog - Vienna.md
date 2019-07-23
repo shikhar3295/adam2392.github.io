@@ -8,16 +8,24 @@ Summary: A summary of how to visit Vienna and get the most out of your trip.
 status: draft
 
 # Europe - Vienna, Austria
-<!-- MarkdownTOC -->
+<!-- MarkdownTOC autolink="true" -->
 
-- General Suggestions
-    - Important Links
-    - Airports
-    - Sights/Activities
-    - Food
-    - Nightlife/Drinking
-    - Getting Around
-- FAQ
+- [General Suggestions](#general-suggestions)
+    - [Important Links](#important-links)
+        - [If you need airbnb \(you'll get a free $40 off\):](#if-you-need-airbnb-youll-get-a-free-%2440-off)
+        - [If you need taxify \(you'll get a free $5 off!\):](#if-you-need-taxify-youll-get-a-free-%245-off)
+    - [Airports](#airports)
+        - [1. Vienna International Airport](#1-vienna-international-airport)
+    - [Sights/Activities](#sightsactivities)
+        - [1. Schonbrunn Palace](#1-schonbrunn-palace)
+        - [2. Hofburg](#2-hofburg)
+    - [Food](#food)
+    - [Nightlife/Drinking](#nightlifedrinking)
+        - [1.](#1)
+    - [Getting Around](#getting-around)
+        - [1. Buses/Metro](#1-busesmetro)
+        - [2. Walking](#2-walking)
+- [FAQ](#faq)
 
 <!-- /MarkdownTOC -->
 

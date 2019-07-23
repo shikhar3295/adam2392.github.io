@@ -8,30 +8,30 @@ Summary: A walkthrough of my experience in Los Angeles.
 status: draft
 
 # Los Angeles, CA
-<!-- MarkdownTOC -->
+<!-- MarkdownTOC autolink="true" -->
 
-- General Suggestions
-    - Important Links
-        - If you need airbnb \(you'll get a free $40 off\):
-        - If you need uber \(you'll get a free ride!\):
-        - If you need lyft \(you'll get a free ride!\):
-    - Sights
-        - 1. Peabody Library:
-        - 2. Inner Harbor:
-        - 3. National Aquarium:
-        - 4. Fort Mchenry:
-    - Food
-        - 1. Miss Shirley's Cafe:
-        - 2. Woodberry Kitchen:
-        - 3. Chocolate Over Water:
-        - 4. Abbey's Burger House:
-        - 5. LP Steamers:
-    - Nightlife/Drinking
-        - 1. Fell's Point:
-        - 2. Federal Hill \(Fed Hill\):
-        - 3. Mt. Vernon / Charles Village:
-    - Getting Around
-- FAQ
+- [General Suggestions](#general-suggestions)
+    - [Important Links](#important-links)
+        - [If you need airbnb \(you'll get a free $40 off\):](#if-you-need-airbnb-youll-get-a-free-%2440-off)
+        - [If you need uber \(you'll get a free ride!\):](#if-you-need-uber-youll-get-a-free-ride)
+        - [If you need lyft \(you'll get a free ride!\):](#if-you-need-lyft-youll-get-a-free-ride)
+    - [Sights](#sights)
+        - [1. Peabody Library:](#1-peabody-library)
+        - [2. Inner Harbor:](#2-inner-harbor)
+        - [3. National Aquarium:](#3-national-aquarium)
+        - [4. Fort Mchenry:](#4-fort-mchenry)
+    - [Food](#food)
+        - [1. Miss Shirley's Cafe:](#1-miss-shirleys-cafe)
+        - [2. Woodberry Kitchen:](#2-woodberry-kitchen)
+        - [3. Chocolate Over Water:](#3-chocolate-over-water)
+        - [4. Abbey's Burger House:](#4-abbeys-burger-house)
+        - [5. LP Steamers:](#5-lp-steamers)
+    - [Nightlife/Drinking](#nightlifedrinking)
+        - [1. Fell's Point:](#1-fells-point)
+        - [2. Federal Hill \(Fed Hill\):](#2-federal-hill-fed-hill)
+        - [3. Mt. Vernon / Charles Village:](#3-mt-vernon--charles-village)
+    - [Getting Around](#getting-around)
+- [FAQ](#faq)
 
 <!-- /MarkdownTOC -->
 # General Suggestions

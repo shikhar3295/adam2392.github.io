@@ -8,44 +8,44 @@ Summary: A summary of how to visit Portugal and get the most out of your trip.
 status: draft
 
 # Europe - Portugal (Lisbon and Porto)
-<!-- MarkdownTOC -->
+<!-- MarkdownTOC autolink="true" -->
 
-- General Suggestions
-    - Important Links
-        - If you need airbnb \(you'll get a free $40 off\):
-        - If you need uber \(you'll get a free ride!\):
-        - If you need taxify \(you'll get a free $5 off!\):
-    - Airports
-        - 1. Lisbon Airport
-        - 2. Porto Airport
-    - Sights \(Lisbon\)
-        - 1. Torre de Belem
-        - 2. Alfama \(Sé Catedral, Miradouro da Nossa Senhora do Monte and Miradouro Portas do Sol\)
-        - 3. Sintra Palaces \(Pena Palace\)
-        - 4. Sintra \(\)
-        - 5.
-    - Sights \(Porto\)
-        - 1. Ponte de Dom Luis I
-        - 2. Cais de Ribeira
-        - 3.
-    - Food
-        - 1. Egg Tarts
-        - 2. Estamine Art Food Drink \(Thu - Mon 2:00 PM - 8:00 PM\)
-        - 3. Ramiro \(seafood\)
-    - Food \(Porto\)
-        - 1. Puorto
-        - 2. Gazela Cachorrinhos da Batalha
-        - 3. Bota & Bira
-        - 4. Tapabento
-    - Nightlife/Drinking
-        - 1. Wine bars and Bar Hopping
-        - 2.
-        - 3.
-    - Nightlife/Drinking \(Porto\)
-        - 1. Wine Quay Bar
-        - 2.
-        - 3.
-    - Getting Around
+- [General Suggestions](#general-suggestions)
+    - [Important Links](#important-links)
+        - [If you need airbnb \(you'll get a free $40 off\):](#if-you-need-airbnb-youll-get-a-free-%2440-off)
+        - [If you need uber \(you'll get a free ride!\):](#if-you-need-uber-youll-get-a-free-ride)
+        - [If you need taxify \(you'll get a free $5 off!\):](#if-you-need-taxify-youll-get-a-free-%245-off)
+    - [Airports](#airports)
+        - [1. Lisbon Airport](#1-lisbon-airport)
+        - [2. Porto Airport](#2-porto-airport)
+    - [Sights \(Lisbon\)](#sights-lisbon)
+        - [1. Torre de Belem](#1-torre-de-belem)
+        - [2. Alfama \(Sé Catedral, Miradouro da Nossa Senhora do Monte and Miradouro Portas do Sol\)](#2-alfama-s%C3%A9-catedral-miradouro-da-nossa-senhora-do-monte-and-miradouro-portas-do-sol)
+        - [3. Sintra Palaces \(Pena Palace\)](#3-sintra-palaces-pena-palace)
+        - [4. Sintra \(\)](#4-sintra-)
+        - [5.](#5)
+    - [Sights \(Porto\)](#sights-porto)
+        - [1. Ponte de Dom Luis I](#1-ponte-de-dom-luis-i)
+        - [2. Cais de Ribeira](#2-cais-de-ribeira)
+        - [3.](#3)
+    - [Food](#food)
+        - [1. Egg Tarts](#1-egg-tarts)
+        - [2. Estamine Art Food Drink \(Thu - Mon 2:00 PM - 8:00 PM\)](#2-estamine-art-food-drink-thu---mon-200-pm---800-pm)
+        - [3. Ramiro \(seafood\)](#3-ramiro-seafood)
+    - [Food \(Porto\)](#food-porto)
+        - [1. Puorto](#1-puorto)
+        - [2. Gazela Cachorrinhos da Batalha](#2-gazela-cachorrinhos-da-batalha)
+        - [3. Bota & Bira](#3-bota--bira)
+        - [4. Tapabento](#4-tapabento)
+    - [Nightlife/Drinking](#nightlifedrinking)
+        - [1. Wine bars and Bar Hopping](#1-wine-bars-and-bar-hopping)
+        - [2.](#2)
+        - [3.](#3-1)
+    - [Nightlife/Drinking \(Porto\)](#nightlifedrinking-porto)
+        - [1. Wine Quay Bar](#1-wine-quay-bar)
+        - [2.](#2-1)
+        - [3.](#3-2)
+    - [Getting Around](#getting-around)
 
 <!-- /MarkdownTOC -->
 

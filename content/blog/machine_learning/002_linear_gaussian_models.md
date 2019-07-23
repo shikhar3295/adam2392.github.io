@@ -6,36 +6,36 @@ Slug: gaussian-generative-models
 Authors: Adam Li
 Summary: An overview of linear gaussian models and how in general, they fall under the learning procedure (system idenfitication) of Expectation-Maximization.
 
-<!-- MarkdownTOC -->
+<!-- MarkdownTOC autolink="true" -->
 
-- Background
-- Methods
-    - Most General Linear Gaussian Model
-    - General Expectation Maximization
-    - Kalman Filter/Smoothing
-- Important Models And Connections With Control Theory
-    - Static Models \(i.e. time is not a factor\)
-        - Continuous State
-        - Discrete State
-    - Dynamical Models \(i.e. time is a factor\)
-        - Continuous State - Kalman Filter Models
-        - Discrete State - Hidden Markov Models
-    - Non-Gaussian Models \(i.e. noise terms are no longer normally distributed\)
-    - Control Theory Type Problems
-- Conclusions for Gaussian Linear Models
-        - Dynamic Version of PCA/KMeans?
-- Extensions of Gaussian Linear Models
-    - Low Rank Tensors \(to generalize space, time and other variable dimensions!\)
-    - Deep Kalman Filter
-        - Caveats of the DKF
-    - Deep Extend To Control \(EC2\)
-    - Deep Variational Bayes Filter
-    - Deep Koopman Model
-        - Quick Koopman Theory Overview
-        - Now the Deep Koopman Model
-    - Deep Kalman Variational Autoencoders \(DKVAE\)
-    - Possibilities for Improved Deep State Space Models \(DSSM\)
-- References:
+- [Background](#background)
+- [Methods](#methods)
+    - [Most General Linear Gaussian Model](#most-general-linear-gaussian-model)
+    - [General Expectation Maximization](#general-expectation-maximization)
+    - [Kalman Filter/Smoothing](#kalman-filtersmoothing)
+- [Important Models And Connections With Control Theory](#important-models-and-connections-with-control-theory)
+    - [Static Models \(i.e. time is not a factor\)](#static-models-ie-time-is-not-a-factor)
+        - [Continuous State](#continuous-state)
+        - [Discrete State](#discrete-state)
+    - [Dynamical Models \(i.e. time is a factor\)](#dynamical-models-ie-time-is-a-factor)
+        - [Continuous State - Kalman Filter Models](#continuous-state---kalman-filter-models)
+        - [Discrete State - Hidden Markov Models](#discrete-state---hidden-markov-models)
+    - [Non-Gaussian Models \(i.e. noise terms are no longer normally distributed\)](#non-gaussian-models-ie-noise-terms-are-no-longer-normally-distributed)
+    - [Control Theory Type Problems](#control-theory-type-problems)
+- [Conclusions for Gaussian Linear Models](#conclusions-for-gaussian-linear-models)
+        - [Dynamic Version of PCA/KMeans?](#dynamic-version-of-pcakmeans)
+- [Extensions of Gaussian Linear Models](#extensions-of-gaussian-linear-models)
+    - [Low Rank Tensors \(to generalize space, time and other variable dimensions!\)](#low-rank-tensors-to-generalize-space-time-and-other-variable-dimensions)
+    - [Deep Kalman Filter](#deep-kalman-filter)
+        - [Caveats of the DKF](#caveats-of-the-dkf)
+    - [Deep Extend To Control \(EC2\)](#deep-extend-to-control-ec2)
+    - [Deep Variational Bayes Filter](#deep-variational-bayes-filter)
+    - [Deep Koopman Model](#deep-koopman-model)
+        - [Quick Koopman Theory Overview](#quick-koopman-theory-overview)
+        - [Now the Deep Koopman Model](#now-the-deep-koopman-model)
+    - [Deep Kalman Variational Autoencoders \(DKVAE\)](#deep-kalman-variational-autoencoders-dkvae)
+    - [Possibilities for Improved Deep State Space Models \(DSSM\)](#possibilities-for-improved-deep-state-space-models-dssm)
+- [References:](#references)
 
 <!-- /MarkdownTOC -->
 

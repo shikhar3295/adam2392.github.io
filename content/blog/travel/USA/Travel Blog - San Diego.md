@@ -8,30 +8,30 @@ Summary: A walkthrough of my experience in San Diego.
 status: draft
 
 # San Diego, CA
-<!-- MarkdownTOC -->
+<!-- MarkdownTOC autolink="true" -->
 
-- General Suggestions
-    - Important Links
-        - If you need airbnb \(you'll get a free $40 off\):
-        - If you need uber \(you'll get a free ride!\):
-        - If you need lyft \(you'll get a free ride!\):
-    - Sights
-        - 1. Coronado Island \(and beach\):
-        - 2. Mission Harbor:
-        - 3.
-        - 4. Geisel Library \(UCSD / La Jolla\):
-        - 5. Blacks Beach, La Jolla:
-    - Food
-        - 1. Oscars Taco Shop
-        - 2. Vallartas
-        - 3. Snooze Cafe for Brunch
-        - 4. Taco Stand \(downtown La Jolla\):
-        - 5. Tacos El Gordo
-    - Nightlife/Drinking
-        - 1. Gaslamp District
-        - 2. NorthPark
-    - Getting Around
-- FAQ
+- [General Suggestions](#general-suggestions)
+    - [Important Links](#important-links)
+        - [If you need airbnb \(you'll get a free $40 off\):](#if-you-need-airbnb-youll-get-a-free-%2440-off)
+        - [If you need uber \(you'll get a free ride!\):](#if-you-need-uber-youll-get-a-free-ride)
+        - [If you need lyft \(you'll get a free ride!\):](#if-you-need-lyft-youll-get-a-free-ride)
+    - [Sights](#sights)
+        - [1. Coronado Island \(and beach\):](#1-coronado-island-and-beach)
+        - [2. Mission Harbor:](#2-mission-harbor)
+        - [3.](#3)
+        - [4. Geisel Library \(UCSD / La Jolla\):](#4-geisel-library-ucsd--la-jolla)
+        - [5. Blacks Beach, La Jolla:](#5-blacks-beach-la-jolla)
+    - [Food](#food)
+        - [1. Oscars Taco Shop](#1-oscars-taco-shop)
+        - [2. Vallartas](#2-vallartas)
+        - [3. Snooze Cafe for Brunch](#3-snooze-cafe-for-brunch)
+        - [4. Taco Stand \(downtown La Jolla\):](#4-taco-stand-downtown-la-jolla)
+        - [5. Tacos El Gordo](#5-tacos-el-gordo)
+    - [Nightlife/Drinking](#nightlifedrinking)
+        - [1. Gaslamp District](#1-gaslamp-district)
+        - [2. NorthPark](#2-northpark)
+    - [Getting Around](#getting-around)
+- [FAQ](#faq)
 
 <!-- /MarkdownTOC -->
 # General Suggestions

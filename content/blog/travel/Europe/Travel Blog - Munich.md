@@ -7,15 +7,36 @@ Authors: Adam Li
 Summary: A summary of how to visit Munich and get the most out of your trip.
 
 # Europe - Munich, Germany
-<!-- MarkdownTOC -->
+<!-- MarkdownTOC autolink="true" -->
 
-- General Suggestions
-    - Important Links
-    - Airports
-    - Sights
-    - Food
-    - Nightlife/Drinking
-    - Getting Around
+- [General Suggestions](#general-suggestions)
+    - [Important Links](#important-links)
+            - [If you need airbnb \(you'll get a free $40 off\):](#if-you-need-airbnb-youll-get-a-free-%2440-off)
+            - [If you need uber \(you'll get a free ride!\):](#if-you-need-uber-youll-get-a-free-ride)
+            - [If you need taxify \(you'll get a free $5 off!\):](#if-you-need-taxify-youll-get-a-free-%245-off)
+    - [Airports](#airports)
+    - [Sights](#sights)
+        - [0. Dachau Concentration Camp \(!\)](#0-dachau-concentration-camp-)
+        - [1. Museum Brandhorst](#1-museum-brandhorst)
+        - [2. St Peter's Church Tower / Marianplatz](#2-st-peters-church-tower--marianplatz)
+        - [3. Eisbachwelle](#3-eisbachwelle)
+        - [4. Hofgarten](#4-hofgarten)
+        - [5. Friedensengel \(Angel of Peace\)](#5-friedensengel-angel-of-peace)
+        - [6. English Garden \(Monopterus\)](#6-english-garden-monopterus)
+        - [7. BMW Museum](#7-bmw-museum)
+        - [8. Nymphenburg Palace](#8-nymphenburg-palace)
+        - [10. Flaucher](#10-flaucher)
+    - [Food](#food)
+        - [1. Pasta e Basta](#1-pasta-e-basta)
+        - [2. Steinhall 16](#2-steinhall-16)
+        - [3. Viktualienmarkt](#3-viktualienmarkt)
+        - [4. Haufbrohaus](#4-haufbrohaus)
+        - [5. Burrito Company](#5-burrito-company)
+        - [6. Augustiner Braustuben](#6-augustiner-braustuben)
+    - [Nightlife/Drinking](#nightlifedrinking)
+        - [1. Oktoberfest](#1-oktoberfest)
+        - [2. Christmas Markets](#2-christmas-markets)
+    - [Getting Around](#getting-around)
 
 <!-- /MarkdownTOC -->
 

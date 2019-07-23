@@ -7,32 +7,32 @@ Authors: Adam Li
 Summary: A summary of how to visit Nice and get the most out of your trip.
 
 # Europe - Nice, France
-<!-- MarkdownTOC -->
+<!-- MarkdownTOC autolink="true" -->
 
-- General Suggestions
-    - Important Links
-        - If you need airbnb \(you'll get a free $40 off\):
-        - If you need uber \(you'll get a free ride!\):
-        - If you need taxify \(you'll get a free $5 off!\):
-    - Airports
-        - 1. Nice Airport
-    - Hostel
-        - 1. Hostel Antares
-    - Sights
-        - 1. Castle Hill
-        - 2. Monaco
-        - 3. Promenade Des Anglais
-        - 4. Cannes
-    - Food
-        - 1. Chez Moi
-        - 2. Illia Pasta
-        - 3. Chez Pipo
-        - 4. Cafe de Turin
-    - Nightlife/Drinking
-        - 1. Wine Drinking On Promenade Des Anglais:
-        - 2. Wayne Bar
-    - Getting Around
-- FAQ
+- [General Suggestions](#general-suggestions)
+    - [Important Links](#important-links)
+        - [If you need airbnb \(you'll get a free $40 off\):](#if-you-need-airbnb-youll-get-a-free-%2440-off)
+        - [If you need uber \(you'll get a free ride!\):](#if-you-need-uber-youll-get-a-free-ride)
+        - [If you need taxify \(you'll get a free $5 off!\):](#if-you-need-taxify-youll-get-a-free-%245-off)
+    - [Airports](#airports)
+        - [1. Nice Airport](#1-nice-airport)
+    - [Hostel](#hostel)
+        - [1. Hostel Antares](#1-hostel-antares)
+    - [Sights](#sights)
+        - [1. Castle Hill](#1-castle-hill)
+        - [2. Monaco](#2-monaco)
+        - [3. Promenade Des Anglais](#3-promenade-des-anglais)
+        - [4. Cannes](#4-cannes)
+    - [Food](#food)
+        - [1. Chez Moi](#1-chez-moi)
+        - [2. Illia Pasta](#2-illia-pasta)
+        - [3. Chez Pipo](#3-chez-pipo)
+        - [4. Cafe de Turin](#4-cafe-de-turin)
+    - [Nightlife/Drinking](#nightlifedrinking)
+        - [1. Wine Drinking On Promenade Des Anglais:](#1-wine-drinking-on-promenade-des-anglais)
+        - [2. Wayne Bar](#2-wayne-bar)
+    - [Getting Around](#getting-around)
+- [FAQ](#faq)
 
 <!-- /MarkdownTOC -->
 

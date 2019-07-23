@@ -7,17 +7,44 @@ Authors: Adam Li
 Summary: A summary of how to visit Prague and get the most out of your trip.
 
 # Europe - Prague, Czech Republic
-<!-- MarkdownTOC -->
+<!-- MarkdownTOC autolink="true" -->
 
-- General Suggestions
-    - Important Links
-    - Airports
-    - Sights/Activities
-    - Food
-    - Nightlife/Drinking
-    - Must try beers:
-    - Getting Around
-- FAQ
+- [General Suggestions](#general-suggestions)
+    - [Important Links](#important-links)
+        - [If you need airbnb \(you'll get a free $40 off\):](#if-you-need-airbnb-youll-get-a-free-%2440-off)
+        - [If you need taxify \(you'll get a free $5 off!\):](#if-you-need-taxify-youll-get-a-free-%245-off)
+    - [Airports](#airports)
+        - [1. Prague International Airport | Vaclave Havel Airport](#1-prague-international-airport-%7C-vaclave-havel-airport)
+    - [Sights/Activities](#sightsactivities)
+        - [1. Kafe Damu](#1-kafe-damu)
+        - [2. Prague Castle](#2-prague-castle)
+        - [3. National Gallery in Prague](#3-national-gallery-in-prague)
+        - [4. Parizska Street and Old Town Square](#4-parizska-street-and-old-town-square)
+        - [5. Piss Sculpture in New Town \(English book store with Shakespeare\)](#5-piss-sculpture-in-new-town-english-book-store-with-shakespeare)
+        - [6. Krizik Fountain](#6-krizik-fountain)
+        - [7. Charles Bridge](#7-charles-bridge)
+        - [8. Prague Clock Tower](#8-prague-clock-tower)
+    - [Food](#food)
+        - [Breakfast:](#breakfast)
+        - [1. Globe Cafe](#1-globe-cafe)
+        - [2. Bohemia Bagels](#2-bohemia-bagels)
+        - [Lunch:](#lunch)
+        - [1. Kolkovna Celnice](#1-kolkovna-celnice)
+        - [2. Fried Cheese Stands \(at end of Wenceclas towards National Museum\):](#2-fried-cheese-stands-at-end-of-wenceclas-towards-national-museum)
+        - [3. Sklep:](#3-sklep)
+        - [4. Nase Maso](#4-nase-maso)
+        - [Dinner:](#dinner)
+        - [1. Ristorante Grosetto Marina – on a boat by the river, so good](#1-ristorante-grosetto-marina-%E2%80%93-on-a-boat-by-the-river-so-good)
+        - [Dessert:](#dessert)
+        - [1. ANGELATO](#1-angelato)
+    - [Nightlife/Drinking](#nightlifedrinking)
+            - [1. Hemminway Bar – authentic absinthe](#1-hemminway-bar-%E2%80%93-authentic-absinthe)
+            - [2. Prague Beer Museum](#2-prague-beer-museum)
+    - [Must try beers:](#must-try-beers)
+    - [Getting Around](#getting-around)
+        - [1. Buses/Metro](#1-busesmetro)
+        - [2. Walking](#2-walking)
+- [FAQ](#faq)
 
 <!-- /MarkdownTOC -->
 

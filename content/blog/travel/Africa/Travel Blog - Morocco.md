@@ -7,31 +7,31 @@ Authors: Adam Li
 Summary: A summary of how to visit Morocco and get the most out of your trip.
 
 # Africa - Morocco
-<!-- MarkdownTOC -->
+<!-- MarkdownTOC autolink="true" -->
 
-- General Suggestions
-    - Important Links
-            - If you need airbnb \(you'll get a free $40 off\):
-            - If you need uber \(you'll get a free ride!\):
-            - If you need taxify \(you'll get a free $5 off!\):
-    - Airports
-            - 1. Casablanca Airport \(CMN\)
-            - 2. Marrakesh Menara Airport \(RAK\)
-            - 3. Tangier Airport \(TNG\)
-    - Sights
-        - Casablanca
-            - 1. Hassan II Mosque
-            - 2. Quartier Tabous
-        - Marrakesh
-            - Jemaa El Fna
-            - Ouzoud Waterfall
-    - Food
-            - 1. Tangine
-            - 2. Bazaar Cafe
-            - 3. Roti D'or
-    - Nightlife/Drinking
-    - Getting Around
-- FAQ
+- [General Suggestions](#general-suggestions)
+    - [Important Links](#important-links)
+            - [If you need airbnb \(you'll get a free $40 off\):](#if-you-need-airbnb-youll-get-a-free-%2440-off)
+            - [If you need uber \(you'll get a free ride!\):](#if-you-need-uber-youll-get-a-free-ride)
+            - [If you need taxify \(you'll get a free $5 off!\):](#if-you-need-taxify-youll-get-a-free-%245-off)
+    - [Airports](#airports)
+            - [1. Casablanca Airport \(CMN\)](#1-casablanca-airport-cmn)
+            - [2. Marrakesh Menara Airport \(RAK\)](#2-marrakesh-menara-airport-rak)
+            - [3. Tangier Airport \(TNG\)](#3-tangier-airport-tng)
+    - [Sights](#sights)
+        - [Casablanca](#casablanca)
+            - [1. Hassan II Mosque](#1-hassan-ii-mosque)
+            - [2. Quartier Tabous](#2-quartier-tabous)
+        - [Marrakesh](#marrakesh)
+            - [Jemaa El Fna](#jemaa-el-fna)
+            - [Ouzoud Waterfall](#ouzoud-waterfall)
+    - [Food](#food)
+            - [1. Tangine](#1-tangine)
+            - [2. Bazaar Cafe](#2-bazaar-cafe)
+            - [3. Roti D'or](#3-roti-dor)
+    - [Nightlife/Drinking](#nightlifedrinking)
+    - [Getting Around](#getting-around)
+- [FAQ](#faq)
 
 <!-- /MarkdownTOC -->
 

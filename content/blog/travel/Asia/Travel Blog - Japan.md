@@ -7,43 +7,43 @@ Authors: Adam Li
 Summary: A walkthrough of my experience in Japan.
 
 # Asia - Japan
-<!-- MarkdownTOC -->
+<!-- MarkdownTOC autolink="true" -->
 
-- General Suggestions
-    - Important Links
-            - If you need airbnb \(you'll get a free $40 off\):
-            - If you need uber \(you'll get a free ride!\):
-    - Airports
-        - Tokyo:
-            - 1. Narita airport
-            - 2. Haneda airport
-        - Osaka
-            - 1. Kansai airport
-    - Cultural Notes
-    - Sights
-        - Tokyo:
-            - 1. Shibuya Walkway
-            - 2. TV Tower
-            - 3. Mount Fuji \(day trip\)
-        - Osaka:
-            - 1. Osaka Castle
-            - 2. Dotonburi
-        - Kyoto:
-            - 1. Kiyomizu-dera Shrine
-            - 2. Kinkaku-ji
-            - 3. Arashiyama Forest
-            - 4. Fushima Inari-Taisha
-        - Nara:
-            - 1. Nara Park
-    - Food
-            - 1. Gen Sushi
-            - 2. Ichiran Ramen
-            - 3. Omakase \(Find a sushi restaurant with good reviews\)
-    - Nightlife/Drinking
-            - 1. Roppongi
-            - 2. Shibuya \(Izakaya\)
-    - Getting Around
-- FAQ
+- [General Suggestions](#general-suggestions)
+    - [Important Links](#important-links)
+            - [If you need airbnb \(you'll get a free $40 off\):](#if-you-need-airbnb-youll-get-a-free-%2440-off)
+            - [If you need uber \(you'll get a free ride!\):](#if-you-need-uber-youll-get-a-free-ride)
+    - [Airports](#airports)
+        - [Tokyo:](#tokyo)
+            - [1. Narita airport](#1-narita-airport)
+            - [2. Haneda airport](#2-haneda-airport)
+        - [Osaka](#osaka)
+            - [1. Kansai airport](#1-kansai-airport)
+    - [Cultural Notes](#cultural-notes)
+    - [Sights](#sights)
+        - [Tokyo:](#tokyo-1)
+            - [1. Shibuya Walkway](#1-shibuya-walkway)
+            - [2. TV Tower](#2-tv-tower)
+            - [3. Mount Fuji \(day trip\)](#3-mount-fuji-day-trip)
+        - [Osaka:](#osaka-1)
+            - [1. Osaka Castle](#1-osaka-castle)
+            - [2. Dotonburi](#2-dotonburi)
+        - [Kyoto:](#kyoto)
+            - [1. Kiyomizu-dera Shrine](#1-kiyomizu-dera-shrine)
+            - [2. Kinkaku-ji](#2-kinkaku-ji)
+            - [3. Arashiyama Forest](#3-arashiyama-forest)
+            - [4. Fushima Inari-Taisha](#4-fushima-inari-taisha)
+        - [Nara:](#nara)
+            - [1. Nara Park](#1-nara-park)
+    - [Food](#food)
+            - [1. Gen Sushi](#1-gen-sushi)
+            - [2. Ichiran Ramen](#2-ichiran-ramen)
+            - [3. Omakase \(Find a sushi restaurant with good reviews\)](#3-omakase-find-a-sushi-restaurant-with-good-reviews)
+    - [Nightlife/Drinking](#nightlifedrinking)
+            - [1. Roppongi](#1-roppongi)
+            - [2. Shibuya \(Izakaya\)](#2-shibuya-izakaya)
+    - [Getting Around](#getting-around)
+- [FAQ](#faq)
 
 <!-- /MarkdownTOC -->
 

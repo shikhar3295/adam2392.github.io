@@ -7,30 +7,30 @@ Authors: Adam Li
 Summary: A summary of how to visit Barcelona and get the most out of your trip.
 
 # Europe - Barcelona, Spain
-<!-- MarkdownTOC -->
+<!-- MarkdownTOC autolink="true" -->
 
-- General Suggestions
-    - Important Links
-        - If you need airbnb \(you'll get a free $40 off\):
-        - If you need uber \(you'll get a free ride!\):
-        - If you need taxify \(you'll get a free $5 off!\):
-    - Airports
-        - 1. Barcelona Airport \(BCN\)
-    - Sights
-        - 1. La Sagrada Familia
-        - 2. Parc Guell
-        - 3. Arc de Triomf
-        - 4. Bunkers Del Carmel
-        - 5. Mount Tibidabo
-    - Food
-        - 1. Tapas
-        - 2. Seafood Market \(La Paradeta\)
-    - Nightlife/Drinking
-        - 1. Opium Nightclub
-        - 2. Pacha Nightclub
-        - 3. Shoko Nightclub
-        - 4. Gothic Quarter
-    - Getting Around
+- [General Suggestions](#general-suggestions)
+    - [Important Links](#important-links)
+        - [If you need airbnb \(you'll get a free $40 off\):](#if-you-need-airbnb-youll-get-a-free-%2440-off)
+        - [If you need uber \(you'll get a free ride!\):](#if-you-need-uber-youll-get-a-free-ride)
+        - [If you need taxify \(you'll get a free $5 off!\):](#if-you-need-taxify-youll-get-a-free-%245-off)
+    - [Airports](#airports)
+        - [1. Barcelona Airport \(BCN\)](#1-barcelona-airport-bcn)
+    - [Sights](#sights)
+        - [1. La Sagrada Familia](#1-la-sagrada-familia)
+        - [2. Parc Guell](#2-parc-guell)
+        - [3. Arc de Triomf](#3-arc-de-triomf)
+        - [4. Bunkers Del Carmel](#4-bunkers-del-carmel)
+        - [5. Mount Tibidabo](#5-mount-tibidabo)
+    - [Food](#food)
+        - [1. Tapas](#1-tapas)
+        - [2. Seafood Market \(La Paradeta\)](#2-seafood-market-la-paradeta)
+    - [Nightlife/Drinking](#nightlifedrinking)
+        - [1. Opium Nightclub](#1-opium-nightclub)
+        - [2. Pacha Nightclub](#2-pacha-nightclub)
+        - [3. Shoko Nightclub](#3-shoko-nightclub)
+        - [4. Gothic Quarter](#4-gothic-quarter)
+    - [Getting Around](#getting-around)
 
 <!-- /MarkdownTOC -->
 

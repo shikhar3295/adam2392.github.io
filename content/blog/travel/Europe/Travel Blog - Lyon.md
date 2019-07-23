@@ -7,16 +7,30 @@ Authors: Adam Li
 Summary: A summary of how to visit Lyon and get the most out of your trip.
 
 # Europe - Lyon, France
-<!-- MarkdownTOC -->
+<!-- MarkdownTOC autolink="true" -->
 
-- General Suggestions
-    - Important Links
-    - Airports
-    - Sights
-    - Food
-    - Nightlife/Drinking
-    - Getting Around
-- FAQ
+- [General Suggestions](#general-suggestions)
+    - [Important Links](#important-links)
+        - [If you need airbnb \(you'll get a free $40 off\):](#if-you-need-airbnb-youll-get-a-free-%2440-off)
+        - [If you need uber \(you'll get a free ride!\):](#if-you-need-uber-youll-get-a-free-ride)
+        - [If you need taxify \(you'll get a free $5 off!\):](#if-you-need-taxify-youll-get-a-free-%245-off)
+    - [Airports](#airports)
+        - [1. Lyon Airport](#1-lyon-airport)
+    - [Sights](#sights)
+        - [1. Basilisque Notre Dame Foire:](#1-basilisque-notre-dame-foire)
+        - [2. Vieux Lyon:](#2-vieux-lyon)
+        - [3. Le Mur Des Canuts:](#3-le-mur-des-canuts)
+        - [4. Musée Des Beaux-arts de Lyon:](#4-mus%C3%A9e-des-beaux-arts-de-lyon)
+        - [5. Parc de La Tete d’Or:](#5-parc-de-la-tete-d%E2%80%99or)
+    - [Food](#food)
+        - [1. Slake:](#1-slake)
+        - [2. Yaafa:](#2-yaafa)
+        - [3. Bollywood Tandoor:](#3-bollywood-tandoor)
+        - [4. Lyonnaise Cuisine:](#4-lyonnaise-cuisine)
+    - [Nightlife/Drinking](#nightlifedrinking)
+        - [1. Wine Drinking On the Rhone:](#1-wine-drinking-on-the-rhone)
+    - [Getting Around](#getting-around)
+- [FAQ](#faq)
 
 <!-- /MarkdownTOC -->
 
