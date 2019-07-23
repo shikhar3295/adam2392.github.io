@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Adam Li's blog - Adam Li</title><link href="https://adam2392.github.io/" rel="alternate"></link><link href="https://adam2392.github.io/feeds/adam-li.atom.xml" rel="self"></link><id>https://adam2392.github.io/</id><updated>2019-06-18T00:00:00-04:00</updated><entry><title>Linear Gaussian Models</title><link href="https://adam2392.github.io/blog/2019/06/gaussian-generative-models/" rel="alternate"></link><published>2019-06-18T00:00:00-04:00</published><updated>2019-06-18T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:adam2392.github.io,2019-06-18:/blog/2019/06/gaussian-generative-models/</id><summary type="html">&lt;p&gt;An overview of linear gaussian models and how in general, they fall under the learning procedure (system idenfitication) of Expectation-Maximization.&lt;/p&gt;</summary><content type="html">&lt;!-- MarkdownTOC --&gt;
+<rss version="2.0"><channel><title>Adam Li's blog</title><link>/</link><description></description><lastBuildDate>Tue, 18 Jun 2019 00:00:00 -0400</lastBuildDate><item><title>Linear Gaussian Models</title><link>/blog/2019/06/gaussian-generative-models/</link><description>&lt;!-- MarkdownTOC --&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Background&lt;/li&gt;
@@ -236,11 +236,14 @@ This is a nonlinear system property because no linear dynamical system (i.e. x(t
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
     mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
         "MathJax.Hub.Config({" +
         "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
         "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
         "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
         "    displayAlign: '"+ align +"'," +
@@ -254,6 +257,8 @@ This is a nonlinear system property because no linear dynamical system (i.e. x(t
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
         "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
         "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
         "    }, " +
@@ -274,9 +279,11 @@ This is a nonlinear system property because no linear dynamical system (i.e. x(t
                 "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
             "});" +
         "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="phd"></category><category term="machine learning"></category></entry><entry><title>Optimization: Convex, Nonlinear, Unconstrained and Constrained</title><link href="https://adam2392.github.io/blog/2019/06/optimization-landscape-overview/" rel="alternate"></link><published>2019-06-18T00:00:00-04:00</published><updated>2019-06-18T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:adam2392.github.io,2019-06-18:/blog/2019/06/optimization-landscape-overview/</id><summary type="html">&lt;p&gt;An overview of optimization frameworks and algorithms under different general settings.&lt;/p&gt;</summary><content type="html">&lt;!-- MarkdownTOC --&gt;
+&lt;/script&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Tue, 18 Jun 2019 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:None,2019-06-18:/blog/2019/06/gaussian-generative-models/</guid><category>phd</category><category>machine learning</category></item><item><title>Optimization: Convex, Nonlinear, Unconstrained and Constrained</title><link>/blog/2019/06/optimization-landscape-overview/</link><description>&lt;!-- MarkdownTOC --&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Background&lt;/li&gt;
@@ -475,11 +482,14 @@ TBD&lt;/p&gt;
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
     mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
         "MathJax.Hub.Config({" +
         "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
         "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
         "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
         "    displayAlign: '"+ align +"'," +
@@ -493,6 +503,8 @@ TBD&lt;/p&gt;
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
         "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
         "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
         "    }, " +
@@ -513,9 +525,11 @@ TBD&lt;/p&gt;
                 "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
             "});" +
         "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="phd"></category><category term="machine learning"></category></entry><entry><title>Setting Up ERC Standard Tokens</title><link href="https://adam2392.github.io/blog/2018/06/setup-erc-token/" rel="alternate"></link><published>2018-06-10T00:00:00-04:00</published><updated>2018-06-10T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:adam2392.github.io,2018-06-10:/blog/2018/06/setup-erc-token/</id><summary type="html">&lt;p&gt;A short walkthrough of setting up an ethereum token.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Getting Setup with Ethereum&lt;/h1&gt;
+&lt;/script&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Tue, 18 Jun 2019 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:None,2019-06-18:/blog/2019/06/optimization-landscape-overview/</guid><category>phd</category><category>machine learning</category></item><item><title>Setting Up ERC Standard Tokens</title><link>/blog/2018/06/setup-erc-token/</link><description>&lt;h1&gt;Getting Setup with Ethereum&lt;/h1&gt;
 &lt;h1&gt;By: Adam Li&lt;/h1&gt;
 &lt;h3&gt;Table of Contents&lt;/h3&gt;
 &lt;!-- MarkdownTOC --&gt;
@@ -729,7 +743,7 @@ ethereumjs-testrpc@6.0.3 &lt;/p&gt;
 &lt;li&gt;https://medium.com/@mvmurthy/full-stack-hello-world-voting-ethereum-dapp-tutorial-part-1-40d2d0d807c2&lt;/li&gt;
 &lt;li&gt;http://truffleframework.com/docs/getting_started/project#exploring-the-project&lt;/li&gt;
 &lt;li&gt;https://www.pubnub.com/blog/testing-and-deploying-an-ethereum-token-part-2/&lt;/li&gt;
-&lt;/ol&gt;</content><category term="webdev"></category><category term="ethereum"></category><category term="javascript"></category><category term="blockchain"></category></entry><entry><title>Travel - Nice</title><link href="https://adam2392.github.io/blog/2018/06/travel-nice/" rel="alternate"></link><published>2018-06-02T00:00:00-04:00</published><updated>2018-06-02T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:adam2392.github.io,2018-06-02:/blog/2018/06/travel-nice/</id><summary type="html">&lt;p&gt;A summary of how to visit Nice and get the most out of your trip.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Europe - Nice, France&lt;/h1&gt;
+&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Sun, 10 Jun 2018 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:None,2018-06-10:/blog/2018/06/setup-erc-token/</guid><category>webdev</category><category>ethereum</category><category>javascript</category><category>blockchain</category></item><item><title>Travel - Nice</title><link>/blog/2018/06/travel-nice/</link><description>&lt;h1&gt;Europe - Nice, France&lt;/h1&gt;
 &lt;!-- MarkdownTOC --&gt;
 
 &lt;ul&gt;
@@ -870,7 +884,7 @@ ethereumjs-testrpc@6.0.3 &lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Q: How do I get around?
 A: Use uber, or the metro line.&lt;/li&gt;
-&lt;/ol&gt;</content><category term="travel"></category><category term="europe"></category><category term="france"></category><category term="nice"></category></entry><entry><title>Europe - Living and Traveling</title><link href="https://adam2392.github.io/blog/2018/06/europe-summary-2018/" rel="alternate"></link><published>2018-06-01T00:00:00-04:00</published><updated>2018-06-01T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:adam2392.github.io,2018-06-01:/blog/2018/06/europe-summary-2018/</id><summary type="html">&lt;p&gt;A summary of my time abroad in Europe, 2017-2018.&lt;/p&gt;</summary><content type="html">&lt;!-- MarkdownTOC --&gt;
+&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Sat, 02 Jun 2018 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:None,2018-06-02:/blog/2018/06/travel-nice/</guid><category>travel</category><category>europe</category><category>france</category><category>nice</category></item><item><title>Europe - Living and Traveling</title><link>/blog/2018/06/europe-summary-2018/</link><description>&lt;!-- MarkdownTOC --&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Quick Background&lt;/li&gt;
@@ -954,7 +968,7 @@ Would you be okay with us writing small posts that may highlight different parts
 (education about the research to the general public that is digestable)&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;simulating seizures in the brain to determine if algorithms designed on empirical data can localize the origin of these seizures in-silico.&lt;/li&gt;
-&lt;/ol&gt;</content><category term="personal"></category><category term="travel"></category><category term="europe"></category></entry><entry><title>Using The Virtual Brain to Understand Algorithms</title><link href="https://adam2392.github.io/blog/2018/06/whitaker-summary-experience/" rel="alternate"></link><published>2018-06-01T00:00:00-04:00</published><updated>2018-06-01T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:adam2392.github.io,2018-06-01:/blog/2018/06/whitaker-summary-experience/</id><summary type="html">&lt;p&gt;To summarize my Whitaker/Chateaubriand research experience abroad in Marseille, France.&lt;/p&gt;</summary><content type="html">&lt;!-- MarkdownTOC --&gt;
+&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Fri, 01 Jun 2018 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:None,2018-06-01:/blog/2018/06/europe-summary-2018/</guid><category>personal</category><category>travel</category><category>europe</category></item><item><title>Using The Virtual Brain to Understand Algorithms</title><link>/blog/2018/06/whitaker-summary-experience/</link><description>&lt;!-- MarkdownTOC --&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Background&lt;ul&gt;
@@ -1076,7 +1090,7 @@ Using a batch of real recording data from patients, we can construct a deep lear
 &lt;li&gt;http://www.thevirtualbrain.org/tvb/&lt;/li&gt;
 &lt;li&gt;https://ieeexplore.ieee.org/document/7963378/&lt;/li&gt;
 &lt;li&gt;https://www.ncbi.nlm.nih.gov/pubmed/29060480&lt;/li&gt;
-&lt;/ol&gt;</content><category term="tvb"></category><category term="phd"></category></entry><entry><title>Travel - Dublin</title><link href="https://adam2392.github.io/blog/2018/05/travel-dublin/" rel="alternate"></link><published>2018-05-08T00:00:00-04:00</published><updated>2018-05-08T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:adam2392.github.io,2018-05-08:/blog/2018/05/travel-dublin/</id><summary type="html">&lt;p&gt;A summary of how to visit Dublin and get the most out of your trip.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Europe - Dublin, Ireland&lt;/h1&gt;
+&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Fri, 01 Jun 2018 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:None,2018-06-01:/blog/2018/06/whitaker-summary-experience/</guid><category>tvb</category><category>phd</category></item><item><title>Travel - Dublin</title><link>/blog/2018/05/travel-dublin/</link><description>&lt;h1&gt;Europe - Dublin, Ireland&lt;/h1&gt;
 &lt;!-- MarkdownTOC --&gt;
 
 &lt;ul&gt;
@@ -1155,7 +1169,7 @@ Using a batch of real recording data from patients, we can construct a deep lear
 &lt;h4&gt;1. Temple Bar&lt;/h4&gt;
 &lt;p&gt;There is live music every night and this area (i.e. Temple Street) is always lively and busy. Pop into different bars and get some Guiness!&lt;/p&gt;
 &lt;h2&gt;Getting Around&lt;/h2&gt;
-&lt;p&gt;You can definitely use the tram/bus system here! The overall city isn't that big, so you can honestly just walk everywhere.&lt;/p&gt;</content><category term="travel"></category><category term="europe"></category><category term="ireland"></category><category term="dublin"></category></entry><entry><title>Travel - Barcelona</title><link href="https://adam2392.github.io/blog/2018/05/travel-barcelona/" rel="alternate"></link><published>2018-05-01T00:00:00-04:00</published><updated>2018-05-01T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:adam2392.github.io,2018-05-01:/blog/2018/05/travel-barcelona/</id><summary type="html">&lt;p&gt;A summary of how to visit Barcelona and get the most out of your trip.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Europe - Barcelona, Spain&lt;/h1&gt;
+&lt;p&gt;You can definitely use the tram/bus system here! The overall city isn't that big, so you can honestly just walk everywhere.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Tue, 08 May 2018 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:None,2018-05-08:/blog/2018/05/travel-dublin/</guid><category>travel</category><category>europe</category><category>ireland</category><category>dublin</category></item><item><title>Travel - Barcelona</title><link>/blog/2018/05/travel-barcelona/</link><description>&lt;h1&gt;Europe - Barcelona, Spain&lt;/h1&gt;
 &lt;!-- MarkdownTOC --&gt;
 
 &lt;ul&gt;
@@ -1284,7 +1298,7 @@ Using a batch of real recording data from patients, we can construct a deep lear
 &lt;h4&gt;4. Gothic Quarter&lt;/h4&gt;
 &lt;p&gt;Just this nice area to walk in with a bunch of shops, bars, restaurants scattered throughout. It is an extremely old area and feels like you're walking almost in historical times.&lt;/p&gt;
 &lt;h2&gt;Getting Around&lt;/h2&gt;
-&lt;p&gt;You can definitely use the metro system in Barcelona! I recommend buying the multi-day passes. &lt;/p&gt;</content><category term="travel"></category><category term="europe"></category><category term="spain"></category><category term="barcelona"></category></entry><entry><title>Travel - Amsterdam</title><link href="https://adam2392.github.io/blog/2018/04/travel-amsterdam/" rel="alternate"></link><published>2018-04-28T00:00:00-04:00</published><updated>2018-04-28T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:adam2392.github.io,2018-04-28:/blog/2018/04/travel-amsterdam/</id><summary type="html">&lt;p&gt;A summary of how to visit Amsterdam and get the most out of your trip.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Europe - Amsterdam, Netherlands&lt;/h1&gt;
+&lt;p&gt;You can definitely use the metro system in Barcelona! I recommend buying the multi-day passes. &lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Tue, 01 May 2018 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:None,2018-05-01:/blog/2018/05/travel-barcelona/</guid><category>travel</category><category>europe</category><category>spain</category><category>barcelona</category></item><item><title>Travel - Amsterdam</title><link>/blog/2018/04/travel-amsterdam/</link><description>&lt;h1&gt;Europe - Amsterdam, Netherlands&lt;/h1&gt;
 &lt;!-- MarkdownTOC --&gt;
 
 &lt;ul&gt;
@@ -1418,7 +1432,7 @@ Using a batch of real recording data from patients, we can construct a deep lear
 &lt;p&gt;This is an American style club that will probably play EDM/HipHop and is styled with an Asian theme. Pretty cool, and they also have a lot of bars around the area. There is a bar across the street from the entrance that has live music and cheap drinks for a 2 euro entrance fee!&lt;/p&gt;
 &lt;h2&gt;Getting Around&lt;/h2&gt;
 &lt;p&gt;You can definitely use the tram/bus system in Amsterdam! I recommend buying the multi-day passes. &lt;/p&gt;
-&lt;p&gt;Another option is completely walking the city (uhh), or renting a bike and getting around like the locals do.&lt;/p&gt;</content><category term="travel"></category><category term="europe"></category><category term="netherlands"></category><category term="amsterdam"></category></entry><entry><title>Setting Up Singularity Containers</title><link href="https://adam2392.github.io/blog/2018/01/setup-singularity/" rel="alternate"></link><published>2018-01-31T00:00:00-05:00</published><updated>2018-01-31T00:00:00-05:00</updated><author><name>Adam Li</name></author><id>tag:adam2392.github.io,2018-01-31:/blog/2018/01/setup-singularity/</id><summary type="html">&lt;p&gt;A short walkthrough of setting up the Singularity containers&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Getting Setup with Singularity&lt;/h1&gt;
+&lt;p&gt;Another option is completely walking the city (uhh), or renting a bike and getting around like the locals do.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Sat, 28 Apr 2018 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:None,2018-04-28:/blog/2018/04/travel-amsterdam/</guid><category>travel</category><category>europe</category><category>netherlands</category><category>amsterdam</category></item><item><title>Setting Up Singularity Containers</title><link>/blog/2018/01/setup-singularity/</link><description>&lt;h1&gt;Getting Setup with Singularity&lt;/h1&gt;
 &lt;h1&gt;By: Adam Li&lt;/h1&gt;
 &lt;h3&gt;Table of Contents&lt;/h3&gt;
 &lt;!-- MarkdownTOC --&gt;
@@ -1547,7 +1561,7 @@ Using a batch of real recording data from patients, we can construct a deep lear
 &lt;li&gt;https://www.singularity-hub.org/&lt;/li&gt;
 &lt;li&gt;http://geekyap.blogspot.com/2016/11/docker-vs-singularity-vs-shifter-in-hpc.html&lt;/li&gt;
 &lt;li&gt;https://singularity.lbl.gov/docs-docker&lt;/li&gt;
-&lt;/ol&gt;</content><category term="cloud"></category><category term="singularity"></category><category term="python"></category><category term="hpc"></category><category term="tensorflow"></category><category term="deep-learning"></category></entry><entry><title>Personal Goals - 2019</title><link href="https://adam2392.github.io/blog/2018/01/goals-2019/" rel="alternate"></link><published>2018-01-07T00:00:00-05:00</published><updated>2018-01-07T00:00:00-05:00</updated><author><name>Adam Li</name></author><id>tag:adam2392.github.io,2018-01-07:/blog/2018/01/goals-2019/</id><summary type="html">&lt;p&gt;A summary of goals for 2019.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Another year has passed, and its getting harder and harder for me to distinguish the years from each other. Every new years goals post seems to be written just a few days ago in my head. This year was filled with transitions, both personal and professional. I started off the year living in France, and traveling to Switzerland to see how a NYE abroad would be like. The time abroad up until August was an experience that really taught me how to survive in a completely different country without a cohort of students around me, or a friend group from college for support. I did a lot of traveling in Europe, seeing countries and cities that I've never been to, such as Hungary, Portugal, Morocco and more. &lt;/p&gt;
+&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Wed, 31 Jan 2018 00:00:00 -0500</pubDate><guid isPermaLink="false">tag:None,2018-01-31:/blog/2018/01/setup-singularity/</guid><category>cloud</category><category>singularity</category><category>python</category><category>hpc</category><category>tensorflow</category><category>deep-learning</category></item><item><title>Personal Goals - 2019</title><link>/blog/2018/01/goals-2019/</link><description>&lt;p&gt;Another year has passed, and its getting harder and harder for me to distinguish the years from each other. Every new years goals post seems to be written just a few days ago in my head. This year was filled with transitions, both personal and professional. I started off the year living in France, and traveling to Switzerland to see how a NYE abroad would be like. The time abroad up until August was an experience that really taught me how to survive in a completely different country without a cohort of students around me, or a friend group from college for support. I did a lot of traveling in Europe, seeing countries and cities that I've never been to, such as Hungary, Portugal, Morocco and more. &lt;/p&gt;
 &lt;p&gt;Professionally, I grew in ways that I did not expect. Rather then going to the EMBC conference with the rest of my lab, I went to a computationally focused neuroscience conference in Seattle. I reconnected with my high school friends and some old friends from JHU. The time there was perfect and a fond way for me to transition my life back into the USA. My time spent with the Theoretical Neurosciences Group helped me grow as an independent thinker and researcher. I developed a distinct appreciation for how mathematics can drive precise and beautiful descriptions of biological systems. I did some explicit exploration of using deep learning to understand its classification capabilities, and also see the pitfalls that occur when designing an architecture, or training scheme.&lt;/p&gt;
 &lt;h2&gt;Old 2018 Resolutions:&lt;/h2&gt;
 &lt;h4&gt;1. Travel [X]&lt;/h4&gt;
@@ -1615,7 +1629,7 @@ Rome [ ] &lt;/p&gt;
 &lt;h4&gt;5. Improving Photography With New IG Page [ ]&lt;/h4&gt;
 &lt;p&gt;This year, I'm going to try to post new photos to a new instagram blog page with more travel related photos. This is to sort of separate my personal instagram from my photography hobby. I have a lot more to learn about optimal lighting and photography of different scenes (e.g. portraits, landscapes, nightshots). I am aiming to post an additional 12 photos that I am proud of onto this IG page by the end of the year.&lt;/p&gt;
 &lt;p&gt;See link to keep up to dates with my adventure!
-https://www.instagram.com/ajltravels/&lt;/p&gt;</content><category term="personal"></category><category term="goals"></category></entry><entry><title>Travel - Switzerland</title><link href="https://adam2392.github.io/blog/2018/01/travel-switzerland/" rel="alternate"></link><published>2018-01-01T00:00:00-05:00</published><updated>2018-01-01T00:00:00-05:00</updated><author><name>Adam Li</name></author><id>tag:adam2392.github.io,2018-01-01:/blog/2018/01/travel-switzerland/</id><summary type="html">&lt;p&gt;A summary of how to visit Switzerland and get the most out of your trip.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Europe - Switzerland&lt;/h1&gt;
+https://www.instagram.com/ajltravels/&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Sun, 07 Jan 2018 00:00:00 -0500</pubDate><guid isPermaLink="false">tag:None,2018-01-07:/blog/2018/01/goals-2019/</guid><category>personal</category><category>goals</category></item><item><title>Travel - Switzerland</title><link>/blog/2018/01/travel-switzerland/</link><description>&lt;h1&gt;Europe - Switzerland&lt;/h1&gt;
 &lt;!-- MarkdownTOC --&gt;
 
 &lt;ul&gt;
@@ -1722,7 +1736,7 @@ This is where the infamous Hadron Collider is! This is where the Higgs Boson was
 &lt;ol&gt;
 &lt;li&gt;Q: Should I get a Swiss Travel Pass?
 This depends on where you are staying and how long you are staying in Switzerland! The minimum multi-day pass is 3 days, so this is definitely worth it if you say plan on going to 3 different mountains because it covers your fee for all the trains and also the cable cars up, which can get pretty expensive!&lt;/li&gt;
-&lt;/ol&gt;</content><category term="travel"></category><category term="europe"></category><category term="switzerland"></category></entry><entry><title>Bitcoin's Problems and Possible Path To Solution - 2017</title><link href="https://adam2392.github.io/blog/2017/12/bitcoin-2018/" rel="alternate"></link><published>2017-12-31T00:00:00-05:00</published><updated>2017-12-31T00:00:00-05:00</updated><author><name>Adam Li</name></author><id>tag:adam2392.github.io,2017-12-31:/blog/2017/12/bitcoin-2018/</id><summary type="html">&lt;p&gt;A public post on my views on Bitcoin and where it fails.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Disclaimer: I am a heavy advocate and believer in the ethereum platform, and similar technologies. This assumes that the reader has heard of cryptocurrency and might have the most basic understanding of its underlying technology. I do not presume to be an expert in cryptography, blockchain, the internet, or anything for that matter. I simply wish to express my views for the sake of learning from other’s viewpoints.&lt;/p&gt;
+&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Mon, 01 Jan 2018 00:00:00 -0500</pubDate><guid isPermaLink="false">tag:None,2018-01-01:/blog/2018/01/travel-switzerland/</guid><category>travel</category><category>europe</category><category>switzerland</category></item><item><title>Bitcoin's Problems and Possible Path To Solution - 2017</title><link>/blog/2017/12/bitcoin-2018/</link><description>&lt;p&gt;Disclaimer: I am a heavy advocate and believer in the ethereum platform, and similar technologies. This assumes that the reader has heard of cryptocurrency and might have the most basic understanding of its underlying technology. I do not presume to be an expert in cryptography, blockchain, the internet, or anything for that matter. I simply wish to express my views for the sake of learning from other’s viewpoints.&lt;/p&gt;
 &lt;h1&gt;A Personal View on Bitcoin&lt;/h1&gt;
 &lt;p&gt;“Bitcoin is going to change the world.” A few words that I heard in 2014 at a startup conference that stuck with me for the next few years. As an engineer, I looked into bitcoin, blockchain and the technologies that began making headlines (e.g. ethereum, litecoin, etc.). My research led me to make investments into cryptocurrency. However, with the recent explosion of Bitcoin throughout the media, I formed a more rigorous hypothesis that led me to question mainstream thinking. Basing my thoughts on a semi-technical understanding of blockchain and basic economics knowledge, I arrive at three main argument points on the validity of bitcoin, or any cryptocurrency for that matter. &lt;/p&gt;
 &lt;ol&gt;
@@ -1751,7 +1765,7 @@ This depends on where you are staying and how long you are staying in Switzerlan
 &lt;li&gt;&lt;a href="https://www.nytimes.com/2017/12/28/business/south-korea-bitcoin.html"&gt; South Korea Clamps Down On Bitcoin Exchanges &lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.blocktrail.com/BTC/pools"&gt; Link to centralized mining rigs for bitcoin &lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Financial_position_of_the_United_States"&gt; Link to usd total assets in world &lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><category term="views"></category><category term="bitcoin"></category></entry><entry><title>Personal Goals - 2018</title><link href="https://adam2392.github.io/blog/2017/12/goals-2018/" rel="alternate"></link><published>2017-12-31T00:00:00-05:00</published><updated>2017-12-31T00:00:00-05:00</updated><author><name>Adam Li</name></author><id>tag:adam2392.github.io,2017-12-31:/blog/2017/12/goals-2018/</id><summary type="html">&lt;p&gt;A summary of goals for 2018.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This year has been a fantastic year from beginning to end. I turned the big 2 5 (yay 1 year older). However, this year came with a lot of fun as I spent time at Coachella 2017, made it out for birthdays of my friends in Vegas, spent time in SF, LA, SD and Chicago visiting old friends, enjoyed new time with Hopkins friends in NYC, Boston and DC, and spent a lot of time enjoying my "relative" last year in Baltimore. I was fortunate enough to win three prestigious fellowships: the NSF-GRFP, Whitaker and Chateaubriand fellowships. I presented two conference papers at two different conferences, where I was even able to make a trip through Korea and Japan come out of it. It's ending with me being in France working with the Theoretical Neurosciences Group in Marseille. I am incredibly fortunate to be working in a group of extraordinary people from all different countries and backgrounds. I am learning so much and developing new ideas that I honestly can't say I would've had if I were just back in Baltimore. I think I have some explicit goals this year related to my work because I find it fascinating.&lt;/p&gt;
+&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Sun, 31 Dec 2017 00:00:00 -0500</pubDate><guid isPermaLink="false">tag:None,2017-12-31:/blog/2017/12/bitcoin-2018/</guid><category>views</category><category>bitcoin</category></item><item><title>Personal Goals - 2018</title><link>/blog/2017/12/goals-2018/</link><description>&lt;p&gt;This year has been a fantastic year from beginning to end. I turned the big 2 5 (yay 1 year older). However, this year came with a lot of fun as I spent time at Coachella 2017, made it out for birthdays of my friends in Vegas, spent time in SF, LA, SD and Chicago visiting old friends, enjoyed new time with Hopkins friends in NYC, Boston and DC, and spent a lot of time enjoying my "relative" last year in Baltimore. I was fortunate enough to win three prestigious fellowships: the NSF-GRFP, Whitaker and Chateaubriand fellowships. I presented two conference papers at two different conferences, where I was even able to make a trip through Korea and Japan come out of it. It's ending with me being in France working with the Theoretical Neurosciences Group in Marseille. I am incredibly fortunate to be working in a group of extraordinary people from all different countries and backgrounds. I am learning so much and developing new ideas that I honestly can't say I would've had if I were just back in Baltimore. I think I have some explicit goals this year related to my work because I find it fascinating.&lt;/p&gt;
 &lt;h2&gt;Old 2017 Resolutions:&lt;/h2&gt;
 &lt;h4&gt;1. Keep dance a significant part of my life: [ ]&lt;/h4&gt;
 &lt;ul&gt;
@@ -1857,7 +1871,7 @@ Bologna [ ], &lt;/p&gt;
 &lt;li&gt;politics&lt;/li&gt;
 &lt;li&gt;foreign markets (EU/Asia) and cryptocurrency/blockchains [ ]&lt;/li&gt;
 &lt;li&gt;emerging markets&lt;/li&gt;
-&lt;/ul&gt;</content><category term="personal"></category><category term="goals"></category></entry><entry><title>Travel - London</title><link href="https://adam2392.github.io/blog/2017/12/travel-london/" rel="alternate"></link><published>2017-12-20T00:00:00-05:00</published><updated>2017-12-20T00:00:00-05:00</updated><author><name>Adam Li</name></author><id>tag:adam2392.github.io,2017-12-20:/blog/2017/12/travel-london/</id><summary type="html">&lt;p&gt;A summary of how to visit London and get the most out of your trip.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Europe - London, United Kingdom&lt;/h1&gt;
+&lt;/ul&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Sun, 31 Dec 2017 00:00:00 -0500</pubDate><guid isPermaLink="false">tag:None,2017-12-31:/blog/2017/12/goals-2018/</guid><category>personal</category><category>goals</category></item><item><title>Travel - London</title><link>/blog/2017/12/travel-london/</link><description>&lt;h1&gt;Europe - London, United Kingdom&lt;/h1&gt;
 &lt;!-- MarkdownTOC --&gt;
 
 &lt;ul&gt;
@@ -2010,7 +2024,7 @@ Pitt Rivers Museum --&gt;
 &lt;!-- #### 2. Ministry of Sound --&gt;
 
 &lt;h2&gt;Getting Around&lt;/h2&gt;
-&lt;p&gt;You can definitely use the Underground, or just walk! UberX/Pool/Plus if necessary.&lt;/p&gt;</content><category term="travel"></category><category term="europe"></category><category term="UK"></category><category term="london"></category></entry><entry><title>Using FreeSurfer</title><link href="https://adam2392.github.io/blog/2017/12/using-freesurfer/" rel="alternate"></link><published>2017-12-07T00:00:00-05:00</published><updated>2017-12-07T00:00:00-05:00</updated><author><name>Adam Li</name></author><id>tag:adam2392.github.io,2017-12-07:/blog/2017/12/using-freesurfer/</id><summary type="html">&lt;p&gt;To guide the user in how to setup freesurfer correctly.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Necessary Tools&lt;/h1&gt;
+&lt;p&gt;You can definitely use the Underground, or just walk! UberX/Pool/Plus if necessary.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Wed, 20 Dec 2017 00:00:00 -0500</pubDate><guid isPermaLink="false">tag:None,2017-12-20:/blog/2017/12/travel-london/</guid><category>travel</category><category>europe</category><category>UK</category><category>london</category></item><item><title>Using FreeSurfer</title><link>/blog/2017/12/using-freesurfer/</link><description>&lt;h1&gt;Necessary Tools&lt;/h1&gt;
 &lt;p&gt;Freesurfer, FSL, and MRtrix3 are the three main neuroimaging and registration softwares that you need to run a systematic data pipeline of neuroimaging data (i.e. CT, MRI, DWI).&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Freesurfer
@@ -2108,7 +2122,7 @@ https://www.mathworks.com/matlabcentral/fileexchange/42997-dicom-to-nifti-conver
 &lt;ol&gt;
 &lt;li&gt;https://surfer.nmr.mgh.harvard.edu/fswiki/DownloadAndInstall#Setup.26Configuration&lt;/li&gt;
 &lt;li&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><category term="data analysis"></category><category term="eeg"></category><category term="phd"></category><category term="brain rendering"></category></entry><entry><title>Travel - Budapest</title><link href="https://adam2392.github.io/blog/2017/10/travel-budapest/" rel="alternate"></link><published>2017-10-22T00:00:00-04:00</published><updated>2017-10-22T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:adam2392.github.io,2017-10-22:/blog/2017/10/travel-budapest/</id><summary type="html">&lt;p&gt;A summary of how to visit Budapest and get the most out of your trip.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Europe - Budapest, Hungary&lt;/h1&gt;
+&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Thu, 07 Dec 2017 00:00:00 -0500</pubDate><guid isPermaLink="false">tag:None,2017-12-07:/blog/2017/12/using-freesurfer/</guid><category>data analysis</category><category>eeg</category><category>phd</category><category>brain rendering</category></item><item><title>Travel - Budapest</title><link>/blog/2017/10/travel-budapest/</link><description>&lt;h1&gt;Europe - Budapest, Hungary&lt;/h1&gt;
 &lt;!-- MarkdownTOC --&gt;
 
 &lt;ul&gt;
@@ -2163,7 +2177,7 @@ https://www.mathworks.com/matlabcentral/fileexchange/42997-dicom-to-nifti-conver
 &lt;ol&gt;
 &lt;li&gt;Q: Where should I stay?
 A: I would recommend staying on the Pest side of Budapest because there is more night life and restaurants there. The buda side is a nice place to walk to for all the historical sites.&lt;/li&gt;
-&lt;/ol&gt;</content><category term="travel"></category><category term="europe"></category><category term="hungary"></category><category term="budapest"></category></entry><entry><title>Travel - Lyon</title><link href="https://adam2392.github.io/blog/2017/10/travel-lyon/" rel="alternate"></link><published>2017-10-22T00:00:00-04:00</published><updated>2017-10-22T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:adam2392.github.io,2017-10-22:/blog/2017/10/travel-lyon/</id><summary type="html">&lt;p&gt;A summary of how to visit Lyon and get the most out of your trip.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Europe - Lyon, France&lt;/h1&gt;
+&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Sun, 22 Oct 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:None,2017-10-22:/blog/2017/10/travel-budapest/</guid><category>travel</category><category>europe</category><category>hungary</category><category>budapest</category></item><item><title>Travel - Lyon</title><link>/blog/2017/10/travel-lyon/</link><description>&lt;h1&gt;Europe - Lyon, France&lt;/h1&gt;
 &lt;!-- MarkdownTOC --&gt;
 
 &lt;ul&gt;
@@ -2228,7 +2242,7 @@ A: Use uber, or the metro line.&lt;/p&gt;
 &lt;p&gt;Q: Where should I stay?
 A: I would stay near the rivers Rhone and Saone towards the center of the city, else you'll spend an incredible amount of time walking/ubering.&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ol&gt;</content><category term="travel"></category><category term="europe"></category><category term="france"></category><category term="lyon"></category></entry><entry><title>Travel - Prague</title><link href="https://adam2392.github.io/blog/2017/10/travel-prague/" rel="alternate"></link><published>2017-10-22T00:00:00-04:00</published><updated>2017-10-22T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:adam2392.github.io,2017-10-22:/blog/2017/10/travel-prague/</id><summary type="html">&lt;p&gt;A summary of how to visit Prague and get the most out of your trip.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Europe - Prague, Czech Republic&lt;/h1&gt;
+&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Sun, 22 Oct 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:None,2017-10-22:/blog/2017/10/travel-lyon/</guid><category>travel</category><category>europe</category><category>france</category><category>lyon</category></item><item><title>Travel - Prague</title><link>/blog/2017/10/travel-prague/</link><description>&lt;h1&gt;Europe - Prague, Czech Republic&lt;/h1&gt;
 &lt;!-- MarkdownTOC --&gt;
 
 &lt;ul&gt;
@@ -2319,7 +2333,7 @@ http://booking.pragueboatsbooking.cz/api_v2/create/pb/lg/en/cruise/Hodinov%C3%A1
 &lt;ol&gt;
 &lt;li&gt;Q: How do I get around?
 Public transportation is recommended for far places, and then walking is nice!&lt;/li&gt;
-&lt;/ol&gt;</content><category term="travel"></category><category term="europe"></category><category term="austria"></category><category term="prague"></category></entry><entry><title>Travel - Morocco</title><link href="https://adam2392.github.io/blog/2017/10/travel-morocco/" rel="alternate"></link><published>2017-10-10T00:00:00-04:00</published><updated>2017-10-10T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:adam2392.github.io,2017-10-10:/blog/2017/10/travel-morocco/</id><summary type="html">&lt;p&gt;A summary of how to visit Morocco and get the most out of your trip.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Africa - Morocco&lt;/h1&gt;
+&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Sun, 22 Oct 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:None,2017-10-22:/blog/2017/10/travel-prague/</guid><category>travel</category><category>europe</category><category>austria</category><category>prague</category></item><item><title>Travel - Morocco</title><link>/blog/2017/10/travel-morocco/</link><description>&lt;h1&gt;Africa - Morocco&lt;/h1&gt;
 &lt;!-- MarkdownTOC --&gt;
 
 &lt;ul&gt;
@@ -2416,7 +2430,7 @@ www.bazaarcafe.ma&lt;/p&gt;
 &lt;li&gt;Q: How do I get around?
 A: Probably taxi for within a city and trains/buses/grand taxis for across the country.&lt;/li&gt;
 &lt;li&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><category term="travel"></category><category term="africa"></category><category term="morocco"></category><category term="marrakech"></category><category term="casablanca"></category></entry><entry><title>Travel - Munich</title><link href="https://adam2392.github.io/blog/2017/10/travel-munich/" rel="alternate"></link><published>2017-10-05T00:00:00-04:00</published><updated>2017-10-05T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:adam2392.github.io,2017-10-05:/blog/2017/10/travel-munich/</id><summary type="html">&lt;p&gt;A summary of how to visit Munich and get the most out of your trip.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Europe - Munich, Germany&lt;/h1&gt;
+&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Tue, 10 Oct 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:None,2017-10-10:/blog/2017/10/travel-morocco/</guid><category>travel</category><category>africa</category><category>morocco</category><category>marrakech</category><category>casablanca</category></item><item><title>Travel - Munich</title><link>/blog/2017/10/travel-munich/</link><description>&lt;h1&gt;Europe - Munich, Germany&lt;/h1&gt;
 &lt;!-- MarkdownTOC --&gt;
 
 &lt;ul&gt;
@@ -2488,7 +2502,7 @@ Getting to the city from the airport is extremely easy. Just check google maps a
 &lt;p&gt;Christmas Market at the Chinese Tower&lt;/p&gt;
 &lt;h2&gt;Getting Around&lt;/h2&gt;
 &lt;p&gt;The best way to get around would be the S line and the U, which goes throughout the entire city. It is pay by an honor system.&lt;/p&gt;
-&lt;p&gt;Other then that, you can take an Uber or a taxi.&lt;/p&gt;</content><category term="travel"></category><category term="europe"></category><category term="germany"></category><category term="munich"></category></entry><entry><title>Important Concepts for Computational Modeling</title><link href="https://adam2392.github.io/blog/2017/09/fundamental-computational-modeling/" rel="alternate"></link><published>2017-09-27T00:00:00-04:00</published><updated>2017-09-27T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:adam2392.github.io,2017-09-27:/blog/2017/09/fundamental-computational-modeling/</id><summary type="html">&lt;p&gt;To keep a log of important concepts in computational modeling.&lt;/p&gt;</summary><content type="html">&lt;!-- MarkdownTOC --&gt;
+&lt;p&gt;Other then that, you can take an Uber or a taxi.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Thu, 05 Oct 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:None,2017-10-05:/blog/2017/10/travel-munich/</guid><category>travel</category><category>europe</category><category>germany</category><category>munich</category></item><item><title>Important Concepts for Computational Modeling</title><link>/blog/2017/09/fundamental-computational-modeling/</link><description>&lt;!-- MarkdownTOC --&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Background&lt;/li&gt;
@@ -2573,11 +2587,14 @@ Stratonovich integral =&amp;gt;&lt;/p&gt;
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
     mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
         "MathJax.Hub.Config({" +
         "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
         "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
         "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
         "    displayAlign: '"+ align +"'," +
@@ -2591,6 +2608,8 @@ Stratonovich integral =&amp;gt;&lt;/p&gt;
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
         "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
         "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
         "    }, " +
@@ -2611,9 +2630,11 @@ Stratonovich integral =&amp;gt;&lt;/p&gt;
                 "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
             "});" +
         "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="phd"></category><category term="journals"></category><category term="reviews"></category><category term="computational modeling"></category></entry><entry><title>Simulating Epileptic iEEG Activity Using The Virtual Brain</title><link href="https://adam2392.github.io/blog/2017/09/simulating-tvb/" rel="alternate"></link><published>2017-09-27T00:00:00-04:00</published><updated>2017-09-27T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:adam2392.github.io,2017-09-27:/blog/2017/09/simulating-tvb/</id><summary type="html">&lt;p&gt;To guide the simulation of Epileptic iEEG activity using TVB in Marseille, France.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Background&lt;/h1&gt;
+&lt;/script&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Wed, 27 Sep 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:None,2017-09-27:/blog/2017/09/fundamental-computational-modeling/</guid><category>phd</category><category>journals</category><category>reviews</category><category>computational modeling</category></item><item><title>Simulating Epileptic iEEG Activity Using The Virtual Brain</title><link>/blog/2017/09/simulating-tvb/</link><description>&lt;h1&gt;Background&lt;/h1&gt;
 &lt;p&gt;TVB is a platform for simulating whole-brain dynamics that starts from raw data involving:
     1. structural connectivity derived from DTI
     2. brain parcellation derived from MRI and CT
@@ -2717,7 +2738,7 @@ Ex: State variables, iEEG activity from sampling rate and period.&lt;/p&gt;
 &lt;li&gt;https://github.com/the-virtual-brain/tvb-library&lt;/li&gt;
 &lt;li&gt;https://github.com/the-virtual-brain/tvb-epilepsy&lt;/li&gt;
 &lt;li&gt;https://www.thevirtualbrain.org/tvb/zwei&lt;/li&gt;
-&lt;/ol&gt;</content><category term="data analysis"></category><category term="eeg"></category><category term="phd"></category><category term="computational modeling"></category></entry><entry><title>Important Papers for Fundamentals in Computational Neuroscience / Data Science</title><link href="https://adam2392.github.io/blog/2017/09/fundamental-papers/" rel="alternate"></link><published>2017-09-25T00:00:00-04:00</published><updated>2017-09-25T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:adam2392.github.io,2017-09-25:/blog/2017/09/fundamental-papers/</id><summary type="html">&lt;p&gt;To keep a log of important papers I read about and how they are relevant.&lt;/p&gt;</summary><content type="html">&lt;!-- MarkdownTOC --&gt;
+&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Wed, 27 Sep 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:None,2017-09-27:/blog/2017/09/simulating-tvb/</guid><category>data analysis</category><category>eeg</category><category>phd</category><category>computational modeling</category></item><item><title>Important Papers for Fundamentals in Computational Neuroscience / Data Science</title><link>/blog/2017/09/fundamental-papers/</link><description>&lt;!-- MarkdownTOC --&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Papers&lt;ul&gt;
@@ -2855,11 +2876,14 @@ It seems that the hidden layers converge to the optiaml IB representations. Howe
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
     mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
         "MathJax.Hub.Config({" +
         "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
         "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
         "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
         "    displayAlign: '"+ align +"'," +
@@ -2873,6 +2897,8 @@ It seems that the hidden layers converge to the optiaml IB representations. Howe
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
         "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
         "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
         "    }, " +
@@ -2893,9 +2919,11 @@ It seems that the hidden layers converge to the optiaml IB representations. Howe
                 "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
             "});" +
         "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="phd"></category><category term="journals"></category><category term="reviews"></category></entry><entry><title>Travel - Marseille</title><link href="https://adam2392.github.io/blog/2017/09/travel-marseille/" rel="alternate"></link><published>2017-09-22T00:00:00-04:00</published><updated>2017-09-22T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:adam2392.github.io,2017-09-22:/blog/2017/09/travel-marseille/</id><summary type="html">&lt;p&gt;A summary of how to visit Marseille and get the most out of your trip.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Europe - Marseille, France&lt;/h1&gt;
+&lt;/script&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Mon, 25 Sep 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:None,2017-09-25:/blog/2017/09/fundamental-papers/</guid><category>phd</category><category>journals</category><category>reviews</category></item><item><title>Travel - Marseille</title><link>/blog/2017/09/travel-marseille/</link><description>&lt;h1&gt;Europe - Marseille, France&lt;/h1&gt;
 &lt;!-- MarkdownTOC --&gt;
 
 &lt;ul&gt;
@@ -3052,7 +3080,7 @@ It seems that the hidden layers converge to the optiaml IB representations. Howe
 A: Use uber, or the metro line.&lt;/li&gt;
 &lt;li&gt;Q: Where should I stay?
 A: I would stay near Vieux Port, Joliette, or the southern part of the city.&lt;/li&gt;
-&lt;/ol&gt;</content><category term="travel"></category><category term="europe"></category><category term="france"></category><category term="marseille"></category></entry><entry><title>Doctoral Board Oral Exam (PhD)</title><link href="https://adam2392.github.io/blog/2017/08/doctoral-board-oral/" rel="alternate"></link><published>2017-08-05T00:00:00-04:00</published><updated>2017-08-05T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:adam2392.github.io,2017-08-05:/blog/2017/08/doctoral-board-oral/</id><summary type="html">&lt;p&gt;A short walkthrough of my experience with the DBO exam at Johns Hopkins University&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Doctoral Board Oral Exam&lt;/h1&gt;
+&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Fri, 22 Sep 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:None,2017-09-22:/blog/2017/09/travel-marseille/</guid><category>travel</category><category>europe</category><category>france</category><category>marseille</category></item><item><title>Doctoral Board Oral Exam (PhD)</title><link>/blog/2017/08/doctoral-board-oral/</link><description>&lt;h1&gt;Doctoral Board Oral Exam&lt;/h1&gt;
 &lt;!-- MarkdownTOC --&gt;
 
 &lt;ul&gt;
@@ -3282,11 +3310,14 @@ A: I would study for about 2-3 weeks with nothing else going on. You want to be 
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
     mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
         "MathJax.Hub.Config({" +
         "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
         "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
         "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
         "    displayAlign: '"+ align +"'," +
@@ -3300,6 +3331,8 @@ A: I would study for about 2-3 weeks with nothing else going on. You want to be 
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
         "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
         "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
         "    }, " +
@@ -3320,9 +3353,11 @@ A: I would study for about 2-3 weeks with nothing else going on. You want to be 
                 "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
             "});" +
         "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="doctoral board oral"></category><category term="phd"></category><category term="johns hopkins"></category></entry><entry><title>Travel - Baltimore</title><link href="https://adam2392.github.io/blog/2017/08/travel-baltimore/" rel="alternate"></link><published>2017-08-04T00:00:00-04:00</published><updated>2017-08-04T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:adam2392.github.io,2017-08-04:/blog/2017/08/travel-baltimore/</id><summary type="html">&lt;p&gt;A walkthrough of my experience in Baltimore.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Baltimore, MD&lt;/h1&gt;
+&lt;/script&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Sat, 05 Aug 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:None,2017-08-05:/blog/2017/08/doctoral-board-oral/</guid><category>doctoral board oral</category><category>phd</category><category>johns hopkins</category></item><item><title>Travel - Baltimore</title><link>/blog/2017/08/travel-baltimore/</link><description>&lt;h1&gt;Baltimore, MD&lt;/h1&gt;
 &lt;!-- MarkdownTOC --&gt;
 
 &lt;ul&gt;
@@ -3386,7 +3421,7 @@ A: I would try to stay at Inner Harbor, Fed Hill, or Canton.&lt;/p&gt;
 &lt;p&gt;Q: I only have a day in Baltimore, where should I go?
 A: Miss Shirley's, Woodberry Kitchen, and Chocolate Over Water to eat. Inner Harbor and the National Aquarium to see. &lt;/p&gt;
 &lt;/li&gt;
-&lt;/ol&gt;</content><category term="travel"></category><category term="baltimore"></category><category term="usa"></category></entry><entry><title>Travel - Chicago</title><link href="https://adam2392.github.io/blog/2017/08/travel-chicago/" rel="alternate"></link><published>2017-08-04T00:00:00-04:00</published><updated>2017-08-04T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:adam2392.github.io,2017-08-04:/blog/2017/08/travel-chicago/</id><summary type="html">&lt;p&gt;A walkthrough of my experience in Chicago.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Chicago, Illinois, USA&lt;/h1&gt;
+&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Fri, 04 Aug 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:None,2017-08-04:/blog/2017/08/travel-baltimore/</guid><category>travel</category><category>baltimore</category><category>usa</category></item><item><title>Travel - Chicago</title><link>/blog/2017/08/travel-chicago/</link><description>&lt;h1&gt;Chicago, Illinois, USA&lt;/h1&gt;
 &lt;h3&gt;Table of Contents&lt;/h3&gt;
 &lt;!-- MarkdownTOC --&gt;
 
@@ -3503,7 +3538,7 @@ A: Purple pig, Girl on the goat, Lou Malnati's to eat. Cloud Gate / Millenium Pa
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h1&gt;Images in Chicago&lt;/h1&gt;
-&lt;p&gt;&lt;img alt="test" src="https://adam2392.github.io/photos/chicago/atoma.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="test" src="photos/chicago/atoma.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;![]{({photo}chicago/atom.jpg)&lt;/p&gt;
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
@@ -3519,11 +3554,14 @@ A: Purple pig, Girl on the goat, Lou Malnati's to eat. Cloud Gate / Millenium Pa
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
     mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
         "MathJax.Hub.Config({" +
         "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
         "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
         "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
         "    displayAlign: '"+ align +"'," +
@@ -3537,6 +3575,8 @@ A: Purple pig, Girl on the goat, Lou Malnati's to eat. Cloud Gate / Millenium Pa
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
         "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
         "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
         "    }, " +
@@ -3557,9 +3597,11 @@ A: Purple pig, Girl on the goat, Lou Malnati's to eat. Cloud Gate / Millenium Pa
                 "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
             "});" +
         "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="travel"></category><category term="chicago"></category><category term="usa"></category></entry><entry><title>Travel - Japan</title><link href="https://adam2392.github.io/blog/2017/07/travel-japan/" rel="alternate"></link><published>2017-07-26T00:00:00-04:00</published><updated>2017-07-26T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:adam2392.github.io,2017-07-26:/blog/2017/07/travel-japan/</id><summary type="html">&lt;p&gt;A walkthrough of my experience in Japan.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Asia - Japan&lt;/h1&gt;
+&lt;/script&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Fri, 04 Aug 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:None,2017-08-04:/blog/2017/08/travel-chicago/</guid><category>travel</category><category>chicago</category><category>usa</category></item><item><title>Travel - Japan</title><link>/blog/2017/07/travel-japan/</link><description>&lt;h1&gt;Asia - Japan&lt;/h1&gt;
 &lt;!-- MarkdownTOC --&gt;
 
 &lt;ul&gt;
@@ -3736,7 +3778,7 @@ A: Purple pig, Girl on the goat, Lou Malnati's to eat. Cloud Gate / Millenium Pa
 &lt;ol&gt;
 &lt;li&gt;Q: How do I get around?
 A: I highly suggest getting the Kansai pass ahead of time if you are going to be traveling in that region. &lt;/li&gt;
-&lt;/ol&gt;</content><category term="travel"></category><category term="japan"></category></entry><entry><title>Travel - Korea</title><link href="https://adam2392.github.io/blog/2017/07/travel-korea/" rel="alternate"></link><published>2017-07-26T00:00:00-04:00</published><updated>2017-07-26T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:adam2392.github.io,2017-07-26:/blog/2017/07/travel-korea/</id><summary type="html">&lt;p&gt;A walkthrough of my experience in Seoul.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Asia - Seoul, South Korea&lt;/h1&gt;
+&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Wed, 26 Jul 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:None,2017-07-26:/blog/2017/07/travel-japan/</guid><category>travel</category><category>japan</category></item><item><title>Travel - Korea</title><link>/blog/2017/07/travel-korea/</link><description>&lt;h1&gt;Asia - Seoul, South Korea&lt;/h1&gt;
 &lt;!-- MarkdownTOC --&gt;
 
 &lt;ul&gt;
@@ -3818,7 +3860,7 @@ A: I highly suggest getting the Kansai pass ahead of time if you are going to be
 &lt;h2&gt;Getting Around&lt;/h2&gt;
 &lt;p&gt;There are metro stations, but be wary of when they close. Uber is also (as of 2017) only Uberblack, so make sure to do some research and download the local Korean taxi app.&lt;/p&gt;
 &lt;h1&gt;FAQ&lt;/h1&gt;
-&lt;p&gt;TBD&lt;/p&gt;</content><category term="travel"></category><category term="korea"></category><category term="seoul"></category></entry><entry><title>Setting Up a Pelican Site</title><link href="https://adam2392.github.io/blog/2017/06/setup-pelican-site/" rel="alternate"></link><published>2017-06-04T00:00:00-04:00</published><updated>2017-06-04T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:adam2392.github.io,2017-06-04:/blog/2017/06/setup-pelican-site/</id><summary type="html">&lt;p&gt;A short walkthrough of setting up a pelican site&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Getting Setup with Pelican Site&lt;/h1&gt;
+&lt;p&gt;TBD&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Wed, 26 Jul 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:None,2017-07-26:/blog/2017/07/travel-korea/</guid><category>travel</category><category>korea</category><category>seoul</category></item><item><title>Setting Up a Pelican Site</title><link>/blog/2017/06/setup-pelican-site/</link><description>&lt;h1&gt;Getting Setup with Pelican Site&lt;/h1&gt;
 &lt;h1&gt;By: Adam Li&lt;/h1&gt;
 &lt;h3&gt;Table of Contents&lt;/h3&gt;
 &lt;!-- MarkdownTOC autolink="True" --&gt;
@@ -3967,7 +4009,7 @@ http://duncanlock.net/blog/2013/05/29/better-figures-images-plugin-for-pelican/&
 &lt;li&gt;Pelican-plugins: https://github.com/getpelican/pelican-plugins&lt;/li&gt;
 &lt;li&gt;Pelican-themes: https://github.com/getpelican/pelican-themes&lt;/li&gt;
 &lt;li&gt;Walkthru of Pelican w/ Python3.7: https://rsip22.github.io/blog/create-a-blog-with-pelican-and-github-pages.html&lt;/li&gt;
-&lt;/ol&gt;</content><category term="pelican"></category><category term="publishing"></category><category term="webdev"></category><category term="python"></category></entry><entry><title>Setting Up a Virtual Environment for Python</title><link href="https://adam2392.github.io/blog/2017/06/setup-virtual-env/" rel="alternate"></link><published>2017-06-04T00:00:00-04:00</published><updated>2017-06-04T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:adam2392.github.io,2017-06-04:/blog/2017/06/setup-virtual-env/</id><summary type="html">&lt;p&gt;A short walkthrough of setting up a virtual environment for Python development.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Getting Setup with Virtual Environment for Python Development&lt;/h1&gt;
+&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Sun, 04 Jun 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:None,2017-06-04:/blog/2017/06/setup-pelican-site/</guid><category>pelican</category><category>publishing</category><category>webdev</category><category>python</category></item><item><title>Setting Up a Virtual Environment for Python</title><link>/blog/2017/06/setup-virtual-env/</link><description>&lt;h1&gt;Getting Setup with Virtual Environment for Python Development&lt;/h1&gt;
 &lt;h1&gt;By: Adam Li&lt;/h1&gt;
 &lt;h3&gt;Table of Contents&lt;/h3&gt;
 &lt;!-- MarkdownTOC autolink="true" bracket="round" --&gt;
@@ -4084,7 +4126,7 @@ VirtualEnvWrapper&lt;/p&gt;
 &lt;li&gt;https://nolar.info/automatically-activate-virtualenv-on-cd/&lt;/li&gt;
 &lt;li&gt;code to input into .bashrc&lt;/li&gt;
 &lt;li&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><category term="virtualenv"></category><category term="webdev"></category><category term="python"></category></entry><entry><title>Travel - Paris</title><link href="https://adam2392.github.io/blog/2017/03/travel-paris/" rel="alternate"></link><published>2017-03-22T00:00:00-04:00</published><updated>2017-03-22T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:adam2392.github.io,2017-03-22:/blog/2017/03/travel-paris/</id><summary type="html">&lt;p&gt;A summary of how to visit Paris and get the most out of your trip.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Europe - Lyon, France&lt;/h1&gt;
+&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Sun, 04 Jun 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:None,2017-06-04:/blog/2017/06/setup-virtual-env/</guid><category>virtualenv</category><category>webdev</category><category>python</category></item><item><title>Travel - Paris</title><link>/blog/2017/03/travel-paris/</link><description>&lt;h1&gt;Europe - Lyon, France&lt;/h1&gt;
 &lt;!-- MarkdownTOC --&gt;
 
 &lt;ul&gt;
@@ -4223,7 +4265,7 @@ A: Use uber, or the metro line.&lt;/p&gt;
 &lt;p&gt;Q: Where should I stay?
 A: I would stay near the Seine river if possible! Preferably on the north side because it's nicer.&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ol&gt;</content><category term="travel"></category><category term="europe"></category><category term="france"></category><category term="paris"></category></entry><entry><title>Personal Goals - 2017</title><link href="https://adam2392.github.io/blog/2016/12/goals-2017/" rel="alternate"></link><published>2016-12-31T00:00:00-05:00</published><updated>2016-12-31T00:00:00-05:00</updated><author><name>Adam Li</name></author><id>tag:adam2392.github.io,2016-12-31:/blog/2016/12/goals-2017/</id><summary type="html">&lt;p&gt;A summary of goals for 2017.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Reflecting on one of the best years ever, I'm grateful for all the people and places that made these memories happen. I took some time around 1 year ago to plan out ten things I wanted to carry out in 2016. I've enjoyed it a lot because it's been a goal to work towards for the entire year.&lt;/p&gt;
+&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Wed, 22 Mar 2017 00:00:00 -0400</pubDate><guid isPermaLink="false">tag:None,2017-03-22:/blog/2017/03/travel-paris/</guid><category>travel</category><category>europe</category><category>france</category><category>paris</category></item><item><title>Personal Goals - 2017</title><link>/blog/2016/12/goals-2017/</link><description>&lt;p&gt;Reflecting on one of the best years ever, I'm grateful for all the people and places that made these memories happen. I took some time around 1 year ago to plan out ten things I wanted to carry out in 2016. I've enjoyed it a lot because it's been a goal to work towards for the entire year.&lt;/p&gt;
 &lt;p&gt;First I want to look at what I set out to do, and where I've come in regards to those goals. It will be interesting to see how my own priorities simply a year ago changed throughout the year and what I want to keep and discard for 2017.&lt;/p&gt;
 &lt;h2&gt;Old 2016 Resolutions:&lt;/h2&gt;
 &lt;h4&gt;1. Spend more effort and time on good friends and ignore the rest. [x]&lt;/h4&gt;
@@ -4293,7 +4335,7 @@ A: I would stay near the Seine river if possible! Preferably on the north side b
 &lt;li&gt;In my research I have a very focused area that I am developing, but I want to become a thought leader in data science one day. The only way to do that is to continue my reading of papers unrelated to my research and continue my textbook reading of different topics, such as matrix theory and bayesian statistics. The more I understand, the more I might even be able to apply to my PhD research.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4&gt;8. Build 3 Node, JS, React webapps this year&lt;/h4&gt;
-&lt;p&gt;Keeping it under 10 this year because I recently read about Warren Buffet's 5/25 rule and am inspired by its logic. Happy 2017 everyone.&lt;/p&gt;</content><category term="personal"></category><category term="goals"></category></entry><entry><title>Personal Goals - 2016</title><link href="https://adam2392.github.io/blog/2015/12/goals-2016/" rel="alternate"></link><published>2015-12-31T00:00:00-05:00</published><updated>2015-12-31T00:00:00-05:00</updated><author><name>Adam Li</name></author><id>tag:adam2392.github.io,2015-12-31:/blog/2015/12/goals-2016/</id><summary type="html">&lt;p&gt;A summary of goals for 2016.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Each year passes by faster and faster in my opinion, so I want to make the most out of 2016. As 2016 comes and 2015 comes to a close, I want to make some resolutions and goals for the new year.&lt;/p&gt;
+&lt;p&gt;Keeping it under 10 this year because I recently read about Warren Buffet's 5/25 rule and am inspired by its logic. Happy 2017 everyone.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Sat, 31 Dec 2016 00:00:00 -0500</pubDate><guid isPermaLink="false">tag:None,2016-12-31:/blog/2016/12/goals-2017/</guid><category>personal</category><category>goals</category></item><item><title>Personal Goals - 2016</title><link>/blog/2015/12/goals-2016/</link><description>&lt;p&gt;Each year passes by faster and faster in my opinion, so I want to make the most out of 2016. As 2016 comes and 2015 comes to a close, I want to make some resolutions and goals for the new year.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Spend more effort and time on good friends and ignore the rest.&lt;/li&gt;
 &lt;li&gt;
@@ -4352,4 +4394,4 @@ A: I would stay near the Seine river if possible! Preferably on the north side b
 &lt;/li&gt;
 &lt;li&gt;I've always been anxious to accomplish things. However, over the next 4 years, I realized it'll be grind and work. Gaining the technical skills so I can set myself up for maximizing the probability of succeeding in a technical startup. Just have to be patient and have this same dream when I'm 29.
 All resolutions are goals in my opinion. The only real way to accomplish a goal that you set your mind to is work on them in minimal increments. Happy new years. It's going to be a good one.&lt;/li&gt;
-&lt;/ol&gt;</content><category term="personal"></category><category term="goals"></category></entry></feed>
+&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Adam Li</dc:creator><pubDate>Thu, 31 Dec 2015 00:00:00 -0500</pubDate><guid isPermaLink="false">tag:None,2015-12-31:/blog/2015/12/goals-2016/</guid><category>personal</category><category>goals</category></item></channel></rss>
