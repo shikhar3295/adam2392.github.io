@@ -1476,11 +1476,14 @@ A: Purple pig, Girl on the goat, Lou Malnati's to eat. Cloud Gate / Millenium Pa
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
     mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
         "MathJax.Hub.Config({" +
         "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
         "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
         "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
         "    displayAlign: '"+ align +"'," +
@@ -1494,6 +1497,8 @@ A: Purple pig, Girl on the goat, Lou Malnati's to eat. Cloud Gate / Millenium Pa
         "        preview: 'TeX'," +
         "    }, " +
         "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
         "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
         "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
         "    }, " +
@@ -1514,6 +1519,8 @@ A: Purple pig, Girl on the goat, Lou Malnati's to eat. Cloud Gate / Millenium Pa
                 "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
             "});" +
         "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;</content><category term="travel"></category><category term="chicago"></category><category term="usa"></category></entry><entry><title>Travel - Japan</title><link href="/blog/2017/07/travel-japan/" rel="alternate"></link><published>2017-07-26T00:00:00-04:00</published><updated>2017-07-26T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-07-26:/blog/2017/07/travel-japan/</id><summary type="html">&lt;p&gt;A walkthrough of my experience in Japan.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Asia - Japan&lt;/h1&gt;
