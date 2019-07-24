@@ -5,7 +5,7 @@ Tags: travel, chicago, usa
 Slug: travel-chicago
 Authors: Adam Li
 Summary: A walkthrough of my experience in Chicago.
-Gallery: {photo}chicago
+gallery:{photo}chicago
 
 # Chicago, Illinois, USA
 ### Table of Contents
@@ -172,7 +172,9 @@ A: Generally, I'm an advocate of staying downtown because then everything is wal
 A: Purple pig, Girl on the goat, Lou Malnati's to eat. Cloud Gate / Millenium Park and the River Walk to see. Signature Room for a night time drink if you have the time.
 
 # Images in Chicago
-![test]({photo}chicago/atom.jpg)
+![]({photo}chicago/atom.JPG)
 
-![]{({photo}chicago/atom.jpg)
+Here are my best photos, taken with my favorite camera:
+![]({photo}chicago/bean.jpg).
+{photo}chicago/bean.jpg
 

@@ -363,7 +363,10 @@ ethereumjs-testrpc@6.0.3 &lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href="#adding-pages-of-static-content"&gt;Adding Pages of Static Content&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#adding-articles-to-your-blog"&gt;Adding Articles To Your Blog&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#adding-gallery--images-to-your-blog"&gt;Adding Gallery / Images To Your Blog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#adding-gallery--images-to-your-blog"&gt;Adding Gallery / Images To Your Blog&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#modifying-pelican-templates"&gt;Modifying Pelican Templates:&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;a href="#references"&gt;References:&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;!-- /MarkdownTOC --&gt;
@@ -386,6 +389,7 @@ ethereumjs-testrpc@6.0.3 &lt;/p&gt;
 &lt;span class="nv"&gt;conda&lt;/span&gt; &lt;span class="nv"&gt;install&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;c&lt;/span&gt; &lt;span class="nv"&gt;damianavila82&lt;/span&gt; &lt;span class="nv"&gt;piexif&lt;/span&gt; # &lt;span class="k"&gt;for&lt;/span&gt;
 &lt;span class="nv"&gt;pip&lt;/span&gt; &lt;span class="nv"&gt;install&lt;/span&gt; &lt;span class="nv"&gt;pyexif&lt;/span&gt;
 &lt;span class="nv"&gt;conda&lt;/span&gt; &lt;span class="nv"&gt;install&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;c&lt;/span&gt; &lt;span class="nv"&gt;conda&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;forge&lt;/span&gt; &lt;span class="nv"&gt;ghp&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;import&lt;/span&gt;
+&lt;span class="nv"&gt;conda&lt;/span&gt; &lt;span class="nv"&gt;install&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;c&lt;/span&gt; &lt;span class="nv"&gt;anaconda&lt;/span&gt; &lt;span class="nv"&gt;pil&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -480,7 +484,9 @@ ethereumjs-testrpc@6.0.3 &lt;/p&gt;
 &lt;h1&gt;Adding Gallery / Images To Your Blog&lt;/h1&gt;
 &lt;p&gt;Adding images to your blog require the following packages:
 - exeif
-- &lt;/p&gt;
+- Pillow
+- Knowledge of modifying Pelican templates&lt;/p&gt;
+&lt;h2&gt;Modifying Pelican Templates:&lt;/h2&gt;
 &lt;p&gt;https://kwkelly.com/blog/adding-galleries-to-pelican-and-bootstrap/
 http://duncanlock.net/blog/2013/05/29/better-figures-images-plugin-for-pelican/&lt;/p&gt;
 &lt;h1&gt;References:&lt;/h1&gt;

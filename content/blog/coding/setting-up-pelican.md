@@ -23,6 +23,7 @@ Summary: A short walkthrough of setting up a pelican site
 - [Adding Pages of Static Content](#adding-pages-of-static-content)
 - [Adding Articles To Your Blog](#adding-articles-to-your-blog)
 - [Adding Gallery / Images To Your Blog](#adding-gallery--images-to-your-blog)
+    - [Modifying Pelican Templates:](#modifying-pelican-templates)
 - [References:](#references)
 
 <!-- /MarkdownTOC -->
@@ -45,6 +46,7 @@ or
     conda install -c damianavila82 piexif # for
     pip install pyexif
     conda install -c conda-forge ghp-import
+    conda install -c anaconda pil
 
 
 for helping to write in Markdown and writing pretty text.
@@ -132,7 +134,11 @@ To add articles to your blog, create /content/blog/ directory and create subdire
 # Adding Gallery / Images To Your Blog
 Adding images to your blog require the following packages:
 - exeif
-- 
+- Pillow
+- Knowledge of modifying Pelican templates
+
+## Modifying Pelican Templates:
+
 
 https://kwkelly.com/blog/adding-galleries-to-pelican-and-bootstrap/
 http://duncanlock.net/blog/2013/05/29/better-figures-images-plugin-for-pelican/

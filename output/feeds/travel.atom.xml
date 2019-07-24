@@ -1317,8 +1317,10 @@ A: Purple pig, Girl on the goat, Lou Malnati's to eat. Cloud Gate / Millenium Pa
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h1&gt;Images in Chicago&lt;/h1&gt;
-&lt;p&gt;&lt;img alt="test" src="photos/chicago/atoma.jpg"&gt;&lt;/p&gt;
-&lt;p&gt;![]{({photo}chicago/atom.jpg)&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="photos/chicago/atoma.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;Here are my best photos, taken with my favorite camera:
+&lt;img alt="" src="photos/chicago/beana.jpg"&gt;.
+{photo}chicago/bean.jpg&lt;/p&gt;
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
