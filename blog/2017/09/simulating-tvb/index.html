@@ -122,7 +122,23 @@ Adam Li's blog            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <h1>Background</h1>
+                <!-- MarkdownTOC autolink="true" -->
+
+<ul>
+<li><a href="#background">Background</a></li>
+<li><a href="#data--metadata">Data &amp; Metadata</a></li>
+<li><a href="#implementation">Implementation</a><ul>
+<li><a href="#1-setting-up-environment">1. Setting Up Environment</a></li>
+<li><a href="#1b-setting-up-environment-on-a-cluster">1b. Setting Up Environment on a Cluster</a></li>
+<li><a href="#1c-using-docker--singularity">1c. Using Docker / Singularity</a></li>
+<li><a href="#2-simulating-epilepsy">2. Simulating Epilepsy</a></li>
+<li><a href="#references">References:</a></li>
+</ul>
+</li>
+</ul>
+<!-- /MarkdownTOC -->
+
+<h2 id="background"><a class="toclink" href="#background">Background</a><a class="headerlink" href="#background" title="Permanent link">&para;</a></h2>
 <p>TVB is a platform for simulating whole-brain dynamics that starts from raw data involving:
     1. structural connectivity derived from DTI
     2. brain parcellation derived from MRI and CT
@@ -130,7 +146,7 @@ Adam Li's blog            </a>
 This will then determine a gain matrix to determine SEEG signals from the source signals that are generated from neural mass models.</p>
 <p>The neural mass models will be implemented with nonlinear, complex models for simulating certain type of electrophysiology. The Epileptor is used for simulating seizure activity from a specific source region. </p>
 <p>The epileptor is a set of coupled differential equations that rely on 6 different variables. They are described here:</p>
-<h1>Data &amp; Metadata</h1>
+<h2 id="data-metadata"><a class="toclink" href="#data-metadata">Data &amp; Metadata</a><a class="headerlink" href="#data-metadata" title="Permanent link">&para;</a></h2>
 <p>Generally, refer to my post on "Freesurfer" to establish the preprocessing data pipeline using Freesurfer, FSL and MRtrix3.</p>
 <p>The minimum necessary requirements for creating the TVB dataset are a set of T1 and DWI images as a list of dicom files, or a single 4-D image nifti file.</p>
 <p>A high level summary of how the pipeline proceeds is:
@@ -158,52 +174,38 @@ In order to compute forward solutions of electrode (i.e. SEEG, ECoG, etc.) activ
 </li>
 </ol>
 <p>This can be done using an inverse-square method fall-off on the region activity, or using a dipole method as outlined in the "Virtual Epileptic Patient" paper.</p>
-<h1>Implementation</h1>
-<h2>1. Setting Up Environment</h2>
+<h2 id="implementation"><a class="toclink" href="#implementation">Implementation</a><a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h2>
+<h3 id="1-setting-up-environment"><a class="toclink" href="#1-setting-up-environment">1. Setting Up Environment</a><a class="headerlink" href="#1-setting-up-environment" title="Permanent link">&para;</a></h3>
 <p>First you may want to set up a conda environment, or a virtualenv that will separate the entire python project from your normal OS.</p>
-<div class="highlight"><pre><span></span><span class="err">$</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="n">nibabel</span> <span class="n">networkx</span>
-<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">the</span><span class="o">-</span><span class="n">virtual</span><span class="o">-</span><span class="n">brain</span><span class="o">/</span><span class="n">tvb</span><span class="o">-</span><span class="k">data</span>
-<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">the</span><span class="o">-</span><span class="n">virtual</span><span class="o">-</span><span class="n">brain</span><span class="o">/</span><span class="n">tvb</span><span class="o">-</span><span class="n">library</span>
-<span class="err">$</span>
-</pre></div>
-
-
+<pre><code>$
+pip install nibabel networkx
+git clone https://github.com/the-virtual-brain/tvb-data
+git clone https://github.com/the-virtual-brain/tvb-library
+$
+</code></pre>
 <p>If you want to have a script to add these all to path for your jupyter notebook, use the following:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-<span class="nb">echo</span> <span class="s2">&quot;Launching IPython Notebook from TVB Distribution&quot;</span>
-<span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;</span><span class="nv">$LANG</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-    <span class="nb">export</span> <span class="nv">LANG</span><span class="o">=</span>en_US.UTF-8
-<span class="k">fi</span>
-<span class="nb">export</span> <span class="nv">LC_ALL</span><span class="o">=</span><span class="nv">$LANG</span>
-<span class="c1"># add tvb data and library to path and launch notebook</span>
-<span class="nb">export</span> <span class="nv">PYTHONPATH</span><span class="o">=</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/_tvbdata:<span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/_tvblibrary:<span class="nv">$PYTHONPATH</span><span class="p">;</span>
+<pre><code>#!/bin/bash
+echo "Launching IPython Notebook from TVB Distribution"
+if [ -z "$LANG" ]; then
+    export LANG=en_US.UTF-8
+fi
+export LC_ALL=$LANG
+# add tvb data and library to path and launch notebook
+export PYTHONPATH=$(pwd)/_tvbdata:$(pwd)/_tvblibrary:$PYTHONPATH;
 jupyter notebook
-</pre></div>
-</td></tr></table>
-
-<h2>1b. Setting Up Environment on a Cluster</h2>
-<div class="highlight"><pre><span></span><span class="p">.</span> <span class="o">/</span><span class="n">soft</span><span class="o">/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">activate</span>
-<span class="n">conda</span> <span class="n">env</span> <span class="n">list</span>
-<span class="n">conda</span> <span class="k">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">tridesclous</span> <span class="n">python</span><span class="o">=</span><span class="mi">3</span><span class="p">.</span><span class="mi">6</span> <span class="n">scipy</span> <span class="n">numpy</span> <span class="n">pandas</span> <span class="n">scikit</span><span class="o">-</span><span class="n">learn</span> <span class="n">matplotlib</span> <span class="n">seaborn</span> <span class="n">pyqt</span><span class="o">=</span><span class="mi">5</span> <span class="n">ipykernel</span>
-<span class="k">source</span> <span class="n">activate</span> <span class="n">tridesclous</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="n">pyqtgraph</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">tridesclous</span><span class="o">/</span><span class="n">tridesclous</span><span class="o">/</span><span class="n">archive</span><span class="o">/</span><span class="n">master</span><span class="p">.</span><span class="n">zip</span>
-<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">ipykernel</span> <span class="n">install</span> <span class="c1">--name tridesclous-testing —user</span>
-</pre></div>
-
-
-<h2>1c. Using Docker / Singularity</h2>
+</code></pre>
+<h3 id="1b-setting-up-environment-on-a-cluster"><a class="toclink" href="#1b-setting-up-environment-on-a-cluster">1b. Setting Up Environment on a Cluster</a><a class="headerlink" href="#1b-setting-up-environment-on-a-cluster" title="Permanent link">&para;</a></h3>
+<pre><code>. /soft/miniconda3/activate
+conda env list
+conda create -n tridesclous python=3.6 scipy numpy pandas scikit-learn matplotlib seaborn pyqt=5 ipykernel
+source activate tridesclous
+pip install pyqtgraph
+pip install https://github.com/tridesclous/tridesclous/archive/master.zip
+python -m ipykernel install --name tridesclous-testing —user
+</code></pre>
+<h3 id="1c-using-docker-singularity"><a class="toclink" href="#1c-using-docker-singularity">1c. Using Docker / Singularity</a><a class="headerlink" href="#1c-using-docker-singularity" title="Permanent link">&para;</a></h3>
 <p>TBD</p>
-<h2>2. Simulating Epilepsy</h2>
+<h3 id="2-simulating-epilepsy"><a class="toclink" href="#2-simulating-epilepsy">2. Simulating Epilepsy</a><a class="headerlink" href="#2-simulating-epilepsy" title="Permanent link">&para;</a></h3>
 <p>In order to simulate epilepsy, you are going to walk through a pipeline using TVB. Details are left out for now.</p>
 <p>i. Structural Connectivity
 What is the matrix of connectivities between your brain regions?
@@ -221,7 +223,7 @@ Ex: linear, additive, hyperbolic</p>
 What variables to monitor and store?
 Ex: State variables, iEEG activity from sampling rate and period.</p>
 <p>Then once these are complete, you can run your simulation.</p>
-<h2>References:</h2>
+<h3 id="references"><a class="toclink" href="#references">References:</a><a class="headerlink" href="#references" title="Permanent link">&para;</a></h3>
 <ol>
 <li>https://github.com/the-virtual-brain/tvb-library</li>
 <li>https://github.com/the-virtual-brain/tvb-epilepsy</li>

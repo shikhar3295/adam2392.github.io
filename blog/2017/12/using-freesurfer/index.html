@@ -122,7 +122,34 @@ Adam Li's blog            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <h1>Necessary Tools</h1>
+                <!-- MarkdownTOC autolink="true" -->
+
+<ul>
+<li><a href="#necessary-tools">Necessary Tools</a></li>
+<li><a href="#data-processing-pipeline">Data Processing Pipeline:</a><ul>
+<li><a href="#1-dwi-processing">1. DWI Processing</a></li>
+<li><a href="#2-t1-mri-processing">2. T1 MRI Processing</a></li>
+<li><a href="#3-optional-ct-processing">3. (Optional) CT Processing</a></li>
+<li><a href="#4-connectome-generation">4. Connectome Generation</a></li>
+</ul>
+</li>
+<li><a href="#background">Background</a><ul>
+<li><a href="#common-definitions">Common Definitions:</a></li>
+</ul>
+</li>
+<li><a href="#implementation">Implementation</a><ul>
+<li><a href="#1-set-up">1. Set Up</a></li>
+<li><a href="#2-running-through-t1-weighted-mri-images">2. Running Through T1-Weighted MRI Images</a></li>
+<li><a href="#3-running-through-ct-images">3. Running Through CT Images</a></li>
+<li><a href="#4-getting-surface-parcellations">4. Getting Surface Parcellations</a></li>
+<li><a href="#5-getting-seeg-xyz-coordinates">5. Getting SEEG XYZ Coordinates</a></li>
+</ul>
+</li>
+<li><a href="#references">References:</a></li>
+</ul>
+<!-- /MarkdownTOC -->
+
+<h2 id="necessary-tools"><a class="toclink" href="#necessary-tools">Necessary Tools</a><a class="headerlink" href="#necessary-tools" title="Permanent link">&para;</a></h2>
 <p>Freesurfer, FSL, and MRtrix3 are the three main neuroimaging and registration softwares that you need to run a systematic data pipeline of neuroimaging data (i.e. CT, MRI, DWI).</p>
 <ol>
 <li>Freesurfer
@@ -139,84 +166,74 @@ https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation</li>
 http://mrtrix.readthedocs.io/en/latest/installation/mac_install.html</li>
 </ol>
 <p>MRtrix3 is primarily intended to be used for the analysis of diffusion MRI data. In addition, at its fundamental level it is designed as a general-purpose library for the analysis of any type of MRI data. </p>
-<h1>Data Processing Pipeline:</h1>
-<h2>1. DWI Processing</h2>
+<h2 id="data-processing-pipeline"><a class="toclink" href="#data-processing-pipeline">Data Processing Pipeline:</a><a class="headerlink" href="#data-processing-pipeline" title="Permanent link">&para;</a></h2>
+<h3 id="1-dwi-processing"><a class="toclink" href="#1-dwi-processing">1. DWI Processing</a><a class="headerlink" href="#1-dwi-processing" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Process diffusion imaging data, by denoising the data, then preprocessing it, then applying bias correction and then estimating the response function.</li>
 </ul>
 <p>$$
     dwidenoise </DTI_dicom_dir/> <dti_img_denoise.mif></p>
-<div class="highlight"><pre><span></span><span class="n">dwipreproc</span> <span class="o">-</span><span class="n">rpe_none</span> <span class="n">AP</span> <span class="n">DTI_30_average</span><span class="o">-</span><span class="mi">2</span><span class="n">_denoise</span><span class="p">.</span><span class="n">mif</span> <span class="o">&lt;</span><span class="n">dti_img_preproc_output</span><span class="p">.</span><span class="n">mif</span><span class="o">&gt;</span>
+<pre><code>dwipreproc -rpe_none AP DTI_30_average-2_denoise.mif &lt;dti_img_preproc_output.mif&gt;
 
-<span class="n">dwibiascorrect</span> <span class="o">&lt;</span><span class="n">dti_img_preproc_output</span><span class="p">.</span><span class="n">mif</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">dti_img_preproc_biascorrect_output</span><span class="p">.</span><span class="n">mif</span><span class="o">&gt;</span> <span class="err">–</span><span class="n">fsl</span>
+dwibiascorrect &lt;dti_img_preproc_output.mif&gt; &lt;dti_img_preproc_biascorrect_output.mif&gt; –fsl
 
-<span class="n">dwi2response</span> <span class="n">tournier</span> <span class="o">&lt;</span><span class="n">dti_img_preproc_biascorrect_output</span><span class="p">.</span><span class="n">mif</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">dti_img_preproc_biascorrect_response</span><span class="p">.</span><span class="n">txt</span><span class="o">&gt;</span>
+dwi2response tournier &lt;dti_img_preproc_biascorrect_output.mif&gt; &lt;dti_img_preproc_biascorrect_response.txt&gt;
 
-<span class="n">dwi2fod</span> <span class="n">csd</span> <span class="n">DTI_30_average</span><span class="o">-</span><span class="mi">2</span><span class="n">_denoise_preproc_biascorrected</span><span class="p">.</span><span class="n">mif</span> <span class="n">DTI_30_average</span><span class="o">-</span><span class="mi">2</span><span class="n">_denoise_preproc_biascorrected_response</span><span class="p">.</span><span class="n">txt</span> <span class="n">DTI_30_average</span><span class="o">-</span><span class="mi">2</span><span class="n">_denoise_preproc_biascorrected_fod</span><span class="p">.</span><span class="n">mif</span>
-</pre></div>
-
-
+dwi2fod csd DTI_30_average-2_denoise_preproc_biascorrected.mif DTI_30_average-2_denoise_preproc_biascorrected_response.txt DTI_30_average-2_denoise_preproc_biascorrected_fod.mif
+</code></pre>
 <p>$$</p>
-<h2>2. T1 MRI Processing</h2>
-<h2>3. (Optional) CT Processing</h2>
-<h2>4. Connectome Generation</h2>
-<h1>Background</h1>
+<h3 id="2-t1-mri-processing"><a class="toclink" href="#2-t1-mri-processing">2. T1 MRI Processing</a><a class="headerlink" href="#2-t1-mri-processing" title="Permanent link">&para;</a></h3>
+<h3 id="3-optional-ct-processing"><a class="toclink" href="#3-optional-ct-processing">3. (Optional) CT Processing</a><a class="headerlink" href="#3-optional-ct-processing" title="Permanent link">&para;</a></h3>
+<h3 id="4-connectome-generation"><a class="toclink" href="#4-connectome-generation">4. Connectome Generation</a><a class="headerlink" href="#4-connectome-generation" title="Permanent link">&para;</a></h3>
+<h2 id="background"><a class="toclink" href="#background">Background</a><a class="headerlink" href="#background" title="Permanent link">&para;</a></h2>
 <p>Freesurfer is a tool built for rendering 3D brains using MRI and Ct scans.</p>
 <p>FSL is a tool for coregistration and image analysis.</p>
 <p>Download both online:</p>
-<h2>Common Definitions:</h2>
+<h3 id="common-definitions"><a class="toclink" href="#common-definitions">Common Definitions:</a><a class="headerlink" href="#common-definitions" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Registration: to find a common coordinate system for the input data sets</li>
 <li></li>
 </ol>
-<h1>Implementation</h1>
-<h2>1. Set Up</h2>
+<h2 id="implementation"><a class="toclink" href="#implementation">Implementation</a><a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h2>
+<h3 id="1-set-up"><a class="toclink" href="#1-set-up">1. Set Up</a><a class="headerlink" href="#1-set-up" title="Permanent link">&para;</a></h3>
 <p>First you will want to download freesurfer from the following website:</p>
 <p>https://surfer.nmr.mgh.harvard.edu/fswiki/DownloadAndInstall
 Linux:
     ## bash
     $&gt; export FREESURFER_HOME=/usr/local/freesurfer
     $&gt; source $FREESURFER_HOME/SetUpFreeSurfer.sh</p>
-<div class="highlight"><pre><span></span>## <span class="nv">tcsh</span>
-$<span class="o">&gt;</span> <span class="k">setenv</span> <span class="nv">FREESURFER_HOME</span> <span class="o">/</span><span class="nv">usr</span><span class="o">/</span><span class="nv">local</span><span class="o">/</span><span class="nv">freesurfer</span>
-$<span class="o">&gt;</span> <span class="nv">source</span> <span class="mh">$F</span><span class="nv">REESURFER_HOME</span><span class="o">/</span><span class="nv">SetUpFreeSurfer</span>.<span class="nv">csh</span>
-</pre></div>
-
-
+<pre><code>## tcsh
+$&gt; setenv FREESURFER_HOME /usr/local/freesurfer
+$&gt; source $FREESURFER_HOME/SetUpFreeSurfer.csh
+</code></pre>
 <p>Mac:
     $&gt; export FREESURFER_HOME=/Applications/freesurfer
     $&gt; source $FREESURFER_HOME/SetUpFreeSurfer.sh</p>
 <p>Run those commands within your terminal, or add them to ~/.bashrc file to have access to all the command line tools for freeview.</p>
 <p>You will need to setup your own directory where you will hold all your subject data.</p>
-<div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">SUBJECTS_DIR</span><span class="o">=&lt;</span><span class="n">path</span> <span class="k">to</span> <span class="n">subject</span> <span class="k">data</span><span class="o">&gt;</span>
-</pre></div>
-
-
+<pre><code>export SUBJECTS_DIR=&lt;path to subject data&gt;
+</code></pre>
 <p>This will be where you store say patient's MRI/CT scans that you will use to reconstruct the brain.</p>
-<h2>2. Running Through T1-Weighted MRI Images</h2>
+<h3 id="2-running-through-t1-weighted-mri-images"><a class="toclink" href="#2-running-through-t1-weighted-mri-images">2. Running Through T1-Weighted MRI Images</a><a class="headerlink" href="#2-running-through-t1-weighted-mri-images" title="Permanent link">&para;</a></h3>
 <p>First you want to set your current Subjects directory to where you are working with the raw say .dcm data.</p>
-<div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">SUBJECTS_DIR</span><span class="o">=</span><span class="err">$</span><span class="n">PWD</span>
-</pre></div>
-
-
+<pre><code>export SUBJECTS_DIR=$PWD
+</code></pre>
 <p>There may be an issue where you can't run the functions with your .dcm files. I have no idea why this occurs, but an easy fix is to externally run a dicom to nii converter and pass this type of file instead. Here is a link to a matlab converter that can do this:
 https://www.mathworks.com/matlabcentral/fileexchange/42997-dicom-to-nifti-converter--nifti-tool-and-viewer</p>
 <p>There are also other resources online.</p>
 <p>Afterwards, you can run the following command(s):</p>
-<div class="highlight"><pre><span></span><span class="n">recon</span><span class="o">-</span><span class="k">all</span> <span class="o">-</span><span class="n">i</span> <span class="o">&lt;</span><span class="k">data</span><span class="o">&gt;</span><span class="p">.</span><span class="n">nii</span> <span class="o">-</span><span class="n">s</span> <span class="o">&lt;</span><span class="n">subject_name</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">autorecon1</span>
-<span class="n">recon</span><span class="o">-</span><span class="k">all</span> <span class="o">-</span><span class="n">i</span> <span class="o">&lt;</span><span class="k">data</span><span class="o">&gt;</span><span class="p">.</span><span class="n">nii</span> <span class="o">-</span><span class="n">s</span> <span class="o">&lt;</span><span class="n">subject_name</span><span class="o">&gt;</span> <span class="o">-</span><span class="k">all</span>
-</pre></div>
-
-
+<pre><code>recon-all -i &lt;data&gt;.nii -s &lt;subject_name&gt; -autorecon1
+recon-all -i &lt;data&gt;.nii -s &lt;subject_name&gt; -all
+</code></pre>
 <p>This will take a long time! So be prepared to run this on a compute engine that has time.</p>
-<h2>3. Running Through CT Images</h2>
+<h3 id="3-running-through-ct-images"><a class="toclink" href="#3-running-through-ct-images">3. Running Through CT Images</a><a class="headerlink" href="#3-running-through-ct-images" title="Permanent link">&para;</a></h3>
 <p>flirt -in patient_ct.nii -ref patient_mri.nii -omat patient_omat.mat -out patient_registered.nii.gz</p>
 <p>This command will coregister the CT data onto the domain of the MRI data and provide a coregistration for you to look at where certain contacts of electrodes are. You can also view in Freeview the different cuts of the brain using either CT, or MRI. </p>
-<h2>4. Getting Surface Parcellations</h2>
+<h3 id="4-getting-surface-parcellations"><a class="toclink" href="#4-getting-surface-parcellations">4. Getting Surface Parcellations</a><a class="headerlink" href="#4-getting-surface-parcellations" title="Permanent link">&para;</a></h3>
 <p>TBD</p>
-<h2>5. Getting SEEG XYZ Coordinates</h2>
+<h3 id="5-getting-seeg-xyz-coordinates"><a class="toclink" href="#5-getting-seeg-xyz-coordinates">5. Getting SEEG XYZ Coordinates</a><a class="headerlink" href="#5-getting-seeg-xyz-coordinates" title="Permanent link">&para;</a></h3>
 <p>Once you have CT images coregistered with MRI images, you can easily extract the locations of all iEEG contacts in the MRI axis system. This is done by noting a contact within each electrode (e.g. A1, B1, C10, etc.) and then an algorithm can fill in the entire electrode's xyz coordinates and output to a file.</p>
-<h1>References:</h1>
+<h2 id="references"><a class="toclink" href="#references">References:</a><a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <ol>
 <li>https://surfer.nmr.mgh.harvard.edu/fswiki/DownloadAndInstall#Setup.26Configuration</li>
 <li></li>
