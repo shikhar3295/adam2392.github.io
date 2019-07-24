@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
+    <link href="/photos/brain.jpg" rel="icon">
 
 <link rel="canonical" href="/blog/2017/06/setup-pelican-site/">
 
@@ -43,8 +44,7 @@
         <link href="/feeds/all.rss.xml" type="application/rss+xml" rel="alternate"
               title="Adam Li's blog RSS Feed"/>
         <link href="/feeds/coding.atom.xml" type="application/atom+xml" rel="alternate"
-              title="Adam Li's blog Coding ATOM Feed"/>
-</head>
+              title="Adam Li's blog Coding ATOM Feed"/></head>
 <body>
 
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -65,8 +65,12 @@ Adam Li's blog            </a>
                     <li><a href="/archives.html">Timeline</a></li>
                     <li><a href="/tags.html">Tags</a></li>
                     <li><a href="/pdfs/AdamLi_CV.pdf">Curriculum Vitae</a></li>
+                    <li><a href="/gallery.html">Gallery</a></li>
                          <li><a href="/contact/">
                              Contact
+                          </a></li>
+                         <li><a href="/gallery/">
+                             Gallery
                           </a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -139,7 +143,10 @@ Adam Li's blog            </a>
 </li>
 <li><a href="#adding-pages-of-static-content">Adding Pages of Static Content</a></li>
 <li><a href="#adding-articles-to-your-blog">Adding Articles To Your Blog</a></li>
-<li><a href="#adding-gallery--images-to-your-blog">Adding Gallery / Images To Your Blog</a></li>
+<li><a href="#adding-gallery--images-to-your-blog">Adding Gallery / Images To Your Blog</a><ul>
+<li><a href="#modifying-pelican-templates">Modifying Pelican Templates:</a></li>
+</ul>
+</li>
 <li><a href="#references">References:</a></li>
 </ul>
 <!-- /MarkdownTOC -->
@@ -162,6 +169,7 @@ Adam Li's blog            </a>
 <span class="nv">conda</span> <span class="nv">install</span> <span class="o">-</span><span class="nv">c</span> <span class="nv">damianavila82</span> <span class="nv">piexif</span> # <span class="k">for</span>
 <span class="nv">pip</span> <span class="nv">install</span> <span class="nv">pyexif</span>
 <span class="nv">conda</span> <span class="nv">install</span> <span class="o">-</span><span class="nv">c</span> <span class="nv">conda</span><span class="o">-</span><span class="nv">forge</span> <span class="nv">ghp</span><span class="o">-</span><span class="nv">import</span>
+<span class="nv">conda</span> <span class="nv">install</span> <span class="o">-</span><span class="nv">c</span> <span class="nv">anaconda</span> <span class="nv">pil</span>
 </pre></div>
 
 
@@ -256,7 +264,9 @@ Adam Li's blog            </a>
 <h1>Adding Gallery / Images To Your Blog</h1>
 <p>Adding images to your blog require the following packages:
 - exeif
-- </p>
+- Pillow
+- Knowledge of modifying Pelican templates</p>
+<h2>Modifying Pelican Templates:</h2>
 <p>https://kwkelly.com/blog/adding-galleries-to-pelican-and-bootstrap/
 http://duncanlock.net/blog/2013/05/29/better-figures-images-plugin-for-pelican/</p>
 <h1>References:</h1>
@@ -269,6 +279,8 @@ http://duncanlock.net/blog/2013/05/29/better-figures-images-plugin-for-pelican/<
 <li>Walkthru of Pelican w/ Python3.7: https://rsip22.github.io/blog/create-a-blog-with-pelican-and-github-pages.html</li>
 </ol>
             </div>
+
+    
             <!-- /.entry-content -->
 <section class="well" id="related-posts">
     <h4>Related Posts:</h4>

@@ -3395,8 +3395,10 @@ A: Purple pig, Girl on the goat, Lou Malnati's to eat. Cloud Gate / Millenium Pa
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h1&gt;Images in Chicago&lt;/h1&gt;
-&lt;p&gt;&lt;img alt="test" src="photos/chicago/atoma.jpg"&gt;&lt;/p&gt;
-&lt;p&gt;![]{({photo}chicago/atom.jpg)&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="photos/chicago/atoma.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;Here are my best photos, taken with my favorite camera:
+&lt;img alt="" src="photos/chicago/beana.jpg"&gt;.
+{photo}chicago/bean.jpg&lt;/p&gt;
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
@@ -3662,7 +3664,10 @@ A: I highly suggest getting the Kansai pass ahead of time if you are going to be
 &lt;/li&gt;
 &lt;li&gt;&lt;a href="#adding-pages-of-static-content"&gt;Adding Pages of Static Content&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#adding-articles-to-your-blog"&gt;Adding Articles To Your Blog&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#adding-gallery--images-to-your-blog"&gt;Adding Gallery / Images To Your Blog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#adding-gallery--images-to-your-blog"&gt;Adding Gallery / Images To Your Blog&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="#modifying-pelican-templates"&gt;Modifying Pelican Templates:&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;a href="#references"&gt;References:&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;!-- /MarkdownTOC --&gt;
@@ -3685,6 +3690,7 @@ A: I highly suggest getting the Kansai pass ahead of time if you are going to be
 &lt;span class="nv"&gt;conda&lt;/span&gt; &lt;span class="nv"&gt;install&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;c&lt;/span&gt; &lt;span class="nv"&gt;damianavila82&lt;/span&gt; &lt;span class="nv"&gt;piexif&lt;/span&gt; # &lt;span class="k"&gt;for&lt;/span&gt;
 &lt;span class="nv"&gt;pip&lt;/span&gt; &lt;span class="nv"&gt;install&lt;/span&gt; &lt;span class="nv"&gt;pyexif&lt;/span&gt;
 &lt;span class="nv"&gt;conda&lt;/span&gt; &lt;span class="nv"&gt;install&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;c&lt;/span&gt; &lt;span class="nv"&gt;conda&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;forge&lt;/span&gt; &lt;span class="nv"&gt;ghp&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;import&lt;/span&gt;
+&lt;span class="nv"&gt;conda&lt;/span&gt; &lt;span class="nv"&gt;install&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;c&lt;/span&gt; &lt;span class="nv"&gt;anaconda&lt;/span&gt; &lt;span class="nv"&gt;pil&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -3779,7 +3785,9 @@ A: I highly suggest getting the Kansai pass ahead of time if you are going to be
 &lt;h1&gt;Adding Gallery / Images To Your Blog&lt;/h1&gt;
 &lt;p&gt;Adding images to your blog require the following packages:
 - exeif
-- &lt;/p&gt;
+- Pillow
+- Knowledge of modifying Pelican templates&lt;/p&gt;
+&lt;h2&gt;Modifying Pelican Templates:&lt;/h2&gt;
 &lt;p&gt;https://kwkelly.com/blog/adding-galleries-to-pelican-and-bootstrap/
 http://duncanlock.net/blog/2013/05/29/better-figures-images-plugin-for-pelican/&lt;/p&gt;
 &lt;h1&gt;References:&lt;/h1&gt;
