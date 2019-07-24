@@ -7,43 +7,43 @@ Authors: Adam Li
 Summary: A short walkthrough of my experience with the DBO exam at Johns Hopkins University
 
 # Doctoral Board Oral Exam
-<!-- MarkdownTOC -->
+<!-- MarkdownTOC autolink="true" -->
 
-- 1. Cable Theory and Compartmental Modeling
-	- Examples of different types of neurons
-	- Approach
-	- Important Equations
-		- Unsealed end:
-		- Sealed end:
-		- Concatenated Cables:
-		- Definitions:
-		- Compartmental Models:
-	- Study
-- 2. Generalized Linear Models:
-	- General Form of Exponential Family Distribution
-	- Normal Linear Regression
-	- Logistic Regression
-	- Poisson Regression
-	- Solving GLM Methods:
-	- Goodness of Fit
-- 3. Kalman Filter
-	- Stochastic State-Space Model
-	- Assumptions
-	- Derivation
-	- Relation to a Least-Squares Problem
-	- Relation to a Bayesian Maximum Aposteri Estimation
-- 4. Expectation Maximization
-	- Basic Idea
-- 5. K-Means Algorithm
-	- Cost Function
-	- The Algorithm
-	- Initialization
-	- Convergence
-- 6. Sensory Pathways and Systems in Neuroscience
-- 7. Motor Pathways and Systems in Neuroscience
-- 8. General Topics in Neuroscience
-- 9. Gaussian Mixture Models
-- FAQ
+- [1. Cable Theory and Compartmental Modeling](#1-cable-theory-and-compartmental-modeling)
+	- [Examples of different types of neurons](#examples-of-different-types-of-neurons)
+	- [Approach](#approach)
+	- [Important Equations](#important-equations)
+		- [Unsealed end:](#unsealed-end)
+		- [Sealed end:](#sealed-end)
+		- [Concatenated Cables:](#concatenated-cables)
+		- [Definitions:](#definitions)
+		- [Compartmental Models:](#compartmental-models)
+	- [Study](#study)
+- [2. Generalized Linear Models:](#2-generalized-linear-models)
+	- [General Form of Exponential Family Distribution](#general-form-of-exponential-family-distribution)
+	- [Normal Linear Regression](#normal-linear-regression)
+	- [Logistic Regression](#logistic-regression)
+	- [Poisson Regression](#poisson-regression)
+	- [Solving GLM Methods:](#solving-glm-methods)
+	- [Goodness of Fit](#goodness-of-fit)
+- [3. Kalman Filter](#3-kalman-filter)
+	- [Stochastic State-Space Model](#stochastic-state-space-model)
+	- [Assumptions](#assumptions)
+	- [Derivation](#derivation)
+	- [Relation to a Least-Squares Problem](#relation-to-a-least-squares-problem)
+	- [Relation to a Bayesian Maximum Aposteri Estimation](#relation-to-a-bayesian-maximum-aposteri-estimation)
+- [4. Expectation Maximization](#4-expectation-maximization)
+	- [Basic Idea](#basic-idea)
+- [5. K-Means Algorithm](#5-k-means-algorithm)
+	- [Cost Function](#cost-function)
+	- [The Algorithm](#the-algorithm)
+	- [Initialization](#initialization)
+	- [Convergence](#convergence)
+- [6. Sensory Pathways and Systems in Neuroscience](#6-sensory-pathways-and-systems-in-neuroscience)
+- [7. Motor Pathways and Systems in Neuroscience](#7-motor-pathways-and-systems-in-neuroscience)
+- [8. General Topics in Neuroscience](#8-general-topics-in-neuroscience)
+- [9. Gaussian Mixture Models](#9-gaussian-mixture-models)
+- [FAQ](#faq)
 
 <!-- /MarkdownTOC -->
 # 1. Cable Theory and Compartmental Modeling

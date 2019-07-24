@@ -116,4 +116,3 @@ This assumes that your project directory files are all correspondingly named wit
 # References:
 1. https://nolar.info/automatically-activate-virtualenv-on-cd/
 - code to input into .bashrc
-2. 

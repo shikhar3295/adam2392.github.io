@@ -116,42 +116,42 @@ Adam Li's blog            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <!-- MarkdownTOC -->
+                <!-- MarkdownTOC autolink="true" -->
 
 <ul>
-<li>Background</li>
-<li>Methods<ul>
-<li>Analytical Solution<ul>
-<li>The Power of the Normal Distribution</li>
-<li>Conjugate Priors</li>
+<li><a href="#background">Background</a></li>
+<li><a href="#methods">Methods</a><ul>
+<li><a href="#analytical-solution">Analytical Solution</a><ul>
+<li><a href="#the-power-of-the-normal-distribution">The Power of the Normal Distribution</a></li>
+<li><a href="#conjugate-priors">Conjugate Priors</a></li>
 </ul>
 </li>
-<li>Variational inference (VI)<ul>
-<li>Evidence Lower Bound (ELBO)</li>
+<li><a href="#variational-inference-vi">Variational inference (VI)</a><ul>
+<li><a href="#evidence-lower-bound-elbo">Evidence Lower Bound (ELBO)</a></li>
 </ul>
 </li>
-<li>Markov Chain Monte Carlo (MCMC)<ul>
-<li>Gibbs Sampling</li>
-<li>Importance Sampling</li>
-<li>Hamiltonian Monte Carlo (HMC)</li>
+<li><a href="#markov-chain-monte-carlo-mcmc">Markov Chain Monte Carlo (MCMC)</a><ul>
+<li><a href="#gibbs-sampling">Gibbs Sampling</a></li>
+<li><a href="#importance-sampling">Importance Sampling</a></li>
+<li><a href="#hamiltonian-monte-carlo-hmc">Hamiltonian Monte Carlo (HMC)</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>Conclusions<ul>
-<li>Variational Autoencoder (VAE)</li>
-<li>Combining MCMC and VI</li>
-<li></li>
+<li><a href="#conclusions">Conclusions</a><ul>
+<li><a href="#variational-autoencoder-vae">Variational Autoencoder (VAE)</a></li>
+<li><a href="#combining-mcmc-and-vi">Combining MCMC and VI</a></li>
+<li><a href="#"></a></li>
 </ul>
 </li>
-<li>References:</li>
+<li><a href="#references">References:</a></li>
 </ul>
 <!-- /MarkdownTOC -->
 
-<h1>Background</h1>
+<h2 id="background"><a class="toclink" href="#background">Background</a><a class="headerlink" href="#background" title="Permanent link">&para;</a></h2>
 <p>In any sort of data analysis, you generally formulate a model that answers some question based on an estimation of a variable. </p>
 <p>Kullman-Leiback Divergence (KL)</p>
-<h1>Methods</h1>
+<h2 id="methods"><a class="toclink" href="#methods">Methods</a><a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
 <p>Here, I talk about some extensions to Gaussian linear models and relate them to our linear models through the lens of probability and statistics; specifically: variational inference and markov chain monte carlo. These are the main techniques in the estimation of an intractable posterior distribution. Here, we'll assume you have basic Bayesian working knowledge and comfortable with the statistics involved.</p>
 <p>The setup of the problem is similar to that of Linear Gaussian Models.</p>
 <div class="math">$$\dot{x}(t) = f(x(t)) + g(u(t)) + w$$</div>
@@ -159,30 +159,30 @@ Adam Li's blog            </a>
 <p>where: <span class="math">\(w \approx Q(\theta)\)</span> and <span class="math">\(v \approx R(\gamma)\)</span> are the state and output noise terms that we assume to be distributed with some distribution <span class="math">\(Q,R\)</span> parametrized by <span class="math">\(\theta, \gamma\)</span>. In addition, now <span class="math">\(f, g, h\)</span> are all potentially nonlinear functions analogs of A, B, C. If we define some priors on the distribution of noise for the latent variables, we can perform Bayesian inference given our observed signals, y. That is, we are interested in estimating:</p>
 <div class="math">$$P(x|y) \approx P(y|x) P(x)$$</div>
 <p>Note, that in convention with literature, P(y|x) is our likelihood of the model and P(x) is our assumed prior distribution on our latent state variable. </p>
-<h2>Analytical Solution</h2>
-<h3>The Power of the Normal Distribution</h3>
-<h3>Conjugate Priors</h3>
-<h2>Variational inference (VI)</h2>
+<h3 id="analytical-solution"><a class="toclink" href="#analytical-solution">Analytical Solution</a><a class="headerlink" href="#analytical-solution" title="Permanent link">&para;</a></h3>
+<h4 id="the-power-of-the-normal-distribution"><a class="toclink" href="#the-power-of-the-normal-distribution">The Power of the Normal Distribution</a><a class="headerlink" href="#the-power-of-the-normal-distribution" title="Permanent link">&para;</a></h4>
+<h4 id="conjugate-priors"><a class="toclink" href="#conjugate-priors">Conjugate Priors</a><a class="headerlink" href="#conjugate-priors" title="Permanent link">&para;</a></h4>
+<h3 id="variational-inference-vi"><a class="toclink" href="#variational-inference-vi">Variational inference (VI)</a><a class="headerlink" href="#variational-inference-vi" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Variational inference (VI) proceeds by: * 
 Fitting the parameters of a family of tractable distributions (e.g. independent Gaussians) to approximate the posterior. For more details, see my blog post on a summary of VI and MCMC.</li>
 </ul>
-<h3>Evidence Lower Bound (ELBO)</h3>
-<h2>Markov Chain Monte Carlo (MCMC)</h2>
+<h4 id="evidence-lower-bound-elbo"><a class="toclink" href="#evidence-lower-bound-elbo">Evidence Lower Bound (ELBO)</a><a class="headerlink" href="#evidence-lower-bound-elbo" title="Permanent link">&para;</a></h4>
+<h3 id="markov-chain-monte-carlo-mcmc"><a class="toclink" href="#markov-chain-monte-carlo-mcmc">Markov Chain Monte Carlo (MCMC)</a><a class="headerlink" href="#markov-chain-monte-carlo-mcmc" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Markov Chain Monte Carlo proceeds by: * 
 Creating a Markov chain that has convergent properties to the true posterior. Samples are drawn from the "proposal" distribution and are either kept, or rejected based on various algorithms (e.g. important sampling, Gibbs sampling, Hamiltonian Monte Carlo, etc.). For more details, see my blog post on a summary of VI and MCMC.</li>
 </ul>
-<h3>Gibbs Sampling</h3>
-<h3>Importance Sampling</h3>
-<h3>Hamiltonian Monte Carlo (HMC)</h3>
-<h1>Conclusions</h1>
-<h2>Variational Autoencoder (VAE)</h2>
+<h4 id="gibbs-sampling"><a class="toclink" href="#gibbs-sampling">Gibbs Sampling</a><a class="headerlink" href="#gibbs-sampling" title="Permanent link">&para;</a></h4>
+<h4 id="importance-sampling"><a class="toclink" href="#importance-sampling">Importance Sampling</a><a class="headerlink" href="#importance-sampling" title="Permanent link">&para;</a></h4>
+<h4 id="hamiltonian-monte-carlo-hmc"><a class="toclink" href="#hamiltonian-monte-carlo-hmc">Hamiltonian Monte Carlo (HMC)</a><a class="headerlink" href="#hamiltonian-monte-carlo-hmc" title="Permanent link">&para;</a></h4>
+<h2 id="conclusions"><a class="toclink" href="#conclusions">Conclusions</a><a class="headerlink" href="#conclusions" title="Permanent link">&para;</a></h2>
+<h3 id="variational-autoencoder-vae"><a class="toclink" href="#variational-autoencoder-vae">Variational Autoencoder (VAE)</a><a class="headerlink" href="#variational-autoencoder-vae" title="Permanent link">&para;</a></h3>
 <p>TBD</p>
-<h2>Combining MCMC and VI</h2>
+<h3 id="combining-mcmc-and-vi"><a class="toclink" href="#combining-mcmc-and-vi">Combining MCMC and VI</a><a class="headerlink" href="#combining-mcmc-and-vi" title="Permanent link">&para;</a></h3>
 <p>TBD</p>
-<h2></h2>
-<h1>References:</h1>
+<h3 id="_1"><a class="toclink" href="#_1"></a><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h2 id="references"><a class="toclink" href="#references">References:</a><a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <ol>
 <li>"Deep Variational Bayes Filter." https://arxiv.org/abs/1605.06432</li>
 <li>"Deep Koopman Model." https://arxiv.org/pdf/1805.07472.pdf</li>

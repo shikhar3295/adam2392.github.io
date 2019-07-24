@@ -6,9 +6,6 @@ import yaml
 import os
 from collections import namedtuple
 
-def convert(dictionary):
-    return namedtuple("Image", dictionary.keys())(**dictionary)
-
 #
 AUTHOR = "Adam Li"
 SITENAME = "Adam Li's blog"
@@ -20,24 +17,6 @@ PATH = "content"
 
 # set favicon in the web browser
 FAVICON = "photos/brain.jpg"
-
-# gallery path
-# GALLERY_PATH = "photos/"
-# RESIZE = [
-#         ('gallery', False, 200,200),
-#       ]
-# IMAGE_PATH = GALLERY_PATH
-# THUMBNAIL_DIR = os.path.join(IMAGE_PATH, "thumbnails")
-# THUMBNAIL_SIZES = "200x?"
-# THUMBNAIL_KEEP_NAME = True
-# THUMBNAIL_KEEP_TREE is a Boolean that, if set, saves the image directory tree.
-# handling the gallery
-# with open("./images.yaml", "r+") as f:
-#   IMAGES = convert(yaml.load(f.read()))
-
-# TEMPLATE_PAGES = {
-#     "gallery.html": "gallery.html",
-# }
 
 # Photo blog settings | https://github.com/getpelican/pelican-plugins/tree/master/photos
 PHOTO_LIBRARY = "/Users/adam2392/Documents/adam2392.github.io/content/photos/"
@@ -92,8 +71,8 @@ THEME = "pelican-themes/pelican-bootstrap3"
 # Default theme language.
 I18N_TEMPLATES_LANG = 'en'
 
-BROWSER_COLOR = '#333'
-ROBOTS = 'index, follow'
+# BROWSER_COLOR = '#333'
+# ROBOTS = 'index, follow'
 
 # Main page
 MAIN_MENU = True
@@ -108,8 +87,17 @@ MENUITEMS = (("Blog", "/categories.html"),
              ("Gallery", "/gallery.html"),
              )
 
-# Blogroll
-# LINKS = (("Pelican", "http://getpelican.com/"),)
+MARKDOWN = {
+    'extension_configs': {
+        'markdown.extensions.toc': {
+            'marker': '[TOC]',
+            'title': 'Contents',
+            'anchorlink': True,
+            'permalink': True,
+            'baselevel': 2,
+        },
+    }
+}
 
 """ SOCIAL MEDIA SECTION """
 # Social widget
@@ -125,8 +113,6 @@ SOCIAL = (("twitter", "https://twitter.com/adam2392"),
           ("linkedin", "https://www.linkedin.com/in/adam2392"))
 
 DEFAULT_PAGINATION = 5
-
-
 
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True

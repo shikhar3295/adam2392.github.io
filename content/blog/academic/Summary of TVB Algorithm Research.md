@@ -6,24 +6,24 @@ Slug: whitaker-summary-experience
 Authors: Adam Li
 Summary: To summarize my Whitaker/Chateaubriand research experience abroad in Marseille, France.
 
-<!-- MarkdownTOC -->
+<!-- MarkdownTOC autolink="true" -->
 
-- Background
-    - 0. Short Blurb About Brains and Network Neuroscience
-    - 1. Epilepsy
-    - 2. Computational Modeling
-    - 3. Algorithms
-- Research Project Concepts
-    - 1. The Virtual Brain \(TVB\) vs Network Data Analysis
-    - 2. Using TVB To Augment Neural Datasets For Deep Learning
-- Conclusions / Future Considerations
-- Random Notes on This Year, Data and PhD Research
-    - Data Pipeline Design
-    - PhD and Research Understanding
-            - 1. reading papers is good to do on a consistent basis, but focus on getting to the core of the "key" papers \(how you decide which papers are key comes with exp\)
-            - 2. software engineering is very important in data analysis.
-            - 3. it's easy to get stuck in a loop of feeling like "you're not going anywhere".
-        - References:
+- [Background](#background)
+    - [0. Short Blurb About Brains and Network Neuroscience](#0-short-blurb-about-brains-and-network-neuroscience)
+    - [1. Epilepsy](#1-epilepsy)
+    - [2. Computational Modeling](#2-computational-modeling)
+    - [3. Algorithms](#3-algorithms)
+- [Research Project Concepts](#research-project-concepts)
+    - [1. The Virtual Brain \(TVB\) vs Network Data Analysis](#1-the-virtual-brain-tvb-vs-network-data-analysis)
+    - [2. Using TVB To Augment Neural Datasets For Deep Learning](#2-using-tvb-to-augment-neural-datasets-for-deep-learning)
+- [Conclusions / Future Considerations](#conclusions--future-considerations)
+- [Random Notes on This Year, Data and PhD Research](#random-notes-on-this-year-data-and-phd-research)
+    - [Data Pipeline Design](#data-pipeline-design)
+    - [PhD and Research Understanding](#phd-and-research-understanding)
+            - [1. reading papers is good to do on a consistent basis, but focus on getting to the core of the "key" papers \(how you decide which papers are key comes with exp\)](#1-reading-papers-is-good-to-do-on-a-consistent-basis-but-focus-on-getting-to-the-core-of-the-key-papers-how-you-decide-which-papers-are-key-comes-with-exp)
+            - [2. software engineering is very important in data analysis.](#2-software-engineering-is-very-important-in-data-analysis)
+            - [3. it's easy to get stuck in a loop of feeling like "you're not going anywhere".](#3-its-easy-to-get-stuck-in-a-loop-of-feeling-like-youre-not-going-anywhere)
+        - [References:](#references)
 
 <!-- /MarkdownTOC -->
 # Background

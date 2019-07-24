@@ -6,31 +6,31 @@ Slug: fundamental-papers
 Authors: Adam Li
 Summary: To keep a log of important papers I read about and how they are relevant.
 
-<!-- MarkdownTOC -->
+<!-- MarkdownTOC autolink="true" -->
 
-- Papers
-    - 1. Wilson-Cowan Neural Mass Model
-        - Summary / Conclusions:
-        - Important Notes:
-    - 2. Kalman Filter Model
-        - Summary / Conclusions:
-        - Important Notes:
-    - 3. Expectation Maximization
-        - Summary / Conclusions:
-        - Important Notes:
-    - 4. Information Bottleneck Method
-        - Summary / Conclusions:
-        - Important Notes:
-    - 5. Opening the Black Box of Deep Neural Networks Via Information
-        - Summary / Conclusions:
-        - Important Notes:
-    - 6. Reinforcement Learning: An Overview
-        - Summary / Conclusions:
-        - Important Notes:
-    - 7. Deep Reinforcement Learning: An Overview
-    - 8. Variational Inference:
-        - Summary / Conclusions
-        - Important Notes
+- [Papers](#papers)
+    - [1. Wilson-Cowan Neural Mass Model](#1-wilson-cowan-neural-mass-model)
+        - [Summary / Conclusions:](#summary--conclusions)
+        - [Important Notes:](#important-notes)
+    - [2. Kalman Filter Model](#2-kalman-filter-model)
+        - [Summary / Conclusions:](#summary--conclusions-1)
+        - [Important Notes:](#important-notes-1)
+    - [3. Expectation Maximization](#3-expectation-maximization)
+        - [Summary / Conclusions:](#summary--conclusions-2)
+        - [Important Notes:](#important-notes-2)
+    - [4. Information Bottleneck Method](#4-information-bottleneck-method)
+        - [Summary / Conclusions:](#summary--conclusions-3)
+        - [Important Notes:](#important-notes-3)
+    - [5. Opening the Black Box of Deep Neural Networks Via Information](#5-opening-the-black-box-of-deep-neural-networks-via-information)
+        - [Summary / Conclusions:](#summary--conclusions-4)
+        - [Important Notes:](#important-notes-4)
+    - [6. Reinforcement Learning: An Overview](#6-reinforcement-learning-an-overview)
+        - [Summary / Conclusions:](#summary--conclusions-5)
+        - [Important Notes:](#important-notes-5)
+    - [7. Deep Reinforcement Learning: An Overview](#7-deep-reinforcement-learning-an-overview)
+    - [8. Variational Inference:](#8-variational-inference)
+        - [Summary / Conclusions](#summary--conclusions-6)
+        - [Important Notes](#important-notes-6)
 
 <!-- /MarkdownTOC -->
 

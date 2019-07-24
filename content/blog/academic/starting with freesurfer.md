@@ -6,6 +6,26 @@ Slug: using-freesurfer
 Authors: Adam Li
 Summary: To guide the user in how to setup freesurfer correctly.
 
+<!-- MarkdownTOC autolink="true" -->
+
+- [Necessary Tools](#necessary-tools)
+- [Data Processing Pipeline:](#data-processing-pipeline)
+    - [1. DWI Processing](#1-dwi-processing)
+    - [2. T1 MRI Processing](#2-t1-mri-processing)
+    - [3. \(Optional\) CT Processing](#3-optional-ct-processing)
+    - [4. Connectome Generation](#4-connectome-generation)
+- [Background](#background)
+    - [Common Definitions:](#common-definitions)
+- [Implementation](#implementation)
+    - [1. Set Up](#1-set-up)
+    - [2. Running Through T1-Weighted MRI Images](#2-running-through-t1-weighted-mri-images)
+    - [3. Running Through CT Images](#3-running-through-ct-images)
+    - [4. Getting Surface Parcellations](#4-getting-surface-parcellations)
+    - [5. Getting SEEG XYZ Coordinates](#5-getting-seeg-xyz-coordinates)
+- [References:](#references)
+
+<!-- /MarkdownTOC -->
+
 # Necessary Tools
 Freesurfer, FSL, and MRtrix3 are the three main neuroimaging and registration softwares that you need to run a systematic data pipeline of neuroimaging data (i.e. CT, MRI, DWI).
 

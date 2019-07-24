@@ -5,22 +5,22 @@ Tags: phd, journals, reviews, computational modeling,
 Slug: fundamental-computational-modeling
 Authors: Adam Li
 Summary: To keep a log of important concepts in computational modeling. 
-<!-- MarkdownTOC -->
+<!-- MarkdownTOC autolink="true" -->
 
-- Background
-- Concepts
-    - 1. Numerical Integration
-        - Deterministic Differential Equations
-        - Stochastic Differential Equations
-        - Considerations:
-        - References:
-    - 2. Deterministic and Stochastic Differential Equations
-        - Deterministic Differential Equations
-        - Stochastic Differential Equations
-        - References:
-        - References:
-        - Summary / Conclusions:
-        - Important Notes:
+- [Background](#background)
+- [Concepts](#concepts)
+    - [1. Numerical Integration](#1-numerical-integration)
+        - [Deterministic Differential Equations](#deterministic-differential-equations)
+        - [Stochastic Differential Equations](#stochastic-differential-equations)
+        - [Considerations:](#considerations)
+        - [References:](#references)
+    - [2. Deterministic and Stochastic Differential Equations](#2-deterministic-and-stochastic-differential-equations)
+        - [Deterministic Differential Equations](#deterministic-differential-equations-1)
+        - [Stochastic Differential Equations](#stochastic-differential-equations-1)
+        - [References:](#references-1)
+        - [References:](#references-2)
+        - [Summary / Conclusions:](#summary--conclusions)
+        - [Important Notes:](#important-notes)
 
 <!-- /MarkdownTOC -->
 # Background

@@ -9,18 +9,18 @@ Summary: A short walkthrough of setting up the Singularity containers
 # Getting Setup with Singularity
 # By: Adam Li
 ### Table of Contents
-<!-- MarkdownTOC -->
+<!-- MarkdownTOC autolink="true" -->
 
-- Installation
-- Setting Up A Tensorflow Container Recipe \(Example\):
-  - 1. Needed Docker Containers:
-  - 2. Environment / Setup
-  - 3. Post
-  - 4. Run Script
-  - 5. Test
-- Common Commands
-- Conclusions
-- References:
+- [Installation](#installation)
+- [Setting Up A Tensorflow Container Recipe \(Example\):](#setting-up-a-tensorflow-container-recipe-example)
+  - [1. Needed Docker Containers:](#1-needed-docker-containers)
+  - [2. Environment / Setup](#2-environment--setup)
+  - [3. Post](#3-post)
+  - [4. Run Script](#4-run-script)
+  - [5. Test](#5-test)
+- [Common Commands](#common-commands)
+- [Conclusions](#conclusions)
+- [References:](#references)
 
 <!-- /MarkdownTOC -->
 

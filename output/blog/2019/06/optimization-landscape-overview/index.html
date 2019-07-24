@@ -116,43 +116,43 @@ Adam Li's blog            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <!-- MarkdownTOC -->
+                <!-- MarkdownTOC autolink="true" -->
 
 <ul>
-<li>Background</li>
-<li>Methods<ul>
-<li>Convex<ul>
-<li>Non-smooth</li>
-<li>Smooth</li>
+<li><a href="#background">Background</a></li>
+<li><a href="#methods">Methods</a><ul>
+<li><a href="#convex">Convex</a><ul>
+<li><a href="#non-smooth">Non-smooth</a></li>
+<li><a href="#smooth">Smooth</a></li>
 </ul>
 </li>
-<li>Unconstrained</li>
-<li>Constrained</li>
-<li>Nonlinear<ul>
-<li>Unconstrained</li>
-<li>Constrained</li>
+<li><a href="#unconstrained">Unconstrained</a></li>
+<li><a href="#constrained">Constrained</a></li>
+<li><a href="#nonlinear">Nonlinear</a><ul>
+<li><a href="#unconstrained-1">Unconstrained</a></li>
+<li><a href="#constrained-1">Constrained</a></li>
 </ul>
 </li>
-<li>Zero-Finding: Newton's Method and the Secant Method<ul>
-<li>Newton Directions, General Newton Method and Quasi-Newton Methods</li>
+<li><a href="#zero-finding-newtons-method-and-the-secant-method">Zero-Finding: Newton's Method and the Secant Method</a><ul>
+<li><a href="#newton-directions-general-newton-method-and-quasi-newton-methods">Newton Directions, General Newton Method and Quasi-Newton Methods</a></li>
 </ul>
 </li>
-<li>Programming (Linear, Quadratic and Semidefinite)</li>
+<li><a href="#programming-linear-quadratic-and-semidefinite">Programming (Linear, Quadratic and Semidefinite)</a></li>
 </ul>
 </li>
-<li>Stochastic Optimization</li>
-<li>Conclusions</li>
-<li>Current Research and Interesting Papers<ul>
-<li>Accelerated Adaptive Moments (ADAM)</li>
-<li>RMS-Prop</li>
-<li>Structured Regularizations and Different Forms</li>
+<li><a href="#stochastic-optimization">Stochastic Optimization</a></li>
+<li><a href="#conclusions">Conclusions</a></li>
+<li><a href="#current-research-and-interesting-papers">Current Research and Interesting Papers</a><ul>
+<li><a href="#accelerated-adaptive-moments-adam">Accelerated Adaptive Moments (ADAM)</a></li>
+<li><a href="#rms-prop">RMS-Prop</a></li>
+<li><a href="#structured-regularizations-and-different-forms">Structured Regularizations and Different Forms</a></li>
 </ul>
 </li>
-<li>References:</li>
+<li><a href="#references">References:</a></li>
 </ul>
 <!-- /MarkdownTOC -->
 
-<h1>Background</h1>
+<h2 id="background"><a class="toclink" href="#background">Background</a><a class="headerlink" href="#background" title="Permanent link">&para;</a></h2>
 <p>Recently, I re-read my notes on convex optimization, nonlinear unconstrained optimization and nonlinear constrained optimization. It's quite fascinating how mathematics can break down very general assumptions into different classes of algorithms with certain convergence, convergence rate and computational cost guarantees. In general all these algorithms are iterative algorithms, that solve a certain optimization problem by taking iterations from a starting vector <span class="math">\(x_0\)</span>. Obviously, there are other classes of algorithms that can say be solved analytically (i.e. one shot), but we're interested in how to take iterations that converge, converge fast and are computationally efficient. The different classes of algorithms can at a high level be broken down into:</p>
 <ul>
 <li>convex vs nonconvex</li>
@@ -175,7 +175,7 @@ Adam Li's blog            </a>
 <li>what is the computational cost per iteration of the algorithm (i.e. how many function evaluations, jacobian evaluations, or hessian evaluations does one need)?</li>
 </ol>
 <p>What I will not overview is combinatorial and stochastic optimization. I will plan on adding the general concepts once I've reviewed linear, quadratic, and semidefinite programming, as well as stochastic gradient descent. </p>
-<h1>Methods</h1>
+<h2 id="methods"><a class="toclink" href="#methods">Methods</a><a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
 <p>Here, I preface the landscape of optimization algorithms with the general objective function:</p>
 <div class="math">$$minimize_{x \in X} f(x) \ s.t. \ g(x)=0,\ h(x) \le 0$$</div>
 <div class="math">$$X \subset \mathbf{R}^n$$</div>
@@ -186,14 +186,14 @@ Adam Li's blog            </a>
 <p>A very general iteration looks something like this:</p>
 <div class="math">$$x_{k+1} = x_k - \alpha_k g_k (x_k)$$</div>
 <p>where <span class="math">\(\alpha\)</span> is the step size, g is the step direction. Note that <span class="math">\(\alpha\)</span> can either be a vector, or scalar (depending on if you want to step uniformly, or with varying magnitudes in the direction vector) and g is a in general a vector that denotes the directionality in the space of x (i.e. <span class="math">\(R^n\)</span>).</p>
-<h2>Convex</h2>
+<h3 id="convex"><a class="toclink" href="#convex">Convex</a><a class="headerlink" href="#convex" title="Permanent link">&para;</a></h3>
 <p>In this section, we make the assumption that f is convex, and in general the constraint functions are convex. Assuming convexity provides a couple of strong guarantees:</p>
 <ul>
 <li>the minimum we find is a global minimum, so we don't have to say rerun the algorithm with multiple initializations</li>
 <li>in general strong duality applies, so there is a zero duality gap (I think)</li>
 </ul>
 <p>There is a whole theory of convex analysis and convex optimization, but here we review the main algorithms that come out of this convex assumption. In general, the algorithms can be broken down into non-smooth vs smooth (where f is either differentiable, or not). If f is not differentiable, a technical detail is that we still assume f is Lipschitz-continuous. </p>
-<h3>Non-smooth</h3>
+<h4 id="non-smooth"><a class="toclink" href="#non-smooth">Non-smooth</a><a class="headerlink" href="#non-smooth" title="Permanent link">&para;</a></h4>
 <p>Here, we are dealing with convex functions that are not differentiable. We are able to circumvent the issue with the use of subgradients and proximal operators. This leads to algorithms like:</p>
 <ol>
 <li>
@@ -209,21 +209,21 @@ This defines a proximal operator that IS differentiable, so that we can take gra
 Armed with the proximal gradient, one can apply acceleration techniques of the form:</p>
 <div class="math">$$ $$</div>
 <p>, which leads to algorithms like FISTA (fast ISTA).</p>
-<h3>Smooth</h3>
+<h4 id="smooth"><a class="toclink" href="#smooth">Smooth</a><a class="headerlink" href="#smooth" title="Permanent link">&para;</a></h4>
 <p>Here, we are dealing with convex functions that ARE differentiable (i.e you can take the derivative). Taking the derivative gives you powerful first-order information. This leads to algorithms like:</p>
 <ol>
 <li>Gradient Descent</li>
 <li>Conjugate Gradient Descent</li>
 <li></li>
 </ol>
-<h2>Unconstrained</h2>
+<h3 id="unconstrained"><a class="toclink" href="#unconstrained">Unconstrained</a><a class="headerlink" href="#unconstrained" title="Permanent link">&para;</a></h3>
 <p>In this section, we comment on the idea of unconstrained optimization. That is the objective function does not have g, or h terms (equality, or inequality constraints). In general, this leads to two classes of algorithms:</p>
 <ul>
 <li>line-search methods (e.g. Armijo line-search and Wolfe conditional line search)</li>
 <li>trust-region methods</li>
 </ul>
 <p>For convex and linear optimization problems, generally you don't need such methods, so we restrict overview until we reach the section on Nonlinear optimization.</p>
-<h2>Constrained</h2>
+<h3 id="constrained"><a class="toclink" href="#constrained">Constrained</a><a class="headerlink" href="#constrained" title="Permanent link">&para;</a></h3>
 <p>In this section, we allow for constraints either in the form of equality, and/or inequality constraints. The idea of adding constraints is really fascinating because in most (almost all) real world problems, you can formulate a loss function to optimize (based on some metric) that generally has constraints built in! This is due to the nature of the problem. For example, if you want to optimize usage of fuel in a car, you are constrained by the amount of fuel you can even have and the fact that fuel can never be negative! In general, adding constraints helps the optimization problem achieve better solutions. In order to analyze a constrained optimization problem, the strategy is to perform a "conversion" into an unconstrained problem. This leads to the definition of a Lagrangian function (draws upon physics):</p>
 <div class="math">$$L(x,y,\lambda,\mu) = $$</div>
 <p>There is a wealth of theory behind constraint optimization with some of the basics drawing from the idea of Lagrange multipliers (that handle equality constraints). One can generalize this notion (it's quite beautiful actually) to inequality constraints, which then handle all possible constraints you might have. This generalization leads to the notion of the Karusch-Kuhn-Tucker (KKT) conditions for optimality. The KKT conditions are:</p>
@@ -235,9 +235,9 @@ Armed with the proximal gradient, one can apply acceleration techniques of the f
 </ul>
 <p>In general, these define necessary conditions for optimality, and in some special cases, they can define also sufficient conditions. Basically, with KKT conditions, you can convert any constrained optimization problem into an unconstrained version with the Lagrangian.</p>
 <p>I don't actually talk about the algorithms here because they get quite complex, but I will cover them in the "Programming (Linear, Quadratic and Semidefinite)" section in the future.</p>
-<h2>Nonlinear</h2>
+<h3 id="nonlinear"><a class="toclink" href="#nonlinear">Nonlinear</a><a class="headerlink" href="#nonlinear" title="Permanent link">&para;</a></h3>
 <p>In this section, we now deal with the possibility of nonlinear functions f, and possibly nonlinear constraint functions. This then leads to the problem that in general, we can not find a global minima of the optimization problem. We simply find local minimums that may, or may not be a useful solution and possibly rerun the algorithms with multiple intializations. </p>
-<h3>Unconstrained</h3>
+<h4 id="unconstrained_1"><a class="toclink" href="#unconstrained_1">Unconstrained</a><a class="headerlink" href="#unconstrained_1" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
 <p>Line-Search Methods
@@ -267,9 +267,9 @@ The purpose of line search methods is to define a direction of search first and 
 <li>Trust Region Methods
 The purpose of trust region methods is to define a region that is "trustworthy" to move in the direction of a local optima. The idea is to first perform a "line search" and then determine the direction of search. A trust region algorithm solves a subproblem that uses the gradient information and Hessian (or approximation) information.</li>
 </ol>
-<h3>Constrained</h3>
+<h4 id="constrained_1"><a class="toclink" href="#constrained_1">Constrained</a><a class="headerlink" href="#constrained_1" title="Permanent link">&para;</a></h4>
 <p>See section on Programming. </p>
-<h2>Zero-Finding: Newton's Method and the Secant Method</h2>
+<h3 id="zero-finding-newtons-method-and-the-secant-method"><a class="toclink" href="#zero-finding-newtons-method-and-the-secant-method">Zero-Finding: Newton's Method and the Secant Method</a><a class="headerlink" href="#zero-finding-newtons-method-and-the-secant-method" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Secant method
 This method essentaially uses an iteration of secant lines and their roots to better approximate a root of the original function of interest, f. It is similar to a finite-difference approximation of Newton's method.</li>
@@ -280,22 +280,22 @@ This method essentaially uses an iteration of secant lines and their roots to be
 </ol>
 <div class="math">$$x_{k+1} = x_k - \frac{f(x_k)}{f'(x_k)}$$</div>
 <p>This Newton's method can be approximated when Jacobians and Hessians are too expensive, by using the class of quasi-newton methods, such as the BFGS method.</p>
-<h3>Newton Directions, General Newton Method and Quasi-Newton Methods</h3>
+<h4 id="newton-directions-general-newton-method-and-quasi-newton-methods"><a class="toclink" href="#newton-directions-general-newton-method-and-quasi-newton-methods">Newton Directions, General Newton Method and Quasi-Newton Methods</a><a class="headerlink" href="#newton-directions-general-newton-method-and-quasi-newton-methods" title="Permanent link">&para;</a></h4>
 <p>TBD</p>
-<h2>Programming (Linear, Quadratic and Semidefinite)</h2>
+<h3 id="programming-linear-quadratic-and-semidefinite"><a class="toclink" href="#programming-linear-quadratic-and-semidefinite">Programming (Linear, Quadratic and Semidefinite)</a><a class="headerlink" href="#programming-linear-quadratic-and-semidefinite" title="Permanent link">&para;</a></h3>
 <p>TBD</p>
-<h1>Stochastic Optimization</h1>
+<h2 id="stochastic-optimization"><a class="toclink" href="#stochastic-optimization">Stochastic Optimization</a><a class="headerlink" href="#stochastic-optimization" title="Permanent link">&para;</a></h2>
 <p>This section deserves a header of its own because of its widespread usage nowadays in training deep neural networks and actually any optimization problem that can't necesesarily fit into RAM. 
 TBD</p>
-<h1>Conclusions</h1>
-<h1>Current Research and Interesting Papers</h1>
-<h2>Accelerated Adaptive Moments (ADAM)</h2>
+<h2 id="conclusions"><a class="toclink" href="#conclusions">Conclusions</a><a class="headerlink" href="#conclusions" title="Permanent link">&para;</a></h2>
+<h2 id="current-research-and-interesting-papers"><a class="toclink" href="#current-research-and-interesting-papers">Current Research and Interesting Papers</a><a class="headerlink" href="#current-research-and-interesting-papers" title="Permanent link">&para;</a></h2>
+<h3 id="accelerated-adaptive-moments-adam"><a class="toclink" href="#accelerated-adaptive-moments-adam">Accelerated Adaptive Moments (ADAM)</a><a class="headerlink" href="#accelerated-adaptive-moments-adam" title="Permanent link">&para;</a></h3>
 <p>TBD</p>
-<h2>RMS-Prop</h2>
+<h3 id="rms-prop"><a class="toclink" href="#rms-prop">RMS-Prop</a><a class="headerlink" href="#rms-prop" title="Permanent link">&para;</a></h3>
 <p>TBD</p>
-<h2>Structured Regularizations and Different Forms</h2>
+<h3 id="structured-regularizations-and-different-forms"><a class="toclink" href="#structured-regularizations-and-different-forms">Structured Regularizations and Different Forms</a><a class="headerlink" href="#structured-regularizations-and-different-forms" title="Permanent link">&para;</a></h3>
 <p>TBD</p>
-<h1>References:</h1>
+<h2 id="references"><a class="toclink" href="#references">References:</a><a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Cvx Course, JHU. https://sites.google.com/site/danielprobinson/convex-optimization</li>
 <li>"Convex Optimization." https://web.stanford.edu/~boyd/cvxbook/</li>

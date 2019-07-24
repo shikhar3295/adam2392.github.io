@@ -6,6 +6,19 @@ Slug: simulating-tvb
 Authors: Adam Li
 Summary: To guide the simulation of Epileptic iEEG activity using TVB in Marseille, France.
 
+<!-- MarkdownTOC autolink="true" -->
+
+- [Background](#background)
+- [Data & Metadata](#data--metadata)
+- [Implementation](#implementation)
+    - [1. Setting Up Environment](#1-setting-up-environment)
+    - [1b. Setting Up Environment on a Cluster](#1b-setting-up-environment-on-a-cluster)
+    - [1c. Using Docker / Singularity](#1c-using-docker--singularity)
+    - [2. Simulating Epilepsy](#2-simulating-epilepsy)
+    - [References:](#references)
+
+<!-- /MarkdownTOC -->
+
 # Background
 TVB is a platform for simulating whole-brain dynamics that starts from raw data involving:
     1. structural connectivity derived from DTI

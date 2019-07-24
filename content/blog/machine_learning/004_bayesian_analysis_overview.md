@@ -7,24 +7,24 @@ Authors: Adam Li
 Summary: An overview of Bayesian analysis and the general approaches to solving Bayesian problems.
 status: draft
 
-<!-- MarkdownTOC -->
+<!-- MarkdownTOC autolink="true" -->
 
-- Background
-- Methods
-    - Analytical Solution
-        - The Power of the Normal Distribution
-        - Conjugate Priors
-    - Variational inference \(VI\)
-        - Evidence Lower Bound \(ELBO\)
-    - Markov Chain Monte Carlo \(MCMC\)
-        - Gibbs Sampling
-        - Importance Sampling
-        - Hamiltonian Monte Carlo \(HMC\)
-- Conclusions
-    - Variational Autoencoder \(VAE\)
-    - Combining MCMC and VI
-    - 
-- References:
+- [Background](#background)
+- [Methods](#methods)
+    - [Analytical Solution](#analytical-solution)
+        - [The Power of the Normal Distribution](#the-power-of-the-normal-distribution)
+        - [Conjugate Priors](#conjugate-priors)
+    - [Variational inference \(VI\)](#variational-inference-vi)
+        - [Evidence Lower Bound \(ELBO\)](#evidence-lower-bound-elbo)
+    - [Markov Chain Monte Carlo \(MCMC\)](#markov-chain-monte-carlo-mcmc)
+        - [Gibbs Sampling](#gibbs-sampling)
+        - [Importance Sampling](#importance-sampling)
+        - [Hamiltonian Monte Carlo \(HMC\)](#hamiltonian-monte-carlo-hmc)
+- [Conclusions](#conclusions)
+    - [Variational Autoencoder \(VAE\)](#variational-autoencoder-vae)
+    - [Combining MCMC and VI](#combining-mcmc-and-vi)
+    - [](#)
+- [References:](#references)
 
 <!-- /MarkdownTOC -->
 

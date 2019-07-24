@@ -6,28 +6,28 @@ Slug: optimization-landscape-overview
 Authors: Adam Li
 Summary: An overview of optimization frameworks and algorithms under different general settings.
 
-<!-- MarkdownTOC -->
+<!-- MarkdownTOC autolink="true" -->
 
-- Background
-- Methods
-    - Convex
-        - Non-smooth
-        - Smooth
-    - Unconstrained
-    - Constrained
-    - Nonlinear
-        - Unconstrained
-        - Constrained
-    - Zero-Finding: Newton's Method and the Secant Method
-        - Newton Directions, General Newton Method and Quasi-Newton Methods
-    - Programming \(Linear, Quadratic and Semidefinite\)
-- Stochastic Optimization
-- Conclusions
-- Current Research and Interesting Papers
-    - Accelerated Adaptive Moments \(ADAM\)
-    - RMS-Prop
-    - Structured Regularizations and Different Forms
-- References:
+- [Background](#background)
+- [Methods](#methods)
+    - [Convex](#convex)
+        - [Non-smooth](#non-smooth)
+        - [Smooth](#smooth)
+    - [Unconstrained](#unconstrained)
+    - [Constrained](#constrained)
+    - [Nonlinear](#nonlinear)
+        - [Unconstrained](#unconstrained-1)
+        - [Constrained](#constrained-1)
+    - [Zero-Finding: Newton's Method and the Secant Method](#zero-finding-newtons-method-and-the-secant-method)
+        - [Newton Directions, General Newton Method and Quasi-Newton Methods](#newton-directions-general-newton-method-and-quasi-newton-methods)
+    - [Programming \(Linear, Quadratic and Semidefinite\)](#programming-linear-quadratic-and-semidefinite)
+- [Stochastic Optimization](#stochastic-optimization)
+- [Conclusions](#conclusions)
+- [Current Research and Interesting Papers](#current-research-and-interesting-papers)
+    - [Accelerated Adaptive Moments \(ADAM\)](#accelerated-adaptive-moments-adam)
+    - [RMS-Prop](#rms-prop)
+    - [Structured Regularizations and Different Forms](#structured-regularizations-and-different-forms)
+- [References:](#references)
 
 <!-- /MarkdownTOC -->
 

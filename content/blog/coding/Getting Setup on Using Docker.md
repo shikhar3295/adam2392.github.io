@@ -5,32 +5,31 @@ Tags: webdev, docker, macos
 Slug: setup-docker
 Authors: Adam Li
 Summary: A short walkthrough of setting up Docker and some notes on setting up a containerized approach to development with persistent database.
-status: draft
 
 # Getting Setup on Using Docker
 # By: Adam Li
 ### Table of Contents
-<!-- MarkdownTOC -->
+<!-- MarkdownTOC autolink="true" -->
 
-- Installation
-- Setting Hardware Requirements:
-- Using Docker
-    - 1. Docker Image
-        - 1a. Setting Base Docker Volume
-        - 1b. Creating The Container
-        - 1c. Running PostgreSQL via Container
-        - 1d. \(Optional\) Expose Docker Container To Host
-    - 2.
-- Linking All This With Docker-Compose
-    - 1.
-- Common Commands
-    - Images
-    - Containers
-    - Volumes
-- Testing
-    - 1.
-    - 2.
-- References:
+- [Installation](#installation)
+- [Setting Hardware Requirements:](#setting-hardware-requirements)
+- [Using Docker](#using-docker)
+    - [1. Docker Image](#1-docker-image)
+        - [1a. Setting Base Docker Volume](#1a-setting-base-docker-volume)
+        - [1b. Creating The Container](#1b-creating-the-container)
+        - [1c. Running PostgreSQL via Container](#1c-running-postgresql-via-container)
+        - [1d. \(Optional\) Expose Docker Container To Host](#1d-optional-expose-docker-container-to-host)
+    - [2.](#2)
+- [Linking All This With Docker-Compose](#linking-all-this-with-docker-compose)
+    - [1.](#1)
+- [Common Commands](#common-commands)
+    - [Images](#images)
+    - [Containers](#containers)
+    - [Volumes](#volumes)
+- [Testing](#testing)
+    - [1.](#1-1)
+    - [2.](#2-1)
+- [References:](#references)
 
 <!-- /MarkdownTOC -->
 
