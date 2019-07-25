@@ -1,11 +1,10 @@
 Title: Travel - Iceland
 Date: 2019-07-15
 Category: Travel
-Tags: travel, europe, Iceland
+Tags: travel, europe, Iceland, Reykjavik
 Slug: travel-iceland
 Authors: Adam Li
-Summary: A summary of how to visit London and get the most out of your trip.
-status: draft
+Summary: A summary of how to visit Iceland and get the most out of your trip.
 
 # Europe - London, United Kingdom
 <!-- MarkdownTOC autolink="true" -->
@@ -19,18 +18,15 @@ status: draft
         - [1. KEF Airport \(Reykjavik\)](#1-kef-airport-reykjavik)
         - [Notes:](#notes)
     - [Sights](#sights)
-        - [1. Skogafoss and Sejelsfoss](#1-skogafoss-and-sejelsfoss)
+        - [1. Skogafoss and Seljalandsfoss](#1-skogafoss-and-seljalandsfoss)
         - [2. Golden Circle \(Thingvellir National Park, Geysir, Gulfoss, Crater Kerid\)](#2-golden-circle-thingvellir-national-park-geysir-gulfoss-crater-kerid)
         - [3. Snaesfellsness \(Kikjufell, Kikjufellfoss, \)](#3-snaesfellsness-kikjufell-kikjufellfoss-)
-        - [4.](#4)
-        - [5.](#5)
     - [Food](#food)
-        - [1. Lanzhou LaMian Noodle:](#1-lanzhou-lamian-noodle)
-        - [2. Burger and Lobster:](#2-burger-and-lobster)
-        - [3. Chick N Sours:](#3-chick-n-sours)
-        - [4.](#4-1)
+        - [1. Tapas Barin \(Reykjavik\)](#1-tapas-barin-reykjavik)
+        - [2. Baejarins beztu pylsur \(Reykjavik\)](#2-baejarins-beztu-pylsur-reykjavik)
+        - [3. Pylsuvagninn \(Sulfoss\)](#3-pylsuvagninn-sulfoss)
+        - [4. Bjargarsteinn mathus \(Grundarfjorour\)](#4-bjargarsteinn-mathus-grundarfjorour)
     - [Nightlife/Drinking](#nightlifedrinking)
-        - [1. Mr. Fogg's Residence](#1-mr-foggs-residence)
     - [Getting Around](#getting-around)
 
 <!-- /MarkdownTOC -->
@@ -49,40 +45,60 @@ status: draft
 #### 1. KEF Airport (Reykjavik)
 This is the main international airport of Iceland! It is about 40 minutes away from Reykjavik and is about 20 minutes away from Blue Lagoon! It's quite a nice airport and has a great Joe & and the Juice.
 
+-> You should just instantly go to Blue Lagoon if you're thinking about it. It's a nice place to relax after a long plane ride.
+
 #### Notes:
 
 ## Sights
-#### 1. Skogafoss and Sejelsfoss
+#### 1. Skogafoss and Seljalandsfoss
+Pretty waterfalls southeast of Reykjavik about 2 hours. Skogafoss is this big waterfall that you can get very close to and then also hike up to the top of. Here, you can actually rent a campsite, or even a hotel room. After hiking up to the top, there is actually also a long hike of apparently 4 days. If it is in the springtime, feel free to walk along for 30-45 minutes. You'll get a quiet area with some wild sheep and more mini waterfalls along the way.
+
+Seljalandsfoss is on the way back to Reykjavik and is another waterfall that you can walk behind! It is a nice one.
+
+Beware, if you get too close to either, you can get severely wet just from the mist.
 
 #### 2. Golden Circle (Thingvellir National Park, Geysir, Gulfoss, Crater Kerid)
+Golden circle is this amazing ring of things to see and do. In Thingvellir national park, there are a bunch of hiking trails and overlooks. In addition, I would highly recommend booking a snorkeling tour at Silfra. You wear a dry suit and swim through a freshwater stream (glacier water), which you can drink from while swimming. It is very cold, so you'll need to bring a pair of thermal underpants and wool socks. Totally worth it to swim in between two tectonic plates.
 
+Geysir is this cool park that has a bunch of 80-100 degree C water geysers. One even shoots up every 5-10 minutes. Cool hike up.
+
+Gulfoss is the granddaddy waterfall of them all! Very amazing sight.
+
+Crater Kerid is a cool looking crater.
 
 #### 3. Snaesfellsness (Kikjufell, Kikjufellfoss, )
+In Snaesfellsness, there is the Snaesfellsnessjokull National Park (a cool glacier with a lot of cliff views).
 
-#### 4. 
-
-#### 5. 
+Kikjufell is a cool arrow-head looking mountain, and Kikjufellfoss is a nearby waterfall. Both very scenic and cool looking.
 
 ## Food
-Here, I briefly describe a couple of food places that are worth the HYPE. For locations, just use google, or yelp. London has a ridiculous amount of people, so if you have 3+ people, I would highly recommend trying to make reservations in advance.
+If you're thinking about eating whale, or puffin, please don't. These are both endangered, or in danger of being endangered animals because of how many people hunt for them. They are hunted for because the tourism industry's craving to "try" these dishes cause massive demand. 
 
-#### 1. Lanzhou LaMian Noodle:
-Amazing handpulled noodle restaurant for any asian food cravings.
+#### 1. Tapas Barin (Reykjavik)
+Upscale tapas that is pretty nice!
 
-#### 2. Burger and Lobster:
-Amazing burger and lobster. Simplistic and reasonably priced.
+#### 2. Baejarins beztu pylsur (Reykjavik)
+Classic hotdog with 5 different sauces, raw onions and fried onions. Need I say more?
 
-#### 3. Chick N Sours:
-Great fried chicken place that is actually really healthy formulas for the fact that it is fried chicken!
+#### 3. Pylsuvagninn (Sulfoss)
+Deep fried hotdog with fries and cheese and paprika. Need I say mor?
 
-#### 4. 
+#### 4. Bjargarsteinn mathus (Grundarfjorour)
+Great seafood restaurant near Kikjufell! 
 
 ## Nightlife/Drinking
-#### 1. Mr. Fogg's Residence
-Great speak-easy looking place! Serves some interesting drinks, but can get quite pricey.
-
-<!-- #### 2. Ministry of Sound -->
-
+Nature.
 
 ## Getting Around
-You can definitely use the Underground, or just walk! UberX/Pool/Plus if necessary.
+You should probably rent a car. I rented one from Ace Rentals, which doesn't have an office at the airport, so you will need to coordinate a pick up from them at the arrivals hall.
+
+Pros:
+- you are in control of your schedule
+- you can drive manual if you want
+- you don't have to sit on a bus
+
+Cons:
+- you have to worry about parking and driving and gas
+- if snowy/icey, then it can be pretty dangerous
+
+Tourbus: TBD
