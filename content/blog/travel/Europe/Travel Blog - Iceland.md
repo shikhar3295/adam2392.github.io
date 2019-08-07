@@ -5,8 +5,9 @@ Tags: travel, europe, Iceland, Reykjavik
 Slug: travel-iceland
 Authors: Adam Li
 Summary: A summary of how to visit Iceland and get the most out of your trip.
+gallery:{photo}Iceland
 
-# Europe - London, United Kingdom
+# Europe - Iceland
 <!-- MarkdownTOC autolink="true" -->
 
 - [General Suggestions](#general-suggestions)

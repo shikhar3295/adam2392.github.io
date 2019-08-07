@@ -5,6 +5,7 @@ Tags: travel, africa, morocco, marrakech, casablanca
 Slug: travel-morocco
 Authors: Adam Li
 Summary: A summary of how to visit Morocco and get the most out of your trip.
+gallery:{photo}morocco
 
 # Africa - Morocco
 <!-- MarkdownTOC autolink="true" -->
@@ -103,4 +104,4 @@ To get a taxi (and you don't have the japanese app), you can always ask the rest
 # FAQ
 1. Q: How do I get around?
 A: Probably taxi for within a city and trains/buses/grand taxis for across the country.
-2. 
+

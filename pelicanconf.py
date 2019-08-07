@@ -31,6 +31,9 @@ PHOTO_EXIF_REMOVE_GPS = True  # Removes any GPS information from t
 PHOTO_EXIF_COPYRIGHT = "COPYRIGHT"
 PHOTO_EXIF_COPYRIGHT_AUTHOR = "Adam Li"
 
+# for showing a lot of albums
+ALBUM_PATH = PHOTO_LIBRARY
+
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = "feeds/all.atom.xml"
 FEED_ALL_RSS = "feeds/all.rss.xml"
@@ -62,8 +65,7 @@ PLUGINS = [
     "photos",
     "pelican_javascript",
     "i18n_subsites",
-    # "gallery",
-    # "thumbnailer"
+    "pelican_albums",
 ]
 
 # Enable Jinja2 i18n extension used to parse translations.
@@ -83,21 +85,20 @@ MENUITEMS = (("Blog", "/categories.html"),
              ("Timeline", "/archives.html"),
              ("Tags", "/tags.html"),
              ("Curriculum Vitae", "/pdfs/AdamLi_CV.pdf"),
-             # ("Blog", "/blog.html"),
-             ("Gallery", "/gallery.html"),
+             # ("Gallery", "/album.html"),
              )
 
-MARKDOWN = {
-    'extension_configs': {
-        'markdown.extensions.toc': {
-            'marker': '[TOC]',
-            'title': 'Contents',
-            'anchorlink': True,
-            'permalink': True,
-            'baselevel': 2,
-        },
-    }
-}
+# MARKDOWN = {
+#     'extension_configs': {
+#         'markdown.extensions.toc': {
+#             'marker': '[TOC]',
+#             'title': 'Contents',
+#             'anchorlink': True,
+#             'permalink': True,
+#             'baselevel': 2,
+#         },
+#     }
+# }
 
 """ SOCIAL MEDIA SECTION """
 # Social widget

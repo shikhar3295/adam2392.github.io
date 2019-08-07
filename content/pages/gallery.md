@@ -1,6 +1,6 @@
 Title: Gallery
-gallery: {photo}chicago
-<!-- template:gallery -->
-<!-- save_as:gallery.html -->
+Slug: gallery
+gallery:{photo}hawaii
+save_as:gallery.html
 
-<!-- HI -->
+This is a gallery of my works.

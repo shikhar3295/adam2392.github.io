@@ -31,6 +31,7 @@ Summary: A walkthrough of my experience in Baltimore.
         - [3. Mt. Vernon / Charles Village:](#3-mt-vernon--charles-village)
     - [Getting Around](#getting-around)
 - [FAQ](#faq)
+- [Images in Baltimore](#images-in-baltimore)
 
 <!-- /MarkdownTOC -->
 # General Suggestions
@@ -90,4 +91,9 @@ A: I would try to stay at Inner Harbor, Fed Hill, or Canton.
 
 2. Q: I only have a day in Baltimore, where should I go?
 A: Miss Shirley's, Woodberry Kitchen, and Chocolate Over Water to eat. Inner Harbor and the National Aquarium to see. 
+
+# Images in Baltimore
+Here are some of my favorite photos in Baltimore, taken with my favorite camera:
+
+
 

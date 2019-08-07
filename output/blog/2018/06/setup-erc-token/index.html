@@ -65,7 +65,6 @@ Adam Li's blog            </a>
                     <li><a href="/archives.html">Timeline</a></li>
                     <li><a href="/tags.html">Tags</a></li>
                     <li><a href="/pdfs/AdamLi_CV.pdf">Curriculum Vitae</a></li>
-                    <li><a href="/gallery.html">Gallery</a></li>
                          <li><a href="/contact/">
                              Contact
                           </a></li>
@@ -122,9 +121,9 @@ Adam Li's blog            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <h2 id="getting-setup-with-ethereum"><a class="toclink" href="#getting-setup-with-ethereum">Getting Setup with Ethereum</a><a class="headerlink" href="#getting-setup-with-ethereum" title="Permanent link">&para;</a></h2>
-<h2 id="by-adam-li"><a class="toclink" href="#by-adam-li">By: Adam Li</a><a class="headerlink" href="#by-adam-li" title="Permanent link">&para;</a></h2>
-<h4 id="table-of-contents"><a class="toclink" href="#table-of-contents">Table of Contents</a><a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h4>
+                <h1>Getting Setup with Ethereum</h1>
+<h1>By: Adam Li</h1>
+<h3>Table of Contents</h3>
 <!-- MarkdownTOC -->
 
 <ul>
@@ -204,42 +203,46 @@ web3@1.0.0-beta.27
 truffle@4.0.4 
 solc@0.4.19 
 ethereumjs-testrpc@6.0.3 </p>
-<h2 id="installation"><a class="toclink" href="#installation">Installation</a><a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<h1>Installation</h1>
 <p>The following packages need to be installed for a test time environment:
 * testrpc
 * web3js
 * solc
 * truffle</p>
-<pre><code>npm install ethereumjs-testrpc web3
-npm install solc
-npm install -g truffle
-</code></pre>
+<div class="highlight"><pre><span></span><span class="n">npm</span> <span class="n">install</span> <span class="n">ethereumjs</span><span class="o">-</span><span class="n">testrpc</span> <span class="n">web3</span>
+<span class="n">npm</span> <span class="n">install</span> <span class="n">solc</span>
+<span class="n">npm</span> <span class="n">install</span> <span class="o">-</span><span class="k">g</span> <span class="n">truffle</span>
+</pre></div>
+
+
 <ul>
 <li>Testrpc is an in-memory blockchain that can be used to test the development of the application.</li>
 <li>Web3 is essentially the web interface with the backend and frontend.</li>
 <li>Solc is a solidity code compiler</li>
 <li>Truffle is a web framework for building dAPPs using Ethereum</li>
 </ul>
-<h2 id="set-up"><a class="toclink" href="#set-up">Set Up</a><a class="headerlink" href="#set-up" title="Permanent link">&para;</a></h2>
-<h3 id="1-creating-your-project-directory"><a class="toclink" href="#1-creating-your-project-directory">1. Creating Your Project Directory</a><a class="headerlink" href="#1-creating-your-project-directory" title="Permanent link">&para;</a></h3>
-<pre><code>mkdir MyToken &amp;&amp; cd MyToken
-truffle init
-npm init -y
-npm install -E zeppelin-solidity
-</code></pre>
+<h1>Set Up</h1>
+<h2>1. Creating Your Project Directory</h2>
+<div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">MyToken</span> <span class="o">&amp;&amp;</span> <span class="n">cd</span> <span class="n">MyToken</span>
+<span class="n">truffle</span> <span class="n">init</span>
+<span class="n">npm</span> <span class="n">init</span> <span class="o">-</span><span class="n">y</span>
+<span class="n">npm</span> <span class="n">install</span> <span class="o">-</span><span class="n">E</span> <span class="n">zeppelin</span><span class="o">-</span><span class="n">solidity</span>
+</pre></div>
+
+
 <p>This will install zeppelin-solidity for testing code and initialize your project directory using truffle.s</p>
-<h4 id="1b-project-directory"><a class="toclink" href="#1b-project-directory">1b. Project Directory</a><a class="headerlink" href="#1b-project-directory" title="Permanent link">&para;</a></h4>
+<h3>1b. Project Directory</h3>
 <ul>
 <li>contracts: this is your directory for any solidity contracts</li>
 <li>migrations: this is your directory for scriptable deployment files (how do we want to release the functionality of our entire project?)</li>
 <li>test: for testing your entire application</li>
 <li>truffle.js: a configuration file for truffle</li>
 </ul>
-<h3 id="2-contracts-and-frontend"><a class="toclink" href="#2-contracts-and-frontend">2. Contracts and FrontEnd</a><a class="headerlink" href="#2-contracts-and-frontend" title="Permanent link">&para;</a></h3>
+<h2>2. Contracts and FrontEnd</h2>
 <p>Next, you need to implement your contracts and frontend to create your unique token(s).</p>
-<h2 id="implementation"><a class="toclink" href="#implementation">Implementation</a><a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h2>
-<h3 id="erc-standards"><a class="toclink" href="#erc-standards">ERC Standards</a><a class="headerlink" href="#erc-standards" title="Permanent link">&para;</a></h3>
-<h4 id="1-erc20"><a class="toclink" href="#1-erc20">1. ERC20</a><a class="headerlink" href="#1-erc20" title="Permanent link">&para;</a></h4>
+<h1>Implementation</h1>
+<h2>ERC Standards</h2>
+<h3>1. ERC20</h3>
 <p>Requirements for it are:
 - The Token’s Name
 - The Token’s Symbol
@@ -250,7 +253,7 @@ npm install -E zeppelin-solidity
 - approve 
 - transferFrom</p>
 <p>It also defines two events: Transfer and Approval .</p>
-<h4 id="2-erc721"><a class="toclink" href="#2-erc721">2. ERC721</a><a class="headerlink" href="#2-erc721" title="Permanent link">&para;</a></h4>
+<h3>2. ERC721</h3>
 <p>These are tokens that are non-fungible. One token does not necessarily equal another. It is slightly more complicated then the erc20 token.</p>
 <p>The standard defines the functions:
 - name 
@@ -264,24 +267,26 @@ npm install -E zeppelin-solidity
 - tokenOfOwnerByIndex
 - tokenMetadata </p>
 <p>It also defines two events: Transfer and Approval .</p>
-<h2 id="testing"><a class="toclink" href="#testing">Testing</a><a class="headerlink" href="#testing" title="Permanent link">&para;</a></h2>
-<h3 id="1-remix-httpremixethereumorg"><a class="toclink" href="#1-remix-httpremixethereumorg">1. Remix (http://remix.ethereum.org/)</a><a class="headerlink" href="#1-remix-httpremixethereumorg" title="Permanent link">&para;</a></h3>
+<h1>Testing</h1>
+<h2>1. Remix (http://remix.ethereum.org/)</h2>
 <p>You can test using a web tool (solidity online compiler), hosted by the Ethereum foundation: http://remix.ethereum.org/.</p>
 <p>You can easily test contract functionality, but beware you can't test your whole dapp functionality, so there could be bugs in synchronizing the front/back end with the contracts.</p>
-<h3 id="2-ropsten-test-network-httpsropstenetherscanio"><a class="toclink" href="#2-ropsten-test-network-httpsropstenetherscanio">2. Ropsten Test Network (https://ropsten.etherscan.io )</a><a class="headerlink" href="#2-ropsten-test-network-httpsropstenetherscanio" title="Permanent link">&para;</a></h3>
+<h2>2. Ropsten Test Network (https://ropsten.etherscan.io )</h2>
 <p>Using remix, or another tool to deploy your contract, you can check basic outputs here on the test network.</p>
-<h3 id="3-javascript-truffle-tests"><a class="toclink" href="#3-javascript-truffle-tests">3. Javascript Truffle Tests</a><a class="headerlink" href="#3-javascript-truffle-tests" title="Permanent link">&para;</a></h3>
+<h2>3. Javascript Truffle Tests</h2>
 <p>These will be customized test suites that you write in the truffle directory.</p>
-<pre><code>npm i ethereumjs-tx
-truffle develop
-truffle(develop)&gt; test
-</code></pre>
+<div class="highlight"><pre><span></span><span class="n">npm</span> <span class="n">i</span> <span class="n">ethereumjs</span><span class="o">-</span><span class="n">tx</span>
+<span class="n">truffle</span> <span class="n">develop</span>
+<span class="n">truffle</span><span class="p">(</span><span class="n">develop</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">test</span>
+</pre></div>
+
+
 <p>This command will install the ethereum-tx package, boot a test blockchain using truffle and then run all tests within "/test/" directory.</p>
-<h3 id="4-metamask-and-ganache"><a class="toclink" href="#4-metamask-and-ganache">4. Metamask and Ganache</a><a class="headerlink" href="#4-metamask-and-ganache" title="Permanent link">&para;</a></h3>
+<h2>4. Metamask and Ganache</h2>
 <p>This is a blockchain utility web app that can run in your web2.0 browser. It can help debug your entire dapp.</p>
 <p>Ganache is a personal Ethereum development network that runs on your computer.  Using Ganache you can quickly see how your application affects the blockchain, and introspect details like your accounts, balances, contract creations and gas costs. </p>
-<h2 id="deployment"><a class="toclink" href="#deployment">Deployment</a><a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h2>
-<h3 id="1-trufflejs-httptruffleframeworkcomdocsadvancedconfiguration"><a class="toclink" href="#1-trufflejs-httptruffleframeworkcomdocsadvancedconfiguration">1. truffle.js (http://truffleframework.com/docs/advanced/configuration)</a><a class="headerlink" href="#1-trufflejs-httptruffleframeworkcomdocsadvancedconfiguration" title="Permanent link">&para;</a></h3>
+<h1>Deployment</h1>
+<h2>1. truffle.js (http://truffleframework.com/docs/advanced/configuration)</h2>
 <p>Inside your truffle.js file, you'll find the line module.exports. You can modify the contents of this json object, to manage your deployment testing.</p>
 <ul>
 <li>
@@ -314,13 +319,17 @@ truffle(develop)&gt; test
 <li>mocha: configuration options for mochajs testing framework.</li>
 </ul>
 <p>You can create an ethereum mnemonic and set it, so your providers can see it within the config file. Here is an example of </p>
-<pre><code>truffle migrate --network ropsten
-</code></pre>
-<h3 id="2-crowdsalable-ethereum-token"><a class="toclink" href="#2-crowdsalable-ethereum-token">2. Crowdsalable Ethereum Token</a><a class="headerlink" href="#2-crowdsalable-ethereum-token" title="Permanent link">&para;</a></h3>
-<pre><code>mkdir crowdsalable-eth-token &amp;&amp; cd crowdsalable-eth-token
-truffle unbox git@github.com:ajb413/crowdsalable-eth-token.git
-</code></pre>
-<h2 id="references"><a class="toclink" href="#references">References:</a><a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><span class="n">truffle</span> <span class="n">migrate</span> <span class="c1">--network ropsten</span>
+</pre></div>
+
+
+<h2>2. Crowdsalable Ethereum Token</h2>
+<div class="highlight"><pre><span></span><span class="n">mkdir</span><span class="w"> </span><span class="n">crowdsalable</span><span class="o">-</span><span class="n">eth</span><span class="o">-</span><span class="n">token</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">cd</span><span class="w"> </span><span class="n">crowdsalable</span><span class="o">-</span><span class="n">eth</span><span class="o">-</span><span class="n">token</span><span class="w"></span>
+<span class="n">truffle</span><span class="w"> </span><span class="n">unbox</span><span class="w"> </span><span class="n">git</span><span class="nv">@github</span><span class="p">.</span><span class="nl">com</span><span class="p">:</span><span class="n">ajb413</span><span class="o">/</span><span class="n">crowdsalable</span><span class="o">-</span><span class="n">eth</span><span class="o">-</span><span class="n">token</span><span class="p">.</span><span class="n">git</span><span class="w"></span>
+</pre></div>
+
+
+<h1>References:</h1>
 <ol>
 <li>https://medium.com/@ConsenSys/a-101-noob-intro-to-programming-smart-contracts-on-ethereum-695d15c1dab4</li>
 <li>https://medium.com/@mvmurthy/full-stack-hello-world-voting-ethereum-dapp-tutorial-part-1-40d2d0d807c2</li>
