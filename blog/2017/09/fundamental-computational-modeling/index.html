@@ -65,7 +65,6 @@ Adam Li's blog            </a>
                     <li><a href="/archives.html">Timeline</a></li>
                     <li><a href="/tags.html">Tags</a></li>
                     <li><a href="/pdfs/AdamLi_CV.pdf">Curriculum Vitae</a></li>
-                    <li><a href="/gallery.html">Gallery</a></li>
                          <li><a href="/contact/">
                              Contact
                           </a></li>
@@ -148,34 +147,34 @@ Adam Li's blog            </a>
 </ul>
 <!-- /MarkdownTOC -->
 
-<h2 id="background"><a class="toclink" href="#background">Background</a><a class="headerlink" href="#background" title="Permanent link">&para;</a></h2>
+<h1>Background</h1>
 <p>Computational modeling involves setting up mathematical equations that represent some sort of statics, or dynamics within a system. You want to simulate these equations to understand behavior, fixed points, bifurcations and changes wrt parameter values.</p>
-<h2 id="concepts"><a class="toclink" href="#concepts">Concepts</a><a class="headerlink" href="#concepts" title="Permanent link">&para;</a></h2>
-<h3 id="1-numerical-integration"><a class="toclink" href="#1-numerical-integration">1. Numerical Integration</a><a class="headerlink" href="#1-numerical-integration" title="Permanent link">&para;</a></h3>
+<h1>Concepts</h1>
+<h2>1. Numerical Integration</h2>
 <p>Numerical integration involves solving system of differential equations via numerical methods. This is in general split into deterministic vs stochastic differential equations. Here we will also split the two.</p>
-<h4 id="deterministic-differential-equations"><a class="toclink" href="#deterministic-differential-equations">Deterministic Differential Equations</a><a class="headerlink" href="#deterministic-differential-equations" title="Permanent link">&para;</a></h4>
+<h3>Deterministic Differential Equations</h3>
 <p>1) Euler's Method</p>
 <p>2) Runge-Kutta Method(s)?</p>
-<h4 id="stochastic-differential-equations"><a class="toclink" href="#stochastic-differential-equations">Stochastic Differential Equations</a><a class="headerlink" href="#stochastic-differential-equations" title="Permanent link">&para;</a></h4>
+<h3>Stochastic Differential Equations</h3>
 <p>Heun methods seem to be more accurate, but more time consuming vs the Milstein method.
 1) Heun Method
 Simple discretization leading to Stratonovich integral. It is a "predictor-corrector method" because given value of X at time <span class="math">\(t_n\)</span>, obtain predictors with Euler integration scheme, then correct it using Heun's correction.</p>
 <p>Details to be filled in.</p>
 <p>2) Milstein Method
 Uses the derivative of the diffusion coefficients</p>
-<h4 id="considerations"><a class="toclink" href="#considerations">Considerations:</a><a class="headerlink" href="#considerations" title="Permanent link">&para;</a></h4>
+<h3>Considerations:</h3>
 <p>1) Convergence</p>
-<h4 id="references"><a class="toclink" href="#references">References:</a><a class="headerlink" href="#references" title="Permanent link">&para;</a></h4>
+<h3>References:</h3>
 <ol>
 <li>Comparison of stochastic integration https://arxiv.org/pdf/1102.4401.pdf</li>
 <li></li>
 </ol>
-<h3 id="2-deterministic-and-stochastic-differential-equations"><a class="toclink" href="#2-deterministic-and-stochastic-differential-equations">2. Deterministic and Stochastic Differential Equations</a><a class="headerlink" href="#2-deterministic-and-stochastic-differential-equations" title="Permanent link">&para;</a></h3>
-<h4 id="deterministic-differential-equations_1"><a class="toclink" href="#deterministic-differential-equations_1">Deterministic Differential Equations</a><a class="headerlink" href="#deterministic-differential-equations_1" title="Permanent link">&para;</a></h4>
+<h2>2. Deterministic and Stochastic Differential Equations</h2>
+<h3>Deterministic Differential Equations</h3>
 <p>An example would be a population growth model. </p>
 <p><span class="math">\(dx_t = Kx_t dt,\ x(0)=x_0\)</span>, with K being some constant.</p>
 <p>However, if we have some inherent randomness, then maybe we can't assume <span class="math">\(x_0\)</span> is deterministic constant, but perhaps a random variable.</p>
-<h4 id="stochastic-differential-equations_1"><a class="toclink" href="#stochastic-differential-equations_1">Stochastic Differential Equations</a><a class="headerlink" href="#stochastic-differential-equations_1" title="Permanent link">&para;</a></h4>
+<h3>Stochastic Differential Equations</h3>
 <p>An example would be a population growth model. </p>
 <p><span class="math">\(dX_t(w) = KX_t(w) dt,\ X_0(w)\)</span>, with K being some constant and <span class="math">\(X_t(w)\)</span> is a random variable, which comes from the initial condition. K could also be random.</p>
 <p><span class="math">\(dX_t(w) = (Kdt + dW_t(w))X_t(w) dt,\ X_0(w)\)</span>, where <span class="math">\(dW_t(w)\)</span> is some noise process that adds randomness to K.</p>
@@ -185,10 +184,10 @@ Uses the derivative of the diffusion coefficients</p>
 <p><span class="math">\(X_t(w) = X_0(w) + \int_t_0 f_s(X_s(w)) ds + \int_t_0 \sigma_s(X_s(w)) dW_s(w)\)</span></p>
 <p>Ito integral =&gt;
 Stratonovich integral =&gt;</p>
-<h4 id="references_1"><a class="toclink" href="#references_1">References:</a><a class="headerlink" href="#references_1" title="Permanent link">&para;</a></h4>
-<h4 id="references_2"><a class="toclink" href="#references_2">References:</a><a class="headerlink" href="#references_2" title="Permanent link">&para;</a></h4>
-<h4 id="summary-conclusions"><a class="toclink" href="#summary-conclusions">Summary / Conclusions:</a><a class="headerlink" href="#summary-conclusions" title="Permanent link">&para;</a></h4>
-<h4 id="important-notes"><a class="toclink" href="#important-notes">Important Notes:</a><a class="headerlink" href="#important-notes" title="Permanent link">&para;</a></h4>
+<h3>References:</h3>
+<h3>References:</h3>
+<h3>Summary / Conclusions:</h3>
+<h3>Important Notes:</h3>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",

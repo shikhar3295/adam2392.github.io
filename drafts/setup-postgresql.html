@@ -65,7 +65,6 @@ Adam Li's blog            </a>
                     <li><a href="/archives.html">Timeline</a></li>
                     <li><a href="/tags.html">Tags</a></li>
                     <li><a href="/pdfs/AdamLi_CV.pdf">Curriculum Vitae</a></li>
-                    <li><a href="/gallery.html">Gallery</a></li>
                          <li><a href="/contact/">
                              Contact
                           </a></li>
@@ -122,9 +121,9 @@ Adam Li's blog            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <h2 id="getting-setup-with-postgresql"><a class="toclink" href="#getting-setup-with-postgresql">Getting Setup with PostgreSQL</a><a class="headerlink" href="#getting-setup-with-postgresql" title="Permanent link">&para;</a></h2>
-<h2 id="by-adam-li"><a class="toclink" href="#by-adam-li">By: Adam Li</a><a class="headerlink" href="#by-adam-li" title="Permanent link">&para;</a></h2>
-<h4 id="table-of-contents"><a class="toclink" href="#table-of-contents">Table of Contents</a><a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h4>
+                <h1>Getting Setup with PostgreSQL</h1>
+<h1>By: Adam Li</h1>
+<h3>Table of Contents</h3>
 <!-- MarkdownTOC -->
 
 <ul>
@@ -160,55 +159,71 @@ Adam Li's blog            </a>
 </ul>
 <!-- /MarkdownTOC -->
 
-<h2 id="installation"><a class="toclink" href="#installation">Installation</a><a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<h1>Installation</h1>
 <p>The following packages need to be installed for a test time environment:</p>
-<pre><code>brew update
-brew doctor
-brew install postgres
-</code></pre>
+<div class="highlight"><pre><span></span><span class="n">brew</span> <span class="k">update</span>
+<span class="n">brew</span> <span class="n">doctor</span>
+<span class="n">brew</span> <span class="n">install</span> <span class="n">postgres</span>
+</pre></div>
+
+
 <ul>
 <li>Testrpc is an in-memory blockchain that can be used to test the development of the application.</li>
 <li>Web3 is essentially the web interface with the backend and frontend.</li>
 <li>Solc is a solidity code compiler</li>
 <li>Truffle is a web framework for building dAPPs using Ethereum</li>
 </ul>
-<h2 id="set-up"><a class="toclink" href="#set-up">Set Up</a><a class="headerlink" href="#set-up" title="Permanent link">&para;</a></h2>
-<h3 id="1a-using-a-launchagent-and-plist-to-launch-postgresql-on-startup"><a class="toclink" href="#1a-using-a-launchagent-and-plist-to-launch-postgresql-on-startup">1a. Using a LaunchAgent and plist to Launch PostgreSQL on Startup</a><a class="headerlink" href="#1a-using-a-launchagent-and-plist-to-launch-postgresql-on-startup" title="Permanent link">&para;</a></h3>
+<h1>Set Up</h1>
+<h2>1a. Using a LaunchAgent and plist to Launch PostgreSQL on Startup</h2>
 <p>First, you’ll need to create a directory for your LaunchAgents to reside (if the directory doesn’t exist already). LaunchAgents in OS X are simple scripts used by launchd that cause the system to run programs or code during startup.</p>
-<pre><code>mkdir -p ~/Library/LaunchAgents
-</code></pre>
+<div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">~/</span><span class="n">Library</span><span class="o">/</span><span class="n">LaunchAgents</span>
+</pre></div>
+
+
 <p>Now you’ll need to create a symbolic link from the script that actually allows Postgres to run to the LaunchAgents directory. A symbolic link is similar to creating a new copy of a file for use in another directory, but since the link is ‘symbolic’, the link is just a forwarding address: any request made to that symbolic link location is actually “forwarded along” or redirected to where the real file actually resides.</p>
-<pre><code>ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents
-</code></pre>
+<div class="highlight"><pre><span></span><span class="n">ln</span> <span class="o">-</span><span class="n">sfv</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="k">local</span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">postgresql</span><span class="cm">/*.plist ~/Library/LaunchAgents</span>
+</pre></div>
+
+
 <p>Note: Double-check that the command is correct: It should’ve been part of the installation output mentioned above when Homebrew installed Postgres initially.</p>
 <p>Finally, we load the new symbolic linked LaunchAgent file using the launchctl load command, which is specifically what informs the computer to run this script and start Postgres when the computer launches. Again, the exact command to enter for your own installation will be an output during Homebrew’s Postgres installation, but it should look something like this:</p>
-<pre><code>launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
-</code></pre>
-<h4 id="1b-manually-starting-postgresql"><a class="toclink" href="#1b-manually-starting-postgresql">1b. Manually Starting PostgreSQL</a><a class="headerlink" href="#1b-manually-starting-postgresql" title="Permanent link">&para;</a></h4>
-<pre><code>postgres -D /usr/local/var/postgres
-</code></pre>
-<h3 id="2-initializing-database"><a class="toclink" href="#2-initializing-database">2. Initializing Database</a><a class="headerlink" href="#2-initializing-database" title="Permanent link">&para;</a></h3>
-<h3 id="3-creating-and-deleting-databases"><a class="toclink" href="#3-creating-and-deleting-databases">3. Creating and Deleting Databases</a><a class="headerlink" href="#3-creating-and-deleting-databases" title="Permanent link">&para;</a></h3>
-<h3 id="4"><a class="toclink" href="#4">4.</a><a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
-<h4 id="1c-use-docker"><a class="toclink" href="#1c-use-docker">1c. Use Docker</a><a class="headerlink" href="#1c-use-docker" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><span class="n">launchctl</span> <span class="k">load</span> <span class="o">~/</span><span class="n">Library</span><span class="o">/</span><span class="n">LaunchAgents</span><span class="o">/</span><span class="n">homebrew</span><span class="p">.</span><span class="n">mxcl</span><span class="p">.</span><span class="n">postgresql</span><span class="p">.</span><span class="n">plist</span>
+</pre></div>
+
+
+<h3>1b. Manually Starting PostgreSQL</h3>
+<div class="highlight"><pre><span></span><span class="n">postgres</span> <span class="o">-</span><span class="n">D</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="k">local</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">postgres</span>
+</pre></div>
+
+
+<h2>2. Initializing Database</h2>
+<h2>3. Creating and Deleting Databases</h2>
+<h2>4.</h2>
+<h3>1c. Use Docker</h3>
 <p>Refer to https://medium.com/@leo_hetsch/local-development-with-go-postgresql-and-elasticsearch-in-docker-61bc8a0d5e66 for a nice little explanation for some common docker installation commands for postgresql and elastic search.</p>
-<pre><code>docker-compose -f local.yml build
-</code></pre>
+<div class="highlight"><pre><span></span><span class="n">docker</span><span class="o">-</span><span class="n">compose</span> <span class="o">-</span><span class="n">f</span> <span class="k">local</span><span class="p">.</span><span class="n">yml</span> <span class="n">build</span>
+</pre></div>
+
+
 <p>or </p>
-<pre><code>export COMPOSE_FILE=local.yml
-docker-compose up
-</code></pre>
+<div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">COMPOSE_FILE</span><span class="o">=</span><span class="k">local</span><span class="p">.</span><span class="n">yml</span>
+<span class="n">docker</span><span class="o">-</span><span class="n">compose</span> <span class="n">up</span>
+</pre></div>
+
+
 <p>Possible / common methods:</p>
-<pre><code>docker-compose -f local.yml run --rm django python manage.py migrate
-docker-compose -f local.yml run --rm django python manage.py createsuperuser
-</code></pre>
+<div class="highlight"><pre><span></span><span class="n">docker</span><span class="o">-</span><span class="n">compose</span> <span class="o">-</span><span class="n">f</span> <span class="k">local</span><span class="p">.</span><span class="n">yml</span> <span class="n">run</span> <span class="c1">--rm django python manage.py migrate</span>
+<span class="n">docker</span><span class="o">-</span><span class="n">compose</span> <span class="o">-</span><span class="n">f</span> <span class="k">local</span><span class="p">.</span><span class="n">yml</span> <span class="n">run</span> <span class="c1">--rm django python manage.py createsuperuser</span>
+</pre></div>
+
+
 <p>Since docker is composed of a set of build commands, you should read up on the documentation here:</p>
 <p>https://docs.docker.com/compose/compose-file/#resources</p>
-<h2 id="testing"><a class="toclink" href="#testing">Testing</a><a class="headerlink" href="#testing" title="Permanent link">&para;</a></h2>
-<h3 id="1"><a class="toclink" href="#1">1.</a><a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
-<h3 id="2"><a class="toclink" href="#2">2.</a><a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
-<h2 id="deployment"><a class="toclink" href="#deployment">Deployment</a><a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h2>
-<h2 id="references"><a class="toclink" href="#references">References:</a><a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<h1>Testing</h1>
+<h2>1.</h2>
+<h2>2.</h2>
+<h1>Deployment</h1>
+<h1>References:</h1>
 <ol>
 <li>http://boot2docker.io/</li>
 <li>https://docs.docker.com/engine/examples/postgresql_service/#installing-postgresql-on-docker</li>

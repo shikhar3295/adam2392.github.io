@@ -65,7 +65,6 @@ Adam Li's blog            </a>
                     <li><a href="/archives.html">Timeline</a></li>
                     <li><a href="/tags.html">Tags</a></li>
                     <li><a href="/pdfs/AdamLi_CV.pdf">Curriculum Vitae</a></li>
-                    <li><a href="/gallery.html">Gallery</a></li>
                          <li><a href="/contact/">
                              Contact
                           </a></li>
@@ -122,9 +121,9 @@ Adam Li's blog            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <h2 id="getting-setup-with-pelican-site"><a class="toclink" href="#getting-setup-with-pelican-site">Getting Setup with Pelican Site</a><a class="headerlink" href="#getting-setup-with-pelican-site" title="Permanent link">&para;</a></h2>
-<h2 id="by-adam-li"><a class="toclink" href="#by-adam-li">By: Adam Li</a><a class="headerlink" href="#by-adam-li" title="Permanent link">&para;</a></h2>
-<h4 id="table-of-contents"><a class="toclink" href="#table-of-contents">Table of Contents</a><a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h4>
+                <h1>Getting Setup with Pelican Site</h1>
+<h1>By: Adam Li</h1>
+<h3>Table of Contents</h3>
 <!-- MarkdownTOC autolink="True" -->
 
 <ul>
@@ -151,36 +150,44 @@ Adam Li's blog            </a>
 </ul>
 <!-- /MarkdownTOC -->
 
-<h2 id="installation"><a class="toclink" href="#installation">Installation</a><a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
-<h3 id="1-condapip-install"><a class="toclink" href="#1-condapip-install">1. Conda/Pip Install</a><a class="headerlink" href="#1-condapip-install" title="Permanent link">&para;</a></h3>
+<h1>Installation</h1>
+<h2>1. Conda/Pip Install</h2>
 <p>After getting your virtualenv setup, run 'pip install pelican'. Also include additional packages:</p>
-<pre><code>pip install Markdown beautifulsoup4 typogrify Pillow webassets
-</code></pre>
+<div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">Markdown</span> <span class="n">beautifulsoup4</span> <span class="n">typogrify</span> <span class="n">Pillow</span> <span class="n">webassets</span>
+</pre></div>
+
+
 <p>or</p>
-<pre><code>conda create -n website python=python3
-conda install -c conda-forge pelican
-conda install -c conda-forge pyaml 
-conda install -c anaconda markdown
-conda install -c anaconda beautifulsoup4 
-conda install -c conda-forge pillow
-conda install -c conda-forge gettext 
-conda install -c damianavila82 piexif # for
-pip install pyexif
-conda install -c conda-forge ghp-import
-conda install -c anaconda pil
-</code></pre>
+<div class="highlight"><pre><span></span><span class="nv">conda</span> <span class="nv">create</span> <span class="o">-</span><span class="nv">n</span> <span class="nv">website</span> <span class="nv">python</span><span class="o">=</span><span class="nv">python3</span>
+<span class="nv">conda</span> <span class="nv">install</span> <span class="o">-</span><span class="nv">c</span> <span class="nv">conda</span><span class="o">-</span><span class="nv">forge</span> <span class="nv">pelican</span>
+<span class="nv">conda</span> <span class="nv">install</span> <span class="o">-</span><span class="nv">c</span> <span class="nv">conda</span><span class="o">-</span><span class="nv">forge</span> <span class="nv">pyaml</span> 
+<span class="nv">conda</span> <span class="nv">install</span> <span class="o">-</span><span class="nv">c</span> <span class="nv">anaconda</span> <span class="nv">markdown</span>
+<span class="nv">conda</span> <span class="nv">install</span> <span class="o">-</span><span class="nv">c</span> <span class="nv">anaconda</span> <span class="nv">beautifulsoup4</span> 
+<span class="nv">conda</span> <span class="nv">install</span> <span class="o">-</span><span class="nv">c</span> <span class="nv">conda</span><span class="o">-</span><span class="nv">forge</span> <span class="nv">pillow</span>
+<span class="nv">conda</span> <span class="nv">install</span> <span class="o">-</span><span class="nv">c</span> <span class="nv">conda</span><span class="o">-</span><span class="nv">forge</span> <span class="nv">gettext</span> 
+<span class="nv">conda</span> <span class="nv">install</span> <span class="o">-</span><span class="nv">c</span> <span class="nv">damianavila82</span> <span class="nv">piexif</span> # <span class="k">for</span>
+<span class="nv">pip</span> <span class="nv">install</span> <span class="nv">pyexif</span>
+<span class="nv">conda</span> <span class="nv">install</span> <span class="o">-</span><span class="nv">c</span> <span class="nv">conda</span><span class="o">-</span><span class="nv">forge</span> <span class="nv">ghp</span><span class="o">-</span><span class="nv">import</span>
+<span class="nv">conda</span> <span class="nv">install</span> <span class="o">-</span><span class="nv">c</span> <span class="nv">anaconda</span> <span class="nv">pil</span>
+</pre></div>
+
+
 <p>for helping to write in Markdown and writing pretty text.</p>
-<h3 id="2-start-up-pelican"><a class="toclink" href="#2-start-up-pelican">2. Start up pelican:</a><a class="headerlink" href="#2-start-up-pelican" title="Permanent link">&para;</a></h3>
+<h2>2. Start up pelican:</h2>
 <p>First you will need to create a separate branch that you work on. This branch contains your actual markdown files, which are rendered and then copied OVER to your master branch during the Publishing section. This then renders html using git.</p>
-<pre><code>git checkout - &lt;source_branch&gt;
-pelican-quickstart
-</code></pre>
+<div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span> <span class="o">&lt;</span><span class="n">source_branch</span><span class="o">&gt;</span>
+<span class="n">pelican</span><span class="o">-</span><span class="n">quickstart</span>
+</pre></div>
+
+
 <p>then go through the directions and create your project.</p>
-<h3 id="3-installing-common-pelican-themes-and-pelican-plugins"><a class="toclink" href="#3-installing-common-pelican-themes-and-pelican-plugins">3. Installing common pelican-themes and pelican-plugins:</a><a class="headerlink" href="#3-installing-common-pelican-themes-and-pelican-plugins" title="Permanent link">&para;</a></h3>
-<pre><code>git clone --recursive https://github.com/getpelican/pelican-themes
-git clone --recursive https://github.com/getpelican/pelican-plugins
-</code></pre>
-<h2 id="choosing-your-hosting-server"><a class="toclink" href="#choosing-your-hosting-server">Choosing Your Hosting Server</a><a class="headerlink" href="#choosing-your-hosting-server" title="Permanent link">&para;</a></h2>
+<h2>3. Installing common pelican-themes and pelican-plugins:</h2>
+<div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="c1">--recursive https://github.com/getpelican/pelican-themes</span>
+<span class="n">git</span> <span class="n">clone</span> <span class="c1">--recursive https://github.com/getpelican/pelican-plugins</span>
+</pre></div>
+
+
+<h1>Choosing Your Hosting Server</h1>
 <p>There are a couple of options, but you should decide how you want to host your site because then it will be built into your pelican project directory.</p>
 <ol>
 <li>
@@ -193,61 +200,75 @@ git clone --recursive https://github.com/getpelican/pelican-plugins
 <p>Heroku, PythonAnywhere, and More: </p>
 </li>
 </ol>
-<h2 id="installing-and-choosing-themesplugins"><a class="toclink" href="#installing-and-choosing-themesplugins">Installing and Choosing Themes/Plugins</a><a class="headerlink" href="#installing-and-choosing-themesplugins" title="Permanent link">&para;</a></h2>
+<h1>Installing and Choosing Themes/Plugins</h1>
 <p>You need to install the pelican themes and the pelican plugins, if you want to use the open source themes and plugins developed. Then you can add code to your python files to add certain plugins:</p>
-<pre><code>PLUGIN_PATHS = ['path/to/pelican-plugins']
-PLUGINS = ['assets', 'sitemap', 'gravatar']
-JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
-</code></pre>
-<h2 id="pushing-content-to-cloud"><a class="toclink" href="#pushing-content-to-cloud">Pushing Content to Cloud</a><a class="headerlink" href="#pushing-content-to-cloud" title="Permanent link">&para;</a></h2>
-<h3 id="1-via-fab-old"><a class="toclink" href="#1-via-fab-old">1. Via Fab (Old)</a><a class="headerlink" href="#1-via-fab-old" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><span class="n">PLUGIN_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;path/to/pelican-plugins&#39;</span><span class="p">]</span>
+<span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;assets&#39;</span><span class="p">,</span> <span class="s1">&#39;sitemap&#39;</span><span class="p">,</span> <span class="s1">&#39;gravatar&#39;</span><span class="p">]</span>
+<span class="n">JINJA_ENVIRONMENT</span> <span class="o">=</span> <span class="err">{</span><span class="s1">&#39;extensions&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;jinja2.ext.i18n&#39;</span><span class="p">]</span><span class="err">}</span>
+</pre></div>
+
+
+<h1>Pushing Content to Cloud</h1>
+<h2>1. Via Fab (Old)</h2>
 <p>'pip install ghp-import fabric'</p>
 <ol>
 <li>Using ghp-import:</li>
 </ol>
 <p>First run install by 'pip install ghp-import'</p>
 <p>Then you can run code like:</p>
-<pre><code>$ ghp-import -m 'commit message' -b master output
-$ git push --all
-</code></pre>
+<div class="highlight"><pre><span></span><span class="err">$</span> <span class="n">ghp</span><span class="o">-</span><span class="kn">import</span> <span class="o">-</span><span class="n">m</span> <span class="s1">&#39;commit message&#39;</span> <span class="o">-</span><span class="n">b</span> <span class="n">master</span> <span class="n">output</span>
+<span class="err">$</span> <span class="n">git</span> <span class="n">push</span> <span class="o">--</span><span class="nb">all</span>
+</pre></div>
+
+
 <ol>
 <li>Using fab:</li>
 </ol>
 <p>First install fabric by running 'pip install fabric'. Then insert code into your fabfile.py:</p>
-<pre><code>def publishghp(msg):
-    preview() #builds publishconf.py
-    local("git add -A") #will commit allll files, be careful
-    local("git commit -m '%s'"%msg)
-    local("ghp-import -m '%s' -b master output"%msg)
-    local("git push --all")
-</code></pre>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">publishghp</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
+    <span class="n">preview</span><span class="p">()</span> <span class="c1">#builds publishconf.py</span>
+    <span class="n">local</span><span class="p">(</span><span class="s2">&quot;git add -A&quot;</span><span class="p">)</span> <span class="c1">#will commit allll files, be careful</span>
+    <span class="n">local</span><span class="p">(</span><span class="s2">&quot;git commit -m &#39;</span><span class="si">%s</span><span class="s2">&#39;&quot;</span><span class="o">%</span><span class="n">msg</span><span class="p">)</span>
+    <span class="n">local</span><span class="p">(</span><span class="s2">&quot;ghp-import -m &#39;</span><span class="si">%s</span><span class="s2">&#39; -b master output&quot;</span><span class="o">%</span><span class="n">msg</span><span class="p">)</span>
+    <span class="n">local</span><span class="p">(</span><span class="s2">&quot;git push --all&quot;</span><span class="p">)</span>
+</pre></div>
+
+
 <p>and then run </p>
-<pre><code>$ fab publishghp:"commit message"
-</code></pre>
+<div class="highlight"><pre><span></span>$ fab publishghp:<span class="s2">&quot;commit message&quot;</span>
+</pre></div>
+
+
 <p>to create commits up to the cloud.</p>
-<h3 id="2-via-git-directly"><a class="toclink" href="#2-via-git-directly">2. Via Git Directly</a><a class="headerlink" href="#2-via-git-directly" title="Permanent link">&para;</a></h3>
+<h2>2. Via Git Directly</h2>
 <p>Before doing anything, check locally if files look right:</p>
-<pre><code>make html &amp;&amp; make serve
-</code></pre>
+<div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">html</span> <span class="o">&amp;&amp;</span> <span class="n">make</span> <span class="n">serve</span>
+</pre></div>
+
+
 <p>First just push all your stuff to your path.</p>
-<pre><code>git add -A &amp;&amp; git commit -a -m 'first commit' &amp;&amp; git push --all
-</code></pre>
+<div class="highlight"><pre><span></span><span class="n">git</span> <span class="k">add</span> <span class="o">-</span><span class="n">A</span> <span class="o">&amp;&amp;</span> <span class="n">git</span> <span class="k">commit</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">m</span> <span class="s1">&#39;first commit&#39;</span> <span class="o">&amp;&amp;</span> <span class="n">git</span> <span class="n">push</span> <span class="c1">--all</span>
+</pre></div>
+
+
 <p>Then:</p>
-<pre><code>make github
-</code></pre>
-<h2 id="adding-pages-of-static-content"><a class="toclink" href="#adding-pages-of-static-content">Adding Pages of Static Content</a><a class="headerlink" href="#adding-pages-of-static-content" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">github</span>
+</pre></div>
+
+
+<h1>Adding Pages of Static Content</h1>
 <p>Here you want to add a homepage, about me page and other static pages that are relevant to your site. Create a directory inside /content/pages/ to hold your static pages. Separate blog content and other content and use pelicanconf.py along w/ plugins to play around with the visuals and presentation of the site.</p>
-<h2 id="adding-articles-to-your-blog"><a class="toclink" href="#adding-articles-to-your-blog">Adding Articles To Your Blog</a><a class="headerlink" href="#adding-articles-to-your-blog" title="Permanent link">&para;</a></h2>
+<h1>Adding Articles To Your Blog</h1>
 <p>To add articles to your blog, create /content/blog/ directory and create subdirectories in there. For example, I have academic, coding, and travel as my subdirectories in my blog. Then adjust your pelicanconf.py file for these blog posts.</p>
-<h2 id="adding-gallery-images-to-your-blog"><a class="toclink" href="#adding-gallery-images-to-your-blog">Adding Gallery / Images To Your Blog</a><a class="headerlink" href="#adding-gallery-images-to-your-blog" title="Permanent link">&para;</a></h2>
+<h1>Adding Gallery / Images To Your Blog</h1>
 <p>Adding images to your blog require the following packages:
 - exeif
 - Pillow
 - Knowledge of modifying Pelican templates</p>
-<h3 id="modifying-pelican-templates"><a class="toclink" href="#modifying-pelican-templates">Modifying Pelican Templates:</a><a class="headerlink" href="#modifying-pelican-templates" title="Permanent link">&para;</a></h3>
+<h2>Modifying Pelican Templates:</h2>
 <p>https://kwkelly.com/blog/adding-galleries-to-pelican-and-bootstrap/
 http://duncanlock.net/blog/2013/05/29/better-figures-images-plugin-for-pelican/</p>
-<h2 id="references"><a class="toclink" href="#references">References:</a><a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<h1>References:</h1>
 <ol>
 <li>https://www.notionsandnotes.org/tech/web-development/pelican-static-blog-setup.html</li>
 <li>http://terriyu.info/blog/posts/2013/07/pelican-setup/</li>

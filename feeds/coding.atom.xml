@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Adam Li's blog - Coding</title><link href="/" rel="alternate"></link><link href="/feeds/coding.atom.xml" rel="self"></link><id>/</id><updated>2018-06-17T00:00:00-04:00</updated><entry><title>Setting Up Docker</title><link href="/blog/2018/06/setup-docker/" rel="alternate"></link><published>2018-06-17T00:00:00-04:00</published><updated>2018-06-17T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2018-06-17:/blog/2018/06/setup-docker/</id><summary type="html">&lt;p&gt;A short walkthrough of setting up Docker and some notes on setting up a containerized approach to development with persistent database.&lt;/p&gt;</summary><content type="html">&lt;h2 id="getting-setup-on-using-docker"&gt;&lt;a class="toclink" href="#getting-setup-on-using-docker"&gt;Getting Setup on Using Docker&lt;/a&gt;&lt;a class="headerlink" href="#getting-setup-on-using-docker" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id="by-adam-li"&gt;&lt;a class="toclink" href="#by-adam-li"&gt;By: Adam Li&lt;/a&gt;&lt;a class="headerlink" href="#by-adam-li" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;h4 id="table-of-contents"&gt;&lt;a class="toclink" href="#table-of-contents"&gt;Table of Contents&lt;/a&gt;&lt;a class="headerlink" href="#table-of-contents" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Adam Li's blog - Coding</title><link href="/" rel="alternate"></link><link href="/feeds/coding.atom.xml" rel="self"></link><id>/</id><updated>2018-06-17T00:00:00-04:00</updated><entry><title>Setting Up Docker</title><link href="/blog/2018/06/setup-docker/" rel="alternate"></link><published>2018-06-17T00:00:00-04:00</published><updated>2018-06-17T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2018-06-17:/blog/2018/06/setup-docker/</id><summary type="html">&lt;p&gt;A short walkthrough of setting up Docker and some notes on setting up a containerized approach to development with persistent database.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Getting Setup on Using Docker&lt;/h1&gt;
+&lt;h1&gt;By: Adam Li&lt;/h1&gt;
+&lt;h3&gt;Table of Contents&lt;/h3&gt;
 &lt;!-- MarkdownTOC autolink="true" --&gt;
 
 &lt;ul&gt;
@@ -37,80 +37,100 @@
 &lt;/ul&gt;
 &lt;!-- /MarkdownTOC --&gt;
 
-&lt;h2 id="installation"&gt;&lt;a class="toclink" href="#installation"&gt;Installation&lt;/a&gt;&lt;a class="headerlink" href="#installation" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h1&gt;Installation&lt;/h1&gt;
 &lt;p&gt;The following packages need to be installed for a test time environment:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;brew update
-brew prune
-brew doctor
-brew install postgres
-brew install docker
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id="setting-hardware-requirements"&gt;&lt;a class="toclink" href="#setting-hardware-requirements"&gt;Setting Hardware Requirements:&lt;/a&gt;&lt;a class="headerlink" href="#setting-hardware-requirements" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;brew&lt;/span&gt; &lt;span class="k"&gt;update&lt;/span&gt;
+&lt;span class="n"&gt;brew&lt;/span&gt; &lt;span class="n"&gt;prune&lt;/span&gt;
+&lt;span class="n"&gt;brew&lt;/span&gt; &lt;span class="n"&gt;doctor&lt;/span&gt;
+&lt;span class="n"&gt;brew&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;postgres&lt;/span&gt;
+&lt;span class="n"&gt;brew&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;docker&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Setting Hardware Requirements:&lt;/h1&gt;
 &lt;p&gt;Some packages need minimum hardware requirements assigned to Docker usage.&lt;/p&gt;
 &lt;p&gt;A minimum of 4GB RAM assigned to Docker&lt;/p&gt;
 &lt;p&gt;Elasticsearch alone needs at least 2GB of RAM to run.&lt;/p&gt;
 &lt;p&gt;With Docker for Mac, the amount of RAM dedicated to Docker can be set using the UI: see How to increase docker-machine memory Mac (Stack Overflow).&lt;/p&gt;
-&lt;h2 id="using-docker"&gt;&lt;a class="toclink" href="#using-docker"&gt;Using Docker&lt;/a&gt;&lt;a class="headerlink" href="#using-docker" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id="1-docker-image"&gt;&lt;a class="toclink" href="#1-docker-image"&gt;1. Docker Image&lt;/a&gt;&lt;a class="headerlink" href="#1-docker-image" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h1&gt;Using Docker&lt;/h1&gt;
+&lt;h2&gt;1. Docker Image&lt;/h2&gt;
 &lt;p&gt;Most docker images have been prebuilt and tested online. Containers are these dynamic "images" of your system that will host data, programs, etc. Images are snapshots of those containers (mainly at the beginning) to setup the baseline container. &lt;/p&gt;
 &lt;p&gt;Volumes are a way of allowing containers persistent storage across usage.&lt;/p&gt;
-&lt;h4 id="1a-setting-base-docker-volume"&gt;&lt;a class="toclink" href="#1a-setting-base-docker-volume"&gt;1a. Setting Base Docker Volume&lt;/a&gt;&lt;a class="headerlink" href="#1a-setting-base-docker-volume" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;h3&gt;1a. Setting Base Docker Volume&lt;/h3&gt;
 &lt;p&gt;This will create a docker with a volume (in the docker image) at the volume you specify with the "-v" tag. The docker image has the name that you set, and then it is based off of "busybox", which is a generalized light-weight docker image by Docker.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;docker create -v /var/lib/postgresql/data --name postgres10.4-data busybox
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id="1b-creating-the-container"&gt;&lt;a class="toclink" href="#1b-creating-the-container"&gt;1b. Creating The Container&lt;/a&gt;&lt;a class="headerlink" href="#1b-creating-the-container" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;docker run --name local-postgres10.4 -e POSTGRES_PASSWORD=dappstore -d --volumes-from postgres10.4-data postgres:10.4
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id="1c-running-postgresql-via-container"&gt;&lt;a class="toclink" href="#1c-running-postgresql-via-container"&gt;1c. Running PostgreSQL via Container&lt;/a&gt;&lt;a class="headerlink" href="#1c-running-postgresql-via-container" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;docker run -it --link local-postgres10.4:postgres --rm postgres:10.4 sh -c 'exec psql -h "$POSTGRES_PORT_5432_TCP_ADDR" -p "$POSTGRES_PORT_5432_TCP_PORT" -U postgres'
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;docker&lt;/span&gt; &lt;span class="k"&gt;create&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;var&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;lib&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;postgresql&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;data&lt;/span&gt; &lt;span class="c1"&gt;--name postgres10.4-data busybox&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;1b. Creating The Container&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;docker&lt;/span&gt; &lt;span class="n"&gt;run&lt;/span&gt; &lt;span class="c1"&gt;--name local-postgres10.4 -e POSTGRES_PASSWORD=dappstore -d --volumes-from postgres10.4-data postgres:10.4&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;1c. Running PostgreSQL via Container&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;docker&lt;/span&gt; &lt;span class="nv"&gt;run&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;it&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="nv"&gt;link&lt;/span&gt; &lt;span class="nv"&gt;local&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;postgres10&lt;/span&gt;.&lt;span class="mi"&gt;4&lt;/span&gt;:&lt;span class="nv"&gt;postgres&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="nv"&gt;rm&lt;/span&gt; &lt;span class="nv"&gt;postgres&lt;/span&gt;:&lt;span class="mi"&gt;10&lt;/span&gt;.&lt;span class="mi"&gt;4&lt;/span&gt; &lt;span class="nv"&gt;sh&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;c&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="s"&gt;exec psql -h &amp;quot;$POSTGRES_PORT_5432_TCP_ADDR&amp;quot; -p &amp;quot;$POSTGRES_PORT_5432_TCP_PORT&amp;quot; -U postgres&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;Enter the password you just set.&lt;/p&gt;
 &lt;p&gt;Inside, you can modify and begin the basic configuration of the base container volume by creating tables and initializing roles using SQL.&lt;/p&gt;
 &lt;p&gt;Now, your base container is set up! Don't remove this if you want to have persistant Postgresql set up.&lt;/p&gt;
-&lt;h4 id="1d-optional-expose-docker-container-to-host"&gt;&lt;a class="toclink" href="#1d-optional-expose-docker-container-to-host"&gt;1d. (Optional) Expose Docker Container To Host&lt;/a&gt;&lt;a class="headerlink" href="#1d-optional-expose-docker-container-to-host" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;docker run --name local-postgres10.4 -p 5432:5432 -e POSTGRES_PASSWORD=asecurepassword -d --volumes-from postgres10.4-data postgres:10.4
-&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;1d. (Optional) Expose Docker Container To Host&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;docker&lt;/span&gt; &lt;span class="n"&gt;run&lt;/span&gt; &lt;span class="c1"&gt;--name local-postgres10.4 -p 5432:5432 -e POSTGRES_PASSWORD=asecurepassword -d --volumes-from postgres10.4-data postgres:10.4&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;This will expose the PostGRESQL docker instance via port 5432 localhost, so that you can connect to it via any application now.&lt;/p&gt;
-&lt;h3 id="2"&gt;&lt;a class="toclink" href="#2"&gt;2.&lt;/a&gt;&lt;a class="headerlink" href="#2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;h2 id="linking-all-this-with-docker-compose"&gt;&lt;a class="toclink" href="#linking-all-this-with-docker-compose"&gt;Linking All This With Docker-Compose&lt;/a&gt;&lt;a class="headerlink" href="#linking-all-this-with-docker-compose" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;2.&lt;/h2&gt;
+&lt;h1&gt;Linking All This With Docker-Compose&lt;/h1&gt;
 &lt;p&gt;Docker-compose is a way of composing up the docker images that you have in a way that fits your needs. You can modularly stack docker images and then run additional installations that fit your specifications.&lt;/p&gt;
 &lt;p&gt;So, for example, here we will compose a docker image that is composed of django, postgres and elasticsearch to have a fully functional web-app with logging capabilities. (Perhaps we should also think about adding Kibana and Logstash for a full ELK stack)?&lt;/p&gt;
-&lt;h3 id="1"&gt;&lt;a class="toclink" href="#1"&gt;1.&lt;/a&gt;&lt;a class="headerlink" href="#1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2&gt;1.&lt;/h2&gt;
 &lt;p&gt;Refer to https://medium.com/@leo_hetsch/local-development-with-go-postgresql-and-elasticsearch-in-docker-61bc8a0d5e66 for a nice little explanation for some common docker installation commands for postgresql and elastic search.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;docker-compose -f local.yml build
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;docker&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;compose&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt; &lt;span class="k"&gt;local&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;yml&lt;/span&gt; &lt;span class="n"&gt;build&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;or &lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;export COMPOSE_FILE=local.yml
-docker-compose up
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;export&lt;/span&gt; &lt;span class="n"&gt;COMPOSE_FILE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;local&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;yml&lt;/span&gt;
+&lt;span class="n"&gt;docker&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;compose&lt;/span&gt; &lt;span class="n"&gt;up&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;Possible / common methods:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;docker-compose -f local.yml run --rm django python manage.py migrate
-docker-compose -f local.yml run --rm django python manage.py createsuperuser
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;docker&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;compose&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt; &lt;span class="k"&gt;local&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;yml&lt;/span&gt; &lt;span class="n"&gt;run&lt;/span&gt; &lt;span class="c1"&gt;--rm django python manage.py migrate&lt;/span&gt;
+&lt;span class="n"&gt;docker&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;compose&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt; &lt;span class="k"&gt;local&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;yml&lt;/span&gt; &lt;span class="n"&gt;run&lt;/span&gt; &lt;span class="c1"&gt;--rm django python manage.py createsuperuser&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;Since docker is composed of a set of build commands, you should read up on the documentation here:&lt;/p&gt;
 &lt;p&gt;https://docs.docker.com/compose/compose-file/#resources&lt;/p&gt;
-&lt;h2 id="common-commands"&gt;&lt;a class="toclink" href="#common-commands"&gt;Common Commands&lt;/a&gt;&lt;a class="headerlink" href="#common-commands" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id="images"&gt;&lt;a class="toclink" href="#images"&gt;Images&lt;/a&gt;&lt;a class="headerlink" href="#images" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;docker image ls
-docker ps
+&lt;h1&gt;Common Commands&lt;/h1&gt;
+&lt;h2&gt;Images&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;docker&lt;/span&gt; &lt;span class="n"&gt;image&lt;/span&gt; &lt;span class="n"&gt;ls&lt;/span&gt;
+&lt;span class="n"&gt;docker&lt;/span&gt; &lt;span class="n"&gt;ps&lt;/span&gt;
 
-docker rmi &amp;lt;image_name&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id="containers"&gt;&lt;a class="toclink" href="#containers"&gt;Containers&lt;/a&gt;&lt;a class="headerlink" href="#containers" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;docker container ls
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id="volumes"&gt;&lt;a class="toclink" href="#volumes"&gt;Volumes&lt;/a&gt;&lt;a class="headerlink" href="#volumes" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;h2 id="testing"&gt;&lt;a class="toclink" href="#testing"&gt;Testing&lt;/a&gt;&lt;a class="headerlink" href="#testing" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id="1_1"&gt;&lt;a class="toclink" href="#1_1"&gt;1.&lt;/a&gt;&lt;a class="headerlink" href="#1_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;h3 id="2_1"&gt;&lt;a class="toclink" href="#2_1"&gt;2.&lt;/a&gt;&lt;a class="headerlink" href="#2_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;h2 id="references"&gt;&lt;a class="toclink" href="#references"&gt;References:&lt;/a&gt;&lt;a class="headerlink" href="#references" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;span class="n"&gt;docker&lt;/span&gt; &lt;span class="n"&gt;rmi&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;image_name&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Containers&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;docker&lt;/span&gt; &lt;span class="n"&gt;container&lt;/span&gt; &lt;span class="n"&gt;ls&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Volumes&lt;/h2&gt;
+&lt;h1&gt;Testing&lt;/h1&gt;
+&lt;h2&gt;1.&lt;/h2&gt;
+&lt;h2&gt;2.&lt;/h2&gt;
+&lt;h1&gt;References:&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;http://boot2docker.io/&lt;/li&gt;
 &lt;li&gt;https://ryaneschinger.com/blog/dockerized-postgresql-development-environment/&lt;/li&gt;
 &lt;li&gt;&lt;/li&gt;
-&lt;/ol&gt;</content><category term="webdev"></category><category term="docker"></category><category term="macos"></category></entry><entry><title>Setting Up ERC Standard Tokens</title><link href="/blog/2018/06/setup-erc-token/" rel="alternate"></link><published>2018-06-10T00:00:00-04:00</published><updated>2018-06-10T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2018-06-10:/blog/2018/06/setup-erc-token/</id><summary type="html">&lt;p&gt;A short walkthrough of setting up an ethereum token.&lt;/p&gt;</summary><content type="html">&lt;h2 id="getting-setup-with-ethereum"&gt;&lt;a class="toclink" href="#getting-setup-with-ethereum"&gt;Getting Setup with Ethereum&lt;/a&gt;&lt;a class="headerlink" href="#getting-setup-with-ethereum" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id="by-adam-li"&gt;&lt;a class="toclink" href="#by-adam-li"&gt;By: Adam Li&lt;/a&gt;&lt;a class="headerlink" href="#by-adam-li" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;h4 id="table-of-contents"&gt;&lt;a class="toclink" href="#table-of-contents"&gt;Table of Contents&lt;/a&gt;&lt;a class="headerlink" href="#table-of-contents" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;/ol&gt;</content><category term="webdev"></category><category term="docker"></category><category term="macos"></category></entry><entry><title>Setting Up ERC Standard Tokens</title><link href="/blog/2018/06/setup-erc-token/" rel="alternate"></link><published>2018-06-10T00:00:00-04:00</published><updated>2018-06-10T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2018-06-10:/blog/2018/06/setup-erc-token/</id><summary type="html">&lt;p&gt;A short walkthrough of setting up an ethereum token.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Getting Setup with Ethereum&lt;/h1&gt;
+&lt;h1&gt;By: Adam Li&lt;/h1&gt;
+&lt;h3&gt;Table of Contents&lt;/h3&gt;
 &lt;!-- MarkdownTOC --&gt;
 
 &lt;ul&gt;
@@ -190,42 +210,46 @@ web3@1.0.0-beta.27
 truffle@4.0.4 
 solc@0.4.19 
 ethereumjs-testrpc@6.0.3 &lt;/p&gt;
-&lt;h2 id="installation"&gt;&lt;a class="toclink" href="#installation"&gt;Installation&lt;/a&gt;&lt;a class="headerlink" href="#installation" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h1&gt;Installation&lt;/h1&gt;
 &lt;p&gt;The following packages need to be installed for a test time environment:
 * testrpc
 * web3js
 * solc
 * truffle&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;npm install ethereumjs-testrpc web3
-npm install solc
-npm install -g truffle
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;npm&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;ethereumjs&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;testrpc&lt;/span&gt; &lt;span class="n"&gt;web3&lt;/span&gt;
+&lt;span class="n"&gt;npm&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;solc&lt;/span&gt;
+&lt;span class="n"&gt;npm&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;g&lt;/span&gt; &lt;span class="n"&gt;truffle&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;ul&gt;
 &lt;li&gt;Testrpc is an in-memory blockchain that can be used to test the development of the application.&lt;/li&gt;
 &lt;li&gt;Web3 is essentially the web interface with the backend and frontend.&lt;/li&gt;
 &lt;li&gt;Solc is a solidity code compiler&lt;/li&gt;
 &lt;li&gt;Truffle is a web framework for building dAPPs using Ethereum&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="set-up"&gt;&lt;a class="toclink" href="#set-up"&gt;Set Up&lt;/a&gt;&lt;a class="headerlink" href="#set-up" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id="1-creating-your-project-directory"&gt;&lt;a class="toclink" href="#1-creating-your-project-directory"&gt;1. Creating Your Project Directory&lt;/a&gt;&lt;a class="headerlink" href="#1-creating-your-project-directory" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;mkdir MyToken &amp;amp;&amp;amp; cd MyToken
-truffle init
-npm init -y
-npm install -E zeppelin-solidity
-&lt;/code&gt;&lt;/pre&gt;
+&lt;h1&gt;Set Up&lt;/h1&gt;
+&lt;h2&gt;1. Creating Your Project Directory&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;mkdir&lt;/span&gt; &lt;span class="n"&gt;MyToken&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;MyToken&lt;/span&gt;
+&lt;span class="n"&gt;truffle&lt;/span&gt; &lt;span class="n"&gt;init&lt;/span&gt;
+&lt;span class="n"&gt;npm&lt;/span&gt; &lt;span class="n"&gt;init&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt;
+&lt;span class="n"&gt;npm&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;E&lt;/span&gt; &lt;span class="n"&gt;zeppelin&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;solidity&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;This will install zeppelin-solidity for testing code and initialize your project directory using truffle.s&lt;/p&gt;
-&lt;h4 id="1b-project-directory"&gt;&lt;a class="toclink" href="#1b-project-directory"&gt;1b. Project Directory&lt;/a&gt;&lt;a class="headerlink" href="#1b-project-directory" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;h3&gt;1b. Project Directory&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;contracts: this is your directory for any solidity contracts&lt;/li&gt;
 &lt;li&gt;migrations: this is your directory for scriptable deployment files (how do we want to release the functionality of our entire project?)&lt;/li&gt;
 &lt;li&gt;test: for testing your entire application&lt;/li&gt;
 &lt;li&gt;truffle.js: a configuration file for truffle&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="2-contracts-and-frontend"&gt;&lt;a class="toclink" href="#2-contracts-and-frontend"&gt;2. Contracts and FrontEnd&lt;/a&gt;&lt;a class="headerlink" href="#2-contracts-and-frontend" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2&gt;2. Contracts and FrontEnd&lt;/h2&gt;
 &lt;p&gt;Next, you need to implement your contracts and frontend to create your unique token(s).&lt;/p&gt;
-&lt;h2 id="implementation"&gt;&lt;a class="toclink" href="#implementation"&gt;Implementation&lt;/a&gt;&lt;a class="headerlink" href="#implementation" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id="erc-standards"&gt;&lt;a class="toclink" href="#erc-standards"&gt;ERC Standards&lt;/a&gt;&lt;a class="headerlink" href="#erc-standards" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;h4 id="1-erc20"&gt;&lt;a class="toclink" href="#1-erc20"&gt;1. ERC20&lt;/a&gt;&lt;a class="headerlink" href="#1-erc20" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;h1&gt;Implementation&lt;/h1&gt;
+&lt;h2&gt;ERC Standards&lt;/h2&gt;
+&lt;h3&gt;1. ERC20&lt;/h3&gt;
 &lt;p&gt;Requirements for it are:
 - The Token’s Name
 - The Token’s Symbol
@@ -236,7 +260,7 @@ npm install -E zeppelin-solidity
 - approve 
 - transferFrom&lt;/p&gt;
 &lt;p&gt;It also defines two events: Transfer and Approval .&lt;/p&gt;
-&lt;h4 id="2-erc721"&gt;&lt;a class="toclink" href="#2-erc721"&gt;2. ERC721&lt;/a&gt;&lt;a class="headerlink" href="#2-erc721" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;h3&gt;2. ERC721&lt;/h3&gt;
 &lt;p&gt;These are tokens that are non-fungible. One token does not necessarily equal another. It is slightly more complicated then the erc20 token.&lt;/p&gt;
 &lt;p&gt;The standard defines the functions:
 - name 
@@ -250,24 +274,26 @@ npm install -E zeppelin-solidity
 - tokenOfOwnerByIndex
 - tokenMetadata &lt;/p&gt;
 &lt;p&gt;It also defines two events: Transfer and Approval .&lt;/p&gt;
-&lt;h2 id="testing"&gt;&lt;a class="toclink" href="#testing"&gt;Testing&lt;/a&gt;&lt;a class="headerlink" href="#testing" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id="1-remix-httpremixethereumorg"&gt;&lt;a class="toclink" href="#1-remix-httpremixethereumorg"&gt;1. Remix (http://remix.ethereum.org/)&lt;/a&gt;&lt;a class="headerlink" href="#1-remix-httpremixethereumorg" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h1&gt;Testing&lt;/h1&gt;
+&lt;h2&gt;1. Remix (http://remix.ethereum.org/)&lt;/h2&gt;
 &lt;p&gt;You can test using a web tool (solidity online compiler), hosted by the Ethereum foundation: http://remix.ethereum.org/.&lt;/p&gt;
 &lt;p&gt;You can easily test contract functionality, but beware you can't test your whole dapp functionality, so there could be bugs in synchronizing the front/back end with the contracts.&lt;/p&gt;
-&lt;h3 id="2-ropsten-test-network-httpsropstenetherscanio"&gt;&lt;a class="toclink" href="#2-ropsten-test-network-httpsropstenetherscanio"&gt;2. Ropsten Test Network (https://ropsten.etherscan.io )&lt;/a&gt;&lt;a class="headerlink" href="#2-ropsten-test-network-httpsropstenetherscanio" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2&gt;2. Ropsten Test Network (https://ropsten.etherscan.io )&lt;/h2&gt;
 &lt;p&gt;Using remix, or another tool to deploy your contract, you can check basic outputs here on the test network.&lt;/p&gt;
-&lt;h3 id="3-javascript-truffle-tests"&gt;&lt;a class="toclink" href="#3-javascript-truffle-tests"&gt;3. Javascript Truffle Tests&lt;/a&gt;&lt;a class="headerlink" href="#3-javascript-truffle-tests" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2&gt;3. Javascript Truffle Tests&lt;/h2&gt;
 &lt;p&gt;These will be customized test suites that you write in the truffle directory.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;npm i ethereumjs-tx
-truffle develop
-truffle(develop)&amp;gt; test
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;npm&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="n"&gt;ethereumjs&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;tx&lt;/span&gt;
+&lt;span class="n"&gt;truffle&lt;/span&gt; &lt;span class="n"&gt;develop&lt;/span&gt;
+&lt;span class="n"&gt;truffle&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;develop&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;test&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;This command will install the ethereum-tx package, boot a test blockchain using truffle and then run all tests within "/test/" directory.&lt;/p&gt;
-&lt;h3 id="4-metamask-and-ganache"&gt;&lt;a class="toclink" href="#4-metamask-and-ganache"&gt;4. Metamask and Ganache&lt;/a&gt;&lt;a class="headerlink" href="#4-metamask-and-ganache" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2&gt;4. Metamask and Ganache&lt;/h2&gt;
 &lt;p&gt;This is a blockchain utility web app that can run in your web2.0 browser. It can help debug your entire dapp.&lt;/p&gt;
 &lt;p&gt;Ganache is a personal Ethereum development network that runs on your computer.  Using Ganache you can quickly see how your application affects the blockchain, and introspect details like your accounts, balances, contract creations and gas costs. &lt;/p&gt;
-&lt;h2 id="deployment"&gt;&lt;a class="toclink" href="#deployment"&gt;Deployment&lt;/a&gt;&lt;a class="headerlink" href="#deployment" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id="1-trufflejs-httptruffleframeworkcomdocsadvancedconfiguration"&gt;&lt;a class="toclink" href="#1-trufflejs-httptruffleframeworkcomdocsadvancedconfiguration"&gt;1. truffle.js (http://truffleframework.com/docs/advanced/configuration)&lt;/a&gt;&lt;a class="headerlink" href="#1-trufflejs-httptruffleframeworkcomdocsadvancedconfiguration" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h1&gt;Deployment&lt;/h1&gt;
+&lt;h2&gt;1. truffle.js (http://truffleframework.com/docs/advanced/configuration)&lt;/h2&gt;
 &lt;p&gt;Inside your truffle.js file, you'll find the line module.exports. You can modify the contents of this json object, to manage your deployment testing.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -300,21 +326,25 @@ truffle(develop)&amp;gt; test
 &lt;li&gt;mocha: configuration options for mochajs testing framework.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;You can create an ethereum mnemonic and set it, so your providers can see it within the config file. Here is an example of &lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;truffle migrate --network ropsten
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id="2-crowdsalable-ethereum-token"&gt;&lt;a class="toclink" href="#2-crowdsalable-ethereum-token"&gt;2. Crowdsalable Ethereum Token&lt;/a&gt;&lt;a class="headerlink" href="#2-crowdsalable-ethereum-token" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;mkdir crowdsalable-eth-token &amp;amp;&amp;amp; cd crowdsalable-eth-token
-truffle unbox git@github.com:ajb413/crowdsalable-eth-token.git
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id="references"&gt;&lt;a class="toclink" href="#references"&gt;References:&lt;/a&gt;&lt;a class="headerlink" href="#references" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;truffle&lt;/span&gt; &lt;span class="n"&gt;migrate&lt;/span&gt; &lt;span class="c1"&gt;--network ropsten&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;2. Crowdsalable Ethereum Token&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;mkdir&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;crowdsalable&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;eth&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;token&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;crowdsalable&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;eth&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;token&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="n"&gt;truffle&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;unbox&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="nv"&gt;@github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nl"&gt;com&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;ajb413&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;crowdsalable&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;eth&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;token&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;git&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;References:&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;https://medium.com/@ConsenSys/a-101-noob-intro-to-programming-smart-contracts-on-ethereum-695d15c1dab4&lt;/li&gt;
 &lt;li&gt;https://medium.com/@mvmurthy/full-stack-hello-world-voting-ethereum-dapp-tutorial-part-1-40d2d0d807c2&lt;/li&gt;
 &lt;li&gt;http://truffleframework.com/docs/getting_started/project#exploring-the-project&lt;/li&gt;
 &lt;li&gt;https://www.pubnub.com/blog/testing-and-deploying-an-ethereum-token-part-2/&lt;/li&gt;
-&lt;/ol&gt;</content><category term="webdev"></category><category term="ethereum"></category><category term="javascript"></category><category term="blockchain"></category></entry><entry><title>Setting Up Singularity Containers</title><link href="/blog/2018/01/setup-singularity/" rel="alternate"></link><published>2018-01-31T00:00:00-05:00</published><updated>2018-01-31T00:00:00-05:00</updated><author><name>Adam Li</name></author><id>tag:None,2018-01-31:/blog/2018/01/setup-singularity/</id><summary type="html">&lt;p&gt;A short walkthrough of setting up the Singularity containers&lt;/p&gt;</summary><content type="html">&lt;h2 id="getting-setup-with-singularity"&gt;&lt;a class="toclink" href="#getting-setup-with-singularity"&gt;Getting Setup with Singularity&lt;/a&gt;&lt;a class="headerlink" href="#getting-setup-with-singularity" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id="by-adam-li"&gt;&lt;a class="toclink" href="#by-adam-li"&gt;By: Adam Li&lt;/a&gt;&lt;a class="headerlink" href="#by-adam-li" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;h4 id="table-of-contents"&gt;&lt;a class="toclink" href="#table-of-contents"&gt;Table of Contents&lt;/a&gt;&lt;a class="headerlink" href="#table-of-contents" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;/ol&gt;</content><category term="webdev"></category><category term="ethereum"></category><category term="javascript"></category><category term="blockchain"></category></entry><entry><title>Setting Up Singularity Containers</title><link href="/blog/2018/01/setup-singularity/" rel="alternate"></link><published>2018-01-31T00:00:00-05:00</published><updated>2018-01-31T00:00:00-05:00</updated><author><name>Adam Li</name></author><id>tag:None,2018-01-31:/blog/2018/01/setup-singularity/</id><summary type="html">&lt;p&gt;A short walkthrough of setting up the Singularity containers&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Getting Setup with Singularity&lt;/h1&gt;
+&lt;h1&gt;By: Adam Li&lt;/h1&gt;
+&lt;h3&gt;Table of Contents&lt;/h3&gt;
 &lt;!-- MarkdownTOC autolink="true" --&gt;
 
 &lt;ul&gt;
@@ -331,87 +361,99 @@ truffle unbox git@github.com:ajb413/crowdsalable-eth-token.git
 &lt;/ul&gt;
 &lt;!-- /MarkdownTOC --&gt;
 
-&lt;h2 id="installation"&gt;&lt;a class="toclink" href="#installation"&gt;Installation&lt;/a&gt;&lt;a class="headerlink" href="#installation" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h1&gt;Installation&lt;/h1&gt;
 &lt;p&gt;To install singularity locally with root privelages, you can then build up containers that can be hosted online.&lt;/p&gt;
-&lt;h2 id="setting-up-a-tensorflow-container-recipe-example"&gt;&lt;a class="toclink" href="#setting-up-a-tensorflow-container-recipe-example"&gt;Setting Up A Tensorflow Container Recipe (Example):&lt;/a&gt;&lt;a class="headerlink" href="#setting-up-a-tensorflow-container-recipe-example" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;Bootstrap: docker
-From: tensorflow/tensorflow:latest-gpu
-%environment
-  # use bash as default shell
-  SHELL=/bin/bash
-  export SHELL
-%setup
-  # runs on host - the path to the image is $SINGULARITY_ROOTFS
-%post
-  # post-setup script
-  # load environment variables
-  . /environment
-  # use bash as default shell
-  echo 'SHELL=/bin/bash' &amp;gt;&amp;gt; /environment
-  # make environment file executable
-  chmod +x /environment
-  # default mount paths
-  mkdir /scratch /data 
-  # load in extra packages for python
-  apt-get update &amp;amp;&amp;amp; apt-get -y install locales
-  locale-gen en_US.UTF-8
-  apt-get install -y git wget python3-dev python3-pip
-  apt-get clean
-  apt-get install -y libcupti-dev
-  pip3 install --upgrade pip
-  pip3 install keras
-  pip3 install numpy scipy scikit-learn pandas tensorboard natsorted tqdm
-%runscript
-  # executes with the singularity run command
-  # delete this section to use existing docker ENTRYPOINT command
-%test
-  # test that script is a success
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id="1-needed-docker-containers"&gt;&lt;a class="toclink" href="#1-needed-docker-containers"&gt;1. Needed Docker Containers:&lt;/a&gt;&lt;a class="headerlink" href="#1-needed-docker-containers" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h1&gt;Setting Up A Tensorflow Container Recipe (Example):&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nl"&gt;Bootstrap&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;docker&lt;/span&gt;
+&lt;span class="nl"&gt;From&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;tensorflow&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nl"&gt;tensorflow&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;latest&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;gpu&lt;/span&gt;
+&lt;span class="nf"&gt;%environment&lt;/span&gt;
+  &lt;span class="cp"&gt;# use bash as default shell&lt;/span&gt;
+  &lt;span class="n"&gt;SHELL&lt;/span&gt;&lt;span class="o"&gt;=/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bash&lt;/span&gt;
+  &lt;span class="k"&gt;export&lt;/span&gt; &lt;span class="n"&gt;SHELL&lt;/span&gt;
+&lt;span class="nf"&gt;%setup&lt;/span&gt;
+  &lt;span class="cp"&gt;# runs on host - the path to the image is $SINGULARITY_ROOTFS&lt;/span&gt;
+&lt;span class="nf"&gt;%post&lt;/span&gt;
+  &lt;span class="cp"&gt;# post-setup script&lt;/span&gt;
+  &lt;span class="cp"&gt;# load environment variables&lt;/span&gt;
+  &lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;environment&lt;/span&gt;
+  &lt;span class="cp"&gt;# use bash as default shell&lt;/span&gt;
+  &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;SHELL&lt;/span&gt;&lt;span class="o"&gt;=/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bash&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;environment&lt;/span&gt;
+  &lt;span class="cp"&gt;# make environment file executable&lt;/span&gt;
+  &lt;span class="n"&gt;chmod&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;environment&lt;/span&gt;
+  &lt;span class="cp"&gt;# default mount paths&lt;/span&gt;
+  &lt;span class="n"&gt;mkdir&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;scratch&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt; 
+  &lt;span class="err"&gt;#&lt;/span&gt; &lt;span class="n"&gt;load&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;extra&lt;/span&gt; &lt;span class="n"&gt;packages&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;
+  &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;update&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;locales&lt;/span&gt;
+  &lt;span class="n"&gt;locale&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;gen&lt;/span&gt; &lt;span class="n"&gt;en_US&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;UTF&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;
+  &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;wget&lt;/span&gt; &lt;span class="n"&gt;python3&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt; &lt;span class="n"&gt;python3&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pip&lt;/span&gt;
+  &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;clean&lt;/span&gt;
+  &lt;span class="n"&gt;apt&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="n"&gt;libcupti&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dev&lt;/span&gt;
+  &lt;span class="n"&gt;pip3&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;upgrade&lt;/span&gt; &lt;span class="n"&gt;pip&lt;/span&gt;
+  &lt;span class="n"&gt;pip3&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;keras&lt;/span&gt;
+  &lt;span class="n"&gt;pip3&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;numpy&lt;/span&gt; &lt;span class="n"&gt;scipy&lt;/span&gt; &lt;span class="n"&gt;scikit&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;learn&lt;/span&gt; &lt;span class="n"&gt;pandas&lt;/span&gt; &lt;span class="n"&gt;tensorboard&lt;/span&gt; &lt;span class="n"&gt;natsorted&lt;/span&gt; &lt;span class="n"&gt;tqdm&lt;/span&gt;
+&lt;span class="nf"&gt;%runscript&lt;/span&gt;
+  &lt;span class="cp"&gt;# executes with the singularity run command&lt;/span&gt;
+  &lt;span class="cp"&gt;# delete this section to use existing docker ENTRYPOINT command&lt;/span&gt;
+&lt;span class="nf"&gt;%test&lt;/span&gt;
+  &lt;span class="cp"&gt;# test that script is a success&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;1. Needed Docker Containers:&lt;/h2&gt;
 &lt;p&gt;The best thing to do is start off with a docker container that is already prebuilt. The nice thing is that for cloud computing with tensorflow-gpu, tensorflow is maintained on docker and up to date. &lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Bootstrap: Docker
-From: tensorflow/tensorflow:latest-gpu
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Bootstrap&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Docker&lt;/span&gt;
+&lt;span class="n"&gt;From&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;tensorflow&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;tensorflow&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="n"&gt;latest&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;gpu&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;Other options are:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Bootstrap: shub
-From:
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id="2-environment-setup"&gt;&lt;a class="toclink" href="#2-environment-setup"&gt;2. Environment / Setup&lt;/a&gt;&lt;a class="headerlink" href="#2-environment-setup" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Bootstrap&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;shub&lt;/span&gt;
+&lt;span class="n"&gt;From&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;2. Environment / Setup&lt;/h2&gt;
 &lt;p&gt;These are commands that can be used to export variables into the environment. Then you can run setup of files/variables before running any installations.&lt;/p&gt;
-&lt;h3 id="3-post"&gt;&lt;a class="toclink" href="#3-post"&gt;3. Post&lt;/a&gt;&lt;a class="headerlink" href="#3-post" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2&gt;3. Post&lt;/h2&gt;
 &lt;p&gt;This is the main area where your image will install different packages and load different environment variables.&lt;/p&gt;
-&lt;h3 id="4-run-script"&gt;&lt;a class="toclink" href="#4-run-script"&gt;4. Run Script&lt;/a&gt;&lt;a class="headerlink" href="#4-run-script" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2&gt;4. Run Script&lt;/h2&gt;
 &lt;p&gt;This will run a script afterwards, say a scientific experiment:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;python3 main.py --args
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id="5-test"&gt;&lt;a class="toclink" href="#5-test"&gt;5. Test&lt;/a&gt;&lt;a class="headerlink" href="#5-test" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;python3&lt;/span&gt; &lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt; &lt;span class="c1"&gt;--args&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;5. Test&lt;/h2&gt;
 &lt;p&gt;This will run test scripts to see that your "main.py" did what it was supposed to do. Were files saved? Were computations correct?&lt;/p&gt;
-&lt;h2 id="common-commands"&gt;&lt;a class="toclink" href="#common-commands"&gt;Common Commands&lt;/a&gt;&lt;a class="headerlink" href="#common-commands" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h1&gt;Common Commands&lt;/h1&gt;
 &lt;p&gt;Pulling images, shelling into the image and executing the image with a script&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;singularity pull
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;singularity&lt;/span&gt; &lt;span class="nv"&gt;pull&lt;/span&gt;
 
-singularity shell
+&lt;span class="nv"&gt;singularity&lt;/span&gt; &lt;span class="nv"&gt;shell&lt;/span&gt;
 
-singularity exec
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span class="nv"&gt;singularity&lt;/span&gt; &lt;span class="k"&gt;exec&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;Common argument flags:
 * verbose mode(s): -v, -vv, -vvv
 * debug mode: -d 
 * link nvidia driver &amp;amp; GPU: --nv
 * binds an existing directory onto the image: -B&lt;/p&gt;
 &lt;p&gt;An example use case that runs a tensorflow simg and runs a training script:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;singularity exec --nv ./tensorflow.simg python main.py ${traindatadir} ${testdatadir} --output_data_dir ${outputdatadir} --log_data_dir ${logdatadir} --patient_to_loo ${patient} --expname ${expname}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id="conclusions"&gt;&lt;a class="toclink" href="#conclusions"&gt;Conclusions&lt;/a&gt;&lt;a class="headerlink" href="#conclusions" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;singularity&lt;/span&gt; &lt;span class="k"&gt;exec&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="nv"&gt;nv&lt;/span&gt; .&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;tensorflow&lt;/span&gt;.&lt;span class="nv"&gt;simg&lt;/span&gt; &lt;span class="nv"&gt;python&lt;/span&gt; &lt;span class="nv"&gt;main&lt;/span&gt;.&lt;span class="nv"&gt;py&lt;/span&gt; ${&lt;span class="nv"&gt;traindatadir&lt;/span&gt;} ${&lt;span class="nv"&gt;testdatadir&lt;/span&gt;} &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="nv"&gt;output_data_dir&lt;/span&gt; ${&lt;span class="nv"&gt;outputdatadir&lt;/span&gt;} &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="nv"&gt;log_data_dir&lt;/span&gt; ${&lt;span class="nv"&gt;logdatadir&lt;/span&gt;} &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="nv"&gt;patient_to_loo&lt;/span&gt; ${&lt;span class="nv"&gt;patient&lt;/span&gt;} &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="nv"&gt;expname&lt;/span&gt; ${&lt;span class="nv"&gt;expname&lt;/span&gt;}
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Conclusions&lt;/h1&gt;
 &lt;p&gt;This allows an end-to-end HPC/scientific computation analysis that uses Docker/Singularityhub to setup your system, and then runs setup, main scripts and testing to create a consistent output.&lt;/p&gt;
-&lt;h2 id="references"&gt;&lt;a class="toclink" href="#references"&gt;References:&lt;/a&gt;&lt;a class="headerlink" href="#references" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h1&gt;References:&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;https://www.singularity-hub.org/&lt;/li&gt;
 &lt;li&gt;http://geekyap.blogspot.com/2016/11/docker-vs-singularity-vs-shifter-in-hpc.html&lt;/li&gt;
 &lt;li&gt;https://singularity.lbl.gov/docs-docker&lt;/li&gt;
-&lt;/ol&gt;</content><category term="cloud"></category><category term="singularity"></category><category term="python"></category><category term="hpc"></category><category term="tensorflow"></category><category term="deep-learning"></category></entry><entry><title>Setting Up a Pelican Site</title><link href="/blog/2017/06/setup-pelican-site/" rel="alternate"></link><published>2017-06-04T00:00:00-04:00</published><updated>2017-06-04T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-06-04:/blog/2017/06/setup-pelican-site/</id><summary type="html">&lt;p&gt;A short walkthrough of setting up a pelican site&lt;/p&gt;</summary><content type="html">&lt;h2 id="getting-setup-with-pelican-site"&gt;&lt;a class="toclink" href="#getting-setup-with-pelican-site"&gt;Getting Setup with Pelican Site&lt;/a&gt;&lt;a class="headerlink" href="#getting-setup-with-pelican-site" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id="by-adam-li"&gt;&lt;a class="toclink" href="#by-adam-li"&gt;By: Adam Li&lt;/a&gt;&lt;a class="headerlink" href="#by-adam-li" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;h4 id="table-of-contents"&gt;&lt;a class="toclink" href="#table-of-contents"&gt;Table of Contents&lt;/a&gt;&lt;a class="headerlink" href="#table-of-contents" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;/ol&gt;</content><category term="cloud"></category><category term="singularity"></category><category term="python"></category><category term="hpc"></category><category term="tensorflow"></category><category term="deep-learning"></category></entry><entry><title>Setting Up a Pelican Site</title><link href="/blog/2017/06/setup-pelican-site/" rel="alternate"></link><published>2017-06-04T00:00:00-04:00</published><updated>2017-06-04T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-06-04:/blog/2017/06/setup-pelican-site/</id><summary type="html">&lt;p&gt;A short walkthrough of setting up a pelican site&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Getting Setup with Pelican Site&lt;/h1&gt;
+&lt;h1&gt;By: Adam Li&lt;/h1&gt;
+&lt;h3&gt;Table of Contents&lt;/h3&gt;
 &lt;!-- MarkdownTOC autolink="True" --&gt;
 
 &lt;ul&gt;
@@ -438,36 +480,44 @@ singularity exec
 &lt;/ul&gt;
 &lt;!-- /MarkdownTOC --&gt;
 
-&lt;h2 id="installation"&gt;&lt;a class="toclink" href="#installation"&gt;Installation&lt;/a&gt;&lt;a class="headerlink" href="#installation" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id="1-condapip-install"&gt;&lt;a class="toclink" href="#1-condapip-install"&gt;1. Conda/Pip Install&lt;/a&gt;&lt;a class="headerlink" href="#1-condapip-install" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h1&gt;Installation&lt;/h1&gt;
+&lt;h2&gt;1. Conda/Pip Install&lt;/h2&gt;
 &lt;p&gt;After getting your virtualenv setup, run 'pip install pelican'. Also include additional packages:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;pip install Markdown beautifulsoup4 typogrify Pillow webassets
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;Markdown&lt;/span&gt; &lt;span class="n"&gt;beautifulsoup4&lt;/span&gt; &lt;span class="n"&gt;typogrify&lt;/span&gt; &lt;span class="n"&gt;Pillow&lt;/span&gt; &lt;span class="n"&gt;webassets&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;or&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;conda create -n website python=python3
-conda install -c conda-forge pelican
-conda install -c conda-forge pyaml 
-conda install -c anaconda markdown
-conda install -c anaconda beautifulsoup4 
-conda install -c conda-forge pillow
-conda install -c conda-forge gettext 
-conda install -c damianavila82 piexif # for
-pip install pyexif
-conda install -c conda-forge ghp-import
-conda install -c anaconda pil
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;conda&lt;/span&gt; &lt;span class="nv"&gt;create&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt; &lt;span class="nv"&gt;website&lt;/span&gt; &lt;span class="nv"&gt;python&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;python3&lt;/span&gt;
+&lt;span class="nv"&gt;conda&lt;/span&gt; &lt;span class="nv"&gt;install&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;c&lt;/span&gt; &lt;span class="nv"&gt;conda&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;forge&lt;/span&gt; &lt;span class="nv"&gt;pelican&lt;/span&gt;
+&lt;span class="nv"&gt;conda&lt;/span&gt; &lt;span class="nv"&gt;install&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;c&lt;/span&gt; &lt;span class="nv"&gt;conda&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;forge&lt;/span&gt; &lt;span class="nv"&gt;pyaml&lt;/span&gt; 
+&lt;span class="nv"&gt;conda&lt;/span&gt; &lt;span class="nv"&gt;install&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;c&lt;/span&gt; &lt;span class="nv"&gt;anaconda&lt;/span&gt; &lt;span class="nv"&gt;markdown&lt;/span&gt;
+&lt;span class="nv"&gt;conda&lt;/span&gt; &lt;span class="nv"&gt;install&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;c&lt;/span&gt; &lt;span class="nv"&gt;anaconda&lt;/span&gt; &lt;span class="nv"&gt;beautifulsoup4&lt;/span&gt; 
+&lt;span class="nv"&gt;conda&lt;/span&gt; &lt;span class="nv"&gt;install&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;c&lt;/span&gt; &lt;span class="nv"&gt;conda&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;forge&lt;/span&gt; &lt;span class="nv"&gt;pillow&lt;/span&gt;
+&lt;span class="nv"&gt;conda&lt;/span&gt; &lt;span class="nv"&gt;install&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;c&lt;/span&gt; &lt;span class="nv"&gt;conda&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;forge&lt;/span&gt; &lt;span class="nv"&gt;gettext&lt;/span&gt; 
+&lt;span class="nv"&gt;conda&lt;/span&gt; &lt;span class="nv"&gt;install&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;c&lt;/span&gt; &lt;span class="nv"&gt;damianavila82&lt;/span&gt; &lt;span class="nv"&gt;piexif&lt;/span&gt; # &lt;span class="k"&gt;for&lt;/span&gt;
+&lt;span class="nv"&gt;pip&lt;/span&gt; &lt;span class="nv"&gt;install&lt;/span&gt; &lt;span class="nv"&gt;pyexif&lt;/span&gt;
+&lt;span class="nv"&gt;conda&lt;/span&gt; &lt;span class="nv"&gt;install&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;c&lt;/span&gt; &lt;span class="nv"&gt;conda&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;forge&lt;/span&gt; &lt;span class="nv"&gt;ghp&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;import&lt;/span&gt;
+&lt;span class="nv"&gt;conda&lt;/span&gt; &lt;span class="nv"&gt;install&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;c&lt;/span&gt; &lt;span class="nv"&gt;anaconda&lt;/span&gt; &lt;span class="nv"&gt;pil&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;for helping to write in Markdown and writing pretty text.&lt;/p&gt;
-&lt;h3 id="2-start-up-pelican"&gt;&lt;a class="toclink" href="#2-start-up-pelican"&gt;2. Start up pelican:&lt;/a&gt;&lt;a class="headerlink" href="#2-start-up-pelican" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2&gt;2. Start up pelican:&lt;/h2&gt;
 &lt;p&gt;First you will need to create a separate branch that you work on. This branch contains your actual markdown files, which are rendered and then copied OVER to your master branch during the Publishing section. This then renders html using git.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;git checkout - &amp;lt;source_branch&amp;gt;
-pelican-quickstart
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;checkout&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;source_branch&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="n"&gt;pelican&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;quickstart&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;then go through the directions and create your project.&lt;/p&gt;
-&lt;h3 id="3-installing-common-pelican-themes-and-pelican-plugins"&gt;&lt;a class="toclink" href="#3-installing-common-pelican-themes-and-pelican-plugins"&gt;3. Installing common pelican-themes and pelican-plugins:&lt;/a&gt;&lt;a class="headerlink" href="#3-installing-common-pelican-themes-and-pelican-plugins" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;git clone --recursive https://github.com/getpelican/pelican-themes
-git clone --recursive https://github.com/getpelican/pelican-plugins
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id="choosing-your-hosting-server"&gt;&lt;a class="toclink" href="#choosing-your-hosting-server"&gt;Choosing Your Hosting Server&lt;/a&gt;&lt;a class="headerlink" href="#choosing-your-hosting-server" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;3. Installing common pelican-themes and pelican-plugins:&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;clone&lt;/span&gt; &lt;span class="c1"&gt;--recursive https://github.com/getpelican/pelican-themes&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;clone&lt;/span&gt; &lt;span class="c1"&gt;--recursive https://github.com/getpelican/pelican-plugins&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Choosing Your Hosting Server&lt;/h1&gt;
 &lt;p&gt;There are a couple of options, but you should decide how you want to host your site because then it will be built into your pelican project directory.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -480,61 +530,75 @@ git clone --recursive https://github.com/getpelican/pelican-plugins
 &lt;p&gt;Heroku, PythonAnywhere, and More: &lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id="installing-and-choosing-themesplugins"&gt;&lt;a class="toclink" href="#installing-and-choosing-themesplugins"&gt;Installing and Choosing Themes/Plugins&lt;/a&gt;&lt;a class="headerlink" href="#installing-and-choosing-themesplugins" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h1&gt;Installing and Choosing Themes/Plugins&lt;/h1&gt;
 &lt;p&gt;You need to install the pelican themes and the pelican plugins, if you want to use the open source themes and plugins developed. Then you can add code to your python files to add certain plugins:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;PLUGIN_PATHS = ['path/to/pelican-plugins']
-PLUGINS = ['assets', 'sitemap', 'gravatar']
-JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id="pushing-content-to-cloud"&gt;&lt;a class="toclink" href="#pushing-content-to-cloud"&gt;Pushing Content to Cloud&lt;/a&gt;&lt;a class="headerlink" href="#pushing-content-to-cloud" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id="1-via-fab-old"&gt;&lt;a class="toclink" href="#1-via-fab-old"&gt;1. Via Fab (Old)&lt;/a&gt;&lt;a class="headerlink" href="#1-via-fab-old" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;PLUGIN_PATHS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;path/to/pelican-plugins&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;PLUGINS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;assets&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;sitemap&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;gravatar&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;JINJA_ENVIRONMENT&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;extensions&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;jinja2.ext.i18n&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="err"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Pushing Content to Cloud&lt;/h1&gt;
+&lt;h2&gt;1. Via Fab (Old)&lt;/h2&gt;
 &lt;p&gt;'pip install ghp-import fabric'&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Using ghp-import:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;First run install by 'pip install ghp-import'&lt;/p&gt;
 &lt;p&gt;Then you can run code like:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ ghp-import -m 'commit message' -b master output
-$ git push --all
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;ghp&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;commit message&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="n"&gt;master&lt;/span&gt; &lt;span class="n"&gt;output&lt;/span&gt;
+&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;push&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="nb"&gt;all&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;ol&gt;
 &lt;li&gt;Using fab:&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;First install fabric by running 'pip install fabric'. Then insert code into your fabfile.py:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;def publishghp(msg):
-    preview() #builds publishconf.py
-    local("git add -A") #will commit allll files, be careful
-    local("git commit -m '%s'"%msg)
-    local("ghp-import -m '%s' -b master output"%msg)
-    local("git push --all")
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;publishghp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;msg&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;preview&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="c1"&gt;#builds publishconf.py&lt;/span&gt;
+    &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;git add -A&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;#will commit allll files, be careful&lt;/span&gt;
+    &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;git commit -m &amp;#39;&lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s2"&gt;&amp;#39;&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;msg&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;ghp-import -m &amp;#39;&lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s2"&gt;&amp;#39; -b master output&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;msg&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;git push --all&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;and then run &lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ fab publishghp:"commit message"
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ fab publishghp:&lt;span class="s2"&gt;&amp;quot;commit message&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;to create commits up to the cloud.&lt;/p&gt;
-&lt;h3 id="2-via-git-directly"&gt;&lt;a class="toclink" href="#2-via-git-directly"&gt;2. Via Git Directly&lt;/a&gt;&lt;a class="headerlink" href="#2-via-git-directly" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2&gt;2. Via Git Directly&lt;/h2&gt;
 &lt;p&gt;Before doing anything, check locally if files look right:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;make html &amp;amp;&amp;amp; make serve
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="n"&gt;html&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="n"&gt;serve&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;First just push all your stuff to your path.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;git add -A &amp;amp;&amp;amp; git commit -a -m 'first commit' &amp;amp;&amp;amp; git push --all
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="k"&gt;add&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="k"&gt;commit&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;first commit&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;push&lt;/span&gt; &lt;span class="c1"&gt;--all&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;Then:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;make github
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id="adding-pages-of-static-content"&gt;&lt;a class="toclink" href="#adding-pages-of-static-content"&gt;Adding Pages of Static Content&lt;/a&gt;&lt;a class="headerlink" href="#adding-pages-of-static-content" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;make&lt;/span&gt; &lt;span class="n"&gt;github&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Adding Pages of Static Content&lt;/h1&gt;
 &lt;p&gt;Here you want to add a homepage, about me page and other static pages that are relevant to your site. Create a directory inside /content/pages/ to hold your static pages. Separate blog content and other content and use pelicanconf.py along w/ plugins to play around with the visuals and presentation of the site.&lt;/p&gt;
-&lt;h2 id="adding-articles-to-your-blog"&gt;&lt;a class="toclink" href="#adding-articles-to-your-blog"&gt;Adding Articles To Your Blog&lt;/a&gt;&lt;a class="headerlink" href="#adding-articles-to-your-blog" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h1&gt;Adding Articles To Your Blog&lt;/h1&gt;
 &lt;p&gt;To add articles to your blog, create /content/blog/ directory and create subdirectories in there. For example, I have academic, coding, and travel as my subdirectories in my blog. Then adjust your pelicanconf.py file for these blog posts.&lt;/p&gt;
-&lt;h2 id="adding-gallery-images-to-your-blog"&gt;&lt;a class="toclink" href="#adding-gallery-images-to-your-blog"&gt;Adding Gallery / Images To Your Blog&lt;/a&gt;&lt;a class="headerlink" href="#adding-gallery-images-to-your-blog" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h1&gt;Adding Gallery / Images To Your Blog&lt;/h1&gt;
 &lt;p&gt;Adding images to your blog require the following packages:
 - exeif
 - Pillow
 - Knowledge of modifying Pelican templates&lt;/p&gt;
-&lt;h3 id="modifying-pelican-templates"&gt;&lt;a class="toclink" href="#modifying-pelican-templates"&gt;Modifying Pelican Templates:&lt;/a&gt;&lt;a class="headerlink" href="#modifying-pelican-templates" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2&gt;Modifying Pelican Templates:&lt;/h2&gt;
 &lt;p&gt;https://kwkelly.com/blog/adding-galleries-to-pelican-and-bootstrap/
 http://duncanlock.net/blog/2013/05/29/better-figures-images-plugin-for-pelican/&lt;/p&gt;
-&lt;h2 id="references"&gt;&lt;a class="toclink" href="#references"&gt;References:&lt;/a&gt;&lt;a class="headerlink" href="#references" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h1&gt;References:&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;https://www.notionsandnotes.org/tech/web-development/pelican-static-blog-setup.html&lt;/li&gt;
 &lt;li&gt;http://terriyu.info/blog/posts/2013/07/pelican-setup/&lt;/li&gt;
@@ -542,9 +606,9 @@ http://duncanlock.net/blog/2013/05/29/better-figures-images-plugin-for-pelican/&
 &lt;li&gt;Pelican-plugins: https://github.com/getpelican/pelican-plugins&lt;/li&gt;
 &lt;li&gt;Pelican-themes: https://github.com/getpelican/pelican-themes&lt;/li&gt;
 &lt;li&gt;Walkthru of Pelican w/ Python3.7: https://rsip22.github.io/blog/create-a-blog-with-pelican-and-github-pages.html&lt;/li&gt;
-&lt;/ol&gt;</content><category term="pelican"></category><category term="publishing"></category><category term="webdev"></category><category term="python"></category></entry><entry><title>Setting Up a Virtual Environment for Python</title><link href="/blog/2017/06/setup-virtual-env/" rel="alternate"></link><published>2017-06-04T00:00:00-04:00</published><updated>2017-06-04T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-06-04:/blog/2017/06/setup-virtual-env/</id><summary type="html">&lt;p&gt;A short walkthrough of setting up a virtual environment for Python development.&lt;/p&gt;</summary><content type="html">&lt;h2 id="getting-setup-with-virtual-environment-for-python-development"&gt;&lt;a class="toclink" href="#getting-setup-with-virtual-environment-for-python-development"&gt;Getting Setup with Virtual Environment for Python Development&lt;/a&gt;&lt;a class="headerlink" href="#getting-setup-with-virtual-environment-for-python-development" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id="by-adam-li"&gt;&lt;a class="toclink" href="#by-adam-li"&gt;By: Adam Li&lt;/a&gt;&lt;a class="headerlink" href="#by-adam-li" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;h4 id="table-of-contents"&gt;&lt;a class="toclink" href="#table-of-contents"&gt;Table of Contents&lt;/a&gt;&lt;a class="headerlink" href="#table-of-contents" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;/ol&gt;</content><category term="pelican"></category><category term="publishing"></category><category term="webdev"></category><category term="python"></category></entry><entry><title>Setting Up a Virtual Environment for Python</title><link href="/blog/2017/06/setup-virtual-env/" rel="alternate"></link><published>2017-06-04T00:00:00-04:00</published><updated>2017-06-04T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-06-04:/blog/2017/06/setup-virtual-env/</id><summary type="html">&lt;p&gt;A short walkthrough of setting up a virtual environment for Python development.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Getting Setup with Virtual Environment for Python Development&lt;/h1&gt;
+&lt;h1&gt;By: Adam Li&lt;/h1&gt;
+&lt;h3&gt;Table of Contents&lt;/h3&gt;
 &lt;!-- MarkdownTOC autolink="true" bracket="round" --&gt;
 
 &lt;ul&gt;
@@ -570,71 +634,91 @@ http://duncanlock.net/blog/2013/05/29/better-figures-images-plugin-for-pelican/&
 &lt;p&gt;VirtualEnv: 15.1.0
 VirtualEnvWrapper&lt;/p&gt;
 &lt;p&gt;A virtual environment is useful for development in Python because it keeps your packages for certain projects separate from each other. It'll keep everything for that project separated in a separate wrapper.&lt;/p&gt;
-&lt;h2 id="installing"&gt;&lt;a class="toclink" href="#installing"&gt;Installing&lt;/a&gt;&lt;a class="headerlink" href="#installing" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h1&gt;Installing&lt;/h1&gt;
 &lt;p&gt;For virtualenvironment, follow https://virtualenv.pypa.io/en/stable/installation/&lt;/p&gt;
 &lt;p&gt;For virtualenvwrapper, follow http://virtualenvwrapper.readthedocs.io/en/latest/install.html&lt;/p&gt;
-&lt;h2 id="basics-create-delete"&gt;&lt;a class="toclink" href="#basics-create-delete"&gt;Basics (Create, Delete):&lt;/a&gt;&lt;a class="headerlink" href="#basics-create-delete" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id="1-create"&gt;&lt;a class="toclink" href="#1-create"&gt;1. Create&lt;/a&gt;&lt;a class="headerlink" href="#1-create" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h1&gt;Basics (Create, Delete):&lt;/h1&gt;
+&lt;h2&gt;1. Create&lt;/h2&gt;
 &lt;p&gt;For Virtualenvwrapper: Run the command &lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;'mkvirtualenv &amp;lt;envname&amp;gt;'
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;mkvirtualenv &amp;lt;envname&amp;gt;&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;For Virtualenv: Run command &lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;virtualenv './venv/'
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;virtualenv&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;./venv/&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;inside your project directory. or&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;mkvirtualenv -p python3
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;mkvirtualenv&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="n"&gt;python3&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;or&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;virtualenv -p python3
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;virtualenv&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="n"&gt;python3&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;to make the virtual environment with a specific python installation (e.g. 2.7, or 3.4). With python3.6 and most of the recent versions, the virtualenvironment is built in, so you can just run&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;python3 -m venv &amp;lt;name_of_venv&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;python3&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt; &lt;span class="n"&gt;venv&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;name_of_venv&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;which is great because it handles it for you.&lt;/p&gt;
-&lt;h3 id="2-delete-a-virtualenv"&gt;&lt;a class="toclink" href="#2-delete-a-virtualenv"&gt;2. Delete a Virtualenv&lt;/a&gt;&lt;a class="headerlink" href="#2-delete-a-virtualenv" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2&gt;2. Delete a Virtualenv&lt;/h2&gt;
 &lt;p&gt;For Virtualenvwrappper: In order to delete a virtual environment, all you need to do is to remove it recursively from your ~/.virtualenvs directory with    &lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;'sudo rm -rf &amp;lt;name&amp;gt;'.
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;sudo rm -rf &amp;lt;name&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;For Virtualenv: Go to the directory of your project and delete the /venv/ directory.&lt;/p&gt;
-&lt;h2 id="tips"&gt;&lt;a class="toclink" href="#tips"&gt;Tips&lt;/a&gt;&lt;a class="headerlink" href="#tips" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id="1-starting-up-your-venv"&gt;&lt;a class="toclink" href="#1-starting-up-your-venv"&gt;1. Starting up your Venv&lt;/a&gt;&lt;a class="headerlink" href="#1-starting-up-your-venv" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h1&gt;Tips&lt;/h1&gt;
+&lt;h2&gt;1. Starting up your Venv&lt;/h2&gt;
 &lt;p&gt;Startup your virtual environment by typing:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;workon name_of_virtualenvironment
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id="2-requirementstxt"&gt;&lt;a class="toclink" href="#2-requirementstxt"&gt;2. Requirements.txt&lt;/a&gt;&lt;a class="headerlink" href="#2-requirementstxt" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;workon&lt;/span&gt; &lt;span class="n"&gt;name_of_virtualenvironment&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;2. Requirements.txt&lt;/h2&gt;
 &lt;p&gt;This is a convenient file for you to make that keeps track of all your packages. If you ever want to run your project on a new computer, you just create a new virtual environment and run:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;pip install -r requirements.txt
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="n"&gt;requirements&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;To create the file:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;pip freeze &amp;gt; requirements.txt
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id="convenient-tools"&gt;&lt;a class="toclink" href="#convenient-tools"&gt;Convenient Tools&lt;/a&gt;&lt;a class="headerlink" href="#convenient-tools" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id="1-automatically-cd-to-project-directory"&gt;&lt;a class="toclink" href="#1-automatically-cd-to-project-directory"&gt;1. Automatically cd To Project Directory&lt;/a&gt;&lt;a class="headerlink" href="#1-automatically-cd-to-project-directory" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="k"&gt;freeze&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;requirements&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Convenient Tools&lt;/h1&gt;
+&lt;h2&gt;1. Automatically cd To Project Directory&lt;/h2&gt;
 &lt;p&gt;Input the following code to your ./virtualenvs/postactivate file&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;    # subtract strings to get the project name
-    function get_project_name() {
-        local venv_dir=$VIRTUALENVWRAPPER_HOOK_DIR
-        local venv=$VIRTUAL_ENV
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    # &lt;span class="nv"&gt;subtract&lt;/span&gt; &lt;span class="nv"&gt;strings&lt;/span&gt; &lt;span class="nv"&gt;to&lt;/span&gt; &lt;span class="nv"&gt;get&lt;/span&gt; &lt;span class="nv"&gt;the&lt;/span&gt; &lt;span class="nv"&gt;project&lt;/span&gt; &lt;span class="nv"&gt;name&lt;/span&gt;
+    &lt;span class="nv"&gt;function&lt;/span&gt; &lt;span class="nv"&gt;get_project_name&lt;/span&gt;&lt;span class="ss"&gt;()&lt;/span&gt; {
+        &lt;span class="nv"&gt;local&lt;/span&gt; &lt;span class="nv"&gt;venv_dir&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;$&lt;span class="nv"&gt;VIRTUALENVWRAPPER_HOOK_DIR&lt;/span&gt;
+        &lt;span class="nv"&gt;local&lt;/span&gt; &lt;span class="nv"&gt;venv&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;$&lt;span class="nv"&gt;VIRTUAL_ENV&lt;/span&gt;
 
-        temp_project_name=${venv#"$venv_dir"}   # get difference between two strings
-        project_name=${temp_project_name:1}     # remove leading '/' character
+        &lt;span class="nv"&gt;temp_project_name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;${&lt;span class="nv"&gt;venv&lt;/span&gt;#&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;$venv_dir&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;}   # &lt;span class="nv"&gt;get&lt;/span&gt; &lt;span class="nv"&gt;difference&lt;/span&gt; &lt;span class="nv"&gt;between&lt;/span&gt; &lt;span class="nv"&gt;two&lt;/span&gt; &lt;span class="nv"&gt;strings&lt;/span&gt;
+        &lt;span class="nv"&gt;project_name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;${&lt;span class="nv"&gt;temp_project_name&lt;/span&gt;:&lt;span class="mi"&gt;1&lt;/span&gt;}     # &lt;span class="nv"&gt;remove&lt;/span&gt; &lt;span class="nv"&gt;leading&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="s"&gt;/&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt; &lt;span class="nv"&gt;character&lt;/span&gt;
 
-        echo $project_name
-        ## uncomment for debugging
-        # echo $venv_dir
-        # echo $venv
-        # echo $temp_project_name
-        # echo $project_name
+        &lt;span class="nv"&gt;echo&lt;/span&gt; $&lt;span class="nv"&gt;project_name&lt;/span&gt;
+        ## &lt;span class="nv"&gt;uncomment&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nv"&gt;debugging&lt;/span&gt;
+        # &lt;span class="nv"&gt;echo&lt;/span&gt; $&lt;span class="nv"&gt;venv_dir&lt;/span&gt;
+        # &lt;span class="nv"&gt;echo&lt;/span&gt; $&lt;span class="nv"&gt;venv&lt;/span&gt;
+        # &lt;span class="nv"&gt;echo&lt;/span&gt; $&lt;span class="nv"&gt;temp_project_name&lt;/span&gt;
+        # &lt;span class="nv"&gt;echo&lt;/span&gt; $&lt;span class="nv"&gt;project_name&lt;/span&gt;
     }
 
-    # export proj="cd ~/Documents/$(get_project_name)"
-    root_dir='/Users/adam2392/Documents/'
-    project_dir=$(get_project_name)
-    cd ${root_dir}/${project_dir}
-&lt;/code&gt;&lt;/pre&gt;
+    # &lt;span class="nv"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;proj&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;cd ~/Documents/$(get_project_name)&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+    &lt;span class="nv"&gt;root_dir&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="s"&gt;/Users/adam2392/Documents/&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;
+    &lt;span class="nv"&gt;project_dir&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;$&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;get_project_name&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+    &lt;span class="nv"&gt;cd&lt;/span&gt; ${&lt;span class="nv"&gt;root_dir&lt;/span&gt;}&lt;span class="o"&gt;/&lt;/span&gt;${&lt;span class="nv"&gt;project_dir&lt;/span&gt;}
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;Make sure you change 'root_dir' to the correct root directory of your projects. &lt;/p&gt;
 &lt;p&gt;This assumes that your project directory files are all correspondingly named with your virtualenv. This is convenient for changing directory into your project directory automatically.&lt;/p&gt;
-&lt;h2 id="references"&gt;&lt;a class="toclink" href="#references"&gt;References:&lt;/a&gt;&lt;a class="headerlink" href="#references" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h1&gt;References:&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;https://nolar.info/automatically-activate-virtualenv-on-cd/&lt;/li&gt;
 &lt;li&gt;code to input into .bashrc&lt;/li&gt;

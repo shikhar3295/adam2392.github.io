@@ -29,29 +29,29 @@
 &lt;/ul&gt;
 &lt;!-- /MarkdownTOC --&gt;
 
-&lt;h2 id="background"&gt;&lt;a class="toclink" href="#background"&gt;Background&lt;/a&gt;&lt;a class="headerlink" href="#background" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h1&gt;Background&lt;/h1&gt;
 &lt;p&gt;Here, I will attempt to give a brief introduction to the core concepts in my research and relate it to the clinical problem of epilepsy.&lt;/p&gt;
-&lt;h3 id="0-short-blurb-about-brains-and-network-neuroscience"&gt;&lt;a class="toclink" href="#0-short-blurb-about-brains-and-network-neuroscience"&gt;0. Short Blurb About Brains and Network Neuroscience&lt;/a&gt;&lt;a class="headerlink" href="#0-short-blurb-about-brains-and-network-neuroscience" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2&gt;0. Short Blurb About Brains and Network Neuroscience&lt;/h2&gt;
 &lt;p&gt;With all the hype about "AI" and deep learning recently, it can become easy to assume that we are at the apex of our understanding of the human brain. This couldn't be farther from the truth. While we have a decent understanding of how single neurons work and how different regions of our brain work to give rise to very basic behavior (i.e. vision, movement, perception), we essentially have no knowledge as to how hundreds-millions of neurons work together, or how more complex behavior manifests (i.e. imagination, learning, etc.). We don't even know how to quantitatively diagnost epilepsy, Parkinsons disease, Alzheimers disease, or any mental disorder for that matter.&lt;/p&gt;
 &lt;p&gt;Brains are inherently a complex network of highly nonlinear functions. In the past it has been easy to analyze very simple, linear "things". That is because linear means a line. If you add a lot of lines together, it is easy to predict what the result looks like. Now imagine, if instead of a line, you have a highly complex curve and you add many of these together. It quickly becomes insurmountable to imagine how this result would look like. This is exactly what happens with our brain. We initially were able to ask simple questions of the brain and get simple answers from one neuron, or one region of the brain. However, in order to tackle increasingly complex questions of the brain, we have to shift our analysis to look at the entire network of the brain. When we learn, how does the entire brain coordinate this (not just one region)? When we have neurological diseases, how does the entire brain get affected (not just one region)?&lt;/p&gt;
 &lt;p&gt;Obviously, there is a whole field out there growing as a result. That is called, network neuroscience; the science of analyzing how the brain works using network-based analysis (e.g. graphs, neural networks, etc.). My belief is that as our understanding of basic brain network principles improves, our ability to generate increasingly complex AI systems will also improve.&lt;/p&gt;
-&lt;h3 id="1-epilepsy"&gt;&lt;a class="toclink" href="#1-epilepsy"&gt;1. Epilepsy&lt;/a&gt;&lt;a class="headerlink" href="#1-epilepsy" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2&gt;1. Epilepsy&lt;/h2&gt;
 &lt;p&gt;Epilepsy is a disease that affects more then 70 M people worldwide, which characterizes itself with seizures (i.e. abnormal brain activity) for seconds to several minutes. Epilepsy can be treated with medicine that generally inhibits brain activity (albeit with numerous side effects), and also with surgery. Surgery can involve resection (i.e. cutting a portion of the hypothesized diseased brain) and laser ablation (i.e. heat treatment of small spherical regions within the brain). When successful, surgery can result in complete seizure freedom! &lt;/p&gt;
 &lt;p&gt;However, the problem is that surgery is extremely variable in success (e.g. ~50% average). Imagine getting permanent brain surgery, when there is a high likelihood of you still having seizures afterwards. A main obstacle to high success rates is incorrect localization of the epileptogenic zone, the clinical region of the brain that seizures originate from. In addition, clinicians employ a strategy similar to cancer resection; they will cut out a greater portion of the brain then possibly hypothesized because it will have good "margins" on the diseased tissue. This can cause unnecessary neural dysfunction, especially when these regions are close to important areas for language, motor or executive function. The goal of any researcher in this field is to identify biomarkers and methods for robustly identifying this diseased brain region given neural data. The result would be more successful surgeries and more accurate maps, leading to less brain regions being resected. Neural data can come in the form of electrophysiological recordings, MRI images, Diffusion weighted MRI images and CT images.&lt;/p&gt;
-&lt;h3 id="2-computational-modeling"&gt;&lt;a class="toclink" href="#2-computational-modeling"&gt;2. Computational Modeling&lt;/a&gt;&lt;a class="headerlink" href="#2-computational-modeling" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2&gt;2. Computational Modeling&lt;/h2&gt;
 &lt;p&gt;Computational modeling is the art of using mathematical equations to model how certain systems (i.e. the brain) behaves given parameters you input. These are normally formed in the framework of differential equations (i.e. that class we took in undergrad that made us go "huh?"). So here, at Marseille, the group has developed computational models that take in the patient's specific brain imaging to model epilepsy in a patient-specific manner (i.e. personalized brain modeling). The way it does this is by parcellating the brain into multiple regions, where each region is modeled by a computational model that can exhibit certain seizure phenomena. Then, by coupling (connecting) every region based on realistic brain connectivity, you can simulate brain behavior when you "set" different regions of the brain to be "diseased" that has some form of a realistic brain network. One could then compare the simulation and the real electrophysiological recording data in patients to test different hypotheses, such as: &lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;what happens if we set this region to be epileptogenic? does it resemble the real dynamics recorded in the patient's brain? &lt;/li&gt;
 &lt;li&gt;If we remove this region of the brain (i.e. remove connectivity to and from this region), will it help prevent propagation of seizure activity to healthy regions of the brain?&lt;/li&gt;
 &lt;li&gt;Can we generate realistic data that can reflect feature variability of the real recording data?&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id="3-algorithms"&gt;&lt;a class="toclink" href="#3-algorithms"&gt;3. Algorithms&lt;/a&gt;&lt;a class="headerlink" href="#3-algorithms" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2&gt;3. Algorithms&lt;/h2&gt;
 &lt;p&gt;Algorithms are spelling out a certain set of computations that a program should undertake to get a specific answer. In our research group, we are attempting to develop algorithms that take in brain data of the patient and outputs a prediction of the diseased region. There are different kinds of algorithms that use the data in various ways. In general, all data analysis tries to represent data in various ways. Does the amplitude, or frequency of the data matter? Should we represent the data as a graph? Should we apply filters to the data to remove noise? Should we just leave the data alone and let the model decide what is important?&lt;/p&gt;
 &lt;p&gt;Our research group currently developed a fast network-based algorithm that analyzes the data as a graph by applying a very specific type of computation. Namely, it constructs a graph out of the dataset and applies perturbations to the graph (i.e. add's vectors of noise in a very structured way), to determine which regions of the brain are most susceptible to being perturbed into seizing. This specific type of analysis requires some simple linear systems theory to derive an analytical equation for doing this. It was biologically inspired and can be read in some of the reference publications.&lt;/p&gt;
 &lt;p&gt;On the other end of the spectrum, one could apply deep learning to this problem for a way of supervised learning. What this would require is knowing the exact regions of the brain that are diseased and then feeding in the data and the labels of the regions to let the model determine which features of the data are most predictive of the diseased region. This is more general, but can require large amounts of data and hyperparameter tuning of the neural networks. In addition, epilepsy data has the problem of "noisy labeling". Clinicians are never sure where exactly the EZ is, so even if we have a significant amount of patients, our training data for deep learning are not optimal. Contrast this with the infamous case of recognizing "cats vs dogs", where I am pretty positive most cats are definitely correctly labeled as cats, and vice versa.&lt;/p&gt;
-&lt;h2 id="research-project-concepts"&gt;&lt;a class="toclink" href="#research-project-concepts"&gt;Research Project Concepts&lt;/a&gt;&lt;a class="headerlink" href="#research-project-concepts" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h1&gt;Research Project Concepts&lt;/h1&gt;
 &lt;p&gt;Here, I attempt to explain some of the high level concepts that motivated the research I am carrying out that integrates network analysis, computational modeling and deep learning.&lt;/p&gt;
-&lt;h3 id="1-the-virtual-brain-tvb-vs-network-data-analysis"&gt;&lt;a class="toclink" href="#1-the-virtual-brain-tvb-vs-network-data-analysis"&gt;1. The Virtual Brain (TVB) vs Network Data Analysis&lt;/a&gt;&lt;a class="headerlink" href="#1-the-virtual-brain-tvb-vs-network-data-analysis" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2&gt;1. The Virtual Brain (TVB) vs Network Data Analysis&lt;/h2&gt;
 &lt;p&gt;This was the main project proposed when I applied for the Whitaker/Chateaubriand fellowships. The goal was to use the flexible modeling capabilities of "The Virtual Brain" (TVB) platform developed here in Marseille to understand how network data predictions of the epileptogenic zone performs under various model configurations. So, how can our predictions work under various clinical settings? Can we arrive at the same conclusion when our algorithm is applied to an in-silico model?&lt;/p&gt;
 &lt;p&gt;Being able to demonstrate agreement by using this whole-brain model helps provide evidence on two fronts: &lt;/p&gt;
 &lt;ol&gt;
@@ -62,37 +62,37 @@
 By using a patient's individual neuroimaging scans, and their actual recorded epileptic seizures, we can 1) create a personalized brain from those scans and 2) analyze their electrophysiological recordings with our network-based algorithm. &lt;/p&gt;
 &lt;p&gt;From the personalized brain, we can use TVB as a software platform to simulate signals that we hypothesize might come from different regions of that patient's brain. If we fix all parameters, and then systematically change which region of the brain is epileptic, then we can form a suite of datasets where we know the epileptic region(s). This would not be possible with real data because we never know for sure which region of the brain is epileptic! So assuming this model is accurate to some degree in replicating features of the  brain's electrophysiology, we can compare the results of the network-based analysis for each simulated dataset.&lt;/p&gt;
 &lt;p&gt;With tools from statistics, we can statistically compare the different results from our algorithm to the real data. The results that are closest to our real data suggest that this is the region most likely to be actually epileptic. This region was where we set as epileptic in the software and was capable of producing the simulated data that best represented the real data; in other words, it is a measure of how similar our simulations are to real data under different hypotheses of epileptic regions. This presents a framework to systematically produce an estimate of the real epileptic region in a patient, and also to study situations in which our network-based algorithm can fail. It is a "step" towards opening the black box, which is the patient's brain.&lt;/p&gt;
-&lt;h3 id="2-using-tvb-to-augment-neural-datasets-for-deep-learning"&gt;&lt;a class="toclink" href="#2-using-tvb-to-augment-neural-datasets-for-deep-learning"&gt;2. Using TVB To Augment Neural Datasets For Deep Learning&lt;/a&gt;&lt;a class="headerlink" href="#2-using-tvb-to-augment-neural-datasets-for-deep-learning" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2&gt;2. Using TVB To Augment Neural Datasets For Deep Learning&lt;/h2&gt;
 &lt;p&gt;A core problem of deep learning is the amount of data required to train successful models to perform classification/regression. Generally, more data means more variation in your dataset, thus having a higher likelihood of capturing the true underlying distribution of all possible data. This is especially apparent in models surrounding neuroscience and neural data. That is because neural data is traditionally difficult to obtain, and is extremely constrained because of the different variables that go into collecting the data in a clinical setting. Clinical procedures can vary, recording electrodes can be implanted in various places of the brain, brains vary structurally from patient to patient, brains vary functionally from patient to patient, and different regions of the brain are epileptic from patient to patient.&lt;/p&gt;
 &lt;p&gt;TVB at its core is a model of the brain that utilizes realistic brain geometry, connectivity and clinical hypotheses to simulate electrophysiological signals. Based on the model, it can generate different patterns of behavior, or in our case, epileptic seizures. This is extremely important because as a scientist, you can control the variables to produce different types of data, but all demonstrating epileptic seizing. This hypothetically would give you a huge amount of variable data, that has ground truth set by you, and also only require computing power to simulate. It is not constrained by medical procedures and could help in generating data that deep learning models can learn from for each patient BEFORE surgery. This could help establish a completely computerized pipeline for helping clinicians make informed decisions and hypotheses before the patient is operated on with the help of deep learning.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Summary of Work&lt;/strong&gt;
 Using a batch of real recording data from patients, we can construct a deep learning model that learns some useful classification from the data. For example, which region is "epileptic", or when is the patient seizing? However, in order to be fair, your training of the model will always use a leave-one-patient out scheme because you have to assume you do not have access to a patient's data before making predictions on that specific patient. This brings up a lot of problems though! Even if we have "a lot" of data, there are so many clinical variables (brought up earlier) that can cause variations in how the test patient's data will look compared to your training data.&lt;/p&gt;
 &lt;p&gt;So my proposal is to use TVB as a way of constructing the personalized brain model for a patient, and then simulating a highly variable dataset by varying parameters. Although it is highly possible that parts of this dataset is not fully realistic or representative of real data, it gives a way of generating significant amounts of data and a way of generating data points that are closer representations in terms of the patient's specific brain structure, connections, and electrode implantation schema. &lt;/p&gt;
 &lt;p&gt;I test the potential for this by performing a set of experiments using a standard neural network trained only on the real data, vs trained on the real data AND the simulated dataset from the test patient's specific brain model. Initial results show improved convergence of training, but more work needs to be done.&lt;/p&gt;
-&lt;h2 id="conclusions-future-considerations"&gt;&lt;a class="toclink" href="#conclusions-future-considerations"&gt;Conclusions / Future Considerations&lt;/a&gt;&lt;a class="headerlink" href="#conclusions-future-considerations" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h1&gt;Conclusions / Future Considerations&lt;/h1&gt;
 &lt;p&gt;Returning to JHU, I have a lot of things to accomplish before being able to graduate with my PhD. Although spending this year may have increased my timeline to graduation, it also expanded my research scope and scientific knowledge. This is exciting to me because a PhD is not just about quickly graduating, but about developing a broad range of deep skills that allow you to make impacts on a variety of different problems.&lt;/p&gt;
 &lt;p&gt;Epilepsy is only a small subset of the many unsolved neurological disorders out there. By tackling a very specific problem in the brain, I will hope to build fundamental understanding that translates to understanding other brain disorders. Specifically in the future, I am interested in Alzheimers disease.&lt;/p&gt;
-&lt;h2 id="random-notes-on-this-year-data-and-phd-research"&gt;&lt;a class="toclink" href="#random-notes-on-this-year-data-and-phd-research"&gt;Random Notes on This Year, Data and PhD Research&lt;/a&gt;&lt;a class="headerlink" href="#random-notes-on-this-year-data-and-phd-research" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h1&gt;Random Notes on This Year, Data and PhD Research&lt;/h1&gt;
 &lt;p&gt;This year, I really had to deal with more data then I was accustomed to at JHU. At JHU, I had access to various text files, EEG recordings and MRI/CT imaging data for various patients from various clinical centers. However, these recordings were never longer then 5-10 minutes. &lt;/p&gt;
 &lt;p&gt;Here, I had to begin dealing with data at larger scales. I had to understand how to optimize parallelized runs of linear algorithms on said data. My datasets went from a couple hundred MB (i.e. few recordings for a single patient), to a few GB (i.e. multiple patients) to a couple hundred GB and few TBs (i.e. &amp;gt;50 patients with multiple recordings). My analysis and data pipeline design scaled at the same time, but required me to refactor and understand how to continuously analyze the data robustly and efficiently. I complain a lot about having to refactor code (since it's not really research), but I think there is a lot to be learned by having to independently design, implement and test your own data pipelines as your data/analysis becomes more and more complex.&lt;/p&gt;
 &lt;p&gt;I started out with analyzing datasets on my laptop/workstation with unoptimized code. Then I proceeded to optimize different parts of my workflow and moduralize it, so that it could be parallelized onto multiple cores. I then proceeded to submit it onto the JHU Maryland High-Performance Computing cluster. At the same time, I ended up learning a lot more about Unix and terminal-based commands.&lt;/p&gt;
-&lt;h3 id="data-pipeline-design"&gt;&lt;a class="toclink" href="#data-pipeline-design"&gt;Data Pipeline Design&lt;/a&gt;&lt;a class="headerlink" href="#data-pipeline-design" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2&gt;Data Pipeline Design&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;First, I began with one CPU per window of data (each dataset was split into a number of windows to analyze). This resulted in hundreds-thousands of CPUs being fired up with loading the data and then analyzing a short segment of the dataset. This had numerous problems. One CPU out of hundreds/thousands could easily fail the run the job correctly, which would result in a missing computed window.&lt;/li&gt;
 &lt;li&gt;Then, I began using a parallel framework with GNU that ran each dataset with a fixed 24 cores per node. This helped because GNU allows you to restart jobs using a log file, but this was also problematic because as datasets grew longer, it wasn't clear how long I would have to wait to get data per each patient.&lt;/li&gt;
 &lt;li&gt;Now, I also break up datasets into chunks and then analyze using 24-48 cores at a time that sift through the data. These data analyzed-chunks can later be combined to form into the one dataset if necessary, but a metadata json object is used to store information allowing anyone using the data to understand how to put computations together.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id="phd-and-research-understanding"&gt;&lt;a class="toclink" href="#phd-and-research-understanding"&gt;PhD and Research Understanding&lt;/a&gt;&lt;a class="headerlink" href="#phd-and-research-understanding" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2&gt;PhD and Research Understanding&lt;/h2&gt;
 &lt;p&gt;A lot of this year was spent reading papers and doing a lot of thinking... Not very productive, but I really felt like I learned a lot and expanded my research mindset.&lt;/p&gt;
 &lt;p&gt;Couple things I started learning more about:&lt;/p&gt;
-&lt;h5 id="1-reading-papers-is-good-to-do-on-a-consistent-basis-but-focus-on-getting-to-the-core-of-the-key-papers-how-you-decide-which-papers-are-key-comes-with-exp"&gt;&lt;a class="toclink" href="#1-reading-papers-is-good-to-do-on-a-consistent-basis-but-focus-on-getting-to-the-core-of-the-key-papers-how-you-decide-which-papers-are-key-comes-with-exp"&gt;1. reading papers is good to do on a consistent basis, but focus on getting to the core of the "key" papers (how you decide which papers are key comes with exp)&lt;/a&gt;&lt;a class="headerlink" href="#1-reading-papers-is-good-to-do-on-a-consistent-basis-but-focus-on-getting-to-the-core-of-the-key-papers-how-you-decide-which-papers-are-key-comes-with-exp" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h5&gt;
+&lt;h4&gt;1. reading papers is good to do on a consistent basis, but focus on getting to the core of the "key" papers (how you decide which papers are key comes with exp)&lt;/h4&gt;
 &lt;p&gt;I realized that some papers are great to learn and skim through the results and methods to understand how they did it, what are the limitations and what was innovated on. Then there are other papers that introduce a completely new concept that might be different. These papers are important to understand because they usually spur papers down the road that require you to understand this one. I tend to go through the figures and equations multiple times to understand the details of the motivation, methods and results.&lt;/p&gt;
-&lt;h5 id="2-software-engineering-is-very-important-in-data-analysis"&gt;&lt;a class="toclink" href="#2-software-engineering-is-very-important-in-data-analysis"&gt;2. software engineering is very important in data analysis.&lt;/a&gt;&lt;a class="headerlink" href="#2-software-engineering-is-very-important-in-data-analysis" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h5&gt;
+&lt;h4&gt;2. software engineering is very important in data analysis.&lt;/h4&gt;
 &lt;p&gt;It helps you formulate and design a software package that is intended to "experiment" the different parameters, datasets, and visualize results in an end-to-end fashion; it ideally would allow you to "press run" while you read papers, go out drinking, or go traveling. I probably refactored my code around 5-6 times this year, which was a great learning experience, but it took a lot of time. It helped me understand the scope of my projects and will hopefully be helpful down the road in my ambition to become a data and machine learning expert.&lt;/p&gt;
-&lt;h5 id="3-its-easy-to-get-stuck-in-a-loop-of-feeling-like-youre-not-going-anywhere"&gt;&lt;a class="toclink" href="#3-its-easy-to-get-stuck-in-a-loop-of-feeling-like-youre-not-going-anywhere"&gt;3. it's easy to get stuck in a loop of feeling like "you're not going anywhere".&lt;/a&gt;&lt;a class="headerlink" href="#3-its-easy-to-get-stuck-in-a-loop-of-feeling-like-youre-not-going-anywhere" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h5&gt;
+&lt;h4&gt;3. it's easy to get stuck in a loop of feeling like "you're not going anywhere".&lt;/h4&gt;
 &lt;p&gt;Research takes time and whether it's analyzing data, thinking of a math problem, understanding an experiment, or testing a computational model, it can become easy to think you're making no progress. It is extremely important to set mini-goals (e.g. weekly) on top of your milestone goals (e.g. monthly, or few months). You want to also allow yourself room to learn how to set these goals realistically. At the beginning, you'll think that you are capable of accomplish ABC...Z in one week. Most of the time, this ends up being overly optimistic. As you grow, you start to realize what is realistically accomplishable on a week-to-week basis. This helps you scope out each week and plan accordingly to make incremental progress.&lt;/p&gt;
 &lt;p&gt;Even if your results don't pan out, this helps build a mindset of systematic thinking. You want to plan mini-experiments on your analysis that will provide you with the next step to pursue. The analysis did not work the way you expect? Okay, then we probably need to test these factors and visualize data over the next week. Okay if those factors will take too long, we should back up and clean up our approach.&lt;/p&gt;
-&lt;h4 id="references"&gt;&lt;a class="toclink" href="#references"&gt;References:&lt;/a&gt;&lt;a class="headerlink" href="#references" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;h3&gt;References:&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;http://www.thevirtualbrain.org/tvb/&lt;/li&gt;
 &lt;li&gt;https://ieeexplore.ieee.org/document/7963378/&lt;/li&gt;
@@ -124,7 +124,7 @@ Using a batch of real recording data from patients, we can construct a deep lear
 &lt;/ul&gt;
 &lt;!-- /MarkdownTOC --&gt;
 
-&lt;h2 id="necessary-tools"&gt;&lt;a class="toclink" href="#necessary-tools"&gt;Necessary Tools&lt;/a&gt;&lt;a class="headerlink" href="#necessary-tools" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h1&gt;Necessary Tools&lt;/h1&gt;
 &lt;p&gt;Freesurfer, FSL, and MRtrix3 are the three main neuroimaging and registration softwares that you need to run a systematic data pipeline of neuroimaging data (i.e. CT, MRI, DWI).&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Freesurfer
@@ -141,74 +141,84 @@ https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation&lt;/li&gt;
 http://mrtrix.readthedocs.io/en/latest/installation/mac_install.html&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;MRtrix3 is primarily intended to be used for the analysis of diffusion MRI data. In addition, at its fundamental level it is designed as a general-purpose library for the analysis of any type of MRI data. &lt;/p&gt;
-&lt;h2 id="data-processing-pipeline"&gt;&lt;a class="toclink" href="#data-processing-pipeline"&gt;Data Processing Pipeline:&lt;/a&gt;&lt;a class="headerlink" href="#data-processing-pipeline" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id="1-dwi-processing"&gt;&lt;a class="toclink" href="#1-dwi-processing"&gt;1. DWI Processing&lt;/a&gt;&lt;a class="headerlink" href="#1-dwi-processing" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h1&gt;Data Processing Pipeline:&lt;/h1&gt;
+&lt;h2&gt;1. DWI Processing&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Process diffusion imaging data, by denoising the data, then preprocessing it, then applying bias correction and then estimating the response function.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;$$
     dwidenoise &lt;/DTI_dicom_dir/&gt; &lt;dti_img_denoise.mif&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;dwipreproc -rpe_none AP DTI_30_average-2_denoise.mif &amp;lt;dti_img_preproc_output.mif&amp;gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;dwipreproc&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;rpe_none&lt;/span&gt; &lt;span class="n"&gt;AP&lt;/span&gt; &lt;span class="n"&gt;DTI_30_average&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="n"&gt;_denoise&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mif&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;dti_img_preproc_output&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mif&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
 
-dwibiascorrect &amp;lt;dti_img_preproc_output.mif&amp;gt; &amp;lt;dti_img_preproc_biascorrect_output.mif&amp;gt; –fsl
+&lt;span class="n"&gt;dwibiascorrect&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;dti_img_preproc_output&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mif&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;dti_img_preproc_biascorrect_output&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mif&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="err"&gt;–&lt;/span&gt;&lt;span class="n"&gt;fsl&lt;/span&gt;
 
-dwi2response tournier &amp;lt;dti_img_preproc_biascorrect_output.mif&amp;gt; &amp;lt;dti_img_preproc_biascorrect_response.txt&amp;gt;
+&lt;span class="n"&gt;dwi2response&lt;/span&gt; &lt;span class="n"&gt;tournier&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;dti_img_preproc_biascorrect_output&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mif&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;dti_img_preproc_biascorrect_response&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
 
-dwi2fod csd DTI_30_average-2_denoise_preproc_biascorrected.mif DTI_30_average-2_denoise_preproc_biascorrected_response.txt DTI_30_average-2_denoise_preproc_biascorrected_fod.mif
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span class="n"&gt;dwi2fod&lt;/span&gt; &lt;span class="n"&gt;csd&lt;/span&gt; &lt;span class="n"&gt;DTI_30_average&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="n"&gt;_denoise_preproc_biascorrected&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mif&lt;/span&gt; &lt;span class="n"&gt;DTI_30_average&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="n"&gt;_denoise_preproc_biascorrected_response&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt; &lt;span class="n"&gt;DTI_30_average&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="n"&gt;_denoise_preproc_biascorrected_fod&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mif&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;$$&lt;/p&gt;
-&lt;h3 id="2-t1-mri-processing"&gt;&lt;a class="toclink" href="#2-t1-mri-processing"&gt;2. T1 MRI Processing&lt;/a&gt;&lt;a class="headerlink" href="#2-t1-mri-processing" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;h3 id="3-optional-ct-processing"&gt;&lt;a class="toclink" href="#3-optional-ct-processing"&gt;3. (Optional) CT Processing&lt;/a&gt;&lt;a class="headerlink" href="#3-optional-ct-processing" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;h3 id="4-connectome-generation"&gt;&lt;a class="toclink" href="#4-connectome-generation"&gt;4. Connectome Generation&lt;/a&gt;&lt;a class="headerlink" href="#4-connectome-generation" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;h2 id="background"&gt;&lt;a class="toclink" href="#background"&gt;Background&lt;/a&gt;&lt;a class="headerlink" href="#background" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h2&gt;2. T1 MRI Processing&lt;/h2&gt;
+&lt;h2&gt;3. (Optional) CT Processing&lt;/h2&gt;
+&lt;h2&gt;4. Connectome Generation&lt;/h2&gt;
+&lt;h1&gt;Background&lt;/h1&gt;
 &lt;p&gt;Freesurfer is a tool built for rendering 3D brains using MRI and Ct scans.&lt;/p&gt;
 &lt;p&gt;FSL is a tool for coregistration and image analysis.&lt;/p&gt;
 &lt;p&gt;Download both online:&lt;/p&gt;
-&lt;h3 id="common-definitions"&gt;&lt;a class="toclink" href="#common-definitions"&gt;Common Definitions:&lt;/a&gt;&lt;a class="headerlink" href="#common-definitions" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2&gt;Common Definitions:&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;Registration: to find a common coordinate system for the input data sets&lt;/li&gt;
 &lt;li&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id="implementation"&gt;&lt;a class="toclink" href="#implementation"&gt;Implementation&lt;/a&gt;&lt;a class="headerlink" href="#implementation" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id="1-set-up"&gt;&lt;a class="toclink" href="#1-set-up"&gt;1. Set Up&lt;/a&gt;&lt;a class="headerlink" href="#1-set-up" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h1&gt;Implementation&lt;/h1&gt;
+&lt;h2&gt;1. Set Up&lt;/h2&gt;
 &lt;p&gt;First you will want to download freesurfer from the following website:&lt;/p&gt;
 &lt;p&gt;https://surfer.nmr.mgh.harvard.edu/fswiki/DownloadAndInstall
 Linux:
     ## bash
     $&amp;gt; export FREESURFER_HOME=/usr/local/freesurfer
     $&amp;gt; source $FREESURFER_HOME/SetUpFreeSurfer.sh&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## tcsh
-$&amp;gt; setenv FREESURFER_HOME /usr/local/freesurfer
-$&amp;gt; source $FREESURFER_HOME/SetUpFreeSurfer.csh
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;## &lt;span class="nv"&gt;tcsh&lt;/span&gt;
+$&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;setenv&lt;/span&gt; &lt;span class="nv"&gt;FREESURFER_HOME&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;local&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;freesurfer&lt;/span&gt;
+$&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="nv"&gt;source&lt;/span&gt; &lt;span class="mh"&gt;$F&lt;/span&gt;&lt;span class="nv"&gt;REESURFER_HOME&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;SetUpFreeSurfer&lt;/span&gt;.&lt;span class="nv"&gt;csh&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;Mac:
     $&amp;gt; export FREESURFER_HOME=/Applications/freesurfer
     $&amp;gt; source $FREESURFER_HOME/SetUpFreeSurfer.sh&lt;/p&gt;
 &lt;p&gt;Run those commands within your terminal, or add them to ~/.bashrc file to have access to all the command line tools for freeview.&lt;/p&gt;
 &lt;p&gt;You will need to setup your own directory where you will hold all your subject data.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;export SUBJECTS_DIR=&amp;lt;path to subject data&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;export&lt;/span&gt; &lt;span class="n"&gt;SUBJECTS_DIR&lt;/span&gt;&lt;span class="o"&gt;=&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt; &lt;span class="k"&gt;to&lt;/span&gt; &lt;span class="n"&gt;subject&lt;/span&gt; &lt;span class="k"&gt;data&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;This will be where you store say patient's MRI/CT scans that you will use to reconstruct the brain.&lt;/p&gt;
-&lt;h3 id="2-running-through-t1-weighted-mri-images"&gt;&lt;a class="toclink" href="#2-running-through-t1-weighted-mri-images"&gt;2. Running Through T1-Weighted MRI Images&lt;/a&gt;&lt;a class="headerlink" href="#2-running-through-t1-weighted-mri-images" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2&gt;2. Running Through T1-Weighted MRI Images&lt;/h2&gt;
 &lt;p&gt;First you want to set your current Subjects directory to where you are working with the raw say .dcm data.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;export SUBJECTS_DIR=$PWD
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;export&lt;/span&gt; &lt;span class="n"&gt;SUBJECTS_DIR&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;PWD&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;There may be an issue where you can't run the functions with your .dcm files. I have no idea why this occurs, but an easy fix is to externally run a dicom to nii converter and pass this type of file instead. Here is a link to a matlab converter that can do this:
 https://www.mathworks.com/matlabcentral/fileexchange/42997-dicom-to-nifti-converter--nifti-tool-and-viewer&lt;/p&gt;
 &lt;p&gt;There are also other resources online.&lt;/p&gt;
 &lt;p&gt;Afterwards, you can run the following command(s):&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;recon-all -i &amp;lt;data&amp;gt;.nii -s &amp;lt;subject_name&amp;gt; -autorecon1
-recon-all -i &amp;lt;data&amp;gt;.nii -s &amp;lt;subject_name&amp;gt; -all
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;recon&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;all&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="k"&gt;data&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nii&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;subject_name&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;autorecon1&lt;/span&gt;
+&lt;span class="n"&gt;recon&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;all&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="k"&gt;data&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;nii&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;subject_name&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;all&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;This will take a long time! So be prepared to run this on a compute engine that has time.&lt;/p&gt;
-&lt;h3 id="3-running-through-ct-images"&gt;&lt;a class="toclink" href="#3-running-through-ct-images"&gt;3. Running Through CT Images&lt;/a&gt;&lt;a class="headerlink" href="#3-running-through-ct-images" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2&gt;3. Running Through CT Images&lt;/h2&gt;
 &lt;p&gt;flirt -in patient_ct.nii -ref patient_mri.nii -omat patient_omat.mat -out patient_registered.nii.gz&lt;/p&gt;
 &lt;p&gt;This command will coregister the CT data onto the domain of the MRI data and provide a coregistration for you to look at where certain contacts of electrodes are. You can also view in Freeview the different cuts of the brain using either CT, or MRI. &lt;/p&gt;
-&lt;h3 id="4-getting-surface-parcellations"&gt;&lt;a class="toclink" href="#4-getting-surface-parcellations"&gt;4. Getting Surface Parcellations&lt;/a&gt;&lt;a class="headerlink" href="#4-getting-surface-parcellations" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2&gt;4. Getting Surface Parcellations&lt;/h2&gt;
 &lt;p&gt;TBD&lt;/p&gt;
-&lt;h3 id="5-getting-seeg-xyz-coordinates"&gt;&lt;a class="toclink" href="#5-getting-seeg-xyz-coordinates"&gt;5. Getting SEEG XYZ Coordinates&lt;/a&gt;&lt;a class="headerlink" href="#5-getting-seeg-xyz-coordinates" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2&gt;5. Getting SEEG XYZ Coordinates&lt;/h2&gt;
 &lt;p&gt;Once you have CT images coregistered with MRI images, you can easily extract the locations of all iEEG contacts in the MRI axis system. This is done by noting a contact within each electrode (e.g. A1, B1, C10, etc.) and then an algorithm can fill in the entire electrode's xyz coordinates and output to a file.&lt;/p&gt;
-&lt;h2 id="references"&gt;&lt;a class="toclink" href="#references"&gt;References:&lt;/a&gt;&lt;a class="headerlink" href="#references" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h1&gt;References:&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;https://surfer.nmr.mgh.harvard.edu/fswiki/DownloadAndInstall#Setup.26Configuration&lt;/li&gt;
 &lt;li&gt;&lt;/li&gt;
@@ -238,34 +248,34 @@ recon-all -i &amp;lt;data&amp;gt;.nii -s &amp;lt;subject_name&amp;gt; -all
 &lt;/ul&gt;
 &lt;!-- /MarkdownTOC --&gt;
 
-&lt;h2 id="background"&gt;&lt;a class="toclink" href="#background"&gt;Background&lt;/a&gt;&lt;a class="headerlink" href="#background" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h1&gt;Background&lt;/h1&gt;
 &lt;p&gt;Computational modeling involves setting up mathematical equations that represent some sort of statics, or dynamics within a system. You want to simulate these equations to understand behavior, fixed points, bifurcations and changes wrt parameter values.&lt;/p&gt;
-&lt;h2 id="concepts"&gt;&lt;a class="toclink" href="#concepts"&gt;Concepts&lt;/a&gt;&lt;a class="headerlink" href="#concepts" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id="1-numerical-integration"&gt;&lt;a class="toclink" href="#1-numerical-integration"&gt;1. Numerical Integration&lt;/a&gt;&lt;a class="headerlink" href="#1-numerical-integration" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h1&gt;Concepts&lt;/h1&gt;
+&lt;h2&gt;1. Numerical Integration&lt;/h2&gt;
 &lt;p&gt;Numerical integration involves solving system of differential equations via numerical methods. This is in general split into deterministic vs stochastic differential equations. Here we will also split the two.&lt;/p&gt;
-&lt;h4 id="deterministic-differential-equations"&gt;&lt;a class="toclink" href="#deterministic-differential-equations"&gt;Deterministic Differential Equations&lt;/a&gt;&lt;a class="headerlink" href="#deterministic-differential-equations" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;h3&gt;Deterministic Differential Equations&lt;/h3&gt;
 &lt;p&gt;1) Euler's Method&lt;/p&gt;
 &lt;p&gt;2) Runge-Kutta Method(s)?&lt;/p&gt;
-&lt;h4 id="stochastic-differential-equations"&gt;&lt;a class="toclink" href="#stochastic-differential-equations"&gt;Stochastic Differential Equations&lt;/a&gt;&lt;a class="headerlink" href="#stochastic-differential-equations" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;h3&gt;Stochastic Differential Equations&lt;/h3&gt;
 &lt;p&gt;Heun methods seem to be more accurate, but more time consuming vs the Milstein method.
 1) Heun Method
 Simple discretization leading to Stratonovich integral. It is a "predictor-corrector method" because given value of X at time &lt;span class="math"&gt;\(t_n\)&lt;/span&gt;, obtain predictors with Euler integration scheme, then correct it using Heun's correction.&lt;/p&gt;
 &lt;p&gt;Details to be filled in.&lt;/p&gt;
 &lt;p&gt;2) Milstein Method
 Uses the derivative of the diffusion coefficients&lt;/p&gt;
-&lt;h4 id="considerations"&gt;&lt;a class="toclink" href="#considerations"&gt;Considerations:&lt;/a&gt;&lt;a class="headerlink" href="#considerations" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;h3&gt;Considerations:&lt;/h3&gt;
 &lt;p&gt;1) Convergence&lt;/p&gt;
-&lt;h4 id="references"&gt;&lt;a class="toclink" href="#references"&gt;References:&lt;/a&gt;&lt;a class="headerlink" href="#references" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;h3&gt;References:&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;Comparison of stochastic integration https://arxiv.org/pdf/1102.4401.pdf&lt;/li&gt;
 &lt;li&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id="2-deterministic-and-stochastic-differential-equations"&gt;&lt;a class="toclink" href="#2-deterministic-and-stochastic-differential-equations"&gt;2. Deterministic and Stochastic Differential Equations&lt;/a&gt;&lt;a class="headerlink" href="#2-deterministic-and-stochastic-differential-equations" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;h4 id="deterministic-differential-equations_1"&gt;&lt;a class="toclink" href="#deterministic-differential-equations_1"&gt;Deterministic Differential Equations&lt;/a&gt;&lt;a class="headerlink" href="#deterministic-differential-equations_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;h2&gt;2. Deterministic and Stochastic Differential Equations&lt;/h2&gt;
+&lt;h3&gt;Deterministic Differential Equations&lt;/h3&gt;
 &lt;p&gt;An example would be a population growth model. &lt;/p&gt;
 &lt;p&gt;&lt;span class="math"&gt;\(dx_t = Kx_t dt,\ x(0)=x_0\)&lt;/span&gt;, with K being some constant.&lt;/p&gt;
 &lt;p&gt;However, if we have some inherent randomness, then maybe we can't assume &lt;span class="math"&gt;\(x_0\)&lt;/span&gt; is deterministic constant, but perhaps a random variable.&lt;/p&gt;
-&lt;h4 id="stochastic-differential-equations_1"&gt;&lt;a class="toclink" href="#stochastic-differential-equations_1"&gt;Stochastic Differential Equations&lt;/a&gt;&lt;a class="headerlink" href="#stochastic-differential-equations_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;h3&gt;Stochastic Differential Equations&lt;/h3&gt;
 &lt;p&gt;An example would be a population growth model. &lt;/p&gt;
 &lt;p&gt;&lt;span class="math"&gt;\(dX_t(w) = KX_t(w) dt,\ X_0(w)\)&lt;/span&gt;, with K being some constant and &lt;span class="math"&gt;\(X_t(w)\)&lt;/span&gt; is a random variable, which comes from the initial condition. K could also be random.&lt;/p&gt;
 &lt;p&gt;&lt;span class="math"&gt;\(dX_t(w) = (Kdt + dW_t(w))X_t(w) dt,\ X_0(w)\)&lt;/span&gt;, where &lt;span class="math"&gt;\(dW_t(w)\)&lt;/span&gt; is some noise process that adds randomness to K.&lt;/p&gt;
@@ -275,10 +285,10 @@ Uses the derivative of the diffusion coefficients&lt;/p&gt;
 &lt;p&gt;&lt;span class="math"&gt;\(X_t(w) = X_0(w) + \int_t_0 f_s(X_s(w)) ds + \int_t_0 \sigma_s(X_s(w)) dW_s(w)\)&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Ito integral =&amp;gt;
 Stratonovich integral =&amp;gt;&lt;/p&gt;
-&lt;h4 id="references_1"&gt;&lt;a class="toclink" href="#references_1"&gt;References:&lt;/a&gt;&lt;a class="headerlink" href="#references_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
-&lt;h4 id="references_2"&gt;&lt;a class="toclink" href="#references_2"&gt;References:&lt;/a&gt;&lt;a class="headerlink" href="#references_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
-&lt;h4 id="summary-conclusions"&gt;&lt;a class="toclink" href="#summary-conclusions"&gt;Summary / Conclusions:&lt;/a&gt;&lt;a class="headerlink" href="#summary-conclusions" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
-&lt;h4 id="important-notes"&gt;&lt;a class="toclink" href="#important-notes"&gt;Important Notes:&lt;/a&gt;&lt;a class="headerlink" href="#important-notes" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;h3&gt;References:&lt;/h3&gt;
+&lt;h3&gt;References:&lt;/h3&gt;
+&lt;h3&gt;Summary / Conclusions:&lt;/h3&gt;
+&lt;h3&gt;Important Notes:&lt;/h3&gt;
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
@@ -356,7 +366,7 @@ Stratonovich integral =&amp;gt;&lt;/p&gt;
 &lt;/ul&gt;
 &lt;!-- /MarkdownTOC --&gt;
 
-&lt;h2 id="background"&gt;&lt;a class="toclink" href="#background"&gt;Background&lt;/a&gt;&lt;a class="headerlink" href="#background" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h1&gt;Background&lt;/h1&gt;
 &lt;p&gt;TVB is a platform for simulating whole-brain dynamics that starts from raw data involving:
     1. structural connectivity derived from DTI
     2. brain parcellation derived from MRI and CT
@@ -364,7 +374,7 @@ Stratonovich integral =&amp;gt;&lt;/p&gt;
 This will then determine a gain matrix to determine SEEG signals from the source signals that are generated from neural mass models.&lt;/p&gt;
 &lt;p&gt;The neural mass models will be implemented with nonlinear, complex models for simulating certain type of electrophysiology. The Epileptor is used for simulating seizure activity from a specific source region. &lt;/p&gt;
 &lt;p&gt;The epileptor is a set of coupled differential equations that rely on 6 different variables. They are described here:&lt;/p&gt;
-&lt;h2 id="data-metadata"&gt;&lt;a class="toclink" href="#data-metadata"&gt;Data &amp;amp; Metadata&lt;/a&gt;&lt;a class="headerlink" href="#data-metadata" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h1&gt;Data &amp;amp; Metadata&lt;/h1&gt;
 &lt;p&gt;Generally, refer to my post on "Freesurfer" to establish the preprocessing data pipeline using Freesurfer, FSL and MRtrix3.&lt;/p&gt;
 &lt;p&gt;The minimum necessary requirements for creating the TVB dataset are a set of T1 and DWI images as a list of dicom files, or a single 4-D image nifti file.&lt;/p&gt;
 &lt;p&gt;A high level summary of how the pipeline proceeds is:
@@ -392,38 +402,52 @@ In order to compute forward solutions of electrode (i.e. SEEG, ECoG, etc.) activ
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;This can be done using an inverse-square method fall-off on the region activity, or using a dipole method as outlined in the "Virtual Epileptic Patient" paper.&lt;/p&gt;
-&lt;h2 id="implementation"&gt;&lt;a class="toclink" href="#implementation"&gt;Implementation&lt;/a&gt;&lt;a class="headerlink" href="#implementation" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id="1-setting-up-environment"&gt;&lt;a class="toclink" href="#1-setting-up-environment"&gt;1. Setting Up Environment&lt;/a&gt;&lt;a class="headerlink" href="#1-setting-up-environment" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h1&gt;Implementation&lt;/h1&gt;
+&lt;h2&gt;1. Setting Up Environment&lt;/h2&gt;
 &lt;p&gt;First you may want to set up a conda environment, or a virtualenv that will separate the entire python project from your normal OS.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$
-pip install nibabel networkx
-git clone https://github.com/the-virtual-brain/tvb-data
-git clone https://github.com/the-virtual-brain/tvb-library
-$
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;
+&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;nibabel&lt;/span&gt; &lt;span class="n"&gt;networkx&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;clone&lt;/span&gt; &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;virtual&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;brain&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;tvb&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;data&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;clone&lt;/span&gt; &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;virtual&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;brain&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;tvb&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;library&lt;/span&gt;
+&lt;span class="err"&gt;$&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;If you want to have a script to add these all to path for your jupyter notebook, use the following:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#!/bin/bash
-echo "Launching IPython Notebook from TVB Distribution"
-if [ -z "$LANG" ]; then
-    export LANG=en_US.UTF-8
-fi
-export LC_ALL=$LANG
-# add tvb data and library to path and launch notebook
-export PYTHONPATH=$(pwd)/_tvbdata:$(pwd)/_tvblibrary:$PYTHONPATH;
+&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;1
+2
+3
+4
+5
+6
+7
+8
+9&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="ch"&gt;#!/bin/bash&lt;/span&gt;
+&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Launching IPython Notebook from TVB Distribution&amp;quot;&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; -z &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$LANG&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+    &lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;LANG&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;en_US.UTF-8
+&lt;span class="k"&gt;fi&lt;/span&gt;
+&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;LC_ALL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$LANG&lt;/span&gt;
+&lt;span class="c1"&gt;# add tvb data and library to path and launch notebook&lt;/span&gt;
+&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;PYTHONPATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;pwd&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;/_tvbdata:&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nb"&gt;pwd&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;/_tvblibrary:&lt;span class="nv"&gt;$PYTHONPATH&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 jupyter notebook
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id="1b-setting-up-environment-on-a-cluster"&gt;&lt;a class="toclink" href="#1b-setting-up-environment-on-a-cluster"&gt;1b. Setting Up Environment on a Cluster&lt;/a&gt;&lt;a class="headerlink" href="#1b-setting-up-environment-on-a-cluster" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;. /soft/miniconda3/activate
-conda env list
-conda create -n tridesclous python=3.6 scipy numpy pandas scikit-learn matplotlib seaborn pyqt=5 ipykernel
-source activate tridesclous
-pip install pyqtgraph
-pip install https://github.com/tridesclous/tridesclous/archive/master.zip
-python -m ipykernel install --name tridesclous-testing —user
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id="1c-using-docker-singularity"&gt;&lt;a class="toclink" href="#1c-using-docker-singularity"&gt;1c. Using Docker / Singularity&lt;/a&gt;&lt;a class="headerlink" href="#1c-using-docker-singularity" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+
+&lt;h2&gt;1b. Setting Up Environment on a Cluster&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;soft&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;miniconda3&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;activate&lt;/span&gt;
+&lt;span class="n"&gt;conda&lt;/span&gt; &lt;span class="n"&gt;env&lt;/span&gt; &lt;span class="n"&gt;list&lt;/span&gt;
+&lt;span class="n"&gt;conda&lt;/span&gt; &lt;span class="k"&gt;create&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="n"&gt;tridesclous&lt;/span&gt; &lt;span class="n"&gt;python&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt; &lt;span class="n"&gt;scipy&lt;/span&gt; &lt;span class="n"&gt;numpy&lt;/span&gt; &lt;span class="n"&gt;pandas&lt;/span&gt; &lt;span class="n"&gt;scikit&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;learn&lt;/span&gt; &lt;span class="n"&gt;matplotlib&lt;/span&gt; &lt;span class="n"&gt;seaborn&lt;/span&gt; &lt;span class="n"&gt;pyqt&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt; &lt;span class="n"&gt;ipykernel&lt;/span&gt;
+&lt;span class="k"&gt;source&lt;/span&gt; &lt;span class="n"&gt;activate&lt;/span&gt; &lt;span class="n"&gt;tridesclous&lt;/span&gt;
+&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;pyqtgraph&lt;/span&gt;
+&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;tridesclous&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;tridesclous&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;archive&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;master&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;zip&lt;/span&gt;
+&lt;span class="n"&gt;python&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt; &lt;span class="n"&gt;ipykernel&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="c1"&gt;--name tridesclous-testing —user&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;1c. Using Docker / Singularity&lt;/h2&gt;
 &lt;p&gt;TBD&lt;/p&gt;
-&lt;h3 id="2-simulating-epilepsy"&gt;&lt;a class="toclink" href="#2-simulating-epilepsy"&gt;2. Simulating Epilepsy&lt;/a&gt;&lt;a class="headerlink" href="#2-simulating-epilepsy" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2&gt;2. Simulating Epilepsy&lt;/h2&gt;
 &lt;p&gt;In order to simulate epilepsy, you are going to walk through a pipeline using TVB. Details are left out for now.&lt;/p&gt;
 &lt;p&gt;i. Structural Connectivity
 What is the matrix of connectivities between your brain regions?
@@ -441,7 +465,7 @@ Ex: linear, additive, hyperbolic&lt;/p&gt;
 What variables to monitor and store?
 Ex: State variables, iEEG activity from sampling rate and period.&lt;/p&gt;
 &lt;p&gt;Then once these are complete, you can run your simulation.&lt;/p&gt;
-&lt;h3 id="references"&gt;&lt;a class="toclink" href="#references"&gt;References:&lt;/a&gt;&lt;a class="headerlink" href="#references" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2&gt;References:&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;https://github.com/the-virtual-brain/tvb-library&lt;/li&gt;
 &lt;li&gt;https://github.com/the-virtual-brain/tvb-epilepsy&lt;/li&gt;
@@ -491,25 +515,25 @@ Ex: State variables, iEEG activity from sampling rate and period.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;!-- /MarkdownTOC --&gt;
 
-&lt;h2 id="papers"&gt;&lt;a class="toclink" href="#papers"&gt;Papers&lt;/a&gt;&lt;a class="headerlink" href="#papers" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id="1-wilson-cowan-neural-mass-model"&gt;&lt;a class="toclink" href="#1-wilson-cowan-neural-mass-model"&gt;1. Wilson-Cowan Neural Mass Model&lt;/a&gt;&lt;a class="headerlink" href="#1-wilson-cowan-neural-mass-model" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;h4 id="summary-conclusions"&gt;&lt;a class="toclink" href="#summary-conclusions"&gt;Summary / Conclusions:&lt;/a&gt;&lt;a class="headerlink" href="#summary-conclusions" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
-&lt;h4 id="important-notes"&gt;&lt;a class="toclink" href="#important-notes"&gt;Important Notes:&lt;/a&gt;&lt;a class="headerlink" href="#important-notes" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
-&lt;h3 id="2-kalman-filter-model"&gt;&lt;a class="toclink" href="#2-kalman-filter-model"&gt;2. Kalman Filter Model&lt;/a&gt;&lt;a class="headerlink" href="#2-kalman-filter-model" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;h4 id="summary-conclusions_1"&gt;&lt;a class="toclink" href="#summary-conclusions_1"&gt;Summary / Conclusions:&lt;/a&gt;&lt;a class="headerlink" href="#summary-conclusions_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
-&lt;h4 id="important-notes_1"&gt;&lt;a class="toclink" href="#important-notes_1"&gt;Important Notes:&lt;/a&gt;&lt;a class="headerlink" href="#important-notes_1" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
-&lt;h3 id="3-expectation-maximization"&gt;&lt;a class="toclink" href="#3-expectation-maximization"&gt;3. Expectation Maximization&lt;/a&gt;&lt;a class="headerlink" href="#3-expectation-maximization" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;h4 id="summary-conclusions_2"&gt;&lt;a class="toclink" href="#summary-conclusions_2"&gt;Summary / Conclusions:&lt;/a&gt;&lt;a class="headerlink" href="#summary-conclusions_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
-&lt;h4 id="important-notes_2"&gt;&lt;a class="toclink" href="#important-notes_2"&gt;Important Notes:&lt;/a&gt;&lt;a class="headerlink" href="#important-notes_2" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
-&lt;h3 id="4-information-bottleneck-method"&gt;&lt;a class="toclink" href="#4-information-bottleneck-method"&gt;4. Information Bottleneck Method&lt;/a&gt;&lt;a class="headerlink" href="#4-information-bottleneck-method" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h1&gt;Papers&lt;/h1&gt;
+&lt;h2&gt;1. Wilson-Cowan Neural Mass Model&lt;/h2&gt;
+&lt;h3&gt;Summary / Conclusions:&lt;/h3&gt;
+&lt;h3&gt;Important Notes:&lt;/h3&gt;
+&lt;h2&gt;2. Kalman Filter Model&lt;/h2&gt;
+&lt;h3&gt;Summary / Conclusions:&lt;/h3&gt;
+&lt;h3&gt;Important Notes:&lt;/h3&gt;
+&lt;h2&gt;3. Expectation Maximization&lt;/h2&gt;
+&lt;h3&gt;Summary / Conclusions:&lt;/h3&gt;
+&lt;h3&gt;Important Notes:&lt;/h3&gt;
+&lt;h2&gt;4. Information Bottleneck Method&lt;/h2&gt;
 &lt;p&gt;http://www.cs.huji.ac.il/labs/learning/Papers/allerton.pdf&lt;/p&gt;
-&lt;h4 id="summary-conclusions_3"&gt;&lt;a class="toclink" href="#summary-conclusions_3"&gt;Summary / Conclusions:&lt;/a&gt;&lt;a class="headerlink" href="#summary-conclusions_3" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;h3&gt;Summary / Conclusions:&lt;/h3&gt;
 &lt;p&gt;Let us define X as input signal, and Y as desired output.&lt;/p&gt;
 &lt;p&gt;Here, they were interested in deriving a quantitative method for optimizing 1) compression rate of a signal and 2) the choice of representation of the original signal.&lt;/p&gt;
 &lt;p&gt;Previous theory looked at minimizing the rate of compression given a constraint on expected distortion of the original signal (with new compression). This was solved via iterative algorithm (similar to EM), but lacked generality to find optimal representatives, which minimize the expected distortion (not just compression) of the signal. &lt;/p&gt;
 &lt;p&gt;The new theory looks at minimizing the rate of compression given a constraint on the amount of information we can keep about Y using X. This produces an iterative algorithm that also can be solved iteratively. It also shows that 1) the Kullback-Leibler divergence is the relevant distortion measure for the information bottleneck setting, and 2) optimization of representation of signal and the signal compression can be done together.&lt;/p&gt;
 &lt;p&gt;This work can be used in applications to information processing problems (e.g. deep learning).&lt;/p&gt;
-&lt;h4 id="important-notes_3"&gt;&lt;a class="toclink" href="#important-notes_3"&gt;Important Notes:&lt;/a&gt;&lt;a class="headerlink" href="#important-notes_3" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;h3&gt;Important Notes:&lt;/h3&gt;
 &lt;p&gt;Mutual information is defined as:&lt;/p&gt;
 &lt;p&gt;&lt;span class="math"&gt;\(I(X;Y) = D_{KL}[P(x,y)||P(x)P(y)] = \sum_{x\in X, y\in Y} P(x,y) log(\frac_{P(x,y)}_{P(x)P(y)})\)&lt;/span&gt;
 &lt;span class="math"&gt;\(= \sum_{x\in X, y\in Y}P(x,y) log(\frac_{P(x|y)}_{P(x)}) = H(X) - H(X|Y)\)&lt;/span&gt;&lt;/p&gt;
@@ -518,9 +542,9 @@ Ex: State variables, iEEG activity from sampling rate and period.&lt;/p&gt;
 &lt;p&gt;&lt;span class="math"&gt;\(I(S(X); Y) = I(X; Y)\)&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;We can allow the map to be stochastic, with encoder P(T|X) and allow map to capture as much as possible of I(X;Y), not necessarily all of it &lt;span class="math"&gt;\(I(S(X); Y) \leq I(X; Y)\)&lt;/span&gt;. Define &lt;span class="math"&gt;\(t \in T\)&lt;/span&gt; as compressed representations of &lt;span class="math"&gt;\(x \in X\)&lt;/span&gt;, stochastically, &lt;span class="math"&gt;\(p(t|x)\)&lt;/span&gt;. The following optimization problem finds a balance between compression of X and prediction of Y.&lt;/p&gt;
 &lt;p&gt;&lt;span class="math"&gt;\(min_{p(t|x),p(y|t),p(t)}\ {I(X;T) - \beta I(T;Y)}\)&lt;/span&gt;&lt;/p&gt;
-&lt;h3 id="5-opening-the-black-box-of-deep-neural-networks-via-information"&gt;&lt;a class="toclink" href="#5-opening-the-black-box-of-deep-neural-networks-via-information"&gt;5. Opening the Black Box of Deep Neural Networks Via Information&lt;/a&gt;&lt;a class="headerlink" href="#5-opening-the-black-box-of-deep-neural-networks-via-information" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2&gt;5. Opening the Black Box of Deep Neural Networks Via Information&lt;/h2&gt;
 &lt;p&gt;Reference: https://arxiv.org/pdf/1703.00810.pdf&lt;/p&gt;
-&lt;h4 id="summary-conclusions_4"&gt;&lt;a class="toclink" href="#summary-conclusions_4"&gt;Summary / Conclusions:&lt;/a&gt;&lt;a class="headerlink" href="#summary-conclusions_4" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;h3&gt;Summary / Conclusions:&lt;/h3&gt;
 &lt;p&gt;In this paper, the authors extend their analysis of DNN using information theory. They answered the following questions:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;The SGD layer dynamics in the Information plane.
@@ -540,18 +564,18 @@ It seems that the hidden layers converge to the optiaml IB representations. Howe
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Another important hypothesis/conjecture they make is that: attempts to interpret single weights, or even single neurons in such networks can be meaningless because there is a large number of different networks that can achieve optimal performance. This makes sense in terms of how the brain is structured; the brain does not form the same pathway for learning something new between different people, but form a unique network for optimal performance. &lt;/p&gt;
-&lt;h4 id="important-notes_4"&gt;&lt;a class="toclink" href="#important-notes_4"&gt;Important Notes:&lt;/a&gt;&lt;a class="headerlink" href="#important-notes_4" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;h3&gt;Important Notes:&lt;/h3&gt;
 &lt;p&gt;First, they estimated the mutual information of the layers with the input and with the labels &lt;span class="math"&gt;\(I(X;T_i)\)&lt;/span&gt; and &lt;span class="math"&gt;\(I(T_i;Y)\)&lt;/span&gt;. &lt;/p&gt;
-&lt;h3 id="6-reinforcement-learning-an-overview"&gt;&lt;a class="toclink" href="#6-reinforcement-learning-an-overview"&gt;6. Reinforcement Learning: An Overview&lt;/a&gt;&lt;a class="headerlink" href="#6-reinforcement-learning-an-overview" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2&gt;6. Reinforcement Learning: An Overview&lt;/h2&gt;
 &lt;p&gt;Reference: https://pdfs.semanticscholar.org/b373/b0c6e3b4fef4ac0534965708fc382343f8dc.pdf&lt;/p&gt;
-&lt;h4 id="summary-conclusions_5"&gt;&lt;a class="toclink" href="#summary-conclusions_5"&gt;Summary / Conclusions:&lt;/a&gt;&lt;a class="headerlink" href="#summary-conclusions_5" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
-&lt;h4 id="important-notes_5"&gt;&lt;a class="toclink" href="#important-notes_5"&gt;Important Notes:&lt;/a&gt;&lt;a class="headerlink" href="#important-notes_5" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
-&lt;h3 id="7-deep-reinforcement-learning-an-overview"&gt;&lt;a class="toclink" href="#7-deep-reinforcement-learning-an-overview"&gt;7. Deep Reinforcement Learning: An Overview&lt;/a&gt;&lt;a class="headerlink" href="#7-deep-reinforcement-learning-an-overview" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h3&gt;Summary / Conclusions:&lt;/h3&gt;
+&lt;h3&gt;Important Notes:&lt;/h3&gt;
+&lt;h2&gt;7. Deep Reinforcement Learning: An Overview&lt;/h2&gt;
 &lt;p&gt;Reference:&lt;/p&gt;
-&lt;h3 id="8-variational-inference"&gt;&lt;a class="toclink" href="#8-variational-inference"&gt;8. Variational Inference:&lt;/a&gt;&lt;a class="headerlink" href="#8-variational-inference" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;h4 id="summary-conclusions_6"&gt;&lt;a class="toclink" href="#summary-conclusions_6"&gt;Summary / Conclusions&lt;/a&gt;&lt;a class="headerlink" href="#summary-conclusions_6" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;h2&gt;8. Variational Inference:&lt;/h2&gt;
+&lt;h3&gt;Summary / Conclusions&lt;/h3&gt;
 &lt;p&gt;Variational inference&lt;/p&gt;
-&lt;h4 id="important-notes_6"&gt;&lt;a class="toclink" href="#important-notes_6"&gt;Important Notes&lt;/a&gt;&lt;a class="headerlink" href="#important-notes_6" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;h3&gt;Important Notes&lt;/h3&gt;
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
@@ -613,7 +637,7 @@ It seems that the hidden layers converge to the optiaml IB representations. Howe
     (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</content><category term="phd"></category><category term="journals"></category><category term="reviews"></category></entry><entry><title>Doctoral Board Oral Exam (PhD)</title><link href="/blog/2017/08/doctoral-board-oral/" rel="alternate"></link><published>2017-08-05T00:00:00-04:00</published><updated>2017-08-05T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-08-05:/blog/2017/08/doctoral-board-oral/</id><summary type="html">&lt;p&gt;A short walkthrough of my experience with the DBO exam at Johns Hopkins University&lt;/p&gt;</summary><content type="html">&lt;h2 id="doctoral-board-oral-exam"&gt;&lt;a class="toclink" href="#doctoral-board-oral-exam"&gt;Doctoral Board Oral Exam&lt;/a&gt;&lt;a class="headerlink" href="#doctoral-board-oral-exam" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;/script&gt;</content><category term="phd"></category><category term="journals"></category><category term="reviews"></category></entry><entry><title>Doctoral Board Oral Exam (PhD)</title><link href="/blog/2017/08/doctoral-board-oral/" rel="alternate"></link><published>2017-08-05T00:00:00-04:00</published><updated>2017-08-05T00:00:00-04:00</updated><author><name>Adam Li</name></author><id>tag:None,2017-08-05:/blog/2017/08/doctoral-board-oral/</id><summary type="html">&lt;p&gt;A short walkthrough of my experience with the DBO exam at Johns Hopkins University&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Doctoral Board Oral Exam&lt;/h1&gt;
 &lt;!-- MarkdownTOC autolink="true" --&gt;
 
 &lt;ul&gt;
@@ -667,46 +691,46 @@ It seems that the hidden layers converge to the optiaml IB representations. Howe
 &lt;/ul&gt;
 &lt;!-- /MarkdownTOC --&gt;
 
-&lt;h2 id="1-cable-theory-and-compartmental-modeling"&gt;&lt;a class="toclink" href="#1-cable-theory-and-compartmental-modeling"&gt;1. Cable Theory and Compartmental Modeling&lt;/a&gt;&lt;a class="headerlink" href="#1-cable-theory-and-compartmental-modeling" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id="examples-of-different-types-of-neurons"&gt;&lt;a class="toclink" href="#examples-of-different-types-of-neurons"&gt;Examples of different types of neurons&lt;/a&gt;&lt;a class="headerlink" href="#examples-of-different-types-of-neurons" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h1&gt;1. Cable Theory and Compartmental Modeling&lt;/h1&gt;
+&lt;h2&gt;Examples of different types of neurons&lt;/h2&gt;
 &lt;p&gt;There are thalamic cells, pyramidal cells, double pyramidal cells, granule cells, purkinje cells. These all have different morphologies and perform different computations.&lt;/p&gt;
-&lt;h3 id="approach"&gt;&lt;a class="toclink" href="#approach"&gt;Approach&lt;/a&gt;&lt;a class="headerlink" href="#approach" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2&gt;Approach&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;Approximate dendrites as uniform membrane cylandiers&lt;/li&gt;
 &lt;li&gt;Synaptic inputs are approximated as 'injected currents'&lt;/li&gt;
 &lt;li&gt;Use the cable equation to create a system of differential equations for each cylinder.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id="important-equations"&gt;&lt;a class="toclink" href="#important-equations"&gt;Important Equations&lt;/a&gt;&lt;a class="headerlink" href="#important-equations" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2&gt;Important Equations&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;input conductance of semi-infinite cable&lt;/li&gt;
 &lt;li&gt;input conductance of infinite cable&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h4 id="unsealed-end"&gt;&lt;a class="toclink" href="#unsealed-end"&gt;Unsealed end:&lt;/a&gt;&lt;a class="headerlink" href="#unsealed-end" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;h3&gt;Unsealed end:&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;cable equation&lt;/li&gt;
 &lt;li&gt;input conductance of finite cable&lt;/li&gt;
 &lt;li&gt;s.s. voltage along cable&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h4 id="sealed-end"&gt;&lt;a class="toclink" href="#sealed-end"&gt;Sealed end:&lt;/a&gt;&lt;a class="headerlink" href="#sealed-end" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;h3&gt;Sealed end:&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;input conductance of the finite cable&lt;/li&gt;
 &lt;li&gt;s.s. voltage along cable&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h4 id="concatenated-cables"&gt;&lt;a class="toclink" href="#concatenated-cables"&gt;Concatenated Cables:&lt;/a&gt;&lt;a class="headerlink" href="#concatenated-cables" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;h3&gt;Concatenated Cables:&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;Compute V(X) along branches, by determining &lt;span class="math"&gt;\(G_{out}\)&lt;/span&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h4 id="definitions"&gt;&lt;a class="toclink" href="#definitions"&gt;Definitions:&lt;/a&gt;&lt;a class="headerlink" href="#definitions" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;h3&gt;Definitions:&lt;/h3&gt;
 &lt;p&gt;Know definitions and related biology of:
 - axial resistance, the resistance to current flow along the uniform cable (along the dendrite)
 - membrane resistance, the resistance of current flow out of the dendrite
 - membrance capacitance, the capacitance of a patch of membrane surface area
 - derive cable equation as a model of concatenated RC circuits&lt;/p&gt;
-&lt;h4 id="compartmental-models"&gt;&lt;a class="toclink" href="#compartmental-models"&gt;Compartmental Models:&lt;/a&gt;&lt;a class="headerlink" href="#compartmental-models" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h4&gt;
+&lt;h3&gt;Compartmental Models:&lt;/h3&gt;
 &lt;p&gt;Be able to derive system of equations into a matrix form for a linear time-invariant system &lt;/p&gt;
 &lt;p&gt;Understand how transfer resistances work. Understand how distributing synaptic inputs works. &lt;/p&gt;
 &lt;p&gt;Understand how coincidence detection (AND operator), shunting inhibition (AND-NOT operator).&lt;/p&gt;
-&lt;h3 id="study"&gt;&lt;a class="toclink" href="#study"&gt;Study&lt;/a&gt;&lt;a class="headerlink" href="#study" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2&gt;Study&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;Definitions of cable theory and biological relations&lt;/li&gt;
 &lt;li&gt;Solving single cable equation and different boundary conditions&lt;/li&gt;
@@ -716,32 +740,32 @@ It seems that the hidden layers converge to the optiaml IB representations. Howe
 &lt;li&gt;Derive AND operator (coincidence detection)&lt;/li&gt;
 &lt;li&gt;Derive AND-NOT operator (shunting inhibition)&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id="2-generalized-linear-models"&gt;&lt;a class="toclink" href="#2-generalized-linear-models"&gt;2. Generalized Linear Models:&lt;/a&gt;&lt;a class="headerlink" href="#2-generalized-linear-models" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id="general-form-of-exponential-family-distribution"&gt;&lt;a class="toclink" href="#general-form-of-exponential-family-distribution"&gt;General Form of Exponential Family Distribution&lt;/a&gt;&lt;a class="headerlink" href="#general-form-of-exponential-family-distribution" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h1&gt;2. Generalized Linear Models:&lt;/h1&gt;
+&lt;h2&gt;General Form of Exponential Family Distribution&lt;/h2&gt;
 &lt;p&gt;Be able to define all the terms, such as: natural paramters, sufficient statistic, natural link function, dispersion parameter&lt;/p&gt;
-&lt;h3 id="normal-linear-regression"&gt;&lt;a class="toclink" href="#normal-linear-regression"&gt;Normal Linear Regression&lt;/a&gt;&lt;a class="headerlink" href="#normal-linear-regression" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;h3 id="logistic-regression"&gt;&lt;a class="toclink" href="#logistic-regression"&gt;Logistic Regression&lt;/a&gt;&lt;a class="headerlink" href="#logistic-regression" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;h3 id="poisson-regression"&gt;&lt;a class="toclink" href="#poisson-regression"&gt;Poisson Regression&lt;/a&gt;&lt;a class="headerlink" href="#poisson-regression" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
-&lt;h3 id="solving-glm-methods"&gt;&lt;a class="toclink" href="#solving-glm-methods"&gt;Solving GLM Methods:&lt;/a&gt;&lt;a class="headerlink" href="#solving-glm-methods" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2&gt;Normal Linear Regression&lt;/h2&gt;
+&lt;h2&gt;Logistic Regression&lt;/h2&gt;
+&lt;h2&gt;Poisson Regression&lt;/h2&gt;
+&lt;h2&gt;Solving GLM Methods:&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;Penalized Quasi-likelihood&lt;/li&gt;
 &lt;li&gt;Laplace's Method&lt;/li&gt;
 &lt;li&gt;Adaptive Gaussian Quadrature&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id="goodness-of-fit"&gt;&lt;a class="toclink" href="#goodness-of-fit"&gt;Goodness of Fit&lt;/a&gt;&lt;a class="headerlink" href="#goodness-of-fit" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2&gt;Goodness of Fit&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;Chi-square test&lt;/li&gt;
 &lt;li&gt;Kolmogorov Statistic&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id="3-kalman-filter"&gt;&lt;a class="toclink" href="#3-kalman-filter"&gt;3. Kalman Filter&lt;/a&gt;&lt;a class="headerlink" href="#3-kalman-filter" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id="stochastic-state-space-model"&gt;&lt;a class="toclink" href="#stochastic-state-space-model"&gt;Stochastic State-Space Model&lt;/a&gt;&lt;a class="headerlink" href="#stochastic-state-space-model" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h1&gt;3. Kalman Filter&lt;/h1&gt;
+&lt;h2&gt;Stochastic State-Space Model&lt;/h2&gt;
 &lt;p&gt;Here, list the linear, time-invariant system with a state evolution equation and measurement/observation equation.&lt;/p&gt;
-&lt;h3 id="assumptions"&gt;&lt;a class="toclink" href="#assumptions"&gt;Assumptions&lt;/a&gt;&lt;a class="headerlink" href="#assumptions" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2&gt;Assumptions&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;state and observation noises are independent, zero-mean Gaussian white processes with some defined covariances&lt;/li&gt;
 &lt;li&gt;initial state x_0 is a Gaussian R.V. independent of the state/observation noises&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id="derivation"&gt;&lt;a class="toclink" href="#derivation"&gt;Derivation&lt;/a&gt;&lt;a class="headerlink" href="#derivation" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2&gt;Derivation&lt;/h2&gt;
 &lt;p&gt;Derive the Kalman filter equations for the state update, covarariance estimates&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Measurement update&lt;/li&gt;
@@ -749,17 +773,17 @@ It seems that the hidden layers converge to the optiaml IB representations. Howe
 &lt;li&gt;Combined Update&lt;/li&gt;
 &lt;li&gt;Covariance Update&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id="relation-to-a-least-squares-problem"&gt;&lt;a class="toclink" href="#relation-to-a-least-squares-problem"&gt;Relation to a Least-Squares Problem&lt;/a&gt;&lt;a class="headerlink" href="#relation-to-a-least-squares-problem" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2&gt;Relation to a Least-Squares Problem&lt;/h2&gt;
 &lt;p&gt;Review...&lt;/p&gt;
-&lt;h3 id="relation-to-a-bayesian-maximum-aposteri-estimation"&gt;&lt;a class="toclink" href="#relation-to-a-bayesian-maximum-aposteri-estimation"&gt;Relation to a Bayesian Maximum Aposteri Estimation&lt;/a&gt;&lt;a class="headerlink" href="#relation-to-a-bayesian-maximum-aposteri-estimation" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2&gt;Relation to a Bayesian Maximum Aposteri Estimation&lt;/h2&gt;
 &lt;p&gt;Review...&lt;/p&gt;
-&lt;h2 id="4-expectation-maximization"&gt;&lt;a class="toclink" href="#4-expectation-maximization"&gt;4. Expectation Maximization&lt;/a&gt;&lt;a class="headerlink" href="#4-expectation-maximization" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id="basic-idea"&gt;&lt;a class="toclink" href="#basic-idea"&gt;Basic Idea&lt;/a&gt;&lt;a class="headerlink" href="#basic-idea" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h1&gt;4. Expectation Maximization&lt;/h1&gt;
+&lt;h2&gt;Basic Idea&lt;/h2&gt;
 &lt;p&gt;By computing the likelihood of your unknown parameters, based on known outcomes. You can perform maximum likelihood estimation to get the best estimate of the unknown parameters&lt;/p&gt;
-&lt;h2 id="5-k-means-algorithm"&gt;&lt;a class="toclink" href="#5-k-means-algorithm"&gt;5. K-Means Algorithm&lt;/a&gt;&lt;a class="headerlink" href="#5-k-means-algorithm" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id="cost-function"&gt;&lt;a class="toclink" href="#cost-function"&gt;Cost Function&lt;/a&gt;&lt;a class="headerlink" href="#cost-function" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h1&gt;5. K-Means Algorithm&lt;/h1&gt;
+&lt;h2&gt;Cost Function&lt;/h2&gt;
 &lt;p&gt;The cost function is attempting to minimize the distortion (distance to centers) for every point in the set of data points, S.&lt;/p&gt;
-&lt;h3 id="the-algorithm"&gt;&lt;a class="toclink" href="#the-algorithm"&gt;The Algorithm&lt;/a&gt;&lt;a class="headerlink" href="#the-algorithm" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2&gt;The Algorithm&lt;/h2&gt;
 &lt;p&gt;'''
 Input: k clusters
 initialize centers: z_1, ..., z_k \in \real^d and clusters C_1, ..., C_k
@@ -777,27 +801,27 @@ repeat until there is no further change in L(z, C):
 (0, 1, 0)
 (1, 1, 0)
 (2, 1, 0)&lt;/p&gt;
-&lt;h3 id="initialization"&gt;&lt;a class="toclink" href="#initialization"&gt;Initialization&lt;/a&gt;&lt;a class="headerlink" href="#initialization" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2&gt;Initialization&lt;/h2&gt;
 &lt;p&gt;Initialization of a k-means type algorithm initializes k "means", we call centers at the beginning, and then assigns points into these centers based on the cost function. &lt;/p&gt;
-&lt;h3 id="convergence"&gt;&lt;a class="toclink" href="#convergence"&gt;Convergence&lt;/a&gt;&lt;a class="headerlink" href="#convergence" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;
+&lt;h2&gt;Convergence&lt;/h2&gt;
 &lt;p&gt;Show that the cost monotonically decreases, so the algorithm will converge at least in the sense of cost decreasing to a non-changing amount.&lt;/p&gt;
-&lt;h2 id="6-sensory-pathways-and-systems-in-neuroscience"&gt;&lt;a class="toclink" href="#6-sensory-pathways-and-systems-in-neuroscience"&gt;6. Sensory Pathways and Systems in Neuroscience&lt;/a&gt;&lt;a class="headerlink" href="#6-sensory-pathways-and-systems-in-neuroscience" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h1&gt;6. Sensory Pathways and Systems in Neuroscience&lt;/h1&gt;
 &lt;p&gt;The different neuronal pathways in the central nervous system, vs the periphery nervous system. &lt;/p&gt;
 &lt;p&gt;Visual sensory pathway that leads from the retina all the way to the occipital lobe of the brain.&lt;/p&gt;
 &lt;p&gt;The somatosensory pathways that lead to the SI, and SII all with nerve sensors from the periphery of your body.&lt;/p&gt;
-&lt;h2 id="7-motor-pathways-and-systems-in-neuroscience"&gt;&lt;a class="toclink" href="#7-motor-pathways-and-systems-in-neuroscience"&gt;7. Motor Pathways and Systems in Neuroscience&lt;/a&gt;&lt;a class="headerlink" href="#7-motor-pathways-and-systems-in-neuroscience" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h1&gt;7. Motor Pathways and Systems in Neuroscience&lt;/h1&gt;
 &lt;p&gt;How does motor movements get controlled in the brain?&lt;/p&gt;
 &lt;p&gt;The premotor cortex, and also the motor cortex are at the highest levels of control. We can also include the cerebellum when we talk about motor control.&lt;/p&gt;
-&lt;h2 id="8-general-topics-in-neuroscience"&gt;&lt;a class="toclink" href="#8-general-topics-in-neuroscience"&gt;8. General Topics in Neuroscience&lt;/a&gt;&lt;a class="headerlink" href="#8-general-topics-in-neuroscience" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h1&gt;8. General Topics in Neuroscience&lt;/h1&gt;
 &lt;p&gt;Good things to know and remember are:
 - Hodgkin Huxley models: a biophysical model that models realistic neuronal firing based on concentration gradients, membrane conductances, membrane potentials and even more.
 - Nernst equation: a fundamental equation for determining the resting potential of a membrane in the presence of a concentration gradient of an ion.
 - Goldman-Katz equation: a model with multiple ions that determins the resting potential of a membrane (extension of Nernst)
 - Action potentials and the chronology of cell actions that are taken&lt;/p&gt;
-&lt;h2 id="9-gaussian-mixture-models"&gt;&lt;a class="toclink" href="#9-gaussian-mixture-models"&gt;9. Gaussian Mixture Models&lt;/a&gt;&lt;a class="headerlink" href="#9-gaussian-mixture-models" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h1&gt;9. Gaussian Mixture Models&lt;/h1&gt;
 &lt;p&gt;This is the idea that some data distributions can be the combinations of many different Gaussian models with different means and variance, but superimposed on each other. &lt;/p&gt;
 &lt;p&gt;The goal of a gaussian mixture model is to identify the parameters of each of the separate gaussians by a process called Expectation Maximization. In this process, we switch between maximizing the likelihood by iterating on the parameters of the gaussian models and computing a new likelihood function given the new parameters.&lt;/p&gt;
-&lt;h2 id="faq"&gt;&lt;a class="toclink" href="#faq"&gt;FAQ&lt;/a&gt;&lt;a class="headerlink" href="#faq" title="Permanent link"&gt;&amp;para;&lt;/a&gt;&lt;/h2&gt;
+&lt;h1&gt;FAQ&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;Q: How long should I study for?
 A: I would study for about 2-3 weeks with nothing else going on. You want to be able to do a comprehensive overview of everything first, and then dive deeper into topics that are more likely to come up. You should also do test runs of walking through "open-ended" questions on a white board many times.&lt;/li&gt;

@@ -67,7 +67,6 @@ Adam Li's blog            </a>
                     <li><a href="/archives.html">Timeline</a></li>
                     <li><a href="/tags.html">Tags</a></li>
                     <li><a href="/pdfs/AdamLi_CV.pdf">Curriculum Vitae</a></li>
-                    <li><a href="/gallery.html">Gallery</a></li>
                          <li><a href="/contact/">
                              Contact
                           </a></li>
@@ -128,9 +127,9 @@ Adam Li's blog            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <h2 id="getting-setup-with-singularity"><a class="toclink" href="#getting-setup-with-singularity">Getting Setup with Singularity</a><a class="headerlink" href="#getting-setup-with-singularity" title="Permanent link">&para;</a></h2>
-<h2 id="by-adam-li"><a class="toclink" href="#by-adam-li">By: Adam Li</a><a class="headerlink" href="#by-adam-li" title="Permanent link">&para;</a></h2>
-<h4 id="table-of-contents"><a class="toclink" href="#table-of-contents">Table of Contents</a><a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h4>
+                <h1>Getting Setup with Singularity</h1>
+<h1>By: Adam Li</h1>
+<h3>Table of Contents</h3>
 <!-- MarkdownTOC autolink="true" -->
 
 <ul>
@@ -147,80 +146,92 @@ Adam Li's blog            </a>
 </ul>
 <!-- /MarkdownTOC -->
 
-<h2 id="installation"><a class="toclink" href="#installation">Installation</a><a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<h1>Installation</h1>
 <p>To install singularity locally with root privelages, you can then build up containers that can be hosted online.</p>
-<h2 id="setting-up-a-tensorflow-container-recipe-example"><a class="toclink" href="#setting-up-a-tensorflow-container-recipe-example">Setting Up A Tensorflow Container Recipe (Example):</a><a class="headerlink" href="#setting-up-a-tensorflow-container-recipe-example" title="Permanent link">&para;</a></h2>
-<pre><code>Bootstrap: docker
-From: tensorflow/tensorflow:latest-gpu
-%environment
-  # use bash as default shell
-  SHELL=/bin/bash
-  export SHELL
-%setup
-  # runs on host - the path to the image is $SINGULARITY_ROOTFS
-%post
-  # post-setup script
-  # load environment variables
-  . /environment
-  # use bash as default shell
-  echo 'SHELL=/bin/bash' &gt;&gt; /environment
-  # make environment file executable
-  chmod +x /environment
-  # default mount paths
-  mkdir /scratch /data 
-  # load in extra packages for python
-  apt-get update &amp;&amp; apt-get -y install locales
-  locale-gen en_US.UTF-8
-  apt-get install -y git wget python3-dev python3-pip
-  apt-get clean
-  apt-get install -y libcupti-dev
-  pip3 install --upgrade pip
-  pip3 install keras
-  pip3 install numpy scipy scikit-learn pandas tensorboard natsorted tqdm
-%runscript
-  # executes with the singularity run command
-  # delete this section to use existing docker ENTRYPOINT command
-%test
-  # test that script is a success
-</code></pre>
-<h3 id="1-needed-docker-containers"><a class="toclink" href="#1-needed-docker-containers">1. Needed Docker Containers:</a><a class="headerlink" href="#1-needed-docker-containers" title="Permanent link">&para;</a></h3>
+<h1>Setting Up A Tensorflow Container Recipe (Example):</h1>
+<div class="highlight"><pre><span></span><span class="nl">Bootstrap</span><span class="p">:</span> <span class="n">docker</span>
+<span class="nl">From</span><span class="p">:</span> <span class="n">tensorflow</span><span class="o">/</span><span class="nl">tensorflow</span><span class="p">:</span><span class="n">latest</span><span class="o">-</span><span class="n">gpu</span>
+<span class="nf">%environment</span>
+  <span class="cp"># use bash as default shell</span>
+  <span class="n">SHELL</span><span class="o">=/</span><span class="n">bin</span><span class="o">/</span><span class="n">bash</span>
+  <span class="k">export</span> <span class="n">SHELL</span>
+<span class="nf">%setup</span>
+  <span class="cp"># runs on host - the path to the image is $SINGULARITY_ROOTFS</span>
+<span class="nf">%post</span>
+  <span class="cp"># post-setup script</span>
+  <span class="cp"># load environment variables</span>
+  <span class="p">.</span> <span class="o">/</span><span class="n">environment</span>
+  <span class="cp"># use bash as default shell</span>
+  <span class="n">echo</span> <span class="err">&#39;</span><span class="n">SHELL</span><span class="o">=/</span><span class="n">bin</span><span class="o">/</span><span class="n">bash</span><span class="err">&#39;</span> <span class="o">&gt;&gt;</span> <span class="o">/</span><span class="n">environment</span>
+  <span class="cp"># make environment file executable</span>
+  <span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="o">/</span><span class="n">environment</span>
+  <span class="cp"># default mount paths</span>
+  <span class="n">mkdir</span> <span class="o">/</span><span class="n">scratch</span> <span class="o">/</span><span class="n">data</span> 
+  <span class="err">#</span> <span class="n">load</span> <span class="n">in</span> <span class="n">extra</span> <span class="n">packages</span> <span class="k">for</span> <span class="n">python</span>
+  <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span> <span class="o">&amp;&amp;</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">locales</span>
+  <span class="n">locale</span><span class="o">-</span><span class="n">gen</span> <span class="n">en_US</span><span class="p">.</span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span>
+  <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">git</span> <span class="n">wget</span> <span class="n">python3</span><span class="o">-</span><span class="n">dev</span> <span class="n">python3</span><span class="o">-</span><span class="n">pip</span>
+  <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">clean</span>
+  <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">libcupti</span><span class="o">-</span><span class="n">dev</span>
+  <span class="n">pip3</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">pip</span>
+  <span class="n">pip3</span> <span class="n">install</span> <span class="n">keras</span>
+  <span class="n">pip3</span> <span class="n">install</span> <span class="n">numpy</span> <span class="n">scipy</span> <span class="n">scikit</span><span class="o">-</span><span class="n">learn</span> <span class="n">pandas</span> <span class="n">tensorboard</span> <span class="n">natsorted</span> <span class="n">tqdm</span>
+<span class="nf">%runscript</span>
+  <span class="cp"># executes with the singularity run command</span>
+  <span class="cp"># delete this section to use existing docker ENTRYPOINT command</span>
+<span class="nf">%test</span>
+  <span class="cp"># test that script is a success</span>
+</pre></div>
+
+
+<h2>1. Needed Docker Containers:</h2>
 <p>The best thing to do is start off with a docker container that is already prebuilt. The nice thing is that for cloud computing with tensorflow-gpu, tensorflow is maintained on docker and up to date. </p>
-<pre><code>Bootstrap: Docker
-From: tensorflow/tensorflow:latest-gpu
-</code></pre>
+<div class="highlight"><pre><span></span><span class="n">Bootstrap</span><span class="o">:</span> <span class="n">Docker</span>
+<span class="n">From</span><span class="o">:</span> <span class="n">tensorflow</span><span class="o">/</span><span class="n">tensorflow</span><span class="o">:</span><span class="n">latest</span><span class="o">-</span><span class="n">gpu</span>
+</pre></div>
+
+
 <p>Other options are:</p>
-<pre><code>Bootstrap: shub
-From:
-</code></pre>
-<h3 id="2-environment-setup"><a class="toclink" href="#2-environment-setup">2. Environment / Setup</a><a class="headerlink" href="#2-environment-setup" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><span class="n">Bootstrap</span><span class="o">:</span> <span class="n">shub</span>
+<span class="n">From</span><span class="o">:</span>
+</pre></div>
+
+
+<h2>2. Environment / Setup</h2>
 <p>These are commands that can be used to export variables into the environment. Then you can run setup of files/variables before running any installations.</p>
-<h3 id="3-post"><a class="toclink" href="#3-post">3. Post</a><a class="headerlink" href="#3-post" title="Permanent link">&para;</a></h3>
+<h2>3. Post</h2>
 <p>This is the main area where your image will install different packages and load different environment variables.</p>
-<h3 id="4-run-script"><a class="toclink" href="#4-run-script">4. Run Script</a><a class="headerlink" href="#4-run-script" title="Permanent link">&para;</a></h3>
+<h2>4. Run Script</h2>
 <p>This will run a script afterwards, say a scientific experiment:</p>
-<pre><code>python3 main.py --args
-</code></pre>
-<h3 id="5-test"><a class="toclink" href="#5-test">5. Test</a><a class="headerlink" href="#5-test" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><span class="n">python3</span> <span class="n">main</span><span class="p">.</span><span class="n">py</span> <span class="c1">--args</span>
+</pre></div>
+
+
+<h2>5. Test</h2>
 <p>This will run test scripts to see that your "main.py" did what it was supposed to do. Were files saved? Were computations correct?</p>
-<h2 id="common-commands"><a class="toclink" href="#common-commands">Common Commands</a><a class="headerlink" href="#common-commands" title="Permanent link">&para;</a></h2>
+<h1>Common Commands</h1>
 <p>Pulling images, shelling into the image and executing the image with a script</p>
-<pre><code>singularity pull
+<div class="highlight"><pre><span></span><span class="nv">singularity</span> <span class="nv">pull</span>
 
-singularity shell
+<span class="nv">singularity</span> <span class="nv">shell</span>
 
-singularity exec
-</code></pre>
+<span class="nv">singularity</span> <span class="k">exec</span>
+</pre></div>
+
+
 <p>Common argument flags:
 * verbose mode(s): -v, -vv, -vvv
 * debug mode: -d 
 * link nvidia driver &amp; GPU: --nv
 * binds an existing directory onto the image: -B</p>
 <p>An example use case that runs a tensorflow simg and runs a training script:</p>
-<pre><code>singularity exec --nv ./tensorflow.simg python main.py ${traindatadir} ${testdatadir} --output_data_dir ${outputdatadir} --log_data_dir ${logdatadir} --patient_to_loo ${patient} --expname ${expname}
-</code></pre>
-<h2 id="conclusions"><a class="toclink" href="#conclusions">Conclusions</a><a class="headerlink" href="#conclusions" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><span class="nv">singularity</span> <span class="k">exec</span> <span class="o">--</span><span class="nv">nv</span> .<span class="o">/</span><span class="nv">tensorflow</span>.<span class="nv">simg</span> <span class="nv">python</span> <span class="nv">main</span>.<span class="nv">py</span> ${<span class="nv">traindatadir</span>} ${<span class="nv">testdatadir</span>} <span class="o">--</span><span class="nv">output_data_dir</span> ${<span class="nv">outputdatadir</span>} <span class="o">--</span><span class="nv">log_data_dir</span> ${<span class="nv">logdatadir</span>} <span class="o">--</span><span class="nv">patient_to_loo</span> ${<span class="nv">patient</span>} <span class="o">--</span><span class="nv">expname</span> ${<span class="nv">expname</span>}
+</pre></div>
+
+
+<h1>Conclusions</h1>
 <p>This allows an end-to-end HPC/scientific computation analysis that uses Docker/Singularityhub to setup your system, and then runs setup, main scripts and testing to create a consistent output.</p>
-<h2 id="references"><a class="toclink" href="#references">References:</a><a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<h1>References:</h1>
 <ol>
 <li>https://www.singularity-hub.org/</li>
 <li>http://geekyap.blogspot.com/2016/11/docker-vs-singularity-vs-shifter-in-hpc.html</li>

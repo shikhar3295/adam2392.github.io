@@ -64,7 +64,6 @@ Adam Li's blog            </a>
                     <li><a href="/archives.html">Timeline</a></li>
                     <li><a href="/tags.html">Tags</a></li>
                     <li><a href="/pdfs/AdamLi_CV.pdf">Curriculum Vitae</a></li>
-                    <li><a href="/gallery.html">Gallery</a></li>
                          <li><a href="/contact/">
                              Contact
                           </a></li>
@@ -164,25 +163,25 @@ Adam Li's blog            </a>
 </ul>
 <!-- /MarkdownTOC -->
 
-<h2 id="papers"><a class="toclink" href="#papers">Papers</a><a class="headerlink" href="#papers" title="Permanent link">&para;</a></h2>
-<h3 id="1-wilson-cowan-neural-mass-model"><a class="toclink" href="#1-wilson-cowan-neural-mass-model">1. Wilson-Cowan Neural Mass Model</a><a class="headerlink" href="#1-wilson-cowan-neural-mass-model" title="Permanent link">&para;</a></h3>
-<h4 id="summary-conclusions"><a class="toclink" href="#summary-conclusions">Summary / Conclusions:</a><a class="headerlink" href="#summary-conclusions" title="Permanent link">&para;</a></h4>
-<h4 id="important-notes"><a class="toclink" href="#important-notes">Important Notes:</a><a class="headerlink" href="#important-notes" title="Permanent link">&para;</a></h4>
-<h3 id="2-kalman-filter-model"><a class="toclink" href="#2-kalman-filter-model">2. Kalman Filter Model</a><a class="headerlink" href="#2-kalman-filter-model" title="Permanent link">&para;</a></h3>
-<h4 id="summary-conclusions_1"><a class="toclink" href="#summary-conclusions_1">Summary / Conclusions:</a><a class="headerlink" href="#summary-conclusions_1" title="Permanent link">&para;</a></h4>
-<h4 id="important-notes_1"><a class="toclink" href="#important-notes_1">Important Notes:</a><a class="headerlink" href="#important-notes_1" title="Permanent link">&para;</a></h4>
-<h3 id="3-expectation-maximization"><a class="toclink" href="#3-expectation-maximization">3. Expectation Maximization</a><a class="headerlink" href="#3-expectation-maximization" title="Permanent link">&para;</a></h3>
-<h4 id="summary-conclusions_2"><a class="toclink" href="#summary-conclusions_2">Summary / Conclusions:</a><a class="headerlink" href="#summary-conclusions_2" title="Permanent link">&para;</a></h4>
-<h4 id="important-notes_2"><a class="toclink" href="#important-notes_2">Important Notes:</a><a class="headerlink" href="#important-notes_2" title="Permanent link">&para;</a></h4>
-<h3 id="4-information-bottleneck-method"><a class="toclink" href="#4-information-bottleneck-method">4. Information Bottleneck Method</a><a class="headerlink" href="#4-information-bottleneck-method" title="Permanent link">&para;</a></h3>
+<h1>Papers</h1>
+<h2>1. Wilson-Cowan Neural Mass Model</h2>
+<h3>Summary / Conclusions:</h3>
+<h3>Important Notes:</h3>
+<h2>2. Kalman Filter Model</h2>
+<h3>Summary / Conclusions:</h3>
+<h3>Important Notes:</h3>
+<h2>3. Expectation Maximization</h2>
+<h3>Summary / Conclusions:</h3>
+<h3>Important Notes:</h3>
+<h2>4. Information Bottleneck Method</h2>
 <p>http://www.cs.huji.ac.il/labs/learning/Papers/allerton.pdf</p>
-<h4 id="summary-conclusions_3"><a class="toclink" href="#summary-conclusions_3">Summary / Conclusions:</a><a class="headerlink" href="#summary-conclusions_3" title="Permanent link">&para;</a></h4>
+<h3>Summary / Conclusions:</h3>
 <p>Let us define X as input signal, and Y as desired output.</p>
 <p>Here, they were interested in deriving a quantitative method for optimizing 1) compression rate of a signal and 2) the choice of representation of the original signal.</p>
 <p>Previous theory looked at minimizing the rate of compression given a constraint on expected distortion of the original signal (with new compression). This was solved via iterative algorithm (similar to EM), but lacked generality to find optimal representatives, which minimize the expected distortion (not just compression) of the signal. </p>
 <p>The new theory looks at minimizing the rate of compression given a constraint on the amount of information we can keep about Y using X. This produces an iterative algorithm that also can be solved iteratively. It also shows that 1) the Kullback-Leibler divergence is the relevant distortion measure for the information bottleneck setting, and 2) optimization of representation of signal and the signal compression can be done together.</p>
 <p>This work can be used in applications to information processing problems (e.g. deep learning).</p>
-<h4 id="important-notes_3"><a class="toclink" href="#important-notes_3">Important Notes:</a><a class="headerlink" href="#important-notes_3" title="Permanent link">&para;</a></h4>
+<h3>Important Notes:</h3>
 <p>Mutual information is defined as:</p>
 <p><span class="math">\(I(X;Y) = D_{KL}[P(x,y)||P(x)P(y)] = \sum_{x\in X, y\in Y} P(x,y) log(\frac_{P(x,y)}_{P(x)P(y)})\)</span>
 <span class="math">\(= \sum_{x\in X, y\in Y}P(x,y) log(\frac_{P(x|y)}_{P(x)}) = H(X) - H(X|Y)\)</span></p>
@@ -191,9 +190,9 @@ Adam Li's blog            </a>
 <p><span class="math">\(I(S(X); Y) = I(X; Y)\)</span></p>
 <p>We can allow the map to be stochastic, with encoder P(T|X) and allow map to capture as much as possible of I(X;Y), not necessarily all of it <span class="math">\(I(S(X); Y) \leq I(X; Y)\)</span>. Define <span class="math">\(t \in T\)</span> as compressed representations of <span class="math">\(x \in X\)</span>, stochastically, <span class="math">\(p(t|x)\)</span>. The following optimization problem finds a balance between compression of X and prediction of Y.</p>
 <p><span class="math">\(min_{p(t|x),p(y|t),p(t)}\ {I(X;T) - \beta I(T;Y)}\)</span></p>
-<h3 id="5-opening-the-black-box-of-deep-neural-networks-via-information"><a class="toclink" href="#5-opening-the-black-box-of-deep-neural-networks-via-information">5. Opening the Black Box of Deep Neural Networks Via Information</a><a class="headerlink" href="#5-opening-the-black-box-of-deep-neural-networks-via-information" title="Permanent link">&para;</a></h3>
+<h2>5. Opening the Black Box of Deep Neural Networks Via Information</h2>
 <p>Reference: https://arxiv.org/pdf/1703.00810.pdf</p>
-<h4 id="summary-conclusions_4"><a class="toclink" href="#summary-conclusions_4">Summary / Conclusions:</a><a class="headerlink" href="#summary-conclusions_4" title="Permanent link">&para;</a></h4>
+<h3>Summary / Conclusions:</h3>
 <p>In this paper, the authors extend their analysis of DNN using information theory. They answered the following questions:</p>
 <ol>
 <li>The SGD layer dynamics in the Information plane.
@@ -213,18 +212,18 @@ It seems that the hidden layers converge to the optiaml IB representations. Howe
 </li>
 </ol>
 <p>Another important hypothesis/conjecture they make is that: attempts to interpret single weights, or even single neurons in such networks can be meaningless because there is a large number of different networks that can achieve optimal performance. This makes sense in terms of how the brain is structured; the brain does not form the same pathway for learning something new between different people, but form a unique network for optimal performance. </p>
-<h4 id="important-notes_4"><a class="toclink" href="#important-notes_4">Important Notes:</a><a class="headerlink" href="#important-notes_4" title="Permanent link">&para;</a></h4>
+<h3>Important Notes:</h3>
 <p>First, they estimated the mutual information of the layers with the input and with the labels <span class="math">\(I(X;T_i)\)</span> and <span class="math">\(I(T_i;Y)\)</span>. </p>
-<h3 id="6-reinforcement-learning-an-overview"><a class="toclink" href="#6-reinforcement-learning-an-overview">6. Reinforcement Learning: An Overview</a><a class="headerlink" href="#6-reinforcement-learning-an-overview" title="Permanent link">&para;</a></h3>
+<h2>6. Reinforcement Learning: An Overview</h2>
 <p>Reference: https://pdfs.semanticscholar.org/b373/b0c6e3b4fef4ac0534965708fc382343f8dc.pdf</p>
-<h4 id="summary-conclusions_5"><a class="toclink" href="#summary-conclusions_5">Summary / Conclusions:</a><a class="headerlink" href="#summary-conclusions_5" title="Permanent link">&para;</a></h4>
-<h4 id="important-notes_5"><a class="toclink" href="#important-notes_5">Important Notes:</a><a class="headerlink" href="#important-notes_5" title="Permanent link">&para;</a></h4>
-<h3 id="7-deep-reinforcement-learning-an-overview"><a class="toclink" href="#7-deep-reinforcement-learning-an-overview">7. Deep Reinforcement Learning: An Overview</a><a class="headerlink" href="#7-deep-reinforcement-learning-an-overview" title="Permanent link">&para;</a></h3>
+<h3>Summary / Conclusions:</h3>
+<h3>Important Notes:</h3>
+<h2>7. Deep Reinforcement Learning: An Overview</h2>
 <p>Reference:</p>
-<h3 id="8-variational-inference"><a class="toclink" href="#8-variational-inference">8. Variational Inference:</a><a class="headerlink" href="#8-variational-inference" title="Permanent link">&para;</a></h3>
-<h4 id="summary-conclusions_6"><a class="toclink" href="#summary-conclusions_6">Summary / Conclusions</a><a class="headerlink" href="#summary-conclusions_6" title="Permanent link">&para;</a></h4>
+<h2>8. Variational Inference:</h2>
+<h3>Summary / Conclusions</h3>
 <p>Variational inference</p>
-<h4 id="important-notes_6"><a class="toclink" href="#important-notes_6">Important Notes</a><a class="headerlink" href="#important-notes_6" title="Permanent link">&para;</a></h4>
+<h3>Important Notes</h3>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",

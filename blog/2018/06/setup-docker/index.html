@@ -64,7 +64,6 @@ Adam Li's blog            </a>
                     <li><a href="/archives.html">Timeline</a></li>
                     <li><a href="/tags.html">Tags</a></li>
                     <li><a href="/pdfs/AdamLi_CV.pdf">Curriculum Vitae</a></li>
-                    <li><a href="/gallery.html">Gallery</a></li>
                          <li><a href="/contact/">
                              Contact
                           </a></li>
@@ -119,9 +118,9 @@ Adam Li's blog            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <h2 id="getting-setup-on-using-docker"><a class="toclink" href="#getting-setup-on-using-docker">Getting Setup on Using Docker</a><a class="headerlink" href="#getting-setup-on-using-docker" title="Permanent link">&para;</a></h2>
-<h2 id="by-adam-li"><a class="toclink" href="#by-adam-li">By: Adam Li</a><a class="headerlink" href="#by-adam-li" title="Permanent link">&para;</a></h2>
-<h4 id="table-of-contents"><a class="toclink" href="#table-of-contents">Table of Contents</a><a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h4>
+                <h1>Getting Setup on Using Docker</h1>
+<h1>By: Adam Li</h1>
+<h3>Table of Contents</h3>
 <!-- MarkdownTOC autolink="true" -->
 
 <ul>
@@ -157,73 +156,93 @@ Adam Li's blog            </a>
 </ul>
 <!-- /MarkdownTOC -->
 
-<h2 id="installation"><a class="toclink" href="#installation">Installation</a><a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<h1>Installation</h1>
 <p>The following packages need to be installed for a test time environment:</p>
-<pre><code>brew update
-brew prune
-brew doctor
-brew install postgres
-brew install docker
-</code></pre>
-<h2 id="setting-hardware-requirements"><a class="toclink" href="#setting-hardware-requirements">Setting Hardware Requirements:</a><a class="headerlink" href="#setting-hardware-requirements" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><span class="n">brew</span> <span class="k">update</span>
+<span class="n">brew</span> <span class="n">prune</span>
+<span class="n">brew</span> <span class="n">doctor</span>
+<span class="n">brew</span> <span class="n">install</span> <span class="n">postgres</span>
+<span class="n">brew</span> <span class="n">install</span> <span class="n">docker</span>
+</pre></div>
+
+
+<h1>Setting Hardware Requirements:</h1>
 <p>Some packages need minimum hardware requirements assigned to Docker usage.</p>
 <p>A minimum of 4GB RAM assigned to Docker</p>
 <p>Elasticsearch alone needs at least 2GB of RAM to run.</p>
 <p>With Docker for Mac, the amount of RAM dedicated to Docker can be set using the UI: see How to increase docker-machine memory Mac (Stack Overflow).</p>
-<h2 id="using-docker"><a class="toclink" href="#using-docker">Using Docker</a><a class="headerlink" href="#using-docker" title="Permanent link">&para;</a></h2>
-<h3 id="1-docker-image"><a class="toclink" href="#1-docker-image">1. Docker Image</a><a class="headerlink" href="#1-docker-image" title="Permanent link">&para;</a></h3>
+<h1>Using Docker</h1>
+<h2>1. Docker Image</h2>
 <p>Most docker images have been prebuilt and tested online. Containers are these dynamic "images" of your system that will host data, programs, etc. Images are snapshots of those containers (mainly at the beginning) to setup the baseline container. </p>
 <p>Volumes are a way of allowing containers persistent storage across usage.</p>
-<h4 id="1a-setting-base-docker-volume"><a class="toclink" href="#1a-setting-base-docker-volume">1a. Setting Base Docker Volume</a><a class="headerlink" href="#1a-setting-base-docker-volume" title="Permanent link">&para;</a></h4>
+<h3>1a. Setting Base Docker Volume</h3>
 <p>This will create a docker with a volume (in the docker image) at the volume you specify with the "-v" tag. The docker image has the name that you set, and then it is based off of "busybox", which is a generalized light-weight docker image by Docker.</p>
-<pre><code>docker create -v /var/lib/postgresql/data --name postgres10.4-data busybox
-</code></pre>
-<h4 id="1b-creating-the-container"><a class="toclink" href="#1b-creating-the-container">1b. Creating The Container</a><a class="headerlink" href="#1b-creating-the-container" title="Permanent link">&para;</a></h4>
-<pre><code>docker run --name local-postgres10.4 -e POSTGRES_PASSWORD=dappstore -d --volumes-from postgres10.4-data postgres:10.4
-</code></pre>
-<h4 id="1c-running-postgresql-via-container"><a class="toclink" href="#1c-running-postgresql-via-container">1c. Running PostgreSQL via Container</a><a class="headerlink" href="#1c-running-postgresql-via-container" title="Permanent link">&para;</a></h4>
-<pre><code>docker run -it --link local-postgres10.4:postgres --rm postgres:10.4 sh -c 'exec psql -h "$POSTGRES_PORT_5432_TCP_ADDR" -p "$POSTGRES_PORT_5432_TCP_PORT" -U postgres'
-</code></pre>
+<div class="highlight"><pre><span></span><span class="n">docker</span> <span class="k">create</span> <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">postgresql</span><span class="o">/</span><span class="k">data</span> <span class="c1">--name postgres10.4-data busybox</span>
+</pre></div>
+
+
+<h3>1b. Creating The Container</h3>
+<div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="c1">--name local-postgres10.4 -e POSTGRES_PASSWORD=dappstore -d --volumes-from postgres10.4-data postgres:10.4</span>
+</pre></div>
+
+
+<h3>1c. Running PostgreSQL via Container</h3>
+<div class="highlight"><pre><span></span><span class="nv">docker</span> <span class="nv">run</span> <span class="o">-</span><span class="nv">it</span> <span class="o">--</span><span class="nv">link</span> <span class="nv">local</span><span class="o">-</span><span class="nv">postgres10</span>.<span class="mi">4</span>:<span class="nv">postgres</span> <span class="o">--</span><span class="nv">rm</span> <span class="nv">postgres</span>:<span class="mi">10</span>.<span class="mi">4</span> <span class="nv">sh</span> <span class="o">-</span><span class="nv">c</span> <span class="s1">&#39;</span><span class="s">exec psql -h &quot;$POSTGRES_PORT_5432_TCP_ADDR&quot; -p &quot;$POSTGRES_PORT_5432_TCP_PORT&quot; -U postgres</span><span class="s1">&#39;</span>
+</pre></div>
+
+
 <p>Enter the password you just set.</p>
 <p>Inside, you can modify and begin the basic configuration of the base container volume by creating tables and initializing roles using SQL.</p>
 <p>Now, your base container is set up! Don't remove this if you want to have persistant Postgresql set up.</p>
-<h4 id="1d-optional-expose-docker-container-to-host"><a class="toclink" href="#1d-optional-expose-docker-container-to-host">1d. (Optional) Expose Docker Container To Host</a><a class="headerlink" href="#1d-optional-expose-docker-container-to-host" title="Permanent link">&para;</a></h4>
-<pre><code>docker run --name local-postgres10.4 -p 5432:5432 -e POSTGRES_PASSWORD=asecurepassword -d --volumes-from postgres10.4-data postgres:10.4
-</code></pre>
+<h3>1d. (Optional) Expose Docker Container To Host</h3>
+<div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="c1">--name local-postgres10.4 -p 5432:5432 -e POSTGRES_PASSWORD=asecurepassword -d --volumes-from postgres10.4-data postgres:10.4</span>
+</pre></div>
+
+
 <p>This will expose the PostGRESQL docker instance via port 5432 localhost, so that you can connect to it via any application now.</p>
-<h3 id="2"><a class="toclink" href="#2">2.</a><a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
-<h2 id="linking-all-this-with-docker-compose"><a class="toclink" href="#linking-all-this-with-docker-compose">Linking All This With Docker-Compose</a><a class="headerlink" href="#linking-all-this-with-docker-compose" title="Permanent link">&para;</a></h2>
+<h2>2.</h2>
+<h1>Linking All This With Docker-Compose</h1>
 <p>Docker-compose is a way of composing up the docker images that you have in a way that fits your needs. You can modularly stack docker images and then run additional installations that fit your specifications.</p>
 <p>So, for example, here we will compose a docker image that is composed of django, postgres and elasticsearch to have a fully functional web-app with logging capabilities. (Perhaps we should also think about adding Kibana and Logstash for a full ELK stack)?</p>
-<h3 id="1"><a class="toclink" href="#1">1.</a><a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<h2>1.</h2>
 <p>Refer to https://medium.com/@leo_hetsch/local-development-with-go-postgresql-and-elasticsearch-in-docker-61bc8a0d5e66 for a nice little explanation for some common docker installation commands for postgresql and elastic search.</p>
-<pre><code>docker-compose -f local.yml build
-</code></pre>
+<div class="highlight"><pre><span></span><span class="n">docker</span><span class="o">-</span><span class="n">compose</span> <span class="o">-</span><span class="n">f</span> <span class="k">local</span><span class="p">.</span><span class="n">yml</span> <span class="n">build</span>
+</pre></div>
+
+
 <p>or </p>
-<pre><code>export COMPOSE_FILE=local.yml
-docker-compose up
-</code></pre>
+<div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">COMPOSE_FILE</span><span class="o">=</span><span class="k">local</span><span class="p">.</span><span class="n">yml</span>
+<span class="n">docker</span><span class="o">-</span><span class="n">compose</span> <span class="n">up</span>
+</pre></div>
+
+
 <p>Possible / common methods:</p>
-<pre><code>docker-compose -f local.yml run --rm django python manage.py migrate
-docker-compose -f local.yml run --rm django python manage.py createsuperuser
-</code></pre>
+<div class="highlight"><pre><span></span><span class="n">docker</span><span class="o">-</span><span class="n">compose</span> <span class="o">-</span><span class="n">f</span> <span class="k">local</span><span class="p">.</span><span class="n">yml</span> <span class="n">run</span> <span class="c1">--rm django python manage.py migrate</span>
+<span class="n">docker</span><span class="o">-</span><span class="n">compose</span> <span class="o">-</span><span class="n">f</span> <span class="k">local</span><span class="p">.</span><span class="n">yml</span> <span class="n">run</span> <span class="c1">--rm django python manage.py createsuperuser</span>
+</pre></div>
+
+
 <p>Since docker is composed of a set of build commands, you should read up on the documentation here:</p>
 <p>https://docs.docker.com/compose/compose-file/#resources</p>
-<h2 id="common-commands"><a class="toclink" href="#common-commands">Common Commands</a><a class="headerlink" href="#common-commands" title="Permanent link">&para;</a></h2>
-<h3 id="images"><a class="toclink" href="#images">Images</a><a class="headerlink" href="#images" title="Permanent link">&para;</a></h3>
-<pre><code>docker image ls
-docker ps
+<h1>Common Commands</h1>
+<h2>Images</h2>
+<div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">image</span> <span class="n">ls</span>
+<span class="n">docker</span> <span class="n">ps</span>
 
-docker rmi &lt;image_name&gt;
-</code></pre>
-<h3 id="containers"><a class="toclink" href="#containers">Containers</a><a class="headerlink" href="#containers" title="Permanent link">&para;</a></h3>
-<pre><code>docker container ls
-</code></pre>
-<h3 id="volumes"><a class="toclink" href="#volumes">Volumes</a><a class="headerlink" href="#volumes" title="Permanent link">&para;</a></h3>
-<h2 id="testing"><a class="toclink" href="#testing">Testing</a><a class="headerlink" href="#testing" title="Permanent link">&para;</a></h2>
-<h3 id="1_1"><a class="toclink" href="#1_1">1.</a><a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
-<h3 id="2_1"><a class="toclink" href="#2_1">2.</a><a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
-<h2 id="references"><a class="toclink" href="#references">References:</a><a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<span class="n">docker</span> <span class="n">rmi</span> <span class="o">&lt;</span><span class="n">image_name</span><span class="o">&gt;</span>
+</pre></div>
+
+
+<h2>Containers</h2>
+<div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">container</span> <span class="n">ls</span>
+</pre></div>
+
+
+<h2>Volumes</h2>
+<h1>Testing</h1>
+<h2>1.</h2>
+<h2>2.</h2>
+<h1>References:</h1>
 <ol>
 <li>http://boot2docker.io/</li>
 <li>https://ryaneschinger.com/blog/dockerized-postgresql-development-environment/</li>
